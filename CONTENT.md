@@ -70,16 +70,20 @@ Needed from the owner, per product he actually sells:
 
 ## 5. Brand assets
 
-| Status | Path                               | Note                                                                          | Who   |
-| ------ | ---------------------------------- | ----------------------------------------------------------------------------- | ----- |
-| `[~]`  | `public/brand/kamika-logo.png`     | Generated from my SVG reconstruction. **Replace with the original logo file.** | Owner |
-| `[~]`  | `public/brand/kamika-wordmark.svg` | My reconstruction in Outfit. Once the real logo arrives, convert it to outlines. | You  |
-| `[x]`  | `src/app/icon.svg`                 | Favicon: the window-frame mark, ink on the logo blue. Mine, no source needed.  | —     |
-| `[x]`  | `src/app/apple-icon.png`           | Generated from `icon.svg` by `node scripts/build-brand-assets.mjs`.            | —     |
+| Status | Path                               | Note                                                                            | Who   |
+| ------ | ---------------------------------- | ------------------------------------------------------------------------------- | ----- |
+| `[~]`  | `public/brand/kamika-logo.png`     | **Save the original logo image here** (1080×1080 is fine). My version is rasterised from the SVG below, and because Outfit is not installed system-wide it falls back to a system face — the proportions are right but the letterforms are not exact. | Owner |
+| `[~]`  | `public/brand/kamika-wordmark.svg` | My reconstruction in Outfit, with the proportions measured off the original. Once the real logo file arrives, convert it to outlines. | You   |
+| `[x]`  | `src/app/icon.svg`                 | Favicon: the window-frame mark, ink on the logo blue. Mine, no source needed.    | —     |
+| `[x]`  | `src/app/apple-icon.png`           | Generated from `icon.svg` by `node scripts/build-brand-assets.mjs`.              | —     |
+| `[ ]`  | `--kamika-blue` exact value        | The token is `#AFC9EF` as specified. Once the original logo file is in the repo I can sample the background pixel and confirm it to the digit. | You   |
 
-The header logo is rendered as **live text** in Outfit, not an image — crisp at every size and
-selectable. If the real logo turns out to use a different typeface, it is one component to change
-(`src/components/brand/Wordmark.tsx`).
+The header logo is rendered as **live text** in Outfit, not an image — crisp at every size,
+selectable, and it recolours for dark backgrounds. Outfit was verified against the original rather
+than assumed: its lowercase `a` is single-storey in a near-circular box (counter centred at 0.50,
+95×98), which is the letterform the logo uses. Weight, tracking and the size of the `BAUELEMENTE`
+line were measured off the logo, not guessed — see the comment in
+`src/components/brand/Wordmark.tsx`.
 
 ## 6. Legal — must be checked by a lawyer
 

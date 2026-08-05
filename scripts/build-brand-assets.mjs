@@ -27,8 +27,8 @@ const jobs = [
   {
     from: join(ROOT, "public/brand/kamika-wordmark.svg"),
     to: join(ROOT, "public/brand/kamika-logo.png"),
-    width: 960,
-    height: 320,
+    width: 1080,
+    height: 1080,
   },
 ];
 
