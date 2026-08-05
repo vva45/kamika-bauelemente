@@ -120,6 +120,25 @@
   color: var(--kamika-steel);
 }
 
+/* Franja marquee: la pista lleva el contenido duplicado, así que
+   desplazarla justo la mitad hace el bucle sin costura. */
+@keyframes kamika-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@utility marquee-track {
+  animation: kamika-marquee 48s linear infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
 /* Enlace que cubre toda su tarjeta sin anidar elementos interactivos. */
 @utility stretched-link {
   &::after {

@@ -29,7 +29,9 @@ npm run assets:placeholders
 | `[~]`  | `public/images/windows/{product-id}-{1,2,3}.jpg`  | Three photos per product: the element installed, a profile/section detail, and a wider shot. 1600×1200. | Owner |
 | `[ ]`  | `public/images/about/dominik.jpg`                 | Portrait of Dominik for the About page. 1000×1250, plain background.            | Owner |
 | `[~]`  | `public/images/catalogues/{id}-cover.jpg`         | Front cover of each catalogue. Can be exported from page 1 of the PDF.          | You   |
-| `[ ]`  | `public/images/projects/{id}-{n}.jpg`             | Minimum 3 photos per completed project.                                        | Owner |
+| `[~]`  | `public/images/projects/{id}-{n}.jpg`             | Minimum 3 photos per completed project.                                        | Owner |
+| `[~]`  | `public/images/colours/render.jpg`                | One frame photographed in a **light, neutral colour** (white or light grey), evenly lit. The colour picker tints it with `mix-blend-multiply`, which keeps the shadows of the profile — but that only works if the source is pale. A dark frame will tint to mud. | Owner |
+| `[~]`  | `public/images/contact/map.jpg`                   | Static map export showing Thomasstraße 11. A screenshot of Google Maps at ~15× zoom is fine. **Deliberately an image, not an embedded map** — a Google iframe sets third-party cookies and would force a consent banner onto the whole site. | You   |
 
 > No stock photography of smiling people pointing at windows. Real installations only.
 
@@ -57,6 +59,18 @@ Needed from the owner, per product he actually sells:
 - Frame depth (mm), Uw value (W/m²K), number of chambers, glazing build-up.
 - Sound insulation (dB), burglary resistance class (RC), max sash size, wind load class.
 - Which catalogue it appears in, and **on which page** — that is what the data sheet button links to.
+
+## 3b. Projects and colours — also example data
+
+`src/data/projects.ts` holds **6 invented projects**. The towns are real ones around Hechingen
+(Balingen, Burladingen, Albstadt, Bisingen, Tübingen) and the work described is plausible, but none
+of it happened. Projects are what actually builds trust on a site like this, so replacing these
+matters more than the product data — **even three real jobs with real photos beat six invented
+ones.** For each: what the customer asked for, what was fitted, the town, the year, and 3+ photos.
+
+`src/data/colors.ts` holds 33 finishes. The RAL codes are real and the hex values are the usual
+on-screen approximations, but the owner has to confirm **which finishes Kamika actually offers**,
+which are stock and which are made to order, and which are unavailable on a given material.
 
 ## 4. Text the owner has to write
 

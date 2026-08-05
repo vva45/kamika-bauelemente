@@ -83,6 +83,41 @@ export const de: Record<ContentKey, string> = {
   "home.featuredEyebrow": "", // TODO: DE
   "home.featuredTitle": "", // TODO: DE
   "home.featuredIntro": "", // TODO: DE
+  "home.categoriesEyebrow": "", // TODO: DE
+  "home.categoriesTitle": "", // TODO: DE
+  "home.categoriesIntro": "", // TODO: DE
+  "home.cataloguesEyebrow": "", // TODO: DE
+  "home.cataloguesTitle": "", // TODO: DE
+  "home.cataloguesIntro": "", // TODO: DE
+  "home.projectsEyebrow": "", // TODO: DE
+  "home.projectsTitle": "", // TODO: DE
+  "home.projectsIntro": "", // TODO: DE
+  "home.coloursEyebrow": "", // TODO: DE
+  "home.coloursTitle": "", // TODO: DE
+  "home.coloursIntro": "", // TODO: DE
+  "home.howEyebrow": "", // TODO: DE
+  "home.howTitle": "", // TODO: DE
+  "home.howStep1Title": "", // TODO: DE
+  "home.howStep1Body": "", // TODO: DE
+  "home.howStep2Title": "", // TODO: DE
+  "home.howStep2Body": "", // TODO: DE
+  "home.howStep3Title": "", // TODO: DE
+  "home.howStep3Body": "", // TODO: DE
+  "home.howStep4Title": "", // TODO: DE
+  "home.howStep4Body": "", // TODO: DE
+  "home.ctaEyebrow": "", // TODO: DE
+  "home.ctaTitle": "", // TODO: DE
+  "home.ctaBody": "", // TODO: DE
+  "home.viewOnMap": "", // TODO: DE
+  "home.mapAlt": "", // TODO: DE
+  "home.colourRenderAlt": "", // TODO: DE
+
+  // ── Catálogos ────────────────────────────────────────────────
+  "catalogue.pages": "", // TODO: DE
+  "catalogue.size": "", // TODO: DE
+
+  // ── Proyectos ────────────────────────────────────────────────
+  "project.installed": "", // TODO: DE
 
   // ── Categorías ───────────────────────────────────────────────
   "category.comingSoonTitle": "", // TODO: DE

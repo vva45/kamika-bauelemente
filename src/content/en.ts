@@ -84,6 +84,50 @@ export const en = {
   "home.featuredTitle": "Products",
   "home.featuredIntro":
     "Every model has its frame depth, its Uw value and its data sheet. Open the sheet from the card, or the full specification from the product page.",
+  "home.categoriesEyebrow": "What we supply",
+  "home.categoriesTitle": "Everything that closes an opening.",
+  "home.categoriesIntro":
+    "Eight ranges, one supplier and one installation team. The shutter is planned with the window, not bolted on afterwards.",
+  "home.cataloguesEyebrow": "Documentation",
+  "home.cataloguesTitle": "Browse the catalogues",
+  "home.cataloguesIntro":
+    "The full ranges as PDF. Read them here or download them — no form, no email address required.",
+  "home.projectsEyebrow": "Completed work",
+  "home.projectsTitle": "Recent installations",
+  "home.projectsIntro":
+    "What was asked for, what was fitted, and where. These are the reference for what we can do.",
+  "home.coloursEyebrow": "Colours and finishes",
+  "home.coloursTitle": "RAL, wood decor and anodised",
+  "home.coloursIntro":
+    "Frames can be finished in a different colour inside and outside. Hover a swatch to see it on a frame.",
+  "home.howEyebrow": "How it works",
+  "home.howTitle": "From the first visit to the last adjustment",
+  "home.howStep1Title": "Consultation",
+  "home.howStep1Body":
+    "We look at the opening, the wall build-up and what the room needs. You get a written offer naming the profile, the glazing and the fittings.",
+  "home.howStep2Title": "Measuring",
+  "home.howStep2Body":
+    "Final measurements are taken on site once the offer is accepted, never off a drawing. Production starts from those figures.",
+  "home.howStep3Title": "Installation",
+  "home.howStep3Body":
+    "Old elements out, new ones in, sealed inside and outside. A single-family house is usually one to two days.",
+  "home.howStep4Title": "Service",
+  "home.howStep4Body":
+    "Adjustment, gaskets, fittings and glass replacement afterwards. We keep the order data so spare parts match.",
+  "home.ctaEyebrow": "Hechingen · Zollernalbkreis",
+  "home.ctaTitle": "Tell us about the opening.",
+  "home.ctaBody":
+    "Call, write, or send the measurements you already have. You will get an answer from Dominik, not from a call centre.",
+  "home.viewOnMap": "View on Google Maps",
+  "home.mapAlt": "Map showing the location of Kamika Bauelemente in Hechingen",
+  "home.colourRenderAlt": "Window frame shown in the selected colour",
+
+  // ── Catálogos ────────────────────────────────────────────────
+  "catalogue.pages": "pages",
+  "catalogue.size": "MB",
+
+  // ── Proyectos ────────────────────────────────────────────────
+  "project.installed": "Installed",
 
   // ── Categorías ───────────────────────────────────────────────
   "category.comingSoonTitle": "This range is being prepared",
