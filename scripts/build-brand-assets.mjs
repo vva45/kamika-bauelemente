@@ -1,13 +1,12 @@
 /**
- * Rasteriza los assets de marca que tienen que ser binarios:
- *  - `src/app/apple-icon.png`      (180×180, lo pide iOS)
- *  - `public/brand/kamika-logo.png` (wordmark sobre el azul del logo)
+ * Rasteriza los assets de marca que tienen que ser binarios.
  *
- * Las fuentes vectoriales son `src/app/icon.svg` y
- * `public/brand/kamika-wordmark.svg`: editar allí y volver a ejecutar.
+ * Hoy solo genera `src/app/apple-icon.png` (180×180, lo pide iOS) a
+ * partir de `src/app/icon.svg`. Editar el SVG y volver a ejecutar.
  *
- * El logo generado es un PROVISIONAL. Cuando el dueño entregue el logo
- * original, se sustituye el PNG y se rehace el SVG a curvas.
+ * ⚠️ `public/brand/kamika-logo.png` es el fichero ORIGINAL del dueño y
+ * este script no lo toca nunca. La reconstrucción vectorial vive en
+ * `public/brand/kamika-wordmark.svg` y no se rasteriza encima del real.
  */
 import { readFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
@@ -23,12 +22,6 @@ const jobs = [
     to: join(ROOT, "src/app/apple-icon.png"),
     width: 180,
     height: 180,
-  },
-  {
-    from: join(ROOT, "public/brand/kamika-wordmark.svg"),
-    to: join(ROOT, "public/brand/kamika-logo.png"),
-    width: 1080,
-    height: 1080,
   },
 ];
 

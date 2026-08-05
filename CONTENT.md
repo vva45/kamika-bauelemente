@@ -49,9 +49,17 @@ Also needed per catalogue: **exact title, year, page count and file size** (curr
 
 ## 3. Product data — the big one
 
-`src/data/products/windows.ts` currently holds **4 example products**. Model names, frame depths,
-Uw values, sound ratings and RC classes are plausible for the trade but **are not Kamika's real
-range**. Every file in `src/data/products/` carries a warning comment at the top.
+`src/data/products/` holds **32 example products — 4 per category, all 8 categories seeded**.
+Model names, frame depths, Uw values, sound ratings and RC classes are plausible for the trade but
+**are not Kamika's real range**. Every file carries a warning comment at the top.
+
+Two details worth knowing when replacing them:
+
+- The `related` lists ("Goes well with") are hand-picked cross-category pairings — a window
+  recommends its shutter, screen and handle. Keep that logic when editing; it is the sales cross-link.
+- `window-rebate-vent` deliberately has **no datasheet and no catalogue page**: it proves the rule
+  that the "Technical data sheet" button is simply not rendered when there is no target. Don't
+  "fix" it by adding a catalogue reference without thinking.
 
 Needed from the owner, per product he actually sells:
 
@@ -86,17 +94,17 @@ which are stock and which are made to order, and which are unavailable on a give
 
 | Status | Path                               | Note                                                                            | Who   |
 | ------ | ---------------------------------- | ------------------------------------------------------------------------------- | ----- |
-| `[~]`  | `public/brand/kamika-logo.png`     | **Save the original logo image here** (1080×1080 is fine). My version is rasterised from the SVG below, and because Outfit is not installed system-wide it falls back to a system face — the proportions are right but the letterforms are not exact. | Owner |
-| `[~]`  | `public/brand/kamika-wordmark.svg` | My reconstruction in Outfit, with the proportions measured off the original. Once the real logo file arrives, convert it to outlines. | You   |
+| `[x]`  | `public/brand/kamika-logo.png`     | **The owner's original file is in place** (1092×1092). `scripts/build-brand-assets.mjs` deliberately never touches it. | —     |
+| `[~]`  | `public/brand/kamika-wordmark.svg` | Vector reconstruction in Outfit, proportions measured off the original file (ink-pixel histogram). For print/vector use, convert the text to outlines first. | You   |
 | `[x]`  | `src/app/icon.svg`                 | Favicon: the window-frame mark, ink on the logo blue. Mine, no source needed.    | —     |
 | `[x]`  | `src/app/apple-icon.png`           | Generated from `icon.svg` by `node scripts/build-brand-assets.mjs`.              | —     |
-| `[ ]`  | `--kamika-blue` exact value        | The token is `#AFC9EF` as specified. Once the original logo file is in the repo I can sample the background pixel and confirm it to the digit. | You   |
+| `[x]`  | `--kamika-blue` value              | Token kept at `#AFC9EF` as specified in the brief. The logo file's background samples at ≈`#B0CDF7` (≈8 units brighter in the blue channel, with compression noise). Imperceptible side by side; say the word if you want the token switched to the sampled value. | —     |
 
 The header logo is rendered as **live text** in Outfit, not an image — crisp at every size,
-selectable, and it recolours for dark backgrounds. Outfit was verified against the original rather
-than assumed: its lowercase `a` is single-storey in a near-circular box (counter centred at 0.50,
-95×98), which is the letterform the logo uses. Weight, tracking and the size of the `BAUELEMENTE`
-line were measured off the logo, not guessed — see the comment in
+selectable, and it recolours for dark backgrounds. Verified against the original file, not assumed:
+Outfit's lowercase `a` is single-storey in a near-circular box, and the measured proportions match —
+`Kamika` ink width/height 4.481 in the file vs 4.48 for Outfit 400; `BAUELEMENTE` is 20% of the main
+size and 0.656 of its width, which the component reproduces. See
 `src/components/brand/Wordmark.tsx`.
 
 ## 6. Legal — must be checked by a lawyer

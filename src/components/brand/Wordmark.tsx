@@ -2,13 +2,15 @@
  * El logo, compuesto como texto vivo en lugar de una imagen: nítido a
  * cualquier tamaño, seleccionable y accesible.
  *
- * Proporciones medidas sobre el logo original:
+ * Proporciones medidas sobre el fichero real del logo (histograma de
+ * píxeles de tinta, no a ojo):
  *  - "Kamika" en Outfit peso 400. Outfit es la correcta: su 'a' es de un
  *    solo piso y prácticamente circular, como la del logo. A peso 400 la
- *    relación ancho-de-tinta / altura-de-caja es 4,48; en el logo, ~4,5.
+ *    relación ancho-de-tinta / altura-de-tinta es 4,48; el logo mide 4,481.
  *  - Tracking cero. El logo no va apretado.
- *  - "BAUELEMENTE" al 17,5% del tamaño, con tracking 0,5em, centrado
- *    debajo y ocupando dos tercios del ancho de "Kamika".
+ *  - "BAUELEMENTE" al 20% del tamaño (altura de tinta 32/160 px en el
+ *    original), con tracking ~0,35em para que su ancho sea 0,656 del de
+ *    "Kamika", que es lo que mide el fichero.
  *  - Ambas líneas en negro. La bajada no es gris.
  *
  * Los tamaños de display (`lg`, `hero`) respetan esas proporciones al
@@ -46,11 +48,11 @@ const SIZES = {
   },
   lg: {
     root: "text-[42px]",
-    suffix: "text-[0.21em] tracking-[0.44em] -mr-[0.44em]",
+    suffix: "text-[0.2em] tracking-[0.35em] -mr-[0.35em]",
   },
   hero: {
     root: "text-[72px]",
-    suffix: "text-[0.175em] tracking-[0.5em] -mr-[0.5em]",
+    suffix: "text-[0.2em] tracking-[0.35em] -mr-[0.35em]",
   },
 } as const;
 

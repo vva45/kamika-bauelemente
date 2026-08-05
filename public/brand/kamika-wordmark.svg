@@ -1,14 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" role="img" aria-label="Kamika Bauelemente">
-  <!-- Reconstrucción del logo de Kamika, con las proporciones medidas
-       sobre el original: Outfit peso 400, tracking cero, y la bajada al
-       17,5% del tamaño con tracking 0,5em, centrada debajo.
+  <!-- Reconstrucción vectorial del logo de Kamika, con las proporciones
+       medidas sobre el fichero real (histograma de píxeles de tinta):
+       Outfit peso 400, tracking cero; la bajada al 20% del tamaño con
+       tracking 0,35em, centrada debajo (ancho 0,656 del de "Kamika").
 
-       PROVISIONAL: sustituir por el fichero original del dueño. Si se
-       abre en un editor vectorial, convertir el texto a curvas con la
-       Outfit real antes de usarlo fuera de la web.
-
-       Al rasterizar con sharp, el sistema no tiene Outfit instalada y
-       cae a una sans del sistema: el PNG generado es aproximado. -->
+       El fichero de referencia es public/brand/kamika-logo.png (el del
+       dueño). Este SVG existe para usos vectoriales; si se abre en un
+       editor, convertir el texto a curvas con la Outfit real. -->
   <rect width="1080" height="1080" fill="#AFC9EF"/>
   <text x="540" y="615"
         text-anchor="middle"
@@ -16,13 +14,13 @@
         font-size="225"
         font-weight="400"
         fill="#0F1114">Kamika</text>
-  <!-- +9.85 = la mitad del tracking, para compensar el hueco que queda
+  <!-- +7.9 = la mitad del tracking, para compensar el hueco que queda
        tras la última letra y que el centrado sea óptico. -->
-  <text x="549.85" y="676"
+  <text x="547.9" y="681"
         text-anchor="middle"
         font-family="Outfit, 'Segoe UI', Arial, Helvetica, sans-serif"
-        font-size="39"
+        font-size="45"
         font-weight="500"
-        letter-spacing="19.7"
+        letter-spacing="15.75"
         fill="#0F1114">BAUELEMENTE</text>
 </svg>

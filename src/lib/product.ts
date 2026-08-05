@@ -36,3 +36,22 @@ export const formatSpecValue = (value: string): string => {
   if (!/^-?\d+(\.\d+)?$/.test(value)) return value;
   return formatNumber(Number(value), { maximumFractionDigits: 2 });
 };
+
+/**
+ * Medidas para las líneas de cota de la galería.
+ *
+ * Busca la primera spec en mm con un valor "ancho × alto" (p. ej.
+ * "1200 × 2200"). Si el producto no declara ninguna —una manilla, un
+ * cilindro— devuelve null y la galería no pinta cotas: una cota
+ * inventada sería decoración, y decoración que además miente.
+ */
+export const productDimensions = (
+  product: Product,
+): { width: number; height: number } | null => {
+  for (const spec of product.specs) {
+    if (spec.unit !== "mm") continue;
+    const match = /^(\d+)\s*×\s*(\d+)$/.exec(spec.value.trim());
+    if (match) return { width: Number(match[1]), height: Number(match[2]) };
+  }
+  return null;
+};

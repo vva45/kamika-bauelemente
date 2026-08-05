@@ -63,6 +63,27 @@ export const de: Record<ContentKey, string> = {
   "common.comingSoon": "", // TODO: DE
   "common.pdf": "", // TODO: DE
 
+  // ── Hub de productos ─────────────────────────────────────────
+  "products.eyebrow": "", // TODO: DE
+  "products.title": "", // TODO: DE
+  "products.intro": "", // TODO: DE
+  "products.filterLabel": "", // TODO: DE
+  "products.filterAll": "", // TODO: DE
+
+  // ── Materiales (etiquetas de filtro y de spec) ──────────────
+  "material.pvc": "", // TODO: DE
+  "material.aluminium": "", // TODO: DE
+  "material.steel": "", // TODO: DE
+  "material.wood": "", // TODO: DE
+  "material.wood-alu": "", // TODO: DE
+
+  // ── Galería y lightbox ───────────────────────────────────────
+  "gallery.viewImage": "", // TODO: DE
+  "gallery.openLightbox": "", // TODO: DE
+  "gallery.close": "", // TODO: DE
+  "gallery.prev": "", // TODO: DE
+  "gallery.next": "", // TODO: DE
+
   // ── Producto ─────────────────────────────────────────────────
   "product.datasheet": "", // TODO: DE
   "product.sendEnquiry": "", // TODO: DE

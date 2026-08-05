@@ -62,6 +62,28 @@ export const en = {
   "common.comingSoon": "Coming soon",
   "common.pdf": "PDF",
 
+  // ── Hub de productos ─────────────────────────────────────────
+  "products.eyebrow": "Product ranges",
+  "products.title": "Products",
+  "products.intro":
+    "Eight ranges covering the whole opening: the element, its shading, its screen and its hardware. Every model page lists the specification and links to the exact catalogue page.",
+  "products.filterLabel": "Material",
+  "products.filterAll": "All materials",
+
+  // ── Materiales (etiquetas de filtro y de spec) ──────────────
+  "material.pvc": "PVC",
+  "material.aluminium": "Aluminium",
+  "material.steel": "Steel",
+  "material.wood": "Wood",
+  "material.wood-alu": "Wood-aluminium",
+
+  // ── Galería y lightbox ───────────────────────────────────────
+  "gallery.viewImage": "View image {index} of {total}",
+  "gallery.openLightbox": "Open image full screen",
+  "gallery.close": "Close full-screen view",
+  "gallery.prev": "Previous image",
+  "gallery.next": "Next image",
+
   // ── Producto ─────────────────────────────────────────────────
   "product.datasheet": "Technical data sheet",
   "product.sendEnquiry": "Send enquiry",
