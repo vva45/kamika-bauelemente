@@ -1,0 +1,305 @@
+"use client";
+
+/**
+ * Navegación principal: barra en desktop (con desplegable de
+ * categorías) y menú a pantalla completa en móvil.
+ *
+ * Los enlaces llegan como props desde el Header, que es un componente
+ * de servidor: así el cliente no se descarga toda la capa de datos de
+ * categorías solo para pintar ocho nombres.
+ */
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { useCallback, useEffect, useId, useRef, useState } from "react";
+import { ButtonLink } from "@/components/ui/Button";
+import { ChevronDownIcon, CloseIcon, MenuIcon, PhoneIcon } from "@/components/ui/icons";
+import { useSmoothScroll } from "@/components/layout/SmoothScroll";
+import { cn } from "@/lib/cn";
+import { t } from "@/lib/i18n";
+import { routes } from "@/lib/routes";
+
+export type NavLink = { href: string; label: string };
+
+type SiteNavProps = {
+  links: NavLink[];
+  categories: NavLink[];
+  phone: string;
+  phoneHref: string;
+};
+
+const EASE = [0.16, 1, 0.3, 1] as const;
+
+export function SiteNav({ links, categories, phone, phoneHref }: SiteNavProps) {
+  const pathname = usePathname();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [productsOpen, setProductsOpen] = useState(false);
+  const productsId = useId();
+  const triggerRef = useRef<HTMLButtonElement | null>(null);
+  const panelRef = useRef<HTMLDivElement | null>(null);
+  const reduceMotion = useReducedMotion();
+  const smoothScroll = useSmoothScroll();
+
+  // Al navegar, se cierra todo. Sin esto el menú se queda abierto sobre
+  // la página nueva. Se ajusta en render, no en un efecto: así no hay
+  // un frame intermedio con el menú abierto sobre la ruta nueva.
+  const [renderedPathname, setRenderedPathname] = useState(pathname);
+  if (pathname !== renderedPathname) {
+    setRenderedPathname(pathname);
+    setMenuOpen(false);
+    setProductsOpen(false);
+  }
+
+  // Mientras el menú a pantalla completa está abierto, la página de
+  // detrás no se mueve.
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    smoothScroll.stop();
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      smoothScroll.start();
+    };
+  }, [menuOpen, smoothScroll]);
+
+  // Escape cierra lo que esté abierto, empezando por lo más superficial.
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+      if (productsOpen) {
+        setProductsOpen(false);
+        triggerRef.current?.focus();
+        return;
+      }
+      if (menuOpen) setMenuOpen(false);
+    };
+
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [menuOpen, productsOpen]);
+
+  // Foco atrapado dentro del menú móvil mientras está abierto.
+  useEffect(() => {
+    if (!menuOpen) return;
+    const panel = panelRef.current;
+    if (!panel) return;
+
+    const focusables = () =>
+      Array.from(
+        panel.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        ),
+      );
+
+    focusables()[0]?.focus();
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== "Tab") return;
+      const items = focusables();
+      if (items.length === 0) return;
+
+      const first = items[0];
+      const last = items[items.length - 1];
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    panel.addEventListener("keydown", onKeyDown);
+    return () => panel.removeEventListener("keydown", onKeyDown);
+  }, [menuOpen]);
+
+  const isActive = useCallback(
+    (href: string) => pathname === href || pathname.startsWith(`${href}/`),
+    [pathname],
+  );
+
+  const linkClasses = (href: string) =>
+    cn(
+      "relative py-2 text-sm font-medium motion-safe:transition-colors",
+      isActive(href) ? "text-kamika-ink" : "text-kamika-ink/65 hover:text-kamika-ink",
+    );
+
+  return (
+    <>
+      {/* ── Barra de desktop ─────────────────────────────────── */}
+      <nav aria-label={t("a11y.mainNavigation")} className="hidden lg:block">
+        <ul className="flex items-center gap-7">
+          <li
+            className="relative"
+            onMouseEnter={() => setProductsOpen(true)}
+            onMouseLeave={() => setProductsOpen(false)}
+          >
+            <span className="flex items-center gap-1">
+              <Link href={routes.products} className={linkClasses(routes.products)}>
+                {t("nav.products")}
+                {isActive(routes.products) && (
+                  <span className="absolute inset-x-0 -bottom-0.5 h-px bg-kamika-steel" />
+                )}
+              </Link>
+              <button
+                ref={triggerRef}
+                type="button"
+                aria-label={t("a11y.openProductsMenu")}
+                aria-expanded={productsOpen}
+                aria-controls={productsId}
+                onClick={() => setProductsOpen((open) => !open)}
+                className="rounded-kamika p-1 text-kamika-ink/65 hover:text-kamika-ink"
+              >
+                <ChevronDownIcon
+                  className={cn(
+                    "size-4 motion-safe:transition-transform motion-safe:duration-200",
+                    productsOpen && "rotate-180",
+                  )}
+                />
+              </button>
+            </span>
+
+            <AnimatePresence>
+              {productsOpen && (
+                <motion.div
+                  id={productsId}
+                  initial={reduceMotion ? false : { opacity: 0, y: -6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: -6 }}
+                  transition={{ duration: 0.18, ease: EASE }}
+                  className="absolute top-full left-0 z-50 w-[30rem] rounded-kamika border border-kamika-mist bg-kamika-paper p-2 shadow-profile"
+                >
+                  <ul className="grid grid-cols-2 gap-x-2">
+                    {categories.map((category) => (
+                      <li key={category.href}>
+                        <Link
+                          href={category.href}
+                          className="block rounded-kamika px-3 py-2 text-sm text-kamika-ink/80 hover:bg-kamika-blue-50 hover:text-kamika-ink"
+                        >
+                          {category.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link
+                    href={routes.products}
+                    className="mt-1 block border-t border-kamika-mist px-3 pt-3 pb-2 font-mono text-[0.6875rem] tracking-[0.18em] text-kamika-steel uppercase hover:text-kamika-ink"
+                  >
+                    {t("nav.allCategories")}
+                  </Link>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </li>
+
+          {links.map((link) => (
+            <li key={link.href}>
+              <Link href={link.href} className={linkClasses(link.href)}>
+                {link.label}
+                {isActive(link.href) && (
+                  <span className="absolute inset-x-0 -bottom-0.5 h-px bg-kamika-steel" />
+                )}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      {/* ── Contacto directo, siempre visible en desktop ──────── */}
+      <div className="hidden items-center gap-4 lg:flex">
+        <a
+          href={phoneHref}
+          className="flex items-center gap-2 font-mono text-[0.8125rem] text-kamika-steel hover:text-kamika-ink"
+        >
+          <PhoneIcon className="size-4" />
+          {phone}
+        </a>
+        <ButtonLink href={routes.contact} size="sm">
+          {t("nav.contact")}
+        </ButtonLink>
+      </div>
+
+      {/* ── Disparador móvil ─────────────────────────────────── */}
+      <button
+        type="button"
+        onClick={() => setMenuOpen(true)}
+        aria-label={t("a11y.openMenu")}
+        aria-expanded={menuOpen}
+        className="-mr-2 rounded-kamika p-2 text-kamika-ink lg:hidden"
+      >
+        <MenuIcon className="size-6" />
+      </button>
+
+      {/* ── Menú móvil a pantalla completa ────────────────────── */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            ref={panelRef}
+            role="dialog"
+            aria-modal="true"
+            aria-label={t("a11y.mainNavigation")}
+            initial={reduceMotion ? false : { clipPath: "inset(0 0 100% 0)" }}
+            animate={{ clipPath: "inset(0 0 0% 0)" }}
+            exit={reduceMotion ? { opacity: 0 } : { clipPath: "inset(0 0 100% 0)" }}
+            transition={{ duration: 0.45, ease: EASE }}
+            className="fixed inset-0 z-100 flex flex-col bg-kamika-paper lg:hidden"
+          >
+            <div className="flex h-16 shrink-0 items-center justify-end border-b border-kamika-mist px-5">
+              <button
+                type="button"
+                onClick={() => setMenuOpen(false)}
+                aria-label={t("a11y.closeMenu")}
+                className="-mr-2 rounded-kamika p-2 text-kamika-ink"
+              >
+                <CloseIcon className="size-6" />
+              </button>
+            </div>
+
+            <div className="flex-1 overflow-y-auto overscroll-contain px-5 py-8">
+              <p className="eyebrow">{t("nav.products")}</p>
+              <ul className="mt-4 grid gap-1">
+                {categories.map((category) => (
+                  <li key={category.href}>
+                    <Link
+                      href={category.href}
+                      className="font-display block py-2 text-2xl font-medium tracking-[-0.02em] text-kamika-ink"
+                    >
+                      {category.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+
+              <ul className="mt-8 grid gap-1 border-t border-kamika-mist pt-6">
+                {links.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="block py-2 text-base text-kamika-ink/80">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="shrink-0 border-t border-kamika-mist px-5 py-6">
+              <a
+                href={phoneHref}
+                className="flex items-center gap-2 font-mono text-sm text-kamika-steel"
+              >
+                <PhoneIcon className="size-4" />
+                {phone}
+              </a>
+              <ButtonLink href={routes.contact} className="mt-4 w-full">
+                {t("nav.contact")}
+              </ButtonLink>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+}

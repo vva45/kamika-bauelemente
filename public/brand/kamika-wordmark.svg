@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="160" viewBox="0 0 480 160" role="img" aria-label="Kamika Bauelemente">
+  <!-- Wordmark de Kamika sobre el azul empolvado del logo.
+       Texto vivo: si se abre en un editor vectorial se puede convertir a
+       curvas con la Outfit real. Es un provisional hasta que el dueño
+       entregue el logo original. -->
+  <rect width="480" height="160" fill="#AFC9EF"/>
+  <text x="240" y="86"
+        text-anchor="middle"
+        font-family="Outfit, 'Segoe UI', Arial, Helvetica, sans-serif"
+        font-size="64"
+        font-weight="600"
+        letter-spacing="-2"
+        fill="#0F1114">Kamika</text>
+  <text x="240" y="118"
+        text-anchor="middle"
+        font-family="Outfit, 'Segoe UI', Arial, Helvetica, sans-serif"
+        font-size="15"
+        font-weight="500"
+        letter-spacing="6.4"
+        fill="#0F1114">BAUELEMENTE</text>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <!-- Favicon: el hueco de ventana, que es el elemento firma del sitio.
+       Negro del logo sobre el azul del logo. Legible a 16px. -->
+  <rect width="32" height="32" rx="4" fill="#AFC9EF"/>
+  <rect x="7.5" y="6.5" width="17" height="19" rx="1" fill="none" stroke="#0F1114" stroke-width="2.4"/>
+  <path d="M16 6.5v19M7.5 14.5h17" stroke="#0F1114" stroke-width="2.4"/>
+</svg>

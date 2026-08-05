@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+/* ──────────────────────────────────────────────────────────────
+   Tokens de marca Kamika.
+   Única fuente de verdad del color. Ningún componente debe
+   escribir un hex suelto: siempre `bg-kamika-*`, `text-kamika-*`
+   o `var(--kamika-*)`.
+   ────────────────────────────────────────────────────────────── */
+:root {
+  --kamika-blue: #afc9ef; /* el azul del logo — fondos de sección, chips, hover, botón de ficha técnica */
+  --kamika-blue-50: #f0f5fc; /* lavados muy claros */
+  --kamika-steel: #2f4c74; /* azul profundo: acentos, líneas de cota, focus */
+  --kamika-ink: #0f1114; /* negro del logo: texto y botones primarios */
+  --kamika-paper: #ffffff;
+  --kamika-mist: #e4e9f0; /* separadores, hairlines, fondos de spec */
+
+  /* Silueta del hueco de ventana. Es el elemento firma de la web:
+     toda imagen enmarcada se recorta con esta máscara. */
+  --frame-clip: inset(0 round 6px);
+
+  /* Duración de la apertura orquestada del hero (ver FrameOpening). */
+  --frame-open-duration: 1.2s;
+}
+
+@theme inline {
+  --color-kamika-blue: var(--kamika-blue);
+  --color-kamika-blue-50: var(--kamika-blue-50);
+  --color-kamika-steel: var(--kamika-steel);
+  --color-kamika-ink: var(--kamika-ink);
+  --color-kamika-paper: var(--kamika-paper);
+  --color-kamika-mist: var(--kamika-mist);
+
+  /* Tres roles tipográficos deliberados. Las variables --font-*
+     las inyecta next/font desde el layout raíz. */
+  --font-display: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, "SFMono-Regular", monospace;
+
+  /* Radios pequeños: esto es documentación técnica, no una app de consumo. */
+  --radius-kamika: 4px;
+  --radius-frame: 6px;
+
+  /* Elevación de perfil: sombra corta y dura, nunca difusa. */
+  --shadow-profile: 4px 4px 0 0 var(--kamika-mist);
+  --shadow-profile-steel: 4px 4px 0 0 var(--kamika-steel);
+}
+
+/* ──────────────────────────────────────────────────────────────
+   Base
+   ────────────────────────────────────────────────────────────── */
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--kamika-paper);
+    color: var(--kamika-ink);
+    font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+    line-height: 1.65;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Titulares en la display, con el tracking cerrado del logo. */
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.08;
+  }
+
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.25;
+  }
+
+  /* Foco siempre visible y en el azul profundo (contraste AA sobre blanco). */
+  :focus-visible {
+    outline: 2px solid var(--kamika-steel);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background-color: var(--kamika-blue);
+    color: var(--kamika-ink);
+  }
+
+  /* El visor nativo de PDF y las imágenes nunca desbordan en móvil. */
+  img,
+  object,
+  iframe {
+    max-width: 100%;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   Utilidades propias
+   ────────────────────────────────────────────────────────────── */
+
+/* Recorta un elemento con la silueta del hueco de ventana. */
+@utility frame-glass {
+  clip-path: var(--frame-clip);
+  overflow: hidden;
+}
+
+/* Eyebrow de sección: rotulación de plano técnico. */
+@utility eyebrow {
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--kamika-steel);
+}
+
+/* Enlace que cubre toda su tarjeta sin anidar elementos interactivos. */
+@utility stretched-link {
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   Accesibilidad: si el usuario pide menos movimiento, se apaga
+   todo. framer-motion lo respeta además vía useReducedMotion.
+   ────────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* framer-motion anima con transforms en línea, no con animaciones CSS,
+     así que la regla de arriba no la detiene: hay que retirar las hojas
+     del hero explícitamente. */
+  .frame-opening-leaves {
+    display: none;
+  }
+}
