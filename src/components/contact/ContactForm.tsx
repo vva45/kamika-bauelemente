@@ -159,7 +159,9 @@ export function ContactForm({ groups, selectedProduct }: ContactFormProps) {
             id="contact-product"
             name="product"
             defaultValue={selectedProduct}
-            className={cn(fieldClasses(false), "appearance-none")}
+            // Sin `appearance-none`: la flecha nativa es lo que hace
+            // que un desplegable se vea como un desplegable.
+            className={fieldClasses(false)}
           >
             <option value="">—</option>
             {groups.map((group) => (
@@ -217,6 +219,7 @@ export function ContactForm({ groups, selectedProduct }: ContactFormProps) {
             <Link href={routes.privacy} className="text-kamika-steel underline">
               {t("contactPage.consentLink")}
             </Link>
+            .
           </label>
         </div>
         {hasError("consent") && (

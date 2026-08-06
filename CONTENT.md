@@ -27,7 +27,7 @@ npm run assets:placeholders
 | `[~]`  | `public/images/home/hero.jpg`                    | One strong installation photo — a finished window or door in a real house. Landscape, 2400×1500 or larger. This is the first thing a visitor sees. | Owner |
 | `[~]`  | `public/images/categories/{slug}-hero.jpg`        | One photo per category (8 files: `windows`, `entrance-doors`, `interior-doors`, `roller-shutters`, `insect-screens`, `gates`, `fences`, `accessories`). 1600×1000. | Owner |
 | `[~]`  | `public/images/windows/{product-id}-{1,2,3}.jpg`  | Three photos per product: the element installed, a profile/section detail, and a wider shot. 1600×1200. | Owner |
-| `[ ]`  | `public/images/about/dominik.jpg`                 | Portrait of Dominik for the About page. 1000×1250, plain background.            | Owner |
+| `[~]`  | `public/images/about/dominik.jpg`                 | Portrait of Dominik for the About page. 1000×1250, plain background. **This one matters**: it is the only face on the site, and "about me" was one of the two things the owner asked for. | Owner |
 | `[~]`  | `public/images/catalogues/{id}-cover.jpg`         | Front cover of each catalogue. Can be exported from page 1 of the PDF.          | You   |
 | `[~]`  | `public/images/projects/{id}-{n}.jpg`             | Minimum 3 photos per completed project.                                        | Owner |
 | `[~]`  | `public/images/colours/render.jpg`                | One frame photographed in a **light, neutral colour** (white or light grey), evenly lit. The colour picker tints it with `mix-blend-multiply`, which keeps the shadows of the profile — but that only works if the source is pale. A dark frame will tint to mud. | Owner |
@@ -84,11 +84,13 @@ which are stock and which are made to order, and which are unavailable on a give
 
 | Status | Where                          | What                                                                             | Who   |
 | ------ | ------------------------------ | -------------------------------------------------------------------------------- | ----- |
-| `[ ]`  | `/about` — "About Dominik"     | A short first-person paragraph: how long in the trade, what he did before, why he set up on his own. I will **not** invent a biography. Marked in code with `{/* TODO: texto real del dueño */}` when the page is built. | Owner |
+| `[~]`  | `/about` — "About Dominik"     | A short first-person paragraph: how long in the trade, what he did before, why he set up on his own. I will **not** invent a biography. The two paragraphs live in `src/content/en.ts` (`about.ownerBody1/2`) and are a **placeholder draft**, marked in `src/app/about/page.tsx` with `{/* TODO: texto real del dueño */}`. | Owner |
 | `[ ]`  | `/about` — "The company"       | Confirm the working area (Hechingen + which surrounding towns), and whether Kamika installs itself or subcontracts. | Owner |
 | `[~]`  | `src/data/categories.ts`       | The 8 category intros are a technical draft written by me. They need reading through — they must describe what Kamika actually supplies. | Owner |
 | `[ ]`  | `src/data/company.ts`          | **Opening hours.** Currently `null`, so the site simply omits the block rather than publishing invented hours. | Owner |
 | `[ ]`  | `src/data/company.ts`          | Confirm the map coordinates (currently the centre of Hechingen, not the exact address). | You   |
+| `[ ]`  | `src/lib/site.ts`              | **The final domain.** Everything absolute — canonical tags, sitemap, OpenGraph, JSON-LD — is built from it. Currently assumes `https://kamika-bauelemente.de`; can be overridden in Vercel with `NEXT_PUBLIC_SITE_URL` without touching code. | Owner |
+| `[ ]`  | Vercel → environment variables | `RESEND_API_KEY` and `RESEND_FROM` (see `.env.example`). Until they are set, the contact form does not send by itself: it hands the visitor a ready-written `mailto:`. That works, but it loses anyone without a mail client configured. | You   |
 
 ## 5. Brand assets
 
@@ -113,13 +115,38 @@ size and 0.656 of its width, which the component reproduces. See
 comment above each block explaining what it says. **Neither is legal advice and both need review by
 a German lawyer before the site goes live.**
 
+Both pages are written and live at `/imprint` and `/privacy`, in German, with an English comment
+above every block in `src/content/legal.ts` explaining what that block says.
+
 Needed to complete them:
 
-- Umsatzsteuer-Identifikationsnummer (VAT ID), if the business has one.
-- Whether the business is entered in any Handwerksrolle / chamber of trade, and which one.
+- **Umsatzsteuer-Identifikationsnummer (VAT ID)**, if the business has one. `COMPANY.vatId` is
+  `null`, so the block is simply not published — better than publishing a placeholder.
+- **Handwerksrolle / chamber of trade** and the professional title, if the trade is a regulated
+  one. Same mechanism: `COMPANY.chamber`.
 - Confirmation that `Dominik Kamienski – Einzelunternehmen` is the exact legal name to publish.
+- **A decision on section 6 of the privacy policy** ("Versand der Formularnachrichten"). It names
+  Resend as the processor that delivers form messages. That is only true once `RESEND_API_KEY` is
+  set in Vercel. If the form ends up delivering only through the visitor's own mail client, that
+  block must be deleted — publishing a processor you do not use is itself a defect.
+- The privacy policy states that the site sets **no cookies and runs no analytics**. That is true
+  of the site as built. Adding Google Analytics, an embedded map or any third-party widget makes it
+  false and forces a consent banner.
 
-## 7. German translation (future phase)
+## 7. Checks before publishing
+
+Run `npm run check` — typecheck, lint, i18n parity, production build and the site audit in one go.
+
+The audit (`npm run audit`, after a build) reports dead internal links, referenced assets that do
+not exist, duplicate ids across the data files, broken cross-references (`related`, project
+`products`, catalogue ids), visible text hardcoded outside the content layer, and content keys that
+nobody uses. It strips the `#page=N` anchor before checking whether a PDF exists, so catalogue
+links do not raise false alarms.
+
+Current state: **0 problems**, one deliberately unused key (`common.downloadCatalogue`, reserved
+for the third-party-brand rule).
+
+## 8. German translation (future phase)
 
 Nothing to do yet. When the time comes:
 

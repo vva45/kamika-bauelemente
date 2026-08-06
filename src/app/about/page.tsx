@@ -19,12 +19,14 @@ import { ArrowRightIcon } from "@/components/ui/icons";
 import { CATEGORIES } from "@/data";
 import { COMPANY, companyAddressLine } from "@/data/company";
 import { t, tf } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/metadata";
 import { routes } from "@/lib/routes";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: t("nav.about"),
   description: t("about.intro"),
-};
+  path: routes.about,
+});
 
 export default function AboutPage() {
   // Los datos duros salen de la capa de datos, no se escriben a mano:

@@ -29,7 +29,7 @@ const buildBody = (values: ReturnType<typeof readContactValues>, productName: st
     `${t("contactPage.nameLabel")}: ${values.name}`,
     `${t("contact.emailLabel")}: ${values.email}`,
     values.phone ? `${t("contact.phoneLabel")}: ${values.phone}` : null,
-    productName ? `${t("contactPage.productLabel")}: ${productName}` : null,
+    productName ? `${t("contactPage.productEmailLabel")}: ${productName}` : null,
     "",
     values.message,
   ]

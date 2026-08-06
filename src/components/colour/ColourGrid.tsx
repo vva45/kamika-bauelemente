@@ -131,6 +131,10 @@ export function ColourGrid({ colours }: { colours: ColorFinish[] }) {
                 {colour.code}
               </p>
               <p className="mt-2 text-[0.75rem] text-kamika-ink/55">
+                {/* La lista de materiales se lee sola en pantalla, pero
+                    sin la etiqueta un lector de pantalla solo diría
+                    "PVC, aluminio" sin decir para qué. */}
+                <span className="sr-only">{t("colours.availableOn")}: </span>
                 {colour.materials.map((entry) => t(MATERIAL_LABEL[entry])).join(" · ")}
               </p>
             </li>

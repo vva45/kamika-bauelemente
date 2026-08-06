@@ -21,7 +21,6 @@ export const de: Record<ContentKey, string> = {
   "a11y.opensInNewTab": "", // TODO: DE
 
   // ── Navegación ───────────────────────────────────────────────
-  "nav.home": "", // TODO: DE
   "nav.products": "", // TODO: DE
   "nav.catalogues": "", // TODO: DE
   "nav.projects": "", // TODO: DE
@@ -33,16 +32,11 @@ export const de: Record<ContentKey, string> = {
   // ── Etiquetas de contacto ────────────────────────────────────
   "contact.phoneLabel": "", // TODO: DE
   "contact.emailLabel": "", // TODO: DE
-  "contact.addressLabel": "", // TODO: DE
-  "contact.hoursLabel": "", // TODO: DE
   "contact.ownerLabel": "", // TODO: DE
-  "contact.callUs": "", // TODO: DE
-  "contact.writeUs": "", // TODO: DE
 
   // ── Pie ──────────────────────────────────────────────────────
   "footer.productsHeading": "", // TODO: DE
   "footer.companyHeading": "", // TODO: DE
-  "footer.contactHeading": "", // TODO: DE
   "footer.legalHeading": "", // TODO: DE
   "footer.imprint": "", // TODO: DE
   "footer.privacy": "", // TODO: DE
@@ -54,14 +48,17 @@ export const de: Record<ContentKey, string> = {
   "common.viewProducts": "", // TODO: DE
   "common.getInTouch": "", // TODO: DE
   "common.contactUs": "", // TODO: DE
+
+  // Reservada: regla de negocio para marcas de terceros — nunca se
+
+  // enlaza a la web del fabricante, se autoaloja su PDF y este es el
+
+  // botón secundario. Todavía no hay ninguna marca de terceros.
   "common.downloadCatalogue": "", // TODO: DE
   "common.browse": "", // TODO: DE
   "common.download": "", // TODO: DE
   "common.openInNewTab": "", // TODO: DE
-  "common.readMore": "", // TODO: DE
-  "common.back": "", // TODO: DE
   "common.comingSoon": "", // TODO: DE
-  "common.pdf": "", // TODO: DE
 
   // ── Hub de productos ─────────────────────────────────────────
   "products.eyebrow": "", // TODO: DE
@@ -101,9 +98,6 @@ export const de: Record<ContentKey, string> = {
   "home.heroSubtitle": "", // TODO: DE
   "home.heroImageAlt": "", // TODO: DE
   "home.scrollHint": "", // TODO: DE
-  "home.featuredEyebrow": "", // TODO: DE
-  "home.featuredTitle": "", // TODO: DE
-  "home.featuredIntro": "", // TODO: DE
   "home.categoriesEyebrow": "", // TODO: DE
   "home.categoriesTitle": "", // TODO: DE
   "home.categoriesIntro": "", // TODO: DE
@@ -184,7 +178,6 @@ export const de: Record<ContentKey, string> = {
   "about.ownerBody1": "", // TODO: DE
   "about.ownerBody2": "", // TODO: DE
   "about.ownerPortraitAlt": "", // TODO: DE
-  "about.contactHeading": "", // TODO: DE
 
   // ── Colores y acabados ───────────────────────────────────────
   "colours.eyebrow": "", // TODO: DE
@@ -211,6 +204,11 @@ export const de: Record<ContentKey, string> = {
   "contactPage.emailLabel": "", // TODO: DE
   "contactPage.phoneLabel": "", // TODO: DE
   "contactPage.productLabel": "", // TODO: DE
+
+  // La misma etiqueta, sin el "(optional)", para la línea del email que
+
+  // recibe el dueño: allí no hay nada que sea opcional.
+  "contactPage.productEmailLabel": "", // TODO: DE
   "contactPage.messageLabel": "", // TODO: DE
   "contactPage.messagePlaceholder": "", // TODO: DE
   "contactPage.consentLabel": "", // TODO: DE

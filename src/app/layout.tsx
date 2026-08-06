@@ -13,8 +13,11 @@ import "./globals.css";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { SmoothScrollProvider } from "@/components/layout/SmoothScroll";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { COMPANY } from "@/data/company";
 import { LOCALE, t } from "@/lib/i18n";
+import { localBusinessSchema } from "@/lib/schema";
+import { SITE_URL } from "@/lib/site";
 
 /** Display: la que más se parece al logo. */
 const outfit = Outfit({
@@ -39,11 +42,27 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
+  // Base para que las URLs relativas de OpenGraph y canonical salgan
+  // absolutas sin escribirlas a mano en cada página.
+  metadataBase: new URL(SITE_URL),
   title: {
     default: `${COMPANY.tradeNameFull} — ${COMPANY.city}`,
     template: `%s — ${COMPANY.tradeNameFull}`,
   },
   description: t("footer.blurb"),
+  // Ojo: aquí NO va `alternates.canonical` ni `openGraph.url`. Los
+  // hereda cada página hija, y heredarlos haría que todas se declararan
+  // como la home. Los pone cada página con `pageMetadata`.
+  openGraph: {
+    type: "website",
+    siteName: COMPANY.tradeNameFull,
+    title: `${COMPANY.tradeNameFull} — ${COMPANY.city}`,
+    description: t("footer.blurb"),
+    // El idioma del OG sale de LOCALE igual que el <html lang>.
+    locale: LOCALE === "de" ? "de_DE" : "en_GB",
+  },
+  // Sin verificación de Google ni de Bing: se añaden cuando el dueño
+  // reclame el dominio en Search Console.
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -55,6 +74,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${outfit.variable} ${inter.variable} ${plexMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
+        {/* El negocio, en datos estructurados. Va en el layout para que
+            esté en todas las páginas. */}
+        <JsonLd schema={localBusinessSchema()} />
         {/* Sin JavaScript, las hojas del hero se quedarían cerradas
             tapando la foto. Se retiran de raíz. */}
         <noscript>

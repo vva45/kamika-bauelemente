@@ -21,6 +21,8 @@ import {
   isCategorySlug,
 } from "@/data";
 import { pick, t } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/metadata";
+import { routes } from "@/lib/routes";
 
 export function generateStaticParams() {
   return CATEGORY_SLUGS.map((category) => ({ category }));
@@ -33,7 +35,13 @@ export async function generateMetadata({
   if (!isCategorySlug(slug)) return {};
   const category = getCategory(slug);
   if (!category) return {};
-  return { title: pick(category.name), description: pick(category.intro) };
+
+  return pageMetadata({
+    title: pick(category.name),
+    description: pick(category.intro),
+    path: routes.category(category.slug),
+    image: { url: category.heroImage, alt: pick(category.name) },
+  });
 }
 
 export default async function CategoryPage({ params }: PageProps<"/products/[category]">) {

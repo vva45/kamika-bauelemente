@@ -16,6 +16,7 @@ import { ButtonLink } from "@/components/ui/Button";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { PROJECTS, getCategory, getProject, getProjectProducts } from "@/data";
 import { formatNumber, pick, t } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/metadata";
 import { routes } from "@/lib/routes";
 
 export function generateStaticParams() {
@@ -28,7 +29,15 @@ export async function generateMetadata({
   const { id } = await params;
   const project = getProject(id);
   if (!project) return {};
-  return { title: pick(project.title), description: pick(project.summary) };
+
+  const cover = project.images[0];
+
+  return pageMetadata({
+    title: pick(project.title),
+    description: pick(project.summary),
+    path: routes.project(project.id),
+    ...(cover ? { image: { url: cover.src, alt: pick(cover.alt) } } : {}),
+  });
 }
 
 export default async function ProjectPage({ params }: PageProps<"/projects/[id]">) {

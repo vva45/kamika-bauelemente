@@ -9,11 +9,14 @@ import { Reveal, RevealGroup } from "@/components/ui/Reveal";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { countProductsByCategory, orderedCategories } from "@/data";
 import { t } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/metadata";
+import { routes } from "@/lib/routes";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: t("products.title"),
   description: t("products.intro"),
-};
+  path: routes.products,
+});
 
 export default function ProductsPage() {
   const categories = orderedCategories();

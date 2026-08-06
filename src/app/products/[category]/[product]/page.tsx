@@ -18,6 +18,7 @@ import { Gallery } from "@/components/media/Gallery";
 import { ProductCard } from "@/components/product/ProductCard";
 import { ProductSpecTable } from "@/components/product/ProductSpecTable";
 import { ProjectCard } from "@/components/project/ProjectCard";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { ButtonLink } from "@/components/ui/Button";
 import { SectionTitle } from "@/components/ui/SectionTitle";
@@ -31,7 +32,9 @@ import {
   isCategorySlug,
 } from "@/data";
 import { pick, t } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/metadata";
 import { datasheetHref, formatSpecValue, highlightSpecs, productDimensions } from "@/lib/product";
+import { productSchema } from "@/lib/schema";
 import { routes } from "@/lib/routes";
 
 export function generateStaticParams() {
@@ -44,7 +47,16 @@ export async function generateMetadata({
   const { product: id } = await params;
   const product = getProduct(id);
   if (!product) return {};
-  return { title: product.name, description: pick(product.tagline) };
+
+  const cover = product.images[0];
+
+  // La foto del producto manda sobre la imagen genérica del sitio.
+  return pageMetadata({
+    title: product.name,
+    description: pick(product.tagline),
+    path: routes.product(product.category, product.id),
+    ...(cover ? { image: { url: cover.src, alt: pick(cover.alt) } } : {}),
+  });
 }
 
 export default async function ProductPage({
@@ -68,6 +80,10 @@ export default async function ProductPage({
 
   return (
     <>
+      {/* La ficha, en datos estructurados. Sin `offers`: no hay precio
+          que declarar y no se inventa uno. */}
+      <JsonLd schema={productSchema(product, category)} />
+
       <div className="mx-auto max-w-[1440px] px-5 py-8 md:px-8">
         {/* ── Breadcrumb ────────────────────────────────────────── */}
         <Breadcrumb

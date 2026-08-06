@@ -13,11 +13,14 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { COLORS } from "@/data";
 import { t } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/metadata";
+import { routes } from "@/lib/routes";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: t("colours.title"),
   description: t("colours.intro"),
-};
+  path: routes.colours,
+});
 
 export default function ColoursPage() {
   return (

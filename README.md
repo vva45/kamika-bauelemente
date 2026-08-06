@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kamika Bauelemente
 
-## Getting Started
+Informative catalogue website for **Kamika Bauelemente** (Dominik Kamienski, Hechingen): windows,
+doors, roller shutters, insect screens, gates, fences and hardware.
 
-First, run the development server:
+It is not a shop. No prices, no basket, no configurator — the visitor sees what is offered, browses
+the catalogues, looks at completed work, and calls or writes.
+
+## Running it
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev          # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+| Script                | What it does                                                             |
+| --------------------- | ------------------------------------------------------------------------ |
+| `npm run check`       | Everything below, in order. Run this before pushing.                     |
+| `npm run typecheck`   | `tsc --noEmit`                                                            |
+| `npm run lint`        | ESLint (Next 16 dropped `next lint`)                                      |
+| `npm run check:i18n`  | Fails if `en.ts` and `de.ts` keys are not in parity                       |
+| `npm run sync:i18n`   | Regenerates `de.ts` from `en.ts`, keeping translations already filled in  |
+| `npm run build`       | Production build                                                          |
+| `npm run audit`       | Dead links, missing assets, duplicate ids, hardcoded text (needs a build) |
+| `npm run assets:placeholders` | Creates any missing image/PDF placeholder at its final path       |
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## How it is put together
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Next.js App Router + TypeScript + Tailwind.** framer-motion for animation, lenis for smooth
+  scroll. No CMS, no database, no component library, no i18n library, no pdf.js.
+- **Content layer.** No visible string is written inside a component. UI text comes from
+  `src/content/en.ts` through `t()`; content text comes from the typed data files in `src/data`
+  through `pick()`. `src/content/de.ts` already has every key, empty, waiting for translation.
+- **Switching the site to German** means filling in `de.ts`, filling in the `de` fields in
+  `src/data/**`, and changing `LOCALE` in `src/lib/i18n.ts`. No component changes.
+- **Legal pages are the exception**: `/imprint` and `/privacy` are in German from day one, because
+  German law requires it. Their text is in `src/content/legal.ts`, with an English comment above
+  every block.
+- **One product card**, used identically on the home page, the category listings, "Goes well with"
+  and the projects. Same for `Gallery`, `Breadcrumb`, `ComingSoon`, `SectionTitle`, `WindowFrame`.
+- **The window frame is the signature**: every important image sits inside a frame mask, the hero
+  sash opens on load, and dimension lines draw themselves on the hero and the product gallery.
+- **No cookie banner is needed** — and that is a design constraint, not luck: fonts are
+  self-hosted, there is no analytics, and the map is an image linking to Google Maps rather than an
+  embedded iframe.
 
-## Learn More
+## Data
 
-To learn more about Next.js, take a look at the following resources:
+Everything in `src/data` is **example data** except `company.ts`. Each file says so at the top.
+`CONTENT.md` lists exactly what is still missing, what it must show, and who has to provide it.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Vercel. Set `RESEND_API_KEY`, `RESEND_FROM` and (optionally) `NEXT_PUBLIC_SITE_URL` — see
+`.env.example`. Without the Resend variables the contact form falls back to a prepared `mailto:`.

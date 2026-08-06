@@ -19,7 +19,6 @@ export const en = {
   "a11y.opensInNewTab": "opens in a new tab",
 
   // ── Navegación ───────────────────────────────────────────────
-  "nav.home": "Home",
   "nav.products": "Products",
   "nav.catalogues": "Catalogues",
   "nav.projects": "Projects",
@@ -31,16 +30,11 @@ export const en = {
   // ── Etiquetas de contacto ────────────────────────────────────
   "contact.phoneLabel": "Phone",
   "contact.emailLabel": "Email",
-  "contact.addressLabel": "Address",
-  "contact.hoursLabel": "Opening hours",
   "contact.ownerLabel": "Owner",
-  "contact.callUs": "Call us",
-  "contact.writeUs": "Write to us",
 
   // ── Pie ──────────────────────────────────────────────────────
   "footer.productsHeading": "Products",
   "footer.companyHeading": "Company",
-  "footer.contactHeading": "Contact",
   "footer.legalHeading": "Legal",
   "footer.imprint": "Imprint",
   "footer.privacy": "Privacy policy",
@@ -53,14 +47,14 @@ export const en = {
   "common.viewProducts": "View products",
   "common.getInTouch": "Get in touch",
   "common.contactUs": "Contact us",
+  // Reservada: regla de negocio para marcas de terceros — nunca se
+  // enlaza a la web del fabricante, se autoaloja su PDF y este es el
+  // botón secundario. Todavía no hay ninguna marca de terceros.
   "common.downloadCatalogue": "Download catalogue (PDF)",
   "common.browse": "Browse",
   "common.download": "Download",
   "common.openInNewTab": "Open in new tab",
-  "common.readMore": "Read more",
-  "common.back": "Back",
   "common.comingSoon": "Coming soon",
-  "common.pdf": "PDF",
 
   // ── Hub de productos ─────────────────────────────────────────
   "products.eyebrow": "Product ranges",
@@ -102,10 +96,6 @@ export const en = {
     "We measure on site, supply the elements and install them. PVC, aluminium, steel and timber — one supplier for the whole opening.",
   "home.heroImageAlt": "A fitted window in a house in the Hechingen area",
   "home.scrollHint": "Scroll",
-  "home.featuredEyebrow": "Selected models",
-  "home.featuredTitle": "Products",
-  "home.featuredIntro":
-    "Every model has its frame depth, its Uw value and its data sheet. Open the sheet from the card, or the full specification from the product page.",
   "home.categoriesEyebrow": "What we supply",
   "home.categoriesTitle": "Everything that closes an opening.",
   "home.categoriesIntro":
@@ -207,7 +197,6 @@ export const en = {
   "about.ownerBody2":
     "If something needs adjusting afterwards, you call me directly — not a service line.",
   "about.ownerPortraitAlt": "Portrait of Dominik Kamienski, owner of Kamika Bauelemente",
-  "about.contactHeading": "Contact me directly",
 
   // ── Colores y acabados ───────────────────────────────────────
   "colours.eyebrow": "Colours and finishes",
@@ -237,11 +226,14 @@ export const en = {
   "contactPage.emailLabel": "Email",
   "contactPage.phoneLabel": "Phone (optional)",
   "contactPage.productLabel": "Product of interest (optional)",
+  // La misma etiqueta, sin el "(optional)", para la línea del email que
+  // recibe el dueño: allí no hay nada que sea opcional.
+  "contactPage.productEmailLabel": "Product of interest",
   "contactPage.messageLabel": "Message",
   "contactPage.messagePlaceholder":
     "Type of element, number of openings, approximate sizes, and when you need it.",
   "contactPage.consentLabel":
-    "I agree that my details may be used to answer this enquiry. See the privacy policy.",
+    "I agree that my details may be used to answer this enquiry, as described in the",
   "contactPage.consentLink": "privacy policy",
   "contactPage.submit": "Send message",
   "contactPage.sending": "Sending…",

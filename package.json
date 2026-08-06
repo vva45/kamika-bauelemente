@@ -10,7 +10,9 @@
     "typecheck": "tsc --noEmit",
     "check:i18n": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/check-i18n.mjs",
     "sync:i18n": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/sync-i18n.mjs",
-    "assets:placeholders": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/generate-placeholders.mjs"
+    "assets:placeholders": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/generate-placeholders.mjs",
+    "audit": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/audit.mjs",
+    "check": "npm run typecheck && npm run lint && npm run check:i18n && npm run build && npm run audit"
   },
   "dependencies": {
     "framer-motion": "^13.0.0",

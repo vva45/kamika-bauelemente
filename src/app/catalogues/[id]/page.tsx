@@ -17,6 +17,7 @@ import { SectionTitle } from "@/components/ui/SectionTitle";
 import { ArrowUpRightIcon, DownloadIcon } from "@/components/ui/icons";
 import { CATALOGUES, getCatalogue, getCategory } from "@/data";
 import { formatNumber, pick, t } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/metadata";
 import { routes } from "@/lib/routes";
 
 export function generateStaticParams() {
@@ -29,7 +30,13 @@ export async function generateMetadata({
   const { id } = await params;
   const catalogue = getCatalogue(id);
   if (!catalogue) return {};
-  return { title: pick(catalogue.title), description: t("catalogues.intro") };
+
+  return pageMetadata({
+    title: pick(catalogue.title),
+    description: t("catalogues.intro"),
+    path: routes.catalogue(catalogue.id),
+    image: { url: catalogue.cover, alt: pick(catalogue.title) },
+  });
 }
 
 export default async function CataloguePage({ params }: PageProps<"/catalogues/[id]">) {

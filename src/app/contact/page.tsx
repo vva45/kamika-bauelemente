@@ -22,12 +22,14 @@ import {
   companyPhoneHref,
 } from "@/data/company";
 import { pick, t } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/metadata";
 import { routes } from "@/lib/routes";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: t("contactPage.title"),
   description: t("contactPage.intro"),
-};
+  path: routes.contact,
+});
 
 export default async function ContactPage({ searchParams }: PageProps<"/contact">) {
   const { product } = await searchParams;
