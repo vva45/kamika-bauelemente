@@ -1,8 +1,12 @@
 # STATUS — checkpoint estable
 
-**Checkpoint:** `checkpoint-1` · commit `46e3d18` · 2026-08-06
+**Checkpoint:** `checkpoint-1` · estado auditado en commit `46e3d18` (la auditoría
+completa) + este fichero encima · 2026-08-06
 **Estado:** todo verde. `npm run check` (build + i18n + auditoría de 375 páginas) sin un solo problema.
-**Volver aquí si algo se rompe:** `git checkout checkpoint-1` (mirar) o `git reset --hard checkpoint-1` (restaurar).
+**Volver aquí si algo se rompe:** `git log --oneline` para localizar este punto por
+mensaje ("Checkpoint: STATUS.md…"), y `git reset --hard <ese hash>`. Todo commit de
+`main` queda en GitHub para siempre: un checkpoint es un hash, la etiqueta es solo
+el nombre bonito.
 
 Este fichero es la foto del proyecto en este punto. El detalle vivo de lo que falta
 por contenido está en `CONTENT.md`; esto es el resumen de qué hay y por qué.
