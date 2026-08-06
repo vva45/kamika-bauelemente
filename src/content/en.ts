@@ -158,9 +158,13 @@ export const en = {
   "catalogue.openAtPage": "Open catalogue at page {page}",
   "catalogue.otherModels": "Other models in this catalogue",
   "catalogue.modelsInCatalogue": "{count} models in this catalogue",
-  "catalogue.modelFamilies": "Collections",
+  "catalogue.modelFamilies": "Series",
   "catalogue.modelNote":
     "Images and data come from the manufacturer's catalogue. Ask us which models are stocked, what they cost and how long they take.",
+  // ── Colecciones ──────────────────────────────────────────────
+  "collection.heading": "Collections",
+  "collection.intro":
+    "Each collection is a manufacturer's own catalogue. Open one to see every model in it, with the specification as printed and a link to the exact page of the PDF.",
   "catalogue.comingSoonTitle": "The catalogues are being prepared",
   "catalogue.comingSoonBody":
     "The PDF ranges are not online yet. Call or write and we will send you the current documentation by email.",

@@ -63,6 +63,21 @@ export interface Catalogue {
   pages?: number;
   sizeMb?: number;
   year?: number;
+  /**
+   * Fabricante del catálogo. No se traduce y NUNCA se enlaza a su web.
+   *
+   * Es lo que pidió el dueño: que el visitante vea primero de quién es
+   * la gama y después qué colecciones tiene. Un catálogo sin marca
+   * conocida —los paneles— simplemente no la lleva; antes que inventarla
+   * se queda sin ella.
+   */
+  brand?: string;
+  /**
+   * Nombre corto de la colección para las tarjetas: "Signature",
+   * "Select". El `title` sigue siendo el nombre completo del PDF, que es
+   * lo que se enseña en la página de catálogos.
+   */
+  collection?: Localized<string>;
 }
 
 export interface Project {
@@ -83,6 +98,14 @@ export interface Project {
    * proyecto sin lista simplemente no enseña el bloque.
    */
   products?: string[];
+  /**
+   * Modelos de catálogo que se instalaron, por catálogo e id.
+   *
+   * Desde que las puertas de entrada se enseñan por colección y no por
+   * ficha propia, lo que se instaló en una casa es un modelo del
+   * catálogo, no un `Product`. Los que no existan se descartan solos.
+   */
+  models?: { catalogue: string; id: string }[];
   featured?: boolean;
 }
 

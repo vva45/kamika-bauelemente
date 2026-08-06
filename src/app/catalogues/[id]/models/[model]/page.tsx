@@ -20,7 +20,14 @@ import { ButtonLink } from "@/components/ui/Button";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { WindowFrame } from "@/components/ui/WindowFrame";
 import { ArrowUpRightIcon, DocumentIcon } from "@/components/ui/icons";
-import { CATALOGUE_MODELS, getCatalogue, getCatalogueModel, getModelsByCatalogue } from "@/data";
+import {
+  CATALOGUE_MODELS,
+  getCatalogue,
+  getCatalogueModel,
+  getCategory,
+  getModelsByCatalogue,
+} from "@/data";
+import { collectionName } from "@/lib/catalogue";
 import { pick, t, tf } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/metadata";
 import { routes } from "@/lib/routes";
@@ -40,7 +47,7 @@ export async function generateMetadata({
   const lead = model.specs[0];
 
   return pageMetadata({
-    title: `${model.name} — ${pick(catalogue.title)}`,
+    title: `${model.name} — ${collectionName(catalogue)}`,
     description: lead ? `${lead.label}: ${lead.value}.` : t("catalogue.modelsIntro"),
     path: routes.catalogueModel(model.catalogue, model.id),
     image: { url: model.image, alt: model.name },
@@ -55,7 +62,8 @@ export default async function CatalogueModelPage({
   const catalogue = getCatalogue(id);
   if (!model || !catalogue) notFound();
 
-  const title = pick(catalogue.title);
+  const title = collectionName(catalogue);
+  const category = catalogue.category ? getCategory(catalogue.category) : undefined;
   // Vecinos en el catálogo: seguir mirando es lo que hace un escaparate.
   const siblings = getModelsByCatalogue(catalogue.id);
   const index = siblings.findIndex((entry) => entry.id === model.id);
@@ -69,9 +77,16 @@ export default async function CatalogueModelPage({
       <div className="mx-auto max-w-[1440px] px-5 py-8 md:px-8">
         <Breadcrumb
           items={[
-            { label: t("nav.catalogues"), href: routes.catalogues },
-            { label: title, href: routes.catalogue(catalogue.id) },
-            { label: t("catalogue.models"), href: routes.catalogueModels(catalogue.id) },
+            // Mismo camino que en el escaparate: gama → colección →
+            // modelo, y solo la lista de catálogos cuando la colección
+            // no cuelga de ninguna gama.
+            ...(category
+              ? [
+                  { label: t("nav.products"), href: routes.products },
+                  { label: pick(category.name), href: routes.category(category.slug) },
+                ]
+              : [{ label: t("nav.catalogues"), href: routes.catalogues }]),
+            { label: title, href: routes.catalogueModels(catalogue.id) },
             { label: model.name },
           ]}
         />
@@ -109,7 +124,10 @@ export default async function CatalogueModelPage({
                   {tf("catalogue.openAtPage", { page: model.page })}
                   <span className="sr-only"> ({t("a11y.opensInNewTab")})</span>
                 </ButtonLink>
-                <ButtonLink href={routes.contact} variant="secondary">
+                {/* La consulta llega con la colección ya elegida en el
+                    formulario; el modelo exacto lo escribe el visitante,
+                    que para eso el asunto del correo lo lleva delante. */}
+                <ButtonLink href={routes.contactAbout(catalogue.id)} variant="secondary">
                   {t("product.sendEnquiry")}
                 </ButtonLink>
                 <ButtonLink href={routes.catalogueModels(catalogue.id)} variant="secondary">

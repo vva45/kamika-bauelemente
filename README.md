@@ -56,12 +56,19 @@ serving the cached copy. Deployments are unaffected: each one starts with an emp
 rm -rf .next/cache/images    # PowerShell: Remove-Item -Recurse -Force .next\cache\images
 ```
 
-## The catalogue showcase
+## How a range is structured
 
-Four entrance doors are **products**: hand-written pages with a gallery, a full specification and
-cross-selling. Behind them sit **314 catalogue models** at `/catalogues/{id}/models`, generated
-straight from the PDFs — every model in every catalogue, each with its own page and a button that
-opens the catalogue at its exact page. Replacing a catalogue means re-running the extractor.
+A category shows the most concrete thing it has, in this order:
+
+1. **Manufacturers**, where the range declares them — windows go Aluplast → system → version.
+2. **Collections**, where the range has catalogues — entrance doors show the four covers, and each
+   one opens **all** of that catalogue's models at `/catalogues/{id}/models`.
+3. **Products**, for the ranges that still have neither.
+
+The 314 models are generated straight from the PDFs: name, page, image and specification come out
+of the catalogue, so there is no hand-written list to keep in step. Each model has its own page and
+a button that opens the catalogue at its exact page. Replacing a catalogue means re-running
+`python3 scripts/extract_catalogue_models.py`.
 
 ## Data
 

@@ -5,10 +5,9 @@
  * PDF de `public/pdf/catalogues`: nombre, página e imagen salen del
  * propio catálogo, así que no hay nada inventado aquí.
  *
- * Es el escaparate completo. Los cuatro productos de
- * `products/entrance-doors.ts` son los que Kamika destaca y llevan ficha
- * larga; esto es la colección entera, para poder mirarla sin
- * descargarse el PDF.
+ * Es el escaparate completo de cada colección: la página de categoría
+ * enseña las portadas, y detrás de cada portada están todos estos
+ * modelos con sus datos y su página del PDF.
  *
  * Si se sustituye un catálogo hay que volver a ejecutar el script: las
  * páginas cambian y los enlaces dejarían de apuntar donde deben.

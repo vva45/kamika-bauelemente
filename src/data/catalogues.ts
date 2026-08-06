@@ -25,6 +25,8 @@ export const CATALOGUES: Catalogue[] = [
   {
     id: "roka-signature-2025",
     title: { en: "ROKA Signature — entrance doors", de: "ROKA Signature — Haustüren" },
+    brand: "ROKA",
+    collection: { en: "Signature", de: "Signature" },
     category: "entrance-doors",
     file: "/pdf/catalogues/roka-signature-2025.pdf",
     cover: "/images/catalogues/roka-signature-2025-cover.jpg",
@@ -35,6 +37,8 @@ export const CATALOGUES: Catalogue[] = [
   {
     id: "roka-select-2025",
     title: { en: "ROKA Select — entrance doors", de: "ROKA Select — Haustüren" },
+    brand: "ROKA",
+    collection: { en: "Select", de: "Select" },
     category: "entrance-doors",
     file: "/pdf/catalogues/roka-select-2025.pdf",
     cover: "/images/catalogues/roka-select-2025-cover.jpg",
@@ -43,23 +47,29 @@ export const CATALOGUES: Catalogue[] = [
     year: 2025,
   },
   {
-    id: "entrance-door-panels",
-    title: { en: "Entrance door panels", de: "Haustür-Paneele" },
-    category: "entrance-doors",
-    file: "/pdf/catalogues/entrance-door-panels.pdf",
-    cover: "/images/catalogues/entrance-door-panels-cover.jpg",
-    pages: 194,
-    sizeMb: 16.4,
-    year: 2025,
-  },
-  {
     id: "despiro-entrance-doors",
     title: { en: "Despiro entrance doors", de: "Despiro Haustüren" },
+    brand: "Despiro",
+    collection: { en: "Entrance doors", de: "Haustüren" },
     category: "entrance-doors",
     file: "/pdf/catalogues/despiro-entrance-doors.pdf",
     cover: "/images/catalogues/despiro-entrance-doors-cover.jpg",
     pages: 37,
     sizeMb: 5.2,
+    year: 2025,
+  },
+  {
+    id: "entrance-door-panels",
+    title: { en: "Entrance door panels", de: "Haustür-Paneele" },
+    // Sin marca a propósito: el PDF llegó con el logotipo de otra
+    // empresa (ver nota de arriba) y no consta quién lo fabrica. Antes
+    // que atribuírselo a alguien, la colección se queda sin marca.
+    collection: { en: "Door panels", de: "Haustür-Paneele" },
+    category: "entrance-doors",
+    file: "/pdf/catalogues/entrance-door-panels.pdf",
+    cover: "/images/catalogues/entrance-door-panels-cover.jpg",
+    pages: 194,
+    sizeMb: 16.4,
     year: 2025,
   },
 ];

@@ -13,7 +13,7 @@ import Link from "next/link";
 import { ContactForm, type ProductOptionGroup } from "@/components/contact/ContactForm";
 import { WindowFrame } from "@/components/ui/WindowFrame";
 import { ClockIcon, MailIcon, PhoneIcon, PinIcon } from "@/components/ui/icons";
-import { getProduct, getProductsByCategory, orderedCategories } from "@/data";
+import { getCatalogue, getCollectionsFor, getProduct, getProductsByCategory, orderedCategories } from "@/data";
 import {
   COMPANY,
   companyAddressLine,
@@ -21,6 +21,7 @@ import {
   companyMapsHref,
   companyPhoneHref,
 } from "@/data/company";
+import { collectionName } from "@/lib/catalogue";
 import { pick, t } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/metadata";
 import { routes } from "@/lib/routes";
@@ -34,17 +35,27 @@ export const metadata: Metadata = pageMetadata({
 export default async function ContactPage({ searchParams }: PageProps<"/contact">) {
   const { product } = await searchParams;
   const requested = typeof product === "string" ? product : "";
-  const selectedProduct = getProduct(requested) ? requested : "";
+  // Vale tanto una ficha de producto como una colección de catálogo:
+  // desde las puertas de entrada, lo que se elige es la colección.
+  const selectedProduct = getProduct(requested) || getCatalogue(requested) ? requested : "";
 
   // El desplegable se arma desde la capa de datos, agrupado por
   // categoría: si mañana hay una gama nueva, aparece sola.
   const groups: ProductOptionGroup[] = orderedCategories()
     .map((category) => ({
       category: pick(category.name),
-      options: getProductsByCategory(category.slug).map((entry) => ({
-        id: entry.id,
-        label: entry.name,
-      })),
+      options: [
+        // Primero las colecciones —que es como se pide una puerta— y
+        // después las fichas sueltas de las gamas que aún las tienen.
+        ...getCollectionsFor(category.slug).map((catalogue) => ({
+          id: catalogue.id,
+          label: collectionName(catalogue),
+        })),
+        ...getProductsByCategory(category.slug).map((entry) => ({
+          id: entry.id,
+          label: entry.name,
+        })),
+      ],
     }))
     .filter((group) => group.options.length > 0);
 

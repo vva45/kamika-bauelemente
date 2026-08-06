@@ -63,9 +63,9 @@ export const PROJECTS: Project[] = [
         alt: { en: "Courtyard elevation with the replacement PVC windows" },
       }],
     /** Modelos instalados, para enlazar a sus fichas desde el detalle. */
-    products: [
-      "roka-select-20",
-      "security-cylinder"],
+    products: ["security-cylinder"],
+    // La puerta salió del catálogo, así que se enlaza a su modelo.
+    models: [{ catalogue: "roka-select-2025", id: "select-20" }],
     featured: true,
   },
   {
@@ -120,10 +120,10 @@ export const PROJECTS: Project[] = [
       }],
     /** Modelos instalados, para enlazar a sus fichas desde el detalle. */
     products: [
-      "roka-signature-liquid-metal",
       "sectional-garage-40",
       "sliding-gate-alu",
       "fence-horizontal-alu"],
+    models: [{ catalogue: "roka-signature-2025", id: "edles-flussigmetall-01" }],
   },
   {
     id: "office-fitout-tuebingen",

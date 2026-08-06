@@ -38,7 +38,7 @@ export const gates: Product[] = [
         alt: { en: "Sektional 40 open under the garage ceiling with the drive rail" },
       }],
     datasheet: "/pdf/gates/sectional-garage-40.pdf",
-    related: ["sliding-gate-alu", "fence-horizontal-alu", "despiro-masterline-8-pivot"],
+    related: ["sliding-gate-alu", "fence-horizontal-alu"],
     featured: true,
     badge: "bestseller",
   },

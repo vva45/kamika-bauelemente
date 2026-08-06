@@ -107,7 +107,7 @@ export const accessories: Product[] = [
         src: "/images/accessories/security-cylinder-3.jpg",
         alt: { en: "One key opening house, garage and garden gate" },
       }],
-    related: ["roka-select-20", "handle-lockable"],
+    related: ["handle-lockable"],
   },
   {
     id: "window-rebate-vent",

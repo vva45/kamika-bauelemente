@@ -1,16 +1,25 @@
 /**
- * Página de categoría.
+ * Página de categoría. Enseña lo más concreto que tenga la gama, en este
+ * orden:
  *
- * Con productos: hero + listado filtrable por material.
- * Sin productos (o `comingSoon`): el MISMO hero, un aviso honesto y las
- * salidas útiles — catálogos de la casa y contacto directo. Nunca una
- * página rota ni un h1 suelto.
+ *   1. FABRICANTES, si los declara (ventanas: Aluplast → sistemas).
+ *   2. COLECCIONES, si tiene catálogos con escaparate (puertas de
+ *      entrada: ROKA Signature, ROKA Select, Despiro, paneles). Cada
+ *      portada lleva a todos los modelos de ese catálogo.
+ *   3. FICHAS de producto, mientras una gama no tenga ni lo uno ni lo
+ *      otro.
+ *   4. Aviso honesto de "en preparación" con las salidas útiles.
+ *
+ * Los dos primeros escalones son la misma idea que pidió el dueño —
+ * primero la marca, después lo que ofrece— y por eso van antes que
+ * cualquier modelo suelto.
  */
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CategoryHero } from "@/components/category/CategoryHero";
 import { CategoryProducts } from "@/components/category/CategoryProducts";
 import { CatalogueCard } from "@/components/catalogue/CatalogueCard";
+import { CollectionCard } from "@/components/catalogue/CollectionCard";
 import { ContactCta } from "@/components/layout/ContactCta";
 import { ManufacturerCard } from "@/components/manufacturer/ManufacturerCard";
 import { ComingSoon } from "@/components/ui/ComingSoon";
@@ -19,6 +28,7 @@ import {
   CATEGORY_SLUGS,
   countModelsInCategory,
   getCategory,
+  getCollectionsFor,
   getManufacturersByCategory,
   getProductsByCategory,
   isCategorySlug,
@@ -59,7 +69,12 @@ export default async function CategoryPage({ params }: PageProps<"/products/[cat
   // gama declara fabricantes, la categoría enseña sus "casitas" en vez
   // de modelos sueltos. Fabricante → sistemas → versiones.
   const manufacturers = getManufacturersByCategory(slug);
-  const comingSoon = manufacturers.length === 0 && (category.comingSoon || products.length === 0);
+  // Y por colección donde ya hay catálogo: portada → todos sus modelos.
+  const collections = getCollectionsFor(slug);
+  const comingSoon =
+    manufacturers.length === 0 &&
+    collections.length === 0 &&
+    (category.comingSoon || products.length === 0);
 
   return (
     <>
@@ -76,6 +91,23 @@ export default async function CategoryPage({ params }: PageProps<"/products/[cat
                 key={manufacturer.id}
                 manufacturer={manufacturer}
                 priority={index < 2}
+              />
+            ))}
+          </div>
+        </section>
+      ) : collections.length > 0 ? (
+        <section className="mx-auto max-w-[1440px] px-5 py-12 md:px-8 md:py-16">
+          <h2 className="text-2xl md:text-3xl">{t("collection.heading")}</h2>
+          <p className="mt-4 max-w-2xl text-pretty text-kamika-ink/70">
+            {t("collection.intro")}
+          </p>
+
+          <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 xl:grid-cols-4">
+            {collections.map((catalogue, index) => (
+              <CollectionCard
+                key={catalogue.id}
+                catalogue={catalogue}
+                priority={index < 4}
               />
             ))}
           </div>

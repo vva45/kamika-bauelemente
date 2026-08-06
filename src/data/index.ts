@@ -80,6 +80,17 @@ export const getCataloguesFor = (slug: CategorySlug): Catalogue[] =>
   CATALOGUES.filter((catalogue) => catalogue.category === slug);
 
 /**
+ * Las colecciones de una gama: sus catálogos que ya tienen escaparate.
+ *
+ * Es lo que la página de categoría enseña en vez de fichas sueltas —
+ * primero de quién es la gama y qué colecciones tiene, y dentro de cada
+ * una, todos sus modelos. Un catálogo sin modelos extraídos no sale:
+ * sería una portada que no lleva a ninguna parte.
+ */
+export const getCollectionsFor = (slug: CategorySlug): Catalogue[] =>
+  getCataloguesFor(slug).filter((catalogue) => countModelsByCatalogue(catalogue.id) > 0);
+
+/**
  * El escaparate de un catálogo, en el orden en que sale impreso: así
  * hojearlo en la web y hojearlo en papel llevan al mismo sitio.
  */
@@ -146,6 +157,12 @@ export const getProjectProducts = (project: Project): Product[] =>
   (project.products ?? [])
     .map((id) => getProduct(id))
     .filter((product): product is Product => product !== undefined);
+
+/** Modelos de catálogo instalados en un proyecto, con el mismo criterio. */
+export const getProjectModels = (project: Project): CatalogueModel[] =>
+  (project.models ?? [])
+    .map((ref) => getCatalogueModel(ref.catalogue, ref.id))
+    .filter((model): model is CatalogueModel => model !== undefined);
 
 /** Años con proyectos, del más reciente al más antiguo (para el filtro). */
 export const getProjectYears = (): number[] =>

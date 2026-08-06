@@ -99,7 +99,7 @@ export const insectScreens: Product[] = [
         src: "/images/insect-screens/insect-screen-hinged-door-3.jpg",
         alt: { en: "Kick plate detail on the Drehtür 40" },
       }],
-    related: ["roka-select-20", "entrance-panel-01"],
+    related: ["insect-screen-pleated"],
   },
   {
     id: "insect-screen-roller",

@@ -28,7 +28,7 @@ npm run assets:placeholders
 | `[~]`  | `public/images/categories/{slug}-hero.jpg`        | One photo per category (8 files). **`entrance-doors` is done**: it is composed from three real doors cut out of the catalogues. The other seven are brand plates — the window-frame motif in the logo colours with the range name — drawn by `node scripts/build-category-heroes.mjs`. They are deliberately graphics, not fake photography, and they can stay published until real photos arrive. 1600×1000. | Owner |
 | `[~]`  | `public/images/windows/{product-id}-{1,2,3}.jpg`  | Three photos per product: the element installed, a profile/section detail, and a wider shot. 1600×1200. | Owner |
 | `[~]`  | `public/images/about/dominik.jpg`                 | Portrait of Dominik for the About page. 1000×1250, plain background. **This one matters**: it is the only face on the site, and "about me" was one of the two things the owner asked for. | Owner |
-| `[~]`  | `public/images/catalogues/{id}-cover.jpg`         | Front cover of each catalogue. Can be exported from page 1 of the PDF.          | You   |
+| `[~]`  | `public/images/catalogues/{id}-cover.jpg`         | Front cover of each catalogue — it is also the card the visitor clicks in the range. ROKA's two PDFs have real covers, rendered from page 1. The Despiro and panel PDFs are extracts with no cover, so theirs are composed by `node scripts/build-collection-covers.mjs` from two of their own models. If the supplier sends a complete PDF, render page 1 and drop the composed one. | You   |
 | `[~]`  | `public/images/projects/{id}-{n}.jpg`             | Minimum 3 photos per completed project.                                        | Owner |
 | `[~]`  | `public/images/colours/render.jpg`                | One frame photographed in a **light, neutral colour** (white or light grey), evenly lit. The colour picker tints it with `mix-blend-multiply`, which keeps the shadows of the profile — but that only works if the source is pale. A dark frame will tint to mud. | Owner |
 | `[~]`  | `public/images/contact/map.jpg`                   | Static map export showing Thomasstraße 11. A screenshot of Google Maps at ~15× zoom is fine. **Deliberately an image, not an embedded map** — a Google iframe sets third-party cookies and would force a consent banner onto the whole site. | You   |
@@ -45,10 +45,10 @@ Self-hosted, never linked to a manufacturer's website.
 | `[ ]`  | `public/pdf/catalogues/` — other ranges      | Nothing yet for windows, roller shutters, insect screens, gates, fences or hardware. Those categories currently have no catalogue to link to. | Owner |
 | `[~]`  | `public/pdf/{category}/{product-id}.pdf`     | Per-product data sheet, where one exists. Five are placeholders; the rest of the products show no data-sheet button at all, which is the rule: no button beats a dead link. | Owner |
 
-**Model → page mapping is done for entrance doors and missing for everything else.** Those four
-buttons open the exact catalogue page. The other 28 products have no catalogue to point at, so they
-show no data-sheet button. Two things would fix that: catalogues for the other ranges, and the
-owner naming which models he actually sells.
+**Model → page mapping is done for entrance doors and missing for everything else.** Every one of
+the 314 entrance-door models opens the catalogue at its exact page. The other ranges have no
+catalogue to point at, so their products show no data-sheet button. Two things would fix that:
+catalogues for the other ranges, and the owner naming which models he actually sells.
 
 > **Branding rule, non-negotiable:** no competitor's mark may appear anywhere on this site.
 > The panel catalogue arrived carrying another window company's logo on page 1. It was replaced
@@ -63,25 +63,25 @@ owner naming which models he actually sells.
 
 ## 3. Product data — the big one
 
-`src/data/products/` holds 32 products. **The four entrance doors are real** — taken from the
-catalogues, with the model name, finish, handle, sizes and Ud values copied from the page, and each
-one linking to its exact page in the PDF. The other 28 are still plausible examples and **are not
-Kamika's real range**; every one of those files carries a warning comment at the top.
+`src/data/products/` holds 24 products, and **all 24 are still plausible examples** — they are
+**not** Kamika's real range. Every one of those files carries a warning comment at the top.
 
-The four real ones, one per catalogue:
+Two ranges no longer use products at all, because the owner asked for the hierarchy the trade
+actually uses — first the manufacturer, then what it offers:
 
-| Product | From | Page |
-| ------- | ---- | ---- |
-| ROKA Signature — Edles Flüssigmetall No. 01 | ROKA Signature | 178 |
-| ROKA Select 20 | ROKA Select | 18 |
-| Despiro MasterLine 8 Pivot | Despiro | 31 |
-| Paneel 01 | Panel catalogue | 1 |
+| Range | Structure | Where the data comes from |
+| ----- | --------- | ------------------------- |
+| Windows | Aluplast → its systems → versions | `src/data/manufacturers.ts`, pending the Aluplast catalogue |
+| Entrance doors | Collection (ROKA Signature, ROKA Select, Despiro, panels) → its models | the four PDFs, extracted |
 
-Their photographs are rendered from the catalogue pages, so they are the manufacturer's own
-renders, not site photography. Replace them with photos of doors actually fitted when there are
-any — that is what sells a door.
+So the entrance-door pages are no longer four hand-picked doors: the category shows the four
+collection covers, and each cover opens the whole collection — 314 models with their specification
+as printed and a link to their page in the PDF. Nothing there is written by hand.
 
-Two details worth knowing when replacing them:
+The model photographs are the manufacturer's own renders, pulled out of the catalogues. Replace
+them with photos of doors actually fitted when there are any — that is what sells a door.
+
+Two details worth knowing about the remaining example products:
 
 - The `related` lists ("Goes well with") are hand-picked cross-category pairings — a window
   recommends its shutter, screen and handle. Keep that logic when editing; it is the sales cross-link.

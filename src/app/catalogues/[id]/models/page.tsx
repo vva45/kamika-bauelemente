@@ -16,7 +16,14 @@ import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { ButtonLink } from "@/components/ui/Button";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { ArrowUpRightIcon, DownloadIcon } from "@/components/ui/icons";
-import { CATALOGUES, getCatalogue, getModelFamilies, getModelsByCatalogue } from "@/data";
+import {
+  CATALOGUES,
+  getCatalogue,
+  getCategory,
+  getModelFamilies,
+  getModelsByCatalogue,
+} from "@/data";
+import { collectionName } from "@/lib/catalogue";
 import { formatNumber, pick, t, tf } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/metadata";
 import { routes } from "@/lib/routes";
@@ -35,7 +42,7 @@ export async function generateMetadata({
   const count = getModelsByCatalogue(id).length;
 
   return pageMetadata({
-    title: `${pick(catalogue.title)} — ${tf("catalogue.modelCount", { count })}`,
+    title: `${collectionName(catalogue)} — ${tf("catalogue.modelCount", { count })}`,
     description: t("catalogue.modelsIntro"),
     path: routes.catalogueModels(catalogue.id),
     image: { url: catalogue.cover, alt: pick(catalogue.title) },
@@ -53,17 +60,29 @@ export default async function CatalogueModelsPage({
   if (models.length === 0) notFound();
 
   const families = getModelFamilies(catalogue.id);
-  const title = pick(catalogue.title);
+  const title = collectionName(catalogue);
+  // El camino de vuelta es por donde se entra: desde la gama, si la
+  // colección pertenece a una. La lista de catálogos sigue siendo la
+  // puerta de atrás para quien llega buscando el PDF.
+  const category = catalogue.category ? getCategory(catalogue.category) : undefined;
 
   return (
     <>
       <div className="mx-auto max-w-[1440px] px-5 py-8 md:px-8">
         <Breadcrumb
-          items={[
-            { label: t("nav.catalogues"), href: routes.catalogues },
-            { label: title, href: routes.catalogue(catalogue.id) },
-            { label: t("catalogue.models") },
-          ]}
+          items={
+            category
+              ? [
+                  { label: t("nav.products"), href: routes.products },
+                  { label: pick(category.name), href: routes.category(category.slug) },
+                  { label: title },
+                ]
+              : [
+                  { label: t("nav.catalogues"), href: routes.catalogues },
+                  { label: pick(catalogue.title), href: routes.catalogue(catalogue.id) },
+                  { label: t("catalogue.models") },
+                ]
+          }
         />
 
         <div className="mt-8">

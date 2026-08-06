@@ -4,9 +4,10 @@ Extrae TODOS los modelos de cada catálogo y genera:
   - public/images/models/{catalogue}/{model}.jpg   una foto por modelo
   - src/data/catalogue-models.ts                   los datos, tipados
 
-Es el escaparate: la web destaca cuatro puertas como producto, pero el
-cliente tiene que poder ver la colección entera sin descargarse 27 MB de
-PDF. Cada modelo enlaza además a su página exacta del catálogo.
+Es el escaparate, y desde que las puertas se enseñan por colección es
+TODO lo que hay: la categoría lleva a la colección y la colección a
+estos modelos, sin que el cliente tenga que descargarse 27 MB de PDF.
+Cada modelo enlaza además a su página exacta del catálogo.
 
 Cada catálogo está maquetado distinto, así que hay una regla por
 catálogo. Todas siguen el mismo método: leer los rótulos con sus
@@ -21,6 +22,7 @@ import json
 import os
 import re
 import unicodedata
+from typing import NamedTuple
 
 import fitz
 
@@ -32,6 +34,14 @@ DATA_FILE = os.path.join(ROOT, "src/data/catalogue-models.ts")
 # Un modelo se descarta si su recorte es más pequeño que esto: suele ser
 # un icono o una viñeta, no una puerta.
 MIN_IMAGE_PT = 60
+
+
+class ImageOnPage(NamedTuple):
+    """Una imagen colocada en una página: dónde está y de dónde sale."""
+
+    rect: "fitz.Rect"
+    xref: int
+    smask: int
 
 
 def slug(value):
@@ -47,28 +57,60 @@ def save_crop(doc, page_index, rect, out_path, zoom=3.2):
     pix.save(out_path, jpg_quality=86)
 
 
+def save_image(doc, xref, smask, out_path):
+    """
+    Guarda UNA imagen del PDF, ella sola.
+
+    En los catálogos de paneles las puertas se maquetan solapadas: sus
+    rectángulos se pisan, así que recortar la página por el rectángulo
+    de una puerta arrastra media puerta vecina a los lados. Aquí se saca
+    el objeto imagen por su xref, se le aplica su máscara de
+    transparencia y se aplana sobre blanco: sale la puerta y nada más.
+    """
+    os.makedirs(os.path.dirname(out_path), exist_ok=True)
+    pix = fitz.Pixmap(doc, xref)
+    if smask:
+        pix = fitz.Pixmap(pix, fitz.Pixmap(doc, smask))
+
+    if pix.alpha:
+        # Fondo blanco, como el del propio catálogo.
+        page = fitz.open().new_page(width=pix.width, height=pix.height)
+        page.insert_image(fitz.Rect(0, 0, pix.width, pix.height), pixmap=pix)
+        pix = page.get_pixmap(alpha=False)
+
+    pix.save(out_path, jpg_quality=86)
+
+
 def image_rects(page):
-    """Imágenes de la página con su posición, las grandes primero."""
+    """
+    Imágenes de la página con su posición, las grandes primero.
+
+    Cada entrada lleva también el xref del objeto y el de su máscara,
+    para poder guardar la imagen sola cuando el recorte de página no
+    sirve (ver `save_image`).
+    """
     out = []
     for img in page.get_images(full=True):
         for r in page.get_image_rects(img[0]):
             if r.width >= MIN_IMAGE_PT and r.height >= MIN_IMAGE_PT:
-                out.append(r)
-    return sorted(out, key=lambda r: -(r.width * r.height))
+                out.append(ImageOnPage(r, img[0], img[1]))
+    return sorted(out, key=lambda entry: -(entry.rect.width * entry.rect.height))
 
 
-def nearest_image(rects, x_center, used):
+def nearest_image(entries, x_center, used):
     """La imagen no usada cuyo centro horizontal cae más cerca del rótulo."""
     best, best_d = None, None
-    for r in rects:
+    for entry in entries:
+        r = entry.rect
         key = (round(r.x0), round(r.y0), round(r.x1), round(r.y1))
         if key in used:
             continue
         d = abs((r.x0 + r.x1) / 2 - x_center)
         if best_d is None or d < best_d:
-            best, best_d = r, d
+            best, best_d = entry, d
     if best is not None:
-        used.add((round(best.x0), round(best.y0), round(best.x1), round(best.y1)))
+        r = best.rect
+        used.add((round(r.x0), round(r.y0), round(r.x1), round(r.y1)))
     return best
 
 
@@ -101,7 +143,7 @@ def extract_signature(doc, catalogue_id):
         rects = image_rects(doc[i])
         if not rects:
             continue
-        r = rects[0]
+        r = rects[0].rect
         model_id = slug(f"{family}-{m.group('no')}")
         save_crop(doc, i, r, os.path.join(IMG_DIR, catalogue_id, f"{model_id}.jpg"), zoom=2.6)
         models.append(
@@ -155,9 +197,10 @@ def extract_select(doc, catalogue_id):
             spec_text = ""
             if spec_blocks:
                 spec_text = min(spec_blocks, key=lambda b: abs((b[0] + b[1]) / 2 - x_center))[2]
-            r = nearest_image(rects, x_center, used)
-            if r is None:
+            entry = nearest_image(rects, x_center, used)
+            if entry is None:
                 continue
+            r = entry.rect
             model_id = f"select-{number}"
             # El rectángulo de la imagen llega hasta el bloque de texto
             # de la columna; se recorta la cuarta parte inferior para que
@@ -224,10 +267,12 @@ def extract_panels(doc, catalogue_id, prefix):
             if model_id in seen:
                 continue
             seen.add(model_id)
-            r = nearest_image(rects, x_center, used)
-            if r is None:
+            entry = nearest_image(rects, x_center, used)
+            if entry is None:
                 continue
-            save_crop(doc, i, r, os.path.join(IMG_DIR, catalogue_id, f"{model_id}.jpg"))
+            save_image(
+                doc, entry.xref, entry.smask, os.path.join(IMG_DIR, catalogue_id, f"{model_id}.jpg")
+            )
 
             specs = []
             # Las medidas de la columna: mínimo y máximo por material.
@@ -318,10 +363,9 @@ def main():
  * PDF de `public/pdf/catalogues`: nombre, página e imagen salen del
  * propio catálogo, así que no hay nada inventado aquí.
  *
- * Es el escaparate completo. Los cuatro productos de
- * `products/entrance-doors.ts` son los que Kamika destaca y llevan ficha
- * larga; esto es la colección entera, para poder mirarla sin
- * descargarse el PDF.
+ * Es el escaparate completo de cada colección: la página de categoría
+ * enseña las portadas, y detrás de cada portada están todos estos
+ * modelos con sus datos y su página del PDF.
  *
  * Si se sustituye un catálogo hay que volver a ejecutar el script: las
  * páginas cambian y los enlaces dejarían de apuntar donde deben.
