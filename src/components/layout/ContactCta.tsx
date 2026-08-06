@@ -10,13 +10,14 @@
  */
 import { ButtonLink } from "@/components/ui/Button";
 import { LocationMap } from "@/components/contact/LocationMap";
-import { ArrowUpRightIcon, MailIcon, PhoneIcon, PinIcon } from "@/components/ui/icons";
+import { ArrowUpRightIcon, ChatIcon, MailIcon, PhoneIcon, PinIcon } from "@/components/ui/icons";
 import {
   COMPANY,
   companyAddressLine,
   companyEmailHref,
   companyMapsHref,
   companyPhoneHref,
+  companyWhatsAppHref,
 } from "@/data/company";
 import { cn } from "@/lib/cn";
 import { t } from "@/lib/i18n";
@@ -45,6 +46,18 @@ export function ContactCta({ className }: { className?: string }) {
               <MailIcon className="size-5 shrink-0 text-kamika-steel" />
               <a href={companyEmailHref} className="break-all text-kamika-ink hover:underline">
                 {COMPANY.email}
+              </a>
+            </li>
+            <li className="flex items-center gap-3">
+              <ChatIcon className="size-5 shrink-0 text-kamika-steel" />
+              <a
+                href={companyWhatsAppHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-kamika-ink hover:underline"
+              >
+                {t("contact.whatsappLabel")}
+                <span className="sr-only"> ({t("a11y.opensInNewTab")})</span>
               </a>
             </li>
             <li className="flex items-start gap-3">

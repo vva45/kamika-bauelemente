@@ -10,13 +10,21 @@
 import type { Metadata } from "next";
 import { ContactForm, type ProductOptionGroup } from "@/components/contact/ContactForm";
 import { LocationMap } from "@/components/contact/LocationMap";
-import { ArrowUpRightIcon, ClockIcon, MailIcon, PhoneIcon, PinIcon } from "@/components/ui/icons";
+import {
+  ArrowUpRightIcon,
+  ChatIcon,
+  ClockIcon,
+  MailIcon,
+  PhoneIcon,
+  PinIcon,
+} from "@/components/ui/icons";
 import { getCatalogue, getCollectionsFor, getProduct, getProductsByCategory, orderedCategories } from "@/data";
 import {
   COMPANY,
   companyAddressLine,
   companyEmailHref,
   companyMapsHref,
+  companyWhatsAppHref,
   companyPhoneHref,
 } from "@/data/company";
 import { collectionName } from "@/lib/catalogue";
@@ -97,6 +105,21 @@ export default async function ContactPage({ searchParams }: PageProps<"/contact"
                 <MailIcon className="size-5 shrink-0 text-kamika-steel" />
                 <a href={companyEmailHref} className="break-all text-kamika-ink hover:underline">
                   {COMPANY.email}
+                </a>
+              </li>
+              {/* WhatsApp: en este oficio media clientela escribe por
+                  ahí antes que por correo. Enlace normal, sin script de
+                  terceros ni logotipo ajeno. */}
+              <li className="flex items-center gap-3">
+                <ChatIcon className="size-5 shrink-0 text-kamika-steel" />
+                <a
+                  href={companyWhatsAppHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-kamika-ink hover:underline"
+                >
+                  {t("contact.whatsappLabel")}
+                  <span className="sr-only"> ({t("a11y.opensInNewTab")})</span>
                 </a>
               </li>
               {/* Sin horario confirmado no se pinta el bloque: mejor

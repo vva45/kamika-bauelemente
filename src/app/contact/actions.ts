@@ -40,6 +40,16 @@ const buildBody = (values: ReturnType<typeof readContactValues>, productName: st
 const buildMailto = (subject: string, body: string) =>
   `mailto:${COMPANY.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
+/**
+ * El mensaje entero en un bloque de texto, asunto incluido.
+ *
+ * Es lo que se copia al portapapeles y lo que se le pasa a WhatsApp: si
+ * el visitante lo manda por ahí no hay campo "asunto", así que el
+ * asunto tiene que ir dentro del propio texto o se pierde el modelo por
+ * el que preguntaba.
+ */
+const buildPlainText = (subject: string, body: string) => `${subject}\n\n${body}`;
+
 export async function sendEnquiry(
   _previous: ContactState,
   data: FormData,
@@ -73,7 +83,7 @@ export async function sendEnquiry(
   const from = process.env.RESEND_FROM;
 
   if (!apiKey || !from) {
-    return { status: "fallback", mailto: buildMailto(subject, body) };
+    return { status: "fallback", mailto: buildMailto(subject, body), text: buildPlainText(subject, body) };
   }
 
   try {
@@ -97,12 +107,12 @@ export async function sendEnquiry(
       // El proveedor ha fallado, pero el visitante ya ha escrito su
       // mensaje: se le devuelve escrito en un mailto en vez de perderlo.
       console.error("Resend rejected the enquiry:", response.status, await response.text());
-      return { status: "fallback", mailto: buildMailto(subject, body) };
+      return { status: "fallback", mailto: buildMailto(subject, body), text: buildPlainText(subject, body) };
     }
 
     return { status: "success" };
   } catch (error) {
     console.error("Could not reach the email provider:", error);
-    return { status: "fallback", mailto: buildMailto(subject, body) };
+    return { status: "fallback", mailto: buildMailto(subject, body), text: buildPlainText(subject, body) };
   }
 }

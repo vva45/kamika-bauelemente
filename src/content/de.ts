@@ -31,6 +31,7 @@ export const de: Record<ContentKey, string> = {
 
   // ── Etiquetas de contacto ────────────────────────────────────
   "contact.phoneLabel": "", // TODO: DE
+  "contact.whatsappLabel": "", // TODO: DE
   "contact.emailLabel": "", // TODO: DE
   "contact.ownerLabel": "", // TODO: DE
 
@@ -238,6 +239,11 @@ export const de: Record<ContentKey, string> = {
   "contactPage.fallbackTitle": "", // TODO: DE
   "contactPage.fallbackBody": "", // TODO: DE
   "contactPage.fallbackAction": "", // TODO: DE
+  "contactPage.fallbackWhatsApp": "", // TODO: DE
+  "contactPage.fallbackCopy": "", // TODO: DE
+  "contactPage.fallbackCopied": "", // TODO: DE
+  "contactPage.fallbackAddress": "", // TODO: DE
+  "contactPage.fallbackNoMailApp": "", // TODO: DE
   "contactPage.requiredMark": "", // TODO: DE
   "contactPage.errorName": "", // TODO: DE
   "contactPage.errorEmail": "", // TODO: DE

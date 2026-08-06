@@ -60,6 +60,21 @@ export const companyPhoneHref = `tel:${COMPANY.phone.replace(/\s+/g, "")}`;
 
 export const companyEmailHref = `mailto:${COMPANY.email}`;
 
+/**
+ * WhatsApp. `wa.me` quiere el número en E.164 sin el "+" ni espacios.
+ *
+ * ⚠️ PENDIENTE DE CONFIRMAR: que ESE número tenga WhatsApp. Si no lo
+ * tiene, el enlace lleva a "este número no está en WhatsApp", que es
+ * peor que no ofrecerlo. Ver CONTENT.md.
+ */
+const whatsappNumber = COMPANY.phone.replace(/[^\d]/g, "");
+
+export const companyWhatsAppHref = `https://wa.me/${whatsappNumber}`;
+
+/** El mismo enlace con el mensaje ya escrito dentro. */
+export const companyWhatsAppWith = (text: string) =>
+  `${companyWhatsAppHref}?text=${encodeURIComponent(text)}`;
+
 const fullAddress = `${COMPANY.street}, ${COMPANY.postalCode} ${COMPANY.city}, ${COMPANY.country}`;
 
 /** Enlace a Google Maps: abrir la ficha del negocio en pestaña nueva. */

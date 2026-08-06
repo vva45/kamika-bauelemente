@@ -6,13 +6,14 @@
  */
 import Link from "next/link";
 import { Wordmark } from "@/components/brand/Wordmark";
-import { MailIcon, PhoneIcon, PinIcon } from "@/components/ui/icons";
+import { ChatIcon, MailIcon, PhoneIcon, PinIcon } from "@/components/ui/icons";
 import { orderedCategories } from "@/data/categories";
 import {
   COMPANY,
   companyAddressLine,
   companyEmailHref,
   companyPhoneHref,
+  companyWhatsAppHref,
 } from "@/data/company";
 import { pick, t } from "@/lib/i18n";
 import { routes } from "@/lib/routes";
@@ -62,6 +63,18 @@ export function Footer() {
                 <MailIcon className="size-4 shrink-0 text-kamika-steel" />
                 <a href={companyEmailHref} className="break-all text-kamika-ink hover:underline">
                   {COMPANY.email}
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <ChatIcon className="size-4 shrink-0 text-kamika-steel" />
+                <a
+                  href={companyWhatsAppHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-kamika-ink hover:underline"
+                >
+                  {t("contact.whatsappLabel")}
+                  <span className="sr-only"> ({t("a11y.opensInNewTab")})</span>
                 </a>
               </li>
             </ul>

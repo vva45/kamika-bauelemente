@@ -106,3 +106,18 @@ export const ClockIcon = (props: IconProps) => (
     <path d="M12 7.5V12l3 2" />
   </svg>
 );
+
+/**
+ * Bocadillo de conversación, para WhatsApp.
+ *
+ * NO es el logotipo de WhatsApp. La regla del sitio es no reproducir
+ * marcas ajenas —se quitó el logo de un competidor de un catálogo y no
+ * se dibuja el de Aluplast—, y el logotipo verde de WhatsApp además se
+ * daría de bofetadas con la paleta. El servicio se nombra por escrito
+ * al lado, que es lo que de verdad lo identifica.
+ */
+export const ChatIcon = (props: IconProps) => (
+  <svg {...base} {...props}>
+    <path d="M20.5 11.5a8 8 0 0 1-11.7 7.1L4 20l1.4-4.3A8 8 0 1 1 20.5 11.5Z" />
+  </svg>
+);

@@ -14,6 +14,8 @@ import Link from "next/link";
 import { useActionState, useState } from "react";
 import { sendEnquiry } from "@/app/contact/actions";
 import { Button, ButtonLink } from "@/components/ui/Button";
+import { ChatIcon } from "@/components/ui/icons";
+import { COMPANY, companyEmailHref, companyWhatsAppWith } from "@/data/company";
 import { cn } from "@/lib/cn";
 import {
   CONTACT_ERROR_KEY,
@@ -51,6 +53,22 @@ export function ContactForm({ groups, selectedProduct }: ContactFormProps) {
   // Errores detectados en el navegador antes de enviar. Los del
   // servidor llegan en `state`.
   const [clientErrors, setClientErrors] = useState<ContactErrorField[]>([]);
+  // "Copiado" vuelve a su sitio solo: un botón que se queda diciendo
+  // "copiado" para siempre hace dudar de si copió la última vez.
+  const [copied, setCopied] = useState(false);
+
+  const copy = async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 4000);
+    } catch {
+      // Sin permiso de portapapeles (o sin HTTPS) no se puede copiar
+      // por código. No es un callejón sin salida: el mensaje está
+      // impreso encima y se puede seleccionar a mano.
+      setCopied(false);
+    }
+  };
 
   const errors = state.status === "invalid" ? state.fields : clientErrors;
   const hasError = (field: ContactErrorField) => errors.includes(field);
@@ -235,9 +253,47 @@ export function ContactForm({ groups, selectedProduct }: ContactFormProps) {
           <p className="mt-2 text-sm text-pretty text-kamika-ink/75">
             {t("contactPage.fallbackBody")}
           </p>
-          <ButtonLink href={state.mailto} size="sm" className="mt-4">
-            {t("contactPage.fallbackAction")}
-          </ButtonLink>
+
+          {/* El mensaje, a la vista. Que se vea es media solución: si
+              ningún botón funciona, se puede seleccionar y copiar a
+              mano, y además el visitante comprueba qué va a mandar. */}
+          <pre className="mt-4 max-h-44 overflow-auto rounded-kamika border border-kamika-mist bg-kamika-paper p-3 font-sans text-[0.8125rem] leading-relaxed whitespace-pre-wrap text-kamika-ink/80">
+            {state.text}
+          </pre>
+
+          <div className="mt-4 flex flex-wrap gap-2">
+            <ButtonLink href={state.mailto} size="sm">
+              {t("contactPage.fallbackAction")}
+            </ButtonLink>
+            {/* WhatsApp se lleva el mensaje entero, asunto incluido. */}
+            <ButtonLink
+              href={companyWhatsAppWith(state.text)}
+              variant="secondary"
+              size="sm"
+              external
+            >
+              <ChatIcon className="size-4" />
+              {t("contactPage.fallbackWhatsApp")}
+            </ButtonLink>
+            <Button
+              type="button"
+              variant="secondary"
+              size="sm"
+              onClick={() => copy(state.text)}
+            >
+              {copied ? t("contactPage.fallbackCopied") : t("contactPage.fallbackCopy")}
+            </Button>
+          </div>
+
+          <p className="mt-4 text-[0.8125rem] text-kamika-ink/65">
+            {t("contactPage.fallbackAddress")}{" "}
+            <a href={companyEmailHref} className="text-kamika-steel underline">
+              {COMPANY.email}
+            </a>
+          </p>
+          <p className="mt-2 text-[0.75rem] text-pretty text-kamika-ink/55">
+            {t("contactPage.fallbackNoMailApp")}
+          </p>
         </div>
       )}
 

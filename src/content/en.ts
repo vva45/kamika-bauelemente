@@ -29,6 +29,7 @@ export const en = {
 
   // ── Etiquetas de contacto ────────────────────────────────────
   "contact.phoneLabel": "Phone",
+  "contact.whatsappLabel": "WhatsApp",
   "contact.emailLabel": "Email",
   "contact.ownerLabel": "Owner",
 
@@ -261,10 +262,16 @@ export const en = {
     "Thank you — the enquiry has arrived. You will normally get an answer within one working day.",
   "contactPage.errorTitle": "The message could not be sent",
   "contactPage.errorBody": "Please try again, or call the number on this page.",
-  "contactPage.fallbackTitle": "Finish sending from your email app",
+  "contactPage.fallbackTitle": "Your message is ready — choose how to send it",
   "contactPage.fallbackBody":
-    "The message could not be sent from the website. Your text has been prepared as an email — open it and press send.",
+    "The website cannot send email itself yet, so nothing has left your browser. The message is written out below: send it in one tap, or copy it and paste it wherever you like.",
   "contactPage.fallbackAction": "Open in your email app",
+  "contactPage.fallbackWhatsApp": "Send by WhatsApp",
+  "contactPage.fallbackCopy": "Copy the message",
+  "contactPage.fallbackCopied": "Copied",
+  "contactPage.fallbackAddress": "Or write to",
+  "contactPage.fallbackNoMailApp":
+    "If nothing happens when you press the email button, this device has no email app set up — copy the message and paste it into your webmail or a WhatsApp chat.",
   "contactPage.requiredMark": "required",
   "contactPage.errorName": "Please give a name we can address you by.",
   "contactPage.errorEmail": "Please give a valid email address.",

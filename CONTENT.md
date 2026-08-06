@@ -35,6 +35,28 @@ npm run assets:placeholders
 
 > No stock photography of smiling people pointing at windows. Real installations only.
 
+### The contact form does not send email yet — and WhatsApp is why that is survivable
+
+`RESEND_API_KEY` and `RESEND_FROM` are **not set in Vercel**, confirmed by submitting the live form.
+So the form validates, composes the message, and then hands it back to the visitor instead of
+sending it: the block offers the prepared email, a WhatsApp message with the same text, a copy
+button, and the address in plain sight. Nothing is lost, but **nothing arrives on its own either**.
+
+- **Fix, in order of value:** create a Resend account, verify a sending domain, set the two
+  variables in Vercel, redeploy. No code changes. Until then every enquiry depends on the visitor
+  finishing the job in their own mail app or WhatsApp.
+- Without a domain, Resend's test sender only delivers to the address the account was opened with —
+  which is `kamika.bauelemente@gmail.com`, so it works as a stopgap. Check it when setting it up.
+
+**WhatsApp** now appears in the contact block, the contact page, the footer and the fallback, as
+`https://wa.me/491627742992`, built from `COMPANY.phone`.
+
+- ⚠️ **Confirm that number is actually on WhatsApp.** If it is not, the link lands on "this number
+  is not on WhatsApp", which is worse than not offering it. That is the one thing to verify before
+  the site is shown to customers.
+- No WhatsApp logo is used, only the name and a neutral speech bubble — same rule as everywhere
+  else on this site: no third-party marks.
+
 ### Google Maps — behind a click, on purpose
 
 The location is a real, navigable Google map, but it is **not loaded when the page opens**. What

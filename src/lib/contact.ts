@@ -71,8 +71,13 @@ export type ContactState =
   | { status: "idle" }
   | { status: "success" }
   | { status: "invalid"; fields: ContactErrorField[] }
-  /** No hay proveedor de envío configurado, o falló: se ofrece el mailto ya escrito. */
-  | { status: "fallback"; mailto: string }
+  /**
+   * No hay proveedor de envío configurado, o falló. No se pierde el
+   * mensaje: vuelve ya redactado para que el visitante lo mande por
+   * donde quiera —correo, WhatsApp o pegándolo a mano—, así que hace
+   * falta el texto además del enlace `mailto:`.
+   */
+  | { status: "fallback"; mailto: string; text: string }
   | { status: "error" };
 
 export const CONTACT_IDLE: ContactState = { status: "idle" };
