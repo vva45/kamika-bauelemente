@@ -86,6 +86,29 @@ export interface Project {
   featured?: boolean;
 }
 
+/**
+ * Un modelo tal y como sale en un catálogo del proveedor.
+ *
+ * No es un `Product`: los productos son los cuatro que Kamika destaca,
+ * con ficha larga, galería y "goes well with". Esto es el escaparate
+ * completo del catálogo —trescientos y pico— para que el cliente pueda
+ * mirarlos sin descargarse un PDF de 27 MB.
+ *
+ * Lo genera `scripts/extract_catalogue_models.py` leyendo los PDF, así
+ * que aquí no hay texto redactado: nombre, página, imagen y specs salen
+ * del catálogo. Por eso las specs son texto plano y no `Localized`.
+ */
+export interface CatalogueModel {
+  id: string; // único dentro de su catálogo
+  catalogue: string; // id del catálogo al que pertenece
+  name: string; // nombre del modelo, no se traduce
+  /** Familia dentro de la colección, si el catálogo la declara. */
+  family?: string;
+  page: number; // página del PDF, para el enlace #page=N
+  image: string;
+  specs: { label: string; value: string }[];
+}
+
 export interface ColorFinish {
   id: string;
   name: Localized<string>; // "Anthracite grey" / "Anthrazitgrau"

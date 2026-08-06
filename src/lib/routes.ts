@@ -13,6 +13,10 @@ export const routes = {
   product: (category: CategorySlug, id: string) => `/products/${category}/${id}`,
   catalogues: "/catalogues",
   catalogue: (id: string) => `/catalogues/${id}`,
+  /** Escaparate: todos los modelos de un catálogo. */
+  catalogueModels: (id: string) => `/catalogues/${id}/models`,
+  catalogueModel: (catalogueId: string, modelId: string) =>
+    `/catalogues/${catalogueId}/models/${modelId}`,
   projects: "/projects",
   project: (id: string) => `/projects/${id}`,
   colours: "/colours",

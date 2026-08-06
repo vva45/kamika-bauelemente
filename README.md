@@ -23,6 +23,8 @@ npm run dev          # http://localhost:3000
 | `npm run build`       | Production build                                                          |
 | `npm run audit`       | Dead links, missing assets, duplicate ids, hardcoded text (needs a build) |
 | `npm run assets:placeholders` | Creates any missing image/PDF placeholder at its final path       |
+| `node scripts/build-category-heroes.mjs` | Redraws the category header images                    |
+| `python3 scripts/extract_catalogue_models.py` | Re-reads the catalogues into the model showcase  |
 
 ## How it is put together
 
@@ -43,6 +45,13 @@ npm run dev          # http://localhost:3000
 - **No cookie banner is needed** — and that is a design constraint, not luck: fonts are
   self-hosted, there is no analytics, and the map is an image linking to Google Maps rather than an
   embedded iframe.
+
+## The catalogue showcase
+
+Four entrance doors are **products**: hand-written pages with a gallery, a full specification and
+cross-selling. Behind them sit **314 catalogue models** at `/catalogues/{id}/models`, generated
+straight from the PDFs — every model in every catalogue, each with its own page and a button that
+opens the catalogue at its exact page. Replacing a catalogue means re-running the extractor.
 
 ## Data
 

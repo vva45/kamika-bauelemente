@@ -139,6 +139,15 @@ export const de: Record<ContentKey, string> = {
   "catalogue.fallbackBody": "", // TODO: DE
   "catalogue.general": "", // TODO: DE
   "catalogue.otherCatalogues": "", // TODO: DE
+  "catalogue.models": "", // TODO: DE
+  "catalogue.viewAllModels": "", // TODO: DE
+  "catalogue.modelCount": "", // TODO: DE
+  "catalogue.modelsIntro": "", // TODO: DE
+  "catalogue.fromCatalogue": "", // TODO: DE
+  "catalogue.openAtPage": "", // TODO: DE
+  "catalogue.otherModels": "", // TODO: DE
+  "catalogue.modelFamilies": "", // TODO: DE
+  "catalogue.modelNote": "", // TODO: DE
   "catalogue.comingSoonTitle": "", // TODO: DE
   "catalogue.comingSoonBody": "", // TODO: DE
 

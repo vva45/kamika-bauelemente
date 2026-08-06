@@ -10,9 +10,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { WindowFrame } from "@/components/ui/WindowFrame";
 import { DownloadIcon } from "@/components/ui/icons";
+import { countModelsByCatalogue } from "@/data";
 import type { Catalogue } from "@/data/types";
 import { cn } from "@/lib/cn";
-import { formatNumber, pick, t } from "@/lib/i18n";
+import { formatNumber, pick, t, tf } from "@/lib/i18n";
 import { routes } from "@/lib/routes";
 
 type CatalogueCardProps = {
@@ -23,8 +24,11 @@ type CatalogueCardProps = {
 
 export function CatalogueCard({ catalogue, priority = false, className }: CatalogueCardProps) {
   // Año, páginas y peso en mono: es ficha técnica, no texto corrido.
+  const models = countModelsByCatalogue(catalogue.id);
+
   const meta = [
     catalogue.year ? formatNumber(catalogue.year, { useGrouping: false }) : null,
+    models > 0 ? tf("catalogue.modelCount", { count: models }) : null,
     catalogue.pages ? `${formatNumber(catalogue.pages)} ${t("catalogue.pages")}` : null,
     catalogue.sizeMb ? `${formatNumber(catalogue.sizeMb)} ${t("catalogue.size")}` : null,
   ].filter((entry): entry is string => entry !== null);

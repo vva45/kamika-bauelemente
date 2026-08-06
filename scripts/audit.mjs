@@ -181,7 +181,24 @@ for (const project of PROJECTS) {
   }
 }
 
+// Modelos de catálogo: id único dentro de su catálogo, y su catálogo
+// tiene que existir. Los genera un script, así que un fallo aquí
+// significa que el extractor se ha equivocado.
+const { CATALOGUE_MODELS } = await import("../src/data/catalogue-models.ts");
+const modelKeys = new Set();
+for (const model of CATALOGUE_MODELS) {
+  const key = `${model.catalogue}/${model.id}`;
+  if (modelKeys.has(key)) fail("duplicate id", `catalogue model: "${key}" appears more than once`);
+  modelKeys.add(key);
+}
+
 const catalogueIds = new Set(CATALOGUES.map((c) => c.id));
+
+for (const model of CATALOGUE_MODELS) {
+  if (!catalogueIds.has(model.catalogue)) {
+    fail("broken reference", `catalogue model "${model.id}" belongs to unknown catalogue "${model.catalogue}"`);
+  }
+}
 for (const product of PRODUCTS) {
   if (product.catalogue && !catalogueIds.has(product.catalogue.id)) {
     fail("broken reference", `product "${product.id}" points at unknown catalogue "${product.catalogue.id}"`);
@@ -189,7 +206,7 @@ for (const product of PRODUCTS) {
 }
 
 notes.push(
-  `${PRODUCTS.length} products, ${CATALOGUES.length} catalogues, ${PROJECTS.length} projects, ${COLORS.length} finishes.`,
+  `${PRODUCTS.length} products, ${CATALOGUES.length} catalogues, ${CATALOGUE_MODELS.length} catalogue models, ${PROJECTS.length} projects, ${COLORS.length} finishes.`,
 );
 
 // ── 4. Texto visible escrito a pelo ──────────────────────────────────

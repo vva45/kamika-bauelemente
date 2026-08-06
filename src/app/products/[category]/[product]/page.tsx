@@ -22,16 +22,18 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { ButtonLink } from "@/components/ui/Button";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { DocumentIcon } from "@/components/ui/icons";
+import { ArrowRightIcon, DocumentIcon } from "@/components/ui/icons";
 import {
   PRODUCTS,
+  countModelsByCatalogue,
+  getCatalogue,
   getCategory,
   getProduct,
   getProjectsByCategory,
   getRelated,
   isCategorySlug,
 } from "@/data";
-import { pick, t } from "@/lib/i18n";
+import { pick, t, tf } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/metadata";
 import { datasheetHref, formatSpecValue, highlightSpecs, productDimensions } from "@/lib/product";
 import { productSchema } from "@/lib/schema";
@@ -77,6 +79,11 @@ export default async function ProductPage({
   const highlights = highlightSpecs(product).slice(0, 3);
   const related = getRelated(product);
   const projects = getProjectsByCategory(product.category).slice(0, 3);
+
+  // Si el modelo sale de un catálogo, el visitante querrá ver el resto
+  // de la colección: es el escaparate completo, a un clic.
+  const sourceCatalogue = product.catalogue ? getCatalogue(product.catalogue.id) : undefined;
+  const sourceModelCount = sourceCatalogue ? countModelsByCatalogue(sourceCatalogue.id) : 0;
 
   return (
     <>
@@ -152,6 +159,25 @@ export default async function ProductPage({
           <ProductSpecTable specs={product.specs} />
         </div>
       </div>
+
+      {/* ── El resto de la colección ────────────────────────────── */}
+      {sourceCatalogue && sourceModelCount > 1 && (
+        <section className="border-y border-kamika-mist bg-kamika-blue-50">
+          <div className="mx-auto flex max-w-[1440px] flex-col gap-6 px-5 py-12 md:flex-row md:items-center md:justify-between md:px-8">
+            <div>
+              <p className="eyebrow">{pick(sourceCatalogue.title)}</p>
+              <p className="mt-3 max-w-xl text-lg text-pretty text-kamika-ink">
+                {tf("catalogue.modelCount", { count: sourceModelCount })} —{" "}
+                {t("catalogue.modelsIntro")}
+              </p>
+            </div>
+            <ButtonLink href={routes.catalogueModels(sourceCatalogue.id)} className="shrink-0">
+              {t("catalogue.viewAllModels")}
+              <ArrowRightIcon className="size-4" />
+            </ButtonLink>
+          </div>
+        </section>
+      )}
 
       {/* ── Goes well with — aquí está el negocio ───────────────── */}
       {related.length > 0 && (

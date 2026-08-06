@@ -14,9 +14,9 @@ import { ContactCta } from "@/components/layout/ContactCta";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { ButtonLink } from "@/components/ui/Button";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { ArrowUpRightIcon, DownloadIcon } from "@/components/ui/icons";
-import { CATALOGUES, getCatalogue, getCategory } from "@/data";
-import { formatNumber, pick, t } from "@/lib/i18n";
+import { ArrowRightIcon, ArrowUpRightIcon, DownloadIcon } from "@/components/ui/icons";
+import { CATALOGUES, countModelsByCatalogue, getCatalogue, getCategory } from "@/data";
+import { formatNumber, pick, t, tf } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/metadata";
 import { routes } from "@/lib/routes";
 
@@ -47,6 +47,7 @@ export default async function CataloguePage({ params }: PageProps<"/catalogues/[
   const title = pick(catalogue.title);
   const category = catalogue.category ? getCategory(catalogue.category) : undefined;
   const others = CATALOGUES.filter((entry) => entry.id !== catalogue.id);
+  const modelCount = countModelsByCatalogue(catalogue.id);
 
   // Año, páginas y peso: ficha técnica del fichero, no texto corrido.
   const meta = [
@@ -73,7 +74,14 @@ export default async function CataloguePage({ params }: PageProps<"/catalogues/[
           </div>
 
           <div className="flex flex-wrap gap-3">
-            <ButtonLink href={catalogue.file} external download>
+            {/* Antes que descargar 27 MB, mirar el escaparate. */}
+            {modelCount > 0 && (
+              <ButtonLink href={routes.catalogueModels(catalogue.id)}>
+                {tf("catalogue.modelCount", { count: modelCount })}
+                <ArrowRightIcon className="size-4" />
+              </ButtonLink>
+            )}
+            <ButtonLink href={catalogue.file} variant="secondary" external download>
               <DownloadIcon className="size-4" />
               {t("common.download")}
             </ButtonLink>

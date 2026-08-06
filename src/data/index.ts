@@ -3,6 +3,7 @@
  * páginas pasa por aquí, para no importar ficheros sueltos desde media
  * docena de sitios.
  */
+import { CATALOGUE_MODELS } from "./catalogue-models";
 import { CATALOGUES, getCatalogue } from "./catalogues";
 import {
   CATEGORIES,
@@ -14,9 +15,17 @@ import {
 import { COLORS } from "./colors";
 import { PRODUCTS } from "./products";
 import { PROJECTS } from "./projects";
-import type { Catalogue, CategorySlug, ColorFinish, Product, Project } from "./types";
+import type {
+  Catalogue,
+  CatalogueModel,
+  CategorySlug,
+  ColorFinish,
+  Product,
+  Project,
+} from "./types";
 
 export {
+  CATALOGUE_MODELS,
   CATALOGUES,
   CATEGORIES,
   CATEGORY_SLUGS,
@@ -59,6 +68,31 @@ export const getFeatured = (limit?: number): Product[] => {
 
 export const getCataloguesFor = (slug: CategorySlug): Catalogue[] =>
   CATALOGUES.filter((catalogue) => catalogue.category === slug);
+
+/**
+ * El escaparate de un catálogo, en el orden en que sale impreso: así
+ * hojearlo en la web y hojearlo en papel llevan al mismo sitio.
+ */
+export const getModelsByCatalogue = (catalogueId: string): CatalogueModel[] =>
+  CATALOGUE_MODELS.filter((model) => model.catalogue === catalogueId);
+
+export const getCatalogueModel = (
+  catalogueId: string,
+  modelId: string,
+): CatalogueModel | undefined =>
+  CATALOGUE_MODELS.find((model) => model.catalogue === catalogueId && model.id === modelId);
+
+export const countModelsByCatalogue = (catalogueId: string): number =>
+  getModelsByCatalogue(catalogueId).length;
+
+/** Familias declaradas en un catálogo, para agrupar el escaparate. */
+export const getModelFamilies = (catalogueId: string): string[] => [
+  ...new Set(
+    getModelsByCatalogue(catalogueId)
+      .map((model) => model.family)
+      .filter((family): family is string => Boolean(family)),
+  ),
+];
 
 // ── Proyectos ──────────────────────────────────────────────────
 

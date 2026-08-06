@@ -149,6 +149,17 @@ export const en = {
     "This browser cannot display the PDF on the page. Open it in a new tab or download it.",
   "catalogue.general": "General catalogue",
   "catalogue.otherCatalogues": "Other catalogues",
+  "catalogue.models": "Models in this catalogue",
+  "catalogue.viewAllModels": "View all models",
+  "catalogue.modelCount": "{count} models",
+  "catalogue.modelsIntro":
+    "Every model in the catalogue, straight from its pages. Open one to see its specification and jump to that page of the PDF.",
+  "catalogue.fromCatalogue": "From the catalogue",
+  "catalogue.openAtPage": "Open catalogue at page {page}",
+  "catalogue.otherModels": "Other models in this catalogue",
+  "catalogue.modelFamilies": "Collections",
+  "catalogue.modelNote":
+    "Images and data come from the manufacturer's catalogue. Ask us which models are stocked, what they cost and how long they take.",
   "catalogue.comingSoonTitle": "The catalogues are being prepared",
   "catalogue.comingSoonBody":
     "The PDF ranges are not online yet. Call or write and we will send you the current documentation by email.",

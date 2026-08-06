@@ -25,7 +25,7 @@ npm run assets:placeholders
 | Status | Path                                             | What it must show                                                              | Who   |
 | ------ | ------------------------------------------------ | ------------------------------------------------------------------------------ | ----- |
 | `[~]`  | `public/images/home/hero.jpg`                    | One strong installation photo — a finished window or door in a real house. Landscape, 2400×1500 or larger. This is the first thing a visitor sees. | Owner |
-| `[~]`  | `public/images/categories/{slug}-hero.jpg`        | One photo per category (8 files: `windows`, `entrance-doors`, `interior-doors`, `roller-shutters`, `insect-screens`, `gates`, `fences`, `accessories`). 1600×1000. | Owner |
+| `[~]`  | `public/images/categories/{slug}-hero.jpg`        | One photo per category (8 files). **`entrance-doors` is done**: it is composed from three real doors cut out of the catalogues. The other seven are brand plates — the window-frame motif in the logo colours with the range name — drawn by `node scripts/build-category-heroes.mjs`. They are deliberately graphics, not fake photography, and they can stay published until real photos arrive. 1600×1000. | Owner |
 | `[~]`  | `public/images/windows/{product-id}-{1,2,3}.jpg`  | Three photos per product: the element installed, a profile/section detail, and a wider shot. 1600×1200. | Owner |
 | `[~]`  | `public/images/about/dominik.jpg`                 | Portrait of Dominik for the About page. 1000×1250, plain background. **This one matters**: it is the only face on the site, and "about me" was one of the two things the owner asked for. | Owner |
 | `[~]`  | `public/images/catalogues/{id}-cover.jpg`         | Front cover of each catalogue. Can be exported from page 1 of the PDF.          | You   |
@@ -107,6 +107,29 @@ ones.** For each: what the customer asked for, what was fitted, the town, the ye
 `src/data/colors.ts` holds 33 finishes. The RAL codes are real and the hex values are the usual
 on-screen approximations, but the owner has to confirm **which finishes Kamika actually offers**,
 which are stock and which are made to order, and which are unavailable on a given material.
+
+## 3c. The catalogue showcase — generated, not written
+
+`src/data/catalogue-models.ts` holds **314 models**, every one in the four catalogues, with its
+name, its page, its photograph and whatever specification the catalogue prints. It is generated:
+
+```bash
+python3 scripts/extract_catalogue_models.py    # needs: pip install pymupdf
+```
+
+The script reads the PDFs, pairs each model label with the image next to it, crops it to
+`public/images/models/{catalogue}/{model}.jpg` and writes the data file. **Re-run it whenever a
+catalogue is replaced** — the page numbers move, and the `#page=N` links would quietly point at the
+wrong door.
+
+Nothing here is written by hand, so nothing here needs the owner's review — but two things are
+worth knowing:
+
+- The specification text is reproduced **in German**, exactly as the manufacturer prints it
+  ("Keramik - Oxide Nero", "8 mm Applikationen…"). Translating it would mean inventing wording for
+  someone else's product.
+- These are the manufacturer's renders. They are honest and they are what the customer will
+  compare, but a photo of a door Kamika actually fitted beats any of them.
 
 ## 4. Text the owner has to write
 
