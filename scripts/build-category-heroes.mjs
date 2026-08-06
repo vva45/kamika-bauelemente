@@ -3,10 +3,11 @@
  *
  * Dos casos distintos, y la diferencia importa:
  *
- *  1. Las gamas de las que el dueño YA mandó fotografía —de momento
- *     `entrance-doors` y `windows`— no se generan: la foto manda y el
- *     script la protege, aunque se le ejecute entero por costumbre. Ver
- *     `OWNER_PHOTOS`.
+ *  1. YA NO GENERA NADA. El dueño mandó fotografía de las ocho gamas,
+ *     así que las ocho están en `OWNER_PHOTOS` y el script las protege:
+ *     ejecutarlo por costumbre no destruye ninguna. Se queda aquí
+ *     porque el día que entre una gama nueva sin foto, quitarla de esa
+ *     lista devuelve su lámina.
  *
  *  2. El resto de gamas — todavía no hay ni una foto. En vez de dejar el
  *     cartel de "PLACEHOLDER" a la vista del cliente, se dibuja una
@@ -52,7 +53,16 @@ const PALETTE = {
  *
  * Al recibir una foto nueva, añadir aquí su slug.
  */
-const OWNER_PHOTOS = new Set(["entrance-doors", "windows"]);
+const OWNER_PHOTOS = new Set([
+  "windows",
+  "entrance-doors",
+  "interior-doors",
+  "roller-shutters",
+  "insect-screens",
+  "gates",
+  "fences",
+  "accessories",
+]);
 
 const MONO = "Consolas, 'DejaVu Sans Mono', 'Courier New', monospace";
 const SANS = "'Segoe UI', Arial, Helvetica, sans-serif";
