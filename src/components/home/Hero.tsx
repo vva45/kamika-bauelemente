@@ -56,7 +56,15 @@ export function Hero() {
 
         <div className="lg:col-span-7">
           <div className="flex items-stretch gap-3">
-            <FrameOpening className="aspect-[4/3] flex-1" mullion="cross">
+            {/*
+              El hueco va a 3:2 porque es exactamente la proporción de la
+              foto: con `object-cover` en 4:3 se recortaba un 12,5% de
+              ancho —6,25% por lado— y ese recorte se comía el logotipo
+              Kamika, que va grabado en la esquina superior izquierda de
+              la foto. Si algún día se cambia la foto del hero, esta
+              proporción se cambia con ella.
+            */}
+            <FrameOpening className="aspect-[3/2] flex-1" mullion="cross">
               <Image
                 src="/images/home/hero.jpg"
                 alt={t("home.heroImageAlt")}
