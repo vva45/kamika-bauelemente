@@ -1,16 +1,15 @@
 /**
- * Franja de contacto directo con mapa estático.
+ * Franja de contacto directo con el mapa.
  *
  * Se reutiliza al final de la home, en /about y en la ficha de producto:
  * el dueño insistió en "contact me directly", así que su teléfono y su
  * email tienen que estar a un golpe de vista en varios sitios.
  *
- * El mapa es una imagen enlazada a Google Maps, nunca un iframe: un
- * iframe de Google pone cookies de terceros y obligaría a un banner.
+ * El mapa vive en `LocationMap`, que es donde está explicado lo que
+ * implica incrustar Google.
  */
-import Image from "next/image";
 import { ButtonLink } from "@/components/ui/Button";
-import { WindowFrame } from "@/components/ui/WindowFrame";
+import { LocationMap } from "@/components/contact/LocationMap";
 import { ArrowUpRightIcon, MailIcon, PhoneIcon, PinIcon } from "@/components/ui/icons";
 import {
   COMPANY,
@@ -63,23 +62,9 @@ export function ContactCta({ className }: { className?: string }) {
           </div>
         </div>
 
-        <a
-          href={companyMapsHref}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group block"
-          aria-label={`${t("home.viewOnMap")} (${t("a11y.opensInNewTab")})`}
-        >
-          <WindowFrame className="aspect-[4/3] w-full" pan>
-            <Image
-              src="/images/contact/map.jpg"
-              alt={t("home.mapAlt")}
-              fill
-              sizes="(min-width: 1024px) 45vw, 100vw"
-              className="object-cover"
-            />
-          </WindowFrame>
-        </a>
+        {/* El mapa navegable; el botón "View on Google Maps" de arriba
+            sigue siendo la salida para quien quiera la ruta. */}
+        <LocationMap />
       </div>
     </section>
   );

@@ -44,8 +44,14 @@ export function CategoryCard({
 
   return (
     <article className={cn("group relative flex h-full flex-col", className)}>
+      {/*
+        3:2, la proporción de las imágenes de gama —la foto real de
+        puertas de entrada y las láminas de marca—, en vez de una altura
+        mínima. Con una banda ancha la tarjeta recortaba la foto por
+        arriba y por abajo y la puerta salía cortada; así entra entera.
+      */}
       <WindowFrame
-        className={cn("w-full flex-1", isFeature ? "min-h-64" : "min-h-44")}
+        className="aspect-[3/2] w-full"
         sash
         pan
         mullion={isFeature ? "vertical" : "none"}

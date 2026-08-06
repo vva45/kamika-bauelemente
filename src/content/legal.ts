@@ -214,26 +214,46 @@ export const PRIVACY_BLOCKS: LegalBlock[] = [
     ],
   },
 
-  // EN: No cookies, no analytics, no third-party fonts or embeds. This
-  // is a factual description of how the site is actually built — it is
-  // why the site needs no cookie banner. Do not publish this paragraph
-  // if analytics or an embedded map are ever added.
+  // EN: No analytics, no tracking, no third-party fonts. The site sets
+  // no cookies of its own — but since the location map was embedded,
+  // Google may set some, so the old "no cookies at all, no consent
+  // needed" wording would now be untrue and has been corrected.
+  // If the map is ever removed again, this section goes back to
+  // stating plainly that nothing third-party is loaded.
   {
-    heading: "8. Keine Cookies, keine Analyse-Werkzeuge",
+    heading: "8. Cookies und Analyse-Werkzeuge",
     paragraphs: [
-      "Diese Website setzt keine Cookies, verwendet keine Tracking- oder Analysedienste und bindet keine Inhalte Dritter nach (keine externen Schriftarten, keine eingebetteten Karten, keine Social-Media-Plugins). Die verwendeten Schriftarten werden von unserem eigenen Server ausgeliefert.",
-      "Aus diesem Grund ist auch keine Einwilligung in Cookies erforderlich.",
+      "Diese Website setzt selbst keine Cookies, verwendet keine Tracking- oder Analysedienste und lädt keine externen Schriftarten oder Social-Media-Plugins. Die verwendeten Schriftarten werden von unserem eigenen Server ausgeliefert.",
+      "Eine Ausnahme ist die eingebettete Standortkarte von Google Maps (siehe Ziffer 9). Beim Aufruf der Seiten, auf denen die Karte eingebunden ist, kann Google Cookies setzen und Daten verarbeiten.",
     ],
   },
 
-  // EN: External links — the map is a plain link to Google Maps, opened
-  // only if the visitor clicks it, and from that point Google's own
-  // privacy policy applies.
+  // EN: Google Maps is embedded on the contact block, so the visitor's
+  // browser contacts Google as soon as the map scrolls into view. This
+  // has to be declared: what is transmitted (IP address at minimum),
+  // the legal basis (Art. 6(1)(f) — showing customers where the
+  // workshop is), and who the recipient is, including the transfer to
+  // the United States under the EU-US Data Privacy Framework.
+  // TODO (owner / legal review): if consent is preferred over
+  // legitimate interest, the map must be put behind a click-to-load
+  // gate or a consent banner. That is a change in `LocationMap`.
   {
-    heading: "9. Externe Links",
+    heading: "9. Google Maps",
     paragraphs: [
-      "Die Standortkarte auf dieser Website ist eine Bilddatei mit einem Link zu Google Maps und keine Einbettung. Eine Verbindung zu Google wird erst hergestellt, wenn Sie den Link aktiv anklicken. Ab diesem Zeitpunkt gilt die Datenschutzerklärung von Google.",
-      "Auch die Produktkataloge und Datenblätter liegen auf unserem eigenen Server; beim Öffnen wird keine Verbindung zu Dritten aufgebaut.",
+      "Auf dieser Website ist eine Karte des Dienstes Google Maps eingebunden. Anbieter ist Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.",
+      "Beim Laden der Karte wird eine Verbindung zu Servern von Google hergestellt. Dabei wird Ihre IP-Adresse an Google übermittelt; Google kann zudem Cookies setzen. Die Karte wird erst geladen, wenn Sie den entsprechenden Seitenbereich erreichen.",
+      "Rechtsgrundlage ist unser berechtigtes Interesse an einer leicht auffindbaren Darstellung unseres Standorts (Art. 6 Abs. 1 lit. f DSGVO). Eine Datenübermittlung in die USA kann nicht ausgeschlossen werden; Google ist unter dem EU-US Data Privacy Framework zertifiziert.",
+      "Weitere Informationen finden Sie in der Datenschutzerklärung von Google: https://policies.google.com/privacy",
+    ],
+  },
+
+  // EN: Everything else the visitor can open — catalogues, data sheets —
+  // is served from our own server, so no third party is contacted.
+  {
+    heading: "10. Externe Links und Dokumente",
+    paragraphs: [
+      "Die Produktkataloge und Datenblätter liegen auf unserem eigenen Server; beim Öffnen wird keine Verbindung zu Dritten aufgebaut.",
+      "Beim Anklicken externer Links verlassen Sie diese Website. Ab diesem Zeitpunkt gilt die Datenschutzerklärung des jeweiligen Anbieters.",
     ],
   },
 
@@ -241,7 +261,7 @@ export const PRIVACY_BLOCKS: LegalBlock[] = [
   // deletion, restriction, portability, objection, and withdrawal of
   // consent.
   {
-    heading: "10. Ihre Rechte",
+    heading: "11. Ihre Rechte",
     paragraphs: [
       "Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung (Art. 15 DSGVO) sowie ein Recht auf Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch (Art. 21 DSGVO).",
       `Zur Ausübung genügt eine formlose Nachricht an ${COMPANY.email}.`,
@@ -251,7 +271,7 @@ export const PRIVACY_BLOCKS: LegalBlock[] = [
   // EN: Right to complain to a supervisory authority, naming the one
   // responsible for Baden-Württemberg, where the business is based.
   {
-    heading: "11. Beschwerderecht bei der Aufsichtsbehörde",
+    heading: "12. Beschwerderecht bei der Aufsichtsbehörde",
     paragraphs: [
       "Ihnen steht ein Beschwerderecht bei einer Datenschutz-Aufsichtsbehörde zu. Zuständig ist der Landesbeauftragte für den Datenschutz und die Informationsfreiheit Baden-Württemberg, Lautenschlagerstraße 20, 70173 Stuttgart.",
     ],
@@ -260,7 +280,7 @@ export const PRIVACY_BLOCKS: LegalBlock[] = [
   // EN: The policy applies as of the date shown and may be updated if
   // the site or the law changes.
   {
-    heading: "12. Stand und Änderungen",
+    heading: "13. Stand und Änderungen",
     paragraphs: [
       `Diese Datenschutzerklärung hat den Stand ${LEGAL_UPDATED}. Durch die Weiterentwicklung dieser Website oder aufgrund geänderter gesetzlicher Vorgaben kann es notwendig werden, sie anzupassen.`,
     ],

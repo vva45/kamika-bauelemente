@@ -60,7 +60,28 @@ export const companyPhoneHref = `tel:${COMPANY.phone.replace(/\s+/g, "")}`;
 
 export const companyEmailHref = `mailto:${COMPANY.email}`;
 
-/** Enlace a Google Maps. Se usa como destino del mapa estático (nunca un iframe). */
+const fullAddress = `${COMPANY.street}, ${COMPANY.postalCode} ${COMPANY.city}, ${COMPANY.country}`;
+
+/** Enlace a Google Maps: abrir la ficha del negocio en pestaña nueva. */
 export const companyMapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-  `${COMPANY.street}, ${COMPANY.postalCode} ${COMPANY.city}, ${COMPANY.country}`,
+  fullAddress,
 )}`;
+
+/**
+ * Mapa de Google embebido y navegable.
+ *
+ * Va por dirección y no por coordenadas a propósito: Google geocodifica
+ * la calle y clava la chincheta en el portal, mientras que las
+ * coordenadas que hay en `COMPANY.geo` son del centro de Hechingen y
+ * están para el JSON-LD, no para señalar el taller.
+ *
+ * ⚠️ AVISO LEGAL: esto sí es una incrustación de terceros. Al abrir la
+ * página el navegador del visitante conecta con Google y este puede
+ * poner cookies. Está declarado en el Datenschutz (§ 8 y § 9). Si el
+ * dueño prefiere no depender del consentimiento, la alternativa es la
+ * "solución de dos clics": enseñar una portada y cargar el iframe solo
+ * al pulsar. Ver `LocationMap`.
+ */
+export const companyMapEmbedHref = `https://www.google.com/maps?q=${encodeURIComponent(
+  fullAddress,
+)}&hl=de&z=16&output=embed`;

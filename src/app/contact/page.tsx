@@ -8,11 +8,10 @@
  * formulario.
  */
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { ContactForm, type ProductOptionGroup } from "@/components/contact/ContactForm";
-import { WindowFrame } from "@/components/ui/WindowFrame";
-import { ClockIcon, MailIcon, PhoneIcon, PinIcon } from "@/components/ui/icons";
+import { LocationMap } from "@/components/contact/LocationMap";
+import { ArrowUpRightIcon, ClockIcon, MailIcon, PhoneIcon, PinIcon } from "@/components/ui/icons";
 import { getCatalogue, getCollectionsFor, getProduct, getProductsByCategory, orderedCategories } from "@/data";
 import {
   COMPANY,
@@ -122,26 +121,21 @@ export default async function ContactPage({ searchParams }: PageProps<"/contact"
             </p>
           </div>
 
-          {/* Mapa estático enlazado a Google Maps: una imagen, nunca un
-              iframe. Un iframe de Google pone cookies de terceros y
-              obligaría a un banner de consentimiento en todo el sitio. */}
-          <a
-            href={companyMapsHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group mt-6 block"
-            aria-label={`${t("home.viewOnMap")} (${t("a11y.opensInNewTab")})`}
-          >
-            <WindowFrame className="aspect-[4/3] w-full" pan>
-              <Image
-                src="/images/contact/map.jpg"
-                alt={t("home.mapAlt")}
-                fill
-                sizes="(min-width: 1024px) 35vw, 100vw"
-                className="object-cover"
-              />
-            </WindowFrame>
-          </a>
+          {/* Mapa navegable. Debajo, el enlace de siempre para quien
+              prefiera abrirlo en su aplicación y trazar la ruta. */}
+          <LocationMap className="mt-6" />
+          <p className="mt-3">
+            <a
+              href={companyMapsHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-medium text-kamika-steel hover:text-kamika-ink"
+            >
+              {t("home.viewOnMap")}
+              <ArrowUpRightIcon className="size-4" />
+              <span className="sr-only"> ({t("a11y.opensInNewTab")})</span>
+            </a>
+          </p>
 
           <p className="mt-4 text-sm text-kamika-ink/60">
             <Link href={routes.privacy} className="text-kamika-steel underline">

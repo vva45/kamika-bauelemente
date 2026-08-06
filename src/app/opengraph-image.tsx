@@ -88,8 +88,8 @@ export default function OpengraphImage() {
           </div>
           <div
             style={{
-              marginTop: 14,
-              fontSize: 30,
+              marginTop: 9,
+              fontSize: 32,
               letterSpacing: 14,
               textTransform: "uppercase",
               color: INK,

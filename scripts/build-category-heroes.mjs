@@ -3,10 +3,10 @@
  *
  * Dos casos distintos, y la diferencia importa:
  *
- *  1. `entrance-doors` — hay catálogos reales, así que la cabecera se
- *     compone con los propios productos: se recortan tres puertas de las
- *     páginas del PDF y se montan sobre el azul de marca. Es producto
- *     real, no decoración.
+ *  1. `entrance-doors` — YA NO SE GENERA. El dueño mandó su propia
+ *     fotografía y esa manda. El montaje con puertas recortadas del PDF
+ *     que había aquí solo se ejecuta si se le pasa `DOOR_CUTS`, y no hay
+ *     que pasárselo: sobreescribiría la foto del dueño.
  *
  *  2. El resto de gamas — todavía no hay ni una foto. En vez de dejar el
  *     cartel de "PLACEHOLDER" a la vista del cliente, se dibuja una
@@ -30,7 +30,10 @@ const CUTS = process.env.DOOR_CUTS; // carpeta con los recortes de puerta
 
 if (!existsSync(OUT)) mkdirSync(OUT, { recursive: true });
 
-const W = 1600;
+// 3:2, la misma proporción con la que se enseñan las cabeceras y las
+// tarjetas de gama. Así ninguna lámina se recorta: entra entera, igual
+// que la fotografía real de puertas de entrada.
+const W = 1500;
 const H = 1000;
 
 const PALETTE = {
@@ -51,7 +54,7 @@ const SANS = "'Segoe UI', Arial, Helvetica, sans-serif";
  * una persiana de una valla en un plano.
  */
 const sheet = ({ label, note, mullions }) => {
-  const frameX = 980;
+  const frameX = 940;
   const frameY = 150;
   const frameW = 480;
   const frameH = 700;

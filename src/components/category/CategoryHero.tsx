@@ -35,7 +35,9 @@ export function CategoryHero({ category, modelCount }: CategoryHeroProps) {
           </p>
         </div>
 
-        <WindowFrame className="aspect-[16/10] w-full" mullion="vertical">
+        {/* 3:2: la proporción de las imágenes de gama, para que la
+            cabecera enseñe la foto entera y no una franja de ella. */}
+        <WindowFrame className="aspect-[3/2] w-full" mullion="vertical">
           <Image
             src={category.heroImage}
             alt={pick(category.name)}
