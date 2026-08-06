@@ -77,7 +77,6 @@ export const rollerShutters: Product[] = [
         alt: { en: "Inspection opening of the Aufsatz 205 seen from the room" },
       },
     ],
-    catalogue: { id: "kamika-overview-2025", page: 22 },
     related: ["pvc-82-comfort", "insect-screen-roller"],
     featured: true,
     badge: "bestseller",
@@ -114,7 +113,6 @@ export const rollerShutters: Product[] = [
         alt: { en: "Guide rail detail of the Unterputz 165 in anthracite" },
       },
     ],
-    catalogue: { id: "kamika-overview-2025", page: 24 },
     related: ["alu-75-slim", "insect-screen-pleated"],
   },
   {
@@ -149,7 +147,6 @@ export const rollerShutters: Product[] = [
         alt: { en: "Living room behind half-tilted Raffstore 90 slats" },
       },
     ],
-    catalogue: { id: "kamika-overview-2025", page: 26 },
     related: ["alu-75-slim", "wood-alu-92-nature"],
   },
 ];

@@ -75,7 +75,6 @@ export const gates: Product[] = [
         alt: { en: "Asymmetric split Flügeltor Duo on an older house" },
       },
     ],
-    catalogue: { id: "kamika-overview-2025", page: 40 },
     related: ["swing-gate-alu", "fence-vertical-bar"],
   },
   {
@@ -110,7 +109,6 @@ export const gates: Product[] = [
         alt: { en: "Schiebetor Line closed, infill matching the fence" },
       },
     ],
-    catalogue: { id: "kamika-overview-2025", page: 42 },
     related: ["fence-horizontal-alu", "pedestrian-gate-alu", "sectional-garage-40"],
     featured: true,
   },
@@ -145,7 +143,6 @@ export const gates: Product[] = [
         alt: { en: "Underground drive box of the Drehtor Classic" },
       },
     ],
-    catalogue: { id: "kamika-overview-2025", page: 43 },
     related: ["pedestrian-gate-alu", "fence-vertical-bar"],
   },
 ];

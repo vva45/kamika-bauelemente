@@ -39,7 +39,6 @@ export const interiorDoors: Product[] = [
         alt: { en: "CPL Basic doors along a corridor of a family house" },
       },
     ],
-    catalogue: { id: "doors-2025", page: 32 },
     related: ["veneer-oak", "lacquer-flat"],
   },
   {
@@ -74,7 +73,6 @@ export const interiorDoors: Product[] = [
         alt: { en: "Concealed hinge on the Veneer Oak leaf" },
       },
     ],
-    catalogue: { id: "doors-2025", page: 36 },
     related: ["cpl-basic", "acoustic-32"],
     featured: true,
   },
@@ -110,7 +108,6 @@ export const interiorDoors: Product[] = [
         alt: { en: "Lacquer Flat door open, showing the hidden frame" },
       },
     ],
-    catalogue: { id: "doors-2025", page: 40 },
     related: ["veneer-oak", "cpl-basic"],
     featured: true,
     badge: "new",
@@ -147,7 +144,6 @@ export const interiorDoors: Product[] = [
         alt: { en: "Double rebate edge of the Acoustic 32 door" },
       },
     ],
-    catalogue: { id: "doors-2025", page: 44 },
     related: ["veneer-oak", "lacquer-flat"],
   },
 ];

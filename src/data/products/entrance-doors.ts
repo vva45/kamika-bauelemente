@@ -78,7 +78,6 @@ export const entranceDoors: Product[] = [
         alt: { en: "PVC 76 entrance door installed in a renovated terraced house" },
       },
     ],
-    catalogue: { id: "doors-2025", page: 8 },
     related: ["security-cylinder", "pvc-70-classic", "insect-screen-hinged-door"],
   },
   {
@@ -113,7 +112,6 @@ export const entranceDoors: Product[] = [
         alt: { en: "Alu Panel Line in basalt grey on a modern house" },
       },
     ],
-    catalogue: { id: "doors-2025", page: 16 },
     related: ["security-cylinder", "alu-75-slim"],
     featured: true,
     badge: "new",
@@ -150,7 +148,6 @@ export const entranceDoors: Product[] = [
         alt: { en: "Steel Secure RC3 fitted between garage and house" },
       },
     ],
-    catalogue: { id: "doors-2025", page: 24 },
     related: ["security-cylinder", "sectional-garage-40"],
   },
 ];

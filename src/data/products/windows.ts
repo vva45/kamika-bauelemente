@@ -46,7 +46,6 @@ export const windows: Product[] = [
         alt: { en: "PVC 70 Classic window fitted in a masonry opening" },
       },
     ],
-    catalogue: { id: "windows-2025", page: 12 },
     related: ["roller-shutter-front-mounted", "insect-screen-fixed-frame", "handle-lockable"],
     featured: true,
   },
@@ -122,7 +121,6 @@ export const windows: Product[] = [
         alt: { en: "Alu 75 Slim windows in a facade, powder coated dark grey" },
       },
     ],
-    catalogue: { id: "windows-2025", page: 24 },
     related: ["roller-shutter-top-mounted", "insect-screen-fixed-frame"],
   },
   {

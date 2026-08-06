@@ -5,7 +5,7 @@ Everything the site needs that I cannot invent. Kept up to date at the end of ev
 **Who provides it**
 
 - **Owner** — Dominik Kamienski. Facts about the company, the real catalogues, the real photos.
-- **You** — Vlad. Decisions, review, and anything you can pull from the existing Kristall Fenster material.
+- **You** — Vlad. Decisions, review, and anything you can supply from your own material.
 
 Status legend: `[ ]` missing · `[~]` placeholder in place, needs replacing.
 
@@ -41,11 +41,26 @@ Self-hosted, never linked to a manufacturer's website.
 
 | Status | Path                                         | What it is                                                                 | Who   |
 | ------ | -------------------------------------------- | -------------------------------------------------------------------------- | ----- |
-| `[~]`  | `public/pdf/catalogues/{id}.pdf`             | The catalogues customers should be able to browse. Placeholders are real 60-page PDFs so `#page=N` links can be tested. | Owner |
-| `[~]`  | `public/pdf/{category}/{product-id}.pdf`     | Per-product data sheet, where one exists. Products without one link to a page inside the general catalogue instead. | Owner |
+| `[x]`  | `public/pdf/catalogues/*.pdf`                | **Four real catalogues are in place**, all of them entrance doors: ROKA Signature (298 pp), ROKA Select (23 pp), the panel catalogue (194 pp) and Despiro (37 pp). Titles, years, page counts and file sizes in `src/data/catalogues.ts` were read from the PDFs, not estimated. Covers are rendered from page 1. | —     |
+| `[ ]`  | `public/pdf/catalogues/` — other ranges      | Nothing yet for windows, roller shutters, insect screens, gates, fences or hardware. Those categories currently have no catalogue to link to. | Owner |
+| `[~]`  | `public/pdf/{category}/{product-id}.pdf`     | Per-product data sheet, where one exists. Five are placeholders; the rest of the products show no data-sheet button at all, which is the rule: no button beats a dead link. | Owner |
 
-Also needed per catalogue: **exact title, year, page count and file size** (currently invented in
-`src/data/catalogues.ts`).
+**Model → page mapping is the missing piece.** The catalogues are real but the 32 products are
+still invented, so no product can honestly point at a page inside them. When the owner says which
+models he actually sells and on which page each one appears, that becomes
+`catalogue: { id: "roka-signature-2025", page: 84 }` and the "Technical data sheet" button starts
+opening the exact page.
+
+> **Branding rule, non-negotiable:** no competitor's mark may appear anywhere on this site.
+> The panel catalogue arrived carrying another window company's logo on page 1. It was replaced
+> with the Kamika wordmark inside the PDF itself — the image data was swapped, not covered, so the
+> foreign logo no longer exists in the file — and the metadata was rewritten. All four PDFs were
+> then swept: no matching text on any of the 552 pages, no links, and every small header/footer
+> image was extracted and inspected by eye (the only brands left are component makers quoted by the
+> manufacturer itself — Dr. Hahn, MACO, Masterline — which are hardware suppliers, not competitors).
+> **Any new catalogue must be checked the same way before it is published.** Ask the supplier for a
+> neutral or Kamika-branded master so it does not have to be done by hand, and confirm Kamika may
+> distribute these catalogues under its own name.
 
 ## 3. Product data — the big one
 

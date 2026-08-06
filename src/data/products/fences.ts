@@ -39,7 +39,6 @@ export const fences: Product[] = [
         alt: { en: "Stepped Linea Horizontal panels on a sloping plot" },
       },
     ],
-    catalogue: { id: "kamika-overview-2025", page: 44 },
     related: ["sliding-gate-alu", "pedestrian-gate-alu"],
     featured: true,
   },
@@ -74,7 +73,6 @@ export const fences: Product[] = [
         alt: { en: "Flange-plate post fixing on a low wall" },
       },
     ],
-    catalogue: { id: "kamika-overview-2025", page: 45 },
     related: ["swing-gate-alu", "pedestrian-gate-alu"],
   },
   {
@@ -108,7 +106,6 @@ export const fences: Product[] = [
         alt: { en: "Sichtschutz Voll in wood decor along a boundary" },
       },
     ],
-    catalogue: { id: "kamika-overview-2025", page: 46 },
     related: ["fence-horizontal-alu", "sliding-gate-alu"],
   },
   {
@@ -142,7 +139,6 @@ export const fences: Product[] = [
         alt: { en: "Electric strike detail for intercom release" },
       },
     ],
-    catalogue: { id: "kamika-overview-2025", page: 47 },
     related: ["fence-horizontal-alu", "swing-gate-alu"],
   },
 ];

@@ -4,10 +4,14 @@
  * Modelos, medidas y valores son plausibles para el sector pero NO son
  * el catálogo real de Kamika. Ver CONTENT.md.
  *
- * Nota: `window-rebate-vent` no tiene ni ficha propia ni página de
- * catálogo A PROPÓSITO — ejercita la regla de que el botón "Technical
- * data sheet" no se renderiza cuando no hay destino. No "arreglarlo"
- * añadiéndole un catálogo sin pensar.
+ * Las referencias a páginas de catálogo se retiraron al llegar los
+ * catálogos reales: los cuatro que hay son de puertas de entrada, y
+ * estos modelos de ejemplo no aparecen en ellos. Enlazar un accesorio a
+ * la página 38 de un catálogo de puertas sería mandar al cliente a una
+ * página que no habla de lo que ha pinchado. Mientras no haya catálogo
+ * de la gama, el botón "Technical data sheet" simplemente no se pinta,
+ * que es la regla del sitio: antes sin botón que con un enlace que
+ * miente.
  */
 import type { Product } from "../types";
 
@@ -43,7 +47,6 @@ export const accessories: Product[] = [
         alt: { en: "Secustik Lock 100 locked on a ground-floor window" },
       },
     ],
-    catalogue: { id: "kamika-overview-2025", page: 38 },
     related: ["pvc-70-classic", "pvc-82-comfort", "security-cylinder"],
     featured: true,
   },
@@ -78,7 +81,6 @@ export const accessories: Product[] = [
         alt: { en: "Sloped sealed bed before the sill is fitted" },
       },
     ],
-    catalogue: { id: "kamika-overview-2025", page: 39 },
     related: ["pvc-82-comfort", "wood-alu-92-nature"],
   },
   {
@@ -111,7 +113,6 @@ export const accessories: Product[] = [
         alt: { en: "One key opening house, garage and garden gate" },
       },
     ],
-    catalogue: { id: "kamika-overview-2025", page: 38 },
     related: ["alu-86-thermo", "handle-lockable"],
   },
   {

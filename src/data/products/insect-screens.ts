@@ -38,7 +38,6 @@ export const insectScreens: Product[] = [
         alt: { en: "Fixframe 25 being lifted off for cleaning" },
       },
     ],
-    catalogue: { id: "kamika-overview-2025", page: 30 },
     related: ["pvc-70-classic", "roller-shutter-front-mounted"],
   },
   {
@@ -72,7 +71,6 @@ export const insectScreens: Product[] = [
         alt: { en: "Pleated mesh parked at the side of the opening" },
       },
     ],
-    catalogue: { id: "kamika-overview-2025", page: 32 },
     related: ["wood-alu-92-nature", "roller-shutter-concealed"],
     featured: true,
   },
@@ -107,7 +105,6 @@ export const insectScreens: Product[] = [
         alt: { en: "Kick plate detail on the Drehtür 40" },
       },
     ],
-    catalogue: { id: "kamika-overview-2025", page: 34 },
     related: ["alu-86-thermo", "pvc-76-entrance"],
   },
   {
@@ -141,7 +138,6 @@ export const insectScreens: Product[] = [
         alt: { en: "Hand strip of the Rollo Integral at the sill" },
       },
     ],
-    catalogue: { id: "kamika-overview-2025", page: 36 },
     related: ["roller-shutter-front-mounted", "pvc-70-classic"],
   },
 ];
