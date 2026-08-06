@@ -26,6 +26,20 @@ export const COMPANY = {
   email: "kamika.bauelemente@gmail.com",
   phone: "+49 162 774 2992",
 
+  /**
+   * Umsatzsteuer-Identifikationsnummer (§ 27a UStG).
+   * TODO: pendiente del dueño. Si es Kleinunternehmer puede no tenerla:
+   * mientras sea null, el Impressum no publica el bloque, en vez de
+   * publicar un número inventado o un "pendiente".
+   */
+  vatId: null as string | null,
+
+  /**
+   * Cámara / registro profesional (Handwerkskammer y Berufsbezeichnung).
+   * TODO: pendiente del dueño. Mismo criterio: null = no se publica.
+   */
+  chamber: null as string | null,
+
   /** Coordenadas de Hechingen para el JSON-LD y el mapa estático. */
   geo: { latitude: 48.3517, longitude: 8.9647 },
 

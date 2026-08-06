@@ -209,6 +209,59 @@ export const en = {
   "about.ownerPortraitAlt": "Portrait of Dominik Kamienski, owner of Kamika Bauelemente",
   "about.contactHeading": "Contact me directly",
 
+  // ── Colores y acabados ───────────────────────────────────────
+  "colours.eyebrow": "Colours and finishes",
+  "colours.title": "Colours and finishes",
+  "colours.intro":
+    "Frames can be finished in a different colour inside and outside. RAL powder coatings, wood decor foils and anodised aluminium — filter by finish or by the material you are ordering.",
+  "colours.filterGroup": "Finish",
+  "colours.filterMaterial": "Material",
+  "colours.filterAll": "All",
+  "colours.groupRal": "RAL",
+  "colours.groupWoodDecor": "Wood decor",
+  "colours.groupAnodised": "Anodised",
+  "colours.availableOn": "Available on",
+  "colours.noMatch": "No finish matches that combination.",
+  "colours.disclaimer":
+    "Screen colours are approximate: brightness, calibration and the finish of the surface all shift them. Ask for a physical sample before deciding.",
+  "colours.count": "{count} finishes",
+
+  // ── Contacto ─────────────────────────────────────────────────
+  "contactPage.eyebrow": "Hechingen · Zollernalbkreis",
+  "contactPage.title": "Contact",
+  "contactPage.intro":
+    "Describe the opening, or send the measurements you already have. You will get an answer from Dominik, not from a call centre.",
+  "contactPage.formHeading": "Send a message",
+  "contactPage.detailsHeading": "Direct contact",
+  "contactPage.nameLabel": "Name",
+  "contactPage.emailLabel": "Email",
+  "contactPage.phoneLabel": "Phone (optional)",
+  "contactPage.productLabel": "Product of interest (optional)",
+  "contactPage.messageLabel": "Message",
+  "contactPage.messagePlaceholder":
+    "Type of element, number of openings, approximate sizes, and when you need it.",
+  "contactPage.consentLabel":
+    "I agree that my details may be used to answer this enquiry. See the privacy policy.",
+  "contactPage.consentLink": "privacy policy",
+  "contactPage.submit": "Send message",
+  "contactPage.sending": "Sending…",
+  "contactPage.successTitle": "Message sent",
+  "contactPage.successBody":
+    "Thank you — the enquiry has arrived. You will normally get an answer within one working day.",
+  "contactPage.errorTitle": "The message could not be sent",
+  "contactPage.errorBody": "Please try again, or call the number on this page.",
+  "contactPage.fallbackTitle": "Finish sending from your email app",
+  "contactPage.fallbackBody":
+    "The message could not be sent from the website. Your text has been prepared as an email — open it and press send.",
+  "contactPage.fallbackAction": "Open in your email app",
+  "contactPage.requiredMark": "required",
+  "contactPage.errorName": "Please give a name we can address you by.",
+  "contactPage.errorEmail": "Please give a valid email address.",
+  "contactPage.errorMessage": "Please describe what you need — at least a couple of sentences.",
+  "contactPage.errorConsent": "We need this agreement before we may answer by email.",
+  "contactPage.enquiryAbout": "Enquiry about {product}",
+  "contactPage.enquiryGeneral": "Enquiry from the website",
+
   // ── Categorías ───────────────────────────────────────────────
   "category.comingSoonTitle": "This range is being prepared",
   "category.comingSoonBody":

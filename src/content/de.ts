@@ -186,6 +186,52 @@ export const de: Record<ContentKey, string> = {
   "about.ownerPortraitAlt": "", // TODO: DE
   "about.contactHeading": "", // TODO: DE
 
+  // ── Colores y acabados ───────────────────────────────────────
+  "colours.eyebrow": "", // TODO: DE
+  "colours.title": "", // TODO: DE
+  "colours.intro": "", // TODO: DE
+  "colours.filterGroup": "", // TODO: DE
+  "colours.filterMaterial": "", // TODO: DE
+  "colours.filterAll": "", // TODO: DE
+  "colours.groupRal": "", // TODO: DE
+  "colours.groupWoodDecor": "", // TODO: DE
+  "colours.groupAnodised": "", // TODO: DE
+  "colours.availableOn": "", // TODO: DE
+  "colours.noMatch": "", // TODO: DE
+  "colours.disclaimer": "", // TODO: DE
+  "colours.count": "", // TODO: DE
+
+  // ── Contacto ─────────────────────────────────────────────────
+  "contactPage.eyebrow": "", // TODO: DE
+  "contactPage.title": "", // TODO: DE
+  "contactPage.intro": "", // TODO: DE
+  "contactPage.formHeading": "", // TODO: DE
+  "contactPage.detailsHeading": "", // TODO: DE
+  "contactPage.nameLabel": "", // TODO: DE
+  "contactPage.emailLabel": "", // TODO: DE
+  "contactPage.phoneLabel": "", // TODO: DE
+  "contactPage.productLabel": "", // TODO: DE
+  "contactPage.messageLabel": "", // TODO: DE
+  "contactPage.messagePlaceholder": "", // TODO: DE
+  "contactPage.consentLabel": "", // TODO: DE
+  "contactPage.consentLink": "", // TODO: DE
+  "contactPage.submit": "", // TODO: DE
+  "contactPage.sending": "", // TODO: DE
+  "contactPage.successTitle": "", // TODO: DE
+  "contactPage.successBody": "", // TODO: DE
+  "contactPage.errorTitle": "", // TODO: DE
+  "contactPage.errorBody": "", // TODO: DE
+  "contactPage.fallbackTitle": "", // TODO: DE
+  "contactPage.fallbackBody": "", // TODO: DE
+  "contactPage.fallbackAction": "", // TODO: DE
+  "contactPage.requiredMark": "", // TODO: DE
+  "contactPage.errorName": "", // TODO: DE
+  "contactPage.errorEmail": "", // TODO: DE
+  "contactPage.errorMessage": "", // TODO: DE
+  "contactPage.errorConsent": "", // TODO: DE
+  "contactPage.enquiryAbout": "", // TODO: DE
+  "contactPage.enquiryGeneral": "", // TODO: DE
+
   // ── Categorías ───────────────────────────────────────────────
   "category.comingSoonTitle": "", // TODO: DE
   "category.comingSoonBody": "", // TODO: DE
