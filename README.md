@@ -46,6 +46,16 @@ npm run dev          # http://localhost:3000
   self-hosted, there is no analytics, and the map is an image linking to Google Maps rather than an
   embedded iframe.
 
+### If a replaced image still shows the old one locally
+
+Next caches every optimised image in `.next/cache/images`, keyed by URL. Replace a file without
+changing its name — which is exactly what the placeholder workflow does — and the dev server keeps
+serving the cached copy. Deployments are unaffected: each one starts with an empty cache.
+
+```bash
+rm -rf .next/cache/images    # PowerShell: Remove-Item -Recurse -Force .next\cache\images
+```
+
 ## The catalogue showcase
 
 Four entrance doors are **products**: hand-written pages with a gallery, a full specification and
