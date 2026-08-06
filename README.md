@@ -51,5 +51,9 @@ Everything in `src/data` is **example data** except `company.ts`. Each file says
 
 ## Deployment
 
-Vercel. Set `RESEND_API_KEY`, `RESEND_FROM` and (optionally) `NEXT_PUBLIC_SITE_URL` — see
-`.env.example`. Without the Resend variables the contact form falls back to a prepared `mailto:`.
+Vercel, from `main`. Set `RESEND_API_KEY` and `RESEND_FROM` — see `.env.example`. Without them the
+contact form falls back to a prepared `mailto:`.
+
+The site's public address resolves itself from the build (`VERCEL_PROJECT_PRODUCTION_URL`), so
+canonical tags, the sitemap and the JSON-LD follow the domain connected in the Vercel dashboard.
+`NEXT_PUBLIC_SITE_URL` is only needed to force a different host.

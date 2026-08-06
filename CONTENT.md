@@ -89,7 +89,7 @@ which are stock and which are made to order, and which are unavailable on a give
 | `[~]`  | `src/data/categories.ts`       | The 8 category intros are a technical draft written by me. They need reading through — they must describe what Kamika actually supplies. | Owner |
 | `[ ]`  | `src/data/company.ts`          | **Opening hours.** Currently `null`, so the site simply omits the block rather than publishing invented hours. | Owner |
 | `[ ]`  | `src/data/company.ts`          | Confirm the map coordinates (currently the centre of Hechingen, not the exact address). | You   |
-| `[ ]`  | `src/lib/site.ts`              | **The final domain.** Everything absolute — canonical tags, sitemap, OpenGraph, JSON-LD — is built from it. Currently assumes `https://kamika-bauelemente.de`; can be overridden in Vercel with `NEXT_PUBLIC_SITE_URL` without touching code. | Owner |
+| `[ ]`  | Vercel → domain                | **The final domain.** Everything absolute — canonical tags, sitemap, OpenGraph, JSON-LD — is built from it, and it now resolves itself from the Vercel build (`VERCEL_PROJECT_PRODUCTION_URL`). Connecting `kamika-bauelemente.de` in the Vercel dashboard is enough; no code change and no environment variable. `NEXT_PUBLIC_SITE_URL` only exists to force a different host. | Owner |
 | `[ ]`  | Vercel → environment variables | `RESEND_API_KEY` and `RESEND_FROM` (see `.env.example`). Until they are set, the contact form does not send by itself: it hands the visitor a ready-written `mailto:`. That works, but it loses anyone without a mail client configured. | You   |
 
 ## 5. Brand assets
