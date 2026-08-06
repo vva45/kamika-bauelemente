@@ -136,9 +136,55 @@ export const de: Record<ContentKey, string> = {
   // ── Catálogos ────────────────────────────────────────────────
   "catalogue.pages": "", // TODO: DE
   "catalogue.size": "", // TODO: DE
+  "catalogues.eyebrow": "", // TODO: DE
+  "catalogues.title": "", // TODO: DE
+  "catalogues.intro": "", // TODO: DE
+  "catalogue.openCatalogue": "", // TODO: DE
+  "catalogue.viewerHint": "", // TODO: DE
+  "catalogue.mobileNote": "", // TODO: DE
+  "catalogue.fallbackBody": "", // TODO: DE
+  "catalogue.general": "", // TODO: DE
+  "catalogue.otherCatalogues": "", // TODO: DE
+  "catalogue.comingSoonTitle": "", // TODO: DE
+  "catalogue.comingSoonBody": "", // TODO: DE
 
   // ── Proyectos ────────────────────────────────────────────────
   "project.installed": "", // TODO: DE
+  "projects.eyebrow": "", // TODO: DE
+  "projects.title": "", // TODO: DE
+  "projects.intro": "", // TODO: DE
+  "projects.filterCategory": "", // TODO: DE
+  "projects.filterYear": "", // TODO: DE
+  "projects.filterAll": "", // TODO: DE
+  "projects.noMatch": "", // TODO: DE
+  "projects.comingSoonTitle": "", // TODO: DE
+  "projects.comingSoonBody": "", // TODO: DE
+  "project.productsUsed": "", // TODO: DE
+  "project.locationLabel": "", // TODO: DE
+  "project.yearLabel": "", // TODO: DE
+  "project.allProjects": "", // TODO: DE
+
+  // ── Sobre la empresa ─────────────────────────────────────────
+  "about.eyebrow": "", // TODO: DE
+  "about.title": "", // TODO: DE
+  "about.intro": "", // TODO: DE
+  "about.companyHeading": "", // TODO: DE
+  "about.companyBody1": "", // TODO: DE
+  "about.companyBody2": "", // TODO: DE
+  "about.companyBody3": "", // TODO: DE
+  "about.factsHeading": "", // TODO: DE
+  "about.factLocationLabel": "", // TODO: DE
+  "about.factAreaLabel": "", // TODO: DE
+  "about.factAreaValue": "", // TODO: DE
+  "about.factRangesLabel": "", // TODO: DE
+  "about.factRangesValue": "", // TODO: DE
+  "about.factOwnerLabel": "", // TODO: DE
+  "about.ownerEyebrow": "", // TODO: DE
+  "about.ownerRole": "", // TODO: DE
+  "about.ownerBody1": "", // TODO: DE
+  "about.ownerBody2": "", // TODO: DE
+  "about.ownerPortraitAlt": "", // TODO: DE
+  "about.contactHeading": "", // TODO: DE
 
   // ── Categorías ───────────────────────────────────────────────
   "category.comingSoonTitle": "", // TODO: DE

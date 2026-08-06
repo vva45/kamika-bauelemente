@@ -147,9 +147,67 @@ export const en = {
   // ── Catálogos ────────────────────────────────────────────────
   "catalogue.pages": "pages",
   "catalogue.size": "MB",
+  "catalogues.eyebrow": "Documentation",
+  "catalogues.title": "Catalogues",
+  "catalogues.intro":
+    "The full ranges as PDF. Read them here in the browser or download them — no form and no email address required.",
+  "catalogue.openCatalogue": "Open catalogue",
+  "catalogue.viewerHint": "Use the viewer controls to page through, zoom or print.",
+  "catalogue.mobileNote":
+    "Phone browsers display embedded PDFs badly, so the catalogue opens in your own PDF viewer instead.",
+  "catalogue.fallbackBody":
+    "This browser cannot display the PDF on the page. Open it in a new tab or download it.",
+  "catalogue.general": "General catalogue",
+  "catalogue.otherCatalogues": "Other catalogues",
+  "catalogue.comingSoonTitle": "The catalogues are being prepared",
+  "catalogue.comingSoonBody":
+    "The PDF ranges are not online yet. Call or write and we will send you the current documentation by email.",
 
   // ── Proyectos ────────────────────────────────────────────────
   "project.installed": "Installed",
+  "projects.eyebrow": "Completed work",
+  "projects.title": "Projects",
+  "projects.intro":
+    "What the customer asked for, what was fitted and where. Filter by the range that was installed or by year.",
+  "projects.filterCategory": "Range",
+  "projects.filterYear": "Year",
+  "projects.filterAll": "All",
+  "projects.noMatch": "No project matches that combination yet.",
+  "projects.comingSoonTitle": "The first projects are being documented",
+  "projects.comingSoonBody":
+    "Photographs of completed installations are being collected. Call or write and we will show you work in your area.",
+  "project.productsUsed": "What was fitted",
+  "project.locationLabel": "Location",
+  "project.yearLabel": "Year",
+  "project.allProjects": "All projects",
+
+  // ── Sobre la empresa ─────────────────────────────────────────
+  "about.eyebrow": "Hechingen · Zollernalbkreis",
+  "about.title": "A one-man business that measures, supplies and fits.",
+  "about.intro":
+    "Kamika Bauelemente supplies building elements for houses and flats in Hechingen and the surrounding area: windows, entrance and interior doors, roller shutters, insect screens, gates, fences and the hardware that goes with them.",
+  "about.companyHeading": "The company",
+  "about.companyBody1":
+    "Every job runs the same way: the opening is looked at on site, the offer names the profile, the glazing and the fittings, and the final measurements are taken only once the offer is accepted. Nothing is ordered off a drawing.",
+  "about.companyBody2":
+    "Because the whole opening comes from one supplier, the shutter box, the insect screen and the window are planned together instead of being bolted on afterwards — the colours match and the sizes fit the first time.",
+  "about.companyBody3":
+    "After the installation the same person handles adjustment, gaskets, fittings and glass replacement. The order data stays on file so spare parts match years later.",
+  "about.factsHeading": "At a glance",
+  "about.factLocationLabel": "Based in",
+  "about.factAreaLabel": "Working area",
+  "about.factAreaValue": "Hechingen, Zollernalbkreis and the surrounding towns",
+  "about.factRangesLabel": "Ranges",
+  "about.factRangesValue": "{count} product ranges, from windows to hardware",
+  "about.factOwnerLabel": "Run by",
+  "about.ownerEyebrow": "About me",
+  "about.ownerRole": "Inhaber",
+  "about.ownerBody1":
+    "I have been fitting windows and doors in this area for years, first for other companies and now under my own name. I still do the measuring and the installation myself, which is why the person who quotes the job is the person who turns up to do it.",
+  "about.ownerBody2":
+    "If something needs adjusting afterwards, you call me directly — not a service line.",
+  "about.ownerPortraitAlt": "Portrait of Dominik Kamienski, owner of Kamika Bauelemente",
+  "about.contactHeading": "Contact me directly",
 
   // ── Categorías ───────────────────────────────────────────────
   "category.comingSoonTitle": "This range is being prepared",

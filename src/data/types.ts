@@ -73,6 +73,16 @@ export interface Project {
   categories: CategorySlug[]; // qué se instaló
   summary: Localized<string>; // 2-3 frases: qué pedía el cliente, qué se puso
   images: ProductImage[]; // mínimo 3
+  /**
+   * Modelos concretos que se instalaron, por id de producto.
+   *
+   * No venía en el modelo de datos del encargo, pero el detalle de
+   * proyecto tiene que enlazar a las fichas de lo que se puso. Deducirlo
+   * de `categories` daría una lista inventada: "se instalaron ventanas"
+   * no es lo mismo que "se instaló este modelo". Es opcional: un
+   * proyecto sin lista simplemente no enseña el bloque.
+   */
+  products?: string[];
   featured?: boolean;
 }
 

@@ -1,13 +1,13 @@
 "use client";
 
 /**
- * Galería de la ficha de producto: imagen grande en el marco firma,
- * miniaturas debajo y un lightbox propio — sin librerías, que para
- * cuatro fotos no hacen falta.
+ * Galería compartida: imagen grande en el marco firma, miniaturas
+ * debajo y un lightbox propio — sin librerías, que para cuatro fotos no
+ * hacen falta. La usan la ficha de producto y el detalle de proyecto.
  *
  * Sobre la imagen principal van las dos líneas de cota con el tamaño
- * máximo real del elemento; si el producto no declara medidas (una
- * manilla, un cilindro), no se pintan.
+ * máximo real del elemento; si quien la usa no pasa medidas (una
+ * manilla, un cilindro, un proyecto), no se pintan.
  *
  * Teclado: las miniaturas son botones; en el lightbox, Escape cierra y
  * las flechas navegan. Mientras está abierto, la página de detrás no
@@ -23,13 +23,14 @@ import type { ProductImage } from "@/data/types";
 import { cn } from "@/lib/cn";
 import { formatNumber, pick, t, tf } from "@/lib/i18n";
 
-type ProductGalleryProps = {
+type GalleryProps = {
   images: ProductImage[];
-  productName: string;
-  dimensions: { width: number; height: number } | null;
+  title: string;
+  /** Solo la ficha de producto pinta cotas; en proyectos no hay medida que dar. */
+  dimensions?: { width: number; height: number } | null;
 };
 
-export function ProductGallery({ images, productName, dimensions }: ProductGalleryProps) {
+export function Gallery({ images, title, dimensions = null }: GalleryProps) {
   const [active, setActive] = useState(0);
   const [lightbox, setLightbox] = useState(false);
   const closeRef = useRef<HTMLButtonElement | null>(null);
@@ -148,7 +149,7 @@ export function ProductGallery({ images, productName, dimensions }: ProductGalle
         <div
           role="dialog"
           aria-modal="true"
-          aria-label={productName}
+          aria-label={title}
           className="fixed inset-0 z-100 flex flex-col bg-kamika-ink/95"
           onClick={(event) => {
             // Click en el fondo cierra; en la imagen o los controles, no.

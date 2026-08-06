@@ -12,13 +12,13 @@
  * 6. Franja de contacto con teléfono y email reales.
  */
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ContactCta } from "@/components/layout/ContactCta";
+import { Gallery } from "@/components/media/Gallery";
 import { ProductCard } from "@/components/product/ProductCard";
-import { ProductGallery } from "@/components/product/ProductGallery";
 import { ProductSpecTable } from "@/components/product/ProductSpecTable";
 import { ProjectCard } from "@/components/project/ProjectCard";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { ButtonLink } from "@/components/ui/Button";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { DocumentIcon } from "@/components/ui/icons";
@@ -70,32 +70,20 @@ export default async function ProductPage({
     <>
       <div className="mx-auto max-w-[1440px] px-5 py-8 md:px-8">
         {/* ── Breadcrumb ────────────────────────────────────────── */}
-        <nav aria-label={t("a11y.breadcrumb")}>
-          <ol className="flex flex-wrap items-center gap-2 font-mono text-[0.6875rem] tracking-[0.12em] text-kamika-steel uppercase">
-            <li>
-              <Link href={routes.products} className="hover:text-kamika-ink">
-                {t("nav.products")}
-              </Link>
-            </li>
-            <li aria-hidden>/</li>
-            <li>
-              <Link href={routes.category(category.slug)} className="hover:text-kamika-ink">
-                {pick(category.name)}
-              </Link>
-            </li>
-            <li aria-hidden>/</li>
-            <li aria-current="page" className="text-kamika-ink">
-              {product.name}
-            </li>
-          </ol>
-        </nav>
+        <Breadcrumb
+          items={[
+            { label: t("nav.products"), href: routes.products },
+            { label: pick(category.name), href: routes.category(category.slug) },
+            { label: product.name },
+          ]}
+        />
 
         {/* ── Galería + columna de compra ───────────────────────── */}
         <div className="mt-8 grid gap-12 lg:grid-cols-5 lg:gap-14">
           <div className="lg:col-span-3">
-            <ProductGallery
+            <Gallery
               images={product.images}
-              productName={product.name}
+              title={product.name}
               dimensions={productDimensions(product)}
             />
           </div>

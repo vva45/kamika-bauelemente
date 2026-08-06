@@ -69,6 +69,20 @@ export const getProject = (id: string): Project | undefined =>
 export const getProjectsByCategory = (slug: CategorySlug): Project[] =>
   PROJECTS.filter((project) => project.categories.includes(slug)).sort((a, b) => b.year - a.year);
 
+/**
+ * Modelos instalados en un proyecto, ya resueltos a producto.
+ * Los ids que no existan se descartan en silencio: cambiar el catálogo
+ * no puede dejar enlaces muertos en un proyecto ya publicado.
+ */
+export const getProjectProducts = (project: Project): Product[] =>
+  (project.products ?? [])
+    .map((id) => getProduct(id))
+    .filter((product): product is Product => product !== undefined);
+
+/** Años con proyectos, del más reciente al más antiguo (para el filtro). */
+export const getProjectYears = (): number[] =>
+  [...new Set(PROJECTS.map((project) => project.year))].sort((a, b) => b - a);
+
 export const getFeaturedProjects = (limit?: number): Project[] => {
   // Si aún no hay ninguno marcado como destacado, se enseñan los más
   // recientes: mejor eso que una sección vacía en la home.

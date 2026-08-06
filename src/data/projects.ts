@@ -34,6 +34,13 @@ export const PROJECTS: Project[] = [
         alt: { en: "Garden door with a pleated insect screen fitted" },
       },
     ],
+    /** Modelos instalados, para enlazar a sus fichas desde el detalle. */
+    products: [
+      "pvc-82-comfort",
+      "roller-shutter-front-mounted",
+      "insect-screen-pleated",
+      "handle-lockable",
+    ],
     featured: true,
   },
   {
@@ -58,6 +65,13 @@ export const PROJECTS: Project[] = [
         src: "/images/projects/apartment-block-balingen-3.jpg",
         alt: { en: "Courtyard elevation with the replacement PVC windows" },
       },
+    ],
+    /** Modelos instalados, para enlazar a sus fichas desde el detalle. */
+    products: [
+      "alu-75-slim",
+      "pvc-70-classic",
+      "alu-86-thermo",
+      "security-cylinder",
     ],
     featured: true,
   },
@@ -84,6 +98,12 @@ export const PROJECTS: Project[] = [
         alt: { en: "Wall-flush interior door in the converted farmhouse" },
       },
     ],
+    /** Modelos instalados, para enlazar a sus fichas desde el detalle. */
+    products: [
+      "wood-alu-92-nature",
+      "veneer-oak",
+      "handle-lockable",
+    ],
     featured: true,
   },
   {
@@ -109,6 +129,13 @@ export const PROJECTS: Project[] = [
         alt: { en: "Aluminium fence panels along the front boundary" },
       },
     ],
+    /** Modelos instalados, para enlazar a sus fichas desde el detalle. */
+    products: [
+      "alu-panel-line",
+      "sectional-garage-40",
+      "sliding-gate-alu",
+      "fence-horizontal-alu",
+    ],
   },
   {
     id: "office-fitout-tuebingen",
@@ -133,6 +160,12 @@ export const PROJECTS: Project[] = [
         alt: { en: "Open-plan office area with the new aluminium windows" },
       },
     ],
+    /** Modelos instalados, para enlazar a sus fichas desde el detalle. */
+    products: [
+      "alu-75-slim",
+      "acoustic-32",
+      "cpl-basic",
+    ],
   },
   {
     id: "bungalow-bisingen",
@@ -156,6 +189,13 @@ export const PROJECTS: Project[] = [
         src: "/images/projects/bungalow-bisingen-3.jpg",
         alt: { en: "Large window opening onto the terrace of the bungalow" },
       },
+    ],
+    /** Modelos instalados, para enlazar a sus fichas desde el detalle. */
+    products: [
+      "pvc-82-comfort",
+      "roller-shutter-concealed",
+      "side-hinged-garage",
+      "window-sill-aluminium",
     ],
   },
 ];
