@@ -124,6 +124,8 @@ export const de: Record<ContentKey, string> = {
   "home.ctaTitle": "", // TODO: DE
   "home.ctaBody": "", // TODO: DE
   "home.viewOnMap": "", // TODO: DE
+  "map.showMap": "", // TODO: DE
+  "map.notice": "", // TODO: DE
   "home.mapAlt": "", // TODO: DE
   "home.colourRenderAlt": "", // TODO: DE
 

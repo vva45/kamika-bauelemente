@@ -8,7 +8,6 @@
  * formulario.
  */
 import type { Metadata } from "next";
-import Link from "next/link";
 import { ContactForm, type ProductOptionGroup } from "@/components/contact/ContactForm";
 import { LocationMap } from "@/components/contact/LocationMap";
 import { ArrowUpRightIcon, ClockIcon, MailIcon, PhoneIcon, PinIcon } from "@/components/ui/icons";
@@ -137,11 +136,6 @@ export default async function ContactPage({ searchParams }: PageProps<"/contact"
             </a>
           </p>
 
-          <p className="mt-4 text-sm text-kamika-ink/60">
-            <Link href={routes.privacy} className="text-kamika-steel underline">
-              {t("footer.privacy")}
-            </Link>
-          </p>
         </aside>
       </div>
     </section>

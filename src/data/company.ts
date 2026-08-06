@@ -75,12 +75,11 @@ export const companyMapsHref = `https://www.google.com/maps/search/?api=1&query=
  * coordenadas que hay en `COMPANY.geo` son del centro de Hechingen y
  * están para el JSON-LD, no para señalar el taller.
  *
- * ⚠️ AVISO LEGAL: esto sí es una incrustación de terceros. Al abrir la
- * página el navegador del visitante conecta con Google y este puede
- * poner cookies. Está declarado en el Datenschutz (§ 8 y § 9). Si el
- * dueño prefiere no depender del consentimiento, la alternativa es la
- * "solución de dos clics": enseñar una portada y cargar el iframe solo
- * al pulsar. Ver `LocationMap`.
+ * ⚠️ Esta URL NO se pide al cargar la página: `LocationMap` la monta
+ * solo cuando el visitante pulsa "Show map" (solución de dos clics).
+ * Quien la use en otro sitio tiene que hacer lo mismo, porque abrirla
+ * conecta el navegador del visitante con Google. Declarado en el
+ * Datenschutz, § 9.
  */
 export const companyMapEmbedHref = `https://www.google.com/maps?q=${encodeURIComponent(
   fullAddress,

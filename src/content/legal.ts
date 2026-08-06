@@ -214,35 +214,33 @@ export const PRIVACY_BLOCKS: LegalBlock[] = [
     ],
   },
 
-  // EN: No analytics, no tracking, no third-party fonts. The site sets
-  // no cookies of its own — but since the location map was embedded,
-  // Google may set some, so the old "no cookies at all, no consent
-  // needed" wording would now be untrue and has been corrected.
-  // If the map is ever removed again, this section goes back to
-  // stating plainly that nothing third-party is loaded.
+  // EN: No cookies, no analytics, no third-party fonts, and nothing
+  // third-party loaded on page view. The one embed that exists — the
+  // map — is behind a click, so it loads nothing until the visitor
+  // asks for it. That is why the site still needs no cookie banner.
+  // Do not publish this section as it stands if anything third-party
+  // is ever loaded automatically.
   {
-    heading: "8. Cookies und Analyse-Werkzeuge",
+    heading: "8. Keine Cookies, keine Analyse-Werkzeuge",
     paragraphs: [
-      "Diese Website setzt selbst keine Cookies, verwendet keine Tracking- oder Analysedienste und lädt keine externen Schriftarten oder Social-Media-Plugins. Die verwendeten Schriftarten werden von unserem eigenen Server ausgeliefert.",
-      "Eine Ausnahme ist die eingebettete Standortkarte von Google Maps (siehe Ziffer 9). Beim Aufruf der Seiten, auf denen die Karte eingebunden ist, kann Google Cookies setzen und Daten verarbeiten.",
+      "Diese Website setzt keine Cookies, verwendet keine Tracking- oder Analysedienste und lädt beim Aufruf der Seiten keine Inhalte Dritter nach (keine externen Schriftarten, keine Social-Media-Plugins). Die verwendeten Schriftarten werden von unserem eigenen Server ausgeliefert.",
+      "Die Standortkarte wird erst nach Ihrem ausdrücklichen Klick geladen (siehe Ziffer 9). Solange Sie die Karte nicht anfordern, wird keine Verbindung zu Google hergestellt.",
+      "Eine Einwilligung in Cookies ist daher für die Nutzung dieser Website nicht erforderlich.",
     ],
   },
 
-  // EN: Google Maps is embedded on the contact block, so the visitor's
-  // browser contacts Google as soon as the map scrolls into view. This
-  // has to be declared: what is transmitted (IP address at minimum),
-  // the legal basis (Art. 6(1)(f) — showing customers where the
-  // workshop is), and who the recipient is, including the transfer to
-  // the United States under the EU-US Data Privacy Framework.
-  // TODO (owner / legal review): if consent is preferred over
-  // legitimate interest, the map must be put behind a click-to-load
-  // gate or a consent banner. That is a change in `LocationMap`.
+  // EN: Google Maps behind a two-click gate. Nothing is requested from
+  // Google until the visitor presses the button, so the legal basis is
+  // consent given by that click (Art. 6(1)(a) GDPR, § 25(1) TDDDG)
+  // rather than legitimate interest. The section still has to say what
+  // is transmitted, to whom, and that the data may reach the US.
   {
-    heading: "9. Google Maps",
+    heading: "9. Google Maps (Zwei-Klick-Lösung)",
     paragraphs: [
-      "Auf dieser Website ist eine Karte des Dienstes Google Maps eingebunden. Anbieter ist Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.",
-      "Beim Laden der Karte wird eine Verbindung zu Servern von Google hergestellt. Dabei wird Ihre IP-Adresse an Google übermittelt; Google kann zudem Cookies setzen. Die Karte wird erst geladen, wenn Sie den entsprechenden Seitenbereich erreichen.",
-      "Rechtsgrundlage ist unser berechtigtes Interesse an einer leicht auffindbaren Darstellung unseres Standorts (Art. 6 Abs. 1 lit. f DSGVO). Eine Datenübermittlung in die USA kann nicht ausgeschlossen werden; Google ist unter dem EU-US Data Privacy Framework zertifiziert.",
+      "Auf der Kontaktseite und in den Kontaktbereichen dieser Website können Sie eine Karte des Dienstes Google Maps anzeigen lassen. Anbieter ist Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.",
+      "Die Karte ist standardmäßig NICHT eingebunden. Zu sehen ist zunächst nur eine von uns selbst gestaltete Vorschaugrafik mit der Schaltfläche „Show map“. Erst wenn Sie diese Schaltfläche anklicken, wird die Karte nachgeladen und eine Verbindung zu Servern von Google hergestellt.",
+      "Ab diesem Zeitpunkt wird Ihre IP-Adresse an Google übermittelt; Google kann Cookies setzen und weitere Daten verarbeiten. Rechtsgrundlage ist Ihre durch den Klick erteilte Einwilligung (Art. 6 Abs. 1 lit. a DSGVO sowie § 25 Abs. 1 TDDDG). Sie können die Einwilligung jederzeit widerrufen, indem Sie die Seite neu laden und die Karte nicht erneut anfordern; die Einwilligung wird nicht gespeichert.",
+      "Eine Datenübermittlung in die USA kann nicht ausgeschlossen werden; Google ist unter dem EU-US Data Privacy Framework zertifiziert.",
       "Weitere Informationen finden Sie in der Datenschutzerklärung von Google: https://policies.google.com/privacy",
     ],
   },

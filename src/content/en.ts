@@ -131,6 +131,9 @@ export const en = {
   "home.ctaBody":
     "Call, write, or send the measurements you already have. You will get an answer from Dominik, not from a call centre.",
   "home.viewOnMap": "View on Google Maps",
+  "map.showMap": "Show map",
+  "map.notice":
+    "The map is only loaded when you ask for it. Showing it connects your browser to Google Maps, and Google may set cookies.",
   "home.mapAlt": "Map showing the location of Kamika Bauelemente in Hechingen",
   "home.colourRenderAlt": "Window frame shown in the selected colour",
 

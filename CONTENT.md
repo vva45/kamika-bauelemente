@@ -31,26 +31,35 @@ npm run assets:placeholders
 | `[~]`  | `public/images/catalogues/{id}-cover.jpg`         | Front cover of each catalogue — it is also the card the visitor clicks in the range. ROKA's two PDFs have real covers, rendered from page 1. The Despiro and panel PDFs are extracts with no cover, so theirs are composed by `node scripts/build-collection-covers.mjs` from two of their own models. If the supplier sends a complete PDF, render page 1 and drop the composed one. | You   |
 | `[~]`  | `public/images/projects/{id}-{n}.jpg`             | Minimum 3 photos per completed project.                                        | Owner |
 | `[~]`  | `public/images/colours/render.jpg`                | One frame photographed in a **light, neutral colour** (white or light grey), evenly lit. The colour picker tints it with `mix-blend-multiply`, which keeps the shadows of the profile — but that only works if the source is pale. A dark frame will tint to mud. | Owner |
-| `[x]`  | ~~`public/images/contact/map.jpg`~~               | Gone. The location is now a **live Google Maps embed** (`LocationMap`), because the owner wants visitors to be able to move around the map rather than look at a picture. It pins the address itself, so nothing has to be supplied. **Read the note under "Google Maps" below** — this is the one third-party embed on the site. | —     |
+| `[x]`  | ~~`public/images/contact/map.jpg`~~               | Gone. The location is a **Google Maps embed behind a click** (`LocationMap`), with a cover the site draws itself. It pins the address on its own, so nothing has to be supplied. See the note below before changing how it loads. | —     |
 
 > No stock photography of smiling people pointing at windows. Real installations only.
 
-### Google Maps — the one decision that needs the owner's sign-off
+### Google Maps — behind a click, on purpose
 
-The contact block used to be a static image linked to Google Maps, on purpose: nothing
-third-party loaded, so the site needed no cookie banner and the Datenschutz could say so plainly.
-The owner asked for a real, navigable map, so it is now an embedded Google Maps iframe.
+The location is a real, navigable Google map, but it is **not loaded when the page opens**. What
+the visitor sees first is a cover drawn by the site itself with the address and a "Show map"
+button; the iframe is mounted only when that button is pressed (`Zwei-Klick-Lösung`, the standard
+German pattern). Until then the browser contacts nobody.
 
-What that changes, factually:
+Why it matters, in one line each:
 
-- The visitor's browser contacts Google when the map scrolls into view (`loading="lazy"`, so most
-  visits to pages where it sits at the bottom never request it). Google receives the IP address and
-  may set cookies.
-- `src/content/legal.ts` was corrected: § 8 no longer claims "no cookies at all", and a new § 9
-  declares Google Maps, the legal basis (legitimate interest, Art. 6(1)(f)) and the US transfer.
-- German practice is split on whether legitimate interest is enough or consent is required. **Ask
-  the lawyer who reviews the Impressum.** If the answer is consent, the fix is a click-to-load gate
-  inside `src/components/contact/LocationMap.tsx` — one component, no other file touched.
+- Without the gate, every visit would send the visitor's IP to Google and let Google set cookies —
+  the mechanism a Munich court ruled on for Google Fonts in 2022, and the reason for the wave of
+  cease-and-desist letters that followed.
+- With the gate, the click **is** the consent (Art. 6(1)(a) GDPR, § 25(1) TDDDG), the site still
+  needs no cookie banner, and `src/content/legal.ts` § 8 can go on saying plainly that nothing
+  third-party loads on its own.
+- The consent is deliberately **not** remembered between pages: storing it would mean writing to
+  the visitor's device, which is the very thing § 25 governs. One extra click is cheaper than that
+  argument.
+- The cover is an abstract drawing in the brand colours, not a map of Hechingen. Faking the street
+  layout would be dishonest, and a real preview tile would have to come from a map server — which
+  is exactly what the gate exists to avoid.
+
+If any of this is ever changed — map loaded automatically, consent remembered, another embed added
+— **§ 8 and § 9 of the Datenschutzerklärung stop being true** and must be rewritten in the same
+commit.
 
 ## 2. PDFs
 
