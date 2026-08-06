@@ -63,9 +63,7 @@ export const companyEmailHref = `mailto:${COMPANY.email}`;
 /**
  * WhatsApp. `wa.me` quiere el número en E.164 sin el "+" ni espacios.
  *
- * ⚠️ PENDIENTE DE CONFIRMAR: que ESE número tenga WhatsApp. Si no lo
- * tiene, el enlace lleva a "este número no está en WhatsApp", que es
- * peor que no ofrecerlo. Ver CONTENT.md.
+ * Confirmado: este número tiene WhatsApp y ya se usa con clientes.
  */
 const whatsappNumber = COMPANY.phone.replace(/[^\d]/g, "");
 

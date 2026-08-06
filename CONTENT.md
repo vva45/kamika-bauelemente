@@ -51,9 +51,7 @@ button, and the address in plain sight. Nothing is lost, but **nothing arrives o
 **WhatsApp** now appears in the contact block, the contact page, the footer and the fallback, as
 `https://wa.me/491627742992`, built from `COMPANY.phone`.
 
-- ⚠️ **Confirm that number is actually on WhatsApp.** If it is not, the link lands on "this number
-  is not on WhatsApp", which is worse than not offering it. That is the one thing to verify before
-  the site is shown to customers.
+- ✅ Confirmed by the owner's side: that number is on WhatsApp and is already used with customers.
 - No WhatsApp logo is used, only the name and a neutral speech bubble — same rule as everywhere
   else on this site: no third-party marks.
 

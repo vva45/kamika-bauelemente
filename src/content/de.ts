@@ -55,7 +55,6 @@ export const de: Record<ContentKey, string> = {
   // enlaza a la web del fabricante, se autoaloja su PDF y este es el
 
   // botón secundario. Todavía no hay ninguna marca de terceros.
-  "common.downloadCatalogue": "", // TODO: DE
   "common.browse": "", // TODO: DE
   "common.download": "", // TODO: DE
   "common.openInNewTab": "", // TODO: DE

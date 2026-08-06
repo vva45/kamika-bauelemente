@@ -51,7 +51,6 @@ export const en = {
   // Reservada: regla de negocio para marcas de terceros — nunca se
   // enlaza a la web del fabricante, se autoaloja su PDF y este es el
   // botón secundario. Todavía no hay ninguna marca de terceros.
-  "common.downloadCatalogue": "Download catalogue (PDF)",
   "common.browse": "Browse",
   "common.download": "Download",
   "common.openInNewTab": "Open in new tab",
