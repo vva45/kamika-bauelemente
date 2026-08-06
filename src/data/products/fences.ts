@@ -23,8 +23,7 @@ export const fences: Product[] = [
       { label: { en: "Gap options" }, value: "10 / 20 / 40 mm" },
       { label: { en: "Coating" }, value: "Powder, all RAL" },
       { label: { en: "Posts" }, value: "60 × 60 mm, set in concrete" },
-      { label: { en: "Slopes" }, value: "Stepped or raked" },
-    ],
+      { label: { en: "Slopes" }, value: "Stepped or raked" }],
     images: [
       {
         src: "/images/fences/fence-horizontal-alu-1.jpg",
@@ -37,8 +36,7 @@ export const fences: Product[] = [
       {
         src: "/images/fences/fence-horizontal-alu-3.jpg",
         alt: { en: "Stepped Linea Horizontal panels on a sloping plot" },
-      },
-    ],
+      }],
     related: ["sliding-gate-alu", "pedestrian-gate-alu"],
     featured: true,
   },
@@ -57,8 +55,7 @@ export const fences: Product[] = [
       { label: { en: "Finish" }, value: "Galvanised + powder", highlight: true },
       { label: { en: "Post spacing" }, value: "up to 2500", unit: "mm" },
       { label: { en: "Bar spacing" }, value: "110 mm clear" },
-      { label: { en: "Fixing" }, value: "Concrete or flange plate" },
-    ],
+      { label: { en: "Fixing" }, value: "Concrete or flange plate" }],
     images: [
       {
         src: "/images/fences/fence-vertical-bar-1.jpg",
@@ -71,8 +68,7 @@ export const fences: Product[] = [
       {
         src: "/images/fences/fence-vertical-bar-3.jpg",
         alt: { en: "Flange-plate post fixing on a low wall" },
-      },
-    ],
+      }],
     related: ["swing-gate-alu", "pedestrian-gate-alu"],
   },
   {
@@ -90,8 +86,7 @@ export const fences: Product[] = [
       { label: { en: "Wind load" }, value: "Calculated per site", highlight: true },
       { label: { en: "Post spacing" }, value: "up to 1500", unit: "mm" },
       { label: { en: "Coating" }, value: "Powder, all RAL + decor" },
-      { label: { en: "Posts" }, value: "80 × 80 mm at full height" },
-    ],
+      { label: { en: "Posts" }, value: "80 × 80 mm at full height" }],
     images: [
       {
         src: "/images/fences/fence-privacy-screen-1.jpg",
@@ -104,8 +99,7 @@ export const fences: Product[] = [
       {
         src: "/images/fences/fence-privacy-screen-3.jpg",
         alt: { en: "Sichtschutz Voll in wood decor along a boundary" },
-      },
-    ],
+      }],
     related: ["fence-horizontal-alu", "sliding-gate-alu"],
   },
   {
@@ -123,8 +117,7 @@ export const fences: Product[] = [
       { label: { en: "Latch" }, value: "Lockable cylinder", highlight: true },
       { label: { en: "Max. size" }, value: "1200 × 1800", unit: "mm" },
       { label: { en: "Electric strike" }, value: "Optional" },
-      { label: { en: "Infill" }, value: "Matches fence range" },
-    ],
+      { label: { en: "Infill" }, value: "Matches fence range" }],
     images: [
       {
         src: "/images/fences/pedestrian-gate-alu-1.jpg",
@@ -137,8 +130,6 @@ export const fences: Product[] = [
       {
         src: "/images/fences/pedestrian-gate-alu-3.jpg",
         alt: { en: "Electric strike detail for intercom release" },
-      },
-    ],
+      }],
     related: ["fence-horizontal-alu", "swing-gate-alu"],
-  },
-];
+  }];

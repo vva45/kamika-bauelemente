@@ -4,6 +4,12 @@
  * docena de sitios.
  */
 import { CATALOGUE_MODELS } from "./catalogue-models";
+import {
+  MANUFACTURERS,
+  getManufacturer,
+  getManufacturersByCategory,
+  getSystem,
+} from "./manufacturers";
 import { CATALOGUES, getCatalogue } from "./catalogues";
 import {
   CATEGORIES,
@@ -27,6 +33,10 @@ import type {
 export {
   CATALOGUE_MODELS,
   CATALOGUES,
+  MANUFACTURERS,
+  getManufacturer,
+  getManufacturersByCategory,
+  getSystem,
   CATEGORIES,
   CATEGORY_SLUGS,
   COLORS,
@@ -99,7 +109,14 @@ export const countModelsInCategory = (slug: CategorySlug): number => {
     (catalogue) => catalogue.id,
   );
   const models = CATALOGUE_MODELS.filter((model) => catalogueIds.includes(model.catalogue)).length;
-  return Math.max(models, getProductsByCategory(slug).length);
+  // Una gama organizada por fabricantes cuenta sus sistemas: es lo que
+  // el visitante puede abrir hoy. Cuando llegue el catálogo del
+  // fabricante, sus modelos extraídos pasarán a mandar solos.
+  const systems = getManufacturersByCategory(slug).reduce(
+    (total, manufacturer) => total + manufacturer.systems.length,
+    0,
+  );
+  return Math.max(models, systems, getProductsByCategory(slug).length);
 };
 
 /** Familias declaradas en un catálogo, para agrupar el escaparate. */

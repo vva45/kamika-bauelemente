@@ -246,6 +246,18 @@ export const de: Record<ContentKey, string> = {
   "notFound.body": "", // TODO: DE
   "notFound.backHome": "", // TODO: DE
 
+  // ── Fabricantes y sistemas ───────────────────────────────────
+  "manufacturer.eyebrow": "", // TODO: DE
+  "manufacturer.systemCountOne": "", // TODO: DE
+  "manufacturer.systemCountOther": "", // TODO: DE
+  "manufacturer.systemsHeading": "", // TODO: DE
+  "manufacturer.systemsIntro": "", // TODO: DE
+  "manufacturer.chooseIntro": "", // TODO: DE
+  "system.versionsTitle": "", // TODO: DE
+  "system.versionsComingSoon": "", // TODO: DE
+  "system.otherSystems": "", // TODO: DE
+  "system.fromManufacturer": "", // TODO: DE
+
   // ── Categorías ───────────────────────────────────────────────
   "category.comingSoonTitle": "", // TODO: DE
   "category.comingSoonBody": "", // TODO: DE

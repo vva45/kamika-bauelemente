@@ -12,12 +12,14 @@ import { CategoryHero } from "@/components/category/CategoryHero";
 import { CategoryProducts } from "@/components/category/CategoryProducts";
 import { CatalogueCard } from "@/components/catalogue/CatalogueCard";
 import { ContactCta } from "@/components/layout/ContactCta";
+import { ManufacturerCard } from "@/components/manufacturer/ManufacturerCard";
 import { ComingSoon } from "@/components/ui/ComingSoon";
 import {
   CATALOGUES,
   CATEGORY_SLUGS,
   countModelsInCategory,
   getCategory,
+  getManufacturersByCategory,
   getProductsByCategory,
   isCategorySlug,
 } from "@/data";
@@ -53,13 +55,32 @@ export default async function CategoryPage({ params }: PageProps<"/products/[cat
   if (!category) notFound();
 
   const products = getProductsByCategory(slug);
-  const comingSoon = category.comingSoon || products.length === 0;
+  // Jerarquía por fabricante (petición del dueño para ventanas): si la
+  // gama declara fabricantes, la categoría enseña sus "casitas" en vez
+  // de modelos sueltos. Fabricante → sistemas → versiones.
+  const manufacturers = getManufacturersByCategory(slug);
+  const comingSoon = manufacturers.length === 0 && (category.comingSoon || products.length === 0);
 
   return (
     <>
       <CategoryHero category={category} modelCount={countModelsInCategory(slug)} />
 
-      {comingSoon ? (
+      {manufacturers.length > 0 ? (
+        <section className="mx-auto max-w-[1440px] px-5 py-12 md:px-8 md:py-16">
+          <p className="max-w-2xl text-pretty text-kamika-ink/70 md:text-lg">
+            {t("manufacturer.chooseIntro")}
+          </p>
+          <div className="mt-10 grid gap-x-6 gap-y-10 lg:grid-cols-2">
+            {manufacturers.map((manufacturer, index) => (
+              <ManufacturerCard
+                key={manufacturer.id}
+                manufacturer={manufacturer}
+                priority={index < 2}
+              />
+            ))}
+          </div>
+        </section>
+      ) : comingSoon ? (
         <ComingSoon title={t("category.comingSoonTitle")} body={t("category.comingSoonBody")}>
           {/* Mientras no hay fichas, los catálogos generales son la
               mejor respuesta a "¿qué ofrecéis aquí?". */}

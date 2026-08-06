@@ -23,8 +23,7 @@ export const interiorDoors: Product[] = [
       { label: { en: "Edge" }, value: "Rebated" },
       { label: { en: "Standard sizes" }, value: "610–985 × 1985", unit: "mm" },
       { label: { en: "Frame range" }, value: "80–330 mm walls" },
-      { label: { en: "Hinges" }, value: "2 × V 4426" },
-    ],
+      { label: { en: "Hinges" }, value: "2 × V 4426" }],
     images: [
       {
         src: "/images/interior-doors/cpl-basic-1.jpg",
@@ -37,8 +36,7 @@ export const interiorDoors: Product[] = [
       {
         src: "/images/interior-doors/cpl-basic-3.jpg",
         alt: { en: "CPL Basic doors along a corridor of a family house" },
-      },
-    ],
+      }],
     related: ["veneer-oak", "lacquer-flat"],
   },
   {
@@ -57,8 +55,7 @@ export const interiorDoors: Product[] = [
       { label: { en: "Edge" }, value: "Flush or rebated" },
       { label: { en: "Core" }, value: "Solid or tubular chipboard" },
       { label: { en: "Standard sizes" }, value: "610–985 × 1985", unit: "mm" },
-      { label: { en: "Hinges" }, value: "Concealed optional" },
-    ],
+      { label: { en: "Hinges" }, value: "Concealed optional" }],
     images: [
       {
         src: "/images/interior-doors/veneer-oak-1.jpg",
@@ -71,8 +68,7 @@ export const interiorDoors: Product[] = [
       {
         src: "/images/interior-doors/veneer-oak-3.jpg",
         alt: { en: "Concealed hinge on the Veneer Oak leaf" },
-      },
-    ],
+      }],
     related: ["cpl-basic", "acoustic-32"],
     featured: true,
   },
@@ -92,8 +88,7 @@ export const interiorDoors: Product[] = [
       { label: { en: "Edge" }, value: "Flush" },
       { label: { en: "Hinges" }, value: "Concealed, 3D adjustable" },
       { label: { en: "Latch" }, value: "Magnetic" },
-      { label: { en: "Standard sizes" }, value: "610–985 × 2110", unit: "mm" },
-    ],
+      { label: { en: "Standard sizes" }, value: "610–985 × 2110", unit: "mm" }],
     images: [
       {
         src: "/images/interior-doors/lacquer-flat-1.jpg",
@@ -106,8 +101,7 @@ export const interiorDoors: Product[] = [
       {
         src: "/images/interior-doors/lacquer-flat-3.jpg",
         alt: { en: "Lacquer Flat door open, showing the hidden frame" },
-      },
-    ],
+      }],
     related: ["veneer-oak", "cpl-basic"],
     featured: true,
     badge: "new",
@@ -128,8 +122,7 @@ export const interiorDoors: Product[] = [
       { label: { en: "Bottom seal" }, value: "Drop-down" },
       { label: { en: "Edge" }, value: "Double rebate" },
       { label: { en: "Standard sizes" }, value: "735–985 × 1985", unit: "mm" },
-      { label: { en: "Smoke rating" }, value: "RS optional" },
-    ],
+      { label: { en: "Smoke rating" }, value: "RS optional" }],
     images: [
       {
         src: "/images/interior-doors/acoustic-32-1.jpg",
@@ -142,8 +135,6 @@ export const interiorDoors: Product[] = [
       {
         src: "/images/interior-doors/acoustic-32-3.jpg",
         alt: { en: "Double rebate edge of the Acoustic 32 door" },
-      },
-    ],
+      }],
     related: ["veneer-oak", "lacquer-flat"],
-  },
-];
+  }];

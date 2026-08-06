@@ -23,8 +23,7 @@ export const gates: Product[] = [
       { label: { en: "Max. size" }, value: "5000 × 3000", unit: "mm" },
       { label: { en: "Safety" }, value: "Photocell + force cut-off" },
       { label: { en: "Surfaces" }, value: "Woodgrain, silk, decor" },
-      { label: { en: "Wicket door" }, value: "Optional, flush threshold" },
-    ],
+      { label: { en: "Wicket door" }, value: "Optional, flush threshold" }],
     images: [
       {
         src: "/images/gates/sectional-garage-40-1.jpg",
@@ -37,8 +36,7 @@ export const gates: Product[] = [
       {
         src: "/images/gates/sectional-garage-40-3.jpg",
         alt: { en: "Sektional 40 open under the garage ceiling with the drive rail" },
-      },
-    ],
+      }],
     datasheet: "/pdf/gates/sectional-garage-40.pdf",
     related: ["sliding-gate-alu", "fence-horizontal-alu", "despiro-masterline-8-pivot"],
     featured: true,
@@ -59,8 +57,7 @@ export const gates: Product[] = [
       { label: { en: "Ceiling" }, value: "Stays free", highlight: true },
       { label: { en: "Max. size" }, value: "3000 × 2500", unit: "mm" },
       { label: { en: "Split" }, value: "50/50 or 1/3–2/3" },
-      { label: { en: "Ventilation" }, value: "Grille optional" },
-    ],
+      { label: { en: "Ventilation" }, value: "Grille optional" }],
     images: [
       {
         src: "/images/gates/side-hinged-garage-1.jpg",
@@ -73,8 +70,7 @@ export const gates: Product[] = [
       {
         src: "/images/gates/side-hinged-garage-3.jpg",
         alt: { en: "Asymmetric split Flügeltor Duo on an older house" },
-      },
-    ],
+      }],
     related: ["swing-gate-alu", "fence-vertical-bar"],
   },
   {
@@ -93,8 +89,7 @@ export const gates: Product[] = [
       { label: { en: "Max. size" }, value: "4500 × 1800", unit: "mm" },
       { label: { en: "Safety" }, value: "Photocell + safety edge" },
       { label: { en: "Infill" }, value: "Matches fence panels" },
-      { label: { en: "Coating" }, value: "Powder, all RAL" },
-    ],
+      { label: { en: "Coating" }, value: "Powder, all RAL" }],
     images: [
       {
         src: "/images/gates/sliding-gate-alu-1.jpg",
@@ -107,8 +102,7 @@ export const gates: Product[] = [
       {
         src: "/images/gates/sliding-gate-alu-3.jpg",
         alt: { en: "Schiebetor Line closed, infill matching the fence" },
-      },
-    ],
+      }],
     related: ["fence-horizontal-alu", "pedestrian-gate-alu", "sectional-garage-40"],
     featured: true,
   },
@@ -127,8 +121,7 @@ export const gates: Product[] = [
       { label: { en: "Drive" }, value: "Underground, optional", highlight: true },
       { label: { en: "Max. size" }, value: "4000 × 1800", unit: "mm" },
       { label: { en: "Lock" }, value: "Drop bolt + cylinder" },
-      { label: { en: "Infill" }, value: "Matches fence panels" },
-    ],
+      { label: { en: "Infill" }, value: "Matches fence panels" }],
     images: [
       {
         src: "/images/gates/swing-gate-alu-1.jpg",
@@ -141,8 +134,6 @@ export const gates: Product[] = [
       {
         src: "/images/gates/swing-gate-alu-3.jpg",
         alt: { en: "Underground drive box of the Drehtor Classic" },
-      },
-    ],
+      }],
     related: ["pedestrian-gate-alu", "fence-vertical-bar"],
-  },
-];
+  }];

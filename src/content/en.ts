@@ -273,6 +273,21 @@ export const en = {
     "The address may be mistyped, or the page may have moved. Everything on the site is one click away from here.",
   "notFound.backHome": "Back to the home page",
 
+  // ── Fabricantes y sistemas ───────────────────────────────────
+  "manufacturer.eyebrow": "System manufacturer",
+  "manufacturer.systemCountOne": "1 system",
+  "manufacturer.systemCountOther": "{count} systems",
+  "manufacturer.systemsHeading": "Window systems",
+  "manufacturer.systemsIntro":
+    "Which system an opening needs depends on the wall build-up and on what the room has to hold. That is decided when we measure — these pages show what each system is for.",
+  "manufacturer.chooseIntro":
+    "Windows are quoted by profile system: first the manufacturer, then the series, then the version. Pick the manufacturer to see its systems.",
+  "system.versionsTitle": "Versions and specifications",
+  "system.versionsComingSoon":
+    "The manufacturer's catalogue for this system is being prepared for the site. Until it is online, call or write and we will send the current documentation and advise which version fits your opening.",
+  "system.otherSystems": "Other systems",
+  "system.fromManufacturer": "A system by",
+
   // ── Categorías ───────────────────────────────────────────────
   "category.comingSoonTitle": "This range is being prepared",
   "category.comingSoonBody":

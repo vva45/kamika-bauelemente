@@ -46,8 +46,7 @@ export const entranceDoors: Product[] = [
       },
       { label: { en: "Hinges", de: "Türbänder" }, value: "Concealed, roller or pivot" },
       { label: { en: "Threshold", de: "Schwelle" }, value: "RS 01–RS 06, thermally broken" },
-      { label: { en: "Motor lock", de: "Motorschloss" }, value: "Instinct by MACO (optional)" },
-    ],
+      { label: { en: "Motor lock", de: "Motorschloss" }, value: "Instinct by MACO (optional)" }],
     images: [
       {
         src: "/images/entrance-doors/roka-signature-liquid-metal-1.jpg",
@@ -63,8 +62,7 @@ export const entranceDoors: Product[] = [
       {
         src: "/images/entrance-doors/roka-signature-liquid-metal-3.jpg",
         alt: { en: "Full view of the Edles Flüssigmetall No. 01 door leaf" },
-      },
-    ],
+      }],
     catalogue: { id: "roka-signature-2025", page: 178 },
     related: ["roka-select-20", "security-cylinder", "handle-lockable"],
     featured: true,
@@ -88,8 +86,7 @@ export const entranceDoors: Product[] = [
       { label: { en: "Profile", de: "Profilsystem" }, value: "ROKA Exclusive (Wicona)" },
       { label: { en: "Aluminium facing", de: "Aluminium Füllung" }, value: "3 mm outside / 2 mm inside" },
       { label: { en: "Sealing", de: "Abdichtung" }, value: "Multi-point gasket system" },
-      { label: { en: "Threshold", de: "Bodenschwelle" }, value: "Aluminium, thermally broken" },
-    ],
+      { label: { en: "Threshold", de: "Bodenschwelle" }, value: "Aluminium, thermally broken" }],
     images: [
       {
         src: "/images/entrance-doors/roka-select-20-1.jpg",
@@ -104,8 +101,7 @@ export const entranceDoors: Product[] = [
         src: "/images/entrance-doors/roka-select-20-3.jpg",
         alt: { en: "A ceramic Select door fitted in a house entrance" },
         caption: { en: "The ceramic surface fitted — example from the Select catalogue." },
-      },
-    ],
+      }],
     catalogue: { id: "roka-select-2025", page: 18 },
     related: ["roka-signature-liquid-metal", "entrance-panel-01", "security-cylinder"],
     featured: true,
@@ -131,8 +127,7 @@ export const entranceDoors: Product[] = [
       {
         label: { en: "Panels", de: "Paneele" },
         value: "DP4, DP5, DP10, DP11, DP16, DP22, DP23, DP25, DP35",
-      },
-    ],
+      }],
     images: [
       {
         src: "/images/entrance-doors/despiro-masterline-8-pivot-1.jpg",
@@ -146,8 +141,7 @@ export const entranceDoors: Product[] = [
         src: "/images/entrance-doors/despiro-masterline-8-pivot-3.jpg",
         alt: { en: "Despiro DP01 panel, one of the panels available for the pivot door" },
         caption: { en: "The pivot door takes selected Despiro panels — DP01 shown." },
-      },
-    ],
+      }],
     catalogue: { id: "despiro-entrance-doors", page: 31 },
     related: ["roka-signature-liquid-metal", "entrance-panel-01", "sliding-gate-alu"],
   },
@@ -168,8 +162,7 @@ export const entranceDoors: Product[] = [
       { label: { en: "Max size, PVC", de: "Maximale Panelgröße PVC" }, value: "900 × 2150", unit: "mm" },
       { label: { en: "Max size, wood", de: "Maximale Panelgröße Holz" }, value: "840 × 2240", unit: "mm" },
       { label: { en: "Glazing strip", de: "Verglasung" }, value: "170 mm plain · 210 mm with application" },
-      { label: { en: "Glazing height", de: "Verglasungshöhe" }, value: "1420 mm plain · 1470 mm with application" },
-    ],
+      { label: { en: "Glazing height", de: "Verglasungshöhe" }, value: "1420 mm plain · 1470 mm with application" }],
     images: [
       {
         src: "/images/entrance-doors/entrance-panel-01-1.jpg",
@@ -183,9 +176,7 @@ export const entranceDoors: Product[] = [
       {
         src: "/images/entrance-doors/entrance-panel-01-3.jpg",
         alt: { en: "Catalogue page for Paneel 01 with the manufacturing sizes" },
-      },
-    ],
+      }],
     catalogue: { id: "entrance-door-panels", page: 1 },
     related: ["despiro-masterline-8-pivot", "roka-select-20", "handle-lockable"],
-  },
-];
+  }];

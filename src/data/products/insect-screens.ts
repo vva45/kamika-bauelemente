@@ -22,8 +22,7 @@ export const insectScreens: Product[] = [
       { label: { en: "Fixing" }, value: "Spring clips, no drilling", highlight: true },
       { label: { en: "Max. size" }, value: "1600 × 2200", unit: "mm" },
       { label: { en: "Frame colours" }, value: "All RAL" },
-      { label: { en: "Light transmission" }, value: "ca. 70", unit: "%" },
-    ],
+      { label: { en: "Light transmission" }, value: "ca. 70", unit: "%" }],
     images: [
       {
         src: "/images/insect-screens/insect-screen-fixed-frame-1.jpg",
@@ -36,9 +35,8 @@ export const insectScreens: Product[] = [
       {
         src: "/images/insect-screens/insect-screen-fixed-frame-3.jpg",
         alt: { en: "Fixframe 25 being lifted off for cleaning" },
-      },
-    ],
-    related: ["pvc-70-classic", "roller-shutter-front-mounted"],
+      }],
+    related: ["roller-shutter-front-mounted"],
   },
   {
     id: "insect-screen-pleated",
@@ -55,8 +53,7 @@ export const insectScreens: Product[] = [
       { label: { en: "Mesh" }, value: "Pleated polyester", highlight: true },
       { label: { en: "Max. size" }, value: "2800 × 2600", unit: "mm" },
       { label: { en: "Operation" }, value: "Slides both ways" },
-      { label: { en: "Frame colours" }, value: "All RAL" },
-    ],
+      { label: { en: "Frame colours" }, value: "All RAL" }],
     images: [
       {
         src: "/images/insect-screens/insect-screen-pleated-1.jpg",
@@ -69,9 +66,8 @@ export const insectScreens: Product[] = [
       {
         src: "/images/insect-screens/insect-screen-pleated-3.jpg",
         alt: { en: "Pleated mesh parked at the side of the opening" },
-      },
-    ],
-    related: ["wood-alu-92-nature", "roller-shutter-concealed"],
+      }],
+    related: ["roller-shutter-concealed"],
     featured: true,
   },
   {
@@ -89,8 +85,7 @@ export const insectScreens: Product[] = [
       { label: { en: "Latch" }, value: "Magnetic", highlight: true },
       { label: { en: "Max. size" }, value: "1200 × 2400", unit: "mm" },
       { label: { en: "Kick plate" }, value: "200 mm, optional" },
-      { label: { en: "Mesh" }, value: "Fibreglass or pet-proof" },
-    ],
+      { label: { en: "Mesh" }, value: "Fibreglass or pet-proof" }],
     images: [
       {
         src: "/images/insect-screens/insect-screen-hinged-door-1.jpg",
@@ -103,8 +98,7 @@ export const insectScreens: Product[] = [
       {
         src: "/images/insect-screens/insect-screen-hinged-door-3.jpg",
         alt: { en: "Kick plate detail on the Drehtür 40" },
-      },
-    ],
+      }],
     related: ["roka-select-20", "entrance-panel-01"],
   },
   {
@@ -122,8 +116,7 @@ export const insectScreens: Product[] = [
       { label: { en: "Operation" }, value: "Spring, hand strip", highlight: true },
       { label: { en: "Max. size" }, value: "2000 × 2400", unit: "mm" },
       { label: { en: "Retrofit" }, value: "Checked per box" },
-      { label: { en: "Brake" }, value: "Soft retract" },
-    ],
+      { label: { en: "Brake" }, value: "Soft retract" }],
     images: [
       {
         src: "/images/insect-screens/insect-screen-roller-1.jpg",
@@ -136,8 +129,6 @@ export const insectScreens: Product[] = [
       {
         src: "/images/insect-screens/insect-screen-roller-3.jpg",
         alt: { en: "Hand strip of the Rollo Integral at the sill" },
-      },
-    ],
-    related: ["roller-shutter-front-mounted", "pvc-70-classic"],
-  },
-];
+      }],
+    related: ["roller-shutter-front-mounted"],
+  }];

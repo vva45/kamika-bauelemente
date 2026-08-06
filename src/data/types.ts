@@ -109,6 +109,34 @@ export interface CatalogueModel {
   specs: { label: string; value: string }[];
 }
 
+/**
+ * Un fabricante de sistemas dentro de una gama, y sus sistemas.
+ *
+ * Es la jerarquía que pidió el dueño para ventanas: la categoría enseña
+ * fabricantes, el fabricante enseña sus sistemas, y cada sistema tendrá
+ * sus versiones cuando llegue su catálogo. Los sistemas no llevan specs
+ * aquí a propósito: se rellenarán desde el catálogo del fabricante,
+ * nunca redactadas de memoria.
+ */
+export interface ManufacturerSystem {
+  id: string; // slug dentro del fabricante
+  name: string; // nombre del sistema, no se traduce
+  tagline: Localized<string>;
+  image: string;
+  /** Catálogo autoalojado del sistema, cuando exista. */
+  catalogue?: { id: string; page?: number };
+}
+
+export interface Manufacturer {
+  id: string; // slug único dentro de su categoría
+  category: CategorySlug;
+  name: string; // marca, no se traduce
+  tagline: Localized<string>;
+  intro: Localized<string>;
+  image: string;
+  systems: ManufacturerSystem[];
+}
+
 export interface ColorFinish {
   id: string;
   name: Localized<string>; // "Anthracite grey" / "Anthrazitgrau"

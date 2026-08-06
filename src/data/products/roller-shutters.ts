@@ -24,8 +24,7 @@ export const rollerShutters: Product[] = [
       { label: { en: "Max. size" }, value: "2400 × 2600", unit: "mm" },
       { label: { en: "Operation" }, value: "Crank or radio motor" },
       { label: { en: "Slat fill" }, value: "PU foam" },
-      { label: { en: "Insect screen" }, value: "Integrated optional" },
-    ],
+      { label: { en: "Insect screen" }, value: "Integrated optional" }],
     images: [
       {
         src: "/images/roller-shutters/roller-shutter-front-mounted-1.jpg",
@@ -38,10 +37,9 @@ export const rollerShutters: Product[] = [
       {
         src: "/images/roller-shutters/roller-shutter-front-mounted-3.jpg",
         alt: { en: "Vorbau 137 half lowered on a south-facing facade" },
-      },
-    ],
+      }],
     datasheet: "/pdf/roller-shutters/roller-shutter-front-mounted.pdf",
-    related: ["pvc-70-classic", "insect-screen-roller", "external-venetian-blind"],
+    related: ["insect-screen-roller", "external-venetian-blind"],
     featured: true,
   },
   {
@@ -61,8 +59,7 @@ export const rollerShutters: Product[] = [
       { label: { en: "Max. size" }, value: "2500 × 2600", unit: "mm" },
       { label: { en: "Operation" }, value: "Radio motor" },
       { label: { en: "Inspection" }, value: "From below" },
-      { label: { en: "Insect screen" }, value: "Integrated optional" },
-    ],
+      { label: { en: "Insect screen" }, value: "Integrated optional" }],
     images: [
       {
         src: "/images/roller-shutters/roller-shutter-top-mounted-1.jpg",
@@ -75,9 +72,8 @@ export const rollerShutters: Product[] = [
       {
         src: "/images/roller-shutters/roller-shutter-top-mounted-3.jpg",
         alt: { en: "Inspection opening of the Aufsatz 205 seen from the room" },
-      },
-    ],
-    related: ["pvc-82-comfort", "insect-screen-roller"],
+      }],
+    related: ["insect-screen-roller"],
     featured: true,
     badge: "bestseller",
   },
@@ -97,8 +93,7 @@ export const rollerShutters: Product[] = [
       { label: { en: "Mounting" }, value: "Behind render or cladding" },
       { label: { en: "Max. size" }, value: "2200 × 2400", unit: "mm" },
       { label: { en: "Operation" }, value: "Radio motor" },
-      { label: { en: "Inspection" }, value: "From outside, clip panel" },
-    ],
+      { label: { en: "Inspection" }, value: "From outside, clip panel" }],
     images: [
       {
         src: "/images/roller-shutters/roller-shutter-concealed-1.jpg",
@@ -111,9 +106,8 @@ export const rollerShutters: Product[] = [
       {
         src: "/images/roller-shutters/roller-shutter-concealed-3.jpg",
         alt: { en: "Guide rail detail of the Unterputz 165 in anthracite" },
-      },
-    ],
-    related: ["alu-75-slim", "insect-screen-pleated"],
+      }],
+    related: ["insect-screen-pleated"],
   },
   {
     id: "external-venetian-blind",
@@ -131,8 +125,7 @@ export const rollerShutters: Product[] = [
       { label: { en: "Max. size" }, value: "3000 × 4000", unit: "mm" },
       { label: { en: "Operation" }, value: "Motor, wind monitored" },
       { label: { en: "Guide" }, value: "Rail or cable" },
-      { label: { en: "Tilt range" }, value: "0–180°" },
-    ],
+      { label: { en: "Tilt range" }, value: "0–180°" }],
     images: [
       {
         src: "/images/roller-shutters/external-venetian-blind-1.jpg",
@@ -145,8 +138,6 @@ export const rollerShutters: Product[] = [
       {
         src: "/images/roller-shutters/external-venetian-blind-3.jpg",
         alt: { en: "Living room behind half-tilted Raffstore 90 slats" },
-      },
-    ],
-    related: ["alu-75-slim", "wood-alu-92-nature"],
-  },
-];
+      }],
+    related: [],
+  }];

@@ -14,6 +14,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ContactCta } from "@/components/layout/ContactCta";
+import { ManufacturerView } from "@/components/manufacturer/ManufacturerView";
 import { Gallery } from "@/components/media/Gallery";
 import { ProductCard } from "@/components/product/ProductCard";
 import { ProductSpecTable } from "@/components/product/ProductSpecTable";
@@ -24,10 +25,12 @@ import { ButtonLink } from "@/components/ui/Button";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { ArrowRightIcon, DocumentIcon } from "@/components/ui/icons";
 import {
+  MANUFACTURERS,
   PRODUCTS,
   countModelsByCatalogue,
   getCatalogue,
   getCategory,
+  getManufacturer,
   getProduct,
   getProjectsByCategory,
   getRelated,
@@ -40,13 +43,35 @@ import { productSchema } from "@/lib/schema";
 import { routes } from "@/lib/routes";
 
 export function generateStaticParams() {
-  return PRODUCTS.map((product) => ({ category: product.category, product: product.id }));
+  return [
+    ...PRODUCTS.map((product) => ({ category: product.category, product: product.id })),
+    // Los fabricantes comparten el segmento con los productos:
+    // /products/windows/aluplast es un fabricante, no una ficha.
+    ...MANUFACTURERS.map((manufacturer) => ({
+      category: manufacturer.category,
+      product: manufacturer.id,
+    })),
+  ];
 }
 
 export async function generateMetadata({
   params,
 }: PageProps<"/products/[category]/[product]">): Promise<Metadata> {
-  const { product: id } = await params;
+  const { category: categorySlug, product: id } = await params;
+
+  // ¿Es un fabricante? Su metadata es suya, no la de una ficha.
+  if (isCategorySlug(categorySlug)) {
+    const manufacturer = getManufacturer(categorySlug, id);
+    if (manufacturer) {
+      return pageMetadata({
+        title: manufacturer.name,
+        description: pick(manufacturer.tagline),
+        path: routes.manufacturer(manufacturer.category, manufacturer.id),
+        image: { url: manufacturer.image, alt: manufacturer.name },
+      });
+    }
+  }
+
   const product = getProduct(id);
   if (!product) return {};
 
@@ -66,6 +91,13 @@ export default async function ProductPage({
 }: PageProps<"/products/[category]/[product]">) {
   const { category: categorySlug, product: id } = await params;
   if (!isCategorySlug(categorySlug)) notFound();
+
+  // Fabricante antes que producto: comparten segmento de URL y el
+  // fabricante es una página completamente distinta.
+  const manufacturer = getManufacturer(categorySlug, id);
+  if (manufacturer) {
+    return <ManufacturerView manufacturer={manufacturer} />;
+  }
 
   const product = getProduct(id);
   // La URL debe coincidir con la categoría real del producto: una ficha

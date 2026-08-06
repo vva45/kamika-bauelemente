@@ -9,6 +9,7 @@ import type { MetadataRoute } from "next";
 import {
   CATALOGUE_MODELS,
   CATALOGUES,
+  MANUFACTURERS,
   PRODUCTS,
   PROJECTS,
   orderedCategories,
@@ -30,6 +31,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry(routes.products, 0.9),
     ...orderedCategories().map((category) => entry(routes.category(category.slug), 0.8)),
     ...PRODUCTS.map((product) => entry(routes.product(product.category, product.id), 0.7)),
+    // Jerarquía por fabricante: la página de marca y cada sistema.
+    ...MANUFACTURERS.map((manufacturer) =>
+      entry(routes.manufacturer(manufacturer.category, manufacturer.id), 0.7),
+    ),
+    ...MANUFACTURERS.flatMap((manufacturer) =>
+      manufacturer.systems.map((system) =>
+        entry(routes.manufacturerSystem(manufacturer.category, manufacturer.id, system.id), 0.6),
+      ),
+    ),
     entry(routes.catalogues, 0.7),
     ...CATALOGUES.map((catalogue) => entry(routes.catalogue(catalogue.id), 0.6)),
     ...CATALOGUES.map((catalogue) => entry(routes.catalogueModels(catalogue.id), 0.6)),

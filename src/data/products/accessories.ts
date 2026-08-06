@@ -31,8 +31,7 @@ export const accessories: Product[] = [
       { label: { en: "Spindle" }, value: "7 × 7 mm", highlight: true },
       { label: { en: "Positions" }, value: "45° stepped" },
       { label: { en: "Finishes" }, value: "White, silver, anthracite, bronze" },
-      { label: { en: "Standard" }, value: "DIN EN 13126-3" },
-    ],
+      { label: { en: "Standard" }, value: "DIN EN 13126-3" }],
     images: [
       {
         src: "/images/accessories/handle-lockable-1.jpg",
@@ -45,9 +44,8 @@ export const accessories: Product[] = [
       {
         src: "/images/accessories/handle-lockable-3.jpg",
         alt: { en: "Secustik Lock 100 locked on a ground-floor window" },
-      },
-    ],
-    related: ["pvc-70-classic", "pvc-82-comfort", "security-cylinder"],
+      }],
+    related: ["security-cylinder"],
     featured: true,
   },
   {
@@ -65,8 +63,7 @@ export const accessories: Product[] = [
       { label: { en: "Slope" }, value: "5°", highlight: true },
       { label: { en: "End caps" }, value: "Plastic, render joint" },
       { label: { en: "Coating" }, value: "Powder, all RAL" },
-      { label: { en: "Fixing" }, value: "Glued + screwed, sealed" },
-    ],
+      { label: { en: "Fixing" }, value: "Glued + screwed, sealed" }],
     images: [
       {
         src: "/images/accessories/window-sill-aluminium-1.jpg",
@@ -79,9 +76,8 @@ export const accessories: Product[] = [
       {
         src: "/images/accessories/window-sill-aluminium-3.jpg",
         alt: { en: "Sloped sealed bed before the sill is fitted" },
-      },
-    ],
-    related: ["pvc-82-comfort", "wood-alu-92-nature"],
+      }],
+    related: [],
   },
   {
     id: "security-cylinder",
@@ -97,8 +93,7 @@ export const accessories: Product[] = [
       { label: { en: "Keying" }, value: "Alike across doors", highlight: true },
       { label: { en: "Lengths" }, value: "27/27–70/70, modular" },
       { label: { en: "Emergency function" }, value: "Both sides" },
-      { label: { en: "Standard" }, value: "DIN EN 1303" },
-    ],
+      { label: { en: "Standard" }, value: "DIN EN 1303" }],
     images: [
       {
         src: "/images/accessories/security-cylinder-1.jpg",
@@ -111,8 +106,7 @@ export const accessories: Product[] = [
       {
         src: "/images/accessories/security-cylinder-3.jpg",
         alt: { en: "One key opening house, garage and garden gate" },
-      },
-    ],
+      }],
     related: ["roka-select-20", "handle-lockable"],
   },
   {
@@ -128,8 +122,7 @@ export const accessories: Product[] = [
       { label: { en: "Mounting" }, value: "In the rebate, invisible", highlight: true },
       { label: { en: "Wind control" }, value: "Self-regulating", highlight: true },
       { label: { en: "Sound path" }, value: "No direct opening" },
-      { label: { en: "Sizing" }, value: "Per room, DIN 1946-6" },
-    ],
+      { label: { en: "Sizing" }, value: "Per room, DIN 1946-6" }],
     images: [
       {
         src: "/images/accessories/window-rebate-vent-1.jpg",
@@ -142,8 +135,6 @@ export const accessories: Product[] = [
       {
         src: "/images/accessories/window-rebate-vent-3.jpg",
         alt: { en: "Window closed with the vent working, seen from the room" },
-      },
-    ],
-    related: ["pvc-82-comfort", "pvc-70-classic"],
-  },
-];
+      }],
+    related: [],
+  }];

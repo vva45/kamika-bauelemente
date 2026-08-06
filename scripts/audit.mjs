@@ -135,6 +135,7 @@ const PRODUCTS = (
   )
 ).flat();
 const { CATALOGUES } = await import("../src/data/catalogues.ts");
+const { MANUFACTURERS } = await import("../src/data/manufacturers.ts");
 const { PROJECTS } = await import("../src/data/projects.ts");
 const { COLORS } = await import("../src/data/colors.ts");
 
@@ -155,6 +156,9 @@ checkDuplicates("colours", COLORS);
 // el encargo dice "slug único en todo el sitio".
 const everyId = [
   ...PRODUCTS.map((p) => ["product", p.id]),
+  // Los fabricantes comparten segmento de URL con los productos de su
+  // categoría: un choque de ids serviría dos páginas bajo una URL.
+  ...MANUFACTURERS.map((m) => ["manufacturer", m.id]),
   ...CATALOGUES.map((c) => ["catalogue", c.id]),
   ...PROJECTS.map((p) => ["project", p.id]),
 ];

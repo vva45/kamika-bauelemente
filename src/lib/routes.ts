@@ -11,6 +11,10 @@ export const routes = {
   products: "/products",
   category: (slug: CategorySlug) => `/products/${slug}`,
   product: (category: CategorySlug, id: string) => `/products/${category}/${id}`,
+  /** Jerarquía por fabricante: /products/windows/aluplast[/ideal-4000]. */
+  manufacturer: (category: CategorySlug, id: string) => `/products/${category}/${id}`,
+  manufacturerSystem: (category: CategorySlug, manufacturerId: string, systemId: string) =>
+    `/products/${category}/${manufacturerId}/${systemId}`,
   catalogues: "/catalogues",
   catalogue: (id: string) => `/catalogues/${id}`,
   /** Escaparate: todos los modelos de un catálogo. */

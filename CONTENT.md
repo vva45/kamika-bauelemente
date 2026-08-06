@@ -108,6 +108,29 @@ ones.** For each: what the customer asked for, what was fitted, the town, the ye
 on-screen approximations, but the owner has to confirm **which finishes Kamika actually offers**,
 which are stock and which are made to order, and which are unavailable on a given material.
 
+## 3b-bis. Windows — the manufacturer hierarchy
+
+The owner asked for windows to be organised the way the trade quotes them:
+**Windows → manufacturer → system → versions**. That structure is live with **Aluplast** as the
+first manufacturer (`src/data/manufacturers.ts`), showing four systems: IDEAL 4000, IDEAL 5000,
+IDEAL 7000 and energeto 8000.
+
+What still needs confirming, because the Aluplast catalogue has not arrived yet:
+
+- **Which systems Kamika actually sells.** The four listed are Aluplast's public flagship range;
+  the chamber counts and system depths on the drawings are the manufacturer's public figures and
+  must be checked against the catalogue when it comes.
+- **Versions and specifications per system** — extracted from the catalogue when it arrives,
+  exactly as was done for the entrance-door catalogues. The system pages say so honestly and route
+  to contact until then.
+- **The Aluplast logo.** The card currently carries a neutral typographic plate, NOT the registered
+  logo — reproducing a third party's trademark needs their permission. If the owner gets the
+  official logo pack from his Aluplast rep (dealers usually may use it), replace
+  `public/images/manufacturers/aluplast.jpg` — same path, no code change.
+
+The four example window products were removed with their images, data sheets and cross-references:
+an invented model cannot sit next to a real hierarchy.
+
 ## 3c. The catalogue showcase — generated, not written
 
 `src/data/catalogue-models.ts` holds **314 models**, every one in the four catalogues, with its
