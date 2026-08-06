@@ -45,11 +45,10 @@ Self-hosted, never linked to a manufacturer's website.
 | `[ ]`  | `public/pdf/catalogues/` — other ranges      | Nothing yet for windows, roller shutters, insect screens, gates, fences or hardware. Those categories currently have no catalogue to link to. | Owner |
 | `[~]`  | `public/pdf/{category}/{product-id}.pdf`     | Per-product data sheet, where one exists. Five are placeholders; the rest of the products show no data-sheet button at all, which is the rule: no button beats a dead link. | Owner |
 
-**Model → page mapping is the missing piece.** The catalogues are real but the 32 products are
-still invented, so no product can honestly point at a page inside them. When the owner says which
-models he actually sells and on which page each one appears, that becomes
-`catalogue: { id: "roka-signature-2025", page: 84 }` and the "Technical data sheet" button starts
-opening the exact page.
+**Model → page mapping is done for entrance doors and missing for everything else.** Those four
+buttons open the exact catalogue page. The other 28 products have no catalogue to point at, so they
+show no data-sheet button. Two things would fix that: catalogues for the other ranges, and the
+owner naming which models he actually sells.
 
 > **Branding rule, non-negotiable:** no competitor's mark may appear anywhere on this site.
 > The panel catalogue arrived carrying another window company's logo on page 1. It was replaced
@@ -64,9 +63,23 @@ opening the exact page.
 
 ## 3. Product data — the big one
 
-`src/data/products/` holds **32 example products — 4 per category, all 8 categories seeded**.
-Model names, frame depths, Uw values, sound ratings and RC classes are plausible for the trade but
-**are not Kamika's real range**. Every file carries a warning comment at the top.
+`src/data/products/` holds 32 products. **The four entrance doors are real** — taken from the
+catalogues, with the model name, finish, handle, sizes and Ud values copied from the page, and each
+one linking to its exact page in the PDF. The other 28 are still plausible examples and **are not
+Kamika's real range**; every one of those files carries a warning comment at the top.
+
+The four real ones, one per catalogue:
+
+| Product | From | Page |
+| ------- | ---- | ---- |
+| ROKA Signature — Edles Flüssigmetall No. 01 | ROKA Signature | 178 |
+| ROKA Select 20 | ROKA Select | 18 |
+| Despiro MasterLine 8 Pivot | Despiro | 31 |
+| Paneel 01 | Panel catalogue | 1 |
+
+Their photographs are rendered from the catalogue pages, so they are the manufacturer's own
+renders, not site photography. Replace them with photos of doors actually fitted when there are
+any — that is what sells a door.
 
 Two details worth knowing when replacing them:
 

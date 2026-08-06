@@ -70,7 +70,7 @@ export const PROJECTS: Project[] = [
     products: [
       "alu-75-slim",
       "pvc-70-classic",
-      "alu-86-thermo",
+      "roka-select-20",
       "security-cylinder",
     ],
     featured: true,
@@ -131,7 +131,7 @@ export const PROJECTS: Project[] = [
     ],
     /** Modelos instalados, para enlazar a sus fichas desde el detalle. */
     products: [
-      "alu-panel-line",
+      "roka-signature-liquid-metal",
       "sectional-garage-40",
       "sliding-gate-alu",
       "fence-horizontal-alu",

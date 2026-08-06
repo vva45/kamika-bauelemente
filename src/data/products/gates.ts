@@ -40,7 +40,7 @@ export const gates: Product[] = [
       },
     ],
     datasheet: "/pdf/gates/sectional-garage-40.pdf",
-    related: ["sliding-gate-alu", "fence-horizontal-alu", "steel-secure-rc3"],
+    related: ["sliding-gate-alu", "fence-horizontal-alu", "despiro-masterline-8-pivot"],
     featured: true,
     badge: "bestseller",
   },

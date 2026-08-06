@@ -105,7 +105,7 @@ export const insectScreens: Product[] = [
         alt: { en: "Kick plate detail on the Drehtür 40" },
       },
     ],
-    related: ["alu-86-thermo", "pvc-76-entrance"],
+    related: ["roka-select-20", "entrance-panel-01"],
   },
   {
     id: "insect-screen-roller",

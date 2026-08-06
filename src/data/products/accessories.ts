@@ -113,7 +113,7 @@ export const accessories: Product[] = [
         alt: { en: "One key opening house, garage and garden gate" },
       },
     ],
-    related: ["alu-86-thermo", "handle-lockable"],
+    related: ["roka-select-20", "handle-lockable"],
   },
   {
     id: "window-rebate-vent",

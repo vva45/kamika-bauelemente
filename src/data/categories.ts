@@ -24,8 +24,10 @@ export const CATEGORIES: Category[] = [
   {
     slug: "entrance-doors",
     name: { en: "Entrance doors", de: "Haustüren" },
+    // Cifras tomadas de los catálogos reales: Ud 0,72 es el mejor valor
+    // del catálogo Select, y RC 3 el máximo del sistema Signature.
     intro: {
-      en: "Insulated aluminium and PVC entrance doors from Ud 0.8 W/m²K, with multi-point locking and RC2 burglary resistance available on most panels. Threshold, handle and cylinder are specified per door.",
+      en: "Aluminium and PVC entrance doors from Ud 0.72 W/m²K, with multi-point locking and burglary resistance up to RC 3. Ceramic, liquid-metal, powder-coated and real old-wood surfaces, and panels in PVC, aluminium or timber. Threshold, handle and cylinder are specified per door.",
     },
     heroImage: "/images/categories/entrance-doors-hero.jpg",
     order: 2,
