@@ -3,10 +3,10 @@
  *
  * Dos casos distintos, y la diferencia importa:
  *
- *  1. `entrance-doors` — YA NO SE GENERA. El dueño mandó su propia
- *     fotografía y esa manda. El montaje con puertas recortadas del PDF
- *     que había aquí solo se ejecuta si se le pasa `DOOR_CUTS`, y no hay
- *     que pasárselo: sobreescribiría la foto del dueño.
+ *  1. Las gamas de las que el dueño YA mandó fotografía —de momento
+ *     `entrance-doors` y `windows`— no se generan: la foto manda y el
+ *     script la protege, aunque se le ejecute entero por costumbre. Ver
+ *     `OWNER_PHOTOS`.
  *
  *  2. El resto de gamas — todavía no hay ni una foto. En vez de dejar el
  *     cartel de "PLACEHOLDER" a la vista del cliente, se dibuja una
@@ -44,6 +44,15 @@ const PALETTE = {
   paper: "#FFFFFF",
   mist: "#E4E9F0",
 };
+
+/**
+ * Gamas con fotografía real del dueño. NUNCA se sobreescriben: perder
+ * su foto por ejecutar un script de láminas sería un destrozo silencioso
+ * y sin vuelta atrás si además ya se ha hecho commit.
+ *
+ * Al recibir una foto nueva, añadir aquí su slug.
+ */
+const OWNER_PHOTOS = new Set(["entrance-doors", "windows"]);
 
 const MONO = "Consolas, 'DejaVu Sans Mono', 'Courier New', monospace";
 const SANS = "'Segoe UI', Arial, Helvetica, sans-serif";
@@ -99,13 +108,17 @@ const SHEETS = {
 };
 
 for (const [slug, config] of Object.entries(SHEETS)) {
+  if (OWNER_PHOTOS.has(slug)) {
+    console.log(`· ${slug}-hero.jpg: foto del dueño, no se toca`);
+    continue;
+  }
   await sharp(sheet(config)).jpeg({ quality: 90, mozjpeg: true }).toFile(join(OUT, `${slug}-hero.jpg`));
   console.log(`✓ ${slug}-hero.jpg (lámina de marca)`);
 }
 
 // ── Puertas de entrada: producto real de los catálogos ───────────────
 
-if (CUTS && existsSync(CUTS)) {
+if (CUTS && existsSync(CUTS) && !OWNER_PHOTOS.has("entrance-doors")) {
   const background = Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">
   <rect width="${W}" height="${H}" fill="${PALETTE.blue50}"/>
   <rect x="0" y="${H * 0.62}" width="${W}" height="${H * 0.38}" fill="${PALETTE.blue}" opacity="0.45"/>
