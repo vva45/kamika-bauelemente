@@ -146,6 +146,7 @@ export const de: Record<ContentKey, string> = {
   "catalogue.fromCatalogue": "", // TODO: DE
   "catalogue.openAtPage": "", // TODO: DE
   "catalogue.otherModels": "", // TODO: DE
+  "catalogue.modelsInCatalogue": "", // TODO: DE
   "catalogue.modelFamilies": "", // TODO: DE
   "catalogue.modelNote": "", // TODO: DE
   "catalogue.comingSoonTitle": "", // TODO: DE

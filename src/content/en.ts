@@ -157,6 +157,7 @@ export const en = {
   "catalogue.fromCatalogue": "From the catalogue",
   "catalogue.openAtPage": "Open catalogue at page {page}",
   "catalogue.otherModels": "Other models in this catalogue",
+  "catalogue.modelsInCatalogue": "{count} models in this catalogue",
   "catalogue.modelFamilies": "Collections",
   "catalogue.modelNote":
     "Images and data come from the manufacturer's catalogue. Ask us which models are stocked, what they cost and how long they take.",

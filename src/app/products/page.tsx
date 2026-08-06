@@ -7,7 +7,7 @@ import { CategoryCard } from "@/components/category/CategoryCard";
 import { ContactCta } from "@/components/layout/ContactCta";
 import { Reveal, RevealGroup } from "@/components/ui/Reveal";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { countProductsByCategory, orderedCategories } from "@/data";
+import { countModelsInCategory, orderedCategories } from "@/data";
 import { t } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/metadata";
 import { routes } from "@/lib/routes";
@@ -41,7 +41,7 @@ export default function ProductsPage() {
             <Reveal key={category.slug} asChild from="bottom">
               <CategoryCard
                 category={category}
-                productCount={countProductsByCategory(category.slug)}
+                modelCount={countModelsInCategory(category.slug)}
                 scale="feature"
                 priority
               />
@@ -54,7 +54,7 @@ export default function ProductsPage() {
             <Reveal key={category.slug} asChild from="bottom">
               <CategoryCard
                 category={category}
-                productCount={countProductsByCategory(category.slug)}
+                modelCount={countModelsInCategory(category.slug)}
               />
             </Reveal>
           ))}

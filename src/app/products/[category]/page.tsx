@@ -16,6 +16,7 @@ import { ComingSoon } from "@/components/ui/ComingSoon";
 import {
   CATALOGUES,
   CATEGORY_SLUGS,
+  countModelsInCategory,
   getCategory,
   getProductsByCategory,
   isCategorySlug,
@@ -56,7 +57,7 @@ export default async function CategoryPage({ params }: PageProps<"/products/[cat
 
   return (
     <>
-      <CategoryHero category={category} productCount={products.length} />
+      <CategoryHero category={category} modelCount={countModelsInCategory(slug)} />
 
       {comingSoon ? (
         <ComingSoon title={t("category.comingSoonTitle")} body={t("category.comingSoonBody")}>

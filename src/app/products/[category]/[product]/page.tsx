@@ -116,6 +116,15 @@ export default async function ProductPage({
               <h1 className="text-3xl md:text-4xl">{product.name}</h1>
               <p className="mt-3 text-lg text-kamika-ink/70">{pick(product.tagline)}</p>
 
+              {/* De qué colección sale esta ficha y cuántos modelos
+                  tiene. Texto, no botón: el botón está más abajo. */}
+              {sourceCatalogue && sourceModelCount > 1 && (
+                <p className="eyebrow mt-4">
+                  {pick(sourceCatalogue.title)} ·{" "}
+                  {tf("catalogue.modelsInCatalogue", { count: sourceModelCount })}
+                </p>
+              )}
+
               {highlights.length > 0 && (
                 <dl className="mt-7 grid grid-cols-3 gap-2">
                   {highlights.map((spec) => (

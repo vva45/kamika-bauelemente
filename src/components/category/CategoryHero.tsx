@@ -13,16 +13,16 @@ import { pick, t, tf } from "@/lib/i18n";
 
 type CategoryHeroProps = {
   category: Category;
-  productCount: number;
+  modelCount: number;
 };
 
-export function CategoryHero({ category, productCount }: CategoryHeroProps) {
+export function CategoryHero({ category, modelCount }: CategoryHeroProps) {
   const countLabel =
-    productCount === 0
+    modelCount === 0
       ? t("common.comingSoon")
-      : productCount === 1
+      : modelCount === 1
         ? t("product.modelsOne")
-        : tf("product.modelsOther", { count: productCount });
+        : tf("product.modelsOther", { count: modelCount });
 
   return (
     <section className="border-b border-kamika-mist bg-kamika-blue-50">

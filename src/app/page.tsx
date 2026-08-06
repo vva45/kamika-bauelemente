@@ -20,7 +20,7 @@ import { Marquee } from "@/components/ui/Marquee";
 import { Reveal, RevealGroup } from "@/components/ui/Reveal";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { ArrowRightIcon } from "@/components/ui/icons";
-import { CATALOGUES, COLORS, countProductsByCategory, getFeaturedProjects, orderedCategories } from "@/data";
+import { CATALOGUES, COLORS, countModelsInCategory, getFeaturedProjects, orderedCategories } from "@/data";
 import { COMPANY } from "@/data/company";
 import { pick, t } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/metadata";
@@ -76,7 +76,7 @@ export default function HomePage() {
             <Reveal key={category.slug} asChild from="bottom">
               <CategoryCard
                 category={category}
-                productCount={countProductsByCategory(category.slug)}
+                modelCount={countModelsInCategory(category.slug)}
                 scale="feature"
               />
             </Reveal>
@@ -88,7 +88,7 @@ export default function HomePage() {
             <Reveal key={category.slug} asChild from="bottom">
               <CategoryCard
                 category={category}
-                productCount={countProductsByCategory(category.slug)}
+                modelCount={countModelsInCategory(category.slug)}
               />
             </Reveal>
           ))}

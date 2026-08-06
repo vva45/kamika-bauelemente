@@ -19,7 +19,7 @@ import { routes } from "@/lib/routes";
 
 type CategoryCardProps = {
   category: Category;
-  productCount: number;
+  modelCount: number;
   /** `feature` para las piezas grandes del mosaico. */
   scale?: "feature" | "compact";
   priority?: boolean;
@@ -28,19 +28,19 @@ type CategoryCardProps = {
 
 export function CategoryCard({
   category,
-  productCount,
+  modelCount,
   scale = "compact",
   priority = false,
   className,
 }: CategoryCardProps) {
   const isFeature = scale === "feature";
-  const comingSoon = category.comingSoon || productCount === 0;
+  const comingSoon = category.comingSoon || modelCount === 0;
 
   const countLabel = comingSoon
     ? t("common.comingSoon")
-    : productCount === 1
+    : modelCount === 1
       ? t("product.modelsOne")
-      : tf("product.modelsOther", { count: productCount });
+      : tf("product.modelsOther", { count: modelCount });
 
   return (
     <article className={cn("group relative flex h-full flex-col", className)}>

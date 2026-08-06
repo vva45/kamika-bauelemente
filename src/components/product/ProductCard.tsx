@@ -18,9 +18,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { WindowFrame } from "@/components/ui/WindowFrame";
 import { DocumentIcon } from "@/components/ui/icons";
+import { countModelsByCatalogue } from "@/data";
 import type { Product } from "@/data/types";
 import { cn } from "@/lib/cn";
-import { pick, t } from "@/lib/i18n";
+import { pick, t, tf } from "@/lib/i18n";
 import { datasheetHref } from "@/lib/product";
 import { routes } from "@/lib/routes";
 
@@ -39,6 +40,9 @@ const BADGE_LABEL = {
 export function ProductCard({ product, priority = false, className }: ProductCardProps) {
   const cover = product.images[0];
   const datasheet = datasheetHref(product);
+  // Cuántos modelos hay detrás de esta ficha. Es un dato, no un botón:
+  // dice de un vistazo que la ficha es una muestra de una colección.
+  const catalogueModels = product.catalogue ? countModelsByCatalogue(product.catalogue.id) : 0;
 
   return (
     <article className={cn("group relative flex flex-col", className)}>
@@ -91,6 +95,9 @@ export function ProductCard({ product, priority = false, className }: ProductCar
           </Link>
         </h3>
         <p className="mt-1 text-sm text-kamika-ink/65">{pick(product.tagline)}</p>
+        {catalogueModels > 1 && (
+          <p className="eyebrow mt-2">{tf("catalogue.modelsInCatalogue", { count: catalogueModels })}</p>
+        )}
       </div>
     </article>
   );

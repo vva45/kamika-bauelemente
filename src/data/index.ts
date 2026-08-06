@@ -85,6 +85,23 @@ export const getCatalogueModel = (
 export const countModelsByCatalogue = (catalogueId: string): number =>
   getModelsByCatalogue(catalogueId).length;
 
+/**
+ * Cuántos modelos puede ver el visitante en una gama.
+ *
+ * No es lo mismo que el número de fichas: en puertas de entrada hay
+ * cuatro productos destacados, pero detrás están los cientos de modelos
+ * de los catálogos, y ese es el número que le interesa a quien está
+ * decidiendo si aquí encontrará lo que busca. Cuando la gama todavía no
+ * tiene catálogo, el número de fichas es todo lo que hay.
+ */
+export const countModelsInCategory = (slug: CategorySlug): number => {
+  const catalogueIds = CATALOGUES.filter((catalogue) => catalogue.category === slug).map(
+    (catalogue) => catalogue.id,
+  );
+  const models = CATALOGUE_MODELS.filter((model) => catalogueIds.includes(model.catalogue)).length;
+  return Math.max(models, getProductsByCategory(slug).length);
+};
+
 /** Familias declaradas en un catálogo, para agrupar el escaparate. */
 export const getModelFamilies = (catalogueId: string): string[] => [
   ...new Set(
