@@ -254,6 +254,13 @@ export const en = {
   "contactPage.enquiryAbout": "Enquiry about {product}",
   "contactPage.enquiryGeneral": "Enquiry from the website",
 
+  // ── Página no encontrada ─────────────────────────────────────
+  "notFound.eyebrow": "Error 404",
+  "notFound.title": "This page does not exist",
+  "notFound.body":
+    "The address may be mistyped, or the page may have moved. Everything on the site is one click away from here.",
+  "notFound.backHome": "Back to the home page",
+
   // ── Categorías ───────────────────────────────────────────────
   "category.comingSoonTitle": "This range is being prepared",
   "category.comingSoonBody":

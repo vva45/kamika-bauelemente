@@ -12,6 +12,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { ButtonLink } from "@/components/ui/Button";
 import { ChevronDownIcon, CloseIcon, MenuIcon, PhoneIcon } from "@/components/ui/icons";
 import { useSmoothScroll } from "@/components/layout/SmoothScroll";
@@ -39,6 +40,21 @@ export function SiteNav({ links, categories, phone, phoneHref }: SiteNavProps) {
   const panelRef = useRef<HTMLDivElement | null>(null);
   const reduceMotion = useReducedMotion();
   const smoothScroll = useSmoothScroll();
+
+  /**
+   * El menú móvil se pinta con un portal en <body>, y no donde vive el
+   * componente. Motivo, que costó una tarde: el <header> lleva
+   * `backdrop-blur`, y un backdrop-filter convierte al elemento en
+   * bloque contenedor de sus descendientes `position: fixed`. Dentro del
+   * header, `fixed inset-0` no se resuelve contra la ventana sino contra
+   * la barra: el panel quedaba recortado a la altura del header y solo
+   * se veía su fila con la X. Fuera del header, vuelve a ser la ventana.
+   *
+   * La comprobación de `document` evita pintar el portal en el
+   * servidor, donde no hay DOM. Con el menú cerrado el portal no mete
+   * nada en <body>, así que la hidratación no ve ninguna diferencia.
+   */
+  const canPortal = typeof document !== "undefined";
 
   // Al navegar, se cierra todo. Sin esto el menú se queda abierto sobre
   // la página nueva. Se ajusta en render, no en un efecto: así no hay
@@ -226,80 +242,87 @@ export function SiteNav({ links, categories, phone, phoneHref }: SiteNavProps) {
       {/* ── Disparador móvil ─────────────────────────────────── */}
       <button
         type="button"
-        onClick={() => setMenuOpen(true)}
-        aria-label={t("a11y.openMenu")}
+        onClick={() => setMenuOpen((open) => !open)}
+        aria-label={menuOpen ? t("a11y.closeMenu") : t("a11y.openMenu")}
         aria-expanded={menuOpen}
         className="-mr-2 rounded-kamika p-2 text-kamika-ink lg:hidden"
       >
-        <MenuIcon className="size-6" />
+        {menuOpen ? <CloseIcon className="size-6" /> : <MenuIcon className="size-6" />}
       </button>
 
       {/* ── Menú móvil a pantalla completa ────────────────────── */}
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            ref={panelRef}
-            role="dialog"
-            aria-modal="true"
-            aria-label={t("a11y.mainNavigation")}
-            initial={reduceMotion ? false : { clipPath: "inset(0 0 100% 0)" }}
-            animate={{ clipPath: "inset(0 0 0% 0)" }}
-            exit={reduceMotion ? { opacity: 0 } : { clipPath: "inset(0 0 100% 0)" }}
-            transition={{ duration: 0.45, ease: EASE }}
-            className="fixed inset-0 z-100 flex flex-col bg-kamika-paper lg:hidden"
-          >
-            <div className="flex h-16 shrink-0 items-center justify-end border-b border-kamika-mist px-5">
-              <button
-                type="button"
-                onClick={() => setMenuOpen(false)}
-                aria-label={t("a11y.closeMenu")}
-                className="-mr-2 rounded-kamika p-2 text-kamika-ink"
+      {canPortal &&
+        createPortal(
+          <AnimatePresence>
+            {menuOpen && (
+              <motion.div
+                ref={panelRef}
+                role="dialog"
+                aria-modal="true"
+                aria-label={t("a11y.mainNavigation")}
+                initial={reduceMotion ? false : { clipPath: "inset(0 0 100% 0)" }}
+                animate={{ clipPath: "inset(0 0 0% 0)" }}
+                exit={reduceMotion ? { opacity: 0 } : { clipPath: "inset(0 0 100% 0)" }}
+                transition={{ duration: 0.45, ease: EASE }}
+                className="fixed inset-0 z-100 flex flex-col bg-kamika-paper lg:hidden"
               >
-                <CloseIcon className="size-6" />
-              </button>
-            </div>
+                <div className="flex h-16 shrink-0 items-center justify-end border-b border-kamika-mist px-5">
+                  <button
+                    type="button"
+                    onClick={() => setMenuOpen(false)}
+                    aria-label={t("a11y.closeMenu")}
+                    className="-mr-2 rounded-kamika p-2 text-kamika-ink"
+                  >
+                    <CloseIcon className="size-6" />
+                  </button>
+                </div>
 
-            <div className="flex-1 overflow-y-auto overscroll-contain px-5 py-8">
-              <p className="eyebrow">{t("nav.products")}</p>
-              <ul className="mt-4 grid gap-1">
-                {categories.map((category) => (
-                  <li key={category.href}>
-                    <Link
-                      href={category.href}
-                      className="font-display block py-2 text-2xl font-medium tracking-[-0.02em] text-kamika-ink"
-                    >
-                      {category.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+                {/* Compacto a propósito: en una pantalla de 360×640 las
+                    ocho gamas y los cuatro enlaces tienen que caber sin
+                    hacer scroll dentro del menú. */}
+                <div className="flex-1 overflow-y-auto overscroll-contain px-5 py-6">
+                  <p className="eyebrow">{t("nav.products")}</p>
+                  <ul className="mt-4 grid gap-1">
+                    {categories.map((category) => (
+                      <li key={category.href}>
+                        <Link
+                          href={category.href}
+                          className="font-display block py-1.5 text-xl font-medium tracking-[-0.02em] text-kamika-ink sm:py-2 sm:text-2xl"
+                        >
+                          {category.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
 
-              <ul className="mt-8 grid gap-1 border-t border-kamika-mist pt-6">
-                {links.map((link) => (
-                  <li key={link.href}>
-                    <Link href={link.href} className="block py-2 text-base text-kamika-ink/80">
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+                  <ul className="mt-6 grid gap-1 border-t border-kamika-mist pt-5">
+                    {links.map((link) => (
+                      <li key={link.href}>
+                        <Link href={link.href} className="block py-2 text-base text-kamika-ink/80">
+                          {link.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-            <div className="shrink-0 border-t border-kamika-mist px-5 py-6">
-              <a
-                href={phoneHref}
-                className="flex items-center gap-2 font-mono text-sm text-kamika-steel"
-              >
-                <PhoneIcon className="size-4" />
-                {phone}
-              </a>
-              <ButtonLink href={routes.contact} className="mt-4 w-full">
-                {t("nav.contact")}
-              </ButtonLink>
-            </div>
-          </motion.div>
+                <div className="shrink-0 border-t border-kamika-mist px-5 py-6">
+                  <a
+                    href={phoneHref}
+                    className="flex items-center gap-2 font-mono text-sm text-kamika-steel"
+                  >
+                    <PhoneIcon className="size-4" />
+                    {phone}
+                  </a>
+                  <ButtonLink href={routes.contact} className="mt-4 w-full">
+                    {t("nav.contact")}
+                  </ButtonLink>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>,
+          document.body,
         )}
-      </AnimatePresence>
     </>
   );
 }

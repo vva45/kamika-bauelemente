@@ -230,6 +230,12 @@ export const de: Record<ContentKey, string> = {
   "contactPage.enquiryAbout": "", // TODO: DE
   "contactPage.enquiryGeneral": "", // TODO: DE
 
+  // ── Página no encontrada ─────────────────────────────────────
+  "notFound.eyebrow": "", // TODO: DE
+  "notFound.title": "", // TODO: DE
+  "notFound.body": "", // TODO: DE
+  "notFound.backHome": "", // TODO: DE
+
   // ── Categorías ───────────────────────────────────────────────
   "category.comingSoonTitle": "", // TODO: DE
   "category.comingSoonBody": "", // TODO: DE
