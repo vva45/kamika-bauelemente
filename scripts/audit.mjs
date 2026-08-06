@@ -74,7 +74,13 @@ if (htmlFiles.length === 0) {
     // Ficheros servidos desde /public o generados por Next.
     if (existsSync(join(PUBLIC, clean))) continue;
     if (clean.startsWith("/_next") || clean === "/sitemap.xml" || clean === "/robots.txt") continue;
-    if (clean.startsWith("/icon") || clean.startsWith("/apple-icon") || clean.startsWith("/opengraph-image")) {
+    // Iconos y OG: no viven en public/, los sirve Next desde src/app.
+    if (
+      clean.startsWith("/icon") ||
+      clean.startsWith("/apple-icon") ||
+      clean.startsWith("/favicon.ico") ||
+      clean.startsWith("/opengraph-image")
+    ) {
       continue;
     }
     fail("dead internal link", `${clean} is linked but no page or file answers it`);
