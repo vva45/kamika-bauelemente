@@ -27,7 +27,7 @@ Cada gama enseña lo más concreto que tiene, en este orden:
 1. **Fabricantes** — Windows → Aluplast → 4 sistemas (IDEAL 4000/5000/7000,
    energeto 8000) → versiones "coming soon" hasta que llegue el catálogo Aluplast.
 2. **Colecciones** — Entrance doors → 4 portadas de catálogo (ROKA Signature 100,
-   ROKA Select 22, Despiro 48, paneles 144 = **314 modelos extraídos de los PDF**
+   ROKA Select 22, Despiro 48, paneles Aluprof 144 = **314 modelos extraídos de los PDF**
    por `scripts/extract_catalogue_models.py`). Cada modelo: ficha + specs impresas
    + botón al PDF por su página exacta.
 3. **Fichas de producto** — las otras 6 gamas, con 24 productos **de ejemplo**

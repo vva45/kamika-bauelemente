@@ -9,15 +9,17 @@
  * Los cuatro son de puertas de entrada; todavía no hay catálogo de
  * ventanas, persianas ni el resto de gamas.
  *
- * ⚠️ Los nombres de marca (ROKA, Despiro) no se traducen nunca.
+ * ⚠️ Los nombres de marca (ROKA, Despiro, Aluprof) no se traducen nunca.
  *
  * Nota sobre `entrance-door-panels`: el PDF llegó rotulado con el
- * logotipo de OTRA empresa del sector en la primera página. Se sustituyó
- * por el de Kamika dentro del propio fichero —reemplazando los datos de
- * la imagen, no tapándola, así que el logo ajeno ya no existe en el
- * PDF— y se limpiaron los metadatos. Si el proveedor manda una versión
- * nueva, hay que repetir la operación ANTES de publicarla: en esta web
- * no puede aparecer la marca de un competidor.
+ * logotipo de OTRA empresa del sector en la primera página — no el del
+ * fabricante, que es Aluprof según confirmó el dueño, sino el de un
+ * competidor local. Se sustituyó por el de Kamika dentro del propio
+ * fichero —reemplazando los datos de la imagen, no tapándola, así que
+ * el logo ajeno ya no existe en el PDF— y se limpiaron los metadatos.
+ * Si el proveedor manda una versión nueva, hay que repetir la operación
+ * ANTES de publicarla: en esta web no puede aparecer la marca de un
+ * competidor.
  */
 import type { Catalogue } from "./types";
 
@@ -60,10 +62,11 @@ export const CATALOGUES: Catalogue[] = [
   },
   {
     id: "entrance-door-panels",
-    title: { en: "Entrance door panels", de: "Haustür-Paneele" },
-    // Sin marca a propósito: el PDF llegó con el logotipo de otra
-    // empresa (ver nota de arriba) y no consta quién lo fabrica. Antes
-    // que atribuírselo a alguien, la colección se queda sin marca.
+    title: { en: "Aluprof entrance door panels", de: "Aluprof Haustür-Paneele" },
+    // Estuvo sin marca mientras no constaba el fabricante; el dueño
+    // confirmó que es Aluprof (2026-08). El logotipo que traía el PDF
+    // era de un competidor, no de Aluprof — ver la nota de arriba.
+    brand: "Aluprof",
     collection: { en: "Door panels", de: "Haustür-Paneele" },
     category: "entrance-doors",
     file: "/pdf/catalogues/entrance-door-panels.pdf",

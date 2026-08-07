@@ -54,8 +54,7 @@ const COVERS = [
   },
   {
     id: "entrance-door-panels",
-    // Sin marca: el catálogo no dice de quién es (ver catalogues.ts).
-    brand: null,
+    brand: "Aluprof",
     collection: "Door panels",
     models: [
       "public/images/models/entrance-door-panels/panel-01.jpg",
@@ -71,8 +70,11 @@ const plate = ({ brand, collection }) =>
   <line x1="0" y1="${H * 0.26}" x2="${W}" y2="${H * 0.26}" stroke="${PALETTE.blue}" stroke-width="2"/>
 
   ${
+    /* La marca tal y como la escribe el fabricante — "Aluprof", no
+       "ALUPROF": el dueño lo pidió expresamente, y forzar mayúsculas a
+       un nombre de marca es reescribírselo. */
     brand
-      ? `<text x="70" y="150" font-family="${MONO}" font-size="24" letter-spacing="10" fill="${PALETTE.steel}">${brand.toUpperCase()}</text>`
+      ? `<text x="70" y="150" font-family="${MONO}" font-size="24" letter-spacing="10" fill="${PALETTE.steel}">${brand}</text>`
       : `<text x="70" y="150" font-family="${MONO}" font-size="24" letter-spacing="10" fill="${PALETTE.steel}">COLLECTION</text>`
   }
   <text x="70" y="248" font-family="${SANS}" font-size="76" font-weight="700" fill="${PALETTE.ink}">${collection}</text>

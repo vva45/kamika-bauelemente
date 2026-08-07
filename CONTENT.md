@@ -87,7 +87,7 @@ Self-hosted, never linked to a manufacturer's website.
 
 | Status | Path                                         | What it is                                                                 | Who   |
 | ------ | -------------------------------------------- | -------------------------------------------------------------------------- | ----- |
-| `[x]`  | `public/pdf/catalogues/*.pdf`                | **Four real catalogues are in place**, all of them entrance doors: ROKA Signature (298 pp), ROKA Select (23 pp), the panel catalogue (194 pp) and Despiro (37 pp). Titles, years, page counts and file sizes in `src/data/catalogues.ts` were read from the PDFs, not estimated. Covers are rendered from page 1. | —     |
+| `[x]`  | `public/pdf/catalogues/*.pdf`                | **Four real catalogues are in place**, all of them entrance doors: ROKA Signature (298 pp), ROKA Select (23 pp), the Aluprof panel catalogue (194 pp) and Despiro (37 pp). Titles, years, page counts and file sizes in `src/data/catalogues.ts` were read from the PDFs, not estimated. Covers are rendered from page 1. | —     |
 | `[ ]`  | `public/pdf/catalogues/` — other ranges      | Nothing yet for windows, roller shutters, insect screens, gates, fences or hardware. Those categories currently have no catalogue to link to. | Owner |
 | `[~]`  | `public/pdf/{category}/{product-id}.pdf`     | Per-product data sheet, where one exists. Five are placeholders; the rest of the products show no data-sheet button at all, which is the rule: no button beats a dead link. | Owner |
 
@@ -97,7 +97,7 @@ catalogue to point at, so their products show no data-sheet button. Two things w
 catalogues for the other ranges, and the owner naming which models he actually sells.
 
 > **Branding rule, non-negotiable:** no competitor's mark may appear anywhere on this site.
-> The panel catalogue arrived carrying another window company's logo on page 1. It was replaced
+> The Aluprof panel catalogue arrived carrying another window company's logo on page 1 — a local competitor's, not the manufacturer's. It was replaced
 > with the Kamika wordmark inside the PDF itself — the image data was swapped, not covered, so the
 > foreign logo no longer exists in the file — and the metadata was rewritten. All four PDFs were
 > then swept: no matching text on any of the 552 pages, no links, and every small header/footer
@@ -118,7 +118,7 @@ actually uses — first the manufacturer, then what it offers:
 | Range | Structure | Where the data comes from |
 | ----- | --------- | ------------------------- |
 | Windows | Aluplast → its systems → versions | `src/data/manufacturers.ts`, pending the Aluplast catalogue |
-| Entrance doors | Collection (ROKA Signature, ROKA Select, Despiro, panels) → its models | the four PDFs, extracted |
+| Entrance doors | Collection (ROKA Signature, ROKA Select, Despiro, Aluprof panels) → its models | the four PDFs, extracted |
 
 So the entrance-door pages are no longer four hand-picked doors: the category shows the four
 collection covers, and each cover opens the whole collection — 314 models with their specification
