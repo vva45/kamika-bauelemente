@@ -225,13 +225,16 @@ export const en = {
   "colours.eyebrow": "Colours and finishes",
   "colours.title": "Colours and finishes",
   "colours.intro":
-    "Frames can be finished in a different colour inside and outside. RAL powder coatings, wood decor foils and anodised aluminium — filter by finish or by the material you are ordering.",
+    "Frames can be finished in a different colour inside and outside. RAL powder coatings, wood decor foils, wood stains, anodised aluminium and the numbered shutter-slat palette — filter by finish or by the material you are ordering.",
   "colours.filterGroup": "Finish",
   "colours.filterMaterial": "Material",
   "colours.filterAll": "All",
   "colours.groupRal": "RAL",
   "colours.groupWoodDecor": "Wood decor",
   "colours.groupAnodised": "Anodised",
+  "colours.groupWoodStain": "Wood stain",
+  "colours.groupLamella": "Shutter slats",
+  "colours.groupSpecial": "Special",
   "colours.availableOn": "Available on",
   "colours.noMatch": "No finish matches that combination.",
   "colours.disclaimer":
@@ -306,6 +309,8 @@ export const en = {
   "system.fromManufacturer": "A system by",
 
   // ── Categorías ───────────────────────────────────────────────
+  "category.fromCataloguesIntro":
+    "Straight from the manufacturers' catalogues, grouped the way they are printed. Every piece opens the catalogue at the page it came from.",
   "category.typesHeading": "Types of door",
   "category.typesIntro":
     "Each type is a range of its own, with its own models, specifications and catalogues. Pick the one that matches the opening.",

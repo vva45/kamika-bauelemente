@@ -151,10 +151,10 @@ export const de: Record<ContentKey, string> = {
   "catalogue.modelsInCatalogue": "", // TODO: DE
   "catalogue.modelFamilies": "", // TODO: DE
   "catalogue.modelNote": "", // TODO: DE
+
   // ── Colecciones ──────────────────────────────────────────────
   "collection.heading": "", // TODO: DE
   "collection.intro": "", // TODO: DE
-
   "catalogue.comingSoonTitle": "", // TODO: DE
   "catalogue.comingSoonBody": "", // TODO: DE
 
@@ -207,6 +207,9 @@ export const de: Record<ContentKey, string> = {
   "colours.groupRal": "", // TODO: DE
   "colours.groupWoodDecor": "", // TODO: DE
   "colours.groupAnodised": "", // TODO: DE
+  "colours.groupWoodStain": "", // TODO: DE
+  "colours.groupLamella": "", // TODO: DE
+  "colours.groupSpecial": "", // TODO: DE
   "colours.availableOn": "", // TODO: DE
   "colours.noMatch": "", // TODO: DE
   "colours.disclaimer": "", // TODO: DE
@@ -272,6 +275,7 @@ export const de: Record<ContentKey, string> = {
   "system.fromManufacturer": "", // TODO: DE
 
   // ── Categorías ───────────────────────────────────────────────
+  "category.fromCataloguesIntro": "", // TODO: DE
   "category.typesHeading": "", // TODO: DE
   "category.typesIntro": "", // TODO: DE
   "category.comingSoonTitle": "", // TODO: DE

@@ -139,6 +139,17 @@ export interface CatalogueModel {
   name: string; // nombre del modelo, no se traduce
   /** Familia dentro de la colección, si el catálogo la declara. */
   family?: string;
+  /**
+   * Gama a la que pertenece el modelo, cuando NO es la de su catálogo.
+   *
+   * Los catálogos de puertas traen al final sus accesorios —tiradores,
+   * manillas, control de acceso, cierrapuertas—. Son producto de
+   * verdad y el visitante los busca, pero en el escaparate de la
+   * colección serían una manilla perdida entre ochenta y siete
+   * puertas. Con esto salen de ahí y aparecen en su gama, sin dejar de
+   * apuntar al PDF y a la página de donde salieron.
+   */
+  category?: CategorySlug;
   page: number; // página del PDF, para el enlace #page=N
   image: string;
   /**
@@ -198,6 +209,6 @@ export interface ColorFinish {
   name: Localized<string>; // "Anthracite grey" / "Anthrazitgrau"
   code: string; // "RAL 7016"
   hex: string;
-  group: "ral" | "wood-decor" | "anodised";
+  group: "ral" | "wood-decor" | "anodised" | "wood-stain" | "lamella" | "special";
   materials: Material[];
 }

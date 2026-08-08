@@ -101,7 +101,21 @@ export const getCollectionsFor = (slug: CategorySlug): Catalogue[] =>
  * hojearlo en la web y hojearlo en papel llevan al mismo sitio.
  */
 export const getModelsByCatalogue = (catalogueId: string): CatalogueModel[] =>
-  CATALOGUE_MODELS.filter((model) => model.catalogue === catalogueId);
+  CATALOGUE_MODELS.filter(
+    // Los accesorios de un catálogo de puertas no van en el escaparate
+    // de la colección: se enseñan en su propia gama. Ver `category` en
+    // `CatalogueModel`.
+    (model) => model.catalogue === catalogueId && model.category === undefined,
+  );
+
+/**
+ * Modelos que un catálogo aporta a OTRA gama: los accesorios que traen
+ * al final los catálogos de puertas y de persianas. Se agrupan por
+ * familia —"Stangengriffe", "Zutrittskontrolle"— porque así es como
+ * vienen y como se buscan.
+ */
+export const getModelsInCategory = (slug: CategorySlug): CatalogueModel[] =>
+  CATALOGUE_MODELS.filter((model) => model.category === slug);
 
 export const getCatalogueModel = (
   catalogueId: string,
@@ -133,7 +147,10 @@ export const countModelsInCategory = (slug: CategorySlug): number => {
   const catalogueIds = CATALOGUES.filter((catalogue) => catalogue.category === slug).map(
     (catalogue) => catalogue.id,
   );
-  const models = CATALOGUE_MODELS.filter((model) => catalogueIds.includes(model.catalogue)).length;
+  const models =
+    CATALOGUE_MODELS.filter(
+      (model) => catalogueIds.includes(model.catalogue) && model.category === undefined,
+    ).length + getModelsInCategory(slug).length;
   // Una gama organizada por fabricantes cuenta sus sistemas: es lo que
   // el visitante puede abrir hoy. Cuando llegue el catálogo del
   // fabricante, sus modelos extraídos pasarán a mandar solos.

@@ -26,6 +26,7 @@ import {
   getCatalogueModel,
   getCategory,
   getModelsByCatalogue,
+  getModelsInCategory,
 } from "@/data";
 import { collectionName } from "@/lib/catalogue";
 import { pick, t, tf } from "@/lib/i18n";
@@ -63,9 +64,21 @@ export default async function CatalogueModelPage({
   if (!model || !catalogue) notFound();
 
   const title = collectionName(catalogue);
-  const category = catalogue.category ? getCategory(catalogue.category) : undefined;
-  // Vecinos en el catálogo: seguir mirando es lo que hace un escaparate.
-  const siblings = getModelsByCatalogue(catalogue.id);
+  // Un accesorio sale de un catálogo de puertas pero pertenece a la
+  // gama de accesorios: el camino de vuelta es el suyo, no el de las
+  // puertas entre las que venía impreso.
+  const home = model.category ?? catalogue.category;
+  const category = home ? getCategory(home) : undefined;
+  // Vecinos: los de su misma gama dentro del catálogo, para que un
+  // tirador enseñe tiradores y no ochenta y siete puertas.
+  const siblings = model.category
+    ? getModelsInCategory(model.category).filter((entry) => entry.catalogue === catalogue.id)
+    : getModelsByCatalogue(catalogue.id);
+  // "Ver todos" lleva a donde está el resto: el escaparate de la
+  // colección, o la gama de accesorios si el modelo es uno de ellos.
+  const allHref = model.category
+    ? routes.category(model.category)
+    : routes.catalogueModels(catalogue.id);
   const index = siblings.findIndex((entry) => entry.id === model.id);
   const nearby = [
     ...siblings.slice(Math.max(0, index - 2), index),
@@ -89,7 +102,10 @@ export default async function CatalogueModelPage({
             // Una gama puede tener una sola colección que se llame como
             // ella ("Roller shutters" dentro de Roller shutters): no se
             // repite la palabra dos veces seguidas.
-            ...(category && pick(category.name) === title
+            // Y el escaparate de la colección solo cuando el modelo
+            // está DENTRO: el de un accesorio son las puertas entre las
+            // que venía impreso, que no es de donde se ha venido.
+            ...(model.category || (category && pick(category.name) === title)
               ? []
               : [{ label: title, href: routes.catalogueModels(catalogue.id) }]),
             { label: model.name },
@@ -142,7 +158,7 @@ export default async function CatalogueModelPage({
                 <ButtonLink href={routes.contactAbout(catalogue.id)} variant="secondary">
                   {t("product.sendEnquiry")}
                 </ButtonLink>
-                <ButtonLink href={routes.catalogueModels(catalogue.id)} variant="secondary">
+                <ButtonLink href={allHref} variant="secondary">
                   {t("catalogue.viewAllModels")}
                   <ArrowUpRightIcon className="size-4" />
                 </ButtonLink>
@@ -196,7 +212,7 @@ export default async function CatalogueModelPage({
             title={t("catalogue.otherModels")}
             size="sm"
             action={
-              <ButtonLink href={routes.catalogueModels(catalogue.id)} variant="secondary" size="sm">
+              <ButtonLink href={allHref} variant="secondary" size="sm">
                 {t("catalogue.viewAllModels")}
               </ButtonLink>
             }

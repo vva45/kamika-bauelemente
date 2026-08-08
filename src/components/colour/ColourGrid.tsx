@@ -22,6 +22,9 @@ const GROUP_LABEL: Record<ColorFinish["group"], ContentKey> = {
   ral: "colours.groupRal",
   "wood-decor": "colours.groupWoodDecor",
   anodised: "colours.groupAnodised",
+  "wood-stain": "colours.groupWoodStain",
+  lamella: "colours.groupLamella",
+  special: "colours.groupSpecial",
 };
 
 const MATERIAL_LABEL: Record<Material, ContentKey> = {

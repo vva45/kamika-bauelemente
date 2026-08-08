@@ -1,10 +1,24 @@
 /**
- * ⚠️ DATOS DE EJEMPLO — PENDIENTES DE CONFIRMAR.
+ * La carta de acabados.
  *
- * Los códigos RAL son reales y los hex son la aproximación habitual en
- * pantalla, pero la carta que Kamika ofrece de verdad la tiene que
- * confirmar el dueño: qué colores están en stock, cuáles son de pedido
- * y cuáles no se hacen en según qué material.
+ * Dos orígenes distintos, y conviene no mezclarlos al mantenerla:
+ *
+ * · Los RAL, los decorados y los anodizados vienen de la carta estándar
+ *   del sector. El código es real y el hex es la aproximación habitual
+ *   en pantalla. Qué está en stock y qué es de pedido lo tiene que
+ *   confirmar el dueño; los que llevan `RAL` los nombra alguno de los
+ *   catálogos que hay publicados en la web.
+ *
+ * · Los acabados de madera y los colores de lamella salen MEDIDOS de los
+ *   catálogos: el hex es la mediana de la propia muestra impresa, no un
+ *   valor de memoria. Es la única fuente que hay —esas cartas no son
+ *   RAL— y por eso se sacó del PDF en vez de inventarla. Si el
+ *   proveedor manda catálogo nuevo, se vuelven a medir.
+ *
+ * Los dos "perlados" (RAL 1035 y 7048) y los dos grises DB llevan el
+ * valor publicado, pero son acabados con efecto metálico: un hex plano
+ * no los representa. Confirmar contra carta física antes de prometer
+ * nada por teléfono — ver CONTENT.md.
  *
  * Aviso obligatorio en la interfaz: en pantalla el color es orientativo
  * y hay que pedir muestra física.
@@ -158,6 +172,144 @@ export const COLORS: ColorFinish[] = [
     materials: ["pvc", "aluminium", "steel"],
   },
 
+  // Los que siguen los nombra alguno de los catálogos publicados —el de
+  // fassadenjalousien sobre todo, que lista la carta entera de cada
+  // lama, y los de puertas de Außentüren y persianas.
+  {
+    id: "ral-9001",
+    name: { en: "Cream" },
+    code: "RAL 9001",
+    hex: "#FDF4E3",
+    group: "ral",
+    materials: ["pvc", "aluminium", "steel"],
+  },
+  {
+    id: "ral-9006",
+    name: { en: "White aluminium" },
+    code: "RAL 9006",
+    hex: "#A5A5A5",
+    group: "ral",
+    materials: ["aluminium", "steel"],
+  },
+  {
+    id: "ral-9004",
+    name: { en: "Signal black" },
+    code: "RAL 9004",
+    hex: "#282828",
+    group: "ral",
+    materials: ["aluminium", "steel"],
+  },
+  {
+    id: "ral-9017",
+    name: { en: "Traffic black" },
+    code: "RAL 9017",
+    hex: "#1E1E1E",
+    group: "ral",
+    materials: ["aluminium", "steel"],
+  },
+  {
+    id: "ral-7021",
+    name: { en: "Black grey" },
+    code: "RAL 7021",
+    hex: "#2F3234",
+    group: "ral",
+    materials: ["aluminium", "steel"],
+  },
+  {
+    id: "ral-7022",
+    name: { en: "Umbra grey" },
+    code: "RAL 7022",
+    hex: "#4C4A44",
+    group: "ral",
+    materials: ["aluminium", "steel"],
+  },
+  {
+    id: "ral-7038",
+    name: { en: "Agate grey" },
+    code: "RAL 7038",
+    hex: "#B5B8B1",
+    group: "ral",
+    materials: ["aluminium", "steel"],
+  },
+  {
+    id: "ral-7043",
+    name: { en: "Traffic grey B" },
+    code: "RAL 7043",
+    hex: "#4E5451",
+    group: "ral",
+    materials: ["aluminium", "steel"],
+  },
+  {
+    // Perlado: efecto metálico, el hex es solo el tono base.
+    id: "ral-7048",
+    name: { en: "Pearl mouse grey" },
+    code: "RAL 7048",
+    hex: "#7C7F7E",
+    group: "ral",
+    materials: ["aluminium"],
+  },
+  {
+    id: "ral-1035",
+    name: { en: "Pearl beige" },
+    code: "RAL 1035",
+    hex: "#7A7B6D",
+    group: "ral",
+    materials: ["aluminium"],
+  },
+  {
+    id: "ral-8014",
+    name: { en: "Sepia brown" },
+    code: "RAL 8014",
+    hex: "#4A3526",
+    group: "ral",
+    materials: ["aluminium", "steel"],
+  },
+  {
+    id: "ral-8019",
+    name: { en: "Grey brown" },
+    code: "RAL 8019",
+    hex: "#3D3635",
+    group: "ral",
+    materials: ["pvc", "aluminium", "steel"],
+  },
+  {
+    id: "ral-3004",
+    name: { en: "Purple red" },
+    code: "RAL 3004",
+    hex: "#75151E",
+    group: "ral",
+    materials: ["aluminium", "steel"],
+  },
+  {
+    id: "ral-5001",
+    name: { en: "Green blue" },
+    code: "RAL 5001",
+    hex: "#1F3438",
+    group: "ral",
+    materials: ["aluminium", "steel"],
+  },
+
+  // ── Sonderfarben ─────────────────────────────────────────────
+  // Los dos grises DB de la carta ferroviaria alemana, que en fachada
+  // se piden tanto como un RAL. Salen en la carta de cada lama del
+  // catálogo de fassadenjalousien.
+  {
+    id: "db-702",
+    name: { en: "DB grey, light" },
+    code: "DB 702",
+    hex: "#7C7F84",
+    group: "special",
+    materials: ["aluminium"],
+  },
+  {
+    id: "db-703",
+    name: { en: "DB grey, dark" },
+    code: "DB 703",
+    hex: "#434750",
+    group: "special",
+    materials: ["aluminium"],
+  },
+
   // ── Decorados de madera ──────────────────────────────────────
   {
     id: "decor-golden-oak",
@@ -238,6 +390,230 @@ export const COLORS: ColorFinish[] = [
     hex: "#383E42",
     group: "wood-decor",
     materials: ["pvc", "aluminium"],
+  },
+  {
+    // Acabado madera sobre lama de aluminio, no lámina de PVC: sale en
+    // la carta de las C-80 y Z-90 del catálogo de fassadenjalousien.
+    id: "decor-turner-oak-malt",
+    name: { en: "Turner oak malt" },
+    code: "Turner Oak Malt",
+    hex: "#B98B54",
+    group: "wood-decor",
+    materials: ["aluminium"],
+  },
+
+  // ── Barnices sobre madera ────────────────────────────────────
+  // Los acabados de las puertas de madera (Kiefer y Meranti) del
+  // catálogo de Außentüren. No son RAL: el hex está MEDIDO sobre la
+  // muestra impresa en la página 74-75 del propio catálogo. El propio
+  // catálogo avisa de que el tono cambia según la madera, y por eso
+  // aquí van los de pino, que es la muestra completa.
+  {
+    id: "stain-farblos",
+    name: { en: "Clear" },
+    code: "Farblos",
+    hex: "#EFD8AC",
+    group: "wood-stain",
+    materials: ["wood"],
+  },
+  {
+    id: "stain-weiss-deckend",
+    name: { en: "White, opaque" },
+    code: "Weiß (deckend)",
+    hex: "#F3F3F5",
+    group: "wood-stain",
+    materials: ["wood"],
+  },
+  {
+    id: "stain-eiche-natur",
+    name: { en: "Natural oak" },
+    code: "Eiche Natur",
+    hex: "#A9643B",
+    group: "wood-stain",
+    materials: ["wood"],
+  },
+  {
+    id: "stain-eiche-dunkel",
+    name: { en: "Dark oak" },
+    code: "Eiche dunkel",
+    hex: "#8C3E20",
+    group: "wood-stain",
+    materials: ["wood"],
+  },
+  {
+    id: "stain-teak",
+    name: { en: "Teak" },
+    code: "Teak",
+    hex: "#792D1A",
+    group: "wood-stain",
+    materials: ["wood"],
+  },
+  {
+    id: "stain-mahagoni",
+    name: { en: "Mahogany" },
+    code: "Mahagoni",
+    hex: "#762A1C",
+    group: "wood-stain",
+    materials: ["wood"],
+  },
+  {
+    id: "stain-nussbaum",
+    name: { en: "Walnut" },
+    code: "Nussbaum",
+    hex: "#2D191B",
+    group: "wood-stain",
+    materials: ["wood"],
+  },
+  {
+    id: "stain-schwarzbraun",
+    name: { en: "Black brown" },
+    code: "Schwarzbraun",
+    hex: "#240F11",
+    group: "wood-stain",
+    materials: ["wood"],
+  },
+
+  // ── Lamas de persiana ────────────────────────────────────────
+  // La carta de la persiana va por número, no por RAL: es lo que el
+  // cliente acaba diciendo por teléfono ("la 23"). Los hex están
+  // MEDIDOS sobre la muestra impresa, salvo los dos que el propio
+  // catálogo iguala a un RAL. Los tres primeros números son estándar y
+  // el resto opcional; el 60 depende de existencias.
+  {
+    id: "lamella-01",
+    name: { en: "Silver" },
+    code: "01 Silber",
+    hex: "#DDDDDD",
+    group: "lamella",
+    materials: ["aluminium"],
+  },
+  {
+    id: "lamella-02",
+    name: { en: "White" },
+    code: "02 Weiß",
+    hex: "#FDFDFD",
+    group: "lamella",
+    materials: ["aluminium"],
+  },
+  {
+    id: "lamella-03",
+    name: { en: "Grey" },
+    code: "03 Grau",
+    hex: "#EDEEE5",
+    group: "lamella",
+    materials: ["aluminium"],
+  },
+  {
+    id: "lamella-05",
+    name: { en: "Beige" },
+    code: "05 Beige",
+    hex: "#CCBB80",
+    group: "lamella",
+    materials: ["aluminium"],
+  },
+  {
+    id: "lamella-08",
+    name: { en: "Dark brown" },
+    code: "08 Dunkelbraun",
+    hex: "#393532",
+    group: "lamella",
+    materials: ["aluminium"],
+  },
+  {
+    id: "lamella-09",
+    name: { en: "Brown" },
+    code: "09 Braun",
+    hex: "#5A3F30",
+    group: "lamella",
+    materials: ["aluminium"],
+  },
+  {
+    id: "lamella-20",
+    name: { en: "Black" },
+    code: "20 Schwarz",
+    hex: "#171717",
+    group: "lamella",
+    materials: ["aluminium"],
+  },
+  {
+    id: "lamella-23",
+    name: { en: "Anthracite" },
+    code: "23 Anthrazit",
+    hex: "#2D2D2F",
+    group: "lamella",
+    materials: ["aluminium"],
+  },
+  {
+    id: "lamella-24",
+    name: { en: "Golden oak" },
+    code: "24 Golden Oak",
+    hex: "#AC6A2F",
+    group: "lamella",
+    materials: ["aluminium"],
+  },
+  {
+    id: "lamella-28",
+    name: { en: "Walnut" },
+    code: "28 Nussbaum",
+    hex: "#614328",
+    group: "lamella",
+    materials: ["aluminium"],
+  },
+  {
+    id: "lamella-33",
+    name: { en: "Basalt grey" },
+    code: "33 Basaltgrau RAL 7012",
+    hex: "#4E5754",
+    group: "lamella",
+    materials: ["aluminium"],
+  },
+  {
+    id: "lamella-34",
+    name: { en: "Quartz grey" },
+    code: "34 Quarzgrau RAL 7039",
+    hex: "#6B695F",
+    group: "lamella",
+    materials: ["aluminium"],
+  },
+  {
+    id: "lamella-49",
+    name: { en: "Turner oak" },
+    code: "49 Turner Oak",
+    hex: "#FACA8A",
+    group: "lamella",
+    materials: ["aluminium"],
+  },
+  {
+    id: "lamella-52",
+    name: { en: "Winchester" },
+    code: "52 Winchester",
+    hex: "#9D6D3C",
+    group: "lamella",
+    materials: ["aluminium"],
+  },
+  {
+    id: "lamella-60",
+    name: { en: "Ivory" },
+    code: "60 Elfenbein",
+    hex: "#CDBD82",
+    group: "lamella",
+    materials: ["aluminium"],
+  },
+  {
+    id: "lamella-61",
+    name: { en: "Moss green" },
+    code: "61 Moosgrün",
+    hex: "#2E5B41",
+    group: "lamella",
+    materials: ["aluminium"],
+  },
+  {
+    id: "lamella-62",
+    name: { en: "Grey aluminium" },
+    code: "62 Grau Aluminium",
+    hex: "#A5A5A5",
+    group: "lamella",
+    materials: ["aluminium"],
   },
 
   // ── Anodizados ───────────────────────────────────────────────

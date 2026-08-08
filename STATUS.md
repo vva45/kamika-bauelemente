@@ -1,8 +1,7 @@
 # STATUS — checkpoint estable
 
-**Checkpoint:** `checkpoint-1` · estado auditado en commit `46e3d18` (la auditoría
-completa) + este fichero encima · 2026-08-06
-**Estado:** todo verde. `npm run check` (build + i18n + auditoría de 375 páginas) sin un solo problema.
+**Checkpoint:** `checkpoint-2` · 2026-08-08 (el anterior, `checkpoint-1`, en `46e3d18`)
+**Estado:** todo verde. `npm run check` (build + i18n + auditoría de 576 páginas) sin un solo problema.
 **Volver aquí si algo se rompe:** `git log --oneline` para localizar este punto por
 mensaje ("Checkpoint: STATUS.md…"), y `git reset --hard <ese hash>`. Todo commit de
 `main` queda en GitHub para siempre: un checkpoint es un hash, la etiqueta es solo
@@ -28,13 +27,17 @@ Cada gama enseña lo más concreto que tiene, en este orden:
    real del proveedor), Salamander (BluEvolution 82, con ficha), VEKA (82) y
    REHAU (Synego), estos dos a la espera de su ficha. Specs copiadas de las
    fichas autoalojadas en /pdf/windows/, nunca de memoria.
-2. **Colecciones** — dos gamas van por catálogo, con **342 modelos extraídos de los
+2. **Colecciones** — dos gamas van por catálogo, con **457 modelos extraídos de los
    PDF**, cada uno con ficha, specs impresas y botón al PDF por su página exacta:
-   · Entrance doors → ROKA Signature 100, ROKA Select 22, Despiro 48, Aluprof 144
-     (`scripts/extract_catalogue_models.py`)
-   · Roller shutters → Rollläden 20, Fassadenjalousien 8, en alemán y con
-     descripción del fabricante (`scripts/extract_shutter_models.py`)
-3. **Fichas de producto** — las otras gamas, con 26 productos **de ejemplo**
+   · Entrance doors → ROKA Signature 100, ROKA Select 22, Despiro 48, Aluprof 144,
+     D-ART LINE 23, Außentüren 87
+     (`extract_catalogue_models.py`, `extract_drutex_models.py`)
+   · Roller shutters → Rollläden 20, Fassadenjalousien 8, Drutex 5, en alemán y con
+     descripción del fabricante (`extract_shutter_models.py`)
+3. **Accesorios** — 44 piezas sacadas del final de esos mismos catálogos
+   (`extract_accessories.py`). Llevan `category: "accessories"`, que las saca del
+   escaparate de su colección y las lleva a su gama, agrupadas por familia.
+4. **Fichas de producto** — las otras gamas, con 22 productos **de ejemplo**
    (marcados como tales) hasta que lleguen sus catálogos.
 
 **Jerarquía de gamas**: `Doors` es un hub que agrupa entrance / interior / patio.
@@ -44,6 +47,8 @@ dónde se llega. El contador del hub suma los de sus hijas.
 ## Reglas de negocio que no se tocan
 
 - **Nunca** enlazar la web de un fabricante: catálogo autoalojado + botón a contacto.
+- Los PDF **sin tratar** viven en `source-catalogues/`, fuera de `public/`. Lo que se
+  sirve pasa antes por `prepare_drutex.py`: fuera logotipo, web, dirección y QR.
 - **Ni rastro de KRISTALL FENSTER** (se limpió hasta del PDF y de la historia git).
 - Nada inventado: ni specs, ni biografía, ni horario, ni testimonios.
 - No reproducir logotipos ajenos (Aluplast es una lámina neutra; WhatsApp es un
@@ -61,6 +66,8 @@ dónde se llega. El contador del hub suma los de sus hijas.
   mailto + **WhatsApp** (+49 162 774 2992, confirmado activo) + copiar.
 - Mapa Google con **solución de dos clics** (0 peticiones a Google sin clic,
   medido). Datenschutz §8/§9 reescritos acorde.
+- Colores: 75 acabados en seis grupos. Los RAL, de la carta estándar; los barnices de
+  madera y la carta numerada de lamas, **medidos sobre la muestra impresa** del PDF.
 - Auditoría: 40 páginas × 2 viewports sin errores de consola/imágenes rotas/
   overflow; teclado y reduced-motion OK; JSON-LD válido; sitemap 372 URLs;
   cabeceras de seguridad activas; 0 vulnerabilidades npm.
@@ -79,9 +86,11 @@ dónde se llega. El contador del hub suma los de sus hijas.
    lo que recibe el dueño (hoy el formulario no envía solo).
 2. Fichas de VEKA 82 y REHAU Synego → completar sus páginas de sistema.
    Y catálogo de Terrassentüren → sustituir los 2 modelos de ejemplo de patio doors.
-3. Catálogos de las otras 5 gamas → sustituir los 24 productos de ejemplo. Eko-Okna
+3. Catálogos de las otras 4 gamas → sustituir los 22 productos de ejemplo. Eko-Okna
    los tiene en alemán: interior doors, gates (Sektionaltore), fences
    (Grundstückszäune), insect screens. Mismo procedimiento que las persianas.
+   Y en accesorios faltan manillas de ventana, cilindros, vierteaguas y aireadores:
+   no están en ningún catálogo de los que hay.
 4. Traducción alemana (215 claves) y textos reales de /about (retrato, bio).
 5. Legal, con abogado: NIF/IVA o Kleinunternehmer, cámara de oficios, horario;
    preguntar por el mapa de dos clics ya de paso.

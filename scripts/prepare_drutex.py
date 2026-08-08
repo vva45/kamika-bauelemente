@@ -126,7 +126,9 @@ COVER_DIR = os.path.join(ROOT, "public/images/catalogues")
 # Texto que es una ruta de salida, en cualquier página.
 ROUTES = [
     "www.drutex.de",
+    "www.drutex.eu",
     "drutex.de",
+    "drutex.eu",
     "DRUTEX",
     "Drutex",
     "Official Partner of FC Bayern",

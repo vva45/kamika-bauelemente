@@ -36,8 +36,7 @@ export const PROJECTS: Project[] = [
     /** Modelos instalados, para enlazar a sus fichas desde el detalle. */
     products: [
       "roller-shutter-front-mounted",
-      "insect-screen-pleated",
-      "handle-lockable"],
+      "insect-screen-pleated"],
     featured: true,
   },
   {
@@ -63,7 +62,7 @@ export const PROJECTS: Project[] = [
         alt: { en: "Courtyard elevation with the replacement PVC windows" },
       }],
     /** Modelos instalados, para enlazar a sus fichas desde el detalle. */
-    products: ["security-cylinder"],
+    products: [],
     // La puerta salió del catálogo, así que se enlaza a su modelo.
     models: [{ catalogue: "roka-select-2025", id: "select-20" }],
     featured: true,
@@ -92,8 +91,7 @@ export const PROJECTS: Project[] = [
       }],
     /** Modelos instalados, para enlazar a sus fichas desde el detalle. */
     products: [
-      "veneer-oak",
-      "handle-lockable"],
+      "veneer-oak"],
     featured: true,
   },
   {
@@ -177,6 +175,5 @@ export const PROJECTS: Project[] = [
     /** Modelos instalados, para enlazar a sus fichas desde el detalle. */
     products: [
       "roller-shutter-concealed",
-      "side-hinged-garage",
-      "window-sill-aluminium"],
+      "side-hinged-garage"],
   }];

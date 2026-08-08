@@ -23,6 +23,7 @@ import { CategoryHero } from "@/components/category/CategoryHero";
 import { CategoryProducts } from "@/components/category/CategoryProducts";
 import { CatalogueCard } from "@/components/catalogue/CatalogueCard";
 import { CollectionCard } from "@/components/catalogue/CollectionCard";
+import { ModelCard } from "@/components/catalogue/ModelCard";
 import { ContactCta } from "@/components/layout/ContactCta";
 import { ManufacturerCard } from "@/components/manufacturer/ManufacturerCard";
 import { ComingSoon } from "@/components/ui/ComingSoon";
@@ -34,6 +35,7 @@ import {
   getCategory,
   getCollectionsFor,
   getManufacturersByCategory,
+  getModelsInCategory,
   getProductsByCategory,
   isCategorySlug,
 } from "@/data";
@@ -79,9 +81,13 @@ export default async function CategoryPage({ params }: PageProps<"/products/[cat
   const manufacturers = getManufacturersByCategory(slug);
   // Y por colección donde ya hay catálogo: portada → todos sus modelos.
   const collections = getCollectionsFor(slug);
+  // Y los modelos que otra colección aporta a esta gama: los accesorios
+  // que traen al final los catálogos de puertas y de persianas.
+  const models = getModelsInCategory(slug);
   const comingSoon =
     manufacturers.length === 0 &&
     collections.length === 0 &&
+    models.length === 0 &&
     (category.comingSoon || products.length === 0);
 
   return (
@@ -137,6 +143,28 @@ export default async function CategoryPage({ params }: PageProps<"/products/[cat
               />
             ))}
           </div>
+        </section>
+      ) : models.length > 0 ? (
+        <section className="mx-auto max-w-[1440px] px-5 py-12 md:px-8 md:py-16">
+          <p className="max-w-2xl text-pretty text-kamika-ink/70 md:text-lg">
+            {t("category.fromCataloguesIntro")}
+          </p>
+
+          {/* Por familias, tal y como vienen impresos: quien busca una
+              manilla no quiere verla entre los mandos de persiana. */}
+          {[...new Set(models.map((model) => model.family ?? ""))].map((family) => {
+            const group = models.filter((model) => (model.family ?? "") === family);
+            return (
+              <div key={family} className="mt-12 first:mt-10">
+                {family && <h2 className="text-2xl md:text-3xl">{family}</h2>}
+                <div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-3 xl:grid-cols-4">
+                  {group.map((model, index) => (
+                    <ModelCard key={`${model.catalogue}-${model.id}`} model={model} priority={index < 4} />
+                  ))}
+                </div>
+              </div>
+            );
+          })}
         </section>
       ) : comingSoon ? (
         <ComingSoon title={t("category.comingSoonTitle")} body={t("category.comingSoonBody")}>

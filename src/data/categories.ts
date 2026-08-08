@@ -112,7 +112,7 @@ export const CATEGORIES: Category[] = [
     slug: "accessories",
     name: { en: "Accessories", de: "Zubehör" },
     intro: {
-      en: "Handles, cylinders, window sills, ventilation units and installation consumables. The parts that decide whether an installation is finished properly or just fitted.",
+      en: "Pull handles, lever handles, access control, hinges, door closers and roller-shutter controls — straight from the manufacturers' catalogues. The parts that decide whether an installation is finished properly or just fitted.",
     },
     heroImage: "/images/categories/accessories-hero.jpg",
     order: 7,

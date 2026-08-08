@@ -123,6 +123,35 @@ no brand, unlike the door collections.
 line per catalogue in `src/data/catalogues.ts` plus re-running the cover script. Ask him — this is
 a commercial call, not a technical one.
 
+### The three Drutex catalogues — same rule, harder to apply
+
+D-ART LINE, Außentüren and the roller-shutter/Raffstoren/insect-screen catalogue come from Drutex,
+which also **sells directly to end customers in Germany**. Same treatment as the shutter catalogues
+above, run by `scripts/prepare_drutex.py`:
+
+- the cover logo → the Kamika wordmark, and the same on the dark band of every section opener;
+- every URL (`.de` and `.eu`), the Bytów address, the phone number and the FC Bayern sponsorship;
+- **twenty-odd QR codes** ("MEHR MUSTER", "MEHR KONSTRUKTIONEN") that lead to their configurator,
+  with their captions;
+- the back cover and the cross-selling pages for their other products.
+
+Two traps worth recording, because a text search says "clean" while the page still shows the brand:
+
+1. **The logo is not text.** It is drawn letter by letter as vector paths, so `search_for("DRUTEX")`
+   finds nothing. The script recognises it by shape — the 21×25 "D" plus its five letters — and
+   removes it from ~50 pages.
+2. **The originals were being served.** `public/pdf/catalogues/` had the untouched files in it, so
+   anyone could download the fully branded version. They now live in `source-catalogues/`, outside
+   `public/`, which is also where the script reads them from.
+
+What was **kept**: the line name `D-ART LINE` and the model names printed under each door
+(`Washington 6`, `Alaska 1`…). Those are how the customer will refer to a door on the phone, and
+renaming them would leave the website saying one thing and the PDF another.
+
+**Not stripped, deliberately**: third-party component brands inside the catalogue pages — ekey,
+IDENCOM, SOMMER, DORMA, GEZE, SOMFY, doorbox, Swisspacer. Those are suppliers of parts, not
+competitors selling windows to the end customer, and naming them is honest attribution.
+
 ### Supplier image permission — ekookna.pl and drutex.es
 
 The owner passed on written permission (2026-08) to use the images available for download on
@@ -199,9 +228,24 @@ of it happened. Projects are what actually builds trust on a site like this, so 
 matters more than the product data — **even three real jobs with real photos beat six invented
 ones.** For each: what the customer asked for, what was fitted, the town, the year, and 3+ photos.
 
-`src/data/colors.ts` holds 33 finishes. The RAL codes are real and the hex values are the usual
-on-screen approximations, but the owner has to confirm **which finishes Kamika actually offers**,
-which are stock and which are made to order, and which are unavailable on a given material.
+`src/data/colors.ts` holds **75 finishes**, in six groups. Two different origins, and the difference
+matters when maintaining it:
+
+- **RAL, wood decor, anodised, and the two DB greys** — the trade's standard chart. The codes are
+  real and the hex values are the usual on-screen approximations. Every RAL added in the last pass
+  is one that a published catalogue names.
+- **Wood stains and the numbered shutter-slat palette** — **measured from the catalogues**. The hex
+  is the median of the printed swatch, sampled out of the PDF, because those charts are not RAL and
+  there is no reference value to look up. Re-measure if a supplier sends a new catalogue.
+
+Still for the owner to confirm: **which finishes Kamika actually offers**, which are stock and which
+are made to order, and which are unavailable on a given material. And specifically: `RAL 1035`,
+`RAL 7048`, `DB 702` and `DB 703` are metallic-effect coatings that a flat hex cannot represent —
+check them against a physical card before promising a colour on the phone.
+
+Two colour charts were found and **not** used: the Renolit foil fan on page 64 of the Außentüren
+catalogue and the metallic/special-effect examples on page 40 are printed without names or codes,
+so there is nothing to record beyond "ask".
 
 ## 3b-bis. Windows — the manufacturer hierarchy
 
@@ -228,11 +272,16 @@ an invented model cannot sit next to a real hierarchy.
 
 ## 3c. The catalogue showcase — generated, not written
 
-`src/data/catalogue-models.ts` holds **314 models**, every one in the four catalogues, with its
-name, its page, its photograph and whatever specification the catalogue prints. It is generated:
+`src/data/catalogue-models.ts` holds **501 entries** — 457 models across the nine catalogues plus 44
+accessories — each with its name, its page, its photograph and whatever specification the catalogue
+prints. It is generated, in this order:
 
 ```bash
-python3 scripts/extract_catalogue_models.py    # needs: pip install pymupdf
+python3 scripts/prepare_drutex.py            # source-catalogues/ → public/, y su portada
+python3 scripts/extract_catalogue_models.py  # needs: pip install pymupdf
+python3 scripts/extract_shutter_models.py
+python3 scripts/extract_drutex_models.py
+python3 scripts/extract_accessories.py       # el último: respeta lo que ya hay
 ```
 
 The script reads the PDFs, pairs each model label with the image next to it, crops it to
@@ -248,6 +297,28 @@ worth knowing:
   someone else's product.
 - These are the manufacturer's renders. They are honest and they are what the customer will
   compare, but a photo of a door Kamika actually fitted beats any of them.
+
+### Accessories are catalogue models too, but they live in their own range
+
+The door and shutter catalogues carry their accessories at the back — pull handles, lever handles,
+access control, hinges, door closers, shutter switches and remotes. Forty-four of them are extracted
+by `scripts/extract_accessories.py` and carry `category: "accessories"`, which takes them **out** of
+their catalogue's showcase (a handle lost among eighty-seven doors helps nobody) and puts them in
+the Accessories range, grouped by the family the catalogue prints. The PDF button still opens the
+page they came from.
+
+**The four example accessories were deleted with them** — a lockable handle, an aluminium sill, a
+security cylinder and a rebate vent — along with the project cross-references that named them. The
+range now has real content, and four invented spec sheets sitting among forty-four real ones is
+exactly what this project does not do.
+
+Still missing from the range because no catalogue covers them: **window handles, cylinders, window
+sills and rebate vents**. They go back in when a supplier catalogue arrives, not before.
+
+Three accessory chapters were read and left out: the door thresholds (Außentüren p. 90-91, three
+items in a bespoke layout), the glazing and sandblasted-glass ranges (p. 78-83, which are a glass
+chart rather than parts) and the pull-handle spreads on p. 84-87, which the manufacturer prints
+**without names**. All are worth a second pass if the owner wants them.
 
 ## 4. Text the owner has to write
 

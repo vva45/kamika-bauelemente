@@ -9514,5 +9514,445 @@ export const CATALOGUE_MODELS: CatalogueModel[] = [
     "image": "/images/models/rollladen-drutex/insektenschutz-plisee.jpg",
     "specs": [],
     "description": "Eine durchdachte und bis ins kleinste Detail raffinierte Konstruktion ermöglicht die Montage in der Fensternische, am Fensterrahmen, an der Gebäudefassade und in der Führung unserer Rollläden. Die Wahl der matten Farben ermöglicht eine ästhetische Harmonie mit der Fassade des Gebäudes."
+  },
+  {
+    "id": "fingerabdruckscanner-tastatur-und-rfid",
+    "catalogue": "aussenturen",
+    "category": "accessories",
+    "name": "Fingerabdruckscanner, Tastatur und RFID",
+    "family": "Zutrittskontrolle",
+    "page": 45,
+    "image": "/images/models/aussenturen/fingerabdruckscanner-tastatur-und-rfid.jpg",
+    "specs": []
+  },
+  {
+    "id": "tastatur-ekey-schwarz",
+    "catalogue": "aussenturen",
+    "category": "accessories",
+    "name": "Tastatur EKEY (Schwarz)",
+    "family": "Zutrittskontrolle",
+    "page": 45,
+    "image": "/images/models/aussenturen/tastatur-ekey-schwarz.jpg",
+    "specs": []
+  },
+  {
+    "id": "tastatur-ekey-stahl",
+    "catalogue": "aussenturen",
+    "category": "accessories",
+    "name": "Tastatur EKEY (Stahl)",
+    "family": "Zutrittskontrolle",
+    "page": 45,
+    "image": "/images/models/aussenturen/tastatur-ekey-stahl.jpg",
+    "specs": []
+  },
+  {
+    "id": "tastatur-idencom",
+    "catalogue": "aussenturen",
+    "category": "accessories",
+    "name": "Tastatur IDENCOM",
+    "family": "Zutrittskontrolle",
+    "page": 45,
+    "image": "/images/models/aussenturen/tastatur-idencom.jpg",
+    "specs": []
+  },
+  {
+    "id": "rfid-leser-idencom",
+    "catalogue": "aussenturen",
+    "category": "accessories",
+    "name": "RFID Leser IDENCOM",
+    "family": "Zutrittskontrolle",
+    "page": 45,
+    "image": "/images/models/aussenturen/rfid-leser-idencom.jpg",
+    "specs": []
+  },
+  {
+    "id": "fingerprint-idencom",
+    "catalogue": "aussenturen",
+    "category": "accessories",
+    "name": "Fingerprint IDENCOM",
+    "family": "Zutrittskontrolle",
+    "page": 45,
+    "image": "/images/models/aussenturen/fingerprint-idencom.jpg",
+    "specs": []
+  },
+  {
+    "id": "fingerprint-ekey-dline",
+    "catalogue": "aussenturen",
+    "category": "accessories",
+    "name": "Fingerprint EKEY dLine",
+    "family": "Zutrittskontrolle",
+    "page": 45,
+    "image": "/images/models/aussenturen/fingerprint-ekey-dline.jpg",
+    "specs": []
+  },
+  {
+    "id": "fingerprint-ekey-stahl",
+    "catalogue": "aussenturen",
+    "category": "accessories",
+    "name": "Fingerprint EKEY (Stahl)",
+    "family": "Zutrittskontrolle",
+    "page": 45,
+    "image": "/images/models/aussenturen/fingerprint-ekey-stahl.jpg",
+    "specs": []
+  },
+  {
+    "id": "leser-sommer",
+    "catalogue": "aussenturen",
+    "category": "accessories",
+    "name": "Leser SOMMER",
+    "family": "Zutrittskontrolle",
+    "page": 45,
+    "image": "/images/models/aussenturen/leser-sommer.jpg",
+    "specs": []
+  },
+  {
+    "id": "turspion",
+    "catalogue": "aussenturen",
+    "category": "accessories",
+    "name": "Türspion",
+    "family": "Optionales Zubehör",
+    "page": 48,
+    "image": "/images/models/aussenturen/turspion.jpg",
+    "specs": []
+  },
+  {
+    "id": "warme-kante-swisspacer-ultimate",
+    "catalogue": "aussenturen",
+    "category": "accessories",
+    "name": "Warme Kante Swisspacer Ultimate",
+    "family": "Optionales Zubehör",
+    "page": 48,
+    "image": "/images/models/aussenturen/warme-kante-swisspacer-ultimate.jpg",
+    "specs": []
+  },
+  {
+    "id": "reed-schalter",
+    "catalogue": "aussenturen",
+    "category": "accessories",
+    "name": "Reed-Schalter",
+    "family": "Optionales Zubehör",
+    "page": 48,
+    "image": "/images/models/aussenturen/reed-schalter.jpg",
+    "specs": []
+  },
+  {
+    "id": "rollenband-fur-aluminium",
+    "catalogue": "aussenturen",
+    "category": "accessories",
+    "name": "Rollenband für Aluminium",
+    "family": "Optionales Zubehör",
+    "page": 48,
+    "image": "/images/models/aussenturen/rollenband-fur-aluminium.jpg",
+    "specs": []
+  },
+  {
+    "id": "3-flugeliges-band-fur-aluminium",
+    "catalogue": "aussenturen",
+    "category": "accessories",
+    "name": "3-flügeliges Band für Aluminium",
+    "family": "Optionales Zubehör",
+    "page": 48,
+    "image": "/images/models/aussenturen/3-flugeliges-band-fur-aluminium.jpg",
+    "specs": []
+  },
+  {
+    "id": "verdeck-liegendes-band-fur-aluminium",
+    "catalogue": "aussenturen",
+    "category": "accessories",
+    "name": "Verdeck liegendes Band für Aluminium",
+    "family": "Optionales Zubehör",
+    "page": 48,
+    "image": "/images/models/aussenturen/verdeck-liegendes-band-fur-aluminium.jpg",
+    "specs": []
+  },
+  {
+    "id": "3-flugeliges-band-fur-pvc",
+    "catalogue": "aussenturen",
+    "category": "accessories",
+    "name": "3-flügeliges Band für PVC",
+    "family": "Optionales Zubehör",
+    "page": 48,
+    "image": "/images/models/aussenturen/3-flugeliges-band-fur-pvc.jpg",
+    "specs": []
+  },
+  {
+    "id": "briefkasten",
+    "catalogue": "aussenturen",
+    "category": "accessories",
+    "name": "Briefkasten",
+    "family": "Optionales Zubehör",
+    "page": 48,
+    "image": "/images/models/aussenturen/briefkasten.jpg",
+    "specs": []
+  },
+  {
+    "id": "dorma-ts-profil",
+    "catalogue": "aussenturen",
+    "category": "accessories",
+    "name": "DORMA TS PROFIL",
+    "family": "Optionales Zubehör",
+    "page": 48,
+    "image": "/images/models/aussenturen/dorma-ts-profil.jpg",
+    "specs": []
+  },
+  {
+    "id": "geze-boxer",
+    "catalogue": "aussenturen",
+    "category": "accessories",
+    "name": "GEZE BOXER",
+    "family": "Optionales Zubehör",
+    "page": 48,
+    "image": "/images/models/aussenturen/geze-boxer.jpg",
+    "specs": []
+  },
+  {
+    "id": "dorma-ts93-basic",
+    "catalogue": "aussenturen",
+    "category": "accessories",
+    "name": "DORMA TS93 BASIC",
+    "family": "Optionales Zubehör",
+    "page": 48,
+    "image": "/images/models/aussenturen/dorma-ts93-basic.jpg",
+    "specs": []
+  },
+  {
+    "id": "panzerendleiste",
+    "catalogue": "rollladen-drutex",
+    "category": "accessories",
+    "name": "Panzerendleiste",
+    "family": "Rollladenzubehör",
+    "page": 14,
+    "image": "/images/models/rollladen-drutex/panzerendleiste.jpg",
+    "specs": []
+  },
+  {
+    "id": "insektenschutzendleiste",
+    "catalogue": "rollladen-drutex",
+    "category": "accessories",
+    "name": "Insektenschutzendleiste",
+    "family": "Rollladenzubehör",
+    "page": 14,
+    "image": "/images/models/rollladen-drutex/insektenschutzendleiste.jpg",
+    "specs": []
+  },
+  {
+    "id": "pklu-schlusselschalter",
+    "catalogue": "rollladen-drutex",
+    "category": "accessories",
+    "name": "PKLU - Schlüsselschalter",
+    "family": "Rollladenzubehör",
+    "page": 14,
+    "image": "/images/models/rollladen-drutex/pklu-schlusselschalter.jpg",
+    "specs": []
+  },
+  {
+    "id": "pk1-standardschalter",
+    "catalogue": "rollladen-drutex",
+    "category": "accessories",
+    "name": "PK1 - Standardschalter",
+    "family": "Rollladenzubehör",
+    "page": 14,
+    "image": "/images/models/rollladen-drutex/pk1-standardschalter.jpg",
+    "specs": []
+  },
+  {
+    "id": "fernbedienung-somfy-situo-1-var-io-pure-ii-1-kanal",
+    "catalogue": "rollladen-drutex",
+    "category": "accessories",
+    "name": "Fernbedienung SOMFY Situo 1 Var IO Pure II – 1-Kanal",
+    "family": "Rollladenzubehör",
+    "page": 14,
+    "image": "/images/models/rollladen-drutex/fernbedienung-somfy-situo-1-var-io-pure-ii-1-kanal.jpg",
+    "specs": []
+  },
+  {
+    "id": "fernbedienung-somfy-situo-5-var-io-pure-ii-5-kanal",
+    "catalogue": "rollladen-drutex",
+    "category": "accessories",
+    "name": "Fernbedienung SOMFY Situo 5 Var IO Pure II – 5-Kanal",
+    "family": "Rollladenzubehör",
+    "page": 14,
+    "image": "/images/models/rollladen-drutex/fernbedienung-somfy-situo-5-var-io-pure-ii-5-kanal.jpg",
+    "specs": []
+  },
+  {
+    "id": "universal-adapter-standardmaig",
+    "catalogue": "rollladen-drutex",
+    "category": "accessories",
+    "name": "Universal Adapter standardmäßig",
+    "family": "Rollladenzubehör",
+    "page": 14,
+    "image": "/images/models/rollladen-drutex/universal-adapter-standardmaig.jpg",
+    "specs": []
+  },
+  {
+    "id": "adapter-iglo-energy-iglo-edge",
+    "catalogue": "rollladen-drutex",
+    "category": "accessories",
+    "name": "Adapter Iglo Energy, Iglo Edge",
+    "family": "Rollladenzubehör",
+    "page": 14,
+    "image": "/images/models/rollladen-drutex/adapter-iglo-energy-iglo-edge.jpg",
+    "specs": []
+  },
+  {
+    "id": "adapter-iglo-5",
+    "catalogue": "rollladen-drutex",
+    "category": "accessories",
+    "name": "Adapter Iglo 5",
+    "family": "Rollladenzubehör",
+    "page": 14,
+    "image": "/images/models/rollladen-drutex/adapter-iglo-5.jpg",
+    "specs": []
+  },
+  {
+    "id": "gurtwickler-14mm",
+    "catalogue": "rollladen-drutex",
+    "category": "accessories",
+    "name": "Gurtwickler - 14mm",
+    "family": "Rollladenzubehör",
+    "page": 14,
+    "image": "/images/models/rollladen-drutex/gurtwickler-14mm.jpg",
+    "specs": []
+  },
+  {
+    "id": "kurbelgetriebe",
+    "catalogue": "rollladen-drutex",
+    "category": "accessories",
+    "name": "Kurbelgetriebe",
+    "family": "Rollladenzubehör",
+    "page": 14,
+    "image": "/images/models/rollladen-drutex/kurbelgetriebe.jpg",
+    "specs": []
+  },
+  {
+    "id": "pks-festes-kurbelgetriebe",
+    "catalogue": "rollladen-drutex",
+    "category": "accessories",
+    "name": "PKS festes Kurbelgetriebe",
+    "family": "Rollladenzubehör",
+    "page": 14,
+    "image": "/images/models/rollladen-drutex/pks-festes-kurbelgetriebe.jpg",
+    "specs": []
+  },
+  {
+    "id": "stangengriffe-ponte-01-anodic-bronze",
+    "catalogue": "d-art-line",
+    "category": "accessories",
+    "name": "Stangengriffe Ponte 01 Anodic Bronze",
+    "family": "Stangengriffe",
+    "page": 23,
+    "image": "/images/models/d-art-line/stangengriffe-ponte-01-anodic-bronze.jpg",
+    "specs": []
+  },
+  {
+    "id": "stangengriffe-ponte-01-black",
+    "catalogue": "d-art-line",
+    "category": "accessories",
+    "name": "Stangengriffe Ponte 01 Black",
+    "family": "Stangengriffe",
+    "page": 23,
+    "image": "/images/models/d-art-line/stangengriffe-ponte-01-black.jpg",
+    "specs": []
+  },
+  {
+    "id": "stangengriffe-line-1",
+    "catalogue": "d-art-line",
+    "category": "accessories",
+    "name": "Stangengriffe Line 1",
+    "family": "Stangengriffe",
+    "page": 23,
+    "image": "/images/models/d-art-line/stangengriffe-line-1.jpg",
+    "specs": []
+  },
+  {
+    "id": "stangengriffe-profilo-03-c-135-st-black",
+    "catalogue": "d-art-line",
+    "category": "accessories",
+    "name": "Stangengriffe Profilo-03-C 135 st Black",
+    "family": "Stangengriffe",
+    "page": 23,
+    "image": "/images/models/d-art-line/stangengriffe-profilo-03-c-135-st-black.jpg",
+    "specs": []
+  },
+  {
+    "id": "stangengriffe-gingko-biloba-antique-satin-gold",
+    "catalogue": "d-art-line",
+    "category": "accessories",
+    "name": "Stangengriffe Gingko Biloba Antique Satin Gold",
+    "family": "Stangengriffe",
+    "page": 23,
+    "image": "/images/models/d-art-line/stangengriffe-gingko-biloba-antique-satin-gold.jpg",
+    "specs": []
+  },
+  {
+    "id": "stangengriffe-fala-anodic-bronze",
+    "catalogue": "d-art-line",
+    "category": "accessories",
+    "name": "Stangengriffe Fala Anodic Bronze",
+    "family": "Stangengriffe",
+    "page": 23,
+    "image": "/images/models/d-art-line/stangengriffe-fala-anodic-bronze.jpg",
+    "specs": []
+  },
+  {
+    "id": "stangengriffe-anodic-bronze-mit-stratuario",
+    "catalogue": "d-art-line",
+    "category": "accessories",
+    "name": "Stangengriffe Anodic Bronze mit Stratuario",
+    "family": "Stangengriffe",
+    "page": 24,
+    "image": "/images/models/d-art-line/stangengriffe-anodic-bronze-mit-stratuario.jpg",
+    "specs": []
+  },
+  {
+    "id": "stangengriffe-black-mit-frappucino",
+    "catalogue": "d-art-line",
+    "category": "accessories",
+    "name": "Stangengriffe Black mit Frappucino",
+    "family": "Stangengriffe",
+    "page": 24,
+    "image": "/images/models/d-art-line/stangengriffe-black-mit-frappucino.jpg",
+    "specs": []
+  },
+  {
+    "id": "stangengriffe-gold-splendour-mit-maraqina",
+    "catalogue": "d-art-line",
+    "category": "accessories",
+    "name": "Stangengriffe Gold Splendour mit Maraqina",
+    "family": "Stangengriffe",
+    "page": 24,
+    "image": "/images/models/d-art-line/stangengriffe-gold-splendour-mit-maraqina.jpg",
+    "specs": []
+  },
+  {
+    "id": "stangengriffe-anodic-bronze-mit-maraqina",
+    "catalogue": "d-art-line",
+    "category": "accessories",
+    "name": "Stangengriffe Anodic Bronze mit Maraqina",
+    "family": "Stangengriffe",
+    "page": 24,
+    "image": "/images/models/d-art-line/stangengriffe-anodic-bronze-mit-maraqina.jpg",
+    "specs": []
+  },
+  {
+    "id": "stangengriffe-anodic-bronze-mit-frappucino",
+    "catalogue": "d-art-line",
+    "category": "accessories",
+    "name": "Stangengriffe Anodic Bronze mit Frappucino",
+    "family": "Stangengriffe",
+    "page": 24,
+    "image": "/images/models/d-art-line/stangengriffe-anodic-bronze-mit-frappucino.jpg",
+    "specs": []
+  },
+  {
+    "id": "stangengriffe-anodic-bronze-mit-gold-splendour",
+    "catalogue": "d-art-line",
+    "category": "accessories",
+    "name": "Stangengriffe Anodic Bronze mit Gold Splendour",
+    "family": "Stangengriffe",
+    "page": 24,
+    "image": "/images/models/d-art-line/stangengriffe-anodic-bronze-mit-gold-splendour.jpg",
+    "specs": []
   }
 ];
