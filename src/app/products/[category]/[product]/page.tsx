@@ -109,6 +109,7 @@ export default async function ProductPage({
 
   const datasheet = datasheetHref(product);
   const highlights = highlightSpecs(product).slice(0, 3);
+  const parentCategory = category?.parent ? getCategory(category.parent) : undefined;
   const related = getRelated(product);
   const projects = getProjectsByCategory(product.category).slice(0, 3);
 
@@ -128,6 +129,17 @@ export default async function ProductPage({
         <Breadcrumb
           items={[
             { label: t("nav.products"), href: routes.products },
+            // Si la gama cuelga de otra (los tipos de puerta), el hub
+            // va en medio: desde una ficha se sube tipo → puertas →
+            // productos sin pasar por el navegador.
+            ...(parentCategory
+              ? [
+                  {
+                    label: pick(parentCategory.name),
+                    href: routes.category(parentCategory.slug),
+                  },
+                ]
+              : []),
             { label: pick(category.name), href: routes.category(category.slug) },
             { label: product.name },
           ]}
