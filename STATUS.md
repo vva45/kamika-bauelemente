@@ -40,12 +40,16 @@ Cada gama enseña lo más concreto que tiene, en este orden:
 2b. **Mosquiteras** — 1 modelo real (Insektenschutz-Plisee), movido desde el
    catálogo de persianas de Drutex a su gama por decisión del dueño
    (`category` en el modelo). Los 4 ejemplos que había, fuera.
+2c. **Puertas de interior** — 1 modelo real: System MB-45 (kalt), el único
+   producto de interior en los diez catálogos (el de Außentüren lo recomienda
+   "vor allem im Innenbereich"). Mismo mecanismo `category`; los 4 ejemplos,
+   fuera. Sin marca: el catálogo white-label no nombra al sistemista.
 3. **Accesorios** — 56 piezas sacadas del final de esos mismos catálogos
    (`extract_accessories.py`). Llevan `category: "accessories"`, que las saca del
    escaparate de su colección y las lleva a su gama, agrupadas por familia.
-4. **Fichas de producto** — las gamas restantes (interior doors, gates,
-   fences y las 4 tarjetas antiguas de persianas), con 16 productos **de
-   ejemplo** (marcados como tales) hasta que lleguen sus catálogos.
+4. **Fichas de producto** — las gamas restantes (gates, fences y las 4
+   tarjetas antiguas de persianas), con 12 productos **de ejemplo**
+   (marcados como tales) hasta que lleguen sus catálogos.
 
 **Jerarquía de gamas**: `Doors` es un hub que agrupa entrance / interior / patio.
 La URL NO se anida —`/products/entrance-doors` sigue igual—; lo que cambia es por
@@ -96,9 +100,10 @@ dónde se llega. El contador del hub suma los de sus hijas.
    lo que recibe el dueño (hoy el formulario no envía solo).
 2. Fichas de VEKA 82 y REHAU Synego → completar sus páginas de sistema.
    (Terrassentüren: RESUELTO — los 3 sistemas evolutionDrive del folleto Salamander.)
-3. Catálogos de las otras 3 gamas → sustituir los 16 productos de ejemplo. Eko-Okna
-   los tiene en alemán: interior doors, gates (Sektionaltore), fences
-   (Grundstückszäune); y uno de mosquiteras para acompañar al Plisee. En
+3. Catálogos de las otras 2 gamas → sustituir los 12 productos de ejemplo. Eko-Okna
+   los tiene en alemán: gates (Sektionaltore), fences (Grundstückszäune); y
+   los de interior doors (hojas CPL/chapa/lacado) y mosquiteras, para
+   acompañar a los dos modelos reales que ya hay. En
    accesorios ya solo faltan cilindros; las manillas/vierteaguas/aireadores
    entraron con la página Dodatki del folleto Salamander (nombres en polaco
    hasta que haya catálogo alemán).

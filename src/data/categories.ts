@@ -50,7 +50,7 @@ export const CATEGORIES: Category[] = [
     parent: "doors",
     name: { en: "Interior doors", de: "Innentüren" },
     intro: {
-      en: "Interior door leaves and frames in CPL, veneer and lacquered finishes, for standard and wall-flush installation. Available with rebated or flush edges, and with sound or smoke rating where required.",
+      en: "Interior doors in cold aluminium framing with glazing from 6 mm — the system built for partitions, corridors and glazed interior walls. CPL, veneer and lacquered leaves join the range when their catalogue arrives.",
     },
     heroImage: "/images/categories/interior-doors-hero.jpg",
     order: 2,

@@ -107,6 +107,19 @@ Drutex shutter catalogue *is* an insect screen, so it now lives in that range �
 re-extraction — and the four example screens were deleted. The range holds one real model until an
 insect-screen catalogue arrives.
 
+**Interior doors too** (2026-08): the owner asked for a sweep of every catalogue for interior
+doors — and across all ten there is exactly ONE genuine hit, the **System MB-45 (kalt)** spread in
+the Außentüren catalogue, which the catalogue itself recommends "vor allem im Innenbereich"
+(partitions, corridors, shop fronts, vitrines — single-chamber profiles without thermal break).
+It is declared by hand in `AUSSEN_MANUAL` of `extract_drutex_models.py` with
+`category: "interior-doors"`, specs and description as printed, photo from its own spread. The
+four example doors (CPL, veneer, lacquer, acoustic) were deleted with their images. Near-misses
+checked and rejected: "Innentürpaneel" in the Aluprof panels catalogue is the inner-face panel of
+an entrance door, and D-ART LINE's "/ inside" captions are interior *views* of entrance doors.
+No manufacturer is shown for MB-45 because the white-labelled catalogue names none — attributing
+the system from outside knowledge would break the house rule. CPL/veneer/lacquered leaves join
+when their catalogue arrives (Eko-Okna has it in German).
+
 ### The two shutter catalogues are white-labelled — a decision to confirm
 
 The roller-shutter and facade-blind catalogues come from the same manufacturer as the window

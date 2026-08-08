@@ -7972,6 +7972,46 @@ export const CATALOGUE_MODELS: CatalogueModel[] = [
     ]
   },
   {
+    "id": "system-mb-45-kalt",
+    "catalogue": "aussenturen",
+    "name": "System MB-45 (kalt)",
+    "family": "Aluminiumtüren",
+    "category": "interior-doors",
+    "page": 8,
+    "image": "/images/models/aussenturen/system-mb-45-kalt.jpg",
+    "specs": [
+      {
+        "label": "Bautiefe",
+        "value": "45 mm"
+      },
+      {
+        "label": "",
+        "value": "Standard: 3-fach Getriebe, 3 Stk. 2-flügelige Bänder, Scheibe mit einem Ug = 1,1 W/(m²K), Schwelle, Standardfarbe Matt: RAL 7016 & 9016, Aluminiumdrücker, Montagezylinder."
+      },
+      {
+        "label": "",
+        "value": "Möglichkeit, eine Füllung mit einer Stärke von 6 mm bis 28 mm zu verwenden."
+      },
+      {
+        "label": "",
+        "value": "Möglichkeit der Anwendung einer Einfachverglasung mit einer Stärke von 6 mm."
+      },
+      {
+        "label": "",
+        "value": "Möglichkeit der Anwendung eines Seitenteils und/oder Oberlichts."
+      },
+      {
+        "label": "",
+        "value": "Große Auswahl an RAL-Farben, Sonderfarben und Strukturen."
+      },
+      {
+        "label": "",
+        "value": "Optional mit Absenkdichtung erhältlich."
+      }
+    ],
+    "description": "Türen aus diesem System werden aufgrund der verwendeten Einkammerprofile ohne thermische Trennung vor allem im Innenbereich empfohlen, d.h. an Orten, die keine hohen Wärmedämmwerte erfordern, z.B. bei der Erstellung von Trennwänden, Fluren, Schaufenstern, Kassen oder Vitrinen. Die Tiefe der Flügel- und Rahmenprofile beträgt jeweils 45 mm, dies ermöglicht flächenbündige Flächen."
+  },
+  {
     "id": "aluminium-washington-6",
     "catalogue": "aussenturen",
     "name": "Washington 6",

@@ -92,8 +92,7 @@ export const PROJECTS: Project[] = [
         alt: { en: "Wall-flush interior door in the converted farmhouse" },
       }],
     /** Modelos instalados, para enlazar a sus fichas desde el detalle. */
-    products: [
-      "veneer-oak"],
+    products: [],
     featured: true,
   },
   {
@@ -148,9 +147,11 @@ export const PROJECTS: Project[] = [
         alt: { en: "Open-plan office area with the new aluminium windows" },
       }],
     /** Modelos instalados, para enlazar a sus fichas desde el detalle. */
-    products: [
-      "acoustic-32",
-      "cpl-basic"],
+    // La puerta acústica de la foto era una ficha de ejemplo, ya
+    // retirada; el proyecto de oficinas enlaza al sistema real de
+    // puertas interiores de aluminio.
+    products: [],
+    models: [{ catalogue: "aussenturen", id: "system-mb-45-kalt" }],
   },
   {
     id: "bungalow-bisingen",
