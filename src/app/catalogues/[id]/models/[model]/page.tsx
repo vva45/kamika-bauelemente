@@ -86,7 +86,12 @@ export default async function CatalogueModelPage({
                   { label: pick(category.name), href: routes.category(category.slug) },
                 ]
               : [{ label: t("nav.catalogues"), href: routes.catalogues }]),
-            { label: title, href: routes.catalogueModels(catalogue.id) },
+            // Una gama puede tener una sola colección que se llame como
+            // ella ("Roller shutters" dentro de Roller shutters): no se
+            // repite la palabra dos veces seguidas.
+            ...(category && pick(category.name) === title
+              ? []
+              : [{ label: title, href: routes.catalogueModels(catalogue.id) }]),
             { label: model.name },
           ]}
         />
@@ -115,6 +120,13 @@ export default async function CatalogueModelPage({
                 <p className="mt-2 font-mono text-[0.8125rem] tracking-[0.12em] text-kamika-steel uppercase">
                   {model.family}
                 </p>
+              )}
+
+              {/* Párrafo del fabricante. Va en el idioma del catálogo
+                  —alemán en persianas— porque es texto copiado, no
+                  redactado: traducirlo a mano sería inventarlo. */}
+              {model.description && (
+                <p className="mt-5 text-pretty text-kamika-ink/75">{model.description}</p>
               )}
 
               <div className="mt-8 flex flex-col gap-3">
@@ -148,16 +160,30 @@ export default async function CatalogueModelPage({
             <table className="w-full border-collapse text-sm">
               <caption className="eyebrow mb-4 text-left">{t("product.specifications")}</caption>
               <tbody>
-                {model.specs.map((spec) => (
-                  <tr key={spec.label} className="border-t border-kamika-mist last:border-b">
-                    <th scope="row" className="py-3 pr-6 text-left font-normal text-kamika-ink/65">
-                      {spec.label}
-                    </th>
-                    <td className="py-3 text-right font-mono text-[0.8125rem] text-kamika-ink">
-                      {spec.value}
-                    </td>
-                  </tr>
-                ))}
+                {model.specs.map((spec) =>
+                  spec.label ? (
+                    <tr
+                      key={`${spec.label}-${spec.value}`}
+                      className="border-t border-kamika-mist last:border-b"
+                    >
+                      <th scope="row" className="py-3 pr-6 text-left font-normal text-kamika-ink/65">
+                        {spec.label}
+                      </th>
+                      <td className="py-3 text-right font-mono text-[0.8125rem] text-kamika-ink">
+                        {spec.value}
+                      </td>
+                    </tr>
+                  ) : (
+                    /* Viñeta sin etiqueta: una ventaja del modelo, no un
+                       dato con nombre. Ocupa la fila entera y va en texto
+                       normal, que en mono se leería como una medida. */
+                    <tr key={spec.value} className="border-t border-kamika-mist last:border-b">
+                      <td colSpan={2} className="py-3 text-pretty text-kamika-ink/75">
+                        {spec.value}
+                      </td>
+                    </tr>
+                  ),
+                )}
               </tbody>
             </table>
           </div>

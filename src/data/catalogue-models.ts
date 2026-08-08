@@ -6132,5 +6132,1373 @@ export const CATALOGUE_MODELS: CatalogueModel[] = [
         "value": "782 × 1900 to 1400 × 2600 mm"
       }
     ]
+  },
+  {
+    "id": "sk45",
+    "catalogue": "rollladen-produktkatalog",
+    "name": "SK45",
+    "family": "Vorbaurollläden",
+    "page": 9,
+    "image": "/images/models/rollladen-produktkatalog/sk45.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Universelle Konstruktion"
+      },
+      {
+        "label": "",
+        "value": "Der Kasten, die Führungen und der Panzer können in jeder Farbe der RAL-Palette lackiert werden"
+      },
+      {
+        "label": "",
+        "value": "Die Montage des Rollladens an der Außenseite garantiert keine Wärmeverlust"
+      },
+      {
+        "label": "",
+        "value": "Ermöglicht den Einsatz eines integrierten Insektenschutzes"
+      },
+      {
+        "label": "",
+        "value": "Verfügbare Panzer: PVC 37, PVC 52, PA 39, EKO 39, PA 43, PA 52"
+      },
+      {
+        "label": "",
+        "value": "Erhältlich in der kostengünstigen Variante Railing SK45"
+      },
+      {
+        "label": "",
+        "value": "Minimale Kastenbreite (elektrische Antriebe): 450 mm"
+      },
+      {
+        "label": "",
+        "value": "Minimale Kastenbreite (manuelle Steuerung): 400 mm"
+      },
+      {
+        "label": "",
+        "value": "Maximale Kastenbreite: 4500 mm"
+      },
+      {
+        "label": "",
+        "value": "Verfügbare Farben: RAL, ALUPROF"
+      }
+    ],
+    "description": "Der Rollladen SK45 ist die ideale Lösung für neue und bestehende Gebäude, unabhängig von der Art der Fenster. Er zeichnet sich durch einen außen abgeschrägten Kasten mit einem Winkel von 45 Grad aus, der der Fassade ein scharfes, geometrisches Aussehen verleiht. Er kann direkt an der Fassade oder in der Fensternische auf dem Fensterrahmen montiert werden."
+  },
+  {
+    "id": "sk90",
+    "catalogue": "rollladen-produktkatalog",
+    "name": "SK90",
+    "family": "Vorbaurollläden",
+    "page": 10,
+    "image": "/images/models/rollladen-produktkatalog/sk90.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Universelle Konstruktion"
+      },
+      {
+        "label": "",
+        "value": "Der Kasten, die Führungsschienen und der Rollladenpanzer können in jeder gewünschten Farbe aus der RAL-Palette lackiert werden"
+      },
+      {
+        "label": "",
+        "value": "Die Montage des Rollladens an der Außenseite garantiert keinen Wärmeverlust"
+      },
+      {
+        "label": "",
+        "value": "Ermöglicht den Einsatz eines integrierten Moskitonetzes"
+      },
+      {
+        "label": "",
+        "value": "Der Rollladen kann an jedem Gebäudetyp montiert werden"
+      },
+      {
+        "label": "",
+        "value": "Die Verwendung einer Putzträgerschiene ermöglicht einen einfachen Montage des Kastens"
+      },
+      {
+        "label": "",
+        "value": "Verfügbare Panzer: PVC 37, PVC 52, PA 39, EKO 39, PA 43, PA 52. *Die angegebenen Werte beziehen sich auf die maximalen Gesamthöhen eines Rollladens ohne integriertes Moskitonetz; sie hängen u.a. von der Wahl der Steuerungsmethode ab"
+      },
+      {
+        "label": "",
+        "value": "Minimale Kastenbreite (elektrische Antriebe): 450 mm"
+      },
+      {
+        "label": "",
+        "value": "Minimale Kastenbreite (manuelle Steuerung): 400 mm"
+      },
+      {
+        "label": "",
+        "value": "Maximale Kastenbreite: 4500 mm"
+      },
+      {
+        "label": "",
+        "value": "Verfügbare Farben: RAL, ALUPROF"
+      }
+    ],
+    "description": "Die einzigartige Konstruktion des Rollladens SK90 bringt frischen Wind in das Konzept der Vorbaurollläden. Neben allen Vorteilen dieses Produkts kann der Kasten auch als Unterputzkasten verwendet werden. Einfach eine Putzträgerschiene nachträglich einsetzen."
+  },
+  {
+    "id": "skp",
+    "catalogue": "rollladen-produktkatalog",
+    "name": "SKP",
+    "family": "Vorbaurollläden",
+    "page": 11,
+    "image": "/images/models/rollladen-produktkatalog/skp.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Abgerundete Revision, die sich von anderen Modellen absetzt"
+      },
+      {
+        "label": "",
+        "value": "Der Kasten, die Führungen und der Panzer können in jeder Farbe der RAL-Palette lackiert werden"
+      },
+      {
+        "label": "",
+        "value": "Keine Wärmeverluste dank der Montage im Außenbereich"
+      },
+      {
+        "label": "",
+        "value": "Die Montage des Rollladens an der Außenseite garantiert keinen Wärmeverlust"
+      },
+      {
+        "label": "",
+        "value": "Ermöglicht den Einsatz eines integrierten Insektenschutzes"
+      },
+      {
+        "label": "",
+        "value": "Verfügbare Panzer: PVC 37, PVC 52, PA 39, EKO 39, PA 43, PA 52"
+      },
+      {
+        "label": "",
+        "value": "Minimale Kastenbreite (elektrische Antriebe): 450 mm"
+      },
+      {
+        "label": "",
+        "value": "Minimale Kastenbreite (manuelle Steuerung): 400 mm"
+      },
+      {
+        "label": "",
+        "value": "Maximale Kastenbreite: 4500 mm"
+      },
+      {
+        "label": "",
+        "value": "Verfügbare Farben: RAL, ALUPROF"
+      }
+    ],
+    "description": "Das System mit halbrundem Kasten passt perfekt zu Fensterrahmen älterer Gebäude. Der optimal gewählte Winkel im oberen Teil des Kastens fügt sich ideal in die Fensterlaibung ein. Es vereint die Merkmale der SK45- und SKO-P-Modelle, zeichnet sich aber zusätzlich durch sein originelles Design aus. Es kann sowohl an der Fassade als auch in der Laibung montiert werden."
+  },
+  {
+    "id": "sko-p",
+    "catalogue": "rollladen-produktkatalog",
+    "name": "SKO-P",
+    "family": "Vorbaurollläden",
+    "page": 12,
+    "image": "/images/models/rollladen-produktkatalog/sko-p.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Einzigartige Form"
+      },
+      {
+        "label": "",
+        "value": "Der Kasten, die Führungen und der Panzer können in jeder Farbe der RAL-Palette lackiert werden"
+      },
+      {
+        "label": "",
+        "value": "Die Montage des Rollladens an der Außenseite garantiert keinen Wärmeverlust"
+      },
+      {
+        "label": "",
+        "value": "Ermöglicht den Einsatz eines integrierten Insektenschutzes"
+      },
+      {
+        "label": "",
+        "value": "Verfügbare Panzer: PVC 37, PVC 52, PA 39, EKO39, PA 43, PA 52"
+      },
+      {
+        "label": "",
+        "value": "Minimale Kastenbreite (elektrische Antriebe): 450 mm"
+      },
+      {
+        "label": "",
+        "value": "Minimale Kastenbreite (manuelle Steuerung): 400 mm"
+      },
+      {
+        "label": "",
+        "value": "Maximale Kastenbreite: 4500 mm"
+      },
+      {
+        "label": "",
+        "value": "Verfügbare Farben: RAL, ALUPROF"
+      }
+    ],
+    "description": "*Die angegebenen Werte beziehen sich auf die maximalen Gesamthöhen eines Rollladens ohne integriertes Moskitonetz; sie hängen u.a. von der Wahl der Steuerungsmethode ab."
+  },
+  {
+    "id": "sp-e",
+    "catalogue": "rollladen-produktkatalog",
+    "name": "SP-E",
+    "family": "Unterputzrollläden",
+    "page": 15,
+    "image": "/images/models/rollladen-produktkatalog/sp-e.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Es passt perfekt zu Neubauten, einschließlich Passivhäusern"
+      },
+      {
+        "label": "",
+        "value": "Der Kasten kann lackiert werden, die Führungsschienen können lackiert oder foliert sein"
+      },
+      {
+        "label": "",
+        "value": "Die Putzträgerschiene ist standardmäßig 15-105 mm lang"
+      },
+      {
+        "label": "",
+        "value": "Es erfordert Beeinträchtigung des Gebäudes oder der keine"
+      },
+      {
+        "label": "",
+        "value": "Ermöglicht den Einsatz eines integrierten Insektenschutzes"
+      },
+      {
+        "label": "",
+        "value": "Verfügbare Panzer: PVC 37, PVC 52, PA 39, EKO 39, PA 43, PA 52"
+      },
+      {
+        "label": "",
+        "value": "Minimale Kastenbreite (elektrische Antriebe): 450 mm"
+      },
+      {
+        "label": "",
+        "value": "Minimale Kastenbreite (manuelle Steuerung): 400 mm"
+      },
+      {
+        "label": "",
+        "value": "Maximale Kastenbreite: 4500 mm"
+      },
+      {
+        "label": "",
+        "value": "Verfügbare Farben: RAL, ALUPROF"
+      }
+    ],
+    "description": "Die größten Vorteile bei der Wahl des Unterputz-Rollladens SP-E ergeben sich, wenn die Installation bereits in der Planungsphase eines Neubaus berücksichtigt wird. Die Konstruktion ist so ausgelegt, dass die Montage weder den Sturz noch die Tür- oder Fensterkonstruktion beeinträchtigt, sodass die Isolationsparameter des Gebäudes erhalten bleiben. Bei bestehenden Gebäuden sind Änderungen im Sturzbereich erforderlich."
+  },
+  {
+    "id": "quadbox",
+    "catalogue": "rollladen-produktkatalog",
+    "name": "QuadBox",
+    "family": "Unterputzrollläden",
+    "page": 16,
+    "image": "/images/models/rollladen-produktkatalog/quadbox.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Die ideale Lösung für Neubauten, einschließlich Passivhäusern"
+      },
+      {
+        "label": "",
+        "value": "Der Kasten und die Führungen können lackiert oder foliert werden"
+      },
+      {
+        "label": "",
+        "value": "Die Putzträgerschiene ist standardmäßig 15 mm lang"
+      },
+      {
+        "label": "",
+        "value": "Möglichkeit, zwischen einer PVC- oder Aluminium-Revisionsklappe zu wählen"
+      },
+      {
+        "label": "",
+        "value": "Keine Wärmeverluste, Rollläden werden unabhängig vom Innenraum montiert"
+      },
+      {
+        "label": "",
+        "value": "Ermöglicht den Einsatz eines integrierten Insektenschutzes"
+      },
+      {
+        "label": "",
+        "value": "Verfügbare Panzer: PVC 37, PVC 52, PA 39, EKO 39 PA 43, PA 52"
+      },
+      {
+        "label": "",
+        "value": "Minimale Kastenbreite (elektrische Antriebe): 450 mm"
+      },
+      {
+        "label": "",
+        "value": "Minimale Kastenbreite (manuelle Steuerung): 400 mm"
+      },
+      {
+        "label": "",
+        "value": "Maximale Kastenbreite: 4500 mm"
+      },
+      {
+        "label": "",
+        "value": "Verfügbare Farben: BeClever, RAL, AP*, SAL*, GEA*, REH*"
+      }
+    ],
+    "description": "Der Unterputz-Rollladen QuadBox kann, wie alle Rollläden dieser Art, fast vollständig unter der Putzschicht verborgen werden. Sichtbar bleibt nur die Revisionsklappe, die beim QuadBox-System aus Aluminium oder PVC gefertigt werden kann. Dies ermöglicht eine bessere Anpassung an die Ästhetik der Fenster durch RAL-Lackierung des Aluminiums oder Folierung der PVC-Klappe mit allen verfügbaren Dekoren."
+  },
+  {
+    "id": "expert-xt",
+    "catalogue": "rollladen-produktkatalog",
+    "name": "Expert XT",
+    "family": "Aufsatzrollläden",
+    "page": 19,
+    "image": "/images/models/rollladen-produktkatalog/expert-xt.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Die Montage und Wartung sind einfach"
+      },
+      {
+        "label": "",
+        "value": "Der Rollladen ist für Fenster aus PVC, Aluminium und Holz geeignet"
+      },
+      {
+        "label": "",
+        "value": "Der Kasten kann von außen und innen verputzt werden"
+      },
+      {
+        "label": "",
+        "value": "Ermöglicht den Einsatz eines integrierten Insektenschutzes"
+      },
+      {
+        "label": "",
+        "value": "Verfügbare Panzer: PVC 37, PVC 52, PA 39, EKO 39 PA 43, PA 52"
+      },
+      {
+        "label": "",
+        "value": "Minimale Kastenbreite (elektrische Antriebe): 450 mm"
+      },
+      {
+        "label": "",
+        "value": "Minimale Kastenbreite (manuelle Steuerung): 400 mm"
+      },
+      {
+        "label": "",
+        "value": "Maximale Kastenbreite: 5500 mm"
+      },
+      {
+        "label": "",
+        "value": "Max. Tiefe des Rahmens bei Revision von unten: 85 mm"
+      },
+      {
+        "label": "",
+        "value": "Verfügbare Farbpalette: RAL, AP, SAL, GEA, REH"
+      },
+      {
+        "label": "",
+        "value": "Revision:"
+      },
+      {
+        "label": "",
+        "value": "von vorne von innen,"
+      },
+      {
+        "label": "",
+        "value": "von unten von innen"
+      }
+    ],
+    "description": "Ein vielseitiges System, das sich durch einfache Montage und Bedienung auszeichnet. Die Montage ist dank dedizierter Adapter, die für verschiedene Fenstertypen erhältlich sind, intuitiv. Die Wartung wurde durch einfach zu montierende Antriebsbefestigungen beschleunigt. Der Kasten kann zusätzlich mit einem integrierten Insektenschutzgitter ausgestattet werden, größere Konstruktionen - mit Stahlverstärkung. All dies wurde für einen besseren Schutz der Bewohner und die Stabilität des Rahmens vorbereitet. Expert XT ist in zwei Weißtönen erhältlich, und weniger ästhetische Elemente können mit Abdeckkappen verdeckt werden."
+  },
+  {
+    "id": "elite-xt",
+    "catalogue": "rollladen-produktkatalog",
+    "name": "Elite XT",
+    "family": "Aufsatzrollläden",
+    "page": 20,
+    "image": "/images/models/rollladen-produktkatalog/elite-xt.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Ermöglicht die Montage an Fenstern mit großer Einbautiefe dank der Revision von außen"
+      },
+      {
+        "label": "",
+        "value": "Die Montage und Wartung sind einfach"
+      },
+      {
+        "label": "",
+        "value": "Der Rollladen ist für Fenster aus PVC, Aluminium und Holz geeignet"
+      },
+      {
+        "label": "",
+        "value": "Ermöglicht den Einsatz eines integrierten Insektenschutzes"
+      },
+      {
+        "label": "",
+        "value": "Verfügbare Panzer: PVC 37, PVC 52, PA 39, EKO 39 PA 43, PA 52"
+      },
+      {
+        "label": "",
+        "value": "Min. Breite des Kastens (elektrische Antriebe): 450 mm"
+      },
+      {
+        "label": "",
+        "value": "Min. Breite des Kastens (manuelle Steuerung): 400 mm"
+      },
+      {
+        "label": "",
+        "value": "Max. Breite des Kastens: 5500 mm"
+      },
+      {
+        "label": "",
+        "value": "Max. Tiefe des Rahmens bei Revision von unten: 85 mm* *Die Einschränkung betrifft die Revision von unten von innen"
+      },
+      {
+        "label": "",
+        "value": "Verfügbare Farbpalette: RAL, AP, SAL, GEA, REH"
+      },
+      {
+        "label": "",
+        "value": "Revision:"
+      },
+      {
+        "label": "",
+        "value": "von unten von innen"
+      },
+      {
+        "label": "",
+        "value": "von vorne von innen,"
+      },
+      {
+        "label": "",
+        "value": "von unten von außen"
+      }
+    ],
+    "description": "In diesem universellen Modell sind die Montage und die Wartung dank der Verwendung von Antriebsbefestigungen und Rahmenadaptern – für Kunststoff oder universelle für Aluminium und Holz – einfach. Bei Elite XT verbinden sich die einzelnen Elemente wie Bausteine. Ein Merkmal des Systems ist die von unten außen montierte Revision, die eine Nutzung und Verputzung sogar bei Fensterrahmen mit außergewöhnlicher Einbautiefe ermöglicht. Elite XT ist in Standardweiß und dem noch helleren Salamander-Weiß erhältlich."
+  },
+  {
+    "id": "exakt-xt",
+    "catalogue": "rollladen-produktkatalog",
+    "name": "Exakt XT",
+    "family": "Aufsatzrollläden",
+    "page": 21,
+    "image": "/images/models/rollladen-produktkatalog/exakt-xt.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Die Montage und Wartung sind einfach"
+      },
+      {
+        "label": "",
+        "value": "Der Rollladen ist für Fenster aus PVC, Aluminium und Holz geeignet"
+      },
+      {
+        "label": "",
+        "value": "Der Kasten kann von außen verputzt werden"
+      },
+      {
+        "label": "",
+        "value": "Verfügbare Panzer: PVC 37, PVC 52, PA 39, EKO 39, PA 43, PA 52"
+      },
+      {
+        "label": "",
+        "value": "Minimale Kastenbreite (elektrische Antriebe): 450 mm"
+      },
+      {
+        "label": "",
+        "value": "Minimale Kastenbreite (manuelle Steuerung): 400 mm"
+      },
+      {
+        "label": "",
+        "value": "Maximale Kastenbreite: 5900 mm"
+      },
+      {
+        "label": "",
+        "value": "Verfügbare Farbpalette: RAL, AP, SAL, GEA, REH"
+      },
+      {
+        "label": "",
+        "value": "Revision:"
+      },
+      {
+        "label": "",
+        "value": "von vorne von innen"
+      }
+    ],
+    "description": "Die überarbeitete, optimierte und verstärkte Version des dauerhaft beliebten Systeme Exakt. Es zeichnet sich durch eine einfache Bauweise aus und wird aufgrund der hohen Ausgereiftheit seiner wichtigsten Funktionen bevorzugt gewählt. Der einfache Zugang zum Rollladenmechanismus erleichtert die Wartung und den Service erheblich. Das System bewährt sich sowohl in PVC- als auch in Aluminium-Lösungen."
+  },
+  {
+    "id": "thermo-box",
+    "catalogue": "rollladen-produktkatalog",
+    "name": "Thermo Box",
+    "family": "Aufsatzrollläden",
+    "page": 22,
+    "image": "/images/models/rollladen-produktkatalog/thermo-box.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Von außen und innen überputzbar"
+      },
+      {
+        "label": "",
+        "value": "Ausgestattet mit langlebigen, austauschbaren Einlaufschienen"
+      },
+      {
+        "label": "",
+        "value": "Ermöglicht die Installation eines integrierten Insektenschutzgitters"
+      },
+      {
+        "label": "",
+        "value": "Verfügbare Lamellen: PVC 37, PA 39, EKO 39, PA 43, PA 52"
+      },
+      {
+        "label": "",
+        "value": "Minimale Kastenbreite (elektrische Antriebe): 450 mm"
+      },
+      {
+        "label": "",
+        "value": "Minimale Kastenbreite (manuelle Steuerung): 400 mm"
+      },
+      {
+        "label": "",
+        "value": "Maximale Kastenbreite: 6300 mm"
+      },
+      {
+        "label": "",
+        "value": "Max. Tiefe des Rahmens bei Revision von unten: 85 mm"
+      },
+      {
+        "label": "",
+        "value": "Verfügbare Farbpalette: RAL, AP, SAL, GEA, REH"
+      },
+      {
+        "label": "",
+        "value": "Revision:"
+      },
+      {
+        "label": "",
+        "value": "von unten von innen"
+      },
+      {
+        "label": "",
+        "value": "von vorne von innen"
+      }
+    ],
+    "description": "Das Aufsatz Rollladensystem Thermo Box bietet einen hervorragenden Schutz vor übermäßiger Sonneneinstrahlung und unerwünschten Blicken. Das Kennzeichnend des Systems ist eine hohe Schalldämmung und vor allem hervorragende thermische Parameter des isolierten Kastens. Bemerkenswert ist auch der Universaladapter, eine Lösung, die die Montage des Systems auf allen gängigen Fenstern auf dem Markt erleichtert."
+  },
+  {
+    "id": "cleverbox-si",
+    "catalogue": "rollladen-produktkatalog",
+    "name": "Cleverbox Si",
+    "family": "Aufsatzrollläden",
+    "page": 23,
+    "image": "/images/models/rollladen-produktkatalog/cleverbox-si.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Der Rollladen ist für ist für Fenster aus PVC und Aluminium geeignet"
+      },
+      {
+        "label": "",
+        "value": "Der Rollladen ist für können seitliche Abdeckkappen separat dazu gekauft werden"
+      },
+      {
+        "label": "",
+        "value": "Ermöglicht den Einsatz eines integrierten Insektenschutzes Der Kasten kann von außen und innen verputzt werden"
+      },
+      {
+        "label": "",
+        "value": "Die Variante mit Neopor bietet eine bessere thermische und akustische Isolierung an"
+      },
+      {
+        "label": "",
+        "value": "Verfügbare Panzer: PVC 37, PA 39, EKO 39, PA 43"
+      },
+      {
+        "label": "",
+        "value": "Minimale Kastenbreite (elektrische Antriebe): 450 mm"
+      },
+      {
+        "label": "",
+        "value": "Minimale Kastenbreite (manuelle Steuerung): 400 mm"
+      },
+      {
+        "label": "",
+        "value": "Maximale Kastenbreite: 5500 mm"
+      },
+      {
+        "label": "",
+        "value": "Max. Tiefe des Rahmens bei Revision von unten: 98 mm. Verfügbare Farbpalette: RAL, AP, SAL, GEA, REH"
+      },
+      {
+        "label": "",
+        "value": "Revision:"
+      },
+      {
+        "label": "",
+        "value": "von unten von innen"
+      },
+      {
+        "label": "",
+        "value": "von vorne von innen"
+      }
+    ],
+    "description": "Der Rollladen wurde mit dem Ziel entwickelt, die Betriebskosten für Haushalte und Unternehmen zu senken. Er verfügt über alle Vorteile von Aufsatzsystemen und kann zusätzlich mit Neopor ausgestattet werden, also geschäumtes Polystyrol, das bessere thermische und akustische Isolierungseigenschaften bietet. Die Stahlverstärkung ermöglicht die Verwendung des Rollladens sogar bei großen Konstruktionen, ohne Bedenken hinsichtlich der Stabilität, und die seitlichen Abdeckkappen verdecken diskret unattraktive Elemente."
+  },
+  {
+    "id": "cleverbox-ri",
+    "catalogue": "rollladen-produktkatalog",
+    "name": "Cleverbox Ri",
+    "family": "Aufsatzrollläden",
+    "page": 24,
+    "image": "/images/models/rollladen-produktkatalog/cleverbox-ri.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Eine einzigartige Form des Kastens von innen"
+      },
+      {
+        "label": "",
+        "value": "Der Rollladen ist für ist für Fenster aus PVC und Aluminium geeignet"
+      },
+      {
+        "label": "",
+        "value": "Ermöglicht die Installation eines integrierten Insektenschutzgitters"
+      },
+      {
+        "label": "",
+        "value": "Es können seitliche Abdeckkappen separat dazu gekauft werden"
+      },
+      {
+        "label": "",
+        "value": "Max. Tiefe des Rahmens: 98 mm"
+      },
+      {
+        "label": "",
+        "value": "Verfügbare Panzer: PVC 37, PA 39, EKO 39, PA 43"
+      },
+      {
+        "label": "",
+        "value": "Minimale Kastenbreite (elektrische Antriebe): 450 mm"
+      },
+      {
+        "label": "",
+        "value": "Minimale Kastenbreite (manuelle Steuerung): 400 mm"
+      },
+      {
+        "label": "",
+        "value": "Maximale Kastenbreite: 5500 mm"
+      },
+      {
+        "label": "",
+        "value": "Verfügbare Farbpalette: RAL, AP, SAL, GEA, REH"
+      },
+      {
+        "label": "",
+        "value": "Revision:"
+      },
+      {
+        "label": "",
+        "value": "von unten von innen"
+      }
+    ],
+    "description": "Der Rollladen bietet alle Vorteile des Cleverbox-Modells und unterscheidet sich im Design. Die abgerundete Revision sieht besonders gut in der französischen Landschaft aus. Ideal für PVC- und Aluminiumfenster."
+  },
+  {
+    "id": "opoterm",
+    "catalogue": "rollladen-produktkatalog",
+    "name": "Opoterm",
+    "family": "Aufsatzrollläden",
+    "page": 25,
+    "image": "/images/models/rollladen-produktkatalog/opoterm.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Der Rollladen ist für Fenster aus PVC und Aluminium geeignet"
+      },
+      {
+        "label": "",
+        "value": "Ermöglicht den Einsatz eines integrierten Insektenschutzes"
+      },
+      {
+        "label": "",
+        "value": "Der Kasten kann von außen und innen verputzt werden"
+      },
+      {
+        "label": "",
+        "value": "Es können seitliche Abdeckkappen separat dazu gekauft werden"
+      },
+      {
+        "label": "",
+        "value": "Es gibt eine Variante mit abgerundeter innerer Frontplatte"
+      },
+      {
+        "label": "",
+        "value": "Die RENO-Version ist ideal für PVC-Fenster mit Renovierung"
+      },
+      {
+        "label": "",
+        "value": "Verfügbare Panzer: PVC 37, PVC 52, PA 39, EKO 39, PA 43, PA 52"
+      },
+      {
+        "label": "",
+        "value": "Minimale Kastenbreite (elektrische Antriebe): 450 mm"
+      },
+      {
+        "label": "",
+        "value": "Minimale Kastenbreite (manuelle Steuerung): 400 mm"
+      },
+      {
+        "label": "",
+        "value": "Maximale Kastenbreite: 5500 mm"
+      },
+      {
+        "label": "",
+        "value": "Max. Tiefe des Rahmens bei Revision von unten: 100 mm"
+      },
+      {
+        "label": "",
+        "value": "Verfügbare Farbpalette: RAL, AP, SAL, GEA, REH"
+      },
+      {
+        "label": "",
+        "value": "Revision:"
+      },
+      {
+        "label": "",
+        "value": "von unten von innen"
+      },
+      {
+        "label": "",
+        "value": "von vorne von innen"
+      }
+    ],
+    "description": "Das System verfügt über bewährte Lösungen, die u.a. eine einfache Montage und Wartung ermöglichen. Der Markenzeichen dieses Rollos ist das raffinierte Aussehen, das durch zusätzliche Abdeckelemente erzielt wird. Dazu gehören Abdeckkappen, die die Schrauben von innen abdecken, sowie die abgerundete Innenplatte. Der Rollladen kann ohne Verluste der Statik an großflächigen Fenstern montiert werden. Opoterm ist in der RENO-Version erhältlich, die für ältere Gebäude mit Rahmen mit Renovierungsflossen entwickelt wurde."
+  },
+  {
+    "id": "neo-xt",
+    "catalogue": "rollladen-produktkatalog",
+    "name": "Neo XT",
+    "family": "Aufsatzrollläden",
+    "page": 26,
+    "image": "/images/models/rollladen-produktkatalog/neo-xt.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Einfache Montage und Wartung"
+      },
+      {
+        "label": "",
+        "value": "Der Rollladen ist für Fenster aus PVC, Aluminium und Holz geeignet"
+      },
+      {
+        "label": "",
+        "value": "Verfügt über eine widerstandsfähige Konstruktion"
+      },
+      {
+        "label": "",
+        "value": "Ermöglicht den Einsatz eines integrierten Insektenschutzes"
+      },
+      {
+        "label": "",
+        "value": "Zeichnet sich durch sehr gute thermische und akustische Isolierung aus"
+      },
+      {
+        "label": "",
+        "value": "Verfügbare Panzer: PVC 37, PVC 52, PA 39, EKO 39, PA 43, PA 52"
+      },
+      {
+        "label": "",
+        "value": "Der Kasten ist in der Variante für Klinkerverbau erhältlich"
+      },
+      {
+        "label": "",
+        "value": "Minimale Kastenbreite (elektrische Antriebe): 450 mm"
+      },
+      {
+        "label": "",
+        "value": "Minimale Kastenbreite (manuelle Steuerung): 400 mm"
+      },
+      {
+        "label": "",
+        "value": "Maximale Kastenbreite: 5500 mm"
+      },
+      {
+        "label": "",
+        "value": "Max. Tiefe des Rahmens bei Revision von unten: 85 mm. *Die Einschränkung betrifft die Revision von unten von innen"
+      },
+      {
+        "label": "",
+        "value": "Revision:"
+      },
+      {
+        "label": "",
+        "value": "von unten von innen"
+      }
+    ],
+    "description": "Ein idealer Rollladen für den Einsatz in energieeffizienten Gebäuden dank seiner hohen Wärmedämmung. Er schützt wirksam vor übermäßiger Sonneneinstrahlung und Umgebungslärm. Geschätzt wird er für sein Montagesystem, das die Verbindung des Rollladens mit Fenstern jeder Art erleichtert. Eine zusätzliche Verstärkungsschiene ermöglicht zudem die Herstellung stabiler Rollläden mit großer Breite."
+  },
+  {
+    "id": "roka-top-2",
+    "catalogue": "rollladen-produktkatalog",
+    "name": "Roka-Top 2",
+    "family": "Aufsatzrollläden",
+    "page": 27,
+    "image": "/images/models/rollladen-produktkatalog/roka-top-2.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Der Rollladen ist für Fenster aus PVC geeignet"
+      },
+      {
+        "label": "",
+        "value": "Verfügt über eine verstärkte Kastenkonstruktion"
+      },
+      {
+        "label": "",
+        "value": "Zeichnet sich durch sehr gute thermische und akustische Isolierwerte aus"
+      },
+      {
+        "label": "",
+        "value": "Verfügbare Panzer: PVC 37, PVC 52, PA 39, EKO 39, PA 43, PA 52"
+      },
+      {
+        "label": "",
+        "value": "Der Kasten ist in drei Bauarten erhältlich"
+      },
+      {
+        "label": "",
+        "value": "Minimale Kastenbreite (elektrische Antriebe): 450 mm"
+      },
+      {
+        "label": "",
+        "value": "Minimale Kastenbreite (manuelle Steuerung): 400 mm"
+      },
+      {
+        "label": "",
+        "value": "Maximale Kastenbreite: 5500 mm"
+      },
+      {
+        "label": "",
+        "value": "Max. Tiefe des Rahmens: 92 mm"
+      },
+      {
+        "label": "",
+        "value": "Revision:"
+      },
+      {
+        "label": "",
+        "value": "von unten von innen"
+      }
+    ],
+    "description": "Roka-Top 2 bietet eine Kombination der Vorteile von Sturz- und Aufsatzsystemen. Die Styroporkästen, deren Anbieter ein Pionier ist, garantieren Zeitersparnis bei der Montage, da die Elemente bereits in der Produktionsphase vorab montiert werden. Der Rollladen ist eine ausgezeichnete Wahl für den Neubau; er bietet sehr gute akustische und thermische Isolierung. Dank der verstärkten Kastenkonstruktion ist er äußerst robust, selbst bei größeren Größen. Das ist eine Lösung für viele Jahre."
+  },
+  {
+    "id": "roka-top-2-ex",
+    "catalogue": "rollladen-produktkatalog",
+    "name": "Roka-Top 2 EX",
+    "family": "Aufsatzrollläden",
+    "page": 28,
+    "image": "/images/models/rollladen-produktkatalog/roka-top-2-ex.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Der Rollladen ist für Fenster aus PVC, Aluminium und Holz geeignet"
+      },
+      {
+        "label": "",
+        "value": "Zeichnet sich durch eine einfache Montage aus"
+      },
+      {
+        "label": "",
+        "value": "Ermöglicht den Einsatz eines integrierten Insektenschutzes"
+      },
+      {
+        "label": "",
+        "value": "Verfügt über eine verstärkte Kastenkonstruktion"
+      },
+      {
+        "label": "",
+        "value": "Verfügbare Panzer: PVC 37, PVC 52, PA 39, EKO 39, PA 43, PA 52"
+      },
+      {
+        "label": "",
+        "value": "Minimale Kastenbreite (elektrische Antriebe): 450 mm"
+      },
+      {
+        "label": "",
+        "value": "Minimale Kastenbreite (manuelle Steuerung): 400 mm"
+      },
+      {
+        "label": "",
+        "value": "Maximale Kastenbreite: 5500 mm"
+      },
+      {
+        "label": "",
+        "value": "Max. Tiefe des Rahmens: 92 mm"
+      },
+      {
+        "label": "",
+        "value": "Revision:"
+      },
+      {
+        "label": "",
+        "value": "von unten von innen"
+      }
+    ],
+    "description": "Ein weiteres Niveau der Spitzenklasse unter den Rollläden. Ein besseres Modell als der Roka-Top 2 das sich durch die Montageart und durch die Möglichkeit des Einbaus eines Moskitonetzes unterscheidet."
+  },
+  {
+    "id": "roka-top-2-plus",
+    "catalogue": "rollladen-produktkatalog",
+    "name": "Roka-Top 2 PLUS",
+    "family": "Aufsatzrollläden",
+    "page": 29,
+    "image": "/images/models/rollladen-produktkatalog/roka-top-2-plus.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Der Rollladen ist für Fenster aus PVC geeignet"
+      },
+      {
+        "label": "",
+        "value": "Verfügt über eine verstärkte Kastenkonstruktion"
+      },
+      {
+        "label": "",
+        "value": "Zeichnet sich durch sehr gute thermische und akustische Isolierwerte aus"
+      },
+      {
+        "label": "",
+        "value": "Die Montage erfolgt ohne zusätzliche Profile zwischen dem Rahmen und Kasten"
+      },
+      {
+        "label": "",
+        "value": "Der Kasten ist in drei Bauarten erhältlich"
+      },
+      {
+        "label": "",
+        "value": "Verfügbare Panzer: PVC 37, PVC 52, PA 39, EKO 39, PA 43, PA 52"
+      },
+      {
+        "label": "",
+        "value": "Minimale Kastenbreite (elektrische Antriebe): 450 mm"
+      },
+      {
+        "label": "",
+        "value": "Minimale Kastenbreite (manuelle Steuerung): 400 mm"
+      },
+      {
+        "label": "",
+        "value": "Maximale Kastenbreite: 5500 mm"
+      },
+      {
+        "label": "",
+        "value": "Max. Tiefe des Rahmens: 92 mm"
+      },
+      {
+        "label": "",
+        "value": "Revision:"
+      },
+      {
+        "label": "",
+        "value": "von unten von innen"
+      }
+    ],
+    "description": "Der Rollladen Verfügt über die besten Eigenschaften des Roka-Top 2 und bietet dank der Revisionsklappe ohne Kammern eine hervorragende Wärme- und Schalldämmung. Besonders widerstandsfähig und langlebig, da das System direkt auf dem Rahmen montiert wird."
+  },
+  {
+    "id": "roka-top-2-rg",
+    "catalogue": "rollladen-produktkatalog",
+    "name": "Roka-Top 2 RG",
+    "family": "Aufsatzrollläden",
+    "page": 30,
+    "image": "/images/models/rollladen-produktkatalog/roka-top-2-rg.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Für Fenster aus PVC und Aluminium geeignet"
+      },
+      {
+        "label": "",
+        "value": "Verfügt über sehr gute akustische und thermische Isolierwerte"
+      },
+      {
+        "label": "",
+        "value": "Der Kasten ist in vielen Varianten erhältlich"
+      },
+      {
+        "label": "",
+        "value": "Der Kasten ist nach dem Verputzen von innen völlig unsichtbar"
+      },
+      {
+        "label": "",
+        "value": "Verfügbare Panzer: PVC 37, PVC 52, PA 39, EKO 39, PA 43, PA 52"
+      },
+      {
+        "label": "",
+        "value": "Minimale Kastenbreite (elektrische Antriebe): 450 mm"
+      },
+      {
+        "label": "",
+        "value": "Minimale Kastenbreite (manuelle Steuerung): 400 mm"
+      },
+      {
+        "label": "",
+        "value": "Maximale Kastenbreite: 5500 mm"
+      },
+      {
+        "label": "",
+        "value": "Revision:"
+      },
+      {
+        "label": "",
+        "value": "von unten von außen"
+      }
+    ],
+    "description": "Rollladen für den Passivhausbau dank einer robusten Konstruktion, die Wärmebrücken minimiert. Optimale Kombination aus Aufsatz- und Unterputzrollladen. Ideal für PVC- und Aluminiumfenster. Die Revisionsklappe befindet sich außen, was eine Montage des Produkts an jedem Fenster ermöglicht."
+  },
+  {
+    "id": "roka-top-2-rg-ex",
+    "catalogue": "rollladen-produktkatalog",
+    "name": "Roka-Top 2 RG EX",
+    "family": "Aufsatzrollläden",
+    "page": 31,
+    "image": "/images/models/rollladen-produktkatalog/roka-top-2-rg-ex.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Für Fenster aus PVC, Aluminium und Holz geeignet"
+      },
+      {
+        "label": "",
+        "value": "Verfügt über eine verstärkte Kastenstruktur"
+      },
+      {
+        "label": "",
+        "value": "Verfügt über sehr gute akustische und thermische Isolierwerte"
+      },
+      {
+        "label": "",
+        "value": "Zeichnet sich durch eine einfache Montage aus"
+      },
+      {
+        "label": "",
+        "value": "Verfügbare Panzer: PVC 37, PVC 52, PA 39, EKO 39, PA 43, PA 52"
+      },
+      {
+        "label": "",
+        "value": "Der Kasten ist in drei Bauarten erhältlich"
+      },
+      {
+        "label": "",
+        "value": "Minimale Kastenbreite (elektrische Antriebe): 450 mm"
+      },
+      {
+        "label": "",
+        "value": "Minimale Kastenbreite (manuelle Steuerung): 400 mm"
+      },
+      {
+        "label": "",
+        "value": "Maximale Kastenbreite: 5500 mm"
+      },
+      {
+        "label": "",
+        "value": "Revision:"
+      },
+      {
+        "label": "",
+        "value": "Von unten von außen"
+      }
+    ],
+    "description": "Verbesserte Lösung des Systems Roka-Top 2 RG. Neu ist die kinderleichte Montage, die durch die Profile der PVC-Rollläden ermöglicht wird. Dies verkürzt die Montagezeit und verbessert die Möglichkeiten zur Anpassung an viele Fenstersysteme."
+  },
+  {
+    "id": "styroterm",
+    "catalogue": "rollladen-produktkatalog",
+    "name": "Styroterm",
+    "family": "Aufsatzrollläden",
+    "page": 32,
+    "image": "/images/models/rollladen-produktkatalog/styroterm.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Revision:"
+      },
+      {
+        "label": "",
+        "value": "Von unten von innen"
+      },
+      {
+        "label": "",
+        "value": "Von unten von außen"
+      },
+      {
+        "label": "",
+        "value": "Ideal für PVC- und Aluminiumfenster"
+      },
+      {
+        "label": "",
+        "value": "Bietet sehr gute akustische und thermische Isolierung"
+      },
+      {
+        "label": "",
+        "value": "Charakterisiert sich durch einfache Montage"
+      },
+      {
+        "label": "",
+        "value": "Ermöglicht den Einsatz eines integrierten Insektenschutzes"
+      },
+      {
+        "label": "",
+        "value": "Verfügbare Panzer: PVC 37, PVC 52, EKO 39, PA 43, PA 52"
+      },
+      {
+        "label": "",
+        "value": "Minimale Kastenbreite (elektrische Antriebe): 450 mm"
+      },
+      {
+        "label": "",
+        "value": "Minimale Kastenbreite (manuelle Steuerung): 400 mm"
+      },
+      {
+        "label": "",
+        "value": "Maximale Kastenbreite: 3000 mm"
+      },
+      {
+        "label": "",
+        "value": "Maximale Rahmentiefe bei Revision von unten: 100 mm* *Die Einschränkung gilt für die Revision von unten von innen"
+      },
+      {
+        "label": "",
+        "value": "Verfügbare Farben: RAL, AP, SAL, GEA, REH"
+      }
+    ],
+    "description": "Der Aufsatzkasten für Projekte vor dem Verputzen. Er sorgt für Komfort und bietet gute thermische und akustische Isolierung. Der Kasten in der Version mit Revision von unten, die von außen montiert wird, ist von innen völlig unsichtbar."
+  },
+  {
+    "id": "basic",
+    "catalogue": "fassadenjalousien",
+    "name": "BASIC",
+    "family": "Vorbau Jalousien",
+    "page": 9,
+    "image": "/images/models/fassadenjalousien/basic.jpg",
+    "specs": [
+      {
+        "label": "Kastenabmessungen",
+        "value": "200 x 140 mm, 240 x 140 mm, 300 x 140 mm, 350 x 140 mm"
+      },
+      {
+        "label": "Maximale Kastenbreite",
+        "value": "6000 mm"
+      },
+      {
+        "label": "Minimale Kastenbreite",
+        "value": "550 mm"
+      },
+      {
+        "label": "Kastenform",
+        "value": "rechteckiges ALU"
+      },
+      {
+        "label": "Blendenformen",
+        "value": "Typ J, Typ Z, Typ U"
+      }
+    ],
+    "description": "Basic ist ein universelles System für Fassadenjalousien. Die Universalität des Systems garantiert die Einstellung der Halterungen der oberen Schiene, sowie die Einstellung der Führungshalterungen. Dadurch kann es problemlos in den meisten Häusern - im Anpassungs- und Unterputzsystem - installiert werden. Der Systemaufbau ermöglicht die Verwendung von Führungen, die mit Halterungen installiert werden, sowie monolithische Führungen, die direkt an den Fenstern montiert werden."
+  },
+  {
+    "id": "raff-i",
+    "catalogue": "fassadenjalousien",
+    "name": "RAFF-I",
+    "family": "Vorbau Jalousien",
+    "page": 10,
+    "image": "/images/models/fassadenjalousien/raff-i.jpg",
+    "specs": [
+      {
+        "label": "Kastenabmessungen",
+        "value": "200 x 140 mm, 240 x 140 mm, 300 x 140 mm, 350 x 140 mm"
+      },
+      {
+        "label": "Maximale Kastenbreite",
+        "value": "6000 mm"
+      },
+      {
+        "label": "Minimale Kastenbreite",
+        "value": "560 mm"
+      },
+      {
+        "label": "Kastenform",
+        "value": "rechteckiges ALU"
+      }
+    ],
+    "description": "RAFF-I ist ein modernes System mit einem Aluminiumkasten die an den Sturz oder direkt an die Fassade montiert wird. Aus dem Kasten ragen spezielle Zapfen heraus, die einfach in die zuvor installierten Führungen geschoben werden, wodurch die Montage des gesamten Systems einfach und sehr schnell ist. Der Kasten mit charakteristischer Prägung verleiht ein besonderes und modernes Aussehen und ist in sichtbarer oder verdeckter Version erhältlich."
+  },
+  {
+    "id": "raff-e",
+    "catalogue": "fassadenjalousien",
+    "name": "RAFF-E",
+    "family": "Vorbau Jalousien",
+    "page": 11,
+    "image": "/images/models/fassadenjalousien/raff-e.jpg",
+    "specs": [
+      {
+        "label": "Kastenabmessungen",
+        "value": "200 x 140 mm, 240 x 140 mm, 300 x 140 mm"
+      },
+      {
+        "label": "Maximale Kastenbreite",
+        "value": "4000 mm"
+      },
+      {
+        "label": "Minimale Kastenbreite",
+        "value": "560 mm"
+      },
+      {
+        "label": "Kastenform",
+        "value": "rechteckiges ALU"
+      }
+    ],
+    "description": "Das RAFF-e System ist ein Produkt, das auf umfangreichem technischem Wissen basiert, wodurch die Jalousien einfach zu vermessen und schnell und effizient zu montieren sind."
+  },
+  {
+    "id": "skef",
+    "catalogue": "fassadenjalousien",
+    "name": "SKEF",
+    "family": "Vorbau Jalousien",
+    "page": 12,
+    "image": "/images/models/fassadenjalousien/skef.jpg",
+    "specs": [
+      {
+        "label": "Insektenschutzgitter",
+        "value": "optional an der, Innenseite des Panzers"
+      },
+      {
+        "label": "Kastenabmessungen",
+        "value": "180 x 140 mm, 205 x 140 mm"
+      },
+      {
+        "label": "Maximale Kastenbreite",
+        "value": "4500 mm"
+      },
+      {
+        "label": "Minimale Kastenbreite",
+        "value": "560 mm"
+      },
+      {
+        "label": "Kastenform",
+        "value": "rechteckiges ALU"
+      }
+    ],
+    "description": "Ein System mit charakteristischer, um 45 Grad von außen abgeschrägter Kasten. Ideal für Personen, die scharfe geometrische Formen bevorzugen. Der Kasten ist sowohl für die Montage direkt a der Fassade, als auch in der Fensterrahmennische geeignet."
+  },
+  {
+    "id": "elite-xt",
+    "catalogue": "fassadenjalousien",
+    "name": "ELITE XT",
+    "family": "Aufsatz Jalousien",
+    "page": 15,
+    "image": "/images/models/fassadenjalousien/elite-xt.jpg",
+    "specs": [
+      {
+        "label": "Kastengröße",
+        "value": "240 x 255 mm"
+      },
+      {
+        "label": "Maximale Kastenbreite",
+        "value": "4500 mm"
+      },
+      {
+        "label": "Minimale Kastenbreite",
+        "value": "630 mm"
+      },
+      {
+        "label": "Kastenform",
+        "value": "rechteckig ALU, Möglichkeit zur, Aufteilung der, Jalousie in einem, Kasten (mehrere, Panzer)"
+      }
+    ],
+    "description": "Die Konstruktion des Systems ermöglicht eine bessere thermische und akustische Isolierung. Es spart erhebliche Mengen an Wärmeenergie, insbesondere in der kälteren Jahreszeit. Ein auf den westlichen Märkten bestens bekanntes System; es ist auch als Element von ästhetisch voll konsistenten „All-in-one”-Lösungen erhältlich."
+  },
+  {
+    "id": "cleverbox",
+    "catalogue": "fassadenjalousien",
+    "name": "CLEVERBOX",
+    "family": "Aufsatz Jalousien",
+    "page": 16,
+    "image": "/images/models/fassadenjalousien/cleverbox.jpg",
+    "specs": [
+      {
+        "label": "Kastengröße",
+        "value": "245x 255 mm"
+      },
+      {
+        "label": "Maximale Kastenbreite",
+        "value": "4500 mm"
+      },
+      {
+        "label": "Minimale Kastenbreite",
+        "value": "560 mm"
+      },
+      {
+        "label": "Kastenform",
+        "value": "rechteckig ALU"
+      }
+    ],
+    "description": "Das System zeichnet sich, aufgrund seiner einzigartigen Struktur und der sehr hohen Qualität der verwendeten Komponenten, durch beste Wärme- und Schalldämmeigenschaften aus. Es ist das einzige Überkopf-System, das die Verwendung von Z-90-Fassadenjalousien ermöglicht, um den Raum vollständig abzudunkeln. Es bietet den Benutzern sowohl im Sommer als auch im Winter Komfort."
+  },
+  {
+    "id": "roka-top-2-shadow",
+    "catalogue": "fassadenjalousien",
+    "name": "ROKA TOP 2 SHADOW",
+    "family": "Unterputz Jalousien",
+    "page": 17,
+    "image": "/images/models/fassadenjalousien/roka-top-2-shadow.jpg",
+    "specs": [
+      {
+        "label": "Kastengröße",
+        "value": "300 x 280 mm, 300 x 300 mm, 300 x 345 mm, 300 x 365 mm"
+      },
+      {
+        "label": "Maximale Kastenbreite",
+        "value": "6000 mm"
+      },
+      {
+        "label": "Minimale Kastenbreite",
+        "value": "580 mm"
+      },
+      {
+        "label": "Kastenform",
+        "value": "rechteckig, Neopar®/Styropor®"
+      }
+    ],
+    "description": "Die Kombination von Neopor®/Styropor®-Material mit einer dichten Konstruktion führt zu hervorragenden Parametern in Bezug auf den Schutz vor Sonne, Wind und Feuchtigkeit. Es lässt sich perfekt mit jeder Art von Oberflächenbehandlung (Putz, WDVS, Klinker) kombinieren und schafft so ein harmonisches, ästhetisches Gesamtbild."
+  },
+  {
+    "id": "skb",
+    "catalogue": "fassadenjalousien",
+    "name": "SKB",
+    "family": "Unterputz Jalousien",
+    "page": 18,
+    "image": "/images/models/fassadenjalousien/skb.jpg",
+    "specs": [
+      {
+        "label": "Führungen",
+        "value": "Aluminium"
+      },
+      {
+        "label": "Kastengröße",
+        "value": "260 x 263,6 mm, 305 x 310,6 mm"
+      },
+      {
+        "label": "Maximale Kastenbreite",
+        "value": "3600 mm"
+      },
+      {
+        "label": "Minimale Kastenbreite",
+        "value": "630 mm"
+      },
+      {
+        "label": "Kastenform",
+        "value": "rechteckig Styropor"
+      }
+    ],
+    "description": "Das System wurde hauptsächlich entwickelt, um die Energiebilanz des Gebäudes zu verbessern. Das Hauptelement des Systems ist der Kasten, der aus hochwertigem Isoliermaterial - Styrotherm - hergestellt ist und sehr gute thermische Eigenschaften besitzt."
   }
 ];

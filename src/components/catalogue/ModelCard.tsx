@@ -46,9 +46,11 @@ export function ModelCard({ model, priority = false, className }: ModelCardProps
         </Link>
       </h3>
 
+      {/* Los catálogos de persianas listan ventajas sin etiqueta; ahí
+          los dos puntos sobran y quedaban colgando al principio. */}
       {lead && (
         <p className="mt-1 line-clamp-2 text-sm text-kamika-ink/65">
-          {lead.label}: {lead.value}
+          {lead.label ? `${lead.label}: ${lead.value}` : lead.value}
         </p>
       )}
     </article>

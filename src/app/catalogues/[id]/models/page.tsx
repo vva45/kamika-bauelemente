@@ -75,7 +75,9 @@ export default async function CatalogueModelsPage({
               ? [
                   { label: t("nav.products"), href: routes.products },
                   { label: pick(category.name), href: routes.category(category.slug) },
-                  { label: title },
+                  // Ver la nota de la ficha de modelo: si la colección
+                  // se llama como la gama, no se repite.
+                  ...(pick(category.name) === title ? [] : [{ label: title }]),
                 ]
               : [
                   { label: t("nav.catalogues"), href: routes.catalogues },

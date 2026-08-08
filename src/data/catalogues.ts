@@ -6,8 +6,9 @@
  * peso lo ve el visitante antes de descargar y el número de páginas
  * sale en la tarjeta.
  *
- * Los cuatro son de puertas de entrada; todavía no hay catálogo de
- * ventanas, persianas ni el resto de gamas.
+ * Cuatro son de puertas de entrada y dos de persianas. Todavía no hay
+ * catálogo de ventanas —esa gama va por fabricante y ficha de sistema—
+ * ni del resto de gamas.
  *
  * ⚠️ Los nombres de marca (ROKA, Despiro, Aluprof) no se traducen nunca.
  *
@@ -74,6 +75,32 @@ export const CATALOGUES: Catalogue[] = [
     pages: 194,
     sizeMb: 16.4,
     year: 2025,
+  },
+  {
+    id: "rollladen-produktkatalog",
+    title: { en: "Roller shutters — product catalogue", de: "Rollladen Produktkatalog" },
+    // Sin marca a propósito: el fabricante de estas persianas vende
+    // también directamente al cliente final en Alemania, así que su
+    // nombre y sus enlaces se quitaron del PDF autoalojado. Enseñar la
+    // marca aquí sería mandarle el cliente. Ver la nota de arriba.
+    collection: { en: "Roller shutters", de: "Rollläden" },
+    category: "roller-shutters",
+    file: "/pdf/catalogues/rollladen-produktkatalog.pdf",
+    cover: "/images/catalogues/rollladen-produktkatalog-cover.jpg",
+    pages: 54,
+    sizeMb: 27.4,
+    year: 2026,
+  },
+  {
+    id: "fassadenjalousien",
+    title: { en: "Facade blinds — catalogue", de: "Katalog der Fassadenjalousien" },
+    collection: { en: "Facade blinds", de: "Fassadenjalousien" },
+    category: "roller-shutters",
+    file: "/pdf/catalogues/fassadenjalousien.pdf",
+    cover: "/images/catalogues/fassadenjalousien-cover.jpg",
+    pages: 34,
+    sizeMb: 20.8,
+    year: 2026,
   },
 ];
 

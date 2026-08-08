@@ -129,7 +129,16 @@ export interface CatalogueModel {
   family?: string;
   page: number; // página del PDF, para el enlace #page=N
   image: string;
+  /**
+   * Las specs tal y como están impresas. `label` vacío = viñeta suelta
+   * (los catálogos de persianas listan ventajas sin etiqueta).
+   */
   specs: { label: string; value: string }[];
+  /**
+   * Párrafo del fabricante, cuando el catálogo lo trae. Los de puertas
+   * no lo tienen —son rejillas de fotos— y los de persianas sí.
+   */
+  description?: string;
 }
 
 /**

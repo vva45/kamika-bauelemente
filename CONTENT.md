@@ -81,6 +81,27 @@ If any of this is ever changed — map loaded automatically, consent remembered,
 — **§ 8 and § 9 of the Datenschutzerklärung stop being true** and must be rewritten in the same
 commit.
 
+### The two shutter catalogues are white-labelled — a decision to confirm
+
+The roller-shutter and facade-blind catalogues come from the same manufacturer as the window
+profiles. Unlike ROKA or Despiro, **that manufacturer sells directly to end customers in Germany**,
+so the self-hosted copies were stripped of everything that routes a Kamika visitor to them:
+
+- the cover logo → the Kamika wordmark, and the back cover → Kamika's address;
+- the corporate "Unsere Firma" page and the B2B page with QR codes to their sales platform, both
+  deleted outright;
+- every URL and postal address. Verified: no `ekookna`, `eko4u`, `Kornice` or `Spacerowa` left in
+  any page's text.
+
+What was **kept**: mentions of the manufacturer inside technical body text ("Monoblock-Führungs-
+schiene …", "Die Modelle von … sind pulverbeschichtet"). Those are honest attribution and lead
+nowhere. The collections are therefore named plainly — "Roller shutters", "Facade blinds" — with
+no brand, unlike the door collections.
+
+**If the owner would rather credit the manufacturer** (as ROKA and Aluprof are credited), it is one
+line per catalogue in `src/data/catalogues.ts` plus re-running the cover script. Ask him — this is
+a commercial call, not a technical one.
+
 ### Supplier image permission — ekookna.pl and drutex.es
 
 The owner passed on written permission (2026-08) to use the images available for download on
@@ -94,7 +115,7 @@ Self-hosted, never linked to a manufacturer's website.
 
 | Status | Path                                         | What it is                                                                 | Who   |
 | ------ | -------------------------------------------- | -------------------------------------------------------------------------- | ----- |
-| `[x]`  | `public/pdf/catalogues/*.pdf`                | **Four real catalogues are in place**, all of them entrance doors: ROKA Signature (298 pp), ROKA Select (23 pp), the Aluprof panel catalogue (194 pp) and Despiro (37 pp). Titles, years, page counts and file sizes in `src/data/catalogues.ts` were read from the PDFs, not estimated. Covers are rendered from page 1. | —     |
+| `[x]`  | `public/pdf/catalogues/*.pdf`                | **Six real catalogues are in place** — four entrance doors and two roller shutters, all of them entrance doors: ROKA Signature (298 pp), ROKA Select (23 pp), the Aluprof panel catalogue (194 pp) and Despiro (37 pp). Titles, years, page counts and file sizes in `src/data/catalogues.ts` were read from the PDFs, not estimated. Covers are rendered from page 1. | —     |
 | `[ ]`  | `public/pdf/catalogues/` — other ranges      | Nothing yet for windows, roller shutters, insect screens, gates, fences or hardware. Those categories currently have no catalogue to link to. | Owner |
 | `[~]`  | `public/pdf/{category}/{product-id}.pdf`     | Per-product data sheet, where one exists. Five are placeholders; the rest of the products show no data-sheet button at all, which is the rule: no button beats a dead link. | Owner |
 
