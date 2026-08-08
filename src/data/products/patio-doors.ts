@@ -14,12 +14,12 @@
  * gama propia ("patio doors / terrace doors" — el mismo producto con
  * sus dos nombres).
  *
- * LAS FOTOS son las dos únicas reales de la gama: la que mandó el
- * dueño, entera para la corredera elevable —que es justo lo que la foto
- * retrata— y un encuadre más cerrado del mismo paño para la
- * oscilo-corredera. Una foto buena que ilustra la gama vale más que
- * tres carteles de "placeholder", pero el pie lo dice: ilustra el tipo,
- * no es una foto de ese modelo concreto.
+ * LAS FOTOS de cada modelo siguen siendo placeholders a propósito. La
+ * fotografía que mandó el dueño ilustra LA GAMA —cabecera y tarjeta de
+ * categoría— y ahí se queda: poner la misma foto en la ficha de dos
+ * modelos distintos diría que así es ese modelo, y no es cierto.
+ * Cuando llegue el catálogo de Terrassentüren, cada modelo traerá su
+ * propia imagen igual que las puertas y las persianas.
  *
  * Ver CONTENT.md.
  */
@@ -47,8 +47,15 @@ export const patioDoors: Product[] = [
     images: [
       {
         src: "/images/patio-doors/lift-slide-hst-1.jpg",
-        alt: { en: "Large sliding patio door onto a terrace, seen from outside at sunset" },
-        caption: { en: "Illustrative of the range — not a photograph of this exact model." },
+        alt: { en: "Lift-and-slide patio door open onto a terrace" },
+      },
+      {
+        src: "/images/patio-doors/lift-slide-hst-2.jpg",
+        alt: { en: "Low threshold detail of the lift-and-slide door" },
+      },
+      {
+        src: "/images/patio-doors/lift-slide-hst-3.jpg",
+        alt: { en: "Handle and locking detail of the lift-and-slide door" },
       },
     ],
     related: ["roller-shutter-front-mounted", "insect-screen-pleated"],
@@ -73,8 +80,15 @@ export const patioDoors: Product[] = [
     images: [
       {
         src: "/images/patio-doors/tilt-slide-psk-1.jpg",
-        alt: { en: "Sliding door sash and handle, with the living room behind it" },
-        caption: { en: "Illustrative of the range — not a photograph of this exact model." },
+        alt: { en: "Tilt-and-slide balcony door in a living room" },
+      },
+      {
+        src: "/images/patio-doors/tilt-slide-psk-2.jpg",
+        alt: { en: "The tilt-and-slide door in its tilt position" },
+      },
+      {
+        src: "/images/patio-doors/tilt-slide-psk-3.jpg",
+        alt: { en: "Running gear detail of the tilt-and-slide door" },
       },
     ],
     related: ["roller-shutter-concealed", "insect-screen-pleated"],

@@ -7500,5 +7500,2019 @@ export const CATALOGUE_MODELS: CatalogueModel[] = [
       }
     ],
     "description": "Das System wurde hauptsächlich entwickelt, um die Energiebilanz des Gebäudes zu verbessern. Das Hauptelement des Systems ist der Kasten, der aus hochwertigem Isoliermaterial - Styrotherm - hergestellt ist und sehr gute thermische Eigenschaften besitzt."
+  },
+  {
+    "id": "classic-2",
+    "catalogue": "d-art-line",
+    "name": "Classic 2",
+    "family": "Classic",
+    "page": 3,
+    "image": "/images/models/d-art-line/classic-2.jpg",
+    "specs": [
+      {
+        "label": "Farbe",
+        "value": "Anodic Graphite / Anodic Bronze"
+      },
+      {
+        "label": "Drücker",
+        "value": "Madeleine Antique Satin Gold"
+      }
+    ]
+  },
+  {
+    "id": "classic-3",
+    "catalogue": "d-art-line",
+    "name": "Classic 3",
+    "family": "Classic",
+    "page": 4,
+    "image": "/images/models/d-art-line/classic-3.jpg",
+    "specs": [
+      {
+        "label": "Farbe",
+        "value": "Metallic Marrone"
+      },
+      {
+        "label": "Drücker",
+        "value": "Madeleine Antique Satin Gold"
+      },
+      {
+        "label": "Sandgestrahlt",
+        "value": "61"
+      }
+    ]
+  },
+  {
+    "id": "classic-4",
+    "catalogue": "d-art-line",
+    "name": "Classic 4",
+    "family": "Classic",
+    "page": 5,
+    "image": "/images/models/d-art-line/classic-4.jpg",
+    "specs": [
+      {
+        "label": "Farbe",
+        "value": "Anodic Graphite"
+      },
+      {
+        "label": "Drücker",
+        "value": "Madeleine Antique Satin Gold"
+      },
+      {
+        "label": "Sandgestrahlt",
+        "value": "62"
+      }
+    ]
+  },
+  {
+    "id": "classic-6",
+    "catalogue": "d-art-line",
+    "name": "Classic 6",
+    "family": "Classic",
+    "page": 5,
+    "image": "/images/models/d-art-line/classic-6.jpg",
+    "specs": [
+      {
+        "label": "Farbe",
+        "value": "Wenge / Gold Splendour"
+      },
+      {
+        "label": "Stangengriffe",
+        "value": "Ginkgo Biloba Antique Satin Gold"
+      },
+      {
+        "label": "Sandgestrahlt",
+        "value": "63"
+      }
+    ]
+  },
+  {
+    "id": "elegance-2",
+    "catalogue": "d-art-line",
+    "name": "Elegance 2",
+    "family": "Elegance",
+    "page": 6,
+    "image": "/images/models/d-art-line/elegance-2.jpg",
+    "specs": [
+      {
+        "label": "Farbe",
+        "value": "Anodic Plum / Gold Splendour"
+      },
+      {
+        "label": "Stangengriffe",
+        "value": "Gold Splendour"
+      },
+      {
+        "label": "Sandgestrahlt",
+        "value": "64"
+      }
+    ]
+  },
+  {
+    "id": "elegance-1",
+    "catalogue": "d-art-line",
+    "name": "Elegance 1",
+    "family": "Elegance",
+    "page": 7,
+    "image": "/images/models/d-art-line/elegance-1.jpg",
+    "specs": [
+      {
+        "label": "Farbe",
+        "value": "Anodic Pearl / Metallic Night"
+      },
+      {
+        "label": "Stangengriffe",
+        "value": "Black mit Black"
+      },
+      {
+        "label": "Sandgestrahlt",
+        "value": "65"
+      }
+    ]
+  },
+  {
+    "id": "modern-8",
+    "catalogue": "d-art-line",
+    "name": "Modern 8",
+    "family": "Modern",
+    "page": 8,
+    "image": "/images/models/d-art-line/modern-8.jpg",
+    "specs": [
+      {
+        "label": "Farbe",
+        "value": "Champagne"
+      },
+      {
+        "label": "Stangengriffe",
+        "value": "Black mit Frappucino"
+      }
+    ]
+  },
+  {
+    "id": "elegance-3",
+    "catalogue": "d-art-line",
+    "name": "Elegance 3",
+    "family": "Elegance",
+    "page": 9,
+    "image": "/images/models/d-art-line/elegance-3.jpg",
+    "specs": [
+      {
+        "label": "Farbe",
+        "value": "Champagne / Sparkling Brown"
+      },
+      {
+        "label": "Stangengriffe",
+        "value": "Gold Splendour mit White"
+      },
+      {
+        "label": "Sandgestrahlt",
+        "value": "67"
+      }
+    ]
+  },
+  {
+    "id": "elegance-4",
+    "catalogue": "d-art-line",
+    "name": "Elegance 4",
+    "family": "Elegance",
+    "page": 9,
+    "image": "/images/models/d-art-line/elegance-4.jpg",
+    "specs": [
+      {
+        "label": "Farbe",
+        "value": "Metallic Night / Anodic Bronze"
+      },
+      {
+        "label": "Stangengriffe",
+        "value": "Metallic Night mit Frappucino"
+      },
+      {
+        "label": "Sandgestrahlt",
+        "value": "68"
+      }
+    ]
+  },
+  {
+    "id": "modern-5",
+    "catalogue": "d-art-line",
+    "name": "Modern 5",
+    "family": "Modern",
+    "page": 10,
+    "image": "/images/models/d-art-line/modern-5.jpg",
+    "specs": [
+      {
+        "label": "Farbe",
+        "value": "Anodic Brown / Anodic Bronze / Lacobel"
+      },
+      {
+        "label": "Stangengriffe",
+        "value": "Anodic Bronze mit Maraqina"
+      }
+    ]
+  },
+  {
+    "id": "modern-12",
+    "catalogue": "d-art-line",
+    "name": "Modern 12",
+    "family": "Modern",
+    "page": 12,
+    "image": "/images/models/d-art-line/modern-12.jpg",
+    "specs": [
+      {
+        "label": "Farbe",
+        "value": "Anodic Pearl"
+      },
+      {
+        "label": "Stangengriffe",
+        "value": "Anodic Pearl mit Maraqina"
+      }
+    ]
+  },
+  {
+    "id": "modern-1",
+    "catalogue": "d-art-line",
+    "name": "Modern 1",
+    "family": "Modern",
+    "page": 13,
+    "image": "/images/models/d-art-line/modern-1.jpg",
+    "specs": [
+      {
+        "label": "Farbe",
+        "value": "Sparkling Grey"
+      },
+      {
+        "label": "Stangengriffe",
+        "value": "Black mit Stratuario"
+      },
+      {
+        "label": "Sandgestrahlt",
+        "value": "70"
+      }
+    ]
+  },
+  {
+    "id": "modern-2",
+    "catalogue": "d-art-line",
+    "name": "Modern 2",
+    "family": "Modern",
+    "page": 14,
+    "image": "/images/models/d-art-line/modern-2.jpg",
+    "specs": [
+      {
+        "label": "Farbe",
+        "value": "Anodic Steel"
+      },
+      {
+        "label": "Stangengriffe",
+        "value": "Black mit Frappucino"
+      },
+      {
+        "label": "Sandgestrahlt",
+        "value": "71"
+      }
+    ]
+  },
+  {
+    "id": "modern-4",
+    "catalogue": "d-art-line",
+    "name": "Modern 4",
+    "family": "Modern",
+    "page": 14,
+    "image": "/images/models/d-art-line/modern-4.jpg",
+    "specs": [
+      {
+        "label": "Farbe",
+        "value": "Champagne"
+      },
+      {
+        "label": "Stangengriffe",
+        "value": "Black mit Frappucino"
+      },
+      {
+        "label": "Sandgestrahlt",
+        "value": "72"
+      }
+    ]
+  },
+  {
+    "id": "modern-6",
+    "catalogue": "d-art-line",
+    "name": "Modern 6",
+    "family": "Modern",
+    "page": 15,
+    "image": "/images/models/d-art-line/modern-6.jpg",
+    "specs": [
+      {
+        "label": "Farbe",
+        "value": "Metallic Iron"
+      },
+      {
+        "label": "Stangengriffe",
+        "value": "Black mit Maraqina"
+      }
+    ]
+  },
+  {
+    "id": "modern-3",
+    "catalogue": "d-art-line",
+    "name": "Modern 3",
+    "family": "Modern",
+    "page": 16,
+    "image": "/images/models/d-art-line/modern-3.jpg",
+    "specs": [
+      {
+        "label": "Farbe",
+        "value": "Metalic Cream"
+      },
+      {
+        "label": "Stangengriffe",
+        "value": "Anodic Sand mit Black"
+      },
+      {
+        "label": "Sandgestrahlt",
+        "value": "73"
+      }
+    ]
+  },
+  {
+    "id": "prestige-2",
+    "catalogue": "d-art-line",
+    "name": "Prestige 2",
+    "family": "Prestige",
+    "page": 17,
+    "image": "/images/models/d-art-line/prestige-2.jpg",
+    "specs": [
+      {
+        "label": "Farbe",
+        "value": "Metallic Night / Anodic Bronze"
+      },
+      {
+        "label": "Stangengriffe",
+        "value": "Metallic NIght mit Frappucino"
+      }
+    ]
+  },
+  {
+    "id": "prestige-3",
+    "catalogue": "d-art-line",
+    "name": "Prestige 3",
+    "family": "Prestige",
+    "page": 18,
+    "image": "/images/models/d-art-line/prestige-3.jpg",
+    "specs": [
+      {
+        "label": "Farbe",
+        "value": "Cappuccino"
+      },
+      {
+        "label": "Stangengriffe",
+        "value": "Ponte 01 Black"
+      },
+      {
+        "label": "Sandgestrahlt",
+        "value": "74"
+      }
+    ]
+  },
+  {
+    "id": "geometric-3",
+    "catalogue": "d-art-line",
+    "name": "Geometric 3",
+    "family": "Geometric",
+    "page": 19,
+    "image": "/images/models/d-art-line/geometric-3.jpg",
+    "specs": [
+      {
+        "label": "Farbe",
+        "value": "Metallic Marrone / 81018C"
+      },
+      {
+        "label": "Stangengriffe",
+        "value": "KA1 / LED"
+      }
+    ]
+  },
+  {
+    "id": "geometric-1",
+    "catalogue": "d-art-line",
+    "name": "Geometric 1",
+    "family": "Geometric",
+    "page": 19,
+    "image": "/images/models/d-art-line/geometric-1.jpg",
+    "specs": [
+      {
+        "label": "Farbe",
+        "value": "Metallic Marrone / Lacobel"
+      },
+      {
+        "label": "Stangengriffe",
+        "value": "KA1 / LED"
+      }
+    ]
+  },
+  {
+    "id": "prestige-4",
+    "catalogue": "d-art-line",
+    "name": "Prestige 4",
+    "family": "Prestige",
+    "page": 20,
+    "image": "/images/models/d-art-line/prestige-4.jpg",
+    "specs": [
+      {
+        "label": "Farbe",
+        "value": "Lacobel"
+      },
+      {
+        "label": "Stangengriffe",
+        "value": "Fala Anodic Bronze"
+      }
+    ]
+  },
+  {
+    "id": "modern-9",
+    "catalogue": "d-art-line",
+    "name": "Modern 9",
+    "family": "Modern",
+    "page": 21,
+    "image": "/images/models/d-art-line/modern-9.jpg",
+    "specs": [
+      {
+        "label": "Farbe",
+        "value": "Anodic Pearl, Metalic Night, Metallic Iron"
+      },
+      {
+        "label": "Stangengriffe",
+        "value": "Ponte 01 Black"
+      },
+      {
+        "label": "Sandgestrahlt",
+        "value": "75"
+      }
+    ]
+  },
+  {
+    "id": "modern-14",
+    "catalogue": "d-art-line",
+    "name": "Modern 14",
+    "family": "Modern",
+    "page": 22,
+    "image": "/images/models/d-art-line/modern-14.jpg",
+    "specs": [
+      {
+        "label": "Farbe",
+        "value": "Metallic Cream"
+      },
+      {
+        "label": "Stangengriffe",
+        "value": "Black mit Stratuario"
+      },
+      {
+        "label": "Sandgestrahlt",
+        "value": "76"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-washington-6",
+    "catalogue": "aussenturen",
+    "name": "Washington 6",
+    "family": "Aluminiumtüren",
+    "page": 12,
+    "image": "/images/models/aussenturen/aluminium-washington-6.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-washington-7",
+    "catalogue": "aussenturen",
+    "name": "Washington 7",
+    "family": "Aluminiumtüren",
+    "page": 12,
+    "image": "/images/models/aussenturen/aluminium-washington-7.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-washington-8",
+    "catalogue": "aussenturen",
+    "name": "Washington 8",
+    "family": "Aluminiumtüren",
+    "page": 12,
+    "image": "/images/models/aussenturen/aluminium-washington-8.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-washington-pocket",
+    "catalogue": "aussenturen",
+    "name": "Washington Pocket",
+    "family": "Aluminiumtüren",
+    "page": 12,
+    "image": "/images/models/aussenturen/aluminium-washington-pocket.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      },
+      {
+        "label": "Musterposition",
+        "value": "Left, Right"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-alaska-1",
+    "catalogue": "aussenturen",
+    "name": "Alaska 1",
+    "family": "Aluminiumtüren",
+    "page": 12,
+    "image": "/images/models/aussenturen/aluminium-alaska-1.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-alaska-1-dekorrahmen",
+    "catalogue": "aussenturen",
+    "name": "Alaska 1 Dekorrahmen",
+    "family": "Aluminiumtüren",
+    "page": 12,
+    "image": "/images/models/aussenturen/aluminium-alaska-1-dekorrahmen.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-alaska-2",
+    "catalogue": "aussenturen",
+    "name": "Alaska 2",
+    "family": "Aluminiumtüren",
+    "page": 12,
+    "image": "/images/models/aussenturen/aluminium-alaska-2.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-alaska-2-dekorrahmen",
+    "catalogue": "aussenturen",
+    "name": "Alaska 2 Dekorrahmen",
+    "family": "Aluminiumtüren",
+    "page": 12,
+    "image": "/images/models/aussenturen/aluminium-alaska-2-dekorrahmen.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-alaska-4",
+    "catalogue": "aussenturen",
+    "name": "Alaska 4",
+    "family": "Aluminiumtüren",
+    "page": 13,
+    "image": "/images/models/aussenturen/aluminium-alaska-4.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-alaska-4-dekorrahmen",
+    "catalogue": "aussenturen",
+    "name": "Alaska 4 Dekorrahmen",
+    "family": "Aluminiumtüren",
+    "page": 13,
+    "image": "/images/models/aussenturen/aluminium-alaska-4-dekorrahmen.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-alaska-5",
+    "catalogue": "aussenturen",
+    "name": "Alaska 5",
+    "family": "Aluminiumtüren",
+    "page": 13,
+    "image": "/images/models/aussenturen/aluminium-alaska-5.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      },
+      {
+        "label": "Musterposition",
+        "value": "Left, Right"
+      },
+      {
+        "label": "Hinweis",
+        "value": "Bestellung in spiegelverkehrt möglich"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-arizona-1",
+    "catalogue": "aussenturen",
+    "name": "Arizona 1",
+    "family": "Aluminiumtüren",
+    "page": 13,
+    "image": "/images/models/aussenturen/aluminium-arizona-1.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-arizona-1-dekorrahmen",
+    "catalogue": "aussenturen",
+    "name": "Arizona 1 Dekorrahmen",
+    "family": "Aluminiumtüren",
+    "page": 13,
+    "image": "/images/models/aussenturen/aluminium-arizona-1-dekorrahmen.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-alaska-3",
+    "catalogue": "aussenturen",
+    "name": "Alaska 3",
+    "family": "Aluminiumtüren",
+    "page": 13,
+    "image": "/images/models/aussenturen/aluminium-alaska-3.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      },
+      {
+        "label": "Musterposition",
+        "value": "Left, Right"
+      },
+      {
+        "label": "Hinweis",
+        "value": "Bestellung in spiegelverkehrt möglich"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-arizona-2-dekorrahmen",
+    "catalogue": "aussenturen",
+    "name": "Arizona 2 Dekorrahmen",
+    "family": "Aluminiumtüren",
+    "page": 13,
+    "image": "/images/models/aussenturen/aluminium-arizona-2-dekorrahmen.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-arizona-2",
+    "catalogue": "aussenturen",
+    "name": "Arizona 2",
+    "family": "Aluminiumtüren",
+    "page": 13,
+    "image": "/images/models/aussenturen/aluminium-arizona-2.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-california-5",
+    "catalogue": "aussenturen",
+    "name": "California 5",
+    "family": "Aluminiumtüren",
+    "page": 14,
+    "image": "/images/models/aussenturen/aluminium-california-5.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      },
+      {
+        "label": "Musterposition",
+        "value": "Left, Right, Center"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-california-5-dekorrahmen",
+    "catalogue": "aussenturen",
+    "name": "California 5 Dekorrahmen",
+    "family": "Aluminiumtüren",
+    "page": 14,
+    "image": "/images/models/aussenturen/aluminium-california-5-dekorrahmen.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-california-6",
+    "catalogue": "aussenturen",
+    "name": "California 6",
+    "family": "Aluminiumtüren",
+    "page": 14,
+    "image": "/images/models/aussenturen/aluminium-california-6.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      },
+      {
+        "label": "Musterposition",
+        "value": "Left, Right, Center"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-california-6-dekorrahmen",
+    "catalogue": "aussenturen",
+    "name": "California 6 Dekorrahmen",
+    "family": "Aluminiumtüren",
+    "page": 14,
+    "image": "/images/models/aussenturen/aluminium-california-6-dekorrahmen.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-colorado-1-dekorrahmen",
+    "catalogue": "aussenturen",
+    "name": "Colorado 1 Dekorrahmen",
+    "family": "Aluminiumtüren",
+    "page": 14,
+    "image": "/images/models/aussenturen/aluminium-colorado-1-dekorrahmen.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      },
+      {
+        "label": "Musterposition",
+        "value": "Center"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-florida-1",
+    "catalogue": "aussenturen",
+    "name": "Florida 1",
+    "family": "Aluminiumtüren",
+    "page": 14,
+    "image": "/images/models/aussenturen/aluminium-florida-1.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      },
+      {
+        "label": "Musterposition",
+        "value": "Left, Right"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-florida-1-dekorrahmen",
+    "catalogue": "aussenturen",
+    "name": "Florida 1 Dekorrahmen",
+    "family": "Aluminiumtüren",
+    "page": 15,
+    "image": "/images/models/aussenturen/aluminium-florida-1-dekorrahmen.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-florida-2",
+    "catalogue": "aussenturen",
+    "name": "Florida 2",
+    "family": "Aluminiumtüren",
+    "page": 15,
+    "image": "/images/models/aussenturen/aluminium-florida-2.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      },
+      {
+        "label": "Musterposition",
+        "value": "Left, Right"
+      },
+      {
+        "label": "Hinweis",
+        "value": "Bestellung in spiegelverkehrt möglich"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-florida-4",
+    "catalogue": "aussenturen",
+    "name": "Florida 4",
+    "family": "Aluminiumtüren",
+    "page": 15,
+    "image": "/images/models/aussenturen/aluminium-florida-4.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      },
+      {
+        "label": "Musterposition",
+        "value": "Left, Right"
+      },
+      {
+        "label": "Hinweis",
+        "value": "Bestellung in spiegelverkehrt möglich"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-hawaii-1",
+    "catalogue": "aussenturen",
+    "name": "Hawaii 1",
+    "family": "Aluminiumtüren",
+    "page": 15,
+    "image": "/images/models/aussenturen/aluminium-hawaii-1.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-florida-3",
+    "catalogue": "aussenturen",
+    "name": "Florida 3",
+    "family": "Aluminiumtüren",
+    "page": 15,
+    "image": "/images/models/aussenturen/aluminium-florida-3.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      },
+      {
+        "label": "Musterposition",
+        "value": "Left, Right"
+      },
+      {
+        "label": "Hinweis",
+        "value": "Bestellung in spiegelverkehrt möglich"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-hawaii-1-dekorrahmen",
+    "catalogue": "aussenturen",
+    "name": "Hawaii 1 Dekorrahmen",
+    "family": "Aluminiumtüren",
+    "page": 15,
+    "image": "/images/models/aussenturen/aluminium-hawaii-1-dekorrahmen.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      },
+      {
+        "label": "Musterposition",
+        "value": "Center"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-hawaii-4",
+    "catalogue": "aussenturen",
+    "name": "Hawaii 4",
+    "family": "Aluminiumtüren",
+    "page": 16,
+    "image": "/images/models/aussenturen/aluminium-hawaii-4.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-hawaii-5",
+    "catalogue": "aussenturen",
+    "name": "Hawaii 5",
+    "family": "Aluminiumtüren",
+    "page": 16,
+    "image": "/images/models/aussenturen/aluminium-hawaii-5.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      },
+      {
+        "label": "Musterposition",
+        "value": "Left, Right"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-montana-1",
+    "catalogue": "aussenturen",
+    "name": "Montana 1",
+    "family": "Aluminiumtüren",
+    "page": 16,
+    "image": "/images/models/aussenturen/aluminium-montana-1.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-hawaii-2-dekorrahmen",
+    "catalogue": "aussenturen",
+    "name": "Hawaii 2 Dekorrahmen",
+    "family": "Aluminiumtüren",
+    "page": 16,
+    "image": "/images/models/aussenturen/aluminium-hawaii-2-dekorrahmen.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      },
+      {
+        "label": "Musterposition",
+        "value": "Center"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-hawaii-3-dekorrahmen",
+    "catalogue": "aussenturen",
+    "name": "Hawaii 3 Dekorrahmen",
+    "family": "Aluminiumtüren",
+    "page": 16,
+    "image": "/images/models/aussenturen/aluminium-hawaii-3-dekorrahmen.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      },
+      {
+        "label": "Musterposition",
+        "value": "Center"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-montana-2-dekorrahmen",
+    "catalogue": "aussenturen",
+    "name": "Montana 2 Dekorrahmen",
+    "family": "Aluminiumtüren",
+    "page": 17,
+    "image": "/images/models/aussenturen/aluminium-montana-2-dekorrahmen.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-montana-3-dekorrahmen",
+    "catalogue": "aussenturen",
+    "name": "Montana 3 Dekorrahmen",
+    "family": "Aluminiumtüren",
+    "page": 17,
+    "image": "/images/models/aussenturen/aluminium-montana-3-dekorrahmen.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-minnesota-1",
+    "catalogue": "aussenturen",
+    "name": "Minnesota 1",
+    "family": "Aluminiumtüren",
+    "page": 17,
+    "image": "/images/models/aussenturen/aluminium-minnesota-1.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-montana-4",
+    "catalogue": "aussenturen",
+    "name": "Montana 4",
+    "family": "Aluminiumtüren",
+    "page": 17,
+    "image": "/images/models/aussenturen/aluminium-montana-4.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-montana-1-dekorrahmen",
+    "catalogue": "aussenturen",
+    "name": "Montana 1 Dekorrahmen",
+    "family": "Aluminiumtüren",
+    "page": 17,
+    "image": "/images/models/aussenturen/aluminium-montana-1-dekorrahmen.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-montana-wood",
+    "catalogue": "aussenturen",
+    "name": "Montana Wood",
+    "family": "Aluminiumtüren",
+    "page": 17,
+    "image": "/images/models/aussenturen/aluminium-montana-wood.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-nebraska-1",
+    "catalogue": "aussenturen",
+    "name": "Nebraska 1",
+    "family": "Aluminiumtüren",
+    "page": 18,
+    "image": "/images/models/aussenturen/aluminium-nebraska-1.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      },
+      {
+        "label": "Musterposition",
+        "value": "Left, Right, Center"
+      },
+      {
+        "label": "Hinweis",
+        "value": "Bestellung in spiegelverkehrt möglich"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-new-york-2",
+    "catalogue": "aussenturen",
+    "name": "New York 2",
+    "family": "Aluminiumtüren",
+    "page": 18,
+    "image": "/images/models/aussenturen/aluminium-new-york-2.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      },
+      {
+        "label": "Musterposition",
+        "value": "Left, Right"
+      },
+      {
+        "label": "Hinweis",
+        "value": "Bestellung in spiegelverkehrt möglich"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-new-york-1",
+    "catalogue": "aussenturen",
+    "name": "New York 1",
+    "family": "Aluminiumtüren",
+    "page": 18,
+    "image": "/images/models/aussenturen/aluminium-new-york-1.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      },
+      {
+        "label": "Musterposition",
+        "value": "Left, Right, Center"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-nebraska-1-dekorrahmen",
+    "catalogue": "aussenturen",
+    "name": "Nebraska 1 Dekorrahmen",
+    "family": "Aluminiumtüren",
+    "page": 18,
+    "image": "/images/models/aussenturen/aluminium-nebraska-1-dekorrahmen.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-texas",
+    "catalogue": "aussenturen",
+    "name": "Texas",
+    "family": "Aluminiumtüren",
+    "page": 18,
+    "image": "/images/models/aussenturen/aluminium-texas.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      },
+      {
+        "label": "Musterposition",
+        "value": "Left, Right, Center"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-texas-wood",
+    "catalogue": "aussenturen",
+    "name": "Texas Wood",
+    "family": "Aluminiumtüren",
+    "page": 18,
+    "image": "/images/models/aussenturen/aluminium-texas-wood.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      },
+      {
+        "label": "Musterposition",
+        "value": "Left, Right"
+      },
+      {
+        "label": "Hinweis",
+        "value": "Bestellung in spiegelverkehrt möglich"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-texas-dekorrahmen",
+    "catalogue": "aussenturen",
+    "name": "Texas Dekorrahmen",
+    "family": "Aluminiumtüren",
+    "page": 18,
+    "image": "/images/models/aussenturen/aluminium-texas-dekorrahmen.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-new-jersey-1-dekorrahmen",
+    "catalogue": "aussenturen",
+    "name": "New Jersey 1 Dekorrahmen",
+    "family": "Aluminiumtüren",
+    "page": 18,
+    "image": "/images/models/aussenturen/aluminium-new-jersey-1-dekorrahmen.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-pennsylvania-2-dekorrahmen",
+    "catalogue": "aussenturen",
+    "name": "Pennsylvania 2 Dekorrahmen",
+    "family": "Aluminiumtüren",
+    "page": 19,
+    "image": "/images/models/aussenturen/aluminium-pennsylvania-2-dekorrahmen.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-pennsylvania-1-dekorrahmen",
+    "catalogue": "aussenturen",
+    "name": "Pennsylvania 1 Dekorrahmen",
+    "family": "Aluminiumtüren",
+    "page": 19,
+    "image": "/images/models/aussenturen/aluminium-pennsylvania-1-dekorrahmen.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-pennsylvania-2",
+    "catalogue": "aussenturen",
+    "name": "Pennsylvania 2",
+    "family": "Aluminiumtüren",
+    "page": 19,
+    "image": "/images/models/aussenturen/aluminium-pennsylvania-2.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      },
+      {
+        "label": "Musterposition",
+        "value": "Left, Right"
+      },
+      {
+        "label": "Hinweis",
+        "value": "Bestellung in spiegelverkehrt möglich"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-pennsylvania-5",
+    "catalogue": "aussenturen",
+    "name": "Pennsylvania 5",
+    "family": "Aluminiumtüren",
+    "page": 19,
+    "image": "/images/models/aussenturen/aluminium-pennsylvania-5.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      },
+      {
+        "label": "Musterposition",
+        "value": "Left, Right"
+      },
+      {
+        "label": "Hinweis",
+        "value": "Bestellung in spiegelverkehrt möglich"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-pennsylvania-4",
+    "catalogue": "aussenturen",
+    "name": "Pennsylvania 4",
+    "family": "Aluminiumtüren",
+    "page": 19,
+    "image": "/images/models/aussenturen/aluminium-pennsylvania-4.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-pennsylvania-6",
+    "catalogue": "aussenturen",
+    "name": "Pennsylvania 6",
+    "family": "Aluminiumtüren",
+    "page": 19,
+    "image": "/images/models/aussenturen/aluminium-pennsylvania-6.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-pennsylvania-3-dekorrahmen",
+    "catalogue": "aussenturen",
+    "name": "Pennsylvania 3 Dekorrahmen",
+    "family": "Aluminiumtüren",
+    "page": 19,
+    "image": "/images/models/aussenturen/aluminium-pennsylvania-3-dekorrahmen.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      }
+    ]
+  },
+  {
+    "id": "aluminium-ohio-dekorrahmen",
+    "catalogue": "aussenturen",
+    "name": "Ohio Dekorrahmen",
+    "family": "Aluminiumtüren",
+    "page": 19,
+    "image": "/images/models/aussenturen/aluminium-ohio-dekorrahmen.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      }
+    ]
+  },
+  {
+    "id": "pvc-florida-dekorrahmen",
+    "catalogue": "aussenturen",
+    "name": "Florida Dekorrahmen",
+    "family": "PVC-Türen",
+    "page": 29,
+    "image": "/images/models/aussenturen/pvc-florida-dekorrahmen.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      },
+      {
+        "label": "Musterposition",
+        "value": "Left, Right"
+      }
+    ]
+  },
+  {
+    "id": "pvc-florida",
+    "catalogue": "aussenturen",
+    "name": "Florida",
+    "family": "PVC-Türen",
+    "page": 29,
+    "image": "/images/models/aussenturen/pvc-florida.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      },
+      {
+        "label": "Musterposition",
+        "value": "Left, Right"
+      }
+    ]
+  },
+  {
+    "id": "pvc-california-1-dekorrahmen",
+    "catalogue": "aussenturen",
+    "name": "California 1 Dekorrahmen",
+    "family": "PVC-Türen",
+    "page": 29,
+    "image": "/images/models/aussenturen/pvc-california-1-dekorrahmen.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      }
+    ]
+  },
+  {
+    "id": "pvc-alaska-4",
+    "catalogue": "aussenturen",
+    "name": "Alaska 4",
+    "family": "PVC-Türen",
+    "page": 29,
+    "image": "/images/models/aussenturen/pvc-alaska-4.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      }
+    ]
+  },
+  {
+    "id": "pvc-california-1",
+    "catalogue": "aussenturen",
+    "name": "California 1",
+    "family": "PVC-Türen",
+    "page": 29,
+    "image": "/images/models/aussenturen/pvc-california-1.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      },
+      {
+        "label": "Musterposition",
+        "value": "Left, Right, Center"
+      }
+    ]
+  },
+  {
+    "id": "pvc-alaska-4-dekorrahmen",
+    "catalogue": "aussenturen",
+    "name": "Alaska 4 Dekorrahmen",
+    "family": "PVC-Türen",
+    "page": 29,
+    "image": "/images/models/aussenturen/pvc-alaska-4-dekorrahmen.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      }
+    ]
+  },
+  {
+    "id": "pvc-arizona-2",
+    "catalogue": "aussenturen",
+    "name": "Arizona 2",
+    "family": "PVC-Türen",
+    "page": 29,
+    "image": "/images/models/aussenturen/pvc-arizona-2.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      }
+    ]
+  },
+  {
+    "id": "pvc-arizona-2-dekorrahmen",
+    "catalogue": "aussenturen",
+    "name": "Arizona 2 Dekorrahmen",
+    "family": "PVC-Türen",
+    "page": 29,
+    "image": "/images/models/aussenturen/pvc-arizona-2-dekorrahmen.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      }
+    ]
+  },
+  {
+    "id": "pvc-hawaii-3-dekorrahmen",
+    "catalogue": "aussenturen",
+    "name": "Hawaii 3 Dekorrahmen",
+    "family": "PVC-Türen",
+    "page": 30,
+    "image": "/images/models/aussenturen/pvc-hawaii-3-dekorrahmen.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      }
+    ]
+  },
+  {
+    "id": "pvc-montana-1-dekorrahmen",
+    "catalogue": "aussenturen",
+    "name": "Montana 1 Dekorrahmen",
+    "family": "PVC-Türen",
+    "page": 30,
+    "image": "/images/models/aussenturen/pvc-montana-1-dekorrahmen.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      }
+    ]
+  },
+  {
+    "id": "pvc-montana-1",
+    "catalogue": "aussenturen",
+    "name": "Montana 1",
+    "family": "PVC-Türen",
+    "page": 30,
+    "image": "/images/models/aussenturen/pvc-montana-1.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      }
+    ]
+  },
+  {
+    "id": "pvc-montana-2-dekorrahmen",
+    "catalogue": "aussenturen",
+    "name": "Montana 2 Dekorrahmen",
+    "family": "PVC-Türen",
+    "page": 30,
+    "image": "/images/models/aussenturen/pvc-montana-2-dekorrahmen.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      }
+    ]
+  },
+  {
+    "id": "pvc-colorado",
+    "catalogue": "aussenturen",
+    "name": "Colorado",
+    "family": "PVC-Türen",
+    "page": 30,
+    "image": "/images/models/aussenturen/pvc-colorado.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      }
+    ]
+  },
+  {
+    "id": "pvc-colorado-dekorrahmen",
+    "catalogue": "aussenturen",
+    "name": "Colorado Dekorrahmen",
+    "family": "PVC-Türen",
+    "page": 30,
+    "image": "/images/models/aussenturen/pvc-colorado-dekorrahmen.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      }
+    ]
+  },
+  {
+    "id": "pvc-hawaii-1",
+    "catalogue": "aussenturen",
+    "name": "Hawaii 1",
+    "family": "PVC-Türen",
+    "page": 30,
+    "image": "/images/models/aussenturen/pvc-hawaii-1.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      }
+    ]
+  },
+  {
+    "id": "pvc-hawaii-2-dekorrahmen",
+    "catalogue": "aussenturen",
+    "name": "Hawaii 2 Dekorrahmen",
+    "family": "PVC-Türen",
+    "page": 30,
+    "image": "/images/models/aussenturen/pvc-hawaii-2-dekorrahmen.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      }
+    ]
+  },
+  {
+    "id": "pvc-ohio-dekorrahmen",
+    "catalogue": "aussenturen",
+    "name": "Ohio Dekorrahmen",
+    "family": "PVC-Türen",
+    "page": 31,
+    "image": "/images/models/aussenturen/pvc-ohio-dekorrahmen.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      }
+    ]
+  },
+  {
+    "id": "pvc-ohio",
+    "catalogue": "aussenturen",
+    "name": "Ohio",
+    "family": "PVC-Türen",
+    "page": 31,
+    "image": "/images/models/aussenturen/pvc-ohio.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      }
+    ]
+  },
+  {
+    "id": "pvc-texas-dekorrahmen",
+    "catalogue": "aussenturen",
+    "name": "Texas Dekorrahmen",
+    "family": "PVC-Türen",
+    "page": 31,
+    "image": "/images/models/aussenturen/pvc-texas-dekorrahmen.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      }
+    ]
+  },
+  {
+    "id": "pvc-nebraska",
+    "catalogue": "aussenturen",
+    "name": "Nebraska",
+    "family": "PVC-Türen",
+    "page": 31,
+    "image": "/images/models/aussenturen/pvc-nebraska.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      },
+      {
+        "label": "Musterposition",
+        "value": "Left, Right, Center"
+      }
+    ]
+  },
+  {
+    "id": "pvc-texas",
+    "catalogue": "aussenturen",
+    "name": "Texas",
+    "family": "PVC-Türen",
+    "page": 31,
+    "image": "/images/models/aussenturen/pvc-texas.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      },
+      {
+        "label": "Musterposition",
+        "value": "Left, Right, Center"
+      }
+    ]
+  },
+  {
+    "id": "pvc-nebraska-dekorrahmen",
+    "catalogue": "aussenturen",
+    "name": "Nebraska Dekorrahmen",
+    "family": "PVC-Türen",
+    "page": 31,
+    "image": "/images/models/aussenturen/pvc-nebraska-dekorrahmen.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      }
+    ]
+  },
+  {
+    "id": "pvc-montana-3",
+    "catalogue": "aussenturen",
+    "name": "Montana 3",
+    "family": "PVC-Türen",
+    "page": 31,
+    "image": "/images/models/aussenturen/pvc-montana-3.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      },
+      {
+        "label": "Musterposition",
+        "value": "Left, Right"
+      }
+    ]
+  },
+  {
+    "id": "pvc-montana-3-dekorrahmen",
+    "catalogue": "aussenturen",
+    "name": "Montana 3 Dekorrahmen",
+    "family": "PVC-Türen",
+    "page": 31,
+    "image": "/images/models/aussenturen/pvc-montana-3-dekorrahmen.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      },
+      {
+        "label": "Musterposition",
+        "value": "Left, Right"
+      }
+    ]
+  },
+  {
+    "id": "pvc-pennsylvania-1",
+    "catalogue": "aussenturen",
+    "name": "Pennsylvania 1",
+    "family": "PVC-Türen",
+    "page": 32,
+    "image": "/images/models/aussenturen/pvc-pennsylvania-1.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      }
+    ]
+  },
+  {
+    "id": "pvc-pennsylvania-2-dekorrahmen",
+    "catalogue": "aussenturen",
+    "name": "Pennsylvania 2 Dekorrahmen",
+    "family": "PVC-Türen",
+    "page": 32,
+    "image": "/images/models/aussenturen/pvc-pennsylvania-2-dekorrahmen.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      },
+      {
+        "label": "Musterposition",
+        "value": "Left, Right"
+      }
+    ]
+  },
+  {
+    "id": "pvc-pennsylvania-2",
+    "catalogue": "aussenturen",
+    "name": "Pennsylvania 2",
+    "family": "PVC-Türen",
+    "page": 32,
+    "image": "/images/models/aussenturen/pvc-pennsylvania-2.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      },
+      {
+        "label": "Musterposition",
+        "value": "Left, Right"
+      }
+    ]
+  },
+  {
+    "id": "pvc-pennsylvania-1-dekorrahmen",
+    "catalogue": "aussenturen",
+    "name": "Pennsylvania 1 Dekorrahmen",
+    "family": "PVC-Türen",
+    "page": 32,
+    "image": "/images/models/aussenturen/pvc-pennsylvania-1-dekorrahmen.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      }
+    ]
+  },
+  {
+    "id": "pvc-pennsylvania-3",
+    "catalogue": "aussenturen",
+    "name": "Pennsylvania 3",
+    "family": "PVC-Türen",
+    "page": 32,
+    "image": "/images/models/aussenturen/pvc-pennsylvania-3.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      },
+      {
+        "label": "Musterposition",
+        "value": "Left, Right"
+      }
+    ]
+  },
+  {
+    "id": "pvc-pennsylvania-3-dekorrahmen",
+    "catalogue": "aussenturen",
+    "name": "Pennsylvania 3 Dekorrahmen",
+    "family": "PVC-Türen",
+    "page": 32,
+    "image": "/images/models/aussenturen/pvc-pennsylvania-3-dekorrahmen.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      }
+    ]
+  },
+  {
+    "id": "pvc-new-jersey-dekorrahmen",
+    "catalogue": "aussenturen",
+    "name": "New Jersey Dekorrahmen",
+    "family": "PVC-Türen",
+    "page": 32,
+    "image": "/images/models/aussenturen/pvc-new-jersey-dekorrahmen.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      }
+    ]
+  },
+  {
+    "id": "pvc-new-jersey",
+    "catalogue": "aussenturen",
+    "name": "New Jersey",
+    "family": "PVC-Türen",
+    "page": 32,
+    "image": "/images/models/aussenturen/pvc-new-jersey.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "PVC"
+      }
+    ]
+  },
+  {
+    "id": "aufsatzrollladen-rn",
+    "catalogue": "rollladen-drutex",
+    "name": "Aufsatzrollladen RN",
+    "family": "Rollladensysteme",
+    "page": 4,
+    "image": "/images/models/rollladen-drutex/aufsatzrollladen-rn.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Die Stahlkonsole in Rollläden ermöglicht eine opti- male Steifigkeit der Konstruktion."
+      },
+      {
+        "label": "",
+        "value": "Speziell entwickelte Verstärkung sorgt für optimale Steifig- keit und Windbeständigkeit des Systems."
+      },
+      {
+        "label": "",
+        "value": "Der Rollladen wurde so konzipiert, dass die Montage des Insektenschutzes sowohl von außen als auch von innen am Panzer möglich ist."
+      },
+      {
+        "label": "",
+        "value": "Der Zugang zum Kasten, für Servicearbeiten ist nach Öffnen der Revision unten oder vorne möglich."
+      },
+      {
+        "label": "",
+        "value": "Möglichkeit zur Verwendung eines Putzträgers und einer Putzleiste zur Integration in die Gebäudefassade."
+      },
+      {
+        "label": "",
+        "value": "Abschlussleiste mit verdecktem Stopper für RN 215/225."
+      },
+      {
+        "label": "",
+        "value": "Einseitige / Doppel Führungsschiene (ALU)"
+      },
+      {
+        "label": "",
+        "value": "Eine große Auswahl an Arten und Farben von Führungsschienen ermöglicht es Ihnen, die optimale Lösung für die Vorlieben des Kunden zu wählen."
+      }
+    ]
+  },
+  {
+    "id": "aufsatzrollladen-rs",
+    "catalogue": "rollladen-drutex",
+    "name": "Aufsatzrollladen RS",
+    "family": "Rollladensysteme",
+    "page": 7,
+    "image": "/images/models/rollladen-drutex/aufsatzrollladen-rs.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Der Rollladenkasten besteht aus EPS (expandiertes Polystyrol)."
+      },
+      {
+        "label": "",
+        "value": "Dank der Verwendung einer Stahlkonsole ist es möglich, die Kästen direkt an den Betonstürzen zu befestigen."
+      },
+      {
+        "label": "",
+        "value": "Das Design und die Konstruktion des Rollladens erleichtern die Montage, das Verputzen und die Behandlung der Fassade."
+      },
+      {
+        "label": "",
+        "value": "Die mit Polyurethanschaum gefüllten Lamellen, 37 mm, 42 mm und 55 mm hoch, sind in verschiedenen Farbvarianten erhältlich und ermöglichen eine vollständige Gestaltung des Projekts."
+      },
+      {
+        "label": "",
+        "value": "Endleiste, erhältlich in verschiedenen Farboptionen aus der RAL-Palette."
+      },
+      {
+        "label": "",
+        "value": "Die Installation des Moskitonetzes ist von der Innenseite der Rollladenpanzerung möglich, was die Funktionalität der Struktur erheblich beeinträchtigt."
+      },
+      {
+        "label": "",
+        "value": "Führungsschienen erhältlich in den Farben unserer Renolit-Palette."
+      },
+      {
+        "label": "",
+        "value": "Möglichkeit der Verwendung von Aluminiumführungsschienen."
+      },
+      {
+        "label": "",
+        "value": "Einseitige Führungsschiene (PVC) - RS Revision von innen."
+      },
+      {
+        "label": "",
+        "value": "A L U M I N I U M - F Ü H R U N G S S C H I E N E N"
+      }
+    ]
+  },
+  {
+    "id": "vorsatzrollladen",
+    "catalogue": "rollladen-drutex",
+    "name": "Vorsatzrollläden",
+    "family": "Rollladensysteme",
+    "page": 10,
+    "image": "/images/models/rollladen-drutex/vorsatzrollladen.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Doppel Führungsschiene (für H37 i H42 Lamellen)."
+      },
+      {
+        "label": "",
+        "value": "Winkel Führungsschiene (für H37 i H42 Lamellen)."
+      },
+      {
+        "label": "",
+        "value": "Der Rollladenkasten kann dank seiner vielfältigen Farben ein dekoratives Element des Objekts sein."
+      },
+      {
+        "label": "",
+        "value": "Zugang zum Kasten bei einem 45o-Rollladen und einem Oval- Rollladen - von vorne und bei einem Unterputzrollladen - von unten."
+      },
+      {
+        "label": "",
+        "value": "Der Kasten und die Führungsschienen sind in einer breiten Farbpalette aus der gesamten RAL-Palette erhältlich, wodurch sich die Rollläden durch Ästhetik und modernes Aussehen auszeichnen."
+      },
+      {
+        "label": "",
+        "value": "Die Panzer bestehen aus Aluminiumprofilen, die mit Polyurethanschaum gefüllt sind und in einen Kasten gerollt werden, die an der Wand oder in der Fensterlaibung platziert wird."
+      },
+      {
+        "label": "",
+        "value": "Endleiste mit verdecktem Stopper, erhältlich in ausgewählten Farboptionen gemäß der RAL-Palette, die eine Übereinstimmung mit der Fassade ermöglicht und zur Eleganz der Gestamterscheinung beiträgt."
+      },
+      {
+        "label": "",
+        "value": "Möglichkeit der Verwendung eines mit dem Kasten integriertem Insektenschutz."
+      },
+      {
+        "label": "",
+        "value": "Kästen und Führungsschienen in der RAL- Palette erhältlich*."
+      },
+      {
+        "label": "",
+        "value": "Farben der holzähnlichen Kisten und Führungsschienen für RA 45 90 Grad. Nussbaum, Golden Oak, Winchester, Turner Oak."
+      }
+    ]
+  },
+  {
+    "id": "raffstoren",
+    "catalogue": "rollladen-drutex",
+    "name": "Raffstoren",
+    "family": "Raffstoren",
+    "page": 15,
+    "image": "/images/models/rollladen-drutex/raffstoren.jpg",
+    "specs": [],
+    "description": "Erhätliche Maße (Breite x Höhe): 140x240 mm, 140x300 mm, 140x350 mm. Durch die freie Einstellung des Lamellenneigungswinkels ermöglichen sie die passende Beschattung und schaffen eine angenehme Atmosphäre in den Räumen des Gebäudes. Sie reflektieren einen Großteil der Sonnenstrahlen vor dem Fenster und sorgen so für behagliche Bedingungen in Wohnung oder Haus. Als Option empfehlen wir eine Wetterstation."
+  },
+  {
+    "id": "insektenschutz-plisee",
+    "catalogue": "rollladen-drutex",
+    "name": "Insektenschutz-Plisee",
+    "family": "Insektenschutz",
+    "page": 17,
+    "image": "/images/models/rollladen-drutex/insektenschutz-plisee.jpg",
+    "specs": [],
+    "description": "Eine durchdachte und bis ins kleinste Detail raffinierte Konstruktion ermöglicht die Montage in der Fensternische, am Fensterrahmen, an der Gebäudefassade und in der Führung unserer Rollläden. Die Wahl der matten Farben ermöglicht eine ästhetische Harmonie mit der Fassade des Gebäudes."
   }
 ];

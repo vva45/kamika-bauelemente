@@ -6,9 +6,15 @@
  * peso lo ve el visitante antes de descargar y el número de páginas
  * sale en la tarjeta.
  *
- * Cuatro son de puertas de entrada y dos de persianas. Todavía no hay
+ * Seis son de puertas de entrada y tres de persianas. Todavía no hay
  * catálogo de ventanas —esa gama va por fabricante y ficha de sistema—
  * ni del resto de gamas.
+ *
+ * Los tres últimos en llegar (D-ART LINE, Außentüren y el de persianas
+ * con raffstoren e insectos) vienen del mismo fabricante, que vende
+ * también directamente en Alemania. Se publican sin su marca: ver
+ * `scripts/prepare_drutex.py`, que es quien deja el PDF así y hay que
+ * volver a ejecutar si el proveedor manda una versión nueva.
  *
  * ⚠️ Los nombres de marca (ROKA, Despiro, Aluprof) no se traducen nunca.
  *
@@ -74,6 +80,47 @@ export const CATALOGUES: Catalogue[] = [
     cover: "/images/catalogues/entrance-door-panels-cover.jpg",
     pages: 194,
     sizeMb: 16.4,
+    year: 2025,
+  },
+  {
+    id: "d-art-line",
+    title: { en: "D-ART LINE — door collection", de: "D-ART LINE Türenkollektion" },
+    // Sin marca, por el mismo motivo que los dos catálogos de persianas
+    // de abajo: el fabricante vende también directo en Alemania. El
+    // nombre de la línea sí se mantiene —va impreso en la portada y en
+    // el pie de cada modelo, y cambiarlo dejaría la web diciendo una
+    // cosa y el PDF otra.
+    collection: { en: "D-ART LINE", de: "D-ART LINE" },
+    category: "entrance-doors",
+    file: "/pdf/catalogues/d-art-line-turenkollektion.pdf",
+    cover: "/images/catalogues/d-art-line-cover.jpg",
+    pages: 24,
+    sizeMb: 8.4,
+    year: 2026,
+  },
+  {
+    id: "aussenturen",
+    title: { en: "Exterior doors — product catalogue", de: "Außentüren Produktkatalog" },
+    collection: { en: "Exterior doors", de: "Außentüren" },
+    category: "entrance-doors",
+    file: "/pdf/catalogues/aussenturen-produktkatalog.pdf",
+    cover: "/images/catalogues/aussenturen-cover.jpg",
+    pages: 56,
+    sizeMb: 12.7,
+    year: 2025,
+  },
+  {
+    id: "rollladen-drutex",
+    title: {
+      en: "Roller shutters, external venetian blinds, insect screens",
+      de: "Rollläden, Raffstoren, Insektenschutz",
+    },
+    collection: { en: "Shutters and screens", de: "Rollläden und Insektenschutz" },
+    category: "roller-shutters",
+    file: "/pdf/catalogues/rollladen-raffstoren-insektenschutz.pdf",
+    cover: "/images/catalogues/rollladen-drutex-cover.jpg",
+    pages: 21,
+    sizeMb: 3.0,
     year: 2025,
   },
   {
