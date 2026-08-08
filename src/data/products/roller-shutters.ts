@@ -39,7 +39,7 @@ export const rollerShutters: Product[] = [
         alt: { en: "Vorbau 137 half lowered on a south-facing facade" },
       }],
     datasheet: "/pdf/roller-shutters/roller-shutter-front-mounted.pdf",
-    related: ["insect-screen-roller", "external-venetian-blind"],
+    related: ["external-venetian-blind"],
     featured: true,
   },
   {
@@ -73,7 +73,7 @@ export const rollerShutters: Product[] = [
         src: "/images/roller-shutters/roller-shutter-top-mounted-3.jpg",
         alt: { en: "Inspection opening of the Aufsatz 205 seen from the room" },
       }],
-    related: ["insect-screen-roller"],
+    related: [],
     featured: true,
     badge: "bestseller",
   },
@@ -107,7 +107,7 @@ export const rollerShutters: Product[] = [
         src: "/images/roller-shutters/roller-shutter-concealed-3.jpg",
         alt: { en: "Guide rail detail of the Unterputz 165 in anthracite" },
       }],
-    related: ["insect-screen-pleated"],
+    related: [],
   },
   {
     id: "external-venetian-blind",

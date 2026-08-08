@@ -144,7 +144,7 @@ export const MANUFACTURERS: Manufacturer[] = [
     name: "Salamander",
     tagline: { en: "German PVC window systems, 76 to 92 mm frame depth." },
     intro: {
-      en: "Salamander profiles stand for solid German engineering across three depths — 76, 82 and 92 mm. The BluEvolution 82 sheet is already here; the other lines follow as their documentation arrives. Ask us which one fits your opening and we will quote it.",
+      en: "Salamander profiles stand for solid German engineering across three depths — 76, 82 and 92 mm: greenEvolution Flex for flexible new build and renovation, bluEvolution 82 as the energy-saving all-rounder, bluEvolution 92 for passive-house projects. The sliding lines of the same family live under patio doors. Ask us which one fits your opening and we will quote it.",
     },
     image: "/images/manufacturers/salamander.jpg",
     systems: [
@@ -191,6 +191,66 @@ export const MANUFACTURERS: Manufacturer[] = [
         datasheet: "/pdf/windows/salamander-bluevolution-82.pdf",
         image: "/images/manufacturers/salamander-bluevolution-82.jpg",
       },
+      // Los dos siguientes salen del folleto de sistemas Salamander
+      // (salamander-systeme.pdf, autoalojado). Grafía tal y como la
+      // imprime: "greenEvolution", "bluEvolution". Los valores son los
+      // impresos; la descripción en inglés está redactada aquí, como
+      // en el resto de fabricantes.
+      {
+        id: "greenevolution-flex",
+        name: "greenEvolution Flex",
+        tagline: { en: "The adaptable 76 mm line — new build or renovation, 2D or 3D." },
+        description: {
+          en: "One platform, two build-ups: the 2D variant covers cost-efficient new build, the 3D variant adds a third gasket and a sixth chamber in the frame for lower heat loss. Renovation frames of 35 and 65 mm let it replace old windows without breaking out the reveal.",
+        },
+        specs: [
+          { label: { en: "Frame depth", de: "Einbautiefe" }, value: "76", unit: "mm", highlight: true },
+          { label: { en: "Uw" }, value: "0.77–1.20", unit: "W/m²K", highlight: true },
+          {
+            label: { en: "Chambers (frame / sash)", de: "Kammern (Rahmen / Flügel)" },
+            value: "5–6 / 5",
+            highlight: true,
+          },
+          { label: { en: "Uf (2D / 3D)" }, value: "from 1.3 / from 1.1", unit: "W/m²K" },
+          { label: { en: "Seals", de: "Dichtungen" }, value: "2–3" },
+          { label: { en: "Glazing packages", de: "Verglasungspakete" }, value: "up to 48 mm" },
+          { label: { en: "Sound insulation Rw", de: "Schalldämmung Rw" }, value: "29–38 dB" },
+          {
+            label: { en: "Variants", de: "Varianten" },
+            value: "Standard 2D / 3D, renovation 35 / 65 mm",
+          },
+        ],
+        datasheet: "/pdf/catalogues/salamander-systeme.pdf#page=4",
+        image: "/images/manufacturers/salamander-greenevolution-flex.jpg",
+      },
+      {
+        id: "bluevolution-92",
+        name: "bluEvolution 92",
+        tagline: { en: "92 mm and a centre gasket — sized for passive-house builds." },
+        description: {
+          en: "The warmest line of the family, meant for passive and low-energy construction. The centre gasket improves airtightness and keeps the hardware in a dry chamber, which is what makes fittings last. Takes glazing units up to 61 mm — room for triple glazing with wide spacers.",
+        },
+        specs: [
+          { label: { en: "Frame depth", de: "Einbautiefe" }, value: "92", unit: "mm", highlight: true },
+          // El folleto imprime "7,73-1,1": una errata evidente — un
+          // rango no puede empezar por encima de donde acaba, y la
+          // serie del fabricante publica 0,73 para este sistema (el 82
+          // imprime 0,74-1,10 en la misma casilla). Se corrige solo la
+          // errata tipográfica, no el dato.
+          { label: { en: "Uw" }, value: "0.73–1.1", unit: "W/m²K", highlight: true },
+          {
+            label: { en: "Chambers (frame / sash)", de: "Kammern (Rahmen / Flügel)" },
+            value: "6 / 6",
+            highlight: true,
+          },
+          { label: { en: "Uf" }, value: "from 1.0", unit: "W/m²K" },
+          { label: { en: "Seals", de: "Dichtungen" }, value: "3, centre gasket" },
+          { label: { en: "Glazing packages", de: "Verglasungspakete" }, value: "up to 61 mm" },
+          { label: { en: "Sound insulation Rw", de: "Schalldämmung Rw" }, value: "29–38 dB" },
+        ],
+        datasheet: "/pdf/catalogues/salamander-systeme.pdf#page=8",
+        image: "/images/manufacturers/salamander-bluevolution-92.jpg",
+      },
     ],
   },
   {
@@ -232,6 +292,110 @@ export const MANUFACTURERS: Manufacturer[] = [
           en: "The manufacturer's sheet is on its way — ask us about this system today.",
         },
         image: "/images/manufacturers/rehau-synego.jpg",
+      },
+    ],
+  },
+  {
+    // La gama de puertas de terraza va por fabricante, igual que las
+    // ventanas: es el mismo pedido del dueño ("primero la marca,
+    // después lo que ofrece") aplicado a la gama que faltaba. Con esto
+    // se van los dos modelos de EJEMPLO que aguantaban la gama — estos
+    // tres sistemas son reales, del folleto Salamander autoalojado.
+    //
+    // Mismo id "salamander" que en ventanas a propósito: es el mismo
+    // fabricante; la clave de búsqueda es (categoría, id).
+    id: "salamander",
+    category: "patio-doors",
+    name: "Salamander",
+    tagline: { en: "Sliding and lift-and-slide systems, from the same profile family." },
+    intro: {
+      en: "Three ways to open a living room to the terrace, all on Salamander profiles: evolutionDrive SF where an economical slider is enough, evolutionDrive Plus+ where airtightness matters, and evolutionDrive 82 HST when the opening deserves a lift-and-slide with a flush threshold. Same maker as our window range — frames and terrace doors match in colour and section.",
+    },
+    image: "/images/manufacturers/salamander-sliding.jpg",
+    systems: [
+      {
+        id: "evolutiondrive-sf",
+        name: "evolutionDrive SF",
+        tagline: { en: "The economical slider for big, bright openings." },
+        description: {
+          en: "A light, easy-running sliding system for joining terrace and living room where a highly insulated build-up is not required. Large glass areas, simple operation, solid running gear — the pragmatic way to a wide opening.",
+        },
+        specs: [
+          {
+            label: { en: "Opening type", de: "Öffnungsart" },
+            value: "Sliding",
+            highlight: true,
+          },
+          { label: { en: "Frame depth", de: "Rahmentiefe" }, value: "76", unit: "mm", highlight: true },
+          { label: { en: "Uw" }, value: "from 1.3", unit: "W/m²K", highlight: true },
+          { label: { en: "Uf" }, value: "from 1.8", unit: "W/m²K" },
+          { label: { en: "Frame / sash height", de: "Rahmen-/Flügelhöhe" }, value: "52 / 88 mm" },
+          { label: { en: "Glazing packages", de: "Verglasungspakete" }, value: "up to 28 mm" },
+          { label: { en: "Layouts", de: "Schemata" }, value: "A · C · D" },
+        ],
+        datasheet: "/pdf/catalogues/salamander-systeme.pdf#page=10",
+        image: "/images/manufacturers/salamander-evolutiondrive-sf.jpg",
+      },
+      {
+        id: "evolutiondrive-plus",
+        name: "evolutionDrive Plus+",
+        tagline: { en: "The airtight slider, at home in low-energy builds." },
+        description: {
+          en: "The new-generation sliding system: smooth running, large glass in clean cubic profiles and — its strongest card — very high airtightness, without demanding installation build-ups. Also at home in low-energy and passive projects.",
+        },
+        specs: [
+          {
+            label: { en: "Opening type", de: "Öffnungsart" },
+            value: "Sliding",
+            highlight: true,
+          },
+          {
+            label: { en: "Frame depth", de: "Rahmentiefe" },
+            value: "152",
+            unit: "mm",
+            highlight: true,
+          },
+          { label: { en: "Uw" }, value: "from 1.5", unit: "W/m²K", highlight: true },
+          { label: { en: "Uf" }, value: "from 1.1", unit: "W/m²K" },
+          { label: { en: "Frame / sash height", de: "Rahmen-/Flügelhöhe" }, value: "54 / 88 mm" },
+          { label: { en: "Glazing packages", de: "Verglasungspakete" }, value: "up to 49 mm" },
+          { label: { en: "Layouts", de: "Schemata" }, value: "A · C" },
+        ],
+        datasheet: "/pdf/catalogues/salamander-systeme.pdf#page=12",
+        image: "/images/manufacturers/salamander-evolutiondrive-plus.jpg",
+      },
+      {
+        id: "evolutiondrive-82-hst",
+        name: "evolutionDrive 82 HST",
+        tagline: { en: "Lift-and-slide: the large-format terrace door." },
+        description: {
+          en: "The lift-and-slide flagship: the sash lifts off its seals and glides sideways, so even very large panels move with one hand. Warmth, tightness and a threshold the floor can run straight over — the door that turns terrace and living room into one space.",
+        },
+        specs: [
+          {
+            label: { en: "Opening type", de: "Öffnungsart" },
+            value: "Lift-and-slide (HST)",
+            highlight: true,
+          },
+          {
+            label: { en: "Frame depth", de: "Einbautiefe" },
+            value: "82",
+            unit: "mm",
+            highlight: true,
+          },
+          { label: { en: "Uw" }, value: "0.74–1.10", unit: "W/m²K", highlight: true },
+          { label: { en: "Uf" }, value: "from 1.0", unit: "W/m²K" },
+          {
+            label: { en: "Chambers (frame / sash)", de: "Kammern (Rahmen / Flügel)" },
+            value: "5 / 5",
+          },
+          { label: { en: "Seals", de: "Dichtungen" }, value: "2" },
+          { label: { en: "Glazing packages", de: "Verglasungspakete" }, value: "up to 53 mm" },
+          { label: { en: "Sound insulation Rw", de: "Schalldämmung Rw" }, value: "29–38 dB" },
+          { label: { en: "Layouts", de: "Schemata" }, value: "A · C · D · G · K" },
+        ],
+        datasheet: "/pdf/catalogues/salamander-systeme.pdf#page=14",
+        image: "/images/manufacturers/salamander-evolutiondrive-82-hst.jpg",
       },
     ],
   },

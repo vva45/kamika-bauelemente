@@ -234,6 +234,7 @@ export const en = {
   "colours.groupAnodised": "Anodised",
   "colours.groupWoodStain": "Wood stain",
   "colours.groupLamella": "Shutter slats",
+  "colours.groupSalFoil": "Salamander foils",
   "colours.groupSpecial": "Special",
   "colours.availableOn": "Available on",
   "colours.noMatch": "No finish matches that combination.",
@@ -301,7 +302,7 @@ export const en = {
   "manufacturer.systemsIntro":
     "Which system an opening needs depends on the wall build-up and on what the room has to hold. That is decided when we measure — these pages show what each system is for.",
   "manufacturer.chooseIntro":
-    "Windows are quoted by profile system: first the manufacturer, then the series, then the version. Pick the manufacturer to see its systems.",
+    "This range is quoted by profile system: first the manufacturer, then the series, then the version. Pick the manufacturer to see its systems.",
   "system.versionsTitle": "Versions and specifications",
   "system.versionsComingSoon":
     "The manufacturer's catalogue for this system is being prepared for the site. Until it is online, call or write and we will send the current documentation and advise which version fits your opening.",

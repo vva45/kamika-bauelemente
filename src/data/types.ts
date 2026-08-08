@@ -209,6 +209,6 @@ export interface ColorFinish {
   name: Localized<string>; // "Anthracite grey" / "Anthrazitgrau"
   code: string; // "RAL 7016"
   hex: string;
-  group: "ral" | "wood-decor" | "anodised" | "wood-stain" | "lamella" | "special";
+  group: "ral" | "wood-decor" | "anodised" | "wood-stain" | "lamella" | "sal-foil" | "special";
   materials: Material[];
 }

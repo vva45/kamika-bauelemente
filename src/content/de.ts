@@ -209,6 +209,7 @@ export const de: Record<ContentKey, string> = {
   "colours.groupAnodised": "", // TODO: DE
   "colours.groupWoodStain": "", // TODO: DE
   "colours.groupLamella": "", // TODO: DE
+  "colours.groupSalFoil": "", // TODO: DE
   "colours.groupSpecial": "", // TODO: DE
   "colours.availableOn": "", // TODO: DE
   "colours.noMatch": "", // TODO: DE

@@ -263,7 +263,11 @@ SHUTTER_SECTIONS = [
     {"name": "Aufsatzrollladen RS", "family": "Rollladensysteme", "page": 7, "image_page": 8, "image_px": (460, 391), "spec_page": 9},
     {"name": "Vorsatzrollläden", "family": "Rollladensysteme", "page": 10, "image_page": 11, "image_px": (682, 714), "spec_page": 12},
     {"name": "Raffstoren", "family": "Raffstoren", "page": 15, "image_page": 15, "image_px": (725, 440), "spec_page": None},
-    {"name": "Insektenschutz-Plisee", "family": "Insektenschutz", "page": 17, "image_page": 17, "image_px": (705, 705), "spec_page": None},
+    # El plisado va marcado con su gama: el dueño decidió (2026-08) que
+    # es una mosquitera y se enseña en insect-screens, no entre las
+    # persianas donde venía impreso. El botón del PDF sigue abriendo su
+    # página de este catálogo.
+    {"name": "Insektenschutz-Plisee", "family": "Insektenschutz", "page": 17, "image_page": 17, "image_px": (705, 705), "spec_page": None, "category": "insect-screens"},
 ]
 
 
@@ -317,6 +321,7 @@ def extract_shutters(doc, catalogue_id):
                 "image": f"/images/models/{catalogue_id}/{model_id}.jpg",
                 "specs": specs[:10],
                 **({"description": description} if len(description) > 60 else {}),
+                **({"category": section["category"]} if "category" in section else {}),
             }
         )
     return models

@@ -24,6 +24,7 @@ const GROUP_LABEL: Record<ColorFinish["group"], ContentKey> = {
   anodised: "colours.groupAnodised",
   "wood-stain": "colours.groupWoodStain",
   lamella: "colours.groupLamella",
+  "sal-foil": "colours.groupSalFoil",
   special: "colours.groupSpecial",
 };
 
@@ -130,9 +131,14 @@ export function ColourGrid({ colours }: { colours: ColorFinish[] }) {
               <p className="mt-3 font-display text-sm font-medium text-kamika-ink">
                 {pick(colour.name)}
               </p>
-              <p className="mt-1 font-mono text-[0.6875rem] tracking-[0.12em] text-kamika-steel uppercase">
-                {colour.code}
-              </p>
+              {/* Algunas cartas (los folios SAL) imprimen SOLO el
+                  código: ahí el código ES el nombre y repetirlo debajo
+                  sería un eco. */}
+              {colour.code !== pick(colour.name) && (
+                <p className="mt-1 font-mono text-[0.6875rem] tracking-[0.12em] text-kamika-steel uppercase">
+                  {colour.code}
+                </p>
+              )}
               <p className="mt-2 text-[0.75rem] text-kamika-ink/55">
                 {/* La lista de materiales se lee sola en pantalla, pero
                     sin la etiqueta un lector de pantalla solo diría

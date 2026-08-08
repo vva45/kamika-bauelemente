@@ -124,6 +124,27 @@ export const CATALOGUES: Catalogue[] = [
     year: 2025,
   },
   {
+    id: "salamander-systeme",
+    title: {
+      en: "Salamander window and sliding systems",
+      de: "Salamander Fenster- und Schiebesysteme",
+    },
+    // Salamander es el fabricante de los perfiles y se le acredita,
+    // como a Aluplast o VEKA. El que va sin rastro es el intermediario
+    // que lo imprimió, que vende también directo en Alemania — ver
+    // `scripts/prepare_salamander.py`, que es quien deja el PDF así.
+    // El folleto está en polaco porque así existe; los números no
+    // tienen idioma y las fichas de la web van redactadas aparte.
+    brand: "Salamander",
+    collection: { en: "Window and sliding systems", de: "Fenster- und Schiebesysteme" },
+    category: "windows",
+    file: "/pdf/catalogues/salamander-systeme.pdf",
+    cover: "/images/catalogues/salamander-systeme-cover.jpg",
+    pages: 22,
+    sizeMb: 7.3,
+    year: 2026,
+  },
+  {
     id: "rollladen-produktkatalog",
     title: { en: "Roller shutters — product catalogue", de: "Rollladen Produktkatalog" },
     // Sin marca a propósito: el fabricante de estas persianas vende

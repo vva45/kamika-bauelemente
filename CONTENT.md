@@ -27,7 +27,7 @@ npm run assets:placeholders
 | `[~]`  | `public/images/home/hero.jpg`                    | One strong installation photo — a finished window or door in a real house. Landscape, 2400×1500 or larger. This is the first thing a visitor sees. | Owner |
 | `[x]`  | `public/images/categories/{slug}-hero.jpg`        | **Done — all eight are the owner's own photographs**, 1536×1024 (3:2), which is exactly what the frame shows, so none of them is cropped. `build-category-heroes.mjs` no longer generates any of them: every slug is in `OWNER_PHOTOS` and the script refuses to overwrite a real photograph. Replacing one means keeping 3:2 and remembering the Kamika wordmark sits in the top-left corner — the first thing any crop eats. | —     |
 | `[~]`  | `public/images/windows/{product-id}-{1,2,3}.jpg`  | Three photos per product: the element installed, a profile/section detail, and a wider shot. 1600×1200. | Owner |
-| `[~]`  | `public/images/about/dominik.jpg`                 | Portrait of Dominik for the About page. 1000×1250, plain background. **This one matters**: it is the only face on the site, and "about me" was one of the two things the owner asked for. | Owner |
+| `[x]`  | `public/images/about/dominik.jpg`                 | **The real portrait is in place** (2026-08, 1600×1241). The frame crops it to 4:5 with the face centred — checked in a real browser. The bio text next to it is still a draft for the owner to replace. | —     |
 | `[~]`  | `public/images/catalogues/{id}-cover.jpg`         | Front cover of each catalogue — it is also the card the visitor clicks in the range. ROKA's two PDFs have real covers, rendered from page 1. The Despiro and panel PDFs are extracts with no cover, so theirs are composed by `node scripts/build-collection-covers.mjs` from two of their own models. If the supplier sends a complete PDF, render page 1 and drop the composed one. | You   |
 | `[~]`  | `public/images/projects/{id}-{n}.jpg`             | Minimum 3 photos per completed project.                                        | Owner |
 | `[~]`  | `public/images/colours/render.jpg`                | One frame photographed in a **light, neutral colour** (white or light grey), evenly lit. The colour picker tints it with `mix-blend-multiply`, which keeps the shadows of the profile — but that only works if the source is pale. A dark frame will tint to mud. | Owner |
@@ -96,11 +96,16 @@ become `/products/doors/entrance-doors`, because that would break every link alr
 range with 314 models, for no gain — what he wanted was the navigation, and that is what changed.
 The hub's model count is the sum of its children's, so the home still advertises the real number.
 
-The two patio-door models are **examples**, like the other 24, and carry the same warning at the
-top of `src/data/products/patio-doors.ts`. The two *types* (lift-and-slide HST, tilt-and-slide
-PSK) are real industry products made from the profile systems Kamika already sells; the names and
-the numbers are placeholders until the manufacturer's Terrassentüren catalogue arrives, and then
-this range converts to collections on its own.
+~~The two patio-door models are examples~~ — **resolved 2026-08**: the Salamander leaflet brought
+the real sliding systems, the range now runs on the manufacturer hierarchy (Salamander →
+evolutionDrive SF / Plus+ / 82 HST) and the two invented models are gone, images and all. See "The
+Salamander leaflet" below.
+
+**Insect screens went the same way** (owner's call, 2026-08): the Insektenschutz-Plisee from the
+Drutex shutter catalogue *is* an insect screen, so it now lives in that range — the move is
+`category: "insect-screens"` on the model, declared in `SHUTTER_SECTIONS` so it survives
+re-extraction — and the four example screens were deleted. The range holds one real model until an
+insect-screen catalogue arrives.
 
 ### The two shutter catalogues are white-labelled — a decision to confirm
 
@@ -152,6 +157,35 @@ renaming them would leave the website saying one thing and the PDF another.
 IDENCOM, SOMMER, DORMA, GEZE, SOMFY, doorbox, Swisspacer. Those are suppliers of parts, not
 competitors selling windows to the end customer, and naming them is honest attribution.
 
+### The Salamander leaflet — Polish, and why that is fine
+
+`source-catalogues/Ulotka_Salamander_PL.pdf` is Eko-Okna's Salamander systems leaflet. The owner
+confirmed it only exists as sent ("así me lo han enviado"), so it is published as-is after the
+usual treatment (`scripts/prepare_salamander.py`): Eko-Okna's cover logo → Kamika wordmark, their
+URL, the accessories-page QR and the back cover removed — **Salamander stays**, because Salamander
+is the profile maker and is credited like Aluplast or VEKA; Eko-Okna is the intermediary that also
+sells direct in Germany.
+
+The Polish is survivable because nothing Polish reaches the site's data: the parameters are numbers
+and classes, the site's system pages are written in the content layer like every other
+manufacturer, and the PDF itself is documentation for whoever wants to leaf through it.
+
+What came out of it:
+
+- **Windows → Salamander** gained greenEvolution Flex and bluEvolution 92 (bluEvolution 82 was
+  already there from its own datasheet and was not touched).
+- **Patio doors** switched from two EXAMPLE products to the real manufacturer hierarchy:
+  Salamander → evolutionDrive SF / Plus+ / 82 HST. Same `id: "salamander"` in a second category —
+  the lookup key is (category, id), and the audit now checks exactly that.
+- **9 accessories** from the "Dodatki" page (names as printed, Polish included) and **3 thresholds**
+  from the Außentüren catalogue that had been left out of the first pass.
+- **49 SAL foil colours**, measured off the printed chart (the chart prints only codes, no names —
+  so the name IS the code and the colour chip skips the duplicate line).
+
+One misprint documented: the leaflet prints bluEvolution 92's Uw as "7,73-1,1". A range cannot
+start above where it ends; the 82 prints "0,74-1,10" in the same box and the maker publishes 0,73
+for the 92 — the site says 0,73–1,1 and the data file carries the comment.
+
 ### Supplier image permission — ekookna.pl and drutex.es
 
 The owner passed on written permission (2026-08) to use the images available for download on
@@ -187,16 +221,23 @@ catalogues for the other ranges, and the owner naming which models he actually s
 
 ## 3. Product data — the big one
 
-`src/data/products/` holds 24 products, and **all 24 are still plausible examples** — they are
-**not** Kamika's real range. Every one of those files carries a warning comment at the top.
+`src/data/products/` holds **16 products, all still plausible examples** — they are
+**not** Kamika's real range. Every one of those files carries a warning comment at the top. Four
+ranges are already fully real (windows, entrance doors, patio doors, roller shutters — plus
+accessories and insect screens fed from the catalogues), which leaves the examples in: interior
+doors (4), roller-shutter legacy cards (4, superseded by the collections), gates (4) and fences (4).
 
-Two ranges no longer use products at all, because the owner asked for the hierarchy the trade
+Ranges that no longer use example products, because the owner asked for the hierarchy the trade
 actually uses — first the manufacturer, then what it offers:
 
 | Range | Structure | Where the data comes from |
 | ----- | --------- | ------------------------- |
-| Windows | 4 makers → their systems | `src/data/manufacturers.ts`. Aluplast (Ideal 5000/8000) and Salamander (BluEvolution 82) carry real specs copied from the supplier's one-page sheets, self-hosted in `/pdf/windows/`. VEKA (82) and REHAU (Synego) are named — the names came from the owner — and wait for their sheets. |
-| Entrance doors | Collection (ROKA Signature, ROKA Select, Despiro, Aluprof panels) → its models | the four PDFs, extracted |
+| Windows | 4 makers → their systems | `src/data/manufacturers.ts`. Aluplast (Ideal 5000/8000) and Salamander (BluEvolution 82 from its sheet; greenEvolution Flex and bluEvolution 92 from the Salamander leaflet) carry real specs. VEKA (82) and REHAU (Synego) are named — the names came from the owner — and wait for their sheets. |
+| Patio doors | Salamander → evolutionDrive SF / Plus+ / 82 HST | the Salamander leaflet, self-hosted; datasheet buttons open it at each system's page |
+| Entrance doors | Collection (ROKA ×2, Despiro, Aluprof, D-ART LINE, Außentüren) → its models | the six PDFs, extracted |
+| Roller shutters | Collection (Rollläden, Fassadenjalousien, Drutex) → its models | the three PDFs, extracted |
+| Insect screens | One real catalogue model (Insektenschutz-Plisee), recategorised from the Drutex shutter catalogue | `extract_drutex_models.py` |
+| Accessories | 56 catalogue models across five catalogues, grouped by printed family | `extract_accessories.py` |
 
 So the entrance-door pages are no longer four hand-picked doors: the category shows the four
 collection covers, and each cover opens the whole collection — 314 models with their specification
@@ -228,13 +269,14 @@ of it happened. Projects are what actually builds trust on a site like this, so 
 matters more than the product data — **even three real jobs with real photos beat six invented
 ones.** For each: what the customer asked for, what was fitted, the town, the year, and 3+ photos.
 
-`src/data/colors.ts` holds **75 finishes**, in six groups. Two different origins, and the difference
+`src/data/colors.ts` holds **126 finishes**, in seven groups. Two different origins, and the difference
 matters when maintaining it:
 
 - **RAL, wood decor, anodised, and the two DB greys** — the trade's standard chart. The codes are
   real and the hex values are the usual on-screen approximations. Every RAL added in the last pass
   is one that a published catalogue names.
-- **Wood stains and the numbered shutter-slat palette** — **measured from the catalogues**. The hex
+- **Wood stains, the numbered shutter-slat palette and the 49 SAL foils** — **measured from the
+  catalogues**. The hex
   is the median of the printed swatch, sampled out of the PDF, because those charts are not RAL and
   there is no reference value to look up. Re-measure if a supplier sends a new catalogue.
 
@@ -272,12 +314,13 @@ an invented model cannot sit next to a real hierarchy.
 
 ## 3c. The catalogue showcase — generated, not written
 
-`src/data/catalogue-models.ts` holds **501 entries** — 457 models across the nine catalogues plus 44
+`src/data/catalogue-models.ts` holds **513 entries** — 457 models across the ten catalogues plus 56
 accessories — each with its name, its page, its photograph and whatever specification the catalogue
 prints. It is generated, in this order:
 
 ```bash
 python3 scripts/prepare_drutex.py            # source-catalogues/ → public/, y su portada
+python3 scripts/prepare_salamander.py        # ídem + imágenes de sistema
 python3 scripts/extract_catalogue_models.py  # needs: pip install pymupdf
 python3 scripts/extract_shutter_models.py
 python3 scripts/extract_drutex_models.py
@@ -301,7 +344,9 @@ worth knowing:
 ### Accessories are catalogue models too, but they live in their own range
 
 The door and shutter catalogues carry their accessories at the back — pull handles, lever handles,
-access control, hinges, door closers, shutter switches and remotes. Forty-four of them are extracted
+access control, hinges, door closers, shutter switches and remotes; the Salamander leaflet adds its
+"Dodatki" page (window handles, sills, vents, spacers, glazing bars…) and the Außentüren thresholds
+joined on the second pass. Fifty-six of them are extracted
 by `scripts/extract_accessories.py` and carry `category: "accessories"`, which takes them **out** of
 their catalogue's showcase (a handle lost among eighty-seven doors helps nobody) and puts them in
 the Accessories range, grouped by the family the catalogue prints. The PDF button still opens the
@@ -312,13 +357,14 @@ security cylinder and a rebate vent — along with the project cross-references 
 range now has real content, and four invented spec sheets sitting among forty-four real ones is
 exactly what this project does not do.
 
-Still missing from the range because no catalogue covers them: **window handles, cylinders, window
-sills and rebate vents**. They go back in when a supplier catalogue arrives, not before.
+Still missing from the range because no catalogue covers them: **cylinders**. Window handles,
+sills and vents arrived with the Salamander "Dodatki" page (Klamki, Parapety, Nawiewniki — names
+as printed, Polish included; they get German names when a German-language accessory catalogue
+lands). The thresholds were added on the 2026-08 second pass.
 
-Three accessory chapters were read and left out: the door thresholds (Außentüren p. 90-91, three
-items in a bespoke layout), the glazing and sandblasted-glass ranges (p. 78-83, which are a glass
-chart rather than parts) and the pull-handle spreads on p. 84-87, which the manufacturer prints
-**without names**. All are worth a second pass if the owner wants them.
+Two accessory chapters remain out, deliberately: the glazing and sandblasted-glass ranges
+(Außentüren p. 78-83 — a glass chart rather than parts) and the pull-handle spreads on p. 84-87,
+which the manufacturer prints **without names**; a nameless product card would be an invented name.
 
 ## 4. Text the owner has to write
 

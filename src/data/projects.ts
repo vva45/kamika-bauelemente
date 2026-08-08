@@ -35,8 +35,10 @@ export const PROJECTS: Project[] = [
       }],
     /** Modelos instalados, para enlazar a sus fichas desde el detalle. */
     products: [
-      "roller-shutter-front-mounted",
-      "insect-screen-pleated"],
+      "roller-shutter-front-mounted"],
+    // La mosquitera de la foto sale del catálogo: se enlaza a su
+    // modelo, no a una ficha que ya no existe.
+    models: [{ catalogue: "rollladen-drutex", id: "insektenschutz-plisee" }],
     featured: true,
   },
   {

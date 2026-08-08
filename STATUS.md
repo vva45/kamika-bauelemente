@@ -1,7 +1,8 @@
 # STATUS — checkpoint estable
 
-**Checkpoint:** `checkpoint-2` · 2026-08-08 (el anterior, `checkpoint-1`, en `46e3d18`)
-**Estado:** todo verde. `npm run check` (build + i18n + auditoría de 576 páginas) sin un solo problema.
+**Checkpoint:** `checkpoint-3` · 2026-08-08 (los anteriores: `checkpoint-1` en `46e3d18`,
+`checkpoint-2` = commit "Llena la página de colores…")
+**Estado:** todo verde. `npm run check` (build + i18n + auditoría de 590 páginas) sin un solo problema.
 **Volver aquí si algo se rompe:** `git log --oneline` para localizar este punto por
 mensaje ("Checkpoint: STATUS.md…"), y `git reset --hard <ese hash>`. Todo commit de
 `main` queda en GitHub para siempre: un checkpoint es un hash, la etiqueta es solo
@@ -24,9 +25,11 @@ DE 0/215 — pendiente de traducir).
 Cada gama enseña lo más concreto que tiene, en este orden:
 
 1. **Fabricantes** — Windows → 4 marcas: Aluplast (Ideal 5000 y 8000, con ficha
-   real del proveedor), Salamander (BluEvolution 82, con ficha), VEKA (82) y
-   REHAU (Synego), estos dos a la espera de su ficha. Specs copiadas de las
-   fichas autoalojadas en /pdf/windows/, nunca de memoria.
+   real del proveedor), Salamander (BluEvolution 82 con ficha; greenEvolution
+   Flex y bluEvolution 92 del folleto Salamander), VEKA (82) y REHAU (Synego),
+   estos dos a la espera de su ficha. Y Patio doors → Salamander →
+   evolutionDrive SF / Plus+ / 82 HST, del mismo folleto (autoalojado, botón
+   por página). Specs copiadas, nunca de memoria.
 2. **Colecciones** — dos gamas van por catálogo, con **457 modelos extraídos de los
    PDF**, cada uno con ficha, specs impresas y botón al PDF por su página exacta:
    · Entrance doors → ROKA Signature 100, ROKA Select 22, Despiro 48, Aluprof 144,
@@ -34,11 +37,15 @@ Cada gama enseña lo más concreto que tiene, en este orden:
      (`extract_catalogue_models.py`, `extract_drutex_models.py`)
    · Roller shutters → Rollläden 20, Fassadenjalousien 8, Drutex 5, en alemán y con
      descripción del fabricante (`extract_shutter_models.py`)
-3. **Accesorios** — 44 piezas sacadas del final de esos mismos catálogos
+2b. **Mosquiteras** — 1 modelo real (Insektenschutz-Plisee), movido desde el
+   catálogo de persianas de Drutex a su gama por decisión del dueño
+   (`category` en el modelo). Los 4 ejemplos que había, fuera.
+3. **Accesorios** — 56 piezas sacadas del final de esos mismos catálogos
    (`extract_accessories.py`). Llevan `category: "accessories"`, que las saca del
    escaparate de su colección y las lleva a su gama, agrupadas por familia.
-4. **Fichas de producto** — las otras gamas, con 22 productos **de ejemplo**
-   (marcados como tales) hasta que lleguen sus catálogos.
+4. **Fichas de producto** — las gamas restantes (interior doors, gates,
+   fences y las 4 tarjetas antiguas de persianas), con 16 productos **de
+   ejemplo** (marcados como tales) hasta que lleguen sus catálogos.
 
 **Jerarquía de gamas**: `Doors` es un hub que agrupa entrance / interior / patio.
 La URL NO se anida —`/products/entrance-doors` sigue igual—; lo que cambia es por
@@ -66,8 +73,11 @@ dónde se llega. El contador del hub suma los de sus hijas.
   mailto + **WhatsApp** (+49 162 774 2992, confirmado activo) + copiar.
 - Mapa Google con **solución de dos clics** (0 peticiones a Google sin clic,
   medido). Datenschutz §8/§9 reescritos acorde.
-- Colores: 75 acabados en seis grupos. Los RAL, de la carta estándar; los barnices de
-  madera y la carta numerada de lamas, **medidos sobre la muestra impresa** del PDF.
+- Colores: 126 acabados en siete grupos. Los RAL, de la carta estándar; barnices,
+  lamas y los 49 folios SAL, **medidos sobre la muestra impresa** del PDF.
+- Home: los 3 catálogos del escaparate son elección del dueño — ROKA Signature,
+  Rollladen Produktkatalog y D-ART LINE (`HOME_CATALOGUES` en `src/app/page.tsx`).
+- /about ya lleva el retrato real de Dominik (la bio sigue siendo borrador).
 - Auditoría: 40 páginas × 2 viewports sin errores de consola/imágenes rotas/
   overflow; teclado y reduced-motion OK; JSON-LD válido; sitemap 372 URLs;
   cabeceras de seguridad activas; 0 vulnerabilidades npm.
@@ -85,12 +95,13 @@ dónde se llega. El contador del hub suma los de sus hijas.
 1. **RESEND_API_KEY + RESEND_FROM en Vercel** — lo único que cambia de verdad
    lo que recibe el dueño (hoy el formulario no envía solo).
 2. Fichas de VEKA 82 y REHAU Synego → completar sus páginas de sistema.
-   Y catálogo de Terrassentüren → sustituir los 2 modelos de ejemplo de patio doors.
-3. Catálogos de las otras 4 gamas → sustituir los 22 productos de ejemplo. Eko-Okna
+   (Terrassentüren: RESUELTO — los 3 sistemas evolutionDrive del folleto Salamander.)
+3. Catálogos de las otras 3 gamas → sustituir los 16 productos de ejemplo. Eko-Okna
    los tiene en alemán: interior doors, gates (Sektionaltore), fences
-   (Grundstückszäune), insect screens. Mismo procedimiento que las persianas.
-   Y en accesorios faltan manillas de ventana, cilindros, vierteaguas y aireadores:
-   no están en ningún catálogo de los que hay.
+   (Grundstückszäune); y uno de mosquiteras para acompañar al Plisee. En
+   accesorios ya solo faltan cilindros; las manillas/vierteaguas/aireadores
+   entraron con la página Dodatki del folleto Salamander (nombres en polaco
+   hasta que haya catálogo alemán).
 4. Traducción alemana (215 claves) y textos reales de /about (retrato, bio).
 5. Legal, con abogado: NIF/IVA o Kleinunternehmer, cámara de oficios, horario;
    preguntar por el mapa de dos clics ya de paso.

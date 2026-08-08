@@ -106,6 +106,51 @@ SECTIONS = [
         "page": 24,
         "family": "Stangengriffe",
     },
+    # ── Página "Dodatki" del folleto Salamander ─────────────────
+    # Nombres tal y como los imprime, en polaco: son los del catálogo
+    # y no se redactan. Los dos con marca (IntelliTAG, SWISSPACER) no
+    # tienen idioma. Va declarada a mano porque el pie y su descripción
+    # van tan pegados que la heurística de rejilla los mezclaba; los
+    # recuadros están medidos sobre el propio PDF.
+    {
+        "kind": "manual",
+        "catalogue": "salamander-systeme",
+        "file": "salamander-systeme.pdf",
+        "page": 21,
+        "family": "Dodatki",
+        "items": [
+            # El borde inferior de cada recuadro queda por ENCIMA del
+            # rótulo impreso (y=286/469/667): el nombre ya lo pone la
+            # tarjeta, dentro de la foto sería un eco.
+            {"name": "Ciepłe ramki", "crop": (34, 172, 213, 281)},
+            {"name": "Nawiewniki", "crop": (217, 185, 357, 281)},
+            {"name": "Podwaliny", "crop": (361, 159, 559, 281)},
+            {"name": "Szprosy", "crop": (24, 358, 205, 464)},
+            {"name": "Osłonki", "crop": (204, 354, 366, 464)},
+            {"name": "Parapety", "crop": (369, 341, 551, 464)},
+            {"name": "Klamki", "crop": (15, 545, 194, 662)},
+            {"name": "IntelliTAG™ Air io", "crop": (174, 538, 399, 662)},
+            {"name": "SWISSPACER Air", "crop": (383, 527, 537, 662)},
+        ],
+    },
+    # ── Umbrales del catálogo de Außentüren (p. 90-91 impresas) ──
+    # Quedaron fuera de la primera pasada por el maquetado a medida:
+    # los pies van al LADO de la foto, no debajo. Se declaran a mano,
+    # con el nombre impreso y la foto de su recuadro.
+    {
+        "kind": "manual",
+        "catalogue": "aussenturen",
+        "file": "aussenturen-produktkatalog.pdf",
+        "page": 46,
+        "family": "Schwellen",
+        "items": [
+            # La grande del pliego ilustra justo este umbral: es la
+            # foto de la izquierda, con la puerta por encima.
+            {"name": "Aluminiumschwelle mit thermischer Trennung", "crop": (360, 40, 840, 560)},
+            {"name": "Combi Schwelle", "crop": (1066, 0, 1442, 341)},
+            {"name": "0 mm Schwelle", "crop": (1066, 372, 1442, 554)},
+        ],
+    },
 ]
 
 
@@ -235,9 +280,16 @@ def extract_grid(doc, section):
         if not (6 < len(name) < 62) or name[0].islower() or HYPHENATED.search(name):
             continue
         model_id = slug(name)
-        save_image(
-            doc, xref, smask, os.path.join(IMG_DIR, section["catalogue"], f"{model_id}.jpg")
-        )
+        crop = section.get("page_crops", {}).get(model_id)
+        if crop:
+            out = os.path.join(IMG_DIR, section["catalogue"], f"{model_id}.jpg")
+            page.get_pixmap(matrix=fitz.Matrix(2.4, 2.4), clip=fitz.Rect(*crop)).save(
+                out, jpg_quality=88
+            )
+        else:
+            save_image(
+                doc, xref, smask, os.path.join(IMG_DIR, section["catalogue"], f"{model_id}.jpg")
+            )
         models.append(
             {
                 "id": model_id,
@@ -320,6 +372,32 @@ def extract_strip(doc, section):
     return models
 
 
+def extract_manual(doc, section):
+    """Secciones declaradas a mano: nombre impreso + recuadro de foto."""
+    page = doc[section["page"] - 1]
+    models = []
+    for item in section["items"]:
+        model_id = slug(item["name"])
+        out = os.path.join(IMG_DIR, section["catalogue"], f"{model_id}.jpg")
+        os.makedirs(os.path.dirname(out), exist_ok=True)
+        page.get_pixmap(matrix=fitz.Matrix(2.2, 2.2), clip=fitz.Rect(*item["crop"])).save(
+            out, jpg_quality=88
+        )
+        models.append(
+            {
+                "id": model_id,
+                "catalogue": section["catalogue"],
+                "category": CATEGORY,
+                "name": item["name"],
+                "family": section["family"],
+                "page": section["page"],
+                "image": f"/images/models/{section['catalogue']}/{model_id}.jpg",
+                "specs": [],
+            }
+        )
+    return models
+
+
 def main():
     with open(DATA_FILE, encoding="utf-8") as f:
         source = f.read()
@@ -329,9 +407,10 @@ def main():
     kept = [model for model in existing if model.get("category") != CATEGORY]
 
     fresh = []
+    extractors = {"grid": extract_grid, "strip": extract_strip, "manual": extract_manual}
     for section in SECTIONS:
         doc = fitz.open(os.path.join(PDF_DIR, section["file"]))
-        found = extract_grid(doc, section) if section["kind"] == "grid" else extract_strip(doc, section)
+        found = extractors[section["kind"]](doc, section)
         doc.close()
         print(f"{section['catalogue']} p{section['page']} · {section['family']}: {len(found)}")
         for model in found:

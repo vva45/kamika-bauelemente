@@ -67,7 +67,7 @@ export const CATEGORIES: Category[] = [
     parent: "doors",
     name: { en: "Patio doors", de: "Terrassentüren" },
     intro: {
-      en: "Patio and terrace doors: lift-and-slide, tilt-and-slide and side-hung, in the same PVC and aluminium systems as the windows, so the frame, the colour and the fittings match across the whole facade.",
+      en: "Patio and terrace doors on Salamander sliding systems: an economical slider, an airtight one for low-energy builds and a lift-and-slide for the big openings — same profile family as our windows, so colour and section match across the facade.",
     },
     heroImage: "/images/categories/patio-doors-hero.jpg",
     order: 3,
@@ -85,7 +85,7 @@ export const CATEGORIES: Category[] = [
     slug: "insect-screens",
     name: { en: "Insect screens", de: "Insektenschutz" },
     intro: {
-      en: "Fixed frames, hinged doors, pleated and roller insect screens in powder-coated aluminium. Made to the measured opening, in the same colour as the window, and removable for cleaning.",
+      en: "Pleated insect screens made to the measured opening, mounted in the window niche or the shutter guide rail, in matt colours that sit quietly next to the frame. More types join the range as their catalogues arrive.",
     },
     heroImage: "/images/categories/insect-screens-hero.jpg",
     order: 4,

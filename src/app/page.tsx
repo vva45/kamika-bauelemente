@@ -47,7 +47,14 @@ export default function HomePage() {
   const featuredCategories = categories.slice(0, 2);
   const restCategories = categories.slice(2, 5);
 
-  const catalogues = CATALOGUES.slice(0, 3);
+  // La home enseña un catálogo de cada cosa, no los tres primeros de
+  // la lista (que eran tres de puertas): puertas, persianas y la
+  // colección D-ART LINE. Elección del dueño (2026-08). La página de
+  // catálogos sí los enseña todos; esto es solo el escaparate.
+  const HOME_CATALOGUES = ["roka-signature-2025", "rollladen-produktkatalog", "d-art-line"];
+  const catalogues = HOME_CATALOGUES.map((id) => CATALOGUES.find((entry) => entry.id === id)).filter(
+    (entry): entry is (typeof CATALOGUES)[number] => entry !== undefined,
+  );
   const projects = getFeaturedProjects(3);
   const marqueeItems = categories.map((category) => pick(category.name));
 

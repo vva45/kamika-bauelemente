@@ -9513,7 +9513,8 @@ export const CATALOGUE_MODELS: CatalogueModel[] = [
     "page": 17,
     "image": "/images/models/rollladen-drutex/insektenschutz-plisee.jpg",
     "specs": [],
-    "description": "Eine durchdachte und bis ins kleinste Detail raffinierte Konstruktion ermöglicht die Montage in der Fensternische, am Fensterrahmen, an der Gebäudefassade und in der Führung unserer Rollläden. Die Wahl der matten Farben ermöglicht eine ästhetische Harmonie mit der Fassade des Gebäudes."
+    "description": "Eine durchdachte und bis ins kleinste Detail raffinierte Konstruktion ermöglicht die Montage in der Fensternische, am Fensterrahmen, an der Gebäudefassade und in der Führung unserer Rollläden. Die Wahl der matten Farben ermöglicht eine ästhetische Harmonie mit der Fassade des Gebäudes.",
+    "category": "insect-screens"
   },
   {
     "id": "fingerabdruckscanner-tastatur-und-rfid",
@@ -9953,6 +9954,126 @@ export const CATALOGUE_MODELS: CatalogueModel[] = [
     "family": "Stangengriffe",
     "page": 24,
     "image": "/images/models/d-art-line/stangengriffe-anodic-bronze-mit-gold-splendour.jpg",
+    "specs": []
+  },
+  {
+    "id": "ciepe-ramki",
+    "catalogue": "salamander-systeme",
+    "category": "accessories",
+    "name": "Ciepłe ramki",
+    "family": "Dodatki",
+    "page": 21,
+    "image": "/images/models/salamander-systeme/ciepe-ramki.jpg",
+    "specs": []
+  },
+  {
+    "id": "nawiewniki",
+    "catalogue": "salamander-systeme",
+    "category": "accessories",
+    "name": "Nawiewniki",
+    "family": "Dodatki",
+    "page": 21,
+    "image": "/images/models/salamander-systeme/nawiewniki.jpg",
+    "specs": []
+  },
+  {
+    "id": "podwaliny",
+    "catalogue": "salamander-systeme",
+    "category": "accessories",
+    "name": "Podwaliny",
+    "family": "Dodatki",
+    "page": 21,
+    "image": "/images/models/salamander-systeme/podwaliny.jpg",
+    "specs": []
+  },
+  {
+    "id": "szprosy",
+    "catalogue": "salamander-systeme",
+    "category": "accessories",
+    "name": "Szprosy",
+    "family": "Dodatki",
+    "page": 21,
+    "image": "/images/models/salamander-systeme/szprosy.jpg",
+    "specs": []
+  },
+  {
+    "id": "osonki",
+    "catalogue": "salamander-systeme",
+    "category": "accessories",
+    "name": "Osłonki",
+    "family": "Dodatki",
+    "page": 21,
+    "image": "/images/models/salamander-systeme/osonki.jpg",
+    "specs": []
+  },
+  {
+    "id": "parapety",
+    "catalogue": "salamander-systeme",
+    "category": "accessories",
+    "name": "Parapety",
+    "family": "Dodatki",
+    "page": 21,
+    "image": "/images/models/salamander-systeme/parapety.jpg",
+    "specs": []
+  },
+  {
+    "id": "klamki",
+    "catalogue": "salamander-systeme",
+    "category": "accessories",
+    "name": "Klamki",
+    "family": "Dodatki",
+    "page": 21,
+    "image": "/images/models/salamander-systeme/klamki.jpg",
+    "specs": []
+  },
+  {
+    "id": "intellitagtm-air-io",
+    "catalogue": "salamander-systeme",
+    "category": "accessories",
+    "name": "IntelliTAG™ Air io",
+    "family": "Dodatki",
+    "page": 21,
+    "image": "/images/models/salamander-systeme/intellitagtm-air-io.jpg",
+    "specs": []
+  },
+  {
+    "id": "swisspacer-air",
+    "catalogue": "salamander-systeme",
+    "category": "accessories",
+    "name": "SWISSPACER Air",
+    "family": "Dodatki",
+    "page": 21,
+    "image": "/images/models/salamander-systeme/swisspacer-air.jpg",
+    "specs": []
+  },
+  {
+    "id": "aluminiumschwelle-mit-thermischer-trennung",
+    "catalogue": "aussenturen",
+    "category": "accessories",
+    "name": "Aluminiumschwelle mit thermischer Trennung",
+    "family": "Schwellen",
+    "page": 46,
+    "image": "/images/models/aussenturen/aluminiumschwelle-mit-thermischer-trennung.jpg",
+    "specs": []
+  },
+  {
+    "id": "combi-schwelle",
+    "catalogue": "aussenturen",
+    "category": "accessories",
+    "name": "Combi Schwelle",
+    "family": "Schwellen",
+    "page": 46,
+    "image": "/images/models/aussenturen/combi-schwelle.jpg",
+    "specs": []
+  },
+  {
+    "id": "0-mm-schwelle",
+    "catalogue": "aussenturen",
+    "category": "accessories",
+    "name": "0 mm Schwelle",
+    "family": "Schwellen",
+    "page": 46,
+    "image": "/images/models/aussenturen/0-mm-schwelle.jpg",
     "specs": []
   }
 ];

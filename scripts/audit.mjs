@@ -158,8 +158,12 @@ checkDuplicates("colours", COLORS);
 const everyId = [
   ...PRODUCTS.map((p) => ["product", p.id]),
   // Los fabricantes comparten segmento de URL con los productos de su
-  // categoría: un choque de ids serviría dos páginas bajo una URL.
-  ...MANUFACTURERS.map((m) => ["manufacturer", m.id]),
+  // categoría: un choque de ids serviría dos páginas bajo una URL. La
+  // URL lleva la categoría delante, así que la clave del fabricante es
+  // (categoría, id) — el contrato del tipo dice "único DENTRO de su
+  // categoría", y Salamander existe a la vez en ventanas y en puertas
+  // de terraza precisamente porque es el mismo fabricante.
+  ...MANUFACTURERS.map((m) => ["manufacturer", `${m.category}/${m.id}`]),
   ...CATALOGUES.map((c) => ["catalogue", c.id]),
   ...PROJECTS.map((p) => ["project", p.id]),
 ];
@@ -167,6 +171,19 @@ const owner = new Map();
 for (const [kind, id] of everyId) {
   if (owner.has(id)) fail("duplicate id", `"${id}" is used by both ${owner.get(id)} and ${kind}`);
   owner.set(id, kind);
+}
+// Y el choque que sí sería grave: un fabricante contra un PRODUCTO de
+// su misma categoría (misma URL), o dos fabricantes en la misma gama.
+const manufacturerKeys = new Set();
+for (const manufacturer of MANUFACTURERS) {
+  const key = `${manufacturer.category}/${manufacturer.id}`;
+  if (manufacturerKeys.has(key)) {
+    fail("duplicate id", `manufacturer "${key}" appears more than once`);
+  }
+  manufacturerKeys.add(key);
+  if (PRODUCTS.some((p) => p.category === manufacturer.category && p.id === manufacturer.id)) {
+    fail("duplicate id", `manufacturer "${key}" collides with a product at the same URL`);
+  }
 }
 
 // Referencias cruzadas: related y products de proyecto.

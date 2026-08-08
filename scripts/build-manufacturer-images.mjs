@@ -104,6 +104,10 @@ const MAKERS = [
   // su propio logotipo, pero aquí es texto de la web, no su logo.
   { file: "aluplast", name: "Aluplast", note: "PVC WINDOW SYSTEMS" },
   { file: "salamander", name: "Salamander", note: "PVC WINDOW SYSTEMS" },
+  // La misma marca vive también en puertas de terraza: misma lámina,
+  // subtítulo suyo. La tarjeta no puede decir "window systems" en la
+  // gama de correderas.
+  { file: "salamander-sliding", name: "Salamander", note: "PVC SLIDING SYSTEMS" },
   { file: "veka", name: "VEKA", note: "PVC WINDOW SYSTEMS" },
   { file: "rehau", name: "REHAU", note: "PVC WINDOW SYSTEMS" },
 ];
