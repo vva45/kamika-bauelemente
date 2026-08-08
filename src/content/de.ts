@@ -193,6 +193,8 @@ export const de: Record<ContentKey, string> = {
   "about.ownerRole": "", // TODO: DE
   "about.ownerBody1": "", // TODO: DE
   "about.ownerBody2": "", // TODO: DE
+  "about.factoryAlt": "", // TODO: DE
+  "about.factoryCaption": "", // TODO: DE
   "about.ownerPortraitAlt": "", // TODO: DE
 
   // ── Colores y acabados ───────────────────────────────────────

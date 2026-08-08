@@ -81,6 +81,13 @@ If any of this is ever changed — map loaded automatically, consent remembered,
 — **§ 8 and § 9 of the Datenschutzerklärung stop being true** and must be rewritten in the same
 commit.
 
+### Supplier image permission — ekookna.pl and drutex.es
+
+The owner passed on written permission (2026-08) to use the images available for download on
+`ekookna.pl` and `drutex.es`. That is where the factory aerial on /about and the system sheets
+come from. Two limits stay in force: the **downloadable** assets only, and **no supplier logo**
+appears on the site — same rule as every other brand.
+
 ## 2. PDFs
 
 Self-hosted, never linked to a manufacturer's website.
@@ -117,7 +124,7 @@ actually uses — first the manufacturer, then what it offers:
 
 | Range | Structure | Where the data comes from |
 | ----- | --------- | ------------------------- |
-| Windows | Aluplast → its systems → versions | `src/data/manufacturers.ts`, pending the Aluplast catalogue |
+| Windows | 4 makers → their systems | `src/data/manufacturers.ts`. Aluplast (Ideal 5000/8000) and Salamander (BluEvolution 82) carry real specs copied from the supplier's one-page sheets, self-hosted in `/pdf/windows/`. VEKA (82) and REHAU (Synego) are named — the names came from the owner — and wait for their sheets. |
 | Entrance doors | Collection (ROKA Signature, ROKA Select, Despiro, Aluprof panels) → its models | the four PDFs, extracted |
 
 So the entrance-door pages are no longer four hand-picked doors: the category shows the four

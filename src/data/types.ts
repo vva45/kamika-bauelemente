@@ -146,6 +146,18 @@ export interface ManufacturerSystem {
   name: string; // nombre del sistema, no se traduce
   tagline: Localized<string>;
   image: string;
+  /**
+   * Descripción y specs, SOLO cuando llegan del fabricante.
+   *
+   * El proveedor manda fichas de una página por sistema (Ideal 5000,
+   * BluEvolution 82…) y de ahí sale todo esto copiado, no redactado.
+   * Un sistema sin ficha simplemente no lleva estos campos y su página
+   * dice honestamente que los datos están en camino.
+   */
+  description?: Localized<string>;
+  specs?: Spec[];
+  /** La ficha del fabricante, autoalojada: /pdf/windows/{id}.pdf. */
+  datasheet?: string;
   /** Catálogo autoalojado del sistema, cuando exista. */
   catalogue?: { id: string; page?: number };
 }

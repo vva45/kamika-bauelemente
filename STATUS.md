@@ -24,8 +24,10 @@ DE 0/215 — pendiente de traducir).
 
 Cada gama enseña lo más concreto que tiene, en este orden:
 
-1. **Fabricantes** — Windows → Aluplast → 4 sistemas (IDEAL 4000/5000/7000,
-   energeto 8000) → versiones "coming soon" hasta que llegue el catálogo Aluplast.
+1. **Fabricantes** — Windows → 4 marcas: Aluplast (Ideal 5000 y 8000, con ficha
+   real del proveedor), Salamander (BluEvolution 82, con ficha), VEKA (82) y
+   REHAU (Synego), estos dos a la espera de su ficha. Specs copiadas de las
+   fichas autoalojadas en /pdf/windows/, nunca de memoria.
 2. **Colecciones** — Entrance doors → 4 portadas de catálogo (ROKA Signature 100,
    ROKA Select 22, Despiro 48, paneles Aluprof 144 = **314 modelos extraídos de los PDF**
    por `scripts/extract_catalogue_models.py`). Cada modelo: ficha + specs impresas
@@ -69,7 +71,7 @@ Cada gama enseña lo más concreto que tiene, en este orden:
 
 1. **RESEND_API_KEY + RESEND_FROM en Vercel** — lo único que cambia de verdad
    lo que recibe el dueño (hoy el formulario no envía solo).
-2. Catálogo Aluplast → rellenar sistemas/versiones de Windows.
+2. Fichas de VEKA 82 y REHAU Synego → completar sus páginas de sistema.
 3. Catálogos de las otras 6 gamas → sustituir los 24 productos de ejemplo.
 4. Traducción alemana (215 claves) y textos reales de /about (retrato, bio).
 5. Legal, con abogado: NIF/IVA o Kleinunternehmer, cámara de oficios, horario;

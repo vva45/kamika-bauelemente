@@ -215,6 +215,10 @@ export const en = {
     "I have been fitting windows and doors in this area for years, first for other companies and now under my own name. I still do the measuring and the installation myself, which is why the person who quotes the job is the person who turns up to do it.",
   "about.ownerBody2":
     "If something needs adjusting afterwards, you call me directly — not a service line.",
+  "about.factoryAlt":
+    "Aerial view of the production plant where our windows and doors are manufactured",
+  "about.factoryCaption":
+    "Where the elements are made — our supplier's production plant. Measured, ordered and fitted from Hechingen.",
   "about.ownerPortraitAlt": "Portrait of Dominik Kamienski, owner of Kamika Bauelemente",
 
   // ── Colores y acabados ───────────────────────────────────────

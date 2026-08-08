@@ -94,6 +94,26 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* ── La fábrica ───────────────────────────────────────────
+          Foto que mandó el dueño: la planta del proveedor que fabrica
+          sus elementos. No se dice el nombre del proveedor a propósito
+          — misma regla que con los fabricantes de perfil: la web no
+          manda a nadie a otra marca. */}
+      <section className="mx-auto max-w-[1440px] px-5 py-16 md:px-8 md:py-24">
+        <Reveal from="bottom">
+          <WindowFrame className="aspect-[4/3] w-full sm:aspect-[16/10]" mullion="vertical">
+            <Image
+              src="/images/about/factory.jpg"
+              alt={t("about.factoryAlt")}
+              fill
+              sizes="(min-width: 1440px) 1376px, 100vw"
+              className="object-cover"
+            />
+          </WindowFrame>
+          <p className="eyebrow mt-4">{t("about.factoryCaption")}</p>
+        </Reveal>
+      </section>
+
       {/* ── Dominik ──────────────────────────────────────────────── */}
       <section className="mx-auto max-w-[1440px] px-5 py-16 md:px-8 md:py-24">
         <div className="grid gap-12 lg:grid-cols-5 lg:gap-16">

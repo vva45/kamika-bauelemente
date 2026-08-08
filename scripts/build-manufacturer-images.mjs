@@ -10,12 +10,10 @@
  *    sustituir `public/images/manufacturers/aluplast.jpg` — misma ruta,
  *    mismo nombre, cero código.
  *
- *  - Las de sistema llevan el corte esquemático de un perfil (las
- *    cámaras, que es lo que de verdad distingue un sistema de otro) y
- *    el nombre de la serie.
- *
- * Cuando llegue el catálogo, las láminas de sistema se sustituyen por
- * recortes reales igual que se hizo con las puertas.
+ *  - Los sistemas CON ficha usan el render real de su PDF y no pasan
+ *    por aquí. Los que aún no la tienen llevan una lámina con el
+ *    nombre y "details follow" — sin corte de perfil, porque dibujar
+ *    cámaras sin confirmar sería inventar specs con un dibujo.
  *
  * Ejecutar:  node scripts/build-manufacturer-images.mjs
  */
@@ -96,23 +94,37 @@ const systemSheet = (name, note, chambers, depthLabel) => {
 };
 
 /**
- * Los datos del dibujo (cámaras, Bautiefe) son la gama pública de
- * Aluplast; se confirman contra el catálogo cuando llegue.
+ * Fabricantes: una lámina por marca. Los sistemas CON ficha del
+ * proveedor ya no se dibujan — usan el render real extraído de su PDF
+ * (aluplast-ideal-5000/8000, salamander-bluevolution-82). Aquí solo se
+ * dibuja lo que aún no tiene ficha.
  */
-const SYSTEMS = [
-  { file: "aluplast-ideal-4000", name: "IDEAL 4000", note: "5 CHAMBERS · SYSTEM DEPTH 70 MM", chambers: 5, depth: "70 mm" },
-  { file: "aluplast-ideal-5000", name: "IDEAL 5000", note: "5 CHAMBERS · FLUSH SASH · 70 MM", chambers: 5, depth: "70 mm" },
-  { file: "aluplast-ideal-7000", name: "IDEAL 7000", note: "6 CHAMBERS · SYSTEM DEPTH 85 MM", chambers: 6, depth: "85 mm" },
-  { file: "aluplast-energeto-8000", name: "energeto 8000", note: "STEEL-FREE BONDED REINFORCEMENT · 85 MM", chambers: 6, depth: "85 mm" },
+const MAKERS = [
+  { file: "aluplast", name: "aluplast", note: "PVC WINDOW SYSTEMS" },
+  { file: "salamander", name: "Salamander", note: "PVC WINDOW SYSTEMS" },
+  { file: "veka", name: "VEKA", note: "PVC WINDOW SYSTEMS" },
+  { file: "rehau", name: "REHAU", note: "PVC WINDOW SYSTEMS" },
 ];
 
-await sharp(manufacturerSheet("aluplast", "PVC WINDOW SYSTEMS"))
-  .jpeg({ quality: 90, mozjpeg: true })
-  .toFile(join(OUT, "aluplast.jpg"));
-console.log("✓ aluplast.jpg");
+for (const maker of MAKERS) {
+  await sharp(manufacturerSheet(maker.name, maker.note))
+    .jpeg({ quality: 90, mozjpeg: true })
+    .toFile(join(OUT, `${maker.file}.jpg`));
+  console.log(`✓ ${maker.file}.jpg`);
+}
 
-for (const system of SYSTEMS) {
-  await sharp(systemSheet(system.name, system.note, system.chambers, system.depth))
+/**
+ * Sistemas todavía sin ficha del fabricante. Lámina con el nombre y un
+ * aviso, SIN corte de perfil: dibujar cámaras que nadie ha confirmado
+ * sería inventar specs con un dibujo.
+ */
+const PENDING_SYSTEMS = [
+  { file: "veka-82", name: "VEKA 82" },
+  { file: "rehau-synego", name: "Synego" },
+];
+
+for (const system of PENDING_SYSTEMS) {
+  await sharp(manufacturerSheet(system.name, "DETAILS FOLLOW · ASK US TODAY"))
     .jpeg({ quality: 90, mozjpeg: true })
     .toFile(join(OUT, `${system.file}.jpg`));
   console.log(`✓ ${system.file}.jpg`);

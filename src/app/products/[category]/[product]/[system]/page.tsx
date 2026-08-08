@@ -1,13 +1,14 @@
 /**
- * Página de un sistema de fabricante (IDEAL 4000, energeto 8000…).
+ * Página de un sistema de fabricante (Ideal 5000, BluEvolution 82…).
  *
  * El tercer nivel de la jerarquía que pidió el dueño:
- * categoría → fabricante → sistema → versiones.
+ * categoría → fabricante → sistema.
  *
- * Las versiones y sus especificaciones llegarán del catálogo del
- * fabricante, igual que las puertas salieron de los suyos. Hasta
- * entonces la página lo dice honestamente y ofrece la salida útil: el
- * contacto directo. Nada de specs redactadas de memoria.
+ * Dos estados, según lo que haya mandado el proveedor:
+ *  - CON ficha: descripción y specs copiadas de ella, el render real y
+ *    el botón azul a la ficha autoalojada. Como una ficha de producto.
+ *  - SIN ficha: nombre, una línea honesta de que los datos vienen de
+ *    camino, y el contacto. Nada de specs redactadas de memoria.
  */
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -18,7 +19,8 @@ import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { ButtonLink } from "@/components/ui/Button";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { WindowFrame } from "@/components/ui/WindowFrame";
-import { ArrowRightIcon } from "@/components/ui/icons";
+import { ArrowRightIcon, DocumentIcon } from "@/components/ui/icons";
+import { ProductSpecTable } from "@/components/product/ProductSpecTable";
 import { MANUFACTURERS, getCategory, getManufacturer, getSystem, isCategorySlug } from "@/data";
 import { pick, t } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/metadata";
@@ -92,7 +94,10 @@ export default async function SystemPage({
                 fill
                 priority
                 sizes="(min-width: 1024px) 55vw, 100vw"
-                className="object-cover"
+                // Render del fabricante sobre blanco: contain, porque
+                // cover se comería el canto del perfil, que es lo que
+                // distingue un sistema de otro.
+                className="object-contain"
               />
             </WindowFrame>
           </div>
@@ -105,17 +110,33 @@ export default async function SystemPage({
               <h1 className="mt-4 text-3xl text-balance md:text-4xl">{system.name}</h1>
               <p className="mt-3 text-lg text-kamika-ink/70">{pick(system.tagline)}</p>
 
-              {/* Las versiones vendrán del catálogo del fabricante.
-                  Hasta entonces: honestidad y contacto, no specs de
-                  memoria. */}
-              <div className="mt-8 rounded-kamika border border-kamika-mist bg-kamika-blue-50 p-5">
-                <h2 className="text-lg">{t("system.versionsTitle")}</h2>
-                <p className="mt-2 text-sm text-pretty text-kamika-ink/75">
-                  {t("system.versionsComingSoon")}
+              {system.description && (
+                <p className="mt-5 text-pretty text-kamika-ink/75">
+                  {pick(system.description)}
                 </p>
-              </div>
+              )}
+
+              {/* Sin ficha del fabricante no hay specs que enseñar, y no
+                  se redactan de memoria: se dice y punto. */}
+              {!system.specs && (
+                <div className="mt-8 rounded-kamika border border-kamika-mist bg-kamika-blue-50 p-5">
+                  <h2 className="text-lg">{t("system.versionsTitle")}</h2>
+                  <p className="mt-2 text-sm text-pretty text-kamika-ink/75">
+                    {t("system.versionsComingSoon")}
+                  </p>
+                </div>
+              )}
 
               <div className="mt-6 flex flex-col gap-3">
+                {/* La ficha del fabricante, autoalojada. El botón azul
+                    está reservado para esto en toda la web. */}
+                {system.datasheet && (
+                  <ButtonLink href={system.datasheet} variant="blue" external>
+                    <DocumentIcon className="size-4" />
+                    {t("product.datasheet")}
+                    <span className="sr-only"> ({t("a11y.opensInNewTab")})</span>
+                  </ButtonLink>
+                )}
                 <ButtonLink href={routes.contact}>{t("product.sendEnquiry")}</ButtonLink>
                 <ButtonLink
                   href={routes.manufacturer(manufacturer.category, manufacturer.id)}
@@ -128,6 +149,12 @@ export default async function SystemPage({
             </div>
           </div>
         </div>
+
+        {system.specs && (
+          <div className="mt-16 max-w-3xl md:mt-20">
+            <ProductSpecTable specs={system.specs} />
+          </div>
+        )}
       </div>
 
       {others.length > 0 && (
