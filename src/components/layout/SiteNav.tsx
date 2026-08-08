@@ -20,7 +20,12 @@ import { cn } from "@/lib/cn";
 import { t } from "@/lib/i18n";
 import { routes } from "@/lib/routes";
 
-export type NavLink = { href: string; label: string };
+export type NavLink = {
+  href: string;
+  label: string;
+  /** Tipos que cuelgan de una gama (los tres de puertas). */
+  children?: NavLink[];
+};
 
 type SiteNavProps = {
   links: NavLink[];
@@ -187,9 +192,11 @@ export function SiteNav({ links, categories, phone, phoneHref }: SiteNavProps) {
                   animate={{ opacity: 1, y: 0 }}
                   exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: -6 }}
                   transition={{ duration: 0.18, ease: EASE }}
-                  className="absolute top-full left-0 z-50 w-[30rem] rounded-kamika border border-kamika-mist bg-kamika-paper p-2 shadow-profile"
+                  // Una columna desde que las puertas cuelgan de su gama: en dos, la
+                  // fila del grupo alto dejaba un hueco muerto al lado.
+                  className="absolute top-full left-0 z-50 w-[19rem] rounded-kamika border border-kamika-mist bg-kamika-paper p-2 shadow-profile"
                 >
-                  <ul className="grid grid-cols-2 gap-x-2">
+                  <ul className="grid">
                     {categories.map((category) => (
                       <li key={category.href}>
                         <Link
@@ -198,6 +205,23 @@ export function SiteNav({ links, categories, phone, phoneHref }: SiteNavProps) {
                         >
                           {category.label}
                         </Link>
+                        {/* Los tipos de puerta, sangrados bajo su gama:
+                            el visitante que busca "entrance doors" la ve
+                            aquí y no a dos clics. */}
+                        {category.children && (
+                          <ul className="mb-1 ml-3 border-l border-kamika-mist pl-2">
+                            {category.children.map((child) => (
+                              <li key={child.href}>
+                                <Link
+                                  href={child.href}
+                                  className="block rounded-kamika px-3 py-1.5 text-[0.8125rem] text-kamika-ink/60 hover:bg-kamika-blue-50 hover:text-kamika-ink"
+                                >
+                                  {child.label}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
                       </li>
                     ))}
                   </ul>
@@ -291,6 +315,20 @@ export function SiteNav({ links, categories, phone, phoneHref }: SiteNavProps) {
                         >
                           {category.label}
                         </Link>
+                        {category.children && (
+                          <ul className="mb-1 ml-1 border-l border-kamika-mist pl-3">
+                            {category.children.map((child) => (
+                              <li key={child.href}>
+                                <Link
+                                  href={child.href}
+                                  className="block py-1 text-base text-kamika-ink/70"
+                                >
+                                  {child.label}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
                       </li>
                     ))}
                   </ul>

@@ -81,6 +81,27 @@ If any of this is ever changed — map loaded automatically, consent remembered,
 — **§ 8 and § 9 of the Datenschutzerklärung stop being true** and must be rewritten in the same
 commit.
 
+### Doors is a hub, and patio doors is ONE range, not two
+
+The owner asked for "a separate category for patio doors / terrace doors". Those are the same
+product — Terrassentür in German, and English uses both names — so the slash reads as a synonym,
+not as two ranges. One range was published, `patio-doors`, named "Patio doors" with "terrace" in
+the intro so a search for either word lands on it. If he really did mean two, say so and it is a
+five-minute change; but two pages selling the same door would be a duplicate for both customers
+and search engines.
+
+The three door types now sit under a **Doors** hub (`parent` on the category), which is what he
+asked for. One deviation, deliberate: **the URLs stay flat**. `/products/entrance-doors` did not
+become `/products/doors/entrance-doors`, because that would break every link already shared to the
+range with 314 models, for no gain — what he wanted was the navigation, and that is what changed.
+The hub's model count is the sum of its children's, so the home still advertises the real number.
+
+The two patio-door models are **examples**, like the other 24, and carry the same warning at the
+top of `src/data/products/patio-doors.ts`. The two *types* (lift-and-slide HST, tilt-and-slide
+PSK) are real industry products made from the profile systems Kamika already sells; the names and
+the numbers are placeholders until the manufacturer's Terrassentüren catalogue arrives, and then
+this range converts to collections on its own.
+
 ### The two shutter catalogues are white-labelled — a decision to confirm
 
 The roller-shutter and facade-blind catalogues come from the same manufacturer as the window

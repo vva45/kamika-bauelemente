@@ -5,16 +5,30 @@
 import Link from "next/link";
 import { Wordmark } from "@/components/brand/Wordmark";
 import { SiteNav, type NavLink } from "@/components/layout/SiteNav";
-import { orderedCategories } from "@/data/categories";
+import { childCategories, topLevelCategories } from "@/data/categories";
 import { COMPANY, companyPhoneHref } from "@/data/company";
 import { pick, t } from "@/lib/i18n";
 import { routes } from "@/lib/routes";
 
 export function Header() {
-  const categories: NavLink[] = orderedCategories().map((category) => ({
-    href: routes.category(category.slug),
-    label: pick(category.name),
-  }));
+  // El menú enseña el primer nivel y, colgando de él, los tipos de la
+  // gama que los tenga. Sin esto, "Entrance doors" —la gama con más
+  // modelos de todo el sitio— quedaría a dos clics desde el menú.
+  const categories: NavLink[] = topLevelCategories().map((category) => {
+    const children = childCategories(category.slug);
+    return {
+      href: routes.category(category.slug),
+      label: pick(category.name),
+      ...(children.length > 0
+        ? {
+            children: children.map((child) => ({
+              href: routes.category(child.slug),
+              label: pick(child.name),
+            })),
+          }
+        : {}),
+    };
+  });
 
   const links: NavLink[] = [
     { href: routes.catalogues, label: t("nav.catalogues") },

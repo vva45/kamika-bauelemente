@@ -108,6 +108,10 @@ const sheet = ({ label, note, mullions }) => {
 
 /** Una lámina por gama, con su despiece y su dato. */
 const SHEETS = {
+  // Gamas sin fotografía todavía. Cuando llegue la del dueño, su slug
+  // pasa a OWNER_PHOTOS y esta lámina deja de generarse.
+  doors: { label: "Doors", note: "ENTRANCE · INTERIOR · PATIO", mullions: [{ axis: "h", at: 0.3 }, { axis: "h", at: 0.7 }] },
+  "patio-doors": { label: "Patio doors", note: "LIFT-AND-SLIDE · TILT-AND-SLIDE", mullions: [{ axis: "v", at: 0.5 }] },
   windows: { label: "Windows", note: "PVC · ALUMINIUM · WOOD-ALU", mullions: [{ axis: "v", at: 0.5 }, { axis: "h", at: 0.38 }] },
   "interior-doors": { label: "Interior doors", note: "CPL · VENEER · LACQUERED", mullions: [{ axis: "h", at: 0.28 }, { axis: "h", at: 0.7 }] },
   "roller-shutters": { label: "Roller shutters", note: "MANUAL · MOTORISED", mullions: [{ axis: "h", at: 0.18 }, { axis: "h", at: 0.3 }, { axis: "h", at: 0.42 }, { axis: "h", at: 0.54 }, { axis: "h", at: 0.66 }, { axis: "h", at: 0.78 }] },

@@ -7,7 +7,7 @@
 import Link from "next/link";
 import { Wordmark } from "@/components/brand/Wordmark";
 import { ChatIcon, MailIcon, PhoneIcon, PinIcon } from "@/components/ui/icons";
-import { orderedCategories } from "@/data/categories";
+import { leafCategories } from "@/data/categories";
 import {
   COMPANY,
   companyAddressLine,
@@ -84,7 +84,7 @@ export function Footer() {
           <div>
             <h2 className="eyebrow">{t("footer.productsHeading")}</h2>
             <ul className="mt-5 grid gap-2.5 text-sm">
-              {orderedCategories().map((category) => (
+              {leafCategories().map((category) => (
                 <li key={category.slug}>
                   <Link
                     href={routes.category(category.slug)}

@@ -2,6 +2,8 @@
  * Página de categoría. Enseña lo más concreto que tenga la gama, en este
  * orden:
  *
+ *   0. TIPOS, si la gama agrupa otras (Doors → entrance / interior /
+ *      patio). Es un hub: no vende nada por sí mismo.
  *   1. FABRICANTES, si los declara (ventanas: Aluplast → sistemas).
  *   2. COLECCIONES, si tiene catálogos con escaparate (puertas de
  *      entrada: ROKA Signature, ROKA Select, Despiro, paneles). Cada
@@ -16,6 +18,7 @@
  */
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { CategoryCard } from "@/components/category/CategoryCard";
 import { CategoryHero } from "@/components/category/CategoryHero";
 import { CategoryProducts } from "@/components/category/CategoryProducts";
 import { CatalogueCard } from "@/components/catalogue/CatalogueCard";
@@ -26,6 +29,7 @@ import { ComingSoon } from "@/components/ui/ComingSoon";
 import {
   CATALOGUES,
   CATEGORY_SLUGS,
+  childCategories,
   countModelsInCategory,
   getCategory,
   getCollectionsFor,
@@ -64,6 +68,10 @@ export default async function CategoryPage({ params }: PageProps<"/products/[cat
   const category = getCategory(slug);
   if (!category) notFound();
 
+  // Una gama puede agrupar tipos en vez de producto propio: entonces
+  // enseña sus tipos y nada más, que es justo lo que se ha venido a
+  // elegir aquí.
+  const children = childCategories(slug);
   const products = getProductsByCategory(slug);
   // Jerarquía por fabricante (petición del dueño para ventanas): si la
   // gama declara fabricantes, la categoría enseña sus "casitas" en vez
@@ -80,7 +88,25 @@ export default async function CategoryPage({ params }: PageProps<"/products/[cat
     <>
       <CategoryHero category={category} modelCount={countModelsInCategory(slug)} />
 
-      {manufacturers.length > 0 ? (
+      {children.length > 0 ? (
+        <section className="mx-auto max-w-[1440px] px-5 py-12 md:px-8 md:py-16">
+          <h2 className="text-2xl md:text-3xl">{t("category.typesHeading")}</h2>
+          <p className="mt-4 max-w-2xl text-pretty text-kamika-ink/70">
+            {t("category.typesIntro")}
+          </p>
+
+          <div className="mt-10 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+            {children.map((child, index) => (
+              <CategoryCard
+                key={child.slug}
+                category={child}
+                modelCount={countModelsInCategory(child.slug)}
+                priority={index < 3}
+              />
+            ))}
+          </div>
+        </section>
+      ) : manufacturers.length > 0 ? (
         <section className="mx-auto max-w-[1440px] px-5 py-12 md:px-8 md:py-16">
           <p className="max-w-2xl text-pretty text-kamika-ink/70 md:text-lg">
             {t("manufacturer.chooseIntro")}

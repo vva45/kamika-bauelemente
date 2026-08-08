@@ -14,9 +14,12 @@ import { CATALOGUES, getCatalogue } from "./catalogues";
 import {
   CATEGORIES,
   CATEGORY_SLUGS,
+  childCategories,
   getCategory,
   isCategorySlug,
+  leafCategories,
   orderedCategories,
+  topLevelCategories,
 } from "./categories";
 import { COLORS } from "./colors";
 import { PRODUCTS } from "./products";
@@ -39,6 +42,9 @@ export {
   getSystem,
   CATEGORIES,
   CATEGORY_SLUGS,
+  childCategories,
+  leafCategories,
+  topLevelCategories,
   COLORS,
   PRODUCTS,
   PROJECTS,
@@ -116,6 +122,14 @@ export const countModelsByCatalogue = (catalogueId: string): number =>
  * tiene catálogo, el número de fichas es todo lo que hay.
  */
 export const countModelsInCategory = (slug: CategorySlug): number => {
+  // Una gama que agrupa tipos (Doors) no tiene modelos propios: enseña
+  // la suma de los suyos, que es lo que el visitante va a encontrar
+  // dentro. Si no, la home anunciaría "0 models" en la gama con más.
+  const children = childCategories(slug);
+  if (children.length > 0) {
+    return children.reduce((total, child) => total + countModelsInCategory(child.slug), 0);
+  }
+
   const catalogueIds = CATALOGUES.filter((catalogue) => catalogue.category === slug).map(
     (catalogue) => catalogue.id,
   );

@@ -272,6 +272,8 @@ export const de: Record<ContentKey, string> = {
   "system.fromManufacturer": "", // TODO: DE
 
   // ── Categorías ───────────────────────────────────────────────
+  "category.typesHeading": "", // TODO: DE
+  "category.typesIntro": "", // TODO: DE
   "category.comingSoonTitle": "", // TODO: DE
   "category.comingSoonBody": "", // TODO: DE
 };

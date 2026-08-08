@@ -22,7 +22,20 @@ export const CATEGORIES: Category[] = [
     order: 1,
   },
   {
+    // Hub: no vende nada por sí misma, agrupa los tipos de puerta.
+    // Su `intro` es lo que lee quien llega buscando "una puerta" sin
+    // saber todavía cuál de los tres tipos necesita.
+    slug: "doors",
+    name: { en: "Doors", de: "Türen" },
+    intro: {
+      en: "Every door in the house, from the one that faces the street to the one that opens onto the terrace. Pick the type and you will find the models, the specifications and the catalogue behind each one.",
+    },
+    heroImage: "/images/categories/doors-hero.jpg",
+    order: 2,
+  },
+  {
     slug: "entrance-doors",
+    parent: "doors",
     name: { en: "Entrance doors", de: "Haustüren" },
     // Cifras tomadas de los catálogos reales: Ud 0,72 es el mejor valor
     // del catálogo Select, y RC 3 el máximo del sistema Signature.
@@ -30,15 +43,33 @@ export const CATEGORIES: Category[] = [
       en: "Aluminium and PVC entrance doors from Ud 0.72 W/m²K, with multi-point locking and burglary resistance up to RC 3. Ceramic, liquid-metal, powder-coated and real old-wood surfaces, and panels in PVC, aluminium or timber. Threshold, handle and cylinder are specified per door.",
     },
     heroImage: "/images/categories/entrance-doors-hero.jpg",
-    order: 2,
+    order: 1,
   },
   {
     slug: "interior-doors",
+    parent: "doors",
     name: { en: "Interior doors", de: "Innentüren" },
     intro: {
       en: "Interior door leaves and frames in CPL, veneer and lacquered finishes, for standard and wall-flush installation. Available with rebated or flush edges, and with sound or smoke rating where required.",
     },
     heroImage: "/images/categories/interior-doors-hero.jpg",
+    order: 2,
+  },
+  {
+    /**
+     * "Patio doors" y "terrace doors" son EL MISMO producto: en alemán
+     * Terrassentür, y en inglés se usan los dos nombres. El dueño las
+     * escribió con barra ("patio doors / terrace doors"), que es como
+     * se escribe un sinónimo, no dos gamas. Se publica una sola, con el
+     * otro nombre dentro de la intro para quien busque por él.
+     */
+    slug: "patio-doors",
+    parent: "doors",
+    name: { en: "Patio doors", de: "Terrassentüren" },
+    intro: {
+      en: "Patio and terrace doors: lift-and-slide, tilt-and-slide and side-hung, in the same PVC and aluminium systems as the windows, so the frame, the colour and the fittings match across the whole facade.",
+    },
+    heroImage: "/images/categories/patio-doors-hero.jpg",
     order: 3,
   },
   {
@@ -48,7 +79,7 @@ export const CATEGORIES: Category[] = [
       en: "Surface-mounted, built-on and front-mounted roller shutters in aluminium, manual or motorised. Box sizes and guide rails are matched to the window opening so the shutter is planned with the window, not after it.",
     },
     heroImage: "/images/categories/roller-shutters-hero.jpg",
-    order: 4,
+    order: 3,
   },
   {
     slug: "insect-screens",
@@ -57,7 +88,7 @@ export const CATEGORIES: Category[] = [
       en: "Fixed frames, hinged doors, pleated and roller insect screens in powder-coated aluminium. Made to the measured opening, in the same colour as the window, and removable for cleaning.",
     },
     heroImage: "/images/categories/insect-screens-hero.jpg",
-    order: 5,
+    order: 4,
   },
   {
     slug: "gates",
@@ -66,7 +97,7 @@ export const CATEGORIES: Category[] = [
       en: "Sectional and side-hinged garage doors, plus sliding and swing gates for driveways. Supplied with the drive, the safety edge and the remote control set as one package.",
     },
     heroImage: "/images/categories/gates-hero.jpg",
-    order: 6,
+    order: 5,
   },
   {
     slug: "fences",
@@ -75,7 +106,7 @@ export const CATEGORIES: Category[] = [
       en: "Aluminium and steel fence panels, posts and matching pedestrian gates in the same colours as the driveway gate. Panel heights and post spacing are set out from a site plan before production.",
     },
     heroImage: "/images/categories/fences-hero.jpg",
-    order: 7,
+    order: 6,
   },
   {
     slug: "accessories",
@@ -84,13 +115,36 @@ export const CATEGORIES: Category[] = [
       en: "Handles, cylinders, window sills, ventilation units and installation consumables. The parts that decide whether an installation is finished properly or just fitted.",
     },
     heroImage: "/images/categories/accessories-hero.jpg",
-    order: 8,
+    order: 7,
   },
 ];
 
-/** Categorías ordenadas tal y como deben salir en menús y listados. */
+/**
+ * Categorías ordenadas tal y como deben salir en menús y listados.
+ * `order` se cuenta dentro de cada nivel: las hijas se ordenan entre
+ * ellas, no contra las de arriba.
+ */
 export const orderedCategories = (): Category[] =>
   [...CATEGORIES].sort((a, b) => a.order - b.order);
+
+/**
+ * Las gamas de primer nivel: las que salen en la home, en el mosaico de
+ * /products y en el menú. "Doors" sale aquí; sus tres tipos, dentro.
+ */
+export const topLevelCategories = (): Category[] =>
+  orderedCategories().filter((category) => !category.parent);
+
+/** Los tipos que cuelgan de una gama, en su orden. */
+export const childCategories = (slug: CategorySlug): Category[] =>
+  orderedCategories().filter((category) => category.parent === slug);
+
+/**
+ * Las gamas que de verdad tienen producto detrás — todas menos los hub.
+ * Es lo que se cuenta cuando el sitio dice "N gamas" y lo que se lista
+ * en el pie: un hub ahí sería un enlace a otra lista de enlaces.
+ */
+export const leafCategories = (): Category[] =>
+  orderedCategories().filter((category) => childCategories(category.slug).length === 0);
 
 export const getCategory = (slug: CategorySlug): Category | undefined =>
   CATEGORIES.find((category) => category.slug === slug);

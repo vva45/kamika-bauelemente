@@ -7,9 +7,12 @@
  * una categoría sin contenido no parezca una página de otra web.
  */
 import Image from "next/image";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { WindowFrame } from "@/components/ui/WindowFrame";
+import { getCategory } from "@/data";
 import type { Category } from "@/data/types";
 import { pick, t, tf } from "@/lib/i18n";
+import { routes } from "@/lib/routes";
 
 type CategoryHeroProps = {
   category: Category;
@@ -24,8 +27,24 @@ export function CategoryHero({ category, modelCount }: CategoryHeroProps) {
         ? t("product.modelsOne")
         : tf("product.modelsOther", { count: modelCount });
 
+  // Un tipo de puerta cuelga de su gama: la miga lo dice, para que
+  // desde dentro se pueda subir al hub sin volver al principio.
+  const parent = category.parent ? getCategory(category.parent) : undefined;
+
   return (
     <section className="border-b border-kamika-mist bg-kamika-blue-50">
+      {parent && (
+        <div className="mx-auto max-w-[1440px] px-5 pt-8 md:px-8">
+          <Breadcrumb
+            items={[
+              { label: t("nav.products"), href: routes.products },
+              { label: pick(parent.name), href: routes.category(parent.slug) },
+              { label: pick(category.name) },
+            ]}
+          />
+        </div>
+      )}
+
       <div className="mx-auto grid max-w-[1440px] items-center gap-10 px-5 py-12 md:px-8 md:py-16 lg:grid-cols-2 lg:gap-14">
         <div>
           <p className="eyebrow">{countLabel}</p>

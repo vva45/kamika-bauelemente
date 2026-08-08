@@ -6,7 +6,9 @@ import type { Localized } from "@/lib/i18n";
 
 export type CategorySlug =
   | "windows"
+  | "doors"
   | "entrance-doors"
+  | "patio-doors"
   | "interior-doors"
   | "roller-shutters"
   | "insect-screens"
@@ -52,6 +54,16 @@ export interface Category {
   heroImage: string;
   order: number;
   comingSoon?: boolean; // si true, la página usa el layout coming-soon
+  /**
+   * Gama padre, para las que son un tipo dentro de otra.
+   *
+   * Lo pidió el dueño para puertas: en vez de tres entradas sueltas en
+   * la home, una sola —"Doors"— y dentro los tipos. La URL NO se anida
+   * (`/products/entrance-doors` sigue siendo la misma): lo que cambia
+   * es por dónde se llega, no dónde vive. Anidarla habría roto los
+   * enlaces ya compartidos a cambio de nada.
+   */
+  parent?: CategorySlug;
 }
 
 export interface Catalogue {

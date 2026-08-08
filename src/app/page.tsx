@@ -20,7 +20,7 @@ import { Marquee } from "@/components/ui/Marquee";
 import { Reveal, RevealGroup } from "@/components/ui/Reveal";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { ArrowRightIcon } from "@/components/ui/icons";
-import { CATALOGUES, COLORS, countModelsInCategory, getFeaturedProjects, orderedCategories } from "@/data";
+import { CATALOGUES, COLORS, countModelsInCategory, getFeaturedProjects, topLevelCategories } from "@/data";
 import { COMPANY } from "@/data/company";
 import { pick, t } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/metadata";
@@ -41,7 +41,7 @@ const STEPS = [
 ] as const;
 
 export default function HomePage() {
-  const categories = orderedCategories();
+  const categories = topLevelCategories();
   // 2 grandes + 3 pequeñas: es la sección que más clics tiene que
   // recibir, así que se lleva el sitio.
   const featuredCategories = categories.slice(0, 2);

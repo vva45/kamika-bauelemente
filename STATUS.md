@@ -34,8 +34,12 @@ Cada gama enseña lo más concreto que tiene, en este orden:
      (`scripts/extract_catalogue_models.py`)
    · Roller shutters → Rollläden 20, Fassadenjalousien 8, en alemán y con
      descripción del fabricante (`scripts/extract_shutter_models.py`)
-3. **Fichas de producto** — las otras 5 gamas, con 24 productos **de ejemplo**
+3. **Fichas de producto** — las otras gamas, con 26 productos **de ejemplo**
    (marcados como tales) hasta que lleguen sus catálogos.
+
+**Jerarquía de gamas**: `Doors` es un hub que agrupa entrance / interior / patio.
+La URL NO se anida —`/products/entrance-doors` sigue igual—; lo que cambia es por
+dónde se llega. El contador del hub suma los de sus hijas.
 
 ## Reglas de negocio que no se tocan
 
@@ -74,6 +78,7 @@ Cada gama enseña lo más concreto que tiene, en este orden:
 1. **RESEND_API_KEY + RESEND_FROM en Vercel** — lo único que cambia de verdad
    lo que recibe el dueño (hoy el formulario no envía solo).
 2. Fichas de VEKA 82 y REHAU Synego → completar sus páginas de sistema.
+   Y catálogo de Terrassentüren → sustituir los 2 modelos de ejemplo de patio doors.
 3. Catálogos de las otras 5 gamas → sustituir los 24 productos de ejemplo. Eko-Okna
    los tiene en alemán: interior doors, gates (Sektionaltore), fences
    (Grundstückszäune), insect screens. Mismo procedimiento que las persianas.

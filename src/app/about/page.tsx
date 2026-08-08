@@ -16,7 +16,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { WindowFrame } from "@/components/ui/WindowFrame";
 import { ArrowRightIcon } from "@/components/ui/icons";
-import { CATEGORIES } from "@/data";
+import { leafCategories } from "@/data";
 import { COMPANY, companyAddressLine } from "@/data/company";
 import { t, tf } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/metadata";
@@ -36,7 +36,9 @@ export default function AboutPage() {
     { label: t("about.factAreaLabel"), value: t("about.factAreaValue") },
     {
       label: t("about.factRangesLabel"),
-      value: tf("about.factRangesValue", { count: CATEGORIES.length }),
+      // Las gamas que el cliente puede abrir, sin contar el hub
+      // de puertas, que no vende nada por sí mismo.
+      value: tf("about.factRangesValue", { count: leafCategories().length }),
     },
     { label: t("about.factOwnerLabel"), value: `${COMPANY.owner} — ${t("about.ownerRole")}` },
   ];

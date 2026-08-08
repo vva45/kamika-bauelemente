@@ -122,6 +122,7 @@ const PRODUCT_MODULES = [
   ["gates", "gates"],
   ["insect-screens", "insectScreens"],
   ["interior-doors", "interiorDoors"],
+  ["patio-doors", "patioDoors"],
   ["roller-shutters", "rollerShutters"],
   ["windows", "windows"],
 ];

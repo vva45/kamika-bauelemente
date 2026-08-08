@@ -306,6 +306,9 @@ export const en = {
   "system.fromManufacturer": "A system by",
 
   // ── Categorías ───────────────────────────────────────────────
+  "category.typesHeading": "Types of door",
+  "category.typesIntro":
+    "Each type is a range of its own, with its own models, specifications and catalogues. Pick the one that matches the opening.",
   "category.comingSoonTitle": "This range is being prepared",
   "category.comingSoonBody":
     "We supply and install this range, but the catalogue pages are not online yet. Call or write and we will send the current documentation.",
