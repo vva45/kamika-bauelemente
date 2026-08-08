@@ -100,7 +100,9 @@ const systemSheet = (name, note, chambers, depthLabel) => {
  * dibuja lo que aún no tiene ficha.
  */
 const MAKERS = [
-  { file: "aluplast", name: "aluplast", note: "PVC WINDOW SYSTEMS" },
+  // "Aluplast" con mayúscula: la marca se escribe en minúscula en
+  // su propio logotipo, pero aquí es texto de la web, no su logo.
+  { file: "aluplast", name: "Aluplast", note: "PVC WINDOW SYSTEMS" },
   { file: "salamander", name: "Salamander", note: "PVC WINDOW SYSTEMS" },
   { file: "veka", name: "VEKA", note: "PVC WINDOW SYSTEMS" },
   { file: "rehau", name: "REHAU", note: "PVC WINDOW SYSTEMS" },
