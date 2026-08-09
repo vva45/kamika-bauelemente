@@ -9,6 +9,7 @@ import type { MetadataRoute } from "next";
 import {
   CATALOGUE_MODELS,
   CATALOGUES,
+  countModelsByCatalogue,
   MANUFACTURERS,
   PRODUCTS,
   PROJECTS,
@@ -42,7 +43,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ),
     entry(routes.catalogues, 0.7),
     ...CATALOGUES.map((catalogue) => entry(routes.catalogue(catalogue.id), 0.6)),
-    ...CATALOGUES.map((catalogue) => entry(routes.catalogueModels(catalogue.id), 0.6)),
+    // Solo los catálogos CON escaparate: la página de modelos hace
+    // notFound() cuando no hay ninguno (el folleto Salamander), y un
+    // sitemap no puede anunciar una URL que responde 404.
+    ...CATALOGUES.filter((catalogue) => countModelsByCatalogue(catalogue.id) > 0).map(
+      (catalogue) => entry(routes.catalogueModels(catalogue.id), 0.6),
+    ),
     // Los modelos del escaparate: son páginas con contenido propio
     // (nombre, specs y foto del catálogo), no duplicados de otra.
     ...CATALOGUE_MODELS.map((model) =>
