@@ -1,29 +1,22 @@
 /**
- * La primera entrada es REAL. Las seis siguientes, NO.
+ * OBRAS REALES DE KAMIKA. Ni una inventada.
  *
- * Altensteig es obra de Kamika, con la foto del dueño. Las otras seis
- * son ejemplos plausibles en la zona real de trabajo (Hechingen y
- * alrededores, Zollernalbkreis) y hay que ir cambiándolas por trabajos
- * hechos de verdad — las fotos ya están en el repositorio, esperando
- * que el dueño diga de qué obra es cada una. Ver CONTENT.md.
+ * Las dieciséis entradas salen de las fotos que mandó el dueño (agosto
+ * de 2026) más lo que él dijo de cada una: ciudad, mes y qué se montó.
+ * Los seis proyectos de ejemplo que había aquí se borraron el mismo día,
+ * con sus imágenes.
  *
- * Los proyectos son lo que da confianza en una web de este tipo, así que
- * en cuanto haya tres o cuatro reales, los inventados sobran.
+ * REGLA AL AÑADIR: el texto describe lo que se ve en la foto y lo que el
+ * dueño confirmó, y nada más. Nada de "triple acristalamiento" ni de
+ * marcas si no está impreso o dicho — un proyecto es la prueba de que el
+ * trabajo existe, y una frase inventada se la carga entera.
+ *
+ * Quedan dos fotos sin datos, la 06 y la 07 del lote, esperando en
+ * `public/images/projects/subidas/`.
  */
 import type { Project } from "./types";
 
 export const PROJECTS: Project[] = [
-  /* ═══ PRIMERA OBRA REAL ════════════════════════════════════════
-   *
-   * Neubau en Altensteig, febrero de 2026. El dueño la mandó primero
-   * por chat y después subió la foto al repositorio (es la 17 del lote
-   * de veintiuna). Confirmado por él: es un sistema HST (Hebe-Schiebe)
-   * y en esta casa solo se montó esta puerta — una foto, una entrada,
-   * sin inventar el resto.
-   *
-   * Las que siguen son de ejemplo y se van cayendo a medida que
-   * lleguen las descripciones del resto del lote.
-   */
   {
     id: "new-build-altensteig",
     title: {
@@ -52,168 +45,437 @@ export const PROJECTS: Project[] = [
     products: [],
     featured: true,
   },
-
   {
-    id: "single-family-hechingen",
-    title: { en: "Single-family home, Hechingen", de: "Einfamilienhaus, Hechingen", pl: "Dom jednorodzinny, Hechingen" },
+    id: "altensteig-fenster-raffstore",
+    title: {
+      en: "Window with external venetian blind, Altensteig",
+      de: "Fenster mit Raffstore, Altensteig",
+      pl: "Okno z żaluzją fasadową, Altensteig",
+    },
+    location: "Altensteig",
+    year: 2026,
+    categories: ["windows", "roller-shutters"],
+    summary: {
+      en: "A wide anthracite element on a new build, with an external venetian blind above it, fitted in February 2026 while the ground outside was still bare subsoil. The shading was planned with the window rather than added afterwards, which is why the head box sits flush in the reveal.",
+      de: "Ein breites Element in Anthrazit an einem Neubau, darüber der außenliegende Raffstore, montiert im Februar 2026, als draußen noch das Rohplanum lag. Die Beschattung wurde mit dem Fenster geplant und nicht nachgerüstet — deshalb sitzt der Kasten bündig in der Laibung.",
+      pl: "Szeroki element w antracycie w nowym budynku, nad nim zewnętrzna żaluzja fasadowa; montaż w lutym 2026, gdy teren wokół był jeszcze surowy. Osłona była zaplanowana razem z oknem, nie dołożona później — dlatego skrzynka siedzi równo we wnęce.",
+    },
+    images: [
+      {
+        src: "/images/projects/altensteig-fenster-raffstore-1.jpg",
+        alt: {
+          en: "Black external venetian blind half lowered over a wide anthracite window on a new build",
+          de: "Schwarzer Raffstore halb heruntergelassen über einem breiten Anthrazit-Element am Neubau",
+          pl: "Czarna żaluzja fasadowa do połowy opuszczona nad szerokim antracytowym oknem w nowym domu",
+        },
+      },
+    ],
+    products: ["external-venetian-blind"],
+    featured: true,
+  },
+  {
+    id: "altensteig-rundbogenfenster",
+    title: {
+      en: "Arched windows, Altensteig",
+      de: "Rundbogenfenster, Altensteig",
+      pl: "Okna łukowe, Altensteig",
+    },
+    location: "Altensteig",
+    year: 2026,
+    categories: ["windows"],
+    summary: {
+      en: "Two arched windows in anthracite with glazing bars, set into the bare shell in February 2026. An arch is made to the measured opening, so the element follows the masonry — not the other way round.",
+      de: "Zwei Rundbogenfenster in Anthrazit mit Sprossen, im Februar 2026 in den Rohbau gesetzt. Ein Bogen wird nach Aufmaß gefertigt: das Element folgt dem Mauerwerk, nicht umgekehrt.",
+      pl: "Dwa okna łukowe w antracycie ze szprosami, osadzone w stanie surowym w lutym 2026. Łuk wykonuje się na wymiar — to element dopasowuje się do muru, nie odwrotnie.",
+    },
+    images: [
+      {
+        src: "/images/projects/altensteig-rundbogenfenster-1.jpg",
+        alt: {
+          en: "Two anthracite arched windows in an unrendered concrete wall",
+          de: "Zwei anthrazitfarbene Rundbogenfenster in einer noch unverputzten Betonwand",
+          pl: "Dwa antracytowe okna łukowe w nieotynkowanej ścianie betonowej",
+        },
+      },
+    ],
+    products: [],
+  },
+  {
+    id: "wehingen-tueren-fenster",
+    title: {
+      en: "Doors and windows, Wehingen",
+      de: "Türen und Fenster, Wehingen",
+      pl: "Drzwi i okna, Wehingen",
+    },
+    location: "Wehingen",
+    year: 2026,
+    categories: ["windows", "patio-doors"],
+    summary: {
+      en: "Windows and doors as one package for a house with a curved roof: white elements with glazing bars, a two-leaf terrace door onto the covered seating area, and a small arched window beside it. Fitted in March 2026.",
+      de: "Fenster und Türen als ein Paket für ein Haus mit geschwungenem Dach: weiße Elemente mit Sprossen, eine zweiflügelige Terrassentür zum überdachten Sitzplatz und daneben ein kleines Rundbogenfenster. Montiert im März 2026.",
+      pl: "Okna i drzwi w jednym pakiecie dla domu z wygiętym dachem: białe elementy ze szprosami, dwuskrzydłowe drzwi tarasowe na zadaszony taras i mniejsze okno łukowe obok. Montaż w marcu 2026.",
+    },
+    images: [
+      {
+        src: "/images/projects/wehingen-tueren-fenster-1.jpg",
+        alt: {
+          en: "Yellow house with a curved roof, white windows with glazing bars and a two-leaf terrace door",
+          de: "Gelbes Haus mit geschwungenem Dach, weiße Sprossenfenster und zweiflügelige Terrassentür",
+          pl: "Żółty dom z wygiętym dachem, białe okna ze szprosami i dwuskrzydłowe drzwi tarasowe",
+        },
+      },
+    ],
+    products: [],
+    featured: true,
+  },
+  {
+    id: "dotternhausen-fenster",
+    title: {
+      en: "Windows, Dotternhausen",
+      de: "Fenster, Dotternhausen",
+      pl: "Okna, Dotternhausen",
+    },
+    location: "Dotternhausen",
+    year: 2026,
+    categories: ["windows"],
+    summary: {
+      en: "A three-part window band in anthracite with an aluminium sill, fitted in March 2026. The joint is still masked with tape in the photo: it was taken straight after installation, before the render was made good.",
+      de: "Ein dreiteiliges Fensterband in Anthrazit mit Aluminium-Fensterbank, montiert im März 2026. Die Anschlussfuge ist auf dem Bild noch abgeklebt — die Aufnahme entstand direkt nach dem Einbau, vor dem Ausbessern des Putzes.",
+      pl: "Trzyczęściowy pas okienny w antracycie z aluminiowym parapetem, montaż w marcu 2026. Na zdjęciu połączenie jest jeszcze zaklejone taśmą — zdjęcie zrobiono zaraz po montażu, przed poprawkami tynku.",
+    },
+    images: [
+      {
+        src: "/images/projects/dotternhausen-fenster-1.jpg",
+        alt: {
+          en: "Three-part anthracite window with an aluminium sill under a timber soffit",
+          de: "Dreiteiliges Anthrazit-Fenster mit Aluminium-Fensterbank unter einem Holzdachüberstand",
+          pl: "Trzyczęściowe antracytowe okno z aluminiowym parapetem pod drewnianym okapem",
+        },
+      },
+    ],
+    products: [],
+  },
+  {
+    id: "dotternhausen-balkontuer",
+    title: {
+      en: "Balcony door, Dotternhausen",
+      de: "Balkontür, Dotternhausen",
+      pl: "Drzwi balkonowe, Dotternhausen",
+    },
+    location: "Dotternhausen",
+    year: 2026,
+    categories: ["patio-doors"],
+    summary: {
+      en: "A balcony door with a fixed trapezoidal light under the roof pitch, fitted in March 2026. The trapezium is made to the angle of the roof, which is why it closes the opening flush instead of leaving a blind panel above it.",
+      de: "Eine Balkontür mit festem Trapezteil unter der Dachschräge, montiert im März 2026. Das Trapez wird nach dem Winkel des Daches gefertigt — deshalb schließt es die Öffnung bündig, statt ein Blindfeld darüber zu lassen.",
+      pl: "Drzwi balkonowe ze stałym elementem trapezowym pod skosem dachu, montaż w marcu 2026. Trapez wykonuje się pod kąt dachu — dzięki temu zamyka otwór równo, bez ślepego pola nad nim.",
+    },
+    images: [
+      {
+        src: "/images/projects/dotternhausen-balkontuer-1.jpg",
+        alt: {
+          en: "Balcony door with a trapezoidal fixed light following the roof pitch, seen from the attic room",
+          de: "Balkontür mit trapezförmigem Festteil entlang der Dachschräge, vom Dachzimmer aus gesehen",
+          pl: "Drzwi balkonowe z trapezowym elementem stałym wzdłuż skosu dachu, widziane z poddasza",
+        },
+      },
+    ],
+    products: [],
+  },
+  {
+    id: "balingen-arztpraxis",
+    title: {
+      en: "Doctor's practice, Balingen",
+      de: "Arztpraxis, Balingen",
+      pl: "Gabinet lekarski, Balingen",
+    },
+    location: "Balingen",
+    year: 2026,
+    categories: ["entrance-doors", "windows"],
+    summary: {
+      en: "Two entrance assemblies for a medical practice: white doors with fixed side lights and transom lights over them, one glazed dark to the street and one satin for the waiting area. Fitted in January 2026.",
+      de: "Zwei Eingangsanlagen für eine Arztpraxis: weiße Türen mit festen Seitenteilen und Oberlichtern, eine zur Straße dunkel verglast, die andere satiniert für den Wartebereich. Montiert im Januar 2026.",
+      pl: "Dwa zespoły wejściowe dla gabinetu lekarskiego: białe drzwi ze stałymi doświetlami bocznymi i naświetlami górnymi, jedno przeszklenie ciemne od ulicy, drugie satynowe przy poczekalni. Montaż w styczniu 2026.",
+    },
+    images: [
+      {
+        src: "/images/projects/balingen-arztpraxis-1.jpg",
+        alt: {
+          en: "White entrance assembly with dark glazing and transom lights on the street side",
+          de: "Weiße Eingangsanlage mit dunkler Verglasung und Oberlichtern zur Straße",
+          pl: "Biały zespół wejściowy z ciemnym przeszkleniem i naświetlami od ulicy",
+        },
+      },
+      {
+        src: "/images/projects/balingen-arztpraxis-2.jpg",
+        alt: {
+          en: "The second entrance being sealed by the fitter, with satin glazing",
+          de: "Die zweite Eingangsanlage mit satinierter Verglasung, beim Abdichten durch den Monteur",
+          pl: "Drugi zespół wejściowy z satynowym przeszkleniem, uszczelniany przez montera",
+        },
+      },
+      {
+        src: "/images/projects/balingen-arztpraxis-3.jpg",
+        alt: {
+          en: "The same assembly seen from inside the practice",
+          de: "Dieselbe Anlage von innen, aus der Praxis gesehen",
+          pl: "Ten sam zespół widziany od środka gabinetu",
+        },
+      },
+    ],
+    products: [],
+    featured: true,
+  },
+  {
+    id: "balingen-einfamilienhaus",
+    title: {
+      en: "Single-family home, Balingen",
+      de: "Einfamilienhaus, Balingen",
+      pl: "Dom jednorodzinny, Balingen",
+    },
+    location: "Balingen",
+    year: 2026,
+    categories: ["windows"],
+    summary: {
+      en: "Anthracite windows to the dormer, the gable and the ground floor, fitted in January 2026. The skip is still standing in front of the house in the photo — it was taken on the day, not out of a brochure.",
+      de: "Fenster in Anthrazit an Gaube, Giebel und Erdgeschoss, montiert im Januar 2026. Auf dem Bild steht der Container noch vor dem Haus: die Aufnahme ist vom Montagetag, nicht aus dem Prospekt.",
+      pl: "Okna w antracycie w lukarnie, na szczycie i na parterze, montaż w styczniu 2026. Na zdjęciu przed domem stoi jeszcze kontener — zdjęcie z dnia montażu, nie z folderu.",
+    },
+    images: [
+      {
+        src: "/images/projects/balingen-einfamilienhaus-1.jpg",
+        alt: {
+          en: "White house with new anthracite windows in the gable and the dormer",
+          de: "Weißes Haus mit neuen Anthrazit-Fenstern in Giebel und Gaube",
+          pl: "Biały dom z nowymi antracytowymi oknami na szczycie i w lukarnie",
+        },
+      },
+    ],
+    products: [],
+  },
+  {
+    id: "balingen-gartenseite",
+    title: {
+      en: "Garden side, Balingen",
+      de: "Gartenseite, Balingen",
+      pl: "Strona ogrodowa, Balingen",
+    },
+    location: "Balingen",
+    year: 2026,
+    categories: ["windows", "patio-doors"],
+    summary: {
+      en: "The garden side of a house as one package: anthracite windows on the ground floor and along the upper storey, and the white door onto the terrace. Fitted in January 2026.",
+      de: "Die Gartenseite eines Wohnhauses als ein Paket: Fenster in Anthrazit im Erdgeschoss und im Obergeschoss, dazu die weiße Tür auf die Terrasse. Montiert im Januar 2026.",
+      pl: "Ogrodowa strona domu w jednym pakiecie: antracytowe okna na parterze i na piętrze oraz białe drzwi na taras. Montaż w styczniu 2026.",
+    },
+    images: [
+      {
+        src: "/images/projects/balingen-gartenseite-1.jpg",
+        alt: {
+          en: "Garden facade with anthracite windows, a white terrace door and an awning over the terrace",
+          de: "Gartenfassade mit Anthrazit-Fenstern, weißer Terrassentür und Markise über der Terrasse",
+          pl: "Elewacja ogrodowa z antracytowymi oknami, białymi drzwiami tarasowymi i markizą nad tarasem",
+        },
+      },
+    ],
+    products: [],
+  },
+  {
+    id: "balingen-terrassenfenster",
+    title: {
+      en: "Terrace window, Balingen",
+      de: "Terrassenfenster, Balingen",
+      pl: "Okno tarasowe, Balingen",
+    },
+    location: "Balingen",
+    year: 2026,
+    categories: ["windows"],
+    summary: {
+      en: "A window in anthracite onto the covered seating area, with a granite sill outside, fitted in January 2026. The awning and the roof stayed; only the window is new.",
+      de: "Ein Fenster in Anthrazit zum überdachten Sitzplatz, außen mit Granit-Fensterbank, montiert im Januar 2026. Markise und Überdachung blieben, neu ist nur das Fenster.",
+      pl: "Okno w antracycie na zadaszone miejsce wypoczynkowe, na zewnątrz z granitowym parapetem, montaż w styczniu 2026. Markiza i zadaszenie zostały — nowe jest tylko okno.",
+    },
+    images: [
+      {
+        src: "/images/projects/balingen-terrassenfenster-1.jpg",
+        alt: {
+          en: "Anthracite window with a granite sill under a striped awning",
+          de: "Anthrazitfarbenes Fenster mit Granit-Fensterbank unter einer gestreiften Markise",
+          pl: "Antracytowe okno z granitowym parapetem pod pasiastą markizą",
+        },
+      },
+    ],
+    products: [],
+  },
+  {
+    id: "balingen-wohnraumfenster",
+    title: {
+      en: "Living-room window, Balingen",
+      de: "Wohnraumfenster, Balingen",
+      pl: "Okno salonu, Balingen",
+    },
+    location: "Balingen",
+    year: 2026,
+    categories: ["windows"],
+    summary: {
+      en: "A large fixed light onto the covered seating area, fitted in January 2026 while the room was still being worked on. The photo shows the sealing tape and the open reveal — what an installation looks like before the plaster and the sill.",
+      de: "Ein großes Festelement zum überdachten Sitzplatz, montiert im Januar 2026, während der Raum noch im Ausbau war. Auf dem Bild sind das Dichtband und die offene Laibung zu sehen — so sieht die Montage aus, bevor Putz und Fensterbank kommen.",
+      pl: "Duże okno stałe na zadaszone miejsce wypoczynkowe, montaż w styczniu 2026, gdy pomieszczenie było jeszcze w budowie. Na zdjęciu widać taśmę uszczelniającą i otwartą wnękę — tak wygląda montaż przed tynkiem i parapetem.",
+    },
+    images: [
+      {
+        src: "/images/projects/balingen-wohnraumfenster-1.jpg",
+        alt: {
+          en: "Large white fixed window in an unfinished room, with the covered seating area behind it",
+          de: "Großes weißes Festelement im noch unfertigen Raum, dahinter der überdachte Sitzplatz",
+          pl: "Duże białe okno stałe w niewykończonym pomieszczeniu, za nim zadaszone miejsce wypoczynkowe",
+        },
+      },
+    ],
+    products: [],
+  },
+  {
+    id: "albstadt-haustuer",
+    title: {
+      en: "Entrance door, Albstadt",
+      de: "Haustür, Albstadt",
+      pl: "Drzwi wejściowe, Albstadt",
+    },
+    location: "Albstadt",
+    year: 2026,
+    categories: ["entrance-doors"],
+    summary: {
+      en: "A white entrance door with a fan light and satin glazed panels, photographed from the hallway so the hinges and the handle are visible. Fitted in January 2026.",
+      de: "Eine weiße Haustür mit Fächer-Oberlicht und satinierten Feldern, vom Flur aus aufgenommen — Bänder und Drücker sind zu sehen. Montiert im Januar 2026.",
+      pl: "Białe drzwi wejściowe z wachlarzowym naświetlem i satynowymi polami, sfotografowane od strony przedpokoju — widać zawiasy i klamkę. Montaż w styczniu 2026.",
+    },
+    images: [
+      {
+        src: "/images/projects/albstadt-haustuer-1.jpg",
+        alt: {
+          en: "White entrance door with a fan light, seen from inside the hallway",
+          de: "Weiße Haustür mit Fächer-Oberlicht, vom Flur aus gesehen",
+          pl: "Białe drzwi wejściowe z wachlarzowym naświetlem, widziane z przedpokoju",
+        },
+      },
+    ],
+    products: [],
+  },
+  {
+    id: "neuffen-haustuer",
+    title: {
+      en: "Entrance door, Neuffen",
+      de: "Haustür, Neuffen",
+      pl: "Drzwi wejściowe, Neuffen",
+    },
+    location: "Neuffen",
+    year: 2026,
+    categories: ["entrance-doors"],
+    summary: {
+      en: "An anthracite entrance door with two side lights and a transom light, fitted in February 2026. The leaf carries satin panels and stainless inlays, and the left side light a cat flap — the house's requirement, not the catalogue's.",
+      de: "Eine Haustür in Anthrazit mit zwei Seitenteilen und Oberlicht, montiert im Februar 2026. Das Türblatt mit satinierten Feldern und Edelstahl-Applikationen, im linken Seitenteil eine Katzenklappe — der Wunsch des Hauses, nicht des Katalogs.",
+      pl: "Antracytowe drzwi wejściowe z dwoma doświetlami bocznymi i naświetlem, montaż w lutym 2026. Skrzydło z satynowymi polami i aplikacjami ze stali nierdzewnej, w lewym doświetlu drzwiczki dla kota — wymóg domu, nie katalogu.",
+    },
+    images: [
+      {
+        src: "/images/projects/neuffen-haustuer-1.jpg",
+        alt: {
+          en: "Anthracite entrance door with two side lights, a transom light and a cat flap",
+          de: "Anthrazitfarbene Haustür mit zwei Seitenteilen, Oberlicht und Katzenklappe",
+          pl: "Antracytowe drzwi wejściowe z dwoma doświetlami, naświetlem i drzwiczkami dla kota",
+        },
+      },
+    ],
+    products: [],
+    featured: true,
+  },
+  {
+    id: "hechingen-haustuer",
+    title: {
+      en: "Entrance door, Hechingen",
+      de: "Haustür, Hechingen",
+      pl: "Drzwi wejściowe, Hechingen",
+    },
     location: "Hechingen",
     year: 2025,
-    categories: ["windows", "roller-shutters", "insect-screens"],
+    categories: ["entrance-doors"],
     summary: {
-      en: "Full window replacement on a 1980s house whose frames no longer closed against the weather. Fourteen openings in PVC with triple glazing, front-mounted shutter boxes reusing the existing reveals, and pleated insect screens on the two garden doors.",
-      de: "Kompletter Fenstertausch an einem Haus aus den 1980ern, dessen Rahmen nicht mehr dicht schlossen. Vierzehn Öffnungen in Kunststoff mit Dreifachverglasung, Vorbaurollladenkästen in den vorhandenen Laibungen und Insektenschutz-Plissees an den beiden Gartentüren.",
-      pl: "Pełna wymiana okien w domu z lat 80., którego ramy nie domykały się już na pogodę. Czternaście otworów w PVC z potrójną szybą, skrzynki rolet elewacyjnych w istniejących wnękach i plisowane siatki na dwojgu drzwi ogrodowych.",
+      en: "An anthracite entrance door with a stainless pull handle and a glazed strip, plus a narrow side light, set in a porch clad in split stone. Fitted in September 2025.",
+      de: "Eine Haustür in Anthrazit mit Edelstahl-Stoßgriff und Lichtausschnitt, dazu ein schmales Seitenteil, im Windfang aus Bruchsteinriemchen. Montiert im September 2025.",
+      pl: "Antracytowe drzwi wejściowe ze stalowym pochwytem i przeszkloną listwą oraz wąskim doświetlem, we wnęce wyłożonej łupanym kamieniem. Montaż we wrześniu 2025.",
     },
     images: [
       {
-        src: "/images/projects/single-family-hechingen-1.jpg",
-        alt: { en: "Front elevation of the house after the window replacement", de: "Straßenansicht des Hauses nach dem Fenstertausch", pl: "Front domu po wymianie okien" },
+        src: "/images/projects/hechingen-haustuer-1.jpg",
+        alt: {
+          en: "Anthracite entrance door with a stainless pull handle in a stone-clad porch",
+          de: "Anthrazitfarbene Haustür mit Edelstahl-Stoßgriff im steinverkleideten Windfang",
+          pl: "Antracytowe drzwi wejściowe ze stalowym pochwytem we wnęce obłożonej kamieniem",
+        },
       },
-      {
-        src: "/images/projects/single-family-hechingen-2.jpg",
-        alt: { en: "Living room window with the roller shutter half lowered", de: "Wohnzimmerfenster mit halb heruntergelassenem Rollladen", pl: "Okno salonu z do połowy opuszczoną roletą" },
-      },
-      {
-        src: "/images/projects/single-family-hechingen-3.jpg",
-        alt: { en: "Garden door with a pleated insect screen fitted", de: "Gartentür mit montiertem Insektenschutz-Plissee", pl: "Drzwi ogrodowe z zamontowaną siatką plisowaną" },
-      }],
-    /** Modelos instalados, para enlazar a sus fichas desde el detalle. */
-    products: [
-      "roller-shutter-front-mounted"],
-    // La mosquitera de la foto sale del catálogo: se enlaza a su
-    // modelo, no a una ficha que ya no existe.
-    models: [{ catalogue: "rollladen-drutex", id: "insektenschutz-plisee" }],
-    featured: true,
+    ],
+    products: [],
   },
   {
-    id: "apartment-block-balingen",
-    title: { en: "Apartment block, Balingen", de: "Mehrfamilienhaus, Balingen", pl: "Blok mieszkalny, Balingen" },
+    id: "balingen-haustuer-fenster",
+    title: {
+      en: "Entrance door and windows, Balingen",
+      de: "Haustür und Fenster, Balingen",
+      pl: "Drzwi wejściowe i okna, Balingen",
+    },
     location: "Balingen",
     year: 2025,
-    categories: ["windows", "entrance-doors"],
+    categories: ["entrance-doors", "windows"],
     summary: {
-      en: "Eight flats over four floors, fitted in two phases so the building stayed occupied. Aluminium windows on the street side for the acoustic rating, PVC to the courtyard, and a single insulated entrance door with a controlled-access strike.",
-      de: "Acht Wohnungen auf vier Etagen, montiert in zwei Abschnitten, damit das Haus bewohnt blieb. Aluminiumfenster zur Straße wegen des Schallschutzes, Kunststoff zum Hof, und eine gedämmte Hauseingangstür mit Türöffner mit Zutrittskontrolle.",
-      pl: "Osiem mieszkań na czterech piętrach, montaż w dwóch etapach, żeby budynek pozostał zamieszkany. Okna aluminiowe od ulicy ze względu na akustykę, PVC od podwórza i jedna ocieplona brama wejściowa z elektrozaczepem z kontrolą dostępu.",
+      en: "Door and windows as one package, delivered and fitted in October 2025: an anthracite entrance door with a stainless pull handle and a full-height side light, the stairwell window above it with satin panels, and the windows of the facade in the same colour.",
+      de: "Tür und Fenster als ein Paket, geliefert und montiert im Oktober 2025: eine Haustür in Anthrazit mit Edelstahl-Stoßgriff und raumhohem Seitenteil, darüber das Treppenhausfenster mit satinierten Feldern, und die Fenster der Fassade im selben Ton.",
+      pl: "Drzwi i okna w jednym pakiecie, dostarczone i zamontowane w październiku 2025: antracytowe drzwi wejściowe ze stalowym pochwytem i doświetlem na całą wysokość, nad nimi okno klatki schodowej z satynowymi polami, a na elewacji okna w tym samym kolorze.",
     },
     images: [
       {
-        src: "/images/projects/apartment-block-balingen-1.jpg",
-        alt: { en: "Street facade of the apartment block with new aluminium windows", de: "Straßenfassade des Mehrfamilienhauses mit neuen Aluminiumfenstern", pl: "Elewacja bloku od ulicy z nowymi oknami aluminiowymi" },
+        src: "/images/projects/balingen-haustuer-fenster-1.jpg",
+        alt: {
+          en: "House front with the anthracite entrance door, its side light and the stairwell window above",
+          de: "Hausfront mit anthrazitfarbener Haustür, Seitenteil und darüberliegendem Treppenhausfenster",
+          pl: "Front domu z antracytowymi drzwiami, doświetlem i oknem klatki schodowej nad nimi",
+        },
       },
       {
-        src: "/images/projects/apartment-block-balingen-2.jpg",
-        alt: { en: "The new insulated entrance door of the apartment block", de: "Die neue gedämmte Hauseingangstür des Mehrfamilienhauses", pl: "Nowa ocieplona brama wejściowa bloku" },
+        src: "/images/projects/balingen-haustuer-fenster-2.jpg",
+        alt: {
+          en: "Close view of the stairwell window with its satin panels and the timber cladding",
+          de: "Nahaufnahme des Treppenhausfensters mit satinierten Feldern und Holzverkleidung",
+          pl: "Zbliżenie okna klatki schodowej z satynowymi polami i drewnianą okładziną",
+        },
       },
-      {
-        src: "/images/projects/apartment-block-balingen-3.jpg",
-        alt: { en: "Courtyard elevation with the replacement PVC windows", de: "Hofseite mit den neuen Kunststofffenstern", pl: "Elewacja od podwórza z nowymi oknami PVC" },
-      }],
-    /** Modelos instalados, para enlazar a sus fichas desde el detalle. */
+    ],
     products: [],
-    // La puerta salió del catálogo, así que se enlaza a su modelo.
-    models: [{ catalogue: "roka-select-2025", id: "select-20" }],
-    featured: true,
   },
   {
-    id: "farmhouse-burladingen",
-    title: { en: "Converted farmhouse, Burladingen", de: "Umgebautes Bauernhaus, Burladingen", pl: "Przebudowany dom wiejski, Burladingen" },
-    location: "Burladingen",
-    year: 2024,
+    id: "balingen-fenstertausch",
+    title: {
+      en: "Window replacement, Balingen",
+      de: "Fenstertausch, Balingen",
+      pl: "Wymiana okien, Balingen",
+    },
+    location: "Balingen",
+    year: 2025,
     categories: ["windows"],
     summary: {
-      en: "A barn conversion where the openings were irregular and none of them square. Every element was measured individually and made to size in wood-aluminium, with oak on the room side to match the exposed structure.",
-      de: "Ein Scheunenumbau mit unregelmäßigen, nie rechtwinkligen Öffnungen. Jedes Element wurde einzeln aufgemessen und in Holz-Aluminium nach Maß gefertigt, raumseitig in Eiche passend zum sichtbaren Gebälk.",
-      pl: "Adaptacja stodoły z nieregularnymi, nigdy prostokątnymi otworami. Każdy element zmierzono osobno i wykonano na wymiar w drewno-aluminium, od strony pokoju w dębie pasującym do odsłoniętej konstrukcji.",
+      en: "A two-leaf white window with a granite sill, fitted in November 2025 and photographed from inside. The sill is part of the delivery, not something added afterwards.",
+      de: "Ein zweiflügeliges weißes Fenster mit Granit-Fensterbank, montiert im November 2025, von innen aufgenommen. Die Fensterbank gehört zur Lieferung und ist kein Nachtrag.",
+      pl: "Dwuskrzydłowe białe okno z granitowym parapetem, montaż w listopadzie 2025, zdjęcie od środka. Parapet jest częścią dostawy, nie dodatkiem po fakcie.",
     },
     images: [
       {
-        src: "/images/projects/farmhouse-burladingen-1.jpg",
-        alt: { en: "Converted barn with wood-aluminium windows in irregular openings", de: "Umgebaute Scheune mit Holz-Aluminium-Fenstern in unregelmäßigen Öffnungen", pl: "Przebudowana stodoła z oknami drewno-aluminiowymi w nieregularnych otworach" },
+        src: "/images/projects/balingen-fenstertausch-1.jpg",
+        alt: {
+          en: "Two-leaf white window with a granite sill, looking out onto the garden",
+          de: "Zweiflügeliges weißes Fenster mit Granit-Fensterbank, Blick in den Garten",
+          pl: "Dwuskrzydłowe białe okno z granitowym parapetem i widokiem na ogród",
+        },
       },
-      {
-        src: "/images/projects/farmhouse-burladingen-2.jpg",
-        alt: { en: "Oak window reveal seen from inside the converted farmhouse", de: "Eichenlaibung von innen im umgebauten Bauernhaus", pl: "Dębowa wnęka okienna od środka przebudowanego domu" },
-      }],
-    /** Modelos instalados, para enlazar a sus fichas desde el detalle. */
-    products: [],
-    featured: true,
-  },
-  {
-    id: "townhouse-albstadt",
-    title: { en: "Townhouse, Albstadt", de: "Reihenhaus, Albstadt", pl: "Dom szeregowy, Albstadt" },
-    location: "Albstadt",
-    year: 2024,
-    categories: ["entrance-doors", "gates"],
-    summary: {
-      en: "Everything from the pavement to the front step, in one anthracite finish. An RC2 entrance door and a sliding driveway gate with its drive and safety edge, delivered and fitted as one package.",
-      de: "Alles vom Gehweg bis zur Haustürstufe in einem Anthrazitton. Eine RC2-Haustür und ein Einfahrts-Schiebetor mit Antrieb und Sicherheitsleiste, als ein Paket geliefert und montiert.",
-      pl: "Wszystko od chodnika po próg wejścia w jednym antracycie. Drzwi RC2 i przesuwna brama wjazdowa z napędem i listwą bezpieczeństwa, dostarczone i zamontowane jako jeden pakiet.",
-    },
-    images: [
-      {
-        src: "/images/projects/townhouse-albstadt-1.jpg",
-        alt: { en: "Townhouse entrance door in anthracite grey", de: "Haustür des Reihenhauses in Anthrazitgrau", pl: "Drzwi wejściowe szeregowca w antracycie" },
-      },
-      {
-        src: "/images/projects/townhouse-albstadt-2.jpg",
-        alt: { en: "Sliding driveway gate in the same anthracite finish", de: "Einfahrts-Schiebetor im selben Anthrazitton", pl: "Przesuwna brama wjazdowa w tym samym antracycie" },
-      }],
-    /** Modelos instalados, para enlazar a sus fichas desde el detalle. */
-    products: [
-      "sectional-garage-40",
-      "sliding-gate-alu"],
-    models: [{ catalogue: "roka-signature-2025", id: "edles-flussigmetall-01" }],
-  },
-  {
-    id: "office-fitout-tuebingen",
-    title: { en: "Office fit-out, Tübingen", de: "Büroausbau, Tübingen", pl: "Wykończenie biura, Tybinga" },
-    location: "Tübingen",
-    year: 2023,
-    categories: ["windows"],
-    summary: {
-      en: "A first-floor office where the requirement was acoustic rather than thermal. Aluminium windows with asymmetric glazing to the main road, sized opening by opening so the meeting rooms stay quiet.",
-      de: "Ein Büro im ersten Stock, wo es um Schallschutz statt Wärmeschutz ging. Aluminiumfenster mit asymmetrischer Verglasung zur Hauptstraße, Öffnung für Öffnung ausgelegt, damit die Besprechungsräume ruhig bleiben.",
-      pl: "Biuro na pierwszym piętrze, gdzie liczyła się akustyka, nie termika. Okna aluminiowe z asymetrycznym pakietem od strony głównej drogi, dobrane otwór po otworze, żeby w salach spotkań było cicho.",
-    },
-    images: [
-      {
-        src: "/images/projects/office-fitout-tuebingen-1.jpg",
-        alt: { en: "Office windows facing the main road in Tübingen", de: "Bürofenster zur Hauptstraße in Tübingen", pl: "Okna biura od głównej drogi w Tybindze" },
-      },
-      {
-        src: "/images/projects/office-fitout-tuebingen-3.jpg",
-        alt: { en: "Open-plan office area with the new aluminium windows", de: "Großraumbüro mit den neuen Aluminiumfenstern", pl: "Przestrzeń open space z nowymi oknami aluminiowymi" },
-      }],
-    /** Modelos instalados, para enlazar a sus fichas desde el detalle. */
+    ],
     products: [],
   },
-  {
-    id: "bungalow-bisingen",
-    title: { en: "Bungalow, Bisingen", de: "Bungalow, Bisingen", pl: "Dom parterowy, Bisingen" },
-    location: "Bisingen",
-    year: 2023,
-    categories: ["windows", "roller-shutters", "gates"],
-    summary: {
-      en: "New build, so the shutter boxes were specified with the windows and built into the wall rather than added later. Motorised throughout, with the garage door on the same remote control set as the shutters.",
-      de: "Neubau — die Rollladenkästen wurden mit den Fenstern spezifiziert und eingemauert statt nachgerüstet. Durchgehend motorisiert, das Garagentor auf demselben Handsender-Set wie die Rollläden.",
-      pl: "Nowy budynek — skrzynki rolet zaplanowano razem z oknami i wmurowano, zamiast dokładać później. Wszystko z napędem, brama garażowa na tym samym zestawie pilotów co rolety.",
-    },
-    images: [
-      {
-        src: "/images/projects/bungalow-bisingen-1.jpg",
-        alt: { en: "Newly built bungalow with built-in roller shutter boxes", de: "Neu gebauter Bungalow mit eingebauten Rollladenkästen", pl: "Nowo wybudowany dom parterowy z wbudowanymi skrzynkami rolet" },
-      },
-      {
-        src: "/images/projects/bungalow-bisingen-2.jpg",
-        alt: { en: "Sectional garage door on the bungalow", de: "Sektionaltor am Bungalow", pl: "Brama segmentowa w domu parterowym" },
-      },
-      {
-        src: "/images/projects/bungalow-bisingen-3.jpg",
-        alt: { en: "Large window opening onto the terrace of the bungalow", de: "Großes Fenster zur Terrasse des Bungalows", pl: "Duże okno otwierające się na taras parterowego domu" },
-      }],
-    /** Modelos instalados, para enlazar a sus fichas desde el detalle. */
-    products: [
-      "roller-shutter-concealed",
-      "side-hinged-garage"],
-  }];
+];

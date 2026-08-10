@@ -29,7 +29,7 @@ npm run assets:placeholders
 | `[~]`  | `public/images/windows/{product-id}-{1,2,3}.jpg`  | Three photos per product: the element installed, a profile/section detail, and a wider shot. 1600×1200. | Owner |
 | `[x]`  | `public/images/about/dominik.jpg`                 | **The real portrait AND the real bio are in place** (2026-08). The frame crops the photo to 4:5 with the face centred — checked in a real browser. The bio is the owner's own text, translated to English for now; **the German original is stored verbatim in `de.ts`** (`about.ownerBody1/2`, `about.ownerRole`) and goes out literally when the site switches to German. | —     |
 | `[~]`  | `public/images/catalogues/{id}-cover.jpg`         | Front cover of each catalogue — it is also the card the visitor clicks in the range. ROKA's two PDFs have real covers, rendered from page 1. The Despiro and panel PDFs are extracts with no cover, so theirs are composed by `node scripts/build-collection-covers.mjs` from two of their own models. If the supplier sends a complete PDF, render page 1 and drop the composed one. | You   |
-| `[~]`  | `public/images/projects/{id}-{n}.jpg`             | Minimum 3 photos per completed project.                                        | Owner |
+| `[~]`  | `public/images/projects/{id}-{n}.jpg`             | **16 real jobs are online** with the owner's photos (2026-08). Most have a single photo, which is what he had; a second and third of the same job — a wider shot, a detail — make a project page much more convincing. Two photos of the batch (06, 07) still have no job attached. | Owner |
 | `[~]`  | `public/images/colours/render.jpg`                | One frame photographed in a **light, neutral colour** (white or light grey), evenly lit. The colour picker tints it with `mix-blend-multiply`, which keeps the shadows of the profile — but that only works if the source is pale. A dark frame will tint to mud. | Owner |
 | `[x]`  | ~~`public/images/contact/map.jpg`~~               | Gone. The location is a **Google Maps embed behind a click** (`LocationMap`), with a cover the site draws itself. It pins the address on its own, so nothing has to be supplied. See the note below before changing how it loads. | —     |
 
@@ -292,20 +292,29 @@ Needed from the owner, per product he actually sells:
 - Sound insulation (dB), burglary resistance class (RC), max sash size, wind load class.
 - Which catalogue it appears in, and **on which page** — that is what the data sheet button links to.
 
-## 3b. Projects and colours — also example data
+## 3b. Projects are real now; colours are still example data
 
-`src/data/projects.ts` holds **one real project and 6 invented ones**. The real one is Altensteig
-(2026, HST lift-and-slide, the owner's own photo) and it sits first in the file. The other six use
-real towns around Hechingen (Balingen, Burladingen, Albstadt, Bisingen, Tübingen) and plausible
-work, but none of it happened. Projects are what actually builds trust on a site like this, so
-replacing these matters more than the product data — **even three real jobs with real photos beat
-six invented ones.** For each: what the customer asked for, what was fitted, the town, the year.
+`src/data/projects.ts` holds **16 real jobs**, all of them Kamika's, all with the owner's own
+photos. The six invented projects that used to live here were deleted the same day, images and
+all. Towns: Balingen (7), Altensteig (3), Dotternhausen (2), Hechingen, Albstadt, Neuffen and
+Wehingen. Years 2025 and 2026, which is what the year filter now offers.
+
+**The rule when adding one.** The text says what the photo shows and what the owner confirmed —
+town, month, what was fitted — and nothing else. No glazing build-ups, no U-values, no
+manufacturer names unless he states them or they are printed on something. A project page is the
+proof that the work happened; one invented sentence in it discredits the other fifteen.
 
 **The photo batch (2026-08).** The owner uploaded 21 photos of finished work to
 `public/images/projects/subidas/`, renamed `01.jpeg` … `21.jpeg` with a numbered contact sheet at
-`00-INDICE.jpg` so they can be referred to by number in chat. Number 17 became the Altensteig
-project. The rest are waiting for him to say which job each one belongs to; then they move out of
-`subidas/` into `{project-id}-N.jpg` and the invented projects get deleted, oldest first.
+`00-INDICE.jpg` so they could be referred to by number in chat. He then went through them by
+number and 19 of the 21 became the project list above; the copies the site uses live at
+`{project-id}-N.jpg` and the numbered originals stay in `subidas/` as the working index.
+
+**Still without data: 06 and 07.** A dark timber balcony door seen from inside (06) and an older
+entrance with a light timber frame and a brass letter plate (07). They stay in `subidas/` until the
+owner says where they belong. Two possible merges are worth asking him about before anyone guesses:
+09 and 13 share what looks like the same orange awning, and 19 and 20 share the same blue-and-white
+balcony — each pair may be one house photographed twice.
 
 ~~Photo 08 carried a "Contenido generado por IA" watermark~~ — **resolved the same day**: it was
 flagged to the owner, who uploaded the original camera file of the same door, and that is what
