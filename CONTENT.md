@@ -294,11 +294,23 @@ Needed from the owner, per product he actually sells:
 
 ## 3b. Projects and colours — also example data
 
-`src/data/projects.ts` holds **6 invented projects**. The towns are real ones around Hechingen
-(Balingen, Burladingen, Albstadt, Bisingen, Tübingen) and the work described is plausible, but none
-of it happened. Projects are what actually builds trust on a site like this, so replacing these
-matters more than the product data — **even three real jobs with real photos beat six invented
-ones.** For each: what the customer asked for, what was fitted, the town, the year, and 3+ photos.
+`src/data/projects.ts` holds **one real project and 6 invented ones**. The real one is Altensteig
+(2026, HST lift-and-slide, the owner's own photo) and it sits first in the file. The other six use
+real towns around Hechingen (Balingen, Burladingen, Albstadt, Bisingen, Tübingen) and plausible
+work, but none of it happened. Projects are what actually builds trust on a site like this, so
+replacing these matters more than the product data — **even three real jobs with real photos beat
+six invented ones.** For each: what the customer asked for, what was fitted, the town, the year.
+
+**The photo batch (2026-08).** The owner uploaded 21 photos of finished work to
+`public/images/projects/subidas/`, renamed `01.jpeg` … `21.jpeg` with a numbered contact sheet at
+`00-INDICE.jpg` so they can be referred to by number in chat. Number 17 became the Altensteig
+project. The rest are waiting for him to say which job each one belongs to; then they move out of
+`subidas/` into `{project-id}-N.jpg` and the invented projects get deleted, oldest first.
+
+⚠️ **Photo 08 carries a "Contenido generado por IA" watermark** in its bottom-left corner — it is
+AI-generated or AI-edited. It must NOT be published as a completed job: the site's whole claim is
+that the reference photos are real work. Flagged to the owner; do not use it until he replaces it
+with the original camera file.
 
 `src/data/colors.ts` holds **126 finishes**, in seven groups. Two different origins, and the difference
 matters when maintaining it:

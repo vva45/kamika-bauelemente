@@ -1,28 +1,29 @@
 /**
- * ⚠️ DATOS DE EJEMPLO — PENDIENTES DE SUSTITUIR.
+ * La primera entrada es REAL. Las seis siguientes, NO.
  *
- * Seis proyectos plausibles en la zona real de trabajo (Hechingen y
- * alrededores, Zollernalbkreis). NO son obras reales de Kamika: hay que
- * cambiarlos por trabajos hechos de verdad, con sus fotos. Ver CONTENT.md.
+ * Altensteig es obra de Kamika, con la foto del dueño. Las otras seis
+ * son ejemplos plausibles en la zona real de trabajo (Hechingen y
+ * alrededores, Zollernalbkreis) y hay que ir cambiándolas por trabajos
+ * hechos de verdad — las fotos ya están en el repositorio, esperando
+ * que el dueño diga de qué obra es cada una. Ver CONTENT.md.
  *
  * Los proyectos son lo que da confianza en una web de este tipo, así que
- * en cuanto haya obras reales conviene sustituirlos, aunque sean tres.
+ * en cuanto haya tres o cuatro reales, los inventados sobran.
  */
 import type { Project } from "./types";
 
 export const PROJECTS: Project[] = [
-  /* ═══ REAL — EN COLA, pendiente solo del archivo de foto ═══════
+  /* ═══ PRIMERA OBRA REAL ════════════════════════════════════════
    *
-   * Primera obra real (el dueño la mandó por chat, 2026-08). El chat
-   * no entrega el archivo original, así que la entrada espera aquí
-   * COMENTADA hasta que la foto suba a:
+   * Neubau en Altensteig, febrero de 2026. El dueño la mandó primero
+   * por chat y después subió la foto al repositorio (es la 17 del lote
+   * de veintiuna). Confirmado por él: es un sistema HST (Hebe-Schiebe)
+   * y en esta casa solo se montó esta puerta — una foto, una entrada,
+   * sin inventar el resto.
    *
-   *   public/images/projects/new-build-altensteig-1.jpg
-   *
-   * En cuanto exista, descomentar y borrar los inventados sobrantes.
-   * El dueño confirmó (2026-08) que es un sistema HST (Hebe-Schiebe) y
-   * que en esta obra solo se montó esta puerta: una foto, una entrada.
-   *
+   * Las que siguen son de ejemplo y se van cayendo a medida que
+   * lleguen las descripciones del resto del lote.
+   */
   {
     id: "new-build-altensteig",
     title: {
@@ -51,7 +52,6 @@ export const PROJECTS: Project[] = [
     products: [],
     featured: true,
   },
-  */
 
   {
     id: "single-family-hechingen",
