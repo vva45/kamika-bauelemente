@@ -7,7 +7,7 @@
 
 export const COMPANY = {
   /** Nombre legal, el que va en el Impressum. */
-  legalName: "Dominik Kamienski – Einzelunternehmen",
+  legalName: "Dominik Kamieński – Einzelunternehmen",
   /** Nombre comercial corto (el del logo). */
   tradeName: "Kamika",
   /** Nombre comercial completo. */
@@ -15,7 +15,7 @@ export const COMPANY = {
   /** Bajada del logo, en versalitas espaciadas. Nunca se traduce. */
   wordmarkSuffix: "Bauelemente",
   /** Titular / Inhaber. */
-  owner: "Dominik Kamienski",
+  owner: "Dominik Kamieński",
 
   street: "Thomasstraße 11",
   postalCode: "72379",

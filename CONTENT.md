@@ -4,7 +4,7 @@ Everything the site needs that I cannot invent. Kept up to date at the end of ev
 
 **Who provides it**
 
-- **Owner** — Dominik Kamienski. Facts about the company, the real catalogues, the real photos.
+- **Owner** — Dominik Kamieński. Facts about the company, the real catalogues, the real photos.
 - **You** — Vlad. Decisions, review, and anything you can supply from your own material.
 
 Status legend: `[ ]` missing · `[~]` placeholder in place, needs replacing.
@@ -27,7 +27,7 @@ npm run assets:placeholders
 | `[~]`  | `public/images/home/hero.jpg`                    | One strong installation photo — a finished window or door in a real house. Landscape, 2400×1500 or larger. This is the first thing a visitor sees. | Owner |
 | `[x]`  | `public/images/categories/{slug}-hero.jpg`        | **Done — all eight are the owner's own photographs**, 1536×1024 (3:2), which is exactly what the frame shows, so none of them is cropped. `build-category-heroes.mjs` no longer generates any of them: every slug is in `OWNER_PHOTOS` and the script refuses to overwrite a real photograph. Replacing one means keeping 3:2 and remembering the Kamika wordmark sits in the top-left corner — the first thing any crop eats. | —     |
 | `[~]`  | `public/images/windows/{product-id}-{1,2,3}.jpg`  | Three photos per product: the element installed, a profile/section detail, and a wider shot. 1600×1200. | Owner |
-| `[x]`  | `public/images/about/dominik.jpg`                 | **The real portrait is in place** (2026-08, 1600×1241). The frame crops it to 4:5 with the face centred — checked in a real browser. The bio text next to it is still a draft for the owner to replace. | —     |
+| `[x]`  | `public/images/about/dominik.jpg`                 | **The real portrait AND the real bio are in place** (2026-08). The frame crops the photo to 4:5 with the face centred — checked in a real browser. The bio is the owner's own text, translated to English for now; **the German original is stored verbatim in `de.ts`** (`about.ownerBody1/2`, `about.ownerRole`) and goes out literally when the site switches to German. | —     |
 | `[~]`  | `public/images/catalogues/{id}-cover.jpg`         | Front cover of each catalogue — it is also the card the visitor clicks in the range. ROKA's two PDFs have real covers, rendered from page 1. The Despiro and panel PDFs are extracts with no cover, so theirs are composed by `node scripts/build-collection-covers.mjs` from two of their own models. If the supplier sends a complete PDF, render page 1 and drop the composed one. | You   |
 | `[~]`  | `public/images/projects/{id}-{n}.jpg`             | Minimum 3 photos per completed project.                                        | Owner |
 | `[~]`  | `public/images/colours/render.jpg`                | One frame photographed in a **light, neutral colour** (white or light grey), evenly lit. The colour picker tints it with `mix-blend-multiply`, which keeps the shadows of the profile — but that only works if the source is pale. A dark frame will tint to mud. | Owner |
@@ -423,7 +423,9 @@ Needed to complete them:
   `null`, so the block is simply not published — better than publishing a placeholder.
 - **Handwerksrolle / chamber of trade** and the professional title, if the trade is a regulated
   one. Same mechanism: `COMPANY.chamber`.
-- Confirmation that `Dominik Kamienski – Einzelunternehmen` is the exact legal name to publish.
+- Confirmation that `Dominik Kamieński – Einzelunternehmen` is the exact legal name to publish.
+  The spelling with the Polish **ń** is the owner's own (2026-08) and is used everywhere on the
+  site — imprint, footer, JSON-LD, About.
 - **A decision on section 6 of the privacy policy** ("Versand der Formularnachrichten"). It names
   Resend as the processor that delivers form messages. That is only true once `RESEND_API_KEY` is
   set in Vercel. If the form ends up delivering only through the visitor's own mail client, that

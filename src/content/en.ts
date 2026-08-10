@@ -210,16 +210,20 @@ export const en = {
   "about.factRangesValue": "{count} product ranges, from windows to hardware",
   "about.factOwnerLabel": "Run by",
   "about.ownerEyebrow": "About me",
-  "about.ownerRole": "Inhaber",
+  "about.ownerRole": "Managing director",
+  // Texto REAL del dueño (2026-08), traducido del alemán. El original
+  // alemán está guardado TAL CUAL en de.ts, para publicarlo literal
+  // cuando el sitio pase a alemán. Si se retoca la traducción, el
+  // alemán no se toca: es su texto, no el nuestro.
   "about.ownerBody1":
-    "I have been fitting windows and doors in this area for years, first for other companies and now under my own name. I still do the measuring and the installation myself, which is why the person who quotes the job is the person who turns up to do it.",
+    "Behind Kamika stand personal service, experience in the trade and direct cooperation with proven manufacturers. Every project is looked after individually — from the consultation and the measurement on site, through the choice of the right products, to professional installation and final hand-over.",
   "about.ownerBody2":
-    "If something needs adjusting afterwards, you call me directly — not a service line.",
+    "As the owner, I personally stand for the quality of our solutions and for the smooth running of every project.",
   "about.factoryAlt":
     "Aerial view of the production plant where our windows and doors are manufactured",
   "about.factoryCaption":
     "Where the elements are made — our supplier's production plant. Measured, ordered and fitted from Hechingen.",
-  "about.ownerPortraitAlt": "Portrait of Dominik Kamienski, owner of Kamika Bauelemente",
+  "about.ownerPortraitAlt": "Portrait of Dominik Kamieński, owner of Kamika Bauelemente",
 
   // ── Colores y acabados ───────────────────────────────────────
   "colours.eyebrow": "Colours and finishes",

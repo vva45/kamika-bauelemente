@@ -13,7 +13,7 @@ por contenido está en `CONTENT.md`; esto es el resumen de qué hay y por qué.
 
 ## Qué es el sitio
 
-Catálogo informativo de Kamika Bauelemente (Dominik Kamienski, Hechingen): ventanas,
+Catálogo informativo de Kamika Bauelemente (Dominik Kamieński, Hechingen): ventanas,
 puertas y elementos de construcción. Sin tienda, sin precios, sin CMS ni base de
 datos. Next.js 16 (App Router, Turbopack), TypeScript estricto, Tailwind 4,
 framer-motion, todo el contenido en ficheros TS tipados. Inglés hoy, alemán

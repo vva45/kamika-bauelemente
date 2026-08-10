@@ -190,9 +190,17 @@ export const de: Record<ContentKey, string> = {
   "about.factRangesValue": "", // TODO: DE
   "about.factOwnerLabel": "", // TODO: DE
   "about.ownerEyebrow": "", // TODO: DE
-  "about.ownerRole": "", // TODO: DE
-  "about.ownerBody1": "", // TODO: DE
-  "about.ownerBody2": "", // TODO: DE
+  "about.ownerRole": "Geschäftsführer",
+
+  // Texto REAL del dueño (2026-08), traducido del alemán. El original
+
+  // alemán está guardado TAL CUAL en de.ts, para publicarlo literal
+
+  // cuando el sitio pase a alemán. Si se retoca la traducción, el
+
+  // alemán no se toca: es su texto, no el nuestro.
+  "about.ownerBody1": "Hinter Kamika stehen eine persönliche Betreuung, Erfahrung in der Branche sowie die direkte Zusammenarbeit mit bewährten Herstellern. Jedes Projekt wird individuell betreut – von der Beratung und dem Aufmaß über die Auswahl der passenden Produkte bis hin zur fachgerechten Montage und Abnahme.",
+  "about.ownerBody2": "Als Inhaber stehe ich persönlich für die Qualität unserer Lösungen und einen reibungslosen Ablauf jedes Projekts.",
   "about.factoryAlt": "", // TODO: DE
   "about.factoryCaption": "", // TODO: DE
   "about.ownerPortraitAlt": "", // TODO: DE

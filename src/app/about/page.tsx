@@ -140,10 +140,9 @@ export default function AboutPage() {
               {t("about.ownerRole")}
             </p>
 
-            {/* TODO: texto real del dueño.
-                Los dos párrafos de abajo son un borrador corto y
-                plausible, NO su biografía: hay que pedírsela y
-                sustituirlos. Está listado en CONTENT.md. */}
+            {/* Texto REAL del dueño (2026-08), traducido al inglés.
+                El original alemán está en de.ts, tal cual lo mandó,
+                para publicarlo literal en la versión alemana. */}
             <div className="mt-6 grid gap-4 max-w-xl text-pretty text-kamika-ink/75">
               <p>{t("about.ownerBody1")}</p>
               <p>{t("about.ownerBody2")}</p>

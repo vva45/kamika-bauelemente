@@ -1,6 +1,6 @@
 # Kamika Bauelemente
 
-Informative catalogue website for **Kamika Bauelemente** (Dominik Kamienski, Hechingen): windows,
+Informative catalogue website for **Kamika Bauelemente** (Dominik Kamieński, Hechingen): windows,
 doors, roller shutters, insect screens, gates, fences and hardware.
 
 It is not a shop. No prices, no basket, no configurator — the visitor sees what is offered, browses
