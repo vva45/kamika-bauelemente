@@ -48,9 +48,15 @@ export async function generateMetadata({
 
   const lead = model.specs[0];
 
+  // La descripción nombra el modelo y su colección ANTES del dato: en
+  // 141 fichas la primera spec es solo "Material: PVC" y eso, a secas,
+  // era toda la descripción que veía el buscador.
+  const intro = `${model.name}, ${pick(catalogue.title)}.`;
+  const leadText = lead && lead.label ? ` ${lead.label}: ${lead.value}.` : "";
+
   return pageMetadata({
     title: `${model.name} — ${collectionName(catalogue)}`,
-    description: lead ? `${lead.label}: ${lead.value}.` : t("catalogue.modelsIntro"),
+    description: `${intro}${leadText}`,
     path: routes.catalogueModel(model.catalogue, model.id),
     image: { url: model.image, alt: model.name },
   });

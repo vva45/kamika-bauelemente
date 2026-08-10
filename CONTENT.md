@@ -178,6 +178,13 @@ no brand, unlike the door collections.
 line per catalogue in `src/data/catalogues.ts` plus re-running the cover script. Ask him — this is
 a commercial call, not a technical one.
 
+**In-text mentions leak too (caught 2026-08).** A deep audit found "Eko-Okna" still printed in the
+running text of two published PDFs — a rail caption on sheet 26 and a "full range available on the
+website of…" sentence on sheet 29 of the facade-blind catalogue, and one "Die Modelle von
+Eko-Okna…" on sheet 42 of the shutter catalogue. Logo removal alone does not white-label a PDF:
+grep the TEXT of every page for the intermediary's name before publishing (`page.get_text()`
+over the whole document). Those three were redacted in place, dangling words ("von") included.
+
 ### The three Drutex catalogues — same rule, harder to apply
 
 D-ART LINE, Außentüren and the roller-shutter/Raffstoren/insect-screen catalogue come from Drutex,

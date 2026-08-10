@@ -238,7 +238,10 @@ export const PRIVACY_BLOCKS: LegalBlock[] = [
     heading: "9. Google Maps (Zwei-Klick-Lösung)",
     paragraphs: [
       "Auf der Kontaktseite und in den Kontaktbereichen dieser Website können Sie eine Karte des Dienstes Google Maps anzeigen lassen. Anbieter ist Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.",
-      "Die Karte ist standardmäßig NICHT eingebunden. Zu sehen ist zunächst nur eine von uns selbst gestaltete Vorschaugrafik mit der Schaltfläche „Show map“. Erst wenn Sie diese Schaltfläche anklicken, wird die Karte nachgeladen und eine Verbindung zu Servern von Google hergestellt.",
+      // La etiqueta citada tiene que ser la que el visitante alemán VE.
+      // Decía „Show map" de la época monolingüe; el botón dice „Karte
+      // anzeigen" desde que la web es multilingüe.
+      "Die Karte ist standardmäßig NICHT eingebunden. Zu sehen ist zunächst nur eine von uns selbst gestaltete Vorschaugrafik mit der Schaltfläche „Karte anzeigen“ (je nach Sprachversion „Show map“ bzw. „Pokaż mapę“). Erst wenn Sie diese Schaltfläche anklicken, wird die Karte nachgeladen und eine Verbindung zu Servern von Google hergestellt.",
       "Ab diesem Zeitpunkt wird Ihre IP-Adresse an Google übermittelt; Google kann Cookies setzen und weitere Daten verarbeiten. Rechtsgrundlage ist Ihre durch den Klick erteilte Einwilligung (Art. 6 Abs. 1 lit. a DSGVO sowie § 25 Abs. 1 TDDDG). Sie können die Einwilligung jederzeit widerrufen, indem Sie die Seite neu laden und die Karte nicht erneut anfordern; die Einwilligung wird nicht gespeichert.",
       "Eine Datenübermittlung in die USA kann nicht ausgeschlossen werden; Google ist unter dem EU-US Data Privacy Framework zertifiziert.",
       "Weitere Informationen finden Sie in der Datenschutzerklärung von Google: https://policies.google.com/privacy",
