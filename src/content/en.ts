@@ -239,6 +239,7 @@ export const en = {
   "colours.groupWoodStain": "Wood stain",
   "colours.groupLamella": "Shutter slats",
   "colours.groupSalFoil": "Salamander foils",
+  "colours.groupPvcFoil": "PVC decor foils",
   "colours.groupSpecial": "Special",
   "colours.availableOn": "Available on",
   "colours.noMatch": "No finish matches that combination.",

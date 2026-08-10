@@ -25,6 +25,7 @@ const GROUP_LABEL: Record<ColorFinish["group"], ContentKey> = {
   "wood-stain": "colours.groupWoodStain",
   lamella: "colours.groupLamella",
   "sal-foil": "colours.groupSalFoil",
+  "pvc-foil": "colours.groupPvcFoil",
   special: "colours.groupSpecial",
 };
 

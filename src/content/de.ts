@@ -218,6 +218,7 @@ export const de: Record<ContentKey, string> = {
   "colours.groupWoodStain": "Holzlasur",
   "colours.groupLamella": "Rollladenlamellen",
   "colours.groupSalFoil": "Salamander-Folien",
+  "colours.groupPvcFoil": "PVC-Dekorfolien",
   "colours.groupSpecial": "Sonderfarben",
   "colours.availableOn": "Erhältlich auf",
   "colours.noMatch": "Keine Oberfläche passt zu dieser Kombination.",

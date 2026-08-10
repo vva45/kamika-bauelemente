@@ -138,6 +138,25 @@ file at all, and its hero is a generated line-drawing sheet, not a photograph. W
 manufacturer's PDF arrives it follows the normal route: self-host it, extract the models, write
 nothing from memory.
 
+### The two IGLO catalogues (2026-08)
+
+The owner sent a 96-page PVC window catalogue and a 6-page terrace-systems leaflet, both from the
+same manufacturer as the shutter and door catalogues, with one instruction: *"make sure the Drutex
+name and the Bayern Munich logo are not visible."* `scripts/prepare_iglo.py` does it and must be
+re-run if a newer edition arrives. What it removes: the cover logo and the sponsor crest (the
+covers are spreads, so the whole back cover — address, phone, "Official Partner of FC Bayern" — is
+cropped off), the logo on every inner spread's dark band (replaced by Kamika's mark, same size,
+same place), the loose "D" in the top-right margin, `www.drutex.de` in every footer, the QR codes
+that lead to their configurator, and the last four sheets (cross-selling their other ranges plus a
+company profile photographed over a yard of liveried trucks).
+
+**IGLO stays.** It names the *systems* — IGLO EDGE, IGLO 5, IGLO-HS — not the manufacturer, and
+without it the catalogue could not even be cited. The owner calls it "iglo window" himself.
+
+Still to do from these two: the **15 systems** they document (8 window, 7 terrace/patio) are not
+yet catalogue models on the site, and neither is the ZUBEHÖR section (glazing bars, thresholds,
+fittings, ventilation, handles, glazing beads, Smart Home). The colour chart is done — see below.
+
 ### The two shutter catalogues are white-labelled — a decision to confirm
 
 The roller-shutter and facade-blind catalogues come from the same manufacturer as the window
@@ -328,7 +347,11 @@ That is fine for a category cover, which says "this is what a patio door is", an
 range is now listed in `OWNER_PHOTOS` so the line-drawing script can never overwrite it. The same
 image would NOT be acceptable on the references page.
 
-`src/data/colors.ts` holds **126 finishes**, in seven groups. Two different origins, and the difference
+`src/data/colors.ts` holds **168 finishes**, in eight groups. The newest are the 42 **PVC decor
+foils** off the IGLO terrace leaflet: name and code exactly as printed, hex sampled as the median
+of fifteen pixels of the printed swatch — orientative, which the leaflet says itself. ⚠️ That
+leaflet prints the SAME code (470-9036) for Turner oak walnut, Diamantblau and Stahlblau; it is
+transcribed as printed, but confirm with the supplier before anyone orders by code. Two different origins, and the difference
 matters when maintaining it:
 
 - **RAL, wood decor, anodised, and the two DB greys** — the trade's standard chart. The codes are

@@ -162,6 +162,48 @@ export const CATALOGUES: Catalogue[] = [
     year: 2026,
   },
   {
+    /**
+     * Los dos IGLO llegaron en agosto de 2026 y son del mismo
+     * fabricante que las persianas y las puertas: vende también directo
+     * en Alemania, así que van sin su marca y sin el escudo del club
+     * que patrocina —lo pidió el dueño con estas palabras: "make sure
+     * the Drutex name and the Bayern Munich logo are not visible"—. Lo
+     * hace `scripts/prepare_iglo.py`, que hay que volver a ejecutar si
+     * el proveedor manda una versión nueva.
+     *
+     * IGLO sí se queda: es el nombre de los SISTEMAS, no el del
+     * fabricante, y sin él el catálogo no se puede ni citar.
+     */
+    id: "iglo-fenster",
+    title: {
+      en: "IGLO — PVC windows and terrace systems",
+      de: "IGLO — PVC-Fenster und Terrassensysteme",
+      pl: "IGLO — okna PCV i systemy tarasowe",
+    },
+    collection: { en: "PVC windows", de: "PVC-Fenster", pl: "Okna PCV" },
+    category: "windows",
+    file: "/pdf/catalogues/iglo-fenster-terrassensysteme.pdf",
+    cover: "/images/catalogues/iglo-fenster-cover.jpg",
+    pages: 90,
+    sizeMb: 10.1,
+    year: 2024,
+  },
+  {
+    id: "iglo-terrassen",
+    title: {
+      en: "IGLO terrace systems",
+      de: "IGLO Terrassensysteme",
+      pl: "Systemy tarasowe IGLO",
+    },
+    collection: { en: "Terrace systems", de: "Terrassensysteme", pl: "Systemy tarasowe" },
+    category: "patio-doors",
+    file: "/pdf/catalogues/iglo-terrassensysteme.pdf",
+    cover: "/images/catalogues/iglo-terrassen-cover.jpg",
+    pages: 9,
+    sizeMb: 1.0,
+    year: 2024,
+  },
+  {
     id: "fassadenjalousien",
     title: { en: "Facade blinds — catalogue", de: "Katalog der Fassadenjalousien", pl: "Żaluzje fasadowe — katalog", },
     collection: { en: "Facade blinds", de: "Fassadenjalousien", pl: "Żaluzje fasadowe", },

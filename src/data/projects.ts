@@ -1,7 +1,7 @@
 /**
  * OBRAS REALES DE KAMIKA. Ni una inventada.
  *
- * Las dieciséis entradas salen de las fotos que mandó el dueño (agosto
+ * Las diecisiete entradas salen de las fotos que mandó el dueño (agosto
  * de 2026) más lo que él dijo de cada una: ciudad, mes y qué se montó.
  * Los seis proyectos de ejemplo que había aquí se borraron el mismo día,
  * con sus imágenes.
@@ -11,8 +11,9 @@
  * marcas si no está impreso o dicho — un proyecto es la prueba de que el
  * trabajo existe, y una frase inventada se la carga entera.
  *
- * Quedan dos fotos sin datos, la 06 y la 07 del lote, esperando en
- * `public/images/projects/subidas/`.
+ * Las veintiuna fotos del lote están colocadas: las 06 y 07 llegaron
+ * después (Hechingen), y la 09 se unió a la 13 porque son la misma
+ * casa — lo confirmó el dueño.
  */
 import type { Project } from "./types";
 
@@ -264,9 +265,9 @@ export const PROJECTS: Project[] = [
     year: 2026,
     categories: ["windows", "patio-doors"],
     summary: {
-      en: "The garden side of a house as one package: anthracite windows on the ground floor and along the upper storey, and the white door onto the terrace. Fitted in January 2026.",
-      de: "Die Gartenseite eines Wohnhauses als ein Paket: Fenster in Anthrazit im Erdgeschoss und im Obergeschoss, dazu die weiße Tür auf die Terrasse. Montiert im Januar 2026.",
-      pl: "Ogrodowa strona domu w jednym pakiecie: antracytowe okna na parterze i na piętrze oraz białe drzwi na taras. Montaż w styczniu 2026.",
+      en: "The garden side of a house as one package: anthracite windows on the ground floor and along the upper storey, the white door onto the terrace, and the window under the awning with its granite sill. Fitted in January 2026.",
+      de: "Die Gartenseite eines Wohnhauses als ein Paket: Fenster in Anthrazit im Erdgeschoss und im Obergeschoss, die weiße Tür auf die Terrasse und das Fenster unter der Markise mit seiner Granit-Fensterbank. Montiert im Januar 2026.",
+      pl: "Ogrodowa strona domu w jednym pakiecie: antracytowe okna na parterze i na piętrze, białe drzwi na taras oraz okno pod markizą z granitowym parapetem. Montaż w styczniu 2026.",
     },
     images: [
       {
@@ -277,31 +278,12 @@ export const PROJECTS: Project[] = [
           pl: "Elewacja ogrodowa z antracytowymi oknami, białymi drzwiami tarasowymi i markizą nad tarasem",
         },
       },
-    ],
-    products: [],
-  },
-  {
-    id: "balingen-terrassenfenster",
-    title: {
-      en: "Terrace window, Balingen",
-      de: "Terrassenfenster, Balingen",
-      pl: "Okno tarasowe, Balingen",
-    },
-    location: "Balingen",
-    year: 2026,
-    categories: ["windows"],
-    summary: {
-      en: "A window in anthracite onto the covered seating area, with a granite sill outside, fitted in January 2026. The awning and the roof stayed; only the window is new.",
-      de: "Ein Fenster in Anthrazit zum überdachten Sitzplatz, außen mit Granit-Fensterbank, montiert im Januar 2026. Markise und Überdachung blieben, neu ist nur das Fenster.",
-      pl: "Okno w antracycie na zadaszone miejsce wypoczynkowe, na zewnątrz z granitowym parapetem, montaż w styczniu 2026. Markiza i zadaszenie zostały — nowe jest tylko okno.",
-    },
-    images: [
       {
-        src: "/images/projects/balingen-terrassenfenster-1.jpg",
+        src: "/images/projects/balingen-gartenseite-2.jpg",
         alt: {
-          en: "Anthracite window with a granite sill under a striped awning",
-          de: "Anthrazitfarbenes Fenster mit Granit-Fensterbank unter einer gestreiften Markise",
-          pl: "Antracytowe okno z granitowym parapetem pod pasiastą markizą",
+          en: "The window under the awning, with its granite sill, seen straight on",
+          de: "Das Fenster unter der Markise mit Granit-Fensterbank, frontal aufgenommen",
+          pl: "Okno pod markizą z granitowym parapetem, ujęcie od frontu",
         },
       },
     ],
@@ -411,6 +393,65 @@ export const PROJECTS: Project[] = [
           en: "Anthracite entrance door with a stainless pull handle in a stone-clad porch",
           de: "Anthrazitfarbene Haustür mit Edelstahl-Stoßgriff im steinverkleideten Windfang",
           pl: "Antracytowe drzwi wejściowe ze stalowym pochwytem we wnęce obłożonej kamieniem",
+        },
+      },
+    ],
+    products: [],
+  },
+  {
+    /**
+     * El mes lo puso el dueño a ojo —"pon diciembre, que hay nieve"— y
+     * es suyo el dato, no una invención de la web: no hay nada en la
+     * foto que lo contradiga y él es quien hizo la obra.
+     */
+    id: "hechingen-fenster",
+    title: {
+      en: "Balcony windows, Hechingen",
+      de: "Balkonfenster, Hechingen",
+      pl: "Okna balkonowe, Hechingen",
+    },
+    location: "Hechingen",
+    year: 2025,
+    categories: ["windows"],
+    summary: {
+      en: "A three-part element in dark timber tone onto the balcony, photographed from inside in December 2025 with snow still on the roof opposite. The middle leaf opens, the outer two are fixed.",
+      de: "Ein dreiteiliges Element in dunklem Holzton zum Balkon, im Dezember 2025 von innen aufgenommen, mit Schnee auf dem gegenüberliegenden Dach. Der mittlere Flügel öffnet, die beiden äußeren sind fest.",
+      pl: "Trzyczęściowy element w ciemnym odcieniu drewna na balkon, sfotografowany od środka w grudniu 2025, ze śniegiem na dachu naprzeciwko. Skrzydło środkowe otwierane, dwa boczne stałe.",
+    },
+    images: [
+      {
+        src: "/images/projects/hechingen-fenster-1.jpg",
+        alt: {
+          en: "Three-part window in a dark timber tone onto the balcony, seen from inside",
+          de: "Dreiteiliges Element in dunklem Holzton zum Balkon, von innen gesehen",
+          pl: "Trzyczęściowe okno w ciemnym drewnie na balkon, widziane od środka",
+        },
+      },
+    ],
+    products: [],
+  },
+  {
+    id: "hechingen-hauseingang",
+    title: {
+      en: "House entrance, Hechingen",
+      de: "Hauseingang, Hechingen",
+      pl: "Wejście do domu, Hechingen",
+    },
+    location: "Hechingen",
+    year: 2025,
+    categories: ["entrance-doors"],
+    summary: {
+      en: "An entrance in a light timber tone: the leaf with vertical battens, a fixed side light in textured glass and the letter plate set into it. Fitted in September 2025.",
+      de: "Ein Hauseingang in hellem Holzton: das Türblatt mit senkrechten Leisten, ein festes Seitenteil in Strukturglas und der Briefeinwurf darin. Montiert im September 2025.",
+      pl: "Wejście w jasnym odcieniu drewna: skrzydło z pionowymi listwami, stałe doświetle ze szkła strukturalnego i wrzutnia na listy w nim. Montaż we wrześniu 2025.",
+    },
+    images: [
+      {
+        src: "/images/projects/hechingen-hauseingang-1.jpg",
+        alt: {
+          en: "Open entrance door in light timber with a textured-glass side light and a letter plate",
+          de: "Geöffnete Haustür in hellem Holzton mit Strukturglas-Seitenteil und Briefeinwurf",
+          pl: "Otwarte drzwi wejściowe w jasnym drewnie z doświetlem ze szkła strukturalnego i wrzutnią",
         },
       },
     ],

@@ -1076,4 +1076,59 @@ export const COLORS: ColorFinish[] = [
     group: "special",
     materials: ["aluminium"],
   },
+
+  /**
+   * Folienfarben del catálogo IGLO (hoja de "DEKORFOLIEN
+   * FARBENÜBERSICHT"). Nombre y código, tal y como están impresos; el
+   * hex es la mediana de quince píxeles de la propia muestra impresa,
+   * así que es orientativo — lo dice el propio catálogo: "Die
+   * dargestellten Farben können von der Realität abweichen".
+   *
+   * Ojo con los tres últimos: el folleto imprime el MISMO código
+   * (470-9036) para Turner oak walnut, Diamantblau y Stahlblau. Se
+   * transcribe tal cual porque es lo que dice el papel, pero hay que
+   * confirmarlo con el proveedor antes de pedir por código.
+   */
+  { id: "iglo-betongrau", name: { en: "Betongrau", de: "Betongrau", pl: "Betongrau" }, code: "702305-167", hex: "#6C675F", group: "pvc-foil", materials: ["pvc"] },
+  { id: "iglo-basaltgrau-glatt", name: { en: "Basaltgrau glatt", de: "Basaltgrau glatt", pl: "Basaltgrau glatt" }, code: "701205-097", hex: "#5E5E53", group: "pvc-foil", materials: ["pvc"] },
+  { id: "iglo-crown-platinum", name: { en: "Crown Platinum", de: "Crown Platinum", pl: "Crown Platinum" }, code: "9.1293001-195", hex: "#333134", group: "pvc-foil", materials: ["pvc"] },
+  { id: "iglo-cremeweiss", name: { en: "Cremeweiss", de: "Cremeweiss", pl: "Cremeweiss" }, code: "137905-167", hex: "#F3EBCF", group: "pvc-foil", materials: ["pvc"] },
+  { id: "iglo-quarzgrau", name: { en: "Quarzgrau", de: "Quarzgrau", pl: "Quarzgrau" }, code: "703905-167", hex: "#403F39", group: "pvc-foil", materials: ["pvc"] },
+  { id: "iglo-dunkelrot", name: { en: "Dunkelrot", de: "Dunkelrot", pl: "Dunkelrot" }, code: "308105-167", hex: "#7D030E", group: "pvc-foil", materials: ["pvc"] },
+  { id: "iglo-lichtgrau", name: { en: "Lichtgrau", de: "Lichtgrau", pl: "Lichtgrau" }, code: "725105-167", hex: "#C4C6C5", group: "pvc-foil", materials: ["pvc"] },
+  { id: "iglo-anthrazit-ulti-matt", name: { en: "Anthrazit Ulti-Matt", de: "Anthrazit Ulti-Matt", pl: "Anthrazit Ulti-Matt" }, code: "02.20.71.000001-504700", hex: "#2F3130", group: "pvc-foil", materials: ["pvc"] },
+  { id: "iglo-quarzgrau-glatt", name: { en: "Quarzgrau glatt", de: "Quarzgrau glatt", pl: "Quarzgrau glatt" }, code: "703905-097", hex: "#41403A", group: "pvc-foil", materials: ["pvc"] },
+  { id: "iglo-eiche-natur", name: { en: "Eiche Natur", de: "Eiche Natur", pl: "Eiche Natur" }, code: "3118076-167", hex: "#B48A55", group: "pvc-foil", materials: ["pvc"] },
+  { id: "iglo-oregon", name: { en: "Oregon", de: "Oregon", pl: "Oregon" }, code: "2115008-167", hex: "#C97B18", group: "pvc-foil", materials: ["pvc"] },
+  { id: "iglo-schwarzbraun", name: { en: "Schwarzbraun", de: "Schwarzbraun", pl: "Schwarzbraun" }, code: "851805-167", hex: "#10100C", group: "pvc-foil", materials: ["pvc"] },
+  { id: "iglo-schiefergrau", name: { en: "Schiefergrau", de: "Schiefergrau", pl: "Schiefergrau" }, code: "1.0065002-097", hex: "#424848", group: "pvc-foil", materials: ["pvc"] },
+  { id: "iglo-schiefergrau-glatt", name: { en: "Schiefergrau glatt", de: "Schiefergrau glatt", pl: "Schiefergrau glatt" }, code: "02.11.71.000040-097", hex: "#414747", group: "pvc-foil", materials: ["pvc"] },
+  { id: "iglo-schwarz-ulti-matt", name: { en: "Schwarz Ulti-Matt", de: "Schwarz Ulti-Matt", pl: "Schwarz Ulti-Matt" }, code: "02.20.01.000002-504700", hex: "#060606", group: "pvc-foil", materials: ["pvc"] },
+  { id: "iglo-grau", name: { en: "Grau", de: "Grau", pl: "Grau" }, code: "715505-167", hex: "#94999A", group: "pvc-foil", materials: ["pvc"] },
+  { id: "iglo-anthrazit-glatt", name: { en: "Anthrazit glatt", de: "Anthrazit glatt", pl: "Anthrazit glatt" }, code: "701605-097", hex: "#000000", group: "pvc-foil", materials: ["pvc"] },
+  { id: "iglo-golden-oak", name: { en: "Golden Oak", de: "Golden Oak", pl: "Golden Oak" }, code: "2178001-167", hex: "#92541A", group: "pvc-foil", materials: ["pvc"] },
+  { id: "iglo-pyrit", name: { en: "Pyrit", de: "Pyrit", pl: "Pyrit" }, code: "02.12.17.000001", hex: "#6C6046", group: "pvc-foil", materials: ["pvc"] },
+  { id: "iglo-jet-black-cc", name: { en: "Jet Black CC+", de: "Jet Black CC+", pl: "Jet Black CC+" }, code: "476-6062", hex: "#252727", group: "pvc-foil", materials: ["pvc"] },
+  { id: "iglo-dunkelgruen", name: { en: "Dunkelgrün", de: "Dunkelgrün", pl: "Dunkelgrün" }, code: "612505-167", hex: "#002A08", group: "pvc-foil", materials: ["pvc"] },
+  { id: "iglo-turner-oak", name: { en: "Turner oak", de: "Turner oak", pl: "Turner oak" }, code: "F470-3001", hex: "#CF9F67", group: "pvc-foil", materials: ["pvc"] },
+  { id: "iglo-moosgruen", name: { en: "Moosgrün", de: "Moosgrün", pl: "Moosgrün" }, code: "600505-167", hex: "#133F2A", group: "pvc-foil", materials: ["pvc"] },
+  { id: "iglo-weiss-fx", name: { en: "Weiß FX", de: "Weiß FX", pl: "Weiß FX" }, code: "915205-168", hex: "#FBFBFB", group: "pvc-foil", materials: ["pvc"] },
+  { id: "iglo-anthrazitgrau", name: { en: "Anthrazitgrau", de: "Anthrazitgrau", pl: "Anthrazitgrau" }, code: "701605-167", hex: "#28282B", group: "pvc-foil", materials: ["pvc"] },
+  { id: "iglo-schokobraun", name: { en: "Schokobraun", de: "Schokobraun", pl: "Schokobraun" }, code: "887505-167", hex: "#2F1A12", group: "pvc-foil", materials: ["pvc"] },
+  { id: "iglo-streifen-douglasie", name: { en: "Streifen Douglasie", de: "Streifen Douglasie", pl: "Streifen Douglasie" }, code: "3152009-167", hex: "#7B460F", group: "pvc-foil", materials: ["pvc"] },
+  { id: "iglo-eiche-dunkel", name: { en: "Eiche Dunkel", de: "Eiche Dunkel", pl: "Eiche Dunkel" }, code: "2052089-167", hex: "#2E180B", group: "pvc-foil", materials: ["pvc"] },
+  { id: "iglo-macore", name: { en: "Macore", de: "Macore", pl: "Macore" }, code: "3162002-167", hex: "#4E2510", group: "pvc-foil", materials: ["pvc"] },
+  { id: "iglo-mahagoni", name: { en: "Mahagoni", de: "Mahagoni", pl: "Mahagoni" }, code: "2097013-167", hex: "#281209", group: "pvc-foil", materials: ["pvc"] },
+  { id: "iglo-basaltgrau", name: { en: "Basaltgrau", de: "Basaltgrau", pl: "Basaltgrau" }, code: "70125-097", hex: "#4B5B5A", group: "pvc-foil", materials: ["pvc"] },
+  { id: "iglo-nussbaum", name: { en: "Nussbaum", de: "Nussbaum", pl: "Nussbaum" }, code: "2178007-167", hex: "#432911", group: "pvc-foil", materials: ["pvc"] },
+  { id: "iglo-sheffield-oak-light", name: { en: "Sheffield Oak Light", de: "Sheffield Oak Light", pl: "Sheffield Oak Light" }, code: "F 456-3081", hex: "#C4AE97", group: "pvc-foil", materials: ["pvc"] },
+  { id: "iglo-winchester", name: { en: "Winchester", de: "Winchester", pl: "Winchester" }, code: "49240015-148", hex: "#704920", group: "pvc-foil", materials: ["pvc"] },
+  { id: "iglo-white-sand-ulti-matt", name: { en: "White sand Ulti-Matt", de: "White sand Ulti-Matt", pl: "White sand Ulti-Matt" }, code: "PX 9152", hex: "#FBF7EE", group: "pvc-foil", materials: ["pvc"] },
+  { id: "iglo-aludec-umbra-grey", name: { en: "Aludec umbra grey", de: "Aludec umbra grey", pl: "Aludec umbra grey" }, code: "470-6065", hex: "#473833", group: "pvc-foil", materials: ["pvc"] },
+  { id: "iglo-deep-bronze", name: { en: "Deep bronze", de: "Deep bronze", pl: "Deep bronze" }, code: "F4701029", hex: "#514A38", group: "pvc-foil", materials: ["pvc"] },
+  { id: "iglo-turner-oak-amber", name: { en: "Turner oak amber", de: "Turner oak amber", pl: "Turner oak amber" }, code: "470-9035", hex: "#957C5C", group: "pvc-foil", materials: ["pvc"] },
+  { id: "iglo-turner-oak-toffee", name: { en: "Turner oak toffee", de: "Turner oak toffee", pl: "Turner oak toffee" }, code: "470-3004", hex: "#513F31", group: "pvc-foil", materials: ["pvc"] },
+  { id: "iglo-turner-oak-walnut", name: { en: "Turner oak walnut", de: "Turner oak walnut", pl: "Turner oak walnut" }, code: "470-9036", hex: "#865330", group: "pvc-foil", materials: ["pvc"] },
+  { id: "iglo-diamantblau", name: { en: "Diamantblau", de: "Diamantblau", pl: "Diamantblau" }, code: "470-9036", hex: "#006786", group: "pvc-foil", materials: ["pvc"] },
+  { id: "iglo-stahlblau", name: { en: "Stahlblau", de: "Stahlblau", pl: "Stahlblau" }, code: "470-9036", hex: "#001939", group: "pvc-foil", materials: ["pvc"] },
 ];

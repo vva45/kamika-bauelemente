@@ -218,6 +218,7 @@ export const pl: Record<ContentKey, string> = {
   "colours.groupWoodStain": "Lazury",
   "colours.groupLamella": "Lamele rolet",
   "colours.groupSalFoil": "Okleiny Salamander",
+  "colours.groupPvcFoil": "Okleiny dekoracyjne PCV",
   "colours.groupSpecial": "Specjalne",
   "colours.availableOn": "Dostępne na",
   "colours.noMatch": "Żadne wykończenie nie pasuje do tego zestawienia.",
