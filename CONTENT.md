@@ -153,9 +153,16 @@ company profile photographed over a yard of liveried trucks).
 **IGLO stays.** It names the *systems* — IGLO EDGE, IGLO 5, IGLO-HS — not the manufacturer, and
 without it the catalogue could not even be cited. The owner calls it "iglo window" himself.
 
-Still to do from these two: the **15 systems** they document (8 window, 7 terrace/patio) are not
-yet catalogue models on the site, and neither is the ZUBEHÖR section (glazing bars, thresholds,
-fittings, ventilation, handles, glazing beads, Smart Home). The colour chart is done — see below.
+**All placed now (2026-08).** The 15 systems became manufacturer systems, the same mechanism as
+Salamander: an **IGLO** manufacturer under windows (7 systems, Edge to EXT) and under patio doors
+(7 systems, HS to Edge Slide), each with specs copied from its spread and a datasheet button that
+opens the self-hosted PDF at that exact sheet. The 15th, **Ideal Neo MD, is signed by Aluplast in
+print**, so it hangs under the existing Aluplast manufacturer instead — crediting IGLO with it
+would have been wrong. "IGLO" itself is the system brand and may be shown; the manufacturer's
+company name stays invisible per the owner's instruction. The ZUBEHÖR section became 7 accessory
+catalogue-models (family "Fenster-Zubehör": Sprossen, Balkontürschwellen, Beschläge,
+Renovationsrahmen, Ventilierungen, Griffe, Smart Home), images extracted from the PDF. The FARBEN
+sheet added nothing new — its swatches are bitmap-only; the codes came from the leaflet's chart.
 
 ### The two shutter catalogues are white-labelled — a decision to confirm
 

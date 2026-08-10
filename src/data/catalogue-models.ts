@@ -10075,5 +10075,205 @@ export const CATALOGUE_MODELS: CatalogueModel[] = [
     "page": 46,
     "image": "/images/models/aussenturen/0-mm-schwelle.jpg",
     "specs": []
+  },
+  {
+    "id": "sprossen",
+    "catalogue": "iglo-fenster",
+    "name": "Sprossen",
+    "family": "Fenster-Zubehör",
+    "category": "accessories",
+    "page": 34,
+    "image": "/images/models/iglo-fenster/sprossen.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Aufgesetzte PVC-Sprossen (‚Wiener‘ Sprossen) in den Ansichtsbreiten 27, 45 oder 65 mm, erhältlich in den Farben der Dekorfolien."
+      },
+      {
+        "label": "",
+        "value": "Sprossen im Scheibenzwischenraum aus Aluminium in 8, 18, 26 und 45 mm Ansichtsbreite — u. a. in Weiß, Gold, Silber, Golden Oak, Eiche Dunkel, Mahagoni, Nussbaum, Macore und Winchester."
+      }
+    ],
+    "description": "Kreieren Sie einen eleganten und doch einzigartigen Look Ihrer Fenster. Die vielfältigen Konfigurationsmöglichkeiten in Kombination mit den verfügbaren Farben ermöglichen viele interessante Arrangements. Sprossen können in allen Fenster- und Terrassensystemen verwendet werden."
+  },
+  {
+    "id": "balkontuerschwellen",
+    "catalogue": "iglo-fenster",
+    "name": "Balkontürschwellen",
+    "family": "Fenster-Zubehör",
+    "category": "accessories",
+    "page": 35,
+    "image": "/images/models/iglo-fenster/balkontuerschwellen.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Rahmenschwelle: Standard bei jedem System."
+      },
+      {
+        "label": "",
+        "value": "Combi 20 mm und Combi Plan 0,0 mm als optionale Schwellen für Iglo Energy und Iglo Energy Classic."
+      },
+      {
+        "label": "",
+        "value": "Holzschwelle für Iglo 5, Iglo 5 Classic, Iglo Light und Iglo EXT."
+      },
+      {
+        "label": "",
+        "value": "20-mm-Aluminiumschwelle für Iglo 5, Iglo 5 Classic und Iglo Light."
+      }
+    ],
+    "description": "Die angebotenen Balkontürschwellen zeichnen sich durch höchste Ergonomie bei der Benutzung, Langlebigkeit der Konstruktion und ein hohes Maß an Wärmedämmung aus. Sie sind für jede Klimazone geeignet."
+  },
+  {
+    "id": "beschlaege",
+    "catalogue": "iglo-fenster",
+    "name": "Beschläge",
+    "family": "Fenster-Zubehör",
+    "category": "accessories",
+    "page": 37,
+    "image": "/images/models/iglo-fenster/beschlaege.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "MACO Multi-Power verdeckt liegender Beschlag — unsichtbar bei geschlossenem Fenster, Last bis 150 kg."
+      },
+      {
+        "label": "",
+        "value": "Komfort-Beschlag TBT (Tilt Before Turn): Kippen vor Öffnen, Drehsperre im Griff."
+      },
+      {
+        "label": "",
+        "value": "Oberlichtöffner für schwer zugängliche Oberlichter."
+      },
+      {
+        "label": "",
+        "value": "Reedkontakt: magnetischer Öffnungssensor für Smart Home oder Alarmanlage."
+      },
+      {
+        "label": "",
+        "value": "Stufenkippstellung und Reibungsbremse."
+      },
+      {
+        "label": "",
+        "value": "Scharnierabdeckungen standard in Weiß, Braun, Hellbraun und Silber; optional Schwarz, Gold-Look, Titan, Champagner und Cremeweiss."
+      },
+      {
+        "label": "",
+        "value": "Montagekeile zur Ausrichtung der Rahmen beim Einbau bestellbar."
+      }
+    ],
+    "description": "Die verwendeten Beschläge sind auf Sicherheit und Funktionalität der Fenster und Türen ausgelegt. Verdeckt liegende Beschläge und Einbruchsicherheit der Klasse RC2 sind möglich."
+  },
+  {
+    "id": "renovationsrahmen",
+    "catalogue": "iglo-fenster",
+    "name": "Renovationsrahmen und Vorsatzrahmen",
+    "family": "Fenster-Zubehör",
+    "category": "accessories",
+    "page": 38,
+    "image": "/images/models/iglo-fenster/renovationsrahmen.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Renovationsrahmen in 41, 47 und 65 mm Höhe, je nach System."
+      },
+      {
+        "label": "",
+        "value": "Vorsatzrahmen in 35 mm Höhe."
+      },
+      {
+        "label": "",
+        "value": "Verfügbar für Iglo 5, Iglo 5 Classic, Iglo Light, Iglo EXT, Iglo Energy und Iglo Energy Classic."
+      },
+      {
+        "label": "",
+        "value": "In V-Perfect-Technologie (dünne Schweißnaht) möglich bei Iglo Energy Classic, Iglo 5 Classic, Iglo Light und Iglo EXT."
+      }
+    ],
+    "description": "Der Renovationsrahmen ermöglicht die Montage neuer Fenster, ohne dass die alten Fensterrahmen demontiert werden müssen — eine Lösung für historische Gebäude und überall dort, wo die Fassade geschont werden muss. Erhältlich in den Farben der PVC-Fenster."
+  },
+  {
+    "id": "ventilierungen",
+    "catalogue": "iglo-fenster",
+    "name": "Ventilierungen",
+    "family": "Fenster-Zubehör",
+    "category": "accessories",
+    "page": 39,
+    "image": "/images/models/iglo-fenster/ventilierungen.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Aereco AMO: 6–30 m³/h."
+      },
+      {
+        "label": "",
+        "value": "Ventair Simpress Drucklüftung: 6,2–22 m³/h."
+      },
+      {
+        "label": "",
+        "value": "Aereco EXR und EMM, feuchtigkeitsgesteuert: 7–28 bzw. 5–29 m³/h."
+      },
+      {
+        "label": "",
+        "value": "Renson THM 90 mit Wetterschenkel: 46,5 m³/h."
+      },
+      {
+        "label": "",
+        "value": "Maco Vent, Regel-air und Radaks für kleinere Luftmengen (5,2–6,5 m³/h)."
+      },
+      {
+        "label": "",
+        "value": "Radaks, Regel-air und Maco Ventyl sind nicht für Iglo Premier und Iglo EXT erhältlich."
+      },
+      {
+        "label": "",
+        "value": "Luftmengen gemessen bei 10 Pa — Daten der Lüfterhersteller."
+      }
+    ],
+    "description": "Hochwertige Fensterlüfter sorgen bei geschlossenen Fenstern für gute Belüftung und Frischluftzufuhr: natürlicher Luftaustausch ohne Zugluftgefühl, weniger Feuchte- und Schimmelrisiko, einstellbar je nach Wetter."
+  },
+  {
+    "id": "griffe",
+    "catalogue": "iglo-fenster",
+    "name": "Griffe",
+    "family": "Fenster-Zubehör",
+    "category": "accessories",
+    "page": 41,
+    "image": "/images/models/iglo-fenster/griffe.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Aluminiumgriffe in mehreren Farben."
+      },
+      {
+        "label": "",
+        "value": "Abschließbar oder mit Druckknopf als Option."
+      }
+    ],
+    "description": "Die verwendeten Aluminiumgriffe zeichnen sich durch elegantes Design, verfügbare Farboptionen und ihre ergonomische Form aus. Optional mit Schlüssel oder Druckknopf gegen ungewolltes Öffnen — besonders für Kinderzimmer empfohlen."
+  },
+  {
+    "id": "smart-home",
+    "catalogue": "iglo-fenster",
+    "name": "Smart Home",
+    "family": "Fenster-Zubehör",
+    "category": "accessories",
+    "page": 43,
+    "image": "/images/models/iglo-fenster/smart-home.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "G-U Automatik und Siegenia: Antriebe für Hebe-Schiebe-Türen, Steuerung per Fernbedienung oder App."
+      },
+      {
+        "label": "",
+        "value": "Somfy TaHoma Switch: Fenster, Türen, Rollläden, Raffstores und Tore in Gruppen oder einzeln steuern, inklusive Zeitprogramme."
+      },
+      {
+        "label": "",
+        "value": "BleBox: Miniaturmodule zum Nachrüsten für Türen, Fenster, Rollläden, Markisen und Beleuchtung."
+      }
+    ],
+    "description": "Intelligente Steuerung der Fensterautomation über Fernbedienung, Tablet oder Smartphone: Fenster einzeln oder in Gruppen öffnen und schließen, zeitlich programmieren und mit anderen Systemen im Haus verbinden — auch aus der Ferne."
   }
 ];

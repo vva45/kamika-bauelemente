@@ -276,7 +276,7 @@ export const de: Record<ContentKey, string> = {
   "manufacturer.eyebrow": "Systemhersteller",
   "manufacturer.systemCountOne": "1 System",
   "manufacturer.systemCountOther": "{count} Systeme",
-  "manufacturer.systemsHeading": "Fenstersysteme",
+  "manufacturer.systemsHeading": "Systeme",
   "manufacturer.systemsIntro": "Welches System eine Öffnung braucht, hängt vom Wandaufbau ab und davon, was der Raum leisten muss. Das entscheidet sich beim Aufmaß — diese Seiten zeigen, wofür jedes System gedacht ist.",
   "manufacturer.chooseIntro": "Dieser Bereich wird nach Profilsystem angeboten: erst der Hersteller, dann die Serie, dann die Ausführung. Wählen Sie den Hersteller, um seine Systeme zu sehen.",
   "system.versionsTitle": "Ausführungen und Spezifikationen",
