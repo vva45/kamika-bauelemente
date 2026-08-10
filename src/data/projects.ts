@@ -11,6 +11,49 @@
 import type { Project } from "./types";
 
 export const PROJECTS: Project[] = [
+  /* ═══ REAL — EN COLA, pendiente solo del archivo de foto ═══════
+   *
+   * Primera obra real (el dueño la mandó por chat, 2026-08). El chat
+   * no entrega el archivo original, así que la entrada espera aquí
+   * COMENTADA hasta que la foto suba a:
+   *
+   *   public/images/projects/new-build-altensteig-1.jpg
+   *
+   * En cuanto exista, descomentar y borrar los inventados sobrantes.
+   * Pendiente de confirmar con el dueño: qué sistema corredero es
+   * (¿evolutionDrive?) y si además de la corredera se montaron
+   * ventanas (para añadir "windows" a categories y enlazar sistema).
+   *
+  {
+    id: "new-build-altensteig",
+    title: {
+      en: "New build, Altensteig",
+      de: "Neubau, Altensteig",
+      pl: "Nowy dom, Altensteig",
+    },
+    location: "Altensteig",
+    year: 2026,
+    categories: ["patio-doors"],
+    summary: {
+      en: "A new single-family home where the living room opens to the garden through a two-panel sliding door in anthracite, the sliding sash carrying an industrial glazing-bar grid. Fitted in February 2026, while the interior was still being finished.",
+      de: "Ein neues Einfamilienhaus, dessen Wohnraum sich über eine zweiteilige Schiebetür in Anthrazit zum Garten öffnet — der Schiebeflügel mit Sprossen im Industrie-Look. Montiert im Februar 2026, noch während des Innenausbaus.",
+      pl: "Nowy dom jednorodzinny, którego salon otwiera się na ogród dwuczęściowymi drzwiami przesuwnymi w antracycie — skrzydło przesuwne ze szprosami w industrialnym stylu. Montaż w lutym 2026, jeszcze w trakcie wykańczania wnętrza.",
+    },
+    images: [
+      {
+        src: "/images/projects/new-build-altensteig-1.jpg",
+        alt: {
+          en: "Anthracite sliding door with glazing bars, seen from inside the unfinished living room",
+          de: "Anthrazitfarbene Schiebetür mit Sprossen, vom noch unfertigen Wohnraum aus gesehen",
+          pl: "Antracytowe drzwi przesuwne ze szprosami, widziane z niewykończonego jeszcze salonu",
+        },
+      },
+    ],
+    products: [],
+    featured: true,
+  },
+  */
+
   {
     id: "single-family-hechingen",
     title: { en: "Single-family home, Hechingen", de: "Einfamilienhaus, Hechingen", pl: "Dom jednorodzinny, Hechingen" },
