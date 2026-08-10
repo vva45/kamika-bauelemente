@@ -39,6 +39,15 @@ const LEGACY_SEGMENTS = [
   "privacy",
 ];
 
+/**
+ * Gamas retiradas (2026-08). El dueño quitó puertas interiores y vallas
+ * del catálogo, y el hub "Doors" se disolvió al subir las correderas a
+ * gama principal. Sus URLs llevaban meses publicadas y compartidas: en
+ * vez de morir en un 404 mandan al mosaico de gamas, que es la respuesta
+ * honesta a "¿esto ya no lo hacéis?".
+ */
+const RETIRED_CATEGORIES = ["doors", "interior-doors", "fences"];
+
 const nextConfig: NextConfig = {
   reactCompiler: true,
   // "X-Powered-By: Next.js" no le sirve a nadie más que a quien busca
@@ -47,6 +56,16 @@ const nextConfig: NextConfig = {
   headers: async () => [{ source: "/(.*)", headers: SECURITY_HEADERS }],
   redirects: async () => [
     { source: "/", destination: "/de/", permanent: true },
+    // Antes que la regla de las URLs sin idioma: si no, /products/fences
+    // daría dos saltos en vez de uno.
+    ...RETIRED_CATEGORIES.flatMap((slug) => [
+      {
+        source: `/:locale(de|en|pl)/products/${slug}`,
+        destination: "/:locale/products",
+        permanent: true,
+      },
+      { source: `/products/${slug}`, destination: "/de/products", permanent: true },
+    ]),
     ...LEGACY_SEGMENTS.map((segment) => ({
       source: `/${segment}/:path*`,
       destination: `/de/${segment}/:path*`,

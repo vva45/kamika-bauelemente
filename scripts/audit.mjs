@@ -94,10 +94,20 @@ if (htmlFiles.length === 0) {
 // ── 2. Assets referenciados ──────────────────────────────────────────
 
 const ASSET_REF = /["'`](\/(?:images|pdf|brand)\/[^"'`\s]+?)["'`]/g;
+/**
+ * Los comentarios de bloque, fuera antes de buscar.
+ *
+ * En `projects.ts` hay obras reales aparcadas en comentario esperando su
+ * foto: código que no se ejecuta y por tanto no referencia nada. Sin
+ * esto, la auditoría exigía en disco una imagen que precisamente todavía
+ * no existe, y el fallo tapaba los que sí importan.
+ */
+const BLOCK_COMMENT = /\/\*[\s\S]*?\*\//g;
 const assetRefs = new Set();
 
 for (const file of sourceFiles) {
-  for (const match of readFileSync(file, "utf8").matchAll(ASSET_REF)) {
+  const source = readFileSync(file, "utf8").replace(BLOCK_COMMENT, "");
+  for (const match of source.matchAll(ASSET_REF)) {
     const path = match[1];
     if (path.includes("${")) continue; // construida en tiempo de ejecución
     assetRefs.add(path.split("#")[0]); // ⚠️ el ancla, fuera antes de mirar el disco
@@ -120,10 +130,8 @@ notes.push(`${assetRefs.size} asset paths referenced from src.`);
 const PRODUCT_MODULES = [
   ["accessories", "accessories"],
   ["entrance-doors", "entranceDoors"],
-  ["fences", "fences"],
   ["gates", "gates"],
   ["insect-screens", "insectScreens"],
-  ["interior-doors", "interiorDoors"],
   ["patio-doors", "patioDoors"],
   ["roller-shutters", "rollerShutters"],
   ["windows", "windows"],

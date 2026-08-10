@@ -24,22 +24,29 @@ export const CATEGORIES: Category[] = [
     order: 1,
   },
   {
-    // Hub: no vende nada por sí misma, agrupa los tipos de puerta.
-    // Su `intro` es lo que lee quien llega buscando "una puerta" sin
-    // saber todavía cuál de los tres tipos necesita.
-    slug: "doors",
-    name: { en: "Doors", de: "Türen", pl: "Drzwi" },
+    /**
+     * "Patio doors" y "terrace doors" son EL MISMO producto: en alemán
+     * Terrassentür, y en inglés se usan los dos nombres. El dueño las
+     * escribió con barra ("patio doors / terrace doors"), que es como
+     * se escribe un sinónimo, no dos gamas. Se publica una sola, con el
+     * otro nombre dentro de la intro para quien busque por él.
+     *
+     * Gama principal por decisión del dueño (2026-08): las correderas
+     * son producto estrella y van entre Fenster y Haustüren, no
+     * escondidas como un tipo de puerta.
+     */
+    slug: "patio-doors",
+    name: { en: "Patio doors", de: "Terrassentüren", pl: "Drzwi tarasowe" },
     intro: {
-      en: "Every door in the house, from the one that faces the street to the one that opens onto the terrace. Pick the type and you will find the models, the specifications and the catalogue behind each one.",
-      de: "Jede Tür im Haus — von der zur Straße bis zu der auf die Terrasse. Wählen Sie die Art, dahinter stehen die Modelle, die Spezifikationen und der Katalog.",
-      pl: "Każde drzwi w domu — od tych od ulicy po te na taras. Wybierz rodzaj, a znajdziesz modele, specyfikacje i katalog.",
+      en: "Patio and terrace doors on Salamander sliding systems: an economical slider, an airtight one for low-energy builds and a lift-and-slide for the big openings — same profile family as our windows, so colour and section match across the facade.",
+      de: "Terrassentüren auf Salamander-Schiebesystemen: ein wirtschaftlicher Schieber, ein besonders dichter für energiesparendes Bauen und ein Hebe-Schiebe-System für die großen Öffnungen — dieselbe Profilfamilie wie unsere Fenster, damit Farbe und Ansicht über die Fassade zusammenpassen.",
+      pl: "Drzwi tarasowe na systemach przesuwnych Salamander: ekonomiczny system przesuwny, szczelny do budynków energooszczędnych i podnoszono-przesuwny do dużych otworów — ta sama rodzina profili co nasze okna, więc kolor i przekrój pasują na całej elewacji.",
     },
-    heroImage: "/images/categories/doors-hero.jpg",
+    heroImage: "/images/categories/patio-doors-hero.jpg",
     order: 2,
   },
   {
     slug: "entrance-doors",
-    parent: "doors",
     name: { en: "Entrance doors", de: "Haustüren", pl: "Drzwi zewnętrzne" },
     // Cifras tomadas de los catálogos reales: Ud 0,72 es el mejor valor
     // del catálogo Select, y RC 3 el máximo del sistema Signature.
@@ -49,37 +56,6 @@ export const CATEGORIES: Category[] = [
       pl: "Drzwi zewnętrzne z aluminium i PVC od Ud 0,72 W/m²K, z ryglowaniem wielopunktowym i odpornością na włamanie do RC 3. Powierzchnie ceramiczne, z płynnego metalu, lakierowane proszkowo i ze starego drewna; wypełnienia z PVC, aluminium lub drewna. Próg, klamka i wkładka dobierane do każdych drzwi.",
     },
     heroImage: "/images/categories/entrance-doors-hero.jpg",
-    order: 1,
-  },
-  {
-    slug: "interior-doors",
-    parent: "doors",
-    name: { en: "Interior doors", de: "Innentüren", pl: "Drzwi wewnętrzne" },
-    intro: {
-      en: "Interior doors in cold aluminium framing with glazing from 6 mm — the system built for partitions, corridors and glazed interior walls. CPL, veneer and lacquered leaves join the range when their catalogue arrives.",
-      de: "Innentüren im kalten Aluminiumrahmen mit Verglasung ab 6 mm — das System für Trennwände, Flure und verglaste Innenwände. CPL-, Furnier- und Lacktürblätter folgen, sobald ihr Katalog da ist.",
-      pl: "Drzwi wewnętrzne w zimnej ramie aluminiowej z szybą od 6 mm — system do ścianek działowych, korytarzy i przeszklonych ścian wewnętrznych. Skrzydła CPL, fornirowane i lakierowane dojdą, gdy pojawi się ich katalog.",
-    },
-    heroImage: "/images/categories/interior-doors-hero.jpg",
-    order: 2,
-  },
-  {
-    /**
-     * "Patio doors" y "terrace doors" son EL MISMO producto: en alemán
-     * Terrassentür, y en inglés se usan los dos nombres. El dueño las
-     * escribió con barra ("patio doors / terrace doors"), que es como
-     * se escribe un sinónimo, no dos gamas. Se publica una sola, con el
-     * otro nombre dentro de la intro para quien busque por él.
-     */
-    slug: "patio-doors",
-    parent: "doors",
-    name: { en: "Patio doors", de: "Terrassentüren", pl: "Drzwi tarasowe" },
-    intro: {
-      en: "Patio and terrace doors on Salamander sliding systems: an economical slider, an airtight one for low-energy builds and a lift-and-slide for the big openings — same profile family as our windows, so colour and section match across the facade.",
-      de: "Terrassentüren auf Salamander-Schiebesystemen: ein wirtschaftlicher Schieber, ein besonders dichter für energiesparendes Bauen und ein Hebe-Schiebe-System für die großen Öffnungen — dieselbe Profilfamilie wie unsere Fenster, damit Farbe und Ansicht über die Fassade zusammenpassen.",
-      pl: "Drzwi tarasowe na systemach przesuwnych Salamander: ekonomiczny system przesuwny, szczelny do budynków energooszczędnych i podnoszono-przesuwny do dużych otworów — ta sama rodzina profili co nasze okna, więc kolor i przekrój pasują na całej elewacji.",
-    },
-    heroImage: "/images/categories/patio-doors-hero.jpg",
     order: 3,
   },
   {
@@ -91,7 +67,7 @@ export const CATEGORIES: Category[] = [
       pl: "Rolety nadstawne, elewacyjne i podtynkowe z aluminium, ręczne lub z napędem. Rozmiary skrzynek i prowadnice dobierane do otworu okiennego — roleta jest planowana razem z oknem, nie po nim.",
     },
     heroImage: "/images/categories/roller-shutters-hero.jpg",
-    order: 3,
+    order: 4,
   },
   {
     slug: "insect-screens",
@@ -102,7 +78,7 @@ export const CATEGORIES: Category[] = [
       pl: "Plisowane siatki przeciw owadom na wymiar, montowane we wnęce okiennej albo w prowadnicy rolety, w matowych kolorach spokojnie pasujących do ramy. Kolejne typy dojdą wraz z katalogami.",
     },
     heroImage: "/images/categories/insect-screens-hero.jpg",
-    order: 4,
+    order: 5,
   },
   {
     slug: "gates",
@@ -113,18 +89,24 @@ export const CATEGORIES: Category[] = [
       pl: "Bramy segmentowe i rozwierne do garażu oraz przesuwne i skrzydłowe na wjazd. Dostarczane z napędem, listwą bezpieczeństwa i pilotami w jednym pakiecie.",
     },
     heroImage: "/images/categories/gates-hero.jpg",
-    order: 5,
+    order: 6,
   },
   {
-    slug: "fences",
-    name: { en: "Fences", de: "Zäune", pl: "Ogrodzenia" },
+    /**
+     * Nueva gama pedida por el dueño (2026-08), todavía sin catálogo ni
+     * fichas: entra en estado "en preparación" a propósito. La intro no
+     * afirma materiales ni sistemas — no hay documento del que copiarlos.
+     */
+    slug: "pergolas",
+    name: { en: "Pergolas", de: "Pergolen", pl: "Pergole" },
     intro: {
-      en: "Aluminium and steel fence panels, posts and matching pedestrian gates in the same colours as the driveway gate. Panel heights and post spacing are set out from a site plan before production.",
-      de: "Zaunfelder, Pfosten und passende Gehtüren aus Aluminium und Stahl, in denselben Farben wie das Einfahrtstor. Feldhöhen und Pfostenabstände werden vor der Fertigung nach Lageplan festgelegt.",
-      pl: "Przęsła, słupki i pasujące furtki z aluminium i stali, w tych samych kolorach co brama wjazdowa. Wysokości przęseł i rozstaw słupków ustalane z planu przed produkcją.",
+      en: "Pergolas for terraces and outdoor seating areas are joining the range. The documentation is on its way — until it arrives, ask us and we will quote directly from the manufacturer's papers.",
+      de: "Pergolen für Terrasse und Sitzplatz kommen neu ins Programm. Die Unterlagen sind unterwegs — bis dahin fragen Sie einfach an, wir bieten direkt aus den Herstellerunterlagen an.",
+      pl: "Pergole na taras i do strefy wypoczynku dołączają do oferty. Dokumentacja jest w drodze — do tego czasu zapytaj, a przygotujemy ofertę wprost z materiałów producenta.",
     },
-    heroImage: "/images/categories/fences-hero.jpg",
-    order: 6,
+    heroImage: "/images/categories/pergolas-hero.jpg",
+    order: 7,
+    comingSoon: true,
   },
   {
     slug: "accessories",
@@ -135,7 +117,7 @@ export const CATEGORIES: Category[] = [
       pl: "Pochwyty, klamki, kontrola dostępu, zawiasy, samozamykacze i sterowanie roletami — prosto z katalogów producentów. Części, które decydują, czy montaż jest wykończony, czy tylko zrobiony.",
     },
     heroImage: "/images/categories/accessories-hero.jpg",
-    order: 7,
+    order: 8,
   },
 ];
 
@@ -149,7 +131,7 @@ export const orderedCategories = (): Category[] =>
 
 /**
  * Las gamas de primer nivel: las que salen en la home, en el mosaico de
- * /products y en el menú. "Doors" sale aquí; sus tres tipos, dentro.
+ * /products y en el menú. Hoy son todas — no queda ningún hub con hijas.
  */
 export const topLevelCategories = (): Category[] =>
   orderedCategories().filter((category) => !category.parent);

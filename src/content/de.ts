@@ -177,7 +177,7 @@ export const de: Record<ContentKey, string> = {
   // ── Sobre la empresa ─────────────────────────────────────────
   "about.eyebrow": "Hechingen · Zollernalbkreis",
   "about.title": "Ein Ein-Mann-Betrieb, der aufmisst, liefert und montiert.",
-  "about.intro": "Kamika Bauelemente liefert Bauelemente für Häuser und Wohnungen in Hechingen und Umgebung: Fenster, Haus- und Innentüren, Rollläden, Insektenschutz, Tore, Zäune und die passenden Beschläge.",
+  "about.intro": "Kamika Bauelemente liefert Bauelemente für Häuser und Wohnungen in Hechingen und Umgebung: Fenster, Terrassen- und Haustüren, Rollläden, Insektenschutz, Tore, Pergolen und die passenden Beschläge.",
   "about.companyHeading": "Das Unternehmen",
   "about.companyBody1": "Jeder Auftrag läuft gleich: Die Öffnung wird vor Ort angeschaut, das Angebot nennt Profil, Verglasung und Beschläge, und das endgültige Aufmaß wird erst nach Auftragserteilung genommen. Nichts wird nach Zeichnung bestellt.",
   "about.companyBody2": "Weil die ganze Öffnung aus einer Hand kommt, werden Rollladenkasten, Insektenschutz und Fenster zusammen geplant statt hinterher angebaut — die Farben passen zusammen und die Maße stimmen beim ersten Mal.",

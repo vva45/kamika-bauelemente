@@ -40,7 +40,7 @@ export const gates: Product[] = [
         alt: { en: "Sektional 40 open under the garage ceiling with the drive rail", de: "Sektional 40 offen unter der Garagendecke mit Antriebsschiene", pl: "Sektional 40 otwarta pod sufitem garażu z szyną napędu" },
       }],
     datasheet: "/pdf/gates/sectional-garage-40.pdf",
-    related: ["sliding-gate-alu", "fence-horizontal-alu"],
+    related: ["sliding-gate-alu", "roller-shutter-front-mounted"],
     featured: true,
     badge: "bestseller",
   },
@@ -75,7 +75,7 @@ export const gates: Product[] = [
         src: "/images/gates/side-hinged-garage-3.jpg",
         alt: { en: "Asymmetric split Flügeltor Duo on an older house", de: "Asymmetrisch geteiltes Flügeltor Duo an einem älteren Haus", pl: "Asymetrycznie dzielona brama Flügeltor Duo przy starszym domu" },
       }],
-    related: ["swing-gate-alu", "fence-vertical-bar"],
+    related: ["swing-gate-alu", "sectional-garage-40"],
   },
   {
     id: "sliding-gate-alu",
@@ -109,7 +109,7 @@ export const gates: Product[] = [
         src: "/images/gates/sliding-gate-alu-3.jpg",
         alt: { en: "Schiebetor Line closed, infill matching the fence", de: "Schiebetor Line geschlossen, Füllung passend zum Zaun", pl: "Brama Schiebetor Line zamknięta, wypełnienie jak w ogrodzeniu" },
       }],
-    related: ["fence-horizontal-alu", "pedestrian-gate-alu", "sectional-garage-40"],
+    related: ["swing-gate-alu", "sectional-garage-40"],
     featured: true,
   },
   {
@@ -143,5 +143,5 @@ export const gates: Product[] = [
         src: "/images/gates/swing-gate-alu-3.jpg",
         alt: { en: "Underground drive box of the Drehtor Classic", de: "Unterflurantrieb des Drehtor Classic", pl: "Napęd podziemny bramy Drehtor Classic" },
       }],
-    related: ["pedestrian-gate-alu", "fence-vertical-bar"],
+    related: ["sliding-gate-alu", "side-hinged-garage"],
   }];

@@ -56,23 +56,26 @@ const PALETTE = {
 const OWNER_PHOTOS = new Set([
   "windows",
   "entrance-doors",
-  "interior-doors",
   "roller-shutters",
   "insect-screens",
   "gates",
-  "fences",
   "accessories",
 ]);
 
 const MONO = "Consolas, 'DejaVu Sans Mono', 'Courier New', monospace";
-const SANS = "'Segoe UI', Arial, Helvetica, sans-serif";
 
 /**
  * Lámina de marca. El dibujo es siempre el mismo hueco de ventana; lo
  * que cambia por gama es el despiece, que es justo lo que distingue a
- * una persiana de una valla en un plano.
+ * una corredera de una pérgola en un plano.
+ *
+ * SIN texto de gama a propósito: el sitio está en tres idiomas y un
+ * "Patio doors" grabado en el JPG saldría en inglés dentro de la página
+ * alemana y de la polaca. El nombre ya lo pone la página —debajo de la
+ * tarjeta y en la cabecera—, traducido, así que la lámina solo pone el
+ * dibujo. Lo único escrito es la marca, que no se traduce.
  */
-const sheet = ({ label, note, mullions }) => {
+const sheet = ({ mullions }) => {
   const frameX = 940;
   const frameY = 150;
   const frameW = 480;
@@ -100,25 +103,24 @@ const sheet = ({ label, note, mullions }) => {
   <rect x="${frameX + inner}" y="${frameY + inner}" width="${frameW - inner * 2}" height="${frameH - inner * 2}" fill="none" stroke="${PALETTE.blue}" stroke-width="3"/>
   ${lines}
 
-  <text x="96" y="${H / 2 - 40}" font-family="${SANS}" font-size="84" font-weight="600" fill="${PALETTE.ink}">${label}</text>
-  <text x="100" y="${H / 2 + 30}" font-family="${MONO}" font-size="26" letter-spacing="5" fill="${PALETTE.steel}">${note}</text>
   <text x="100" y="${H - 70}" font-family="${MONO}" font-size="22" letter-spacing="6" fill="${PALETTE.steel}" opacity="0.75">KAMIKA BAUELEMENTE · HECHINGEN</text>
 </svg>`);
 };
 
-/** Una lámina por gama, con su despiece y su dato. */
+/**
+ * Una lámina por gama: solo el despiece, que es lo que distingue un
+ * plano de corredera de uno de persiana. Las gamas con foto del dueño
+ * siguen listadas para que quitarlas de OWNER_PHOTOS baste para
+ * recuperar su lámina.
+ */
 const SHEETS = {
-  // Gamas sin fotografía todavía. Cuando llegue la del dueño, su slug
-  // pasa a OWNER_PHOTOS y esta lámina deja de generarse.
-  doors: { label: "Doors", note: "ENTRANCE · INTERIOR · PATIO", mullions: [{ axis: "h", at: 0.3 }, { axis: "h", at: 0.7 }] },
-  "patio-doors": { label: "Patio doors", note: "LIFT-AND-SLIDE · TILT-AND-SLIDE", mullions: [{ axis: "v", at: 0.5 }] },
-  windows: { label: "Windows", note: "PVC · ALUMINIUM · WOOD-ALU", mullions: [{ axis: "v", at: 0.5 }, { axis: "h", at: 0.38 }] },
-  "interior-doors": { label: "Interior doors", note: "CPL · VENEER · LACQUERED", mullions: [{ axis: "h", at: 0.28 }, { axis: "h", at: 0.7 }] },
-  "roller-shutters": { label: "Roller shutters", note: "MANUAL · MOTORISED", mullions: [{ axis: "h", at: 0.18 }, { axis: "h", at: 0.3 }, { axis: "h", at: 0.42 }, { axis: "h", at: 0.54 }, { axis: "h", at: 0.66 }, { axis: "h", at: 0.78 }] },
-  "insect-screens": { label: "Insect screens", note: "FIXED · HINGED · PLEATED · ROLLER", mullions: [{ axis: "v", at: 0.33 }, { axis: "v", at: 0.66 }] },
-  gates: { label: "Gates", note: "SECTIONAL · SLIDING · SWING", mullions: [{ axis: "h", at: 0.25 }, { axis: "h", at: 0.5 }, { axis: "h", at: 0.75 }] },
-  fences: { label: "Fences", note: "ALUMINIUM · STEEL", mullions: [{ axis: "v", at: 0.2 }, { axis: "v", at: 0.4 }, { axis: "v", at: 0.6 }, { axis: "v", at: 0.8 }] },
-  accessories: { label: "Accessories", note: "HANDLES · CYLINDERS · SILLS · VENTS", mullions: [{ axis: "v", at: 0.5 }] },
+  "patio-doors": { mullions: [{ axis: "v", at: 0.5 }] },
+  windows: { mullions: [{ axis: "v", at: 0.5 }, { axis: "h", at: 0.38 }] },
+  "roller-shutters": { mullions: [{ axis: "h", at: 0.18 }, { axis: "h", at: 0.3 }, { axis: "h", at: 0.42 }, { axis: "h", at: 0.54 }, { axis: "h", at: 0.66 }, { axis: "h", at: 0.78 }] },
+  "insect-screens": { mullions: [{ axis: "v", at: 0.33 }, { axis: "v", at: 0.66 }] },
+  gates: { mullions: [{ axis: "h", at: 0.25 }, { axis: "h", at: 0.5 }, { axis: "h", at: 0.75 }] },
+  pergolas: { mullions: [{ axis: "h", at: 0.25 }, { axis: "h", at: 0.45 }, { axis: "h", at: 0.65 }, { axis: "h", at: 0.85 }] },
+  accessories: { mullions: [{ axis: "v", at: 0.5 }] },
 };
 
 for (const [slug, config] of Object.entries(SHEETS)) {

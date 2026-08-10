@@ -81,20 +81,34 @@ If any of this is ever changed — map loaded automatically, consent remembered,
 — **§ 8 and § 9 of the Datenschutzerklärung stop being true** and must be rewritten in the same
 commit.
 
-### Doors is a hub, and patio doors is ONE range, not two
+### The eight ranges, and why three of them changed in August 2026
 
 The owner asked for "a separate category for patio doors / terrace doors". Those are the same
 product — Terrassentür in German, and English uses both names — so the slash reads as a synonym,
 not as two ranges. One range was published, `patio-doors`, named "Patio doors" with "terrace" in
-the intro so a search for either word lands on it. If he really did mean two, say so and it is a
-five-minute change; but two pages selling the same door would be a duplicate for both customers
-and search engines.
+the intro so a search for either word lands on it.
 
-The three door types now sit under a **Doors** hub (`parent` on the category), which is what he
-asked for. One deviation, deliberate: **the URLs stay flat**. `/products/entrance-doors` did not
-become `/products/doors/entrance-doors`, because that would break every link already shared to the
-range with 314 models, for no gain — what he wanted was the navigation, and that is what changed.
-The hub's model count is the sum of its children's, so the home still advertises the real number.
+It first shipped as a type inside a **Doors** hub. In August 2026 the owner reorganised the
+catalogue and three things changed at once:
+
+- **Patio doors became a main range**, sitting between Windows and Entrance doors — his words:
+  the sliding systems are the flagship, not a sub-type. Salamander's Slide and HST systems belong
+  there too.
+- **Interior doors were dropped.** He will not be offering them. The range, its (empty) product
+  file and the one genuine catalogue find are gone — see below.
+- **Fences were dropped** as well, with their four example products.
+- **Pergolas were added**, in the honest coming-soon state: no catalogue has arrived, so the page
+  says the documentation is on its way instead of inventing systems.
+
+With interior doors gone, the **Doors hub had one child left** — entrance doors — which made it a
+click that led nowhere new, so it was dissolved and entrance doors went back to the top level.
+The `parent` mechanism stayed in the code (category page, nav dropdown and model counts all still
+understand it) because the next grouping request would otherwise have to rebuild it.
+
+The URLs were always flat — `/products/entrance-doors`, never `/products/doors/entrance-doors` —
+which is why dissolving the hub broke no shared link. The three retired slugs (`doors`,
+`interior-doors`, `fences`) redirect 308 to `/products` in all three languages, plus the
+language-less legacy forms, so an old WhatsApp link lands on the range mosaic instead of a 404.
 
 ~~The two patio-door models are examples~~ — **resolved 2026-08**: the Salamander leaflet brought
 the real sliding systems, the range now runs on the manufacturer hierarchy (Salamander →
@@ -107,18 +121,22 @@ Drutex shutter catalogue *is* an insect screen, so it now lives in that range �
 re-extraction — and the four example screens were deleted. The range holds one real model until an
 insect-screen catalogue arrives.
 
-**Interior doors too** (2026-08): the owner asked for a sweep of every catalogue for interior
-doors — and across all ten there is exactly ONE genuine hit, the **System MB-45 (kalt)** spread in
-the Außentüren catalogue, which the catalogue itself recommends "vor allem im Innenbereich"
-(partitions, corridors, shop fronts, vitrines — single-chamber profiles without thermal break).
-It is declared by hand in `AUSSEN_MANUAL` of `extract_drutex_models.py` with
-`category: "interior-doors"`, specs and description as printed, photo from its own spread. The
-four example doors (CPL, veneer, lacquer, acoustic) were deleted with their images. Near-misses
-checked and rejected: "Innentürpaneel" in the Aluprof panels catalogue is the inner-face panel of
-an entrance door, and D-ART LINE's "/ inside" captions are interior *views* of entrance doors.
-No manufacturer is shown for MB-45 because the white-labelled catalogue names none — attributing
-the system from outside knowledge would break the house rule. CPL/veneer/lacquered leaves join
-when their catalogue arrives (Eko-Okna has it in German).
+**The interior-door sweep, and what happened to its one find.** Before the range was dropped, the
+owner asked for a sweep of every catalogue for interior doors, and across all ten there was
+exactly ONE genuine hit: the **System MB-45 (kalt)** spread in the Außentüren catalogue, which the
+catalogue itself recommends "vor allem im Innenbereich" (partitions, corridors, shop fronts,
+vitrines — single-chamber profiles without thermal break). It was declared by hand in
+`AUSSEN_MANUAL` of `extract_drutex_models.py`. When the range went, so did the model, the manual
+entry and its extracted photo: leaving it marked would have resurrected a dead category on the
+next extraction. `AUSSEN_MANUAL` is now an empty list, kept for the mechanism. Near-misses that
+were checked and rejected at the time, recorded so nobody re-runs the sweep: "Innentürpaneel" in
+the Aluprof panels catalogue is the inner-face panel of an entrance door, and D-ART LINE's
+"/ inside" captions are interior *views* of entrance doors.
+
+**Pergolas have no catalogue yet.** The range is deliberately `comingSoon: true` with no product
+file at all, and its hero is a generated line-drawing sheet, not a photograph. When the
+manufacturer's PDF arrives it follows the normal route: self-host it, extract the models, write
+nothing from memory.
 
 ### The two shutter catalogues are white-labelled — a decision to confirm
 
@@ -213,7 +231,7 @@ Self-hosted, never linked to a manufacturer's website.
 | Status | Path                                         | What it is                                                                 | Who   |
 | ------ | -------------------------------------------- | -------------------------------------------------------------------------- | ----- |
 | `[x]`  | `public/pdf/catalogues/*.pdf`                | **Six real catalogues are in place** — four entrance doors and two roller shutters, all of them entrance doors: ROKA Signature (298 pp), ROKA Select (23 pp), the Aluprof panel catalogue (194 pp) and Despiro (37 pp). Titles, years, page counts and file sizes in `src/data/catalogues.ts` were read from the PDFs, not estimated. Covers are rendered from page 1. | —     |
-| `[ ]`  | `public/pdf/catalogues/` — other ranges      | Nothing yet for windows, roller shutters, insect screens, gates, fences or hardware. Those categories currently have no catalogue to link to. | Owner |
+| `[ ]`  | `public/pdf/catalogues/` — other ranges      | Nothing yet for windows, roller shutters, insect screens, gates, pergolas or hardware. Those categories currently have no catalogue to link to. | Owner |
 | `[~]`  | `public/pdf/{category}/{product-id}.pdf`     | Per-product data sheet, where one exists. Five are placeholders; the rest of the products show no data-sheet button at all, which is the rule: no button beats a dead link. | Owner |
 
 **Model → page mapping is done for entrance doors and missing for everything else.** Every one of
@@ -237,8 +255,8 @@ catalogues for the other ranges, and the owner naming which models he actually s
 `src/data/products/` holds **16 products, all still plausible examples** — they are
 **not** Kamika's real range. Every one of those files carries a warning comment at the top. Four
 ranges are already fully real (windows, entrance doors, patio doors, roller shutters — plus
-accessories and insect screens fed from the catalogues), which leaves the examples in: interior
-doors (4), roller-shutter legacy cards (4, superseded by the collections), gates (4) and fences (4).
+accessories and insect screens fed from the catalogues), which leaves the examples in:
+roller-shutter legacy cards (4, superseded by the collections) and gates (4).
 
 Ranges that no longer use example products, because the owner asked for the hierarchy the trade
 actually uses — first the manufacturer, then what it offers:

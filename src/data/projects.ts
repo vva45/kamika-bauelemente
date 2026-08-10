@@ -20,9 +20,8 @@ export const PROJECTS: Project[] = [
    *   public/images/projects/new-build-altensteig-1.jpg
    *
    * En cuanto exista, descomentar y borrar los inventados sobrantes.
-   * Pendiente de confirmar con el dueño: qué sistema corredero es
-   * (¿evolutionDrive?) y si además de la corredera se montaron
-   * ventanas (para añadir "windows" a categories y enlazar sistema).
+   * El dueño confirmó (2026-08) que es un sistema HST (Hebe-Schiebe) y
+   * que en esta obra solo se montó esta puerta: una foto, una entrada.
    *
   {
     id: "new-build-altensteig",
@@ -35,9 +34,9 @@ export const PROJECTS: Project[] = [
     year: 2026,
     categories: ["patio-doors"],
     summary: {
-      en: "A new single-family home where the living room opens to the garden through a two-panel sliding door in anthracite, the sliding sash carrying an industrial glazing-bar grid. Fitted in February 2026, while the interior was still being finished.",
-      de: "Ein neues Einfamilienhaus, dessen Wohnraum sich über eine zweiteilige Schiebetür in Anthrazit zum Garten öffnet — der Schiebeflügel mit Sprossen im Industrie-Look. Montiert im Februar 2026, noch während des Innenausbaus.",
-      pl: "Nowy dom jednorodzinny, którego salon otwiera się na ogród dwuczęściowymi drzwiami przesuwnymi w antracycie — skrzydło przesuwne ze szprosami w industrialnym stylu. Montaż w lutym 2026, jeszcze w trakcie wykańczania wnętrza.",
+      en: "A new single-family home where the living room opens to the garden through a two-panel HST lift-and-slide door in anthracite, the sliding sash carrying an industrial glazing-bar grid. Fitted in February 2026, while the interior was still being finished.",
+      de: "Ein neues Einfamilienhaus, dessen Wohnraum sich über eine zweiteilige HST-Hebe-Schiebetür in Anthrazit zum Garten öffnet — der Schiebeflügel mit Sprossen im Industrie-Look. Montiert im Februar 2026, noch während des Innenausbaus.",
+      pl: "Nowy dom jednorodzinny, którego salon otwiera się na ogród dwuczęściowymi podnoszono-przesuwnymi drzwiami HST w antracycie — skrzydło przesuwne ze szprosami w industrialnym stylu. Montaż w lutym 2026, jeszcze w trakcie wykańczania wnętrza.",
     },
     images: [
       {
@@ -121,11 +120,11 @@ export const PROJECTS: Project[] = [
     title: { en: "Converted farmhouse, Burladingen", de: "Umgebautes Bauernhaus, Burladingen", pl: "Przebudowany dom wiejski, Burladingen" },
     location: "Burladingen",
     year: 2024,
-    categories: ["windows", "interior-doors"],
+    categories: ["windows"],
     summary: {
-      en: "A barn conversion where the openings were irregular and none of them square. Every element was measured individually and made to size in wood-aluminium, with oak on the room side to match the exposed structure. Interior doors were hung wall-flush.",
-      de: "Ein Scheunenumbau mit unregelmäßigen, nie rechtwinkligen Öffnungen. Jedes Element wurde einzeln aufgemessen und in Holz-Aluminium nach Maß gefertigt, raumseitig in Eiche passend zum sichtbaren Gebälk. Die Innentüren wurden wandbündig gehängt.",
-      pl: "Adaptacja stodoły z nieregularnymi, nigdy prostokątnymi otworami. Każdy element zmierzono osobno i wykonano na wymiar w drewno-aluminium, od strony pokoju w dębie pasującym do odsłoniętej konstrukcji. Drzwi wewnętrzne zawieszono licując ze ścianą.",
+      en: "A barn conversion where the openings were irregular and none of them square. Every element was measured individually and made to size in wood-aluminium, with oak on the room side to match the exposed structure.",
+      de: "Ein Scheunenumbau mit unregelmäßigen, nie rechtwinkligen Öffnungen. Jedes Element wurde einzeln aufgemessen und in Holz-Aluminium nach Maß gefertigt, raumseitig in Eiche passend zum sichtbaren Gebälk.",
+      pl: "Adaptacja stodoły z nieregularnymi, nigdy prostokątnymi otworami. Każdy element zmierzono osobno i wykonano na wymiar w drewno-aluminium, od strony pokoju w dębie pasującym do odsłoniętej konstrukcji.",
     },
     images: [
       {
@@ -135,10 +134,6 @@ export const PROJECTS: Project[] = [
       {
         src: "/images/projects/farmhouse-burladingen-2.jpg",
         alt: { en: "Oak window reveal seen from inside the converted farmhouse", de: "Eichenlaibung von innen im umgebauten Bauernhaus", pl: "Dębowa wnęka okienna od środka przebudowanego domu" },
-      },
-      {
-        src: "/images/projects/farmhouse-burladingen-3.jpg",
-        alt: { en: "Wall-flush interior door in the converted farmhouse", de: "Wandbündige Innentür im umgebauten Bauernhaus", pl: "Drzwi wewnętrzne licujące ze ścianą w przebudowanym domu" },
       }],
     /** Modelos instalados, para enlazar a sus fichas desde el detalle. */
     products: [],
@@ -149,11 +144,11 @@ export const PROJECTS: Project[] = [
     title: { en: "Townhouse, Albstadt", de: "Reihenhaus, Albstadt", pl: "Dom szeregowy, Albstadt" },
     location: "Albstadt",
     year: 2024,
-    categories: ["entrance-doors", "gates", "fences"],
+    categories: ["entrance-doors", "gates"],
     summary: {
-      en: "Everything from the pavement to the front step, in one anthracite finish. An RC2 entrance door, a sliding driveway gate with its drive and safety edge, and matching aluminium fence panels set out from a site plan before production.",
-      de: "Alles vom Gehweg bis zur Haustürstufe in einem Anthrazitton. Eine RC2-Haustür, ein Einfahrts-Schiebetor mit Antrieb und Sicherheitsleiste und passende Aluminium-Zaunfelder, vor der Fertigung nach Lageplan festgelegt.",
-      pl: "Wszystko od chodnika po próg wejścia w jednym antracycie. Drzwi RC2, przesuwna brama wjazdowa z napędem i listwą bezpieczeństwa oraz pasujące aluminiowe przęsła, rozmierzone z planu przed produkcją.",
+      en: "Everything from the pavement to the front step, in one anthracite finish. An RC2 entrance door and a sliding driveway gate with its drive and safety edge, delivered and fitted as one package.",
+      de: "Alles vom Gehweg bis zur Haustürstufe in einem Anthrazitton. Eine RC2-Haustür und ein Einfahrts-Schiebetor mit Antrieb und Sicherheitsleiste, als ein Paket geliefert und montiert.",
+      pl: "Wszystko od chodnika po próg wejścia w jednym antracycie. Drzwi RC2 i przesuwna brama wjazdowa z napędem i listwą bezpieczeństwa, dostarczone i zamontowane jako jeden pakiet.",
     },
     images: [
       {
@@ -163,16 +158,11 @@ export const PROJECTS: Project[] = [
       {
         src: "/images/projects/townhouse-albstadt-2.jpg",
         alt: { en: "Sliding driveway gate in the same anthracite finish", de: "Einfahrts-Schiebetor im selben Anthrazitton", pl: "Przesuwna brama wjazdowa w tym samym antracycie" },
-      },
-      {
-        src: "/images/projects/townhouse-albstadt-3.jpg",
-        alt: { en: "Aluminium fence panels along the front boundary", de: "Aluminium-Zaunfelder entlang der vorderen Grundstücksgrenze", pl: "Aluminiowe przęsła wzdłuż frontowej granicy działki" },
       }],
     /** Modelos instalados, para enlazar a sus fichas desde el detalle. */
     products: [
       "sectional-garage-40",
-      "sliding-gate-alu",
-      "fence-horizontal-alu"],
+      "sliding-gate-alu"],
     models: [{ catalogue: "roka-signature-2025", id: "edles-flussigmetall-01" }],
   },
   {
@@ -180,11 +170,11 @@ export const PROJECTS: Project[] = [
     title: { en: "Office fit-out, Tübingen", de: "Büroausbau, Tübingen", pl: "Wykończenie biura, Tybinga" },
     location: "Tübingen",
     year: 2023,
-    categories: ["windows", "interior-doors"],
+    categories: ["windows"],
     summary: {
-      en: "A first-floor office where the requirement was acoustic rather than thermal. Aluminium windows with asymmetric glazing to the main road, and interior doors with a 32 dB rating between the meeting rooms.",
-      de: "Ein Büro im ersten Stock, wo es um Schallschutz statt Wärmeschutz ging. Aluminiumfenster mit asymmetrischer Verglasung zur Hauptstraße und Innentüren mit 32 dB zwischen den Besprechungsräumen.",
-      pl: "Biuro na pierwszym piętrze, gdzie liczyła się akustyka, nie termika. Okna aluminiowe z asymetrycznym pakietem od strony głównej drogi i drzwi wewnętrzne o izolacyjności 32 dB między salami spotkań.",
+      en: "A first-floor office where the requirement was acoustic rather than thermal. Aluminium windows with asymmetric glazing to the main road, sized opening by opening so the meeting rooms stay quiet.",
+      de: "Ein Büro im ersten Stock, wo es um Schallschutz statt Wärmeschutz ging. Aluminiumfenster mit asymmetrischer Verglasung zur Hauptstraße, Öffnung für Öffnung ausgelegt, damit die Besprechungsräume ruhig bleiben.",
+      pl: "Biuro na pierwszym piętrze, gdzie liczyła się akustyka, nie termika. Okna aluminiowe z asymetrycznym pakietem od strony głównej drogi, dobrane otwór po otworze, żeby w salach spotkań było cicho.",
     },
     images: [
       {
@@ -192,19 +182,11 @@ export const PROJECTS: Project[] = [
         alt: { en: "Office windows facing the main road in Tübingen", de: "Bürofenster zur Hauptstraße in Tübingen", pl: "Okna biura od głównej drogi w Tybindze" },
       },
       {
-        src: "/images/projects/office-fitout-tuebingen-2.jpg",
-        alt: { en: "Acoustic interior door between two meeting rooms", de: "Schallschutz-Innentür zwischen zwei Besprechungsräumen", pl: "Akustyczne drzwi wewnętrzne między dwiema salami spotkań" },
-      },
-      {
         src: "/images/projects/office-fitout-tuebingen-3.jpg",
         alt: { en: "Open-plan office area with the new aluminium windows", de: "Großraumbüro mit den neuen Aluminiumfenstern", pl: "Przestrzeń open space z nowymi oknami aluminiowymi" },
       }],
     /** Modelos instalados, para enlazar a sus fichas desde el detalle. */
-    // La puerta acústica de la foto era una ficha de ejemplo, ya
-    // retirada; el proyecto de oficinas enlaza al sistema real de
-    // puertas interiores de aluminio.
     products: [],
-    models: [{ catalogue: "aussenturen", id: "system-mb-45-kalt" }],
   },
   {
     id: "bungalow-bisingen",

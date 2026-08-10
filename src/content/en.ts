@@ -194,7 +194,7 @@ export const en = {
   "about.eyebrow": "Hechingen · Zollernalbkreis",
   "about.title": "A one-man business that measures, supplies and fits.",
   "about.intro":
-    "Kamika Bauelemente supplies building elements for houses and flats in Hechingen and the surrounding area: windows, entrance and interior doors, roller shutters, insect screens, gates, fences and the hardware that goes with them.",
+    "Kamika Bauelemente supplies building elements for houses and flats in Hechingen and the surrounding area: windows, patio and entrance doors, roller shutters, insect screens, gates, pergolas and the hardware that goes with them.",
   "about.companyHeading": "The company",
   "about.companyBody1":
     "Every job runs the same way: the opening is looked at on site, the offer names the profile, the glazing and the fittings, and the final measurements are taken only once the offer is accepted. Nothing is ordered off a drawing.",

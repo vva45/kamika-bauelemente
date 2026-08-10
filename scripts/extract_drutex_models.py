@@ -174,42 +174,15 @@ def tidy_pattern_name(raw):
     return name, family
 
 
-# El único producto de INTERIOR de los diez catálogos: el catálogo de
-# Außentüren trae un sistema de aluminio en frío que él mismo recomienda
-# "vor allem im Innenbereich" — tabiques, pasillos, escaparates. Va
-# declarado a mano porque es un pliego de sistema, no una rejilla de
-# modelos, y marcado con su gama para que se enseñe en interior-doors
-# (el mismo mecanismo que movió el Insektenschutz-Plisee a mosquiteras).
-# Nombre, specs y descripción tal como están impresos; la foto es la de
-# la mampara acristalada del propio pliego (xref fijado por tamaño).
-AUSSEN_MANUAL = [
-    {
-        "id": "system-mb-45-kalt",
-        "name": "System MB-45 (kalt)",
-        "family": "Aluminiumtüren",
-        "category": "interior-doors",
-        "page": 8,
-        "image_px": (591, 605),
-        "description": (
-            "Türen aus diesem System werden aufgrund der verwendeten "
-            "Einkammerprofile ohne thermische Trennung vor allem im "
-            "Innenbereich empfohlen, d.h. an Orten, die keine hohen "
-            "Wärmedämmwerte erfordern, z.B. bei der Erstellung von "
-            "Trennwänden, Fluren, Schaufenstern, Kassen oder Vitrinen. "
-            "Die Tiefe der Flügel- und Rahmenprofile beträgt jeweils 45 mm, "
-            "dies ermöglicht flächenbündige Flächen."
-        ),
-        "specs": [
-            {"label": "Bautiefe", "value": "45 mm"},
-            {"label": "", "value": "Standard: 3-fach Getriebe, 3 Stk. 2-flügelige Bänder, Scheibe mit einem Ug = 1,1 W/(m²K), Schwelle, Standardfarbe Matt: RAL 7016 & 9016, Aluminiumdrücker, Montagezylinder."},
-            {"label": "", "value": "Möglichkeit, eine Füllung mit einer Stärke von 6 mm bis 28 mm zu verwenden."},
-            {"label": "", "value": "Möglichkeit der Anwendung einer Einfachverglasung mit einer Stärke von 6 mm."},
-            {"label": "", "value": "Möglichkeit der Anwendung eines Seitenteils und/oder Oberlichts."},
-            {"label": "", "value": "Große Auswahl an RAL-Farben, Sonderfarben und Strukturen."},
-            {"label": "", "value": "Optional mit Absenkdichtung erhältlich."},
-        ],
-    },
-]
+# Nada declarado a mano en este catálogo.
+#
+# Aquí vivía el System MB-45 (kalt), el único sistema de interior de los
+# diez catálogos, marcado con `category: "interior-doors"`. El dueño
+# retiró esa gama en 2026-08 —no va a ofrecer puertas interiores— así
+# que el pliego se cae con ella: dejarlo marcado habría devuelto la gama
+# muerta en la siguiente extracción. La lista se queda por el mecanismo,
+# que es el mismo que usa el Insektenschutz-Plisee.
+AUSSEN_MANUAL = []
 
 
 def extract_aussenturen(doc, catalogue_id):

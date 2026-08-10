@@ -177,7 +177,7 @@ export const pl: Record<ContentKey, string> = {
   // ── Sobre la empresa ─────────────────────────────────────────
   "about.eyebrow": "Hechingen · Zollernalbkreis",
   "about.title": "Jednoosobowa firma, która mierzy, dostarcza i montuje.",
-  "about.intro": "Kamika Bauelemente dostarcza elementy budowlane do domów i mieszkań w Hechingen i okolicach: okna, drzwi zewnętrzne i wewnętrzne, rolety, siatki przeciw owadom, bramy, ogrodzenia i pasujące do nich okucia.",
+  "about.intro": "Kamika Bauelemente dostarcza elementy budowlane do domów i mieszkań w Hechingen i okolicach: okna, drzwi tarasowe i zewnętrzne, rolety, siatki przeciw owadom, bramy, pergole i pasujące do nich okucia.",
   "about.companyHeading": "Firma",
   "about.companyBody1": "Każde zlecenie przebiega tak samo: otwór oglądamy na miejscu, oferta wymienia profil, szybę i okucia, a ostateczny pomiar wykonujemy dopiero po przyjęciu oferty. Niczego nie zamawiamy z rysunku.",
   "about.companyBody2": "Ponieważ cały otwór pochodzi od jednego dostawcy, skrzynka rolety, siatka i okno są planowane razem, a nie dokładane później — kolory do siebie pasują, a wymiary zgadzają się za pierwszym razem.",

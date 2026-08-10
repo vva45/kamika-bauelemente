@@ -6,14 +6,12 @@ import type { Localized } from "@/lib/i18n";
 
 export type CategorySlug =
   | "windows"
-  | "doors"
-  | "entrance-doors"
   | "patio-doors"
-  | "interior-doors"
+  | "entrance-doors"
   | "roller-shutters"
   | "insect-screens"
   | "gates"
-  | "fences"
+  | "pergolas"
   | "accessories";
 
 export type Material = "pvc" | "aluminium" | "steel" | "wood" | "wood-alu";
@@ -62,11 +60,12 @@ export interface Category {
   /**
    * Gama padre, para las que son un tipo dentro de otra.
    *
-   * Lo pidió el dueño para puertas: en vez de tres entradas sueltas en
-   * la home, una sola —"Doors"— y dentro los tipos. La URL NO se anida
-   * (`/products/entrance-doors` sigue siendo la misma): lo que cambia
-   * es por dónde se llega, no dónde vive. Anidarla habría roto los
-   * enlaces ya compartidos a cambio de nada.
+   * Hoy no la usa ninguna: el hub "Doors" se disolvió cuando el dueño
+   * subió las correderas a gama principal y quitó las interiores — con
+   * una sola hija, el hub era un clic de más. El mecanismo se queda
+   * (página de categoría, menú y contadores lo entienden) por si algún
+   * día una gama vuelve a agrupar tipos. La URL de una hija NO se anida:
+   * `/products/{slug}` es la misma con padre o sin él.
    */
   parent?: CategorySlug;
 }
