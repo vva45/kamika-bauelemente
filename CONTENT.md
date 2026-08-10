@@ -423,9 +423,9 @@ Needed to complete them:
   `null`, so the block is simply not published — better than publishing a placeholder.
 - **Handwerksrolle / chamber of trade** and the professional title, if the trade is a regulated
   one. Same mechanism: `COMPANY.chamber`.
-- Confirmation that `Dominik Kamieński – Einzelunternehmen` is the exact legal name to publish.
-  The spelling with the Polish **ń** is the owner's own (2026-08) and is used everywhere on the
-  site — imprint, footer, JSON-LD, About.
+- ~~Confirmation that `Dominik Kamieński – Einzelunternehmen` is the exact legal name to publish.~~
+  **Confirmed (2026-08): the official papers carry the Polish ń**, so `Kamieński` is the correct
+  spelling everywhere — imprint, footer, JSON-LD, About. Nothing to ask the lawyer here.
 - **A decision on section 6 of the privacy policy** ("Versand der Formularnachrichten"). It names
   Resend as the processor that delivers form messages. That is only true once `RESEND_API_KEY` is
   set in Vercel. If the form ends up delivering only through the visitor's own mail client, that
