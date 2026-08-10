@@ -20,7 +20,12 @@ export type Material = "pvc" | "aluminium" | "steel" | "wood" | "wood-alu";
 
 export interface Spec {
   label: Localized<string>; // "Frame depth" / "Bautiefe"
-  value: string; // "82"
+  /**
+   * "82" — o localizado cuando el valor lleva prosa ("up to 53 mm" /
+   * "bis 53 mm"). Los números pelados se quedan en string y el
+   * formateador les pone la coma alemana solo.
+   */
+  value: string | Localized<string>;
   unit?: string; // "mm"
   highlight?: boolean; // sale también en la cabecera de la ficha
 }

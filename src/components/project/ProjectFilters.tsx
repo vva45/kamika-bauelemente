@@ -16,7 +16,7 @@ import { ProjectCard } from "@/components/project/ProjectCard";
 import { getCategory } from "@/data/categories";
 import type { CategorySlug, Project } from "@/data/types";
 import { cn } from "@/lib/cn";
-import { formatNumber, pick, t } from "@/lib/i18n";
+import { useI18n } from "@/components/layout/LocaleProvider";
 
 type ProjectFiltersProps = {
   projects: Project[];
@@ -31,6 +31,7 @@ const chipClasses = (active: boolean) =>
   );
 
 export function ProjectFilters({ projects, years }: ProjectFiltersProps) {
+  const { formatNumber, pick, t } = useI18n();
   const [category, setCategory] = useState<CategorySlug | null>(null);
   const [year, setYear] = useState<number | null>(null);
 

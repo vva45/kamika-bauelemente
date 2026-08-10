@@ -14,11 +14,11 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { ButtonLink } from "@/components/ui/Button";
+import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { ChevronDownIcon, CloseIcon, MenuIcon, PhoneIcon } from "@/components/ui/icons";
 import { useSmoothScroll } from "@/components/layout/SmoothScroll";
 import { cn } from "@/lib/cn";
-import { t } from "@/lib/i18n";
-import { routes } from "@/lib/routes";
+import { useI18n } from "@/components/layout/LocaleProvider";
 
 export type NavLink = {
   href: string;
@@ -37,6 +37,7 @@ type SiteNavProps = {
 const EASE = [0.16, 1, 0.3, 1] as const;
 
 export function SiteNav({ links, categories, phone, phoneHref }: SiteNavProps) {
+  const { t, routes } = useI18n();
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
@@ -249,8 +250,9 @@ export function SiteNav({ links, categories, phone, phoneHref }: SiteNavProps) {
         </ul>
       </nav>
 
-      {/* ── Contacto directo, siempre visible en desktop ──────── */}
+      {/* ── Idioma y contacto directo, siempre visibles en desktop ── */}
       <div className="hidden items-center gap-4 lg:flex">
+        <LanguageSwitcher />
         <a
           href={phoneHref}
           className="flex items-center gap-2 font-mono text-[0.8125rem] text-kamika-steel hover:text-kamika-ink"
@@ -345,6 +347,7 @@ export function SiteNav({ links, categories, phone, phoneHref }: SiteNavProps) {
                 </div>
 
                 <div className="shrink-0 border-t border-kamika-mist px-5 py-6">
+                  <LanguageSwitcher className="mb-4" />
                   <a
                     href={phoneHref}
                     className="flex items-center gap-2 font-mono text-sm text-kamika-steel"

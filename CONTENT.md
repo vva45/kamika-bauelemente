@@ -447,12 +447,32 @@ links do not raise false alarms.
 Current state: **0 problems**, one deliberately unused key (`common.downloadCatalogue`, reserved
 for the third-party-brand rule).
 
-## 8. German translation (future phase)
+## 8. Languages — DONE (2026-08): German, English and Polish
 
-Nothing to do yet. When the time comes:
+The site now publishes in three languages by URL prefix: **/de (default — the root redirects
+there), /en and /pl**, with a DE·EN·PL switcher in the header and mobile menu that keeps the
+current page. Google gets `hreflang` alternates on every page and in the sitemap (×3, with
+x-default → German). The legacy unprefixed URLs (shared before the change) 308-redirect to their
+German equivalents.
 
-1. Fill in the values in `src/content/de.ts` (keys are already generated and in parity).
-2. Fill in the `de` field on the localised entries in `src/data/**`.
-3. Change `LOCALE` to `'de'` in `src/lib/i18n.ts`.
+How it works, for whoever maintains it (full comments in `src/lib/i18n.ts`):
 
-No component changes. Run `npm run check:i18n` to confirm nothing drifted.
+- Server components read the language from a per-render store; every page sets it from its URL
+  params. **Client components use the `useI18n()` hook** (context) — never the global `t()`,
+  because their prerender runs in a separate module graph where the store does not exist; that
+  exact mismatch produced hydration errors and a switcher that highlighted the wrong language
+  before it was fixed. If you write a new client component, use the hook.
+- UI text: `en.ts` (authoring), `de.ts`, `pl.ts` — all 224 keys translated, parity enforced by
+  `npm run check:i18n`. `npm run sync:i18n` regenerates both and preserves filled values.
+- Data layer: every `Localized` field carries en+de+pl (categories, catalogues, manufacturers,
+  systems, the 12 example products, projects, 75 named colours). Spec values with prose are now
+  localisable (`value: string | Localized<string>`).
+- **Never translated, on purpose**: model names, printed catalogue specs (German/Polish as
+  printed), brand names, and the owner's texts (his German is verbatim in `de.ts`; the Polish
+  `about.owner*` strings are a translation of his German — he is a native speaker, ask him to
+  bless them).
+- **/imprint and /privacy stay in German in all three languages** — they are German legal texts;
+  translating them would create unreviewed legal copy.
+- Polish grammar note: counters use the genitive plural ("{count} modeli / stron"), which reads
+  slightly off for counts of 2–4. Accepted trade-off with a single plural form — the owner can
+  veto any wording, it is one line per key.

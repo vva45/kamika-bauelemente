@@ -17,7 +17,7 @@ import { useState } from "react";
 import { WindowFrame } from "@/components/ui/WindowFrame";
 import type { ColorFinish } from "@/data/types";
 import { cn } from "@/lib/cn";
-import { pick, t } from "@/lib/i18n";
+import { useI18n } from "@/components/layout/LocaleProvider";
 
 type ColourPreviewProps = {
   colours: ColorFinish[];
@@ -26,6 +26,7 @@ type ColourPreviewProps = {
 };
 
 export function ColourPreview({ colours, renderImage, className }: ColourPreviewProps) {
+  const { pick, t } = useI18n();
   const [activeId, setActiveId] = useState(colours[0]?.id);
   const active = colours.find((colour) => colour.id === activeId) ?? colours[0];
 

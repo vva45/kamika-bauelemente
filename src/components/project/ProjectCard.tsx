@@ -1,3 +1,5 @@
+"use client";
+
 /**
  * Tarjeta de proyecto: foto grande, título, ubicación, año y chips de
  * las categorías que se instalaron.
@@ -12,8 +14,7 @@ import { WindowFrame } from "@/components/ui/WindowFrame";
 import { getCategory } from "@/data/categories";
 import type { Project } from "@/data/types";
 import { cn } from "@/lib/cn";
-import { formatNumber, pick } from "@/lib/i18n";
-import { routes } from "@/lib/routes";
+import { useI18n } from "@/components/layout/LocaleProvider";
 
 type ProjectCardProps = {
   project: Project;
@@ -22,6 +23,7 @@ type ProjectCardProps = {
 };
 
 export function ProjectCard({ project, priority = false, className }: ProjectCardProps) {
+  const { formatNumber, pick, routes } = useI18n();
   const cover = project.images[0];
 
   return (

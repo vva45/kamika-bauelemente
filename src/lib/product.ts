@@ -2,7 +2,7 @@
  * Reglas de negocio de producto que se usan en más de un sitio.
  */
 import type { Product } from "@/data/types";
-import { formatNumber } from "@/lib/i18n";
+import { pick, formatNumber, type Localized } from "@/lib/i18n";
 
 /**
  * Destino del botón "Technical data sheet".
@@ -32,9 +32,10 @@ export const highlightSpecs = (product: Product) => product.specs.filter((spec) 
  * Solo se reformatean los valores puramente numéricos. Cosas como
  * "4/18/4 triple", "RC2" o "C3/B3" se dejan exactamente como están.
  */
-export const formatSpecValue = (value: string): string => {
-  if (!/^-?\d+(\.\d+)?$/.test(value)) return value;
-  return formatNumber(Number(value), { maximumFractionDigits: 2 });
+export const formatSpecValue = (value: string | Localized<string>): string => {
+  const text = typeof value === "string" ? value : pick(value);
+  if (!/^-?\d+(\.\d+)?$/.test(text)) return text;
+  return formatNumber(Number(text), { maximumFractionDigits: 2 });
 };
 
 /**
@@ -50,7 +51,8 @@ export const productDimensions = (
 ): { width: number; height: number } | null => {
   for (const spec of product.specs) {
     if (spec.unit !== "mm") continue;
-    const match = /^(\d+)\s*×\s*(\d+)$/.exec(spec.value.trim());
+    const raw = typeof spec.value === "string" ? spec.value : spec.value.en;
+    const match = /^(\d+)\s*×\s*(\d+)$/.exec(raw.trim());
     if (match) return { width: Number(match[1]), height: Number(match[2]) };
   }
   return null;

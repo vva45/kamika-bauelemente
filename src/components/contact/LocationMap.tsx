@@ -30,8 +30,7 @@ import { WindowFrame } from "@/components/ui/WindowFrame";
 import { PinIcon } from "@/components/ui/icons";
 import { companyAddressLine, companyMapEmbedHref } from "@/data/company";
 import { cn } from "@/lib/cn";
-import { t } from "@/lib/i18n";
-import { routes } from "@/lib/routes";
+import { useI18n } from "@/components/layout/LocaleProvider";
 
 /** Trazos abstractos: manzanas y calles, sin pretender ser un plano. */
 function MapPattern() {
@@ -64,6 +63,7 @@ function MapPattern() {
 }
 
 export function LocationMap({ className }: { className?: string }) {
+  const { t, routes } = useI18n();
   const [loaded, setLoaded] = useState(false);
 
   return (

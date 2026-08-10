@@ -15,7 +15,7 @@
 import { useState } from "react";
 import type { ColorFinish, Material } from "@/data/types";
 import { cn } from "@/lib/cn";
-import { pick, t, tf } from "@/lib/i18n";
+import { useI18n } from "@/components/layout/LocaleProvider";
 import type { ContentKey } from "@/lib/i18n";
 
 const GROUP_LABEL: Record<ColorFinish["group"], ContentKey> = {
@@ -44,6 +44,7 @@ const chipClasses = (active: boolean) =>
   );
 
 export function ColourGrid({ colours }: { colours: ColorFinish[] }) {
+  const { pick, t, tf } = useI18n();
   const [group, setGroup] = useState<ColorFinish["group"] | null>(null);
   const [material, setMaterial] = useState<Material | null>(null);
 

@@ -1,3 +1,5 @@
+"use client";
+
 /**
  * LA tarjeta de producto. Una sola, igual en toda la web: home,
  * listados de categoría, "Goes well with" y resultados filtrados.
@@ -21,9 +23,8 @@ import { DocumentIcon } from "@/components/ui/icons";
 import { countModelsByCatalogue } from "@/data";
 import type { Product } from "@/data/types";
 import { cn } from "@/lib/cn";
-import { pick, t, tf } from "@/lib/i18n";
+import { useI18n } from "@/components/layout/LocaleProvider";
 import { datasheetHref } from "@/lib/product";
-import { routes } from "@/lib/routes";
 
 type ProductCardProps = {
   product: Product;
@@ -38,6 +39,7 @@ const BADGE_LABEL = {
 } as const;
 
 export function ProductCard({ product, priority = false, className }: ProductCardProps) {
+  const { pick, t, tf, routes } = useI18n();
   const cover = product.images[0];
   const datasheet = datasheetHref(product);
   // Cuántos modelos hay detrás de esta ficha. Es un dato, no un botón:

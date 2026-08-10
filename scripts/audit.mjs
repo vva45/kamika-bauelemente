@@ -57,7 +57,9 @@ if (htmlFiles.length === 0) {
     }),
   );
   // Páginas servidas bajo demanda: no dejan HTML en el build.
-  pages.add("/contact");
+  // /contact es dinámica (searchParams): existe en los tres idiomas
+  // aunque no haya HTML prerenderizado.
+  for (const locale of ["de", "en", "pl"]) pages.add(`/${locale}/contact`);
 
   const linked = new Set();
 

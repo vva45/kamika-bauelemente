@@ -33,9 +33,9 @@ import type { Catalogue } from "./types";
 export const CATALOGUES: Catalogue[] = [
   {
     id: "roka-signature-2025",
-    title: { en: "ROKA Signature — entrance doors", de: "ROKA Signature — Haustüren" },
+    title: { en: "ROKA Signature — entrance doors", de: "ROKA Signature — Haustüren", pl: "ROKA Signature — drzwi zewnętrzne", },
     brand: "ROKA",
-    collection: { en: "Signature", de: "Signature" },
+    collection: { en: "Signature", de: "Signature", pl: "Signature", },
     category: "entrance-doors",
     file: "/pdf/catalogues/roka-signature-2025.pdf",
     cover: "/images/catalogues/roka-signature-2025-cover.jpg",
@@ -45,9 +45,9 @@ export const CATALOGUES: Catalogue[] = [
   },
   {
     id: "roka-select-2025",
-    title: { en: "ROKA Select — entrance doors", de: "ROKA Select — Haustüren" },
+    title: { en: "ROKA Select — entrance doors", de: "ROKA Select — Haustüren", pl: "ROKA Select — drzwi zewnętrzne", },
     brand: "ROKA",
-    collection: { en: "Select", de: "Select" },
+    collection: { en: "Select", de: "Select", pl: "Select", },
     category: "entrance-doors",
     file: "/pdf/catalogues/roka-select-2025.pdf",
     cover: "/images/catalogues/roka-select-2025-cover.jpg",
@@ -57,9 +57,9 @@ export const CATALOGUES: Catalogue[] = [
   },
   {
     id: "despiro-entrance-doors",
-    title: { en: "Despiro entrance doors", de: "Despiro Haustüren" },
+    title: { en: "Despiro entrance doors", de: "Despiro Haustüren", pl: "Drzwi zewnętrzne Despiro", },
     brand: "Despiro",
-    collection: { en: "Entrance doors", de: "Haustüren" },
+    collection: { en: "Entrance doors", de: "Haustüren", pl: "Drzwi zewnętrzne", },
     category: "entrance-doors",
     file: "/pdf/catalogues/despiro-entrance-doors.pdf",
     cover: "/images/catalogues/despiro-entrance-doors-cover.jpg",
@@ -69,12 +69,12 @@ export const CATALOGUES: Catalogue[] = [
   },
   {
     id: "entrance-door-panels",
-    title: { en: "Aluprof entrance door panels", de: "Aluprof Haustür-Paneele" },
+    title: { en: "Aluprof entrance door panels", de: "Aluprof Haustür-Paneele", pl: "Panele drzwiowe Aluprof", },
     // Estuvo sin marca mientras no constaba el fabricante; el dueño
     // confirmó que es Aluprof (2026-08). El logotipo que traía el PDF
     // era de un competidor, no de Aluprof — ver la nota de arriba.
     brand: "Aluprof",
-    collection: { en: "Door panels", de: "Haustür-Paneele" },
+    collection: { en: "Door panels", de: "Haustür-Paneele", pl: "Panele drzwiowe", },
     category: "entrance-doors",
     file: "/pdf/catalogues/entrance-door-panels.pdf",
     cover: "/images/catalogues/entrance-door-panels-cover.jpg",
@@ -84,13 +84,13 @@ export const CATALOGUES: Catalogue[] = [
   },
   {
     id: "d-art-line",
-    title: { en: "D-ART LINE — door collection", de: "D-ART LINE Türenkollektion" },
+    title: { en: "D-ART LINE — door collection", de: "D-ART LINE Türenkollektion", pl: "D-ART LINE — kolekcja drzwi", },
     // Sin marca, por el mismo motivo que los dos catálogos de persianas
     // de abajo: el fabricante vende también directo en Alemania. El
     // nombre de la línea sí se mantiene —va impreso en la portada y en
     // el pie de cada modelo, y cambiarlo dejaría la web diciendo una
     // cosa y el PDF otra.
-    collection: { en: "D-ART LINE", de: "D-ART LINE" },
+    collection: { en: "D-ART LINE", de: "D-ART LINE", pl: "D-ART LINE", },
     category: "entrance-doors",
     file: "/pdf/catalogues/d-art-line-turenkollektion.pdf",
     cover: "/images/catalogues/d-art-line-cover.jpg",
@@ -100,8 +100,8 @@ export const CATALOGUES: Catalogue[] = [
   },
   {
     id: "aussenturen",
-    title: { en: "Exterior doors — product catalogue", de: "Außentüren Produktkatalog" },
-    collection: { en: "Exterior doors", de: "Außentüren" },
+    title: { en: "Exterior doors — product catalogue", de: "Außentüren Produktkatalog", pl: "Drzwi zewnętrzne — katalog produktów", },
+    collection: { en: "Exterior doors", de: "Außentüren", pl: "Drzwi zewnętrzne", },
     category: "entrance-doors",
     file: "/pdf/catalogues/aussenturen-produktkatalog.pdf",
     cover: "/images/catalogues/aussenturen-cover.jpg",
@@ -114,8 +114,9 @@ export const CATALOGUES: Catalogue[] = [
     title: {
       en: "Roller shutters, external venetian blinds, insect screens",
       de: "Rollläden, Raffstoren, Insektenschutz",
+      pl: "Rolety, raffstory, siatki przeciw owadom",
     },
-    collection: { en: "Shutters and screens", de: "Rollläden und Insektenschutz" },
+    collection: { en: "Shutters and screens", de: "Rollläden und Insektenschutz", pl: "Rolety i siatki", },
     category: "roller-shutters",
     file: "/pdf/catalogues/rollladen-raffstoren-insektenschutz.pdf",
     cover: "/images/catalogues/rollladen-drutex-cover.jpg",
@@ -128,6 +129,7 @@ export const CATALOGUES: Catalogue[] = [
     title: {
       en: "Salamander window and sliding systems",
       de: "Salamander Fenster- und Schiebesysteme",
+      pl: "Systemy okienne i przesuwne Salamander",
     },
     // Salamander es el fabricante de los perfiles y se le acredita,
     // como a Aluplast o VEKA. El que va sin rastro es el intermediario
@@ -136,7 +138,7 @@ export const CATALOGUES: Catalogue[] = [
     // El folleto está en polaco porque así existe; los números no
     // tienen idioma y las fichas de la web van redactadas aparte.
     brand: "Salamander",
-    collection: { en: "Window and sliding systems", de: "Fenster- und Schiebesysteme" },
+    collection: { en: "Window and sliding systems", de: "Fenster- und Schiebesysteme", pl: "Systemy okienne i przesuwne", },
     category: "windows",
     file: "/pdf/catalogues/salamander-systeme.pdf",
     cover: "/images/catalogues/salamander-systeme-cover.jpg",
@@ -146,12 +148,12 @@ export const CATALOGUES: Catalogue[] = [
   },
   {
     id: "rollladen-produktkatalog",
-    title: { en: "Roller shutters — product catalogue", de: "Rollladen Produktkatalog" },
+    title: { en: "Roller shutters — product catalogue", de: "Rollladen Produktkatalog", pl: "Rolety — katalog produktów", },
     // Sin marca a propósito: el fabricante de estas persianas vende
     // también directamente al cliente final en Alemania, así que su
     // nombre y sus enlaces se quitaron del PDF autoalojado. Enseñar la
     // marca aquí sería mandarle el cliente. Ver la nota de arriba.
-    collection: { en: "Roller shutters", de: "Rollläden" },
+    collection: { en: "Roller shutters", de: "Rollläden", pl: "Rolety", },
     category: "roller-shutters",
     file: "/pdf/catalogues/rollladen-produktkatalog.pdf",
     cover: "/images/catalogues/rollladen-produktkatalog-cover.jpg",
@@ -161,8 +163,8 @@ export const CATALOGUES: Catalogue[] = [
   },
   {
     id: "fassadenjalousien",
-    title: { en: "Facade blinds — catalogue", de: "Katalog der Fassadenjalousien" },
-    collection: { en: "Facade blinds", de: "Fassadenjalousien" },
+    title: { en: "Facade blinds — catalogue", de: "Katalog der Fassadenjalousien", pl: "Żaluzje fasadowe — katalog", },
+    collection: { en: "Facade blinds", de: "Fassadenjalousien", pl: "Żaluzje fasadowe", },
     category: "roller-shutters",
     file: "/pdf/catalogues/fassadenjalousien.pdf",
     cover: "/images/catalogues/fassadenjalousien-cover.jpg",

@@ -14,7 +14,7 @@ import { useState } from "react";
 import { ProductCard } from "@/components/product/ProductCard";
 import type { Material, Product } from "@/data/types";
 import { cn } from "@/lib/cn";
-import { t } from "@/lib/i18n";
+import { useI18n } from "@/components/layout/LocaleProvider";
 import type { ContentKey } from "@/lib/i18n";
 
 const MATERIAL_LABEL: Record<Material, ContentKey> = {
@@ -26,6 +26,7 @@ const MATERIAL_LABEL: Record<Material, ContentKey> = {
 };
 
 export function CategoryProducts({ products }: { products: Product[] }) {
+  const { t } = useI18n();
   const [material, setMaterial] = useState<Material | null>(null);
 
   // Materiales presentes, en el orden estable del catálogo.

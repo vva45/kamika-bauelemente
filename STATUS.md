@@ -16,9 +16,12 @@ por contenido está en `CONTENT.md`; esto es el resumen de qué hay y por qué.
 Catálogo informativo de Kamika Bauelemente (Dominik Kamieński, Hechingen): ventanas,
 puertas y elementos de construcción. Sin tienda, sin precios, sin CMS ni base de
 datos. Next.js 16 (App Router, Turbopack), TypeScript estricto, Tailwind 4,
-framer-motion, todo el contenido en ficheros TS tipados. Inglés hoy, alemán
-preparado (`src/content/en.ts` + `de.ts`, paridad forzada por `check:i18n`;
-DE 0/215 — pendiente de traducir).
+framer-motion, todo el contenido en ficheros TS tipados.
+
+**Trilingüe** (2026-08): /de (por defecto, la raíz redirige), /en y /pl, con
+selector en la cabecera, hreflang y sitemap ×3. UI 224/224 claves en los tres;
+capa de datos con en+de+pl. Legal solo en alemán a propósito. Los componentes
+de CLIENTE usan `useI18n()` (contexto), nunca el `t()` global — ver i18n.ts.
 
 ## Cómo se estructura el catálogo (decisión del dueño)
 
@@ -107,7 +110,8 @@ dónde se llega. El contador del hub suma los de sus hijas.
    accesorios ya solo faltan cilindros; las manillas/vierteaguas/aireadores
    entraron con la página Dodatki del folleto Salamander (nombres en polaco
    hasta que haya catálogo alemán).
-4. Traducción alemana (215 claves) y textos reales de /about (retrato, bio).
+4. (Traducción DE+PL: HECHA. Queda que el dueño revise el polaco — es nativo —
+   y los textos reales de /about ya están: retrato y bio suyos.)
 5. Legal, con abogado: NIF/IVA o Kleinunternehmer, cámara de oficios, horario;
    preguntar por el mapa de dos clics ya de paso.
 6. Dominio definitivo (`kamika-bauelemente.de`?) — al conectarlo en Vercel,

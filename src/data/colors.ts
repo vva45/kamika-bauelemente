@@ -29,7 +29,7 @@ export const COLORS: ColorFinish[] = [
   // ── RAL ──────────────────────────────────────────────────────
   {
     id: "ral-9016",
-    name: { en: "Traffic white" },
+    name: { en: "Traffic white", de: "Verkehrsweiß", pl: "Biały drogowy" },
     code: "RAL 9016",
     hex: "#F1F0EA",
     group: "ral",
@@ -37,7 +37,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "ral-9010",
-    name: { en: "Pure white" },
+    name: { en: "Pure white", de: "Reinweiß", pl: "Czysta biel" },
     code: "RAL 9010",
     hex: "#F1EDE1",
     group: "ral",
@@ -45,7 +45,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "ral-1013",
-    name: { en: "Oyster white" },
+    name: { en: "Oyster white", de: "Perlweiß", pl: "Biel perłowa" },
     code: "RAL 1013",
     hex: "#EAE6DA",
     group: "ral",
@@ -53,7 +53,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "ral-1015",
-    name: { en: "Light ivory" },
+    name: { en: "Light ivory", de: "Hellelfenbein", pl: "Jasna kość słoniowa" },
     code: "RAL 1015",
     hex: "#E6D2B5",
     group: "ral",
@@ -61,7 +61,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "ral-7035",
-    name: { en: "Light grey" },
+    name: { en: "Light grey", de: "Lichtgrau", pl: "Szary jasny" },
     code: "RAL 7035",
     hex: "#D7D7D7",
     group: "ral",
@@ -69,7 +69,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "ral-9007",
-    name: { en: "Grey aluminium" },
+    name: { en: "Grey aluminium", de: "Graualuminium", pl: "Szare aluminium" },
     code: "RAL 9007",
     hex: "#8F8F8C",
     group: "ral",
@@ -77,7 +77,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "ral-7039",
-    name: { en: "Quartz grey" },
+    name: { en: "Quartz grey", de: "Quarzgrau", pl: "Szary kwarcowy" },
     code: "RAL 7039",
     hex: "#6B665E",
     group: "ral",
@@ -85,7 +85,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "ral-7015",
-    name: { en: "Slate grey" },
+    name: { en: "Slate grey", de: "Schiefergrau", pl: "Szary łupkowy" },
     code: "RAL 7015",
     hex: "#4E5754",
     group: "ral",
@@ -93,7 +93,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "ral-7012",
-    name: { en: "Basalt grey" },
+    name: { en: "Basalt grey", de: "Basaltgrau", pl: "Szary bazaltowy" },
     code: "RAL 7012",
     hex: "#4E5452",
     group: "ral",
@@ -101,7 +101,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "ral-7016",
-    name: { en: "Anthracite grey" },
+    name: { en: "Anthracite grey", de: "Anthrazitgrau", pl: "Antracytowy" },
     code: "RAL 7016",
     hex: "#383E42",
     group: "ral",
@@ -109,7 +109,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "ral-9005",
-    name: { en: "Jet black" },
+    name: { en: "Jet black", de: "Tiefschwarz", pl: "Czerń głęboka" },
     code: "RAL 9005",
     hex: "#0A0A0A",
     group: "ral",
@@ -117,7 +117,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "ral-8003",
-    name: { en: "Clay brown" },
+    name: { en: "Clay brown", de: "Lehmbraun", pl: "Brąz gliniasty" },
     code: "RAL 8003",
     hex: "#7E4B26",
     group: "ral",
@@ -125,7 +125,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "ral-8017",
-    name: { en: "Chocolate brown" },
+    name: { en: "Chocolate brown", de: "Schokoladenbraun", pl: "Brąz czekoladowy" },
     code: "RAL 8017",
     hex: "#45322E",
     group: "ral",
@@ -133,7 +133,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "ral-6005",
-    name: { en: "Moss green" },
+    name: { en: "Moss green", de: "Moosgrün", pl: "Zieleń mchowa" },
     code: "RAL 6005",
     hex: "#114232",
     group: "ral",
@@ -141,7 +141,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "ral-6009",
-    name: { en: "Fir green" },
+    name: { en: "Fir green", de: "Tannengrün", pl: "Zieleń jodłowa" },
     code: "RAL 6009",
     hex: "#27352A",
     group: "ral",
@@ -149,7 +149,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "ral-5011",
-    name: { en: "Steel blue" },
+    name: { en: "Steel blue", de: "Stahlblau", pl: "Błękit stalowy" },
     code: "RAL 5011",
     hex: "#1A2B3C",
     group: "ral",
@@ -157,7 +157,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "ral-3003",
-    name: { en: "Ruby red" },
+    name: { en: "Ruby red", de: "Rubinrot", pl: "Czerwień rubinowa" },
     code: "RAL 3003",
     hex: "#9B111E",
     group: "ral",
@@ -165,7 +165,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "ral-3005",
-    name: { en: "Wine red" },
+    name: { en: "Wine red", de: "Weinrot", pl: "Czerwień wina" },
     code: "RAL 3005",
     hex: "#59191F",
     group: "ral",
@@ -177,7 +177,7 @@ export const COLORS: ColorFinish[] = [
   // lama, y los de puertas de Außentüren y persianas.
   {
     id: "ral-9001",
-    name: { en: "Cream" },
+    name: { en: "Cream", de: "Cremeweiß", pl: "Kremowy" },
     code: "RAL 9001",
     hex: "#FDF4E3",
     group: "ral",
@@ -185,7 +185,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "ral-9006",
-    name: { en: "White aluminium" },
+    name: { en: "White aluminium", de: "Weißaluminium", pl: "Białe aluminium" },
     code: "RAL 9006",
     hex: "#A5A5A5",
     group: "ral",
@@ -193,7 +193,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "ral-9004",
-    name: { en: "Signal black" },
+    name: { en: "Signal black", de: "Signalschwarz", pl: "Czerń sygnałowa" },
     code: "RAL 9004",
     hex: "#282828",
     group: "ral",
@@ -201,7 +201,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "ral-9017",
-    name: { en: "Traffic black" },
+    name: { en: "Traffic black", de: "Verkehrsschwarz", pl: "Czerń drogowa" },
     code: "RAL 9017",
     hex: "#1E1E1E",
     group: "ral",
@@ -209,7 +209,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "ral-7021",
-    name: { en: "Black grey" },
+    name: { en: "Black grey", de: "Schwarzgrau", pl: "Czarno-szary" },
     code: "RAL 7021",
     hex: "#2F3234",
     group: "ral",
@@ -217,7 +217,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "ral-7022",
-    name: { en: "Umbra grey" },
+    name: { en: "Umbra grey", de: "Umbragrau", pl: "Szary umbra" },
     code: "RAL 7022",
     hex: "#4C4A44",
     group: "ral",
@@ -225,7 +225,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "ral-7038",
-    name: { en: "Agate grey" },
+    name: { en: "Agate grey", de: "Achatgrau", pl: "Szary agatowy" },
     code: "RAL 7038",
     hex: "#B5B8B1",
     group: "ral",
@@ -233,7 +233,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "ral-7043",
-    name: { en: "Traffic grey B" },
+    name: { en: "Traffic grey B", de: "Verkehrsgrau B", pl: "Szary drogowy B" },
     code: "RAL 7043",
     hex: "#4E5451",
     group: "ral",
@@ -242,7 +242,7 @@ export const COLORS: ColorFinish[] = [
   {
     // Perlado: efecto metálico, el hex es solo el tono base.
     id: "ral-7048",
-    name: { en: "Pearl mouse grey" },
+    name: { en: "Pearl mouse grey", de: "Perlmausgrau", pl: "Szary mysi perłowy" },
     code: "RAL 7048",
     hex: "#7C7F7E",
     group: "ral",
@@ -250,7 +250,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "ral-1035",
-    name: { en: "Pearl beige" },
+    name: { en: "Pearl beige", de: "Perlbeige", pl: "Beż perłowy" },
     code: "RAL 1035",
     hex: "#7A7B6D",
     group: "ral",
@@ -258,7 +258,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "ral-8014",
-    name: { en: "Sepia brown" },
+    name: { en: "Sepia brown", de: "Sepiabraun", pl: "Brąz sepiowy" },
     code: "RAL 8014",
     hex: "#4A3526",
     group: "ral",
@@ -266,7 +266,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "ral-8019",
-    name: { en: "Grey brown" },
+    name: { en: "Grey brown", de: "Graubraun", pl: "Szarobrązowy" },
     code: "RAL 8019",
     hex: "#3D3635",
     group: "ral",
@@ -274,7 +274,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "ral-3004",
-    name: { en: "Purple red" },
+    name: { en: "Purple red", de: "Purpurrot", pl: "Czerwień purpurowa" },
     code: "RAL 3004",
     hex: "#75151E",
     group: "ral",
@@ -282,7 +282,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "ral-5001",
-    name: { en: "Green blue" },
+    name: { en: "Green blue", de: "Grünblau", pl: "Zielononiebieski" },
     code: "RAL 5001",
     hex: "#1F3438",
     group: "ral",
@@ -295,7 +295,7 @@ export const COLORS: ColorFinish[] = [
   // catálogo de fassadenjalousien.
   {
     id: "db-702",
-    name: { en: "DB grey, light" },
+    name: { en: "DB grey, light", de: "DB-Grau, hell", pl: "Szary DB, jasny" },
     code: "DB 702",
     hex: "#7C7F84",
     group: "special",
@@ -303,7 +303,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "db-703",
-    name: { en: "DB grey, dark" },
+    name: { en: "DB grey, dark", de: "DB-Grau, dunkel", pl: "Szary DB, ciemny" },
     code: "DB 703",
     hex: "#434750",
     group: "special",
@@ -313,7 +313,7 @@ export const COLORS: ColorFinish[] = [
   // ── Decorados de madera ──────────────────────────────────────
   {
     id: "decor-golden-oak",
-    name: { en: "Golden oak" },
+    name: { en: "Golden oak", de: "Golden Oak", pl: "Złoty dąb" },
     code: "Decor 2178-001",
     hex: "#9C5A20",
     group: "wood-decor",
@@ -321,7 +321,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "decor-nut-tree",
-    name: { en: "Nut tree" },
+    name: { en: "Nut tree", de: "Nussbaum", pl: "Orzech" },
     code: "Decor 2178-007",
     hex: "#5A3520",
     group: "wood-decor",
@@ -329,7 +329,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "decor-winchester-oak",
-    name: { en: "Winchester oak" },
+    name: { en: "Winchester oak", de: "Winchester Oak", pl: "Dąb Winchester" },
     code: "Decor 3152-009",
     hex: "#A98C6B",
     group: "wood-decor",
@@ -337,7 +337,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "decor-irish-oak",
-    name: { en: "Irish oak" },
+    name: { en: "Irish oak", de: "Irish Oak", pl: "Dąb irlandzki" },
     code: "Decor 3149-008",
     hex: "#8A5A2B",
     group: "wood-decor",
@@ -345,7 +345,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "decor-sheffield-oak-light",
-    name: { en: "Sheffield oak light" },
+    name: { en: "Sheffield oak light", de: "Sheffield Eiche hell", pl: "Dąb Sheffield jasny" },
     code: "Decor 3181-001",
     hex: "#B49A7E",
     group: "wood-decor",
@@ -353,7 +353,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "decor-sheffield-oak-concrete",
-    name: { en: "Sheffield oak concrete" },
+    name: { en: "Sheffield oak concrete", de: "Sheffield Eiche beton", pl: "Dąb Sheffield beton" },
     code: "Decor 3181-002",
     hex: "#8C8A85",
     group: "wood-decor",
@@ -361,7 +361,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "decor-mahogany",
-    name: { en: "Mahogany" },
+    name: { en: "Mahogany", de: "Mahagoni", pl: "Mahoń" },
     code: "Decor 2097-013",
     hex: "#6B2B22",
     group: "wood-decor",
@@ -369,7 +369,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "decor-walnut",
-    name: { en: "Walnut" },
+    name: { en: "Walnut", de: "Walnuss", pl: "Orzech włoski" },
     code: "Decor 1192-001",
     hex: "#4A2E1E",
     group: "wood-decor",
@@ -377,7 +377,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "decor-macore",
-    name: { en: "Macore" },
+    name: { en: "Macore", de: "Macoré", pl: "Makore" },
     code: "Decor 2065-021",
     hex: "#7B3B2A",
     group: "wood-decor",
@@ -385,7 +385,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "decor-anthracite-woodgrain",
-    name: { en: "Anthracite woodgrain" },
+    name: { en: "Anthracite woodgrain", de: "Anthrazit Holzstruktur", pl: "Antracyt drewnopodobny" },
     code: "Decor 701605-167",
     hex: "#383E42",
     group: "wood-decor",
@@ -395,7 +395,7 @@ export const COLORS: ColorFinish[] = [
     // Acabado madera sobre lama de aluminio, no lámina de PVC: sale en
     // la carta de las C-80 y Z-90 del catálogo de fassadenjalousien.
     id: "decor-turner-oak-malt",
-    name: { en: "Turner oak malt" },
+    name: { en: "Turner oak malt", de: "Turner Oak Malt", pl: "Dąb Turner Malt" },
     code: "Turner Oak Malt",
     hex: "#B98B54",
     group: "wood-decor",
@@ -410,7 +410,7 @@ export const COLORS: ColorFinish[] = [
   // aquí van los de pino, que es la muestra completa.
   {
     id: "stain-farblos",
-    name: { en: "Clear" },
+    name: { en: "Clear", de: "Farblos", pl: "Bezbarwny" },
     code: "Farblos",
     hex: "#EFD8AC",
     group: "wood-stain",
@@ -418,7 +418,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "stain-weiss-deckend",
-    name: { en: "White, opaque" },
+    name: { en: "White, opaque", de: "Weiß (deckend)", pl: "Biały (kryjący)" },
     code: "Weiß (deckend)",
     hex: "#F3F3F5",
     group: "wood-stain",
@@ -426,7 +426,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "stain-eiche-natur",
-    name: { en: "Natural oak" },
+    name: { en: "Natural oak", de: "Eiche Natur", pl: "Dąb naturalny" },
     code: "Eiche Natur",
     hex: "#A9643B",
     group: "wood-stain",
@@ -434,7 +434,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "stain-eiche-dunkel",
-    name: { en: "Dark oak" },
+    name: { en: "Dark oak", de: "Eiche dunkel", pl: "Dąb ciemny" },
     code: "Eiche dunkel",
     hex: "#8C3E20",
     group: "wood-stain",
@@ -442,7 +442,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "stain-teak",
-    name: { en: "Teak" },
+    name: { en: "Teak", de: "Teak", pl: "Teak" },
     code: "Teak",
     hex: "#792D1A",
     group: "wood-stain",
@@ -450,7 +450,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "stain-mahagoni",
-    name: { en: "Mahogany" },
+    name: { en: "Mahogany", de: "Mahagoni", pl: "Mahoń" },
     code: "Mahagoni",
     hex: "#762A1C",
     group: "wood-stain",
@@ -458,7 +458,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "stain-nussbaum",
-    name: { en: "Walnut" },
+    name: { en: "Walnut", de: "Nussbaum", pl: "Orzech" },
     code: "Nussbaum",
     hex: "#2D191B",
     group: "wood-stain",
@@ -466,7 +466,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "stain-schwarzbraun",
-    name: { en: "Black brown" },
+    name: { en: "Black brown", de: "Schwarzbraun", pl: "Czarnobrązowy" },
     code: "Schwarzbraun",
     hex: "#240F11",
     group: "wood-stain",
@@ -481,7 +481,7 @@ export const COLORS: ColorFinish[] = [
   // el resto opcional; el 60 depende de existencias.
   {
     id: "lamella-01",
-    name: { en: "Silver" },
+    name: { en: "Silver", de: "Silber", pl: "Srebrny" },
     code: "01 Silber",
     hex: "#DDDDDD",
     group: "lamella",
@@ -489,7 +489,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "lamella-02",
-    name: { en: "White" },
+    name: { en: "White", de: "Weiß", pl: "Biały" },
     code: "02 Weiß",
     hex: "#FDFDFD",
     group: "lamella",
@@ -497,7 +497,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "lamella-03",
-    name: { en: "Grey" },
+    name: { en: "Grey", de: "Grau", pl: "Szary" },
     code: "03 Grau",
     hex: "#EDEEE5",
     group: "lamella",
@@ -505,7 +505,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "lamella-05",
-    name: { en: "Beige" },
+    name: { en: "Beige", de: "Beige", pl: "Beżowy" },
     code: "05 Beige",
     hex: "#CCBB80",
     group: "lamella",
@@ -513,7 +513,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "lamella-08",
-    name: { en: "Dark brown" },
+    name: { en: "Dark brown", de: "Dunkelbraun", pl: "Ciemnobrązowy" },
     code: "08 Dunkelbraun",
     hex: "#393532",
     group: "lamella",
@@ -521,7 +521,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "lamella-09",
-    name: { en: "Brown" },
+    name: { en: "Brown", de: "Braun", pl: "Brązowy" },
     code: "09 Braun",
     hex: "#5A3F30",
     group: "lamella",
@@ -529,7 +529,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "lamella-20",
-    name: { en: "Black" },
+    name: { en: "Black", de: "Schwarz", pl: "Czarny" },
     code: "20 Schwarz",
     hex: "#171717",
     group: "lamella",
@@ -537,7 +537,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "lamella-23",
-    name: { en: "Anthracite" },
+    name: { en: "Anthracite", de: "Anthrazit", pl: "Antracyt" },
     code: "23 Anthrazit",
     hex: "#2D2D2F",
     group: "lamella",
@@ -545,7 +545,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "lamella-24",
-    name: { en: "Golden oak" },
+    name: { en: "Golden oak", de: "Golden Oak", pl: "Złoty dąb" },
     code: "24 Golden Oak",
     hex: "#AC6A2F",
     group: "lamella",
@@ -553,7 +553,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "lamella-28",
-    name: { en: "Walnut" },
+    name: { en: "Walnut", de: "Nussbaum", pl: "Orzech" },
     code: "28 Nussbaum",
     hex: "#614328",
     group: "lamella",
@@ -561,7 +561,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "lamella-33",
-    name: { en: "Basalt grey" },
+    name: { en: "Basalt grey", de: "Basaltgrau", pl: "Szary bazaltowy" },
     code: "33 Basaltgrau RAL 7012",
     hex: "#4E5754",
     group: "lamella",
@@ -569,7 +569,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "lamella-34",
-    name: { en: "Quartz grey" },
+    name: { en: "Quartz grey", de: "Quarzgrau", pl: "Szary kwarcowy" },
     code: "34 Quarzgrau RAL 7039",
     hex: "#6B695F",
     group: "lamella",
@@ -577,7 +577,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "lamella-49",
-    name: { en: "Turner oak" },
+    name: { en: "Turner oak", de: "Turner Oak", pl: "Dąb Turner" },
     code: "49 Turner Oak",
     hex: "#FACA8A",
     group: "lamella",
@@ -585,7 +585,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "lamella-52",
-    name: { en: "Winchester" },
+    name: { en: "Winchester", de: "Winchester", pl: "Winchester" },
     code: "52 Winchester",
     hex: "#9D6D3C",
     group: "lamella",
@@ -593,7 +593,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "lamella-60",
-    name: { en: "Ivory" },
+    name: { en: "Ivory", de: "Elfenbein", pl: "Kość słoniowa" },
     code: "60 Elfenbein",
     hex: "#CDBD82",
     group: "lamella",
@@ -601,7 +601,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "lamella-61",
-    name: { en: "Moss green" },
+    name: { en: "Moss green", de: "Moosgrün", pl: "Zieleń mchowa" },
     code: "61 Moosgrün",
     hex: "#2E5B41",
     group: "lamella",
@@ -609,7 +609,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "lamella-62",
-    name: { en: "Grey aluminium" },
+    name: { en: "Grey aluminium", de: "Grau Aluminium", pl: "Szare aluminium" },
     code: "62 Grau Aluminium",
     hex: "#A5A5A5",
     group: "lamella",
@@ -619,7 +619,7 @@ export const COLORS: ColorFinish[] = [
   // ── Anodizados ───────────────────────────────────────────────
   {
     id: "anod-e6-ev1",
-    name: { en: "Natural silver" },
+    name: { en: "Natural silver", de: "Natursilber", pl: "Srebro naturalne" },
     code: "E6 / EV1",
     hex: "#C9C9C6",
     group: "anodised",
@@ -627,7 +627,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "anod-c0",
-    name: { en: "Champagne" },
+    name: { en: "Champagne", de: "Champagner", pl: "Szampański" },
     code: "C-0",
     hex: "#C9B79B",
     group: "anodised",
@@ -635,7 +635,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "anod-c31",
-    name: { en: "Medium bronze" },
+    name: { en: "Medium bronze", de: "Mittelbronze", pl: "Brąz średni" },
     code: "C-31",
     hex: "#7A6754",
     group: "anodised",
@@ -643,7 +643,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "anod-c33",
-    name: { en: "Dark bronze" },
+    name: { en: "Dark bronze", de: "Dunkelbronze", pl: "Brąz ciemny" },
     code: "C-33",
     hex: "#4A3F35",
     group: "anodised",
@@ -651,7 +651,7 @@ export const COLORS: ColorFinish[] = [
   },
   {
     id: "anod-c35",
-    name: { en: "Anodised black" },
+    name: { en: "Anodised black", de: "Schwarz eloxiert", pl: "Czarny anodowany" },
     code: "C-35",
     hex: "#2B2B2B",
     group: "anodised",

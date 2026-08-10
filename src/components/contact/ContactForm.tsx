@@ -12,11 +12,12 @@
  */
 import Link from "next/link";
 import { useActionState, useState } from "react";
-import { sendEnquiry } from "@/app/contact/actions";
+import { sendEnquiry } from "@/app/[locale]/contact/actions";
 import { Button, ButtonLink } from "@/components/ui/Button";
 import { ChatIcon } from "@/components/ui/icons";
 import { COMPANY, companyEmailHref, companyWhatsAppWith } from "@/data/company";
 import { cn } from "@/lib/cn";
+import { useI18n } from "@/components/layout/LocaleProvider";
 import {
   CONTACT_ERROR_KEY,
   CONTACT_IDLE,
@@ -26,8 +27,6 @@ import {
   readContactValues,
   validateContact,
 } from "@/lib/contact";
-import { t } from "@/lib/i18n";
-import { routes } from "@/lib/routes";
 
 /** Un producto para el desplegable, ya agrupado por categoría. */
 export type ProductOption = { id: string; label: string };
@@ -49,6 +48,7 @@ const fieldClasses = (invalid: boolean) =>
 const labelClasses = "eyebrow mb-2 block";
 
 export function ContactForm({ groups, selectedProduct }: ContactFormProps) {
+  const { t, routes } = useI18n();
   const [state, formAction, pending] = useActionState(sendEnquiry, CONTACT_IDLE);
   // Errores detectados en el navegador antes de enviar. Los del
   // servidor llegan en `state`.

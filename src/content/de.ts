@@ -2,8 +2,8 @@
  * Traducción alemana. Generado por `npm run sync:i18n` desde `en.ts`.
  *
  * Mismas claves que `en.ts`, en el mismo orden. Rellena los valores y
- * borra el `// TODO: DE` de la línea. Cuando esté completo, cambia
- * LOCALE a 'de' en `src/lib/i18n.ts` y el sitio pasa a alemán.
+ * borra el `// TODO` de la línea. Los textos del dueño van verbatim y
+ * NO se retocan.
  *
  * No edites la estructura a mano: vuelve a ejecutar el script.
  */
@@ -11,185 +11,185 @@ import type { ContentKey } from "./en";
 
 export const de: Record<ContentKey, string> = {
   // ── Accesibilidad ────────────────────────────────────────────
-  "a11y.skipToContent": "", // TODO: DE
-  "a11y.mainNavigation": "", // TODO: DE
-  "a11y.breadcrumb": "", // TODO: DE
-  "a11y.openMenu": "", // TODO: DE
-  "a11y.closeMenu": "", // TODO: DE
-  "a11y.openProductsMenu": "", // TODO: DE
-  "a11y.footerNavigation": "", // TODO: DE
-  "a11y.opensInNewTab": "", // TODO: DE
+  "a11y.skipToContent": "Zum Inhalt springen",
+  "a11y.mainNavigation": "Hauptnavigation",
+  "a11y.breadcrumb": "Seitenpfad",
+  "a11y.openMenu": "Menü öffnen",
+  "a11y.closeMenu": "Menü schließen",
+  "a11y.openProductsMenu": "Produktkategorien anzeigen",
+  "a11y.footerNavigation": "Fußzeilennavigation",
+  "a11y.opensInNewTab": "öffnet in einem neuen Tab",
 
   // ── Navegación ───────────────────────────────────────────────
-  "nav.products": "", // TODO: DE
-  "nav.catalogues": "", // TODO: DE
-  "nav.projects": "", // TODO: DE
-  "nav.colours": "", // TODO: DE
-  "nav.about": "", // TODO: DE
-  "nav.contact": "", // TODO: DE
-  "nav.allCategories": "", // TODO: DE
+  "nav.products": "Produkte",
+  "nav.catalogues": "Kataloge",
+  "nav.projects": "Referenzen",
+  "nav.colours": "Farben",
+  "nav.about": "Über uns",
+  "nav.contact": "Kontakt",
+  "nav.allCategories": "Alle Kategorien",
 
   // ── Etiquetas de contacto ────────────────────────────────────
-  "contact.phoneLabel": "", // TODO: DE
-  "contact.whatsappLabel": "", // TODO: DE
-  "contact.emailLabel": "", // TODO: DE
-  "contact.ownerLabel": "", // TODO: DE
+  "contact.phoneLabel": "Telefon",
+  "contact.whatsappLabel": "WhatsApp",
+  "contact.emailLabel": "E-Mail",
+  "contact.ownerLabel": "Inhaber",
 
   // ── Pie ──────────────────────────────────────────────────────
-  "footer.productsHeading": "", // TODO: DE
-  "footer.companyHeading": "", // TODO: DE
-  "footer.legalHeading": "", // TODO: DE
-  "footer.imprint": "", // TODO: DE
-  "footer.privacy": "", // TODO: DE
-  "footer.rights": "", // TODO: DE
-  "footer.blurb": "", // TODO: DE
+  "footer.productsHeading": "Produkte",
+  "footer.companyHeading": "Unternehmen",
+  "footer.legalHeading": "Rechtliches",
+  "footer.imprint": "Impressum",
+  "footer.privacy": "Datenschutzerklärung",
+  "footer.rights": "Alle Rechte vorbehalten.",
+  "footer.blurb": "Fenster, Türen, Rollläden und Bauelemente. Aufgemessen, geliefert und montiert in Hechingen und Umgebung.",
 
   // ── Botones y etiquetas comunes ──────────────────────────────
-  "common.viewAll": "", // TODO: DE
-  "common.viewProducts": "", // TODO: DE
-  "common.getInTouch": "", // TODO: DE
-  "common.contactUs": "", // TODO: DE
+  "common.viewAll": "Alle anzeigen",
+  "common.viewProducts": "Produkte ansehen",
+  "common.getInTouch": "Kontakt aufnehmen",
+  "common.contactUs": "Kontaktieren Sie uns",
 
   // Reservada: regla de negocio para marcas de terceros — nunca se
 
   // enlaza a la web del fabricante, se autoaloja su PDF y este es el
 
   // botón secundario. Todavía no hay ninguna marca de terceros.
-  "common.browse": "", // TODO: DE
-  "common.download": "", // TODO: DE
-  "common.openInNewTab": "", // TODO: DE
-  "common.comingSoon": "", // TODO: DE
+  "common.browse": "Durchblättern",
+  "common.download": "Herunterladen",
+  "common.openInNewTab": "In neuem Tab öffnen",
+  "common.comingSoon": "Demnächst",
 
   // ── Hub de productos ─────────────────────────────────────────
-  "products.eyebrow": "", // TODO: DE
-  "products.title": "", // TODO: DE
-  "products.intro": "", // TODO: DE
-  "products.filterLabel": "", // TODO: DE
-  "products.filterAll": "", // TODO: DE
+  "products.eyebrow": "Produktbereiche",
+  "products.title": "Produkte",
+  "products.intro": "Acht Bereiche rund um die Öffnung: das Element, seine Beschattung, sein Insektenschutz und die Beschläge. Jede Modellseite zeigt die Spezifikation und verlinkt auf die genaue Katalogseite.",
+  "products.filterLabel": "Material",
+  "products.filterAll": "Alle Materialien",
 
   // ── Materiales (etiquetas de filtro y de spec) ──────────────
-  "material.pvc": "", // TODO: DE
-  "material.aluminium": "", // TODO: DE
-  "material.steel": "", // TODO: DE
-  "material.wood": "", // TODO: DE
-  "material.wood-alu": "", // TODO: DE
+  "material.pvc": "Kunststoff",
+  "material.aluminium": "Aluminium",
+  "material.steel": "Stahl",
+  "material.wood": "Holz",
+  "material.wood-alu": "Holz-Aluminium",
 
   // ── Galería y lightbox ───────────────────────────────────────
-  "gallery.viewImage": "", // TODO: DE
-  "gallery.openLightbox": "", // TODO: DE
-  "gallery.close": "", // TODO: DE
-  "gallery.prev": "", // TODO: DE
-  "gallery.next": "", // TODO: DE
+  "gallery.viewImage": "Bild {index} von {total} anzeigen",
+  "gallery.openLightbox": "Bild im Vollbild öffnen",
+  "gallery.close": "Vollbildansicht schließen",
+  "gallery.prev": "Vorheriges Bild",
+  "gallery.next": "Nächstes Bild",
 
   // ── Producto ─────────────────────────────────────────────────
-  "product.datasheet": "", // TODO: DE
-  "product.sendEnquiry": "", // TODO: DE
-  "product.specifications": "", // TODO: DE
-  "product.goesWellWith": "", // TODO: DE
-  "product.usedInProjects": "", // TODO: DE
-  "product.badgeNew": "", // TODO: DE
-  "product.badgeBestseller": "", // TODO: DE
-  "product.modelsOne": "", // TODO: DE
-  "product.modelsOther": "", // TODO: DE
+  "product.datasheet": "Technisches Datenblatt",
+  "product.sendEnquiry": "Anfrage senden",
+  "product.specifications": "Spezifikationen",
+  "product.goesWellWith": "Passt gut zu",
+  "product.usedInProjects": "In diesen Referenzen verbaut",
+  "product.badgeNew": "Neu",
+  "product.badgeBestseller": "Bestseller",
+  "product.modelsOne": "1 Modell",
+  "product.modelsOther": "{count} Modelle",
 
   // ── Home ─────────────────────────────────────────────────────
-  "home.heroEyebrow": "", // TODO: DE
-  "home.heroTitle": "", // TODO: DE
-  "home.heroSubtitle": "", // TODO: DE
-  "home.heroImageAlt": "", // TODO: DE
-  "home.scrollHint": "", // TODO: DE
-  "home.categoriesEyebrow": "", // TODO: DE
-  "home.categoriesTitle": "", // TODO: DE
-  "home.categoriesIntro": "", // TODO: DE
-  "home.cataloguesEyebrow": "", // TODO: DE
-  "home.cataloguesTitle": "", // TODO: DE
-  "home.cataloguesIntro": "", // TODO: DE
-  "home.projectsEyebrow": "", // TODO: DE
-  "home.projectsTitle": "", // TODO: DE
-  "home.projectsIntro": "", // TODO: DE
-  "home.coloursEyebrow": "", // TODO: DE
-  "home.coloursTitle": "", // TODO: DE
-  "home.coloursIntro": "", // TODO: DE
-  "home.howEyebrow": "", // TODO: DE
-  "home.howTitle": "", // TODO: DE
-  "home.howStep1Title": "", // TODO: DE
-  "home.howStep1Body": "", // TODO: DE
-  "home.howStep2Title": "", // TODO: DE
-  "home.howStep2Body": "", // TODO: DE
-  "home.howStep3Title": "", // TODO: DE
-  "home.howStep3Body": "", // TODO: DE
-  "home.howStep4Title": "", // TODO: DE
-  "home.howStep4Body": "", // TODO: DE
-  "home.ctaEyebrow": "", // TODO: DE
-  "home.ctaTitle": "", // TODO: DE
-  "home.ctaBody": "", // TODO: DE
-  "home.viewOnMap": "", // TODO: DE
-  "map.showMap": "", // TODO: DE
-  "map.notice": "", // TODO: DE
-  "home.mapAlt": "", // TODO: DE
-  "home.colourRenderAlt": "", // TODO: DE
+  "home.heroEyebrow": "Fenster · Türen · Rollläden · Hechingen",
+  "home.heroTitle": "Fenster, Türen und Rollläden — fachgerecht montiert.",
+  "home.heroSubtitle": "Wir messen vor Ort auf, liefern die Elemente und montieren sie. Kunststoff, Aluminium, Stahl und Holz — ein Anbieter für die ganze Öffnung.",
+  "home.heroImageAlt": "Ein montiertes Fenster in einem Haus in der Umgebung von Hechingen",
+  "home.scrollHint": "Scrollen",
+  "home.categoriesEyebrow": "Was wir liefern",
+  "home.categoriesTitle": "Alles, was eine Öffnung schließt.",
+  "home.categoriesIntro": "Acht Bereiche, ein Anbieter, ein Montageteam. Der Rollladen wird mit dem Fenster geplant — nicht hinterher angeschraubt.",
+  "home.cataloguesEyebrow": "Unterlagen",
+  "home.cataloguesTitle": "Kataloge durchblättern",
+  "home.cataloguesIntro": "Die kompletten Sortimente als PDF. Hier lesen oder herunterladen — ohne Formular, ohne E-Mail-Adresse.",
+  "home.projectsEyebrow": "Ausgeführte Arbeiten",
+  "home.projectsTitle": "Aktuelle Montagen",
+  "home.projectsIntro": "Was gewünscht war, was eingebaut wurde, und wo. Das ist die Referenz für das, was wir können.",
+  "home.coloursEyebrow": "Farben und Oberflächen",
+  "home.coloursTitle": "RAL, Holzdekor und eloxiert",
+  "home.coloursIntro": "Rahmen können innen und außen unterschiedlich beschichtet werden. Fahren Sie über eine Farbe, um sie am Rahmen zu sehen.",
+  "home.howEyebrow": "So läuft es ab",
+  "home.howTitle": "Vom ersten Termin bis zur letzten Einstellung",
+  "home.howStep1Title": "Beratung",
+  "home.howStep1Body": "Wir schauen uns die Öffnung, den Wandaufbau und die Anforderungen des Raums an. Sie erhalten ein schriftliches Angebot mit Profil, Verglasung und Beschlägen.",
+  "home.howStep2Title": "Aufmaß",
+  "home.howStep2Body": "Das endgültige Aufmaß nehmen wir vor Ort, sobald das Angebot angenommen ist — nie nach Zeichnung. Die Fertigung startet mit diesen Maßen.",
+  "home.howStep3Title": "Montage",
+  "home.howStep3Body": "Alte Elemente raus, neue rein, innen und außen abgedichtet. Ein Einfamilienhaus dauert in der Regel ein bis zwei Tage.",
+  "home.howStep4Title": "Service",
+  "home.howStep4Body": "Danach Einstellung, Dichtungen, Beschläge und Glasersatz aus einer Hand. Die Auftragsdaten bleiben hinterlegt, damit Ersatzteile auch Jahre später passen.",
+  "home.ctaEyebrow": "Hechingen · Zollernalbkreis",
+  "home.ctaTitle": "Erzählen Sie uns von Ihrer Öffnung.",
+  "home.ctaBody": "Rufen Sie an, schreiben Sie, oder schicken Sie die Maße, die Sie schon haben. Es antwortet Dominik — kein Callcenter.",
+  "home.viewOnMap": "Auf Google Maps ansehen",
+  "map.showMap": "Karte anzeigen",
+  "map.notice": "Die Karte wird erst geladen, wenn Sie es möchten. Beim Anzeigen verbindet sich Ihr Browser mit Google Maps; Google kann dabei Cookies setzen.",
+  "home.mapAlt": "Karte mit dem Standort von Kamika Bauelemente in Hechingen",
+  "home.colourRenderAlt": "Fensterrahmen in der gewählten Farbe",
 
   // ── Catálogos ────────────────────────────────────────────────
-  "catalogue.pages": "", // TODO: DE
-  "catalogue.size": "", // TODO: DE
-  "catalogues.eyebrow": "", // TODO: DE
-  "catalogues.title": "", // TODO: DE
-  "catalogues.intro": "", // TODO: DE
-  "catalogue.openCatalogue": "", // TODO: DE
-  "catalogue.viewerHint": "", // TODO: DE
-  "catalogue.mobileNote": "", // TODO: DE
-  "catalogue.fallbackBody": "", // TODO: DE
-  "catalogue.general": "", // TODO: DE
-  "catalogue.otherCatalogues": "", // TODO: DE
-  "catalogue.models": "", // TODO: DE
-  "catalogue.viewAllModels": "", // TODO: DE
-  "catalogue.modelCount": "", // TODO: DE
-  "catalogue.modelsIntro": "", // TODO: DE
-  "catalogue.fromCatalogue": "", // TODO: DE
-  "catalogue.openAtPage": "", // TODO: DE
-  "catalogue.otherModels": "", // TODO: DE
-  "catalogue.modelsInCatalogue": "", // TODO: DE
-  "catalogue.modelFamilies": "", // TODO: DE
-  "catalogue.modelNote": "", // TODO: DE
+  "catalogue.pages": "Seiten",
+  "catalogue.size": "MB",
+  "catalogues.eyebrow": "Unterlagen",
+  "catalogues.title": "Kataloge",
+  "catalogues.intro": "Die kompletten Sortimente als PDF. Im Browser lesen oder herunterladen — ohne Formular und ohne E-Mail-Adresse.",
+  "catalogue.openCatalogue": "Katalog öffnen",
+  "catalogue.viewerHint": "Blättern, zoomen oder drucken Sie über die Steuerung des Viewers.",
+  "catalogue.mobileNote": "Handy-Browser zeigen eingebettete PDFs schlecht an, deshalb öffnet der Katalog in Ihrem eigenen PDF-Viewer.",
+  "catalogue.fallbackBody": "Dieser Browser kann das PDF nicht auf der Seite anzeigen. Öffnen Sie es in einem neuen Tab oder laden Sie es herunter.",
+  "catalogue.general": "Gesamtkatalog",
+  "catalogue.otherCatalogues": "Weitere Kataloge",
+  "catalogue.models": "Modelle in diesem Katalog",
+  "catalogue.viewAllModels": "Alle Modelle ansehen",
+  "catalogue.modelCount": "{count} Modelle",
+  "catalogue.modelsIntro": "Jedes Modell des Katalogs, direkt aus seinen Seiten. Öffnen Sie eines für die Spezifikation und den Sprung auf die Katalogseite.",
+  "catalogue.fromCatalogue": "Aus dem Katalog",
+  "catalogue.openAtPage": "Katalog auf Seite {page} öffnen",
+  "catalogue.otherModels": "Weitere Modelle aus diesem Katalog",
+  "catalogue.modelsInCatalogue": "{count} Modelle in diesem Katalog",
+  "catalogue.modelFamilies": "Serien",
+  "catalogue.modelNote": "Bilder und Daten stammen aus dem Herstellerkatalog. Fragen Sie uns, welche Modelle lieferbar sind, was sie kosten und wie lange sie dauern.",
 
   // ── Colecciones ──────────────────────────────────────────────
-  "collection.heading": "", // TODO: DE
-  "collection.intro": "", // TODO: DE
-  "catalogue.comingSoonTitle": "", // TODO: DE
-  "catalogue.comingSoonBody": "", // TODO: DE
+  "collection.heading": "Kollektionen",
+  "collection.intro": "Jede Kollektion ist ein eigener Herstellerkatalog. Öffnen Sie eine, um jedes Modell zu sehen — mit der Spezifikation wie gedruckt und dem Link auf die genaue PDF-Seite.",
+  "catalogue.comingSoonTitle": "Die Kataloge werden vorbereitet",
+  "catalogue.comingSoonBody": "Die PDF-Sortimente sind noch nicht online. Rufen Sie an oder schreiben Sie uns — wir senden die aktuellen Unterlagen per E-Mail.",
 
   // ── Proyectos ────────────────────────────────────────────────
-  "project.installed": "", // TODO: DE
-  "projects.eyebrow": "", // TODO: DE
-  "projects.title": "", // TODO: DE
-  "projects.intro": "", // TODO: DE
-  "projects.filterCategory": "", // TODO: DE
-  "projects.filterYear": "", // TODO: DE
-  "projects.filterAll": "", // TODO: DE
-  "projects.noMatch": "", // TODO: DE
-  "projects.comingSoonTitle": "", // TODO: DE
-  "projects.comingSoonBody": "", // TODO: DE
-  "project.productsUsed": "", // TODO: DE
-  "project.locationLabel": "", // TODO: DE
-  "project.yearLabel": "", // TODO: DE
-  "project.allProjects": "", // TODO: DE
+  "project.installed": "Eingebaut",
+  "projects.eyebrow": "Ausgeführte Arbeiten",
+  "projects.title": "Referenzen",
+  "projects.intro": "Was der Kunde wollte, was eingebaut wurde und wo. Filtern Sie nach Bereich oder Jahr.",
+  "projects.filterCategory": "Bereich",
+  "projects.filterYear": "Jahr",
+  "projects.filterAll": "Alle",
+  "projects.noMatch": "Zu dieser Kombination gibt es noch keine Referenz.",
+  "projects.comingSoonTitle": "Die ersten Referenzen werden dokumentiert",
+  "projects.comingSoonBody": "Fotos abgeschlossener Montagen werden gerade gesammelt. Rufen Sie an oder schreiben Sie — wir zeigen Ihnen Arbeiten in Ihrer Nähe.",
+  "project.productsUsed": "Was eingebaut wurde",
+  "project.locationLabel": "Ort",
+  "project.yearLabel": "Jahr",
+  "project.allProjects": "Alle Referenzen",
 
   // ── Sobre la empresa ─────────────────────────────────────────
-  "about.eyebrow": "", // TODO: DE
-  "about.title": "", // TODO: DE
-  "about.intro": "", // TODO: DE
-  "about.companyHeading": "", // TODO: DE
-  "about.companyBody1": "", // TODO: DE
-  "about.companyBody2": "", // TODO: DE
-  "about.companyBody3": "", // TODO: DE
-  "about.factsHeading": "", // TODO: DE
-  "about.factLocationLabel": "", // TODO: DE
-  "about.factAreaLabel": "", // TODO: DE
-  "about.factAreaValue": "", // TODO: DE
-  "about.factRangesLabel": "", // TODO: DE
-  "about.factRangesValue": "", // TODO: DE
-  "about.factOwnerLabel": "", // TODO: DE
-  "about.ownerEyebrow": "", // TODO: DE
+  "about.eyebrow": "Hechingen · Zollernalbkreis",
+  "about.title": "Ein Ein-Mann-Betrieb, der aufmisst, liefert und montiert.",
+  "about.intro": "Kamika Bauelemente liefert Bauelemente für Häuser und Wohnungen in Hechingen und Umgebung: Fenster, Haus- und Innentüren, Rollläden, Insektenschutz, Tore, Zäune und die passenden Beschläge.",
+  "about.companyHeading": "Das Unternehmen",
+  "about.companyBody1": "Jeder Auftrag läuft gleich: Die Öffnung wird vor Ort angeschaut, das Angebot nennt Profil, Verglasung und Beschläge, und das endgültige Aufmaß wird erst nach Auftragserteilung genommen. Nichts wird nach Zeichnung bestellt.",
+  "about.companyBody2": "Weil die ganze Öffnung aus einer Hand kommt, werden Rollladenkasten, Insektenschutz und Fenster zusammen geplant statt hinterher angebaut — die Farben passen zusammen und die Maße stimmen beim ersten Mal.",
+  "about.companyBody3": "Nach der Montage kümmert sich dieselbe Person um Einstellung, Dichtungen, Beschläge und Glasersatz. Die Auftragsdaten bleiben hinterlegt, damit Ersatzteile auch Jahre später passen.",
+  "about.factsHeading": "Auf einen Blick",
+  "about.factLocationLabel": "Sitz",
+  "about.factAreaLabel": "Einsatzgebiet",
+  "about.factAreaValue": "Hechingen, Zollernalbkreis und die umliegenden Orte",
+  "about.factRangesLabel": "Bereiche",
+  "about.factRangesValue": "{count} Produktbereiche, von Fenstern bis zu Beschlägen",
+  "about.factOwnerLabel": "Geführt von",
+  "about.ownerEyebrow": "Über mich",
   "about.ownerRole": "Geschäftsführer",
 
   // Texto REAL del dueño (2026-08), traducido del alemán. El original
@@ -201,92 +201,92 @@ export const de: Record<ContentKey, string> = {
   // alemán no se toca: es su texto, no el nuestro.
   "about.ownerBody1": "Hinter Kamika stehen eine persönliche Betreuung, Erfahrung in der Branche sowie die direkte Zusammenarbeit mit bewährten Herstellern. Jedes Projekt wird individuell betreut – von der Beratung und dem Aufmaß über die Auswahl der passenden Produkte bis hin zur fachgerechten Montage und Abnahme.",
   "about.ownerBody2": "Als Inhaber stehe ich persönlich für die Qualität unserer Lösungen und einen reibungslosen Ablauf jedes Projekts.",
-  "about.factoryAlt": "", // TODO: DE
-  "about.factoryCaption": "", // TODO: DE
-  "about.ownerPortraitAlt": "", // TODO: DE
+  "about.factoryAlt": "Luftaufnahme des Produktionswerks, in dem unsere Fenster und Türen gefertigt werden",
+  "about.factoryCaption": "Wo die Elemente entstehen — das Produktionswerk unseres Lieferanten. Aufgemessen, bestellt und montiert von Hechingen aus.",
+  "about.ownerPortraitAlt": "Porträt von Dominik Kamieński, Inhaber von Kamika Bauelemente",
 
   // ── Colores y acabados ───────────────────────────────────────
-  "colours.eyebrow": "", // TODO: DE
-  "colours.title": "", // TODO: DE
-  "colours.intro": "", // TODO: DE
-  "colours.filterGroup": "", // TODO: DE
-  "colours.filterMaterial": "", // TODO: DE
-  "colours.filterAll": "", // TODO: DE
-  "colours.groupRal": "", // TODO: DE
-  "colours.groupWoodDecor": "", // TODO: DE
-  "colours.groupAnodised": "", // TODO: DE
-  "colours.groupWoodStain": "", // TODO: DE
-  "colours.groupLamella": "", // TODO: DE
-  "colours.groupSalFoil": "", // TODO: DE
-  "colours.groupSpecial": "", // TODO: DE
-  "colours.availableOn": "", // TODO: DE
-  "colours.noMatch": "", // TODO: DE
-  "colours.disclaimer": "", // TODO: DE
-  "colours.count": "", // TODO: DE
+  "colours.eyebrow": "Farben und Oberflächen",
+  "colours.title": "Farben und Oberflächen",
+  "colours.intro": "Rahmen können innen und außen unterschiedlich beschichtet werden. RAL-Pulverbeschichtungen, Holzdekorfolien, Holzlasuren, eloxiertes Aluminium und die nummerierte Lamellenpalette — filtern Sie nach Oberfläche oder Material.",
+  "colours.filterGroup": "Oberfläche",
+  "colours.filterMaterial": "Material",
+  "colours.filterAll": "Alle",
+  "colours.groupRal": "RAL",
+  "colours.groupWoodDecor": "Holzdekor",
+  "colours.groupAnodised": "Eloxiert",
+  "colours.groupWoodStain": "Holzlasur",
+  "colours.groupLamella": "Rollladenlamellen",
+  "colours.groupSalFoil": "Salamander-Folien",
+  "colours.groupSpecial": "Sonderfarben",
+  "colours.availableOn": "Erhältlich auf",
+  "colours.noMatch": "Keine Oberfläche passt zu dieser Kombination.",
+  "colours.disclaimer": "Bildschirmfarben sind Näherungswerte: Helligkeit, Kalibrierung und die Struktur der Oberfläche verschieben sie. Fordern Sie vor der Entscheidung ein Muster an.",
+  "colours.count": "{count} Oberflächen",
 
   // ── Contacto ─────────────────────────────────────────────────
-  "contactPage.eyebrow": "", // TODO: DE
-  "contactPage.title": "", // TODO: DE
-  "contactPage.intro": "", // TODO: DE
-  "contactPage.formHeading": "", // TODO: DE
-  "contactPage.detailsHeading": "", // TODO: DE
-  "contactPage.nameLabel": "", // TODO: DE
-  "contactPage.emailLabel": "", // TODO: DE
-  "contactPage.phoneLabel": "", // TODO: DE
-  "contactPage.productLabel": "", // TODO: DE
+  "contactPage.eyebrow": "Hechingen · Zollernalbkreis",
+  "contactPage.title": "Kontakt",
+  "contactPage.intro": "Beschreiben Sie die Öffnung, oder schicken Sie die Maße, die Sie schon haben. Es antwortet Dominik — kein Callcenter.",
+  "contactPage.formHeading": "Nachricht senden",
+  "contactPage.detailsHeading": "Direkter Kontakt",
+  "contactPage.nameLabel": "Name",
+  "contactPage.emailLabel": "E-Mail",
+  "contactPage.phoneLabel": "Telefon (optional)",
+  "contactPage.productLabel": "Betreffendes Produkt (optional)",
 
   // La misma etiqueta, sin el "(optional)", para la línea del email que
 
   // recibe el dueño: allí no hay nada que sea opcional.
-  "contactPage.productEmailLabel": "", // TODO: DE
-  "contactPage.messageLabel": "", // TODO: DE
-  "contactPage.messagePlaceholder": "", // TODO: DE
-  "contactPage.consentLabel": "", // TODO: DE
-  "contactPage.consentLink": "", // TODO: DE
-  "contactPage.submit": "", // TODO: DE
-  "contactPage.sending": "", // TODO: DE
-  "contactPage.successTitle": "", // TODO: DE
-  "contactPage.successBody": "", // TODO: DE
-  "contactPage.errorTitle": "", // TODO: DE
-  "contactPage.errorBody": "", // TODO: DE
-  "contactPage.fallbackTitle": "", // TODO: DE
-  "contactPage.fallbackBody": "", // TODO: DE
-  "contactPage.fallbackAction": "", // TODO: DE
-  "contactPage.fallbackWhatsApp": "", // TODO: DE
-  "contactPage.fallbackCopy": "", // TODO: DE
-  "contactPage.fallbackCopied": "", // TODO: DE
-  "contactPage.fallbackAddress": "", // TODO: DE
-  "contactPage.fallbackNoMailApp": "", // TODO: DE
-  "contactPage.requiredMark": "", // TODO: DE
-  "contactPage.errorName": "", // TODO: DE
-  "contactPage.errorEmail": "", // TODO: DE
-  "contactPage.errorMessage": "", // TODO: DE
-  "contactPage.errorConsent": "", // TODO: DE
-  "contactPage.enquiryAbout": "", // TODO: DE
-  "contactPage.enquiryGeneral": "", // TODO: DE
+  "contactPage.productEmailLabel": "Betreffendes Produkt",
+  "contactPage.messageLabel": "Nachricht",
+  "contactPage.messagePlaceholder": "Art des Elements, Anzahl der Öffnungen, ungefähre Maße, und wann Sie es brauchen.",
+  "contactPage.consentLabel": "Ich bin einverstanden, dass meine Angaben zur Beantwortung dieser Anfrage verwendet werden, wie beschrieben in der",
+  "contactPage.consentLink": "Datenschutzerklärung",
+  "contactPage.submit": "Nachricht senden",
+  "contactPage.sending": "Wird gesendet…",
+  "contactPage.successTitle": "Nachricht gesendet",
+  "contactPage.successBody": "Vielen Dank — die Anfrage ist angekommen. Sie erhalten in der Regel innerhalb eines Werktags eine Antwort.",
+  "contactPage.errorTitle": "Die Nachricht konnte nicht gesendet werden",
+  "contactPage.errorBody": "Bitte versuchen Sie es erneut, oder rufen Sie die Nummer auf dieser Seite an.",
+  "contactPage.fallbackTitle": "Ihre Nachricht ist fertig — wählen Sie den Versandweg",
+  "contactPage.fallbackBody": "Die Website kann selbst noch keine E-Mails versenden; nichts hat Ihren Browser verlassen. Die Nachricht steht unten fertig: mit einem Fingertipp senden, oder kopieren und einfügen, wo Sie möchten.",
+  "contactPage.fallbackAction": "In Ihrer E-Mail-App öffnen",
+  "contactPage.fallbackWhatsApp": "Per WhatsApp senden",
+  "contactPage.fallbackCopy": "Nachricht kopieren",
+  "contactPage.fallbackCopied": "Kopiert",
+  "contactPage.fallbackAddress": "Oder schreiben Sie an",
+  "contactPage.fallbackNoMailApp": "Wenn beim E-Mail-Knopf nichts passiert, ist auf diesem Gerät keine E-Mail-App eingerichtet — kopieren Sie die Nachricht und fügen Sie sie in Ihr Webmail oder einen WhatsApp-Chat ein.",
+  "contactPage.requiredMark": "Pflichtfeld",
+  "contactPage.errorName": "Bitte nennen Sie einen Namen, mit dem wir Sie ansprechen können.",
+  "contactPage.errorEmail": "Bitte geben Sie eine gültige E-Mail-Adresse an.",
+  "contactPage.errorMessage": "Bitte beschreiben Sie Ihr Anliegen — mindestens ein paar Sätze.",
+  "contactPage.errorConsent": "Ohne diese Einwilligung dürfen wir nicht per E-Mail antworten.",
+  "contactPage.enquiryAbout": "Anfrage zu {product}",
+  "contactPage.enquiryGeneral": "Anfrage über die Website",
 
   // ── Página no encontrada ─────────────────────────────────────
-  "notFound.eyebrow": "", // TODO: DE
-  "notFound.title": "", // TODO: DE
-  "notFound.body": "", // TODO: DE
-  "notFound.backHome": "", // TODO: DE
+  "notFound.eyebrow": "Fehler 404",
+  "notFound.title": "Diese Seite gibt es nicht",
+  "notFound.body": "Die Adresse ist vielleicht vertippt, oder die Seite ist umgezogen. Alles auf dieser Website ist von hier aus einen Klick entfernt.",
+  "notFound.backHome": "Zurück zur Startseite",
 
   // ── Fabricantes y sistemas ───────────────────────────────────
-  "manufacturer.eyebrow": "", // TODO: DE
-  "manufacturer.systemCountOne": "", // TODO: DE
-  "manufacturer.systemCountOther": "", // TODO: DE
-  "manufacturer.systemsHeading": "", // TODO: DE
-  "manufacturer.systemsIntro": "", // TODO: DE
-  "manufacturer.chooseIntro": "", // TODO: DE
-  "system.versionsTitle": "", // TODO: DE
-  "system.versionsComingSoon": "", // TODO: DE
-  "system.otherSystems": "", // TODO: DE
-  "system.fromManufacturer": "", // TODO: DE
+  "manufacturer.eyebrow": "Systemhersteller",
+  "manufacturer.systemCountOne": "1 System",
+  "manufacturer.systemCountOther": "{count} Systeme",
+  "manufacturer.systemsHeading": "Fenstersysteme",
+  "manufacturer.systemsIntro": "Welches System eine Öffnung braucht, hängt vom Wandaufbau ab und davon, was der Raum leisten muss. Das entscheidet sich beim Aufmaß — diese Seiten zeigen, wofür jedes System gedacht ist.",
+  "manufacturer.chooseIntro": "Dieser Bereich wird nach Profilsystem angeboten: erst der Hersteller, dann die Serie, dann die Ausführung. Wählen Sie den Hersteller, um seine Systeme zu sehen.",
+  "system.versionsTitle": "Ausführungen und Spezifikationen",
+  "system.versionsComingSoon": "Der Herstellerkatalog zu diesem System wird gerade für die Website aufbereitet. Bis dahin: Rufen Sie an oder schreiben Sie — wir senden die aktuellen Unterlagen und beraten, welche Ausführung zu Ihrer Öffnung passt.",
+  "system.otherSystems": "Weitere Systeme",
+  "system.fromManufacturer": "Ein System von",
 
   // ── Categorías ───────────────────────────────────────────────
-  "category.fromCataloguesIntro": "", // TODO: DE
-  "category.typesHeading": "", // TODO: DE
-  "category.typesIntro": "", // TODO: DE
-  "category.comingSoonTitle": "", // TODO: DE
-  "category.comingSoonBody": "", // TODO: DE
+  "category.fromCataloguesIntro": "Direkt aus den Herstellerkatalogen, gruppiert wie gedruckt. Jedes Teil öffnet den Katalog auf der Seite, von der es stammt.",
+  "category.typesHeading": "Türarten",
+  "category.typesIntro": "Jede Art ist ein eigener Bereich mit eigenen Modellen, Spezifikationen und Katalogen. Wählen Sie die, die zu Ihrer Öffnung passt.",
+  "category.comingSoonTitle": "Dieser Bereich wird vorbereitet",
+  "category.comingSoonBody": "Wir liefern und montieren diesen Bereich, aber die Katalogseiten sind noch nicht online. Rufen Sie an oder schreiben Sie — wir senden die aktuellen Unterlagen.",
 };

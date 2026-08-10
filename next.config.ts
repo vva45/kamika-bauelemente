@@ -22,12 +22,37 @@ const SECURITY_HEADERS = [
   { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
 ];
 
+/**
+ * El sitio vive bajo /de, /en y /pl. La raíz manda al alemán (el
+ * mercado), y las URLs de la época monolingüe —compartidas por
+ * WhatsApp antes de este cambio— redirigen en permanente a su
+ * equivalente alemana en vez de morir en un 404.
+ */
+const LEGACY_SEGMENTS = [
+  "about",
+  "products",
+  "catalogues",
+  "projects",
+  "colours",
+  "contact",
+  "imprint",
+  "privacy",
+];
+
 const nextConfig: NextConfig = {
   reactCompiler: true,
   // "X-Powered-By: Next.js" no le sirve a nadie más que a quien busca
   // versiones que atacar.
   poweredByHeader: false,
   headers: async () => [{ source: "/(.*)", headers: SECURITY_HEADERS }],
+  redirects: async () => [
+    { source: "/", destination: "/de/", permanent: true },
+    ...LEGACY_SEGMENTS.map((segment) => ({
+      source: `/${segment}/:path*`,
+      destination: `/de/${segment}/:path*`,
+      permanent: true,
+    })),
+  ],
 };
 
 export default nextConfig;

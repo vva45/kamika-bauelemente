@@ -21,7 +21,7 @@ import { WindowFrame } from "@/components/ui/WindowFrame";
 import { ArrowRightIcon, CloseIcon } from "@/components/ui/icons";
 import type { ProductImage } from "@/data/types";
 import { cn } from "@/lib/cn";
-import { formatNumber, pick, t, tf } from "@/lib/i18n";
+import { useI18n } from "@/components/layout/LocaleProvider";
 
 type GalleryProps = {
   images: ProductImage[];
@@ -31,6 +31,7 @@ type GalleryProps = {
 };
 
 export function Gallery({ images, title, dimensions = null }: GalleryProps) {
+  const { formatNumber, pick, t, tf } = useI18n();
   const [active, setActive] = useState(0);
   const [lightbox, setLightbox] = useState(false);
   const closeRef = useRef<HTMLButtonElement | null>(null);

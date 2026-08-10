@@ -1,5 +1,6 @@
 "use client";
 
+import { useI18n } from "@/components/layout/LocaleProvider";
 /**
  * Visor de catálogo. Petición literal del dueño: "the possibility of
  * opening and browsing product catalogues".
@@ -22,7 +23,6 @@ import { useEffect, useRef, useState } from "react";
 import { ButtonLink } from "@/components/ui/Button";
 import { WindowFrame } from "@/components/ui/WindowFrame";
 import { ArrowUpRightIcon, DownloadIcon } from "@/components/ui/icons";
-import { t } from "@/lib/i18n";
 
 type CatalogueViewerProps = {
   file: string;
@@ -34,6 +34,7 @@ type CatalogueViewerProps = {
 const EMBED_MIN_WIDTH = "(min-width: 768px)";
 
 export function CatalogueViewer({ file, title, cover }: CatalogueViewerProps) {
+  const { t } = useI18n();
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [visible, setVisible] = useState(false);
   // `null` = todavía no se sabe (primer render en servidor). Hasta que
