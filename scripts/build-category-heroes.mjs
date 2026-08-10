@@ -55,6 +55,7 @@ const PALETTE = {
  */
 const OWNER_PHOTOS = new Set([
   "windows",
+  "patio-doors",
   "entrance-doors",
   "roller-shutters",
   "insect-screens",

@@ -307,10 +307,17 @@ six invented ones.** For each: what the customer asked for, what was fitted, the
 project. The rest are waiting for him to say which job each one belongs to; then they move out of
 `subidas/` into `{project-id}-N.jpg` and the invented projects get deleted, oldest first.
 
-⚠️ **Photo 08 carries a "Contenido generado por IA" watermark** in its bottom-left corner — it is
-AI-generated or AI-edited. It must NOT be published as a completed job: the site's whole claim is
-that the reference photos are real work. Flagged to the owner; do not use it until he replaces it
-with the original camera file.
+~~Photo 08 carried a "Contenido generado por IA" watermark~~ — **resolved the same day**: it was
+flagged to the owner, who uploaded the original camera file of the same door, and that is what
+`08.jpeg` now holds. Worth keeping the habit: before a photo goes on the references page, look at
+its corners. That page's whole claim is that the work is real, and one watermarked image would put
+the other twenty in doubt.
+
+**The Terrassentüren cover** (`public/images/categories/patio-doors-hero.jpg`) is brand imagery the
+owner supplied, not one of his jobs — a styled interior with a multi-panel slider onto a terrace.
+That is fine for a category cover, which says "this is what a patio door is", and it is why the
+range is now listed in `OWNER_PHOTOS` so the line-drawing script can never overwrite it. The same
+image would NOT be acceptable on the references page.
 
 `src/data/colors.ts` holds **126 finishes**, in seven groups. Two different origins, and the difference
 matters when maintaining it:
