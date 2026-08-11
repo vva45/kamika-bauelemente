@@ -109,7 +109,7 @@ export const de: Record<ContentKey, string> = {
   "home.projectsIntro": "Was gewünscht war, was eingebaut wurde, und wo. Das ist die Referenz für das, was wir können.",
   "home.coloursEyebrow": "Farben und Oberflächen",
   "home.coloursTitle": "RAL, Holzdekor und eloxiert",
-  "home.coloursIntro": "Rahmen können innen und außen unterschiedlich beschichtet werden. Fahren Sie über eine Farbe, um sie am Rahmen zu sehen.",
+  "home.coloursIntro": "Rahmen können innen und außen unterschiedlich beschichtet werden — von RAL über Holzdekore bis eloxiert, jede Farbe mit ihrem Originalcode.",
   "home.howEyebrow": "So läuft es ab",
   "home.howTitle": "Vom ersten Termin bis zur letzten Einstellung",
   "home.howStep1Title": "Beratung",
@@ -128,6 +128,7 @@ export const de: Record<ContentKey, string> = {
   "map.notice": "Die Karte wird erst geladen, wenn Sie es möchten. Beim Anzeigen verbindet sich Ihr Browser mit Google Maps; Google kann dabei Cookies setzen.",
   "home.mapAlt": "Karte mit dem Standort von Kamika Bauelemente in Hechingen",
   "home.colourRenderAlt": "Fensterrahmen in der gewählten Farbe",
+  "home.colourHeroAlt": "Farbfächer neben einem aufgeschnittenen Fensterprofil",
 
   // ── Catálogos ────────────────────────────────────────────────
   "catalogue.pages": "Seiten",

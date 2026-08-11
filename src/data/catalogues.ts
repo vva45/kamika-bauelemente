@@ -205,6 +205,40 @@ export const CATALOGUES: Catalogue[] = [
     year: 2024,
   },
   {
+    /**
+     * Los dos de la gama Tore llegaron en agosto de 2026, del mismo
+     * intermediario que las persianas: van sin su marca, sin sus
+     * páginas de autopromoción y con las fotos recomprimidas — el de
+     * vallas pesaba 85 MB tal cual llegó. Lo hace
+     * `scripts/prepare_eko_gates.py`; volver a ejecutarlo si llega una
+     * edición nueva.
+     */
+    id: "garagentore",
+    title: { en: "Garage doors — product catalogue", de: "Garagentore Produktkatalog", pl: "Bramy garażowe — katalog produktów" },
+    collection: { en: "Garage doors", de: "Garagentore", pl: "Bramy garażowe" },
+    category: "gates",
+    file: "/pdf/catalogues/garagentore-produktkatalog.pdf",
+    cover: "/images/catalogues/garagentore-cover.jpg",
+    pages: 79,
+    sizeMb: 22.5,
+    year: 2026,
+  },
+  {
+    // Zäune, Tore und Pforten. La gama de vallas se retiró del
+    // catálogo de la web, pero el PDF también cubre puertas de finca
+    // (Tore und Pforten) y el dueño quiere TODOS los catálogos en la
+    // página de catálogos — así que se registra bajo Tore.
+    id: "grundstueckszaeune",
+    title: { en: "Property fences, gates and wickets", de: "Grundstückszäune — Zäune, Tore und Pforten", pl: "Ogrodzenia posesyjne — ogrodzenia, bramy i furtki" },
+    collection: { en: "Fences and gates", de: "Zäune und Tore", pl: "Ogrodzenia i bramy" },
+    category: "gates",
+    file: "/pdf/catalogues/grundstueckszaeune-katalog.pdf",
+    cover: "/images/catalogues/grundstueckszaeune-cover.jpg",
+    pages: 62,
+    sizeMb: 14.2,
+    year: 2026,
+  },
+  {
     id: "fassadenjalousien",
     title: { en: "Facade blinds — catalogue", de: "Katalog der Fassadenjalousien", pl: "Żaluzje fasadowe — katalog", },
     collection: { en: "Facade blinds", de: "Fassadenjalousien", pl: "Żaluzje fasadowe", },

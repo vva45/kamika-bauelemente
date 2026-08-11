@@ -180,9 +180,14 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
           />
         </Reveal>
 
+        {/* La lámina de marca del dueño, SIN teñir: multiplicarla por
+            un RAL oscuro la dejaba negra (ver ColourPreview.tint). El
+            render teñible sigue en la página de colores. */}
         <ColourPreview
           colours={COLORS.slice(0, 14)}
-          renderImage="/images/colours/render.jpg"
+          renderImage="/images/colours/colours-hero.jpg"
+          imageAlt={t("home.colourHeroAlt")}
+          tint={false}
           className="mt-12"
         />
       </section>

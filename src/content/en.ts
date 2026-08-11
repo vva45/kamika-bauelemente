@@ -111,7 +111,7 @@ export const en = {
   "home.coloursEyebrow": "Colours and finishes",
   "home.coloursTitle": "RAL, wood decor and anodised",
   "home.coloursIntro":
-    "Frames can be finished in a different colour inside and outside. Hover a swatch to see it on a frame.",
+    "Frames can be finished in a different colour inside and outside — from RAL through wood decors to anodised, each with its original code.",
   "home.howEyebrow": "How it works",
   "home.howTitle": "From the first visit to the last adjustment",
   "home.howStep1Title": "Consultation",
@@ -136,6 +136,7 @@ export const en = {
     "The map is only loaded when you ask for it. Showing it connects your browser to Google Maps, and Google may set cookies.",
   "home.mapAlt": "Map showing the location of Kamika Bauelemente in Hechingen",
   "home.colourRenderAlt": "Window frame shown in the selected colour",
+  "home.colourHeroAlt": "Fan of colour samples next to a window profile cutaway",
 
   // ── Catálogos ────────────────────────────────────────────────
   "catalogue.pages": "pages",

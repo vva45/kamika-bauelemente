@@ -23,9 +23,26 @@ type ColourPreviewProps = {
   colours: ColorFinish[];
   renderImage: string;
   className?: string;
+  /**
+   * `false` desactiva el velo de color sobre la imagen.
+   *
+   * Existe porque la home usa la lámina de marca del dueño (abanico de
+   * muestras con el logotipo), y multiplicar ESO por un RAL oscuro la
+   * dejaba negra entera — se comprobó con renders antes de decidir. La
+   * página de colores conserva el render neutro que sí se tiñe.
+   */
+  tint?: boolean;
+  /** Alt propio cuando la imagen no es el render teñible. */
+  imageAlt?: string;
 };
 
-export function ColourPreview({ colours, renderImage, className }: ColourPreviewProps) {
+export function ColourPreview({
+  colours,
+  renderImage,
+  className,
+  tint = true,
+  imageAlt,
+}: ColourPreviewProps) {
   const { pick, t } = useI18n();
   const [activeId, setActiveId] = useState(colours[0]?.id);
   const active = colours.find((colour) => colour.id === activeId) ?? colours[0];
@@ -38,16 +55,18 @@ export function ColourPreview({ colours, renderImage, className }: ColourPreview
         <WindowFrame className="aspect-[4/3] w-full" mullion="vertical">
           <Image
             src={renderImage}
-            alt={t("home.colourRenderAlt")}
+            alt={imageAlt ?? t("home.colourRenderAlt")}
             fill
             sizes="(min-width: 1024px) 45vw, 100vw"
             className="object-cover"
           />
-          <div
-            aria-hidden
-            className="absolute inset-0 mix-blend-multiply motion-safe:transition-colors motion-safe:duration-500"
-            style={{ backgroundColor: active.hex }}
-          />
+          {tint && (
+            <div
+              aria-hidden
+              className="absolute inset-0 mix-blend-multiply motion-safe:transition-colors motion-safe:duration-500"
+              style={{ backgroundColor: active.hex }}
+            />
+          )}
         </WindowFrame>
 
         {/* El nombre y el código se anuncian al cambiar, para quien no ve
