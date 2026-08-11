@@ -10441,6 +10441,10 @@ export const CATALOGUE_MODELS: CatalogueModel[] = [
       {
         "label": "",
         "value": "Wärmegedämmtes Sektionaltor — Uw-Werte je nach Torgröße, vollständige Tabelle im Katalog"
+      },
+      {
+        "label": "Paneelstärke",
+        "value": "60 mm (INFINITI: 40 mm)"
       }
     ],
     "detailImage": "/images/models/garagentore/infiniti-thermo-detail.jpg",

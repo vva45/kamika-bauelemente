@@ -41,16 +41,18 @@ MARK_END = "  // ══ /Gama Tore ═══════════════
 # cada modelo. La lista de modelos se queda con la lámina completa del
 # pliego —única excepción, decisión del dueño: le gusta cómo queda— y la
 # ficha individual enseña este render. id → (hoja, xref) o
-# (hoja, None, recorte a mano). THERMO no trae render suelto: sus dos
-# hojas son fotos de obra, así que se recorta el primer plano del panel
-# montado.
+# (hoja, None, recorte a mano). THERMO no trae render en SU pliego (sus
+# dos hojas son fotos de obra); su imagen de producto es el corte del
+# paneel de la hoja 9 — "Paneel des Garagensektionaltors 40/60 mm" — que
+# es justo la Platte de 60 mm que define al sistema. El primer intento
+# fue un primer plano de la foto de obra y parecía una imagen rota.
 GARAGENTORE_DETAIL = {
     "infiniti-x": (11, 102),
     "infiniti-f": (13, 115),
     "infiniti-r": (15, 130),
     "infiniti-zero": (17, 161),
     "infiniti-f350": (19, 187),
-    "infiniti-thermo": (21, None, (16, 95, 345, 490)),
+    "infiniti-thermo": (9, None, (271, 146, 737, 595)),
     "presto": (66, 794),
     "unico": (67, 798),
     "rolltore": (71, 811),
@@ -139,6 +141,7 @@ GARAGENTORE = [
     ]),
     ("infiniti-thermo", "INFINITI THERMO", "Sektionaltore", 20, [
         ("", "Wärmegedämmtes Sektionaltor — Uw-Werte je nach Torgröße, vollständige Tabelle im Katalog"),
+        ("Paneelstärke", "60 mm (INFINITI: 40 mm)"),
     ]),
     ("presto", "PRESTO", "Drehflügel-Garagentore", 66, [
         ("Stahlprofile", "1,5 mm"),
