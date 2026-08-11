@@ -276,7 +276,7 @@ export const pl: Record<ContentKey, string> = {
   "manufacturer.eyebrow": "Producent systemu",
   "manufacturer.systemCountOne": "1 system",
   "manufacturer.systemCountOther": "{count} systemów",
-  "manufacturer.systemsHeading": "Systemy okienne",
+  "manufacturer.systemsHeading": "Systemy",
   "manufacturer.systemsIntro": "To, jakiego systemu potrzebuje otwór, zależy od układu ściany i od tego, co pomieszczenie ma spełniać. Decyduje o tym pomiar — te strony pokazują, do czego służy każdy system.",
   "manufacturer.chooseIntro": "Ta grupa jest wyceniana według systemu profili: najpierw producent, potem seria, potem wersja. Wybierz producenta, aby zobaczyć jego systemy.",
   "system.versionsTitle": "Wersje i specyfikacje",

@@ -303,7 +303,7 @@ export const en = {
   "manufacturer.eyebrow": "System manufacturer",
   "manufacturer.systemCountOne": "1 system",
   "manufacturer.systemCountOther": "{count} systems",
-  "manufacturer.systemsHeading": "Window systems",
+  "manufacturer.systemsHeading": "Systems",
   "manufacturer.systemsIntro":
     "Which system an opening needs depends on the wall build-up and on what the room has to hold. That is decided when we measure — these pages show what each system is for.",
   "manufacturer.chooseIntro":
