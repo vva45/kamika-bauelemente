@@ -79,7 +79,7 @@ export const CATALOGUES: Catalogue[] = [
     file: "/pdf/catalogues/entrance-door-panels.pdf",
     cover: "/images/catalogues/entrance-door-panels-cover.jpg",
     pages: 194,
-    sizeMb: 16.4,
+    sizeMb: 16.1,
     year: 2025,
   },
   {
@@ -184,7 +184,8 @@ export const CATALOGUES: Catalogue[] = [
     category: "windows",
     file: "/pdf/catalogues/iglo-fenster-terrassensysteme.pdf",
     cover: "/images/catalogues/iglo-fenster-cover.jpg",
-    pages: 90,
+    // Hojas del PDF, como en el resto de tarjetas (los pliegos cuentan 1).
+    pages: 45,
     sizeMb: 10.1,
     year: 2024,
   },
@@ -199,7 +200,7 @@ export const CATALOGUES: Catalogue[] = [
     category: "patio-doors",
     file: "/pdf/catalogues/iglo-terrassensysteme.pdf",
     cover: "/images/catalogues/iglo-terrassen-cover.jpg",
-    pages: 9,
+    pages: 5,
     sizeMb: 1.0,
     year: 2024,
   },

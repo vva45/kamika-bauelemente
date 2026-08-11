@@ -18,6 +18,7 @@ import { SectionTitle } from "@/components/ui/SectionTitle";
 import { ArrowUpRightIcon, DownloadIcon } from "@/components/ui/icons";
 import {
   CATALOGUES,
+  countModelsByCatalogue,
   getCatalogue,
   getCategory,
   getModelFamilies,
@@ -29,7 +30,13 @@ import { pageMetadata } from "@/lib/metadata";
 import { routes } from "@/lib/routes";
 
 export function generateStaticParams() {
-  return CATALOGUES.map((catalogue) => ({ id: catalogue.id }));
+  // Solo catálogos CON escaparate: para los que no tienen modelos
+  // extraídos (Salamander, los dos IGLO) la página llamaba notFound()
+  // en el prerender y Next congelaba su cascarón de error sin estilo y
+  // sin lang. Sin parámetro, la URL cae en el 404 propio con marca.
+  return CATALOGUES.filter((catalogue) => countModelsByCatalogue(catalogue.id) > 0).map(
+    (catalogue) => ({ id: catalogue.id }),
+  );
 }
 
 export async function generateMetadata({
