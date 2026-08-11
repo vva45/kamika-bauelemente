@@ -46,6 +46,13 @@ MARK_END = "  // ══ /Gama Tore ═══════════════
 # el dueño con esa foto en la mano; su pliego no trae render de
 # producto y ni el primer plano del panel ni el corte del paneel de la
 # hoja 9 le convencieron.
+# Y la imagen de LISTA del THERMO es la misma foto de la hoja 21: la
+# lámina de su pliego (hoja 20, la casa con la puerta pequeña) no le
+# gusta al dueño. Es el único modelo con la lámina sustituida.
+GARAGENTORE_LIST_OVERRIDE = {
+    "infiniti-thermo": (21, 199),
+}
+
 GARAGENTORE_DETAIL = {
     "infiniti-x": (11, 102),
     "infiniti-f": (13, 115),
@@ -194,7 +201,14 @@ def extract_garagentore():
     for id_, name, family, sheet, specs in GARAGENTORE:
         page = doc[sheet - 1]
         image = f"/images/models/garagentore/{id_}.jpg"
-        if not save_page_photo(page, os.path.join(ROOT, "public" + image)):
+        override = GARAGENTORE_LIST_OVERRIDE.get(id_)
+        if override:
+            over_page = doc[override[0] - 1]
+            rects = over_page.get_image_rects(override[1])
+            over_page.get_pixmap(dpi=140, clip=rects[0]).save(
+                os.path.join(ROOT, "public" + image)
+            )
+        elif not save_page_photo(page, os.path.join(ROOT, "public" + image)):
             print(f"  · {name}: sin foto en la hoja {sheet}")
             image = None
         entry = {
