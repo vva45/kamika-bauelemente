@@ -20,11 +20,13 @@ Ejecutar:  python3 scripts/extract_gates_models.py
 Requiere:  pip install pymupdf
 """
 
+import io
 import json
 import os
 import re
 
 import fitz
+from PIL import Image
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PDF_DIR = os.path.join(ROOT, "public/pdf/catalogues")
@@ -33,6 +35,46 @@ MODELS_TS = os.path.join(ROOT, "src/data/catalogue-models.ts")
 
 MARK_START = "  // ══ Gama Tore — generado por scripts/extract_gates_models.py ══════"
 MARK_END = "  // ══ /Gama Tore ════════════════════════════════════════════════════"
+
+# Imagen de DETALLE de los Garagentore: el render de producto (mecanismo
+# o puerta sobre blanco) que el catálogo trae en la hoja de datos de
+# cada modelo. La lista de modelos se queda con la lámina completa del
+# pliego —única excepción, decisión del dueño: le gusta cómo queda— y la
+# ficha individual enseña este render. id → (hoja, xref) o
+# (hoja, None, recorte a mano). THERMO no trae render suelto: sus dos
+# hojas son fotos de obra, así que se recorta el primer plano del panel
+# montado.
+GARAGENTORE_DETAIL = {
+    "infiniti-x": (11, 102),
+    "infiniti-f": (13, 115),
+    "infiniti-r": (15, 130),
+    "infiniti-zero": (17, 161),
+    "infiniti-f350": (19, 187),
+    "infiniti-thermo": (21, None, (16, 95, 345, 490)),
+    "presto": (66, 794),
+    "unico": (67, 798),
+    "rolltore": (71, 811),
+    "rollgitter": (75, 831),
+}
+
+DETAIL_CANVAS = (1200, 900)
+DETAIL_MARGIN = 60
+
+
+def compose_on_white(png_bytes, out_path):
+    render = Image.open(io.BytesIO(png_bytes)).convert("RGB")
+    max_w = DETAIL_CANVAS[0] - 2 * DETAIL_MARGIN
+    max_h = DETAIL_CANVAS[1] - 2 * DETAIL_MARGIN
+    scale = min(max_w / render.width, max_h / render.height)
+    render = render.resize(
+        (round(render.width * scale), round(render.height * scale)), Image.LANCZOS
+    )
+    canvas = Image.new("RGB", DETAIL_CANVAS, "white")
+    canvas.paste(
+        render,
+        ((DETAIL_CANVAS[0] - render.width) // 2, (DETAIL_CANVAS[1] - render.height) // 2),
+    )
+    canvas.save(out_path, "JPEG", quality=88, optimize=True)
 
 
 def save_page_photo(page, out_path, dpi=140):
@@ -161,6 +203,24 @@ def extract_garagentore():
             "image": image,
             "specs": [{"label": l, "value": v} for l, v in specs],
         }
+        detail = GARAGENTORE_DETAIL.get(id_)
+        if detail:
+            detail_sheet, xref = detail[0], detail[1]
+            detail_page = doc[detail_sheet - 1]
+            clip = None
+            if xref is None:
+                clip = fitz.Rect(*detail[2])
+            else:
+                rects = detail_page.get_image_rects(xref)
+                if rects:
+                    clip = rects[0] + (-2, -2, 2, 2)
+            if clip:
+                detail_image = f"/images/models/garagentore/{id_}-detail.jpg"
+                compose_on_white(
+                    detail_page.get_pixmap(dpi=150, clip=clip).tobytes("png"),
+                    os.path.join(ROOT, "public" + detail_image),
+                )
+                entry["detailImage"] = detail_image
         description = longest_paragraph(page)
         if description:
             entry["description"] = description

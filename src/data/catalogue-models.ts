@@ -10311,6 +10311,7 @@ export const CATALOGUE_MODELS: CatalogueModel[] = [
         "value": "430 mm"
       }
     ],
+    "detailImage": "/images/models/garagentore/infiniti-x-detail.jpg",
     "description": "Das Zugfedersystem wird für den Einsatz in kleinen Garagen empfohlen. Es ist schnell zu montieren und erfordert keine zusätzliche Federwicklung. INFINITI X verwendet den so genannten „Feder-in-Feder”-Mechanismus, der eine sichere Nutzung eines Torflügelgewichts von bis zu 130 kg ermöglicht. Die zwei Federn sind ein zusätzliches Sicherheitsmerkmal, das die Gefahr des höchst unwahrscheinlichen Bruchs einer der Federn ausschließt."
   },
   {
@@ -10346,6 +10347,7 @@ export const CATALOGUE_MODELS: CatalogueModel[] = [
         "value": "430 mm"
       }
     ],
+    "detailImage": "/images/models/garagentore/infiniti-f-detail.jpg",
     "description": "Torsionsfedern sind für Tore mit großen Abmessungen gedacht. Sie tragen wesentlich mehr Gewicht als Zugfedern. Der Einbau der Tore mit Torsionsfedern an der Vorderseite ist möglich, wenn die lichte Höhe mindestens 200 mm beträgt. Das maximale Torgewicht beträgt ca. 295 kg."
   },
   {
@@ -10381,6 +10383,7 @@ export const CATALOGUE_MODELS: CatalogueModel[] = [
         "value": "430 mm"
       }
     ],
+    "detailImage": "/images/models/garagentore/infiniti-r-detail.jpg",
     "description": "Die Platzierung der Torsionsfedern an der Rückseite des Tores ermöglicht den Einbau in eine Garagenöffnung mit niedrigerem Sturz. In diesem Fall reicht es aus, wenn der Sturz 90 mm (120 mm bei elektrischem Antrieb) beträgt. Maximale Tragfähigkeit bis zu ca. 165 kg."
   },
   {
@@ -10400,6 +10403,7 @@ export const CATALOGUE_MODELS: CatalogueModel[] = [
         "value": "HOME-ZERO-Montageset: Sturz-, Wand- und Deckenhalterungen, Abstandshalterprofil und Abdeckprofil, in RAL-Farben lackierbar"
       }
     ],
+    "detailImage": "/images/models/garagentore/infiniti-zero-detail.jpg",
     "description": "Für Situationen, in denen der Seitenraum oder der Sturz begrenzt ist, haben wir ein Zusatzteil für INFINITI-Systeme entwickelt. Mit diesen Komponenten kann das Schienenset direkt an der Wand oder der Decke montiert werden. Die Verbindungen sind mit hochwertigen Profilen ausgestattet, die eine dauerhafte und moderne Ausführung garantieren. Dies ist ideal für sogenannte Tunnelgaragen oder Renovierungsprojekte, bei denen der Seitenraum oder der Sturzraum stark eingeschränkt ist."
   },
   {
@@ -10423,6 +10427,7 @@ export const CATALOGUE_MODELS: CatalogueModel[] = [
         "value": "min. 350 mm"
       }
     ],
+    "detailImage": "/images/models/garagentore/infiniti-f350-detail.jpg",
     "description": "Bessere Raumnutzung in der Garage Die F350-Umlenkung ist ein spezielles System zur Höherführung eines Sektionaltors, dank dem sich das geöffnete Torblatt auf einer größeren Höhe befindet. Dies hilft bei einer effektiveren Raumnutzung innerhalb der Garage, erhöht deren Funktionalität und verhindert Kollisionen des Tores mit Objekten, die im Bewegungsbereich des Torblattes auftreten könnten."
   },
   {
@@ -10438,6 +10443,7 @@ export const CATALOGUE_MODELS: CatalogueModel[] = [
         "value": "Wärmegedämmtes Sektionaltor — Uw-Werte je nach Torgröße, vollständige Tabelle im Katalog"
       }
     ],
+    "detailImage": "/images/models/garagentore/infiniti-thermo-detail.jpg",
     "description": "Die zunehmenden Anforderungen an die Wärmedämmung machen es erforderlich, den Wärmedurchgangskoeffizienten sämtlicher Tischlerbauteile zu minimieren. INFINITI Thermo ist die Antwort auf die Bedürfnisse der anspruchsvollsten Investoren, einschließlich der Besitzer von Passivhäusern. Durch die Verwendung einer 60 mm dicken Platte und fortschrittlicher Dichtungssysteme konnten die Parameter der Tür deutlich verbessert werden, wobei die höchsten Standards in Bezug auf Haltbarkeit, Nutzungskomfort und ästhetische Optionen beibehalten wurden."
   },
   {
@@ -10461,6 +10467,7 @@ export const CATALOGUE_MODELS: CatalogueModel[] = [
         "value": "Profile lackiert in RAL-Farben"
       }
     ],
+    "detailImage": "/images/models/garagentore/presto-detail.jpg",
     "description": "Die klassische Eleganz der Presto-Dreflügel-Garagentore macht sie zu einem unwiderstehlichen Angebot für freistehende Garagen, Lagerhallen und verschiedene Nebengebäude, bei denen die Aufrechterhaltung einer hohen Innentemperatur keine Priorität hat. Obwohl sie mit 40 mm dicken, mit Polyurethanschaum gefüllten Sektionaltorpaneelen ausgestattet sind, liegen ihre Hauptvorteile in der zeitlosen Eleganz und der hohen Lebensdauer. Die Verwendung von zuverlässigen Stahlprofilen bedeutet, dass der Investor von den Presto-Toren viele Jahre zuverlässigen Betrieb und perfektes Aussehen erwarten darf. Ihre geringen Anforderungen an die Gebäudestruktur machen sie zur besten Wahl für Kunden, die Garagentore in älteren Gebäuden ersetzen wollen. Die einfache Bedienung und die umfangreiche Serienausstattung machen Presto-Drehtore zu einem äußerst attraktiven Angebot."
   },
   {
@@ -10484,6 +10491,7 @@ export const CATALOGUE_MODELS: CatalogueModel[] = [
         "value": "Profile lackiert in RAL-Farben"
       }
     ],
+    "detailImage": "/images/models/garagentore/unico-detail.jpg",
     "description": "Überall dort, wo die baulichen Gegebenheiten den Einsatz von Garagen-Sektionaltoren nicht zulassen und wo Kunden traditionelle Eleganz erwarten, werden Unico-Stahlschwingtore zu einer interessanten Alternative. Die klassische Optik, die minimalen Anforderungen an die technischen Garagenbedingungen und die umfangreichen Ausstattungsmöglichkeiten machen Unico-Tore zu einer universellen Lösung, die für nahezu jeden Einsatzbereich gewählt werden kann. Alles, was Sie brauchen, ist ein kleiner Freiraum vor der Garage für die Bewegung der Flügel. Unico-Tore sind in erster Linie für den Einsatz in Garagen konzipiert, die an Häuser angeschlossen sind. Das liegt daran, dass sie thermische Unterbrechungen in den Profilen haben und mit den bei Sektionaltoren verwendeten warmen Platten gefüllt sind. Ihr Einbau ist anspruchslos und zusammen mit der serienmäßigen Ausstattung sind sie eine bequeme Option für jeden Investor."
   },
   {
@@ -10511,6 +10519,7 @@ export const CATALOGUE_MODELS: CatalogueModel[] = [
         "value": "3000–6000 mm je nach System"
       }
     ],
+    "detailImage": "/images/models/garagentore/rolltore-detail.jpg",
     "description": "Intense hingegen ist ein System mit oder ohne SK45-Kasten - montiert auf Konsolen mit einem seitlich angebrachten Motor. Es wird vor allem in Lagerhallen, Werkstätten und Produktionshallen eingesetzt, um große Öffnungen von bis zu 30 m² in Gewerbebauten zu sichern."
   },
   {
@@ -10538,6 +10547,7 @@ export const CATALOGUE_MODELS: CatalogueModel[] = [
         "value": "9 m²"
       }
     ],
+    "detailImage": "/images/models/garagentore/rollgitter-detail.jpg",
     "description": "Die Verwendung von Rollgittern ermöglicht die Schaffung eines sicheren Raums, der Licht und und Belüftung. Sie werden häufig in Geschäftsräumen eingesetzt und ermöglichen es, zu sehen, was sich dahinter befindet. Unsere Rollgitter-Systeme können SK45-Kästen verwenden oder auf seitlich bedienbaren Konsolen montiert werden."
   },
   {

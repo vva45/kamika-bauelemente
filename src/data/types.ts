@@ -157,6 +157,15 @@ export interface CatalogueModel {
   page: number; // página del PDF, para el enlace #page=N
   image: string;
   /**
+   * Imagen de producto para la FICHA, cuando difiere de la de la lista.
+   *
+   * Lo pidió el dueño para los Garagentore: en la lista le gustan las
+   * láminas completas del pliego —única excepción—, pero la ficha
+   * individual tiene que enseñar el render del producto, no "un
+   * wallpaper bonito". La ficha usa `detailImage ?? image`.
+   */
+  detailImage?: string;
+  /**
    * Las specs tal y como están impresas. `label` vacío = viñeta suelta
    * (los catálogos de persianas listan ventajas sin etiqueta).
    */

@@ -58,7 +58,7 @@ export async function generateMetadata({
     title: `${model.name} — ${collectionName(catalogue)}`,
     description: `${intro}${leadText}`,
     path: routes.catalogueModel(model.catalogue, model.id),
-    image: { url: model.image, alt: model.name },
+    image: { url: model.detailImage ?? model.image, alt: model.name },
   });
 }
 
@@ -124,7 +124,9 @@ export default async function CatalogueModelPage({
           <div className="lg:col-span-3">
             <WindowFrame className="aspect-[4/5] w-full sm:aspect-[4/3]">
               <Image
-                src={model.image}
+                // La ficha enseña el render del producto cuando lo hay;
+                // la lámina del pliego se queda para la lista.
+                src={model.detailImage ?? model.image}
                 alt={model.name}
                 fill
                 priority
