@@ -10275,5 +10275,870 @@ export const CATALOGUE_MODELS: CatalogueModel[] = [
       }
     ],
     "description": "Intelligente Steuerung der Fensterautomation über Fernbedienung, Tablet oder Smartphone: Fenster einzeln oder in Gruppen öffnen und schließen, zeitlich programmieren und mit anderen Systemen im Haus verbinden — auch aus der Ferne."
-  }
+  },
+  // ══ Gama Tore — generado por scripts/extract_gates_models.py ══════
+  // No editar a mano entre estas marcas: el script sustituye el bloque.
+  {
+    "id": "infiniti-x",
+    "catalogue": "garagentore",
+    "name": "INFINITI X",
+    "family": "Sektionaltore",
+    "page": 10,
+    "image": "/images/models/garagentore/infiniti-x.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Torsystem mit Zugfeder — empfohlen für kleine Garagen"
+      },
+      {
+        "label": "Antriebsart",
+        "value": "manuell oder automatisch"
+      },
+      {
+        "label": "Max. Torflügelfläche",
+        "value": "9 m²"
+      },
+      {
+        "label": "Max. Öffnungsgröße",
+        "value": "DW 4500 × DH 3000 mm"
+      },
+      {
+        "label": "Min. Leibungsbreite",
+        "value": "85 mm"
+      },
+      {
+        "label": "Max. Sturzhöhe (Standardmontage)",
+        "value": "430 mm"
+      }
+    ],
+    "description": "Das Zugfedersystem wird für den Einsatz in kleinen Garagen empfohlen. Es ist schnell zu montieren und erfordert keine zusätzliche Federwicklung. INFINITI X verwendet den so genannten „Feder-in-Feder”-Mechanismus, der eine sichere Nutzung eines Torflügelgewichts von bis zu 130 kg ermöglicht. Die zwei Federn sind ein zusätzliches Sicherheitsmerkmal, das die Gefahr des höchst unwahrscheinlichen Bruchs einer der Federn ausschließt."
+  },
+  {
+    "id": "infiniti-f",
+    "catalogue": "garagentore",
+    "name": "INFINITI F",
+    "family": "Sektionaltore",
+    "page": 12,
+    "image": "/images/models/garagentore/infiniti-f.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Torsystem mit Torsionsfedern an der Vorderseite"
+      },
+      {
+        "label": "Antriebsart",
+        "value": "manuell oder automatisch"
+      },
+      {
+        "label": "Max. Torflügelfläche",
+        "value": "18 m²"
+      },
+      {
+        "label": "Max. Öffnungsgröße",
+        "value": "DW 6000 × DH 3500 mm"
+      },
+      {
+        "label": "Min. Leibungsbreite",
+        "value": "85 mm"
+      },
+      {
+        "label": "Max. Sturzhöhe (Standardmontage)",
+        "value": "430 mm"
+      }
+    ],
+    "description": "Torsionsfedern sind für Tore mit großen Abmessungen gedacht. Sie tragen wesentlich mehr Gewicht als Zugfedern. Der Einbau der Tore mit Torsionsfedern an der Vorderseite ist möglich, wenn die lichte Höhe mindestens 200 mm beträgt. Das maximale Torgewicht beträgt ca. 295 kg."
+  },
+  {
+    "id": "infiniti-r",
+    "catalogue": "garagentore",
+    "name": "INFINITI R",
+    "family": "Sektionaltore",
+    "page": 14,
+    "image": "/images/models/garagentore/infiniti-r.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Torsystem mit Torsionsfedern an der Rückseite"
+      },
+      {
+        "label": "Antriebsart",
+        "value": "manuell oder automatisch"
+      },
+      {
+        "label": "Max. Torflügelfläche",
+        "value": "12,5 m²"
+      },
+      {
+        "label": "Max. Öffnungsgröße",
+        "value": "DW 5500 × DH 3000 mm"
+      },
+      {
+        "label": "Min. Leibungsbreite",
+        "value": "85 mm"
+      },
+      {
+        "label": "Max. Sturzhöhe (Standardmontage)",
+        "value": "430 mm"
+      }
+    ],
+    "description": "Die Platzierung der Torsionsfedern an der Rückseite des Tores ermöglicht den Einbau in eine Garagenöffnung mit niedrigerem Sturz. In diesem Fall reicht es aus, wenn der Sturz 90 mm (120 mm bei elektrischem Antrieb) beträgt. Maximale Tragfähigkeit bis zu ca. 165 kg."
+  },
+  {
+    "id": "infiniti-zero",
+    "catalogue": "garagentore",
+    "name": "INFINITI ZERO",
+    "family": "Sektionaltore",
+    "page": 16,
+    "image": "/images/models/garagentore/infiniti-zero.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Renovierungs-Montagesystem bei mangelndem Seiten- oder Sturzraum"
+      },
+      {
+        "label": "",
+        "value": "HOME-ZERO-Montageset: Sturz-, Wand- und Deckenhalterungen, Abstandshalterprofil und Abdeckprofil, in RAL-Farben lackierbar"
+      }
+    ],
+    "description": "Für Situationen, in denen der Seitenraum oder der Sturz begrenzt ist, haben wir ein Zusatzteil für INFINITI-Systeme entwickelt. Mit diesen Komponenten kann das Schienenset direkt an der Wand oder der Decke montiert werden. Die Verbindungen sind mit hochwertigen Profilen ausgestattet, die eine dauerhafte und moderne Ausführung garantieren. Dies ist ideal für sogenannte Tunnelgaragen oder Renovierungsprojekte, bei denen der Seitenraum oder der Sturzraum stark eingeschränkt ist."
+  },
+  {
+    "id": "infiniti-f350",
+    "catalogue": "garagentore",
+    "name": "INFINITI F350",
+    "family": "Sektionaltore",
+    "page": 18,
+    "image": "/images/models/garagentore/infiniti-f350.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Höhergeführter Beschlag — die Lösung bei Kollisionen mit Türen und Fenstern"
+      },
+      {
+        "label": "Höherführung",
+        "value": "ab 170 mm"
+      },
+      {
+        "label": "Sturz",
+        "value": "min. 350 mm"
+      }
+    ],
+    "description": "Bessere Raumnutzung in der Garage Die F350-Umlenkung ist ein spezielles System zur Höherführung eines Sektionaltors, dank dem sich das geöffnete Torblatt auf einer größeren Höhe befindet. Dies hilft bei einer effektiveren Raumnutzung innerhalb der Garage, erhöht deren Funktionalität und verhindert Kollisionen des Tores mit Objekten, die im Bewegungsbereich des Torblattes auftreten könnten."
+  },
+  {
+    "id": "infiniti-thermo",
+    "catalogue": "garagentore",
+    "name": "INFINITI THERMO",
+    "family": "Sektionaltore",
+    "page": 20,
+    "image": "/images/models/garagentore/infiniti-thermo.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Wärmegedämmtes Sektionaltor — Uw-Werte je nach Torgröße, vollständige Tabelle im Katalog"
+      }
+    ],
+    "description": "Die zunehmenden Anforderungen an die Wärmedämmung machen es erforderlich, den Wärmedurchgangskoeffizienten sämtlicher Tischlerbauteile zu minimieren. INFINITI Thermo ist die Antwort auf die Bedürfnisse der anspruchsvollsten Investoren, einschließlich der Besitzer von Passivhäusern. Durch die Verwendung einer 60 mm dicken Platte und fortschrittlicher Dichtungssysteme konnten die Parameter der Tür deutlich verbessert werden, wobei die höchsten Standards in Bezug auf Haltbarkeit, Nutzungskomfort und ästhetische Optionen beibehalten wurden."
+  },
+  {
+    "id": "presto",
+    "catalogue": "garagentore",
+    "name": "PRESTO",
+    "family": "Drehflügel-Garagentore",
+    "page": 66,
+    "image": "/images/models/garagentore/presto.jpg",
+    "specs": [
+      {
+        "label": "Stahlprofile",
+        "value": "1,5 mm"
+      },
+      {
+        "label": "Platte",
+        "value": "40 mm, mit Wärmedämmung"
+      },
+      {
+        "label": "Oberfläche",
+        "value": "Profile lackiert in RAL-Farben"
+      }
+    ],
+    "description": "Die klassische Eleganz der Presto-Dreflügel-Garagentore macht sie zu einem unwiderstehlichen Angebot für freistehende Garagen, Lagerhallen und verschiedene Nebengebäude, bei denen die Aufrechterhaltung einer hohen Innentemperatur keine Priorität hat. Obwohl sie mit 40 mm dicken, mit Polyurethanschaum gefüllten Sektionaltorpaneelen ausgestattet sind, liegen ihre Hauptvorteile in der zeitlosen Eleganz und der hohen Lebensdauer. Die Verwendung von zuverlässigen Stahlprofilen bedeutet, dass der Investor von den Presto-Toren viele Jahre zuverlässigen Betrieb und perfektes Aussehen erwarten darf. Ihre geringen Anforderungen an die Gebäudestruktur machen sie zur besten Wahl für Kunden, die Garagentore in älteren Gebäuden ersetzen wollen. Die einfache Bedienung und die umfangreiche Serienausstattung machen Presto-Drehtore zu einem äußerst attraktiven Angebot."
+  },
+  {
+    "id": "unico",
+    "catalogue": "garagentore",
+    "name": "UNICO",
+    "family": "Drehflügel-Garagentore",
+    "page": 67,
+    "image": "/images/models/garagentore/unico.jpg",
+    "specs": [
+      {
+        "label": "Stahlprofile",
+        "value": "1,5–2,0 mm"
+      },
+      {
+        "label": "Platte",
+        "value": "40 mm, mit Wärmedämmung"
+      },
+      {
+        "label": "Oberfläche",
+        "value": "Profile lackiert in RAL-Farben"
+      }
+    ],
+    "description": "Überall dort, wo die baulichen Gegebenheiten den Einsatz von Garagen-Sektionaltoren nicht zulassen und wo Kunden traditionelle Eleganz erwarten, werden Unico-Stahlschwingtore zu einer interessanten Alternative. Die klassische Optik, die minimalen Anforderungen an die technischen Garagenbedingungen und die umfangreichen Ausstattungsmöglichkeiten machen Unico-Tore zu einer universellen Lösung, die für nahezu jeden Einsatzbereich gewählt werden kann. Alles, was Sie brauchen, ist ein kleiner Freiraum vor der Garage für die Bewegung der Flügel. Unico-Tore sind in erster Linie für den Einsatz in Garagen konzipiert, die an Häuser angeschlossen sind. Das liegt daran, dass sie thermische Unterbrechungen in den Profilen haben und mit den bei Sektionaltoren verwendeten warmen Platten gefüllt sind. Ihr Einbau ist anspruchslos und zusammen mit der serienmäßigen Ausstattung sind sie eine bequeme Option für jeden Investor."
+  },
+  {
+    "id": "rolltore",
+    "catalogue": "garagentore",
+    "name": "Rolltore BGR SK / Intense",
+    "family": "Rolltore und Rollgitter",
+    "page": 70,
+    "image": "/images/models/garagentore/rolltore.jpg",
+    "specs": [
+      {
+        "label": "Antriebsart",
+        "value": "elektrisch"
+      },
+      {
+        "label": "Kästen",
+        "value": "SK45: 250, 300 oder 350 mm"
+      },
+      {
+        "label": "Max. Fläche",
+        "value": "9,5 m² (Panzer PA55)"
+      },
+      {
+        "label": "Max. Breite mit Führungen",
+        "value": "3000–6000 mm je nach System"
+      }
+    ],
+    "description": "Intense hingegen ist ein System mit oder ohne SK45-Kasten - montiert auf Konsolen mit einem seitlich angebrachten Motor. Es wird vor allem in Lagerhallen, Werkstätten und Produktionshallen eingesetzt, um große Öffnungen von bis zu 30 m² in Gewerbebauten zu sichern."
+  },
+  {
+    "id": "rollgitter",
+    "catalogue": "garagentore",
+    "name": "Rollgitter BKR SK",
+    "family": "Rolltore und Rollgitter",
+    "page": 74,
+    "image": "/images/models/garagentore/rollgitter.jpg",
+    "specs": [
+      {
+        "label": "Antriebsart",
+        "value": "elektrisch"
+      },
+      {
+        "label": "Kästen",
+        "value": "SK45: 250, 300 oder 350 mm"
+      },
+      {
+        "label": "Panzer",
+        "value": "PEK 77, PEK 80 — verschiedene Transluzenzstufen"
+      },
+      {
+        "label": "Max. Fläche",
+        "value": "9 m²"
+      }
+    ],
+    "description": "Die Verwendung von Rollgittern ermöglicht die Schaffung eines sicheren Raums, der Licht und und Belüftung. Sie werden häufig in Geschäftsräumen eingesetzt und ermöglichen es, zu sehen, was sich dahinter befindet. Unsere Rollgitter-Systeme können SK45-Kästen verwenden oder auf seitlich bedienbaren Konsolen montiert werden."
+  },
+  {
+    "id": "prizzi",
+    "catalogue": "grundstueckszaeune",
+    "name": "Prizzi",
+    "family": "Stahlzäune Standard",
+    "page": 12,
+    "image": "/images/models/grundstueckszaeune/prizzi.jpg",
+    "specs": [
+      {
+        "label": "Zaunsystem",
+        "value": "Pforte, zweiflügeliges tor oder schiebetor, spannweite"
+      },
+      {
+        "label": "Pfostenmaße",
+        "value": "80x80, 100x100 mm"
+      },
+      {
+        "label": "Rahmenprofile",
+        "value": "40x40, 60x40 mm"
+      },
+      {
+        "label": "Füllungsprofile",
+        "value": "40x20 mm"
+      },
+      {
+        "label": "Code",
+        "value": "EK.20.101"
+      }
+    ]
+  },
+  {
+    "id": "lugano",
+    "catalogue": "grundstueckszaeune",
+    "name": "Lugano",
+    "family": "Stahlzäune Standard",
+    "page": 13,
+    "image": "/images/models/grundstueckszaeune/lugano.jpg",
+    "specs": [
+      {
+        "label": "Zaunsystem",
+        "value": "Pforte, zweiflügeliges tor oder schiebetor, spannweite"
+      },
+      {
+        "label": "Pfostenmaße",
+        "value": "80x80, 100x100 mm"
+      },
+      {
+        "label": "Rahmenprofile",
+        "value": "80x40 mm"
+      },
+      {
+        "label": "Füllungsprofile",
+        "value": "80x20 mm"
+      },
+      {
+        "label": "Code",
+        "value": "EK.20.102"
+      }
+    ]
+  },
+  {
+    "id": "iseo",
+    "catalogue": "grundstueckszaeune",
+    "name": "Iseo",
+    "family": "Stahlzäune Standard",
+    "page": 14,
+    "image": "/images/models/grundstueckszaeune/iseo.jpg",
+    "specs": [
+      {
+        "label": "Zaunsystem",
+        "value": "Pforte, zweiflügeliges tor oder schiebetor, spannweite"
+      },
+      {
+        "label": "Pfostenmaße",
+        "value": "80x80, 100x100 mm"
+      },
+      {
+        "label": "Rahmenprofile",
+        "value": "40x40, 60x40 mm"
+      },
+      {
+        "label": "Füllungsprofile",
+        "value": "20x20 mm"
+      },
+      {
+        "label": "Code",
+        "value": "EK.20.103"
+      }
+    ]
+  },
+  {
+    "id": "omodeo",
+    "catalogue": "grundstueckszaeune",
+    "name": "Omodeo",
+    "family": "Stahlzäune Standard",
+    "page": 15,
+    "image": "/images/models/grundstueckszaeune/omodeo.jpg",
+    "specs": [
+      {
+        "label": "Zaunsystem",
+        "value": "Pforte, zweiflügeliges tor oder schiebetor, spannweite"
+      },
+      {
+        "label": "Pfostenmaße",
+        "value": "80x80; 100x100 mm"
+      },
+      {
+        "label": "Rahmenprofile",
+        "value": "40x40, 60x40 mm"
+      },
+      {
+        "label": "Füllungsprofile",
+        "value": "80x20 mm"
+      },
+      {
+        "label": "Code",
+        "value": "EK.20.104"
+      }
+    ]
+  },
+  {
+    "id": "torbido",
+    "catalogue": "grundstueckszaeune",
+    "name": "Torbido",
+    "family": "Stahlzäune Elegance",
+    "page": 18,
+    "image": "/images/models/grundstueckszaeune/torbido.jpg",
+    "specs": [
+      {
+        "label": "Zaunsystem",
+        "value": "Pforte, zweiflügeliges tor oder schiebetor, spannweite"
+      },
+      {
+        "label": "Pfostenmaße",
+        "value": "80x80, 100x100 mm"
+      },
+      {
+        "label": "Rahmenprofile",
+        "value": "80x40 mm"
+      },
+      {
+        "label": "Füllungsprofile",
+        "value": "80x20 mm"
+      },
+      {
+        "label": "Code",
+        "value": "EK.20.105"
+      }
+    ]
+  },
+  {
+    "id": "como",
+    "catalogue": "grundstueckszaeune",
+    "name": "Como",
+    "family": "Stahlzäune Elegance",
+    "page": 19,
+    "image": "/images/models/grundstueckszaeune/como.jpg",
+    "specs": [
+      {
+        "label": "Zaunsystem",
+        "value": "Pforte, zweiflügeliges tor oder schiebetor, spannweite"
+      },
+      {
+        "label": "Pfostenmaße",
+        "value": "80x80, 100x100 mm"
+      },
+      {
+        "label": "Rahmenprofile",
+        "value": "80x40 mm"
+      },
+      {
+        "label": "Füllungsprofile",
+        "value": "80x20, 50x20, 30x20 mm"
+      },
+      {
+        "label": "Code",
+        "value": "EK.20.106"
+      }
+    ]
+  },
+  {
+    "id": "nambino",
+    "catalogue": "grundstueckszaeune",
+    "name": "Nambino",
+    "family": "Stahlzäune Elegance",
+    "page": 20,
+    "image": "/images/models/grundstueckszaeune/nambino.jpg",
+    "specs": [
+      {
+        "label": "Zaunsystem",
+        "value": "Pforte, zweiflügeliges tor oder schiebetor, spannweite"
+      },
+      {
+        "label": "Pfostenmaße",
+        "value": "80x80, 100x100 mm"
+      },
+      {
+        "label": "Rahmenprofile",
+        "value": "60x40 mm"
+      },
+      {
+        "label": "Füllungsprofile",
+        "value": "20x20 mm, 80x20 mm"
+      },
+      {
+        "label": "Code",
+        "value": "EK.20.107"
+      }
+    ]
+  },
+  {
+    "id": "molveno",
+    "catalogue": "grundstueckszaeune",
+    "name": "Molveno",
+    "family": "Stahlzäune Prestige",
+    "page": 24,
+    "image": "/images/models/grundstueckszaeune/molveno.jpg",
+    "specs": [
+      {
+        "label": "Zaunsystem",
+        "value": "Pforte, zweiflügeliges tor oder schiebetor, spannweite"
+      },
+      {
+        "label": "Pfostenmaße",
+        "value": "80x80, 100x100 mm"
+      },
+      {
+        "label": "Rahmenprofile",
+        "value": "60x40 mm"
+      },
+      {
+        "label": "Füllungsprofile",
+        "value": "100x20, 100x40, 60x20, 60x30 mm"
+      },
+      {
+        "label": "Code",
+        "value": "EK.20.109"
+      }
+    ]
+  },
+  {
+    "id": "bolsena",
+    "catalogue": "grundstueckszaeune",
+    "name": "Bolsena",
+    "family": "Stahlzäune Prestige",
+    "page": 25,
+    "image": "/images/models/grundstueckszaeune/bolsena.jpg",
+    "specs": [
+      {
+        "label": "Zaunsystem",
+        "value": "Pforte, zweiflügeliges tor oder schiebetor, spannweite"
+      },
+      {
+        "label": "Pfostenmaße",
+        "value": "80x80, 100x100 mm"
+      },
+      {
+        "label": "Rahmenprofile",
+        "value": "60x40 mm"
+      },
+      {
+        "label": "Füllungsprofile",
+        "value": "80x20, 60x30, 30x20 mm"
+      },
+      {
+        "label": "Code",
+        "value": "EK.20.110"
+      }
+    ]
+  },
+  {
+    "id": "varano",
+    "catalogue": "grundstueckszaeune",
+    "name": "Varano",
+    "family": "Stahlzäune Prestige",
+    "page": 26,
+    "image": "/images/models/grundstueckszaeune/varano.jpg",
+    "specs": [
+      {
+        "label": "Zaunsystem",
+        "value": "Pforte, zweiflügeliges tor oder schiebetor, spannweite"
+      },
+      {
+        "label": "Pfostenmaße",
+        "value": "80x80, 100x100 mm"
+      },
+      {
+        "label": "Rahmenprofile",
+        "value": "60x40 mm"
+      },
+      {
+        "label": "Füllungsprofile",
+        "value": "verzinkte Lochbleche"
+      },
+      {
+        "label": "Code",
+        "value": "EK.20.113"
+      }
+    ]
+  },
+  {
+    "id": "piatto",
+    "catalogue": "grundstueckszaeune",
+    "name": "Piatto",
+    "family": "Aluminiumzäune Standard",
+    "page": 34,
+    "image": "/images/models/grundstueckszaeune/piatto.jpg",
+    "specs": [
+      {
+        "label": "Zaunsystem",
+        "value": "Pforte, zweiflügeliges tor oder schiebetor, spannweite"
+      },
+      {
+        "label": "Pfostenmaße",
+        "value": "80x80, 100x100 mm"
+      },
+      {
+        "label": "Rahmenprofile",
+        "value": "58x44 mm"
+      },
+      {
+        "label": "Füllungsprofile",
+        "value": "40x20 mm"
+      },
+      {
+        "label": "Code",
+        "value": "EK.20.101"
+      }
+    ]
+  },
+  {
+    "id": "lesina",
+    "catalogue": "grundstueckszaeune",
+    "name": "Lesina",
+    "family": "Aluminiumzäune Standard",
+    "page": 35,
+    "image": "/images/models/grundstueckszaeune/lesina.jpg",
+    "specs": [
+      {
+        "label": "Zaunsystem",
+        "value": "Pforte, zweiflügeliges tor oder schiebetor, spannweite"
+      },
+      {
+        "label": "Pfostenmaße",
+        "value": "80x80, 100x100 mm"
+      },
+      {
+        "label": "Rahmenprofile",
+        "value": "58x44 mm"
+      },
+      {
+        "label": "Füllungsprofile",
+        "value": "80x20 mm"
+      },
+      {
+        "label": "Code",
+        "value": "EK.20.102"
+      }
+    ]
+  },
+  {
+    "id": "trasimeno",
+    "catalogue": "grundstueckszaeune",
+    "name": "Trasimeno",
+    "family": "Aluminiumzäune Elegance",
+    "page": 38,
+    "image": "/images/models/grundstueckszaeune/trasimeno.jpg",
+    "specs": [
+      {
+        "label": "Zaunsystem",
+        "value": "Pforte, zweiflügeliges tor oder schiebetor, spannweite"
+      },
+      {
+        "label": "Pfostenmaße",
+        "value": "80x80, 100x100 mm"
+      },
+      {
+        "label": "Rahmenprofile",
+        "value": "58x44 mm"
+      },
+      {
+        "label": "Füllungsprofile",
+        "value": "80x20 mm"
+      },
+      {
+        "label": "Code",
+        "value": "EK.20.105"
+      }
+    ]
+  },
+  {
+    "id": "campelli",
+    "catalogue": "grundstueckszaeune",
+    "name": "Campelli",
+    "family": "Aluminiumzäune Elegance",
+    "page": 39,
+    "image": "/images/models/grundstueckszaeune/campelli.jpg",
+    "specs": [
+      {
+        "label": "Zaunsystem",
+        "value": "Pforte, zweiflügeliges tor oder schiebetor, spannweite"
+      },
+      {
+        "label": "Pfostenmaße",
+        "value": "80x80, 100x100 mm"
+      },
+      {
+        "label": "Rahmenprofile",
+        "value": "58x44 mm"
+      },
+      {
+        "label": "Füllungsprofile",
+        "value": "80x20, 50x20, 20x20 mm"
+      },
+      {
+        "label": "Code",
+        "value": "EK.20.106"
+      }
+    ]
+  },
+  {
+    "id": "nemi",
+    "catalogue": "grundstueckszaeune",
+    "name": "Nemi",
+    "family": "Aluminiumzäune Elegance",
+    "page": 40,
+    "image": "/images/models/grundstueckszaeune/nemi.jpg",
+    "specs": [
+      {
+        "label": "Zaunsystem",
+        "value": "Pforte, zweiflügeliges tor oder schiebetor, spannweite"
+      },
+      {
+        "label": "Pfostenmaße",
+        "value": "80x80, 100x100 mm"
+      },
+      {
+        "label": "Rahmenprofile",
+        "value": "58x44 mm"
+      },
+      {
+        "label": "Füllungsprofile",
+        "value": "20x20 mm, 80x20 mm"
+      },
+      {
+        "label": "Code",
+        "value": "EK.20.107"
+      }
+    ]
+  },
+  {
+    "id": "maulazzo",
+    "catalogue": "grundstueckszaeune",
+    "name": "Maulazzo",
+    "family": "Aluminiumzäune Elegance",
+    "page": 41,
+    "image": "/images/models/grundstueckszaeune/maulazzo.jpg",
+    "specs": [
+      {
+        "label": "Zaunsystem",
+        "value": "Pforte, zweiflügeliges tor oder schiebetor, spannweite"
+      },
+      {
+        "label": "Pfostenmaße",
+        "value": "80x80, 100x100 mm"
+      },
+      {
+        "label": "Rahmenprofile",
+        "value": "58x44 mm"
+      },
+      {
+        "label": "Füllungsprofile",
+        "value": "panel aluminiowy łączony na pióro, wpust o wysokości 200 mm"
+      },
+      {
+        "label": "Code",
+        "value": "EK.20.108"
+      }
+    ]
+  },
+  {
+    "id": "maggiore",
+    "catalogue": "grundstueckszaeune",
+    "name": "Maggiore",
+    "family": "Aluminiumzäune Prestige",
+    "page": 44,
+    "image": "/images/models/grundstueckszaeune/maggiore.jpg",
+    "specs": [
+      {
+        "label": "Zaunsystem",
+        "value": "Pforte, zweiflügeliges tor oder schiebetor, spannweite"
+      },
+      {
+        "label": "Pfostenmaße",
+        "value": "80x80, 100x100 mm"
+      },
+      {
+        "label": "Rahmenprofile",
+        "value": "58x44 mm"
+      },
+      {
+        "label": "Füllungsprofile",
+        "value": "120x20, 60x20 mm"
+      },
+      {
+        "label": "Code",
+        "value": "EK.20.109"
+      }
+    ]
+  },
+  {
+    "id": "bracciano",
+    "catalogue": "grundstueckszaeune",
+    "name": "Bracciano",
+    "family": "Aluminiumzäune Prestige",
+    "page": 45,
+    "image": "/images/models/grundstueckszaeune/bracciano.jpg",
+    "specs": [
+      {
+        "label": "Zaunsystem",
+        "value": "Pforte, zweiflügeliges tor oder schiebetor, spannweite"
+      },
+      {
+        "label": "Pfostenmaße",
+        "value": "80x80, 100x100 mm"
+      },
+      {
+        "label": "Rahmenprofile",
+        "value": "58x44 mm"
+      },
+      {
+        "label": "Füllungsprofile",
+        "value": "80x20, 20x20 mm"
+      },
+      {
+        "label": "Code",
+        "value": "EK.20.110"
+      }
+    ]
+  },
+  {
+    "id": "viverone",
+    "catalogue": "grundstueckszaeune",
+    "name": "Viverone",
+    "family": "Aluminiumzäune Prestige",
+    "page": 46,
+    "image": "/images/models/grundstueckszaeune/viverone.jpg",
+    "specs": [
+      {
+        "label": "Zaunsystem",
+        "value": "Pforte, zweiflügeliges tor oder schiebetor, spannweite"
+      },
+      {
+        "label": "Pfostenmaße",
+        "value": "80x80, 100x100 mm"
+      },
+      {
+        "label": "Rahmenprofile",
+        "value": "58x44 mm"
+      },
+      {
+        "label": "Füllungsprofile",
+        "value": "aluminiumpaneel mit federverbindung, längsfeder 200 mm hoch"
+      },
+      {
+        "label": "Code",
+        "value": "EK.20.111"
+      }
+    ]
+  },
+  {
+    "id": "averno",
+    "catalogue": "grundstueckszaeune",
+    "name": "Averno",
+    "family": "Aluminiumzäune Prestige",
+    "page": 47,
+    "image": "/images/models/grundstueckszaeune/averno.jpg",
+    "specs": [
+      {
+        "label": "Zaunsystem",
+        "value": "Pforte, zweiflügeliges tor oder schiebetor, spannweite"
+      },
+      {
+        "label": "Pfostenmaße",
+        "value": "80x80, 100x100 mm"
+      },
+      {
+        "label": "Rahmenprofile",
+        "value": "58x44 mm"
+      },
+      {
+        "label": "Füllungsprofile",
+        "value": "140x20 mm"
+      },
+      {
+        "label": "Code",
+        "value": "EK.20.112"
+      }
+    ]
+  },
+  // ══ /Gama Tore ════════════════════════════════════════════════════
 ];
