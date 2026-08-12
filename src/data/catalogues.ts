@@ -106,7 +106,7 @@ export const CATALOGUES: Catalogue[] = [
     file: "/pdf/catalogues/aussenturen-produktkatalog.pdf",
     cover: "/images/catalogues/aussenturen-cover.jpg",
     pages: 56,
-    sizeMb: 12.7,
+    sizeMb: 14.3,
     year: 2025,
   },
   {
@@ -157,8 +157,8 @@ export const CATALOGUES: Catalogue[] = [
     category: "roller-shutters",
     file: "/pdf/catalogues/rollladen-produktkatalog.pdf",
     cover: "/images/catalogues/rollladen-produktkatalog-cover.jpg",
-    pages: 54,
-    sizeMb: 27.4,
+    pages: 53,
+    sizeMb: 27.2,
     year: 2026,
   },
   {

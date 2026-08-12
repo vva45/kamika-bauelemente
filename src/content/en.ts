@@ -233,6 +233,7 @@ export const en = {
     "Frames can be finished in a different colour inside and outside. RAL powder coatings, wood decor foils, wood stains, anodised aluminium and the numbered shutter-slat palette — filter by finish or by the material you are ordering.",
   "colours.filterGroup": "Finish",
   "colours.filterMaterial": "Material",
+  "colours.filterCatalogue": "Catalogue",
   "colours.filterAll": "All",
   "colours.groupRal": "RAL",
   "colours.groupWoodDecor": "Wood decor",
@@ -241,12 +242,18 @@ export const en = {
   "colours.groupLamella": "Shutter slats",
   "colours.groupSalFoil": "Salamander foils",
   "colours.groupPvcFoil": "PVC decor foils",
+  "colours.groupPowder": "Powder coating",
+  "colours.groupGlass": "Tempered colour glass",
+  "colours.groupCeramic": "Ceramic",
+  "colours.groupLiquidMetal": "Liquid metal",
   "colours.groupSpecial": "Special",
   "colours.availableOn": "Available on",
   "colours.noMatch": "No finish matches that combination.",
   "colours.disclaimer":
     "Screen colours are approximate: brightness, calibration and the finish of the surface all shift them. Ask for a physical sample before deciding.",
   "colours.count": "{count} finishes",
+  "colours.standardSection": "Standard colour charts (RAL, decors, anodised)",
+  "colours.standardChip": "Standard",
 
   // ── Contacto ─────────────────────────────────────────────────
   "contactPage.eyebrow": "Hechingen · Zollernalbkreis",

@@ -149,6 +149,7 @@ const { CATALOGUES } = await import("../src/data/catalogues.ts");
 const { MANUFACTURERS } = await import("../src/data/manufacturers.ts");
 const { PROJECTS } = await import("../src/data/projects.ts");
 const { COLORS } = await import("../src/data/colors.ts");
+const { CATALOGUE_COLORS } = await import("../src/data/catalogue-colors.ts");
 
 const checkDuplicates = (label, items) => {
   const seen = new Set();
@@ -161,7 +162,9 @@ const checkDuplicates = (label, items) => {
 checkDuplicates("products", PRODUCTS);
 checkDuplicates("catalogues", CATALOGUES);
 checkDuplicates("projects", PROJECTS);
-checkDuplicates("colours", COLORS);
+// Las muestras de catálogo las genera un script: un id repetido aquí
+// significa que dos nombres distintos han caído en el mismo slug.
+checkDuplicates("colours", [...COLORS, ...CATALOGUE_COLORS]);
 
 // Un id de producto no puede chocar con uno de proyecto o de catálogo:
 // el encargo dice "slug único en todo el sitio".
@@ -236,9 +239,16 @@ for (const product of PRODUCTS) {
     fail("broken reference", `product "${product.id}" points at unknown catalogue "${product.catalogue.id}"`);
   }
 }
+// Las muestras de color extraídas apuntan al catálogo del que salieron:
+// la sección de /colours toma de ahí su título.
+for (const colour of CATALOGUE_COLORS) {
+  if (colour.catalogue && !catalogueIds.has(colour.catalogue)) {
+    fail("broken reference", `colour swatch "${colour.id}" comes from unknown catalogue "${colour.catalogue}"`);
+  }
+}
 
 notes.push(
-  `${PRODUCTS.length} products, ${CATALOGUES.length} catalogues, ${CATALOGUE_MODELS.length} catalogue models, ${PROJECTS.length} projects, ${COLORS.length} finishes.`,
+  `${PRODUCTS.length} products, ${CATALOGUES.length} catalogues, ${CATALOGUE_MODELS.length} catalogue models, ${PROJECTS.length} projects, ${COLORS.length} standard finishes + ${CATALOGUE_COLORS.length} catalogue swatches.`,
 );
 
 // ── 4. Texto visible escrito a pelo ──────────────────────────────────

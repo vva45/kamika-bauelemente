@@ -22,6 +22,7 @@ import {
   topLevelCategories,
 } from "./categories";
 import { COLORS } from "./colors";
+import { CATALOGUE_COLORS } from "./catalogue-colors";
 import { PRODUCTS } from "./products";
 import { PROJECTS } from "./projects";
 import type {
@@ -211,3 +212,20 @@ export const getFeaturedProjects = (limit?: number): Project[] => {
 
 export const getColorsByGroup = (group: ColorFinish["group"]): ColorFinish[] =>
   COLORS.filter((color) => color.group === group);
+
+/**
+ * La carta COMPLETA para la página de colores: las muestras extraídas
+ * de los catálogos (con imagen) más las paletas estándar. Cuando una
+ * muestra de catálogo cubre un color que ya existía como hex —misma
+ * combinación de grupo y código—, la imagen manda y el hex se retira:
+ * dos chips del mismo SAL 03 confundirían más que ayudar.
+ */
+const finishKey = (color: ColorFinish) =>
+  `${color.group}:${(color.code || color.name.en).toLowerCase().replace(/[^a-z0-9]/g, "")}`;
+
+const supersededByImage = new Set(CATALOGUE_COLORS.map(finishKey));
+
+export const ALL_COLORS: ColorFinish[] = [
+  ...COLORS.filter((color) => !supersededByImage.has(finishKey(color))),
+  ...CATALOGUE_COLORS,
+];

@@ -51,7 +51,7 @@ export function ProjectFilters({ projects, years }: ProjectFiltersProps) {
           role="group"
           aria-label={t("projects.filterCategory")}
         >
-          <span className="eyebrow mr-1 w-16">{t("projects.filterCategory")}</span>
+          <span className="eyebrow mr-1 w-28 shrink-0">{t("projects.filterCategory")}</span>
           <button
             type="button"
             onClick={() => setCategory(null)}
@@ -82,7 +82,7 @@ export function ProjectFilters({ projects, years }: ProjectFiltersProps) {
           role="group"
           aria-label={t("projects.filterYear")}
         >
-          <span className="eyebrow mr-1 w-16">{t("projects.filterYear")}</span>
+          <span className="eyebrow mr-1 w-28 shrink-0">{t("projects.filterYear")}</span>
           <button
             type="button"
             onClick={() => setYear(null)}

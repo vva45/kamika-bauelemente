@@ -230,6 +230,18 @@ export interface ColorFinish {
     | "lamella"
     | "sal-foil"
     | "pvc-foil"
+    | "powder"
+    | "glass"
+    | "ceramic"
+    | "liquid-metal"
     | "special";
   materials: Material[];
+  /**
+   * Muestra RECORTADA del catálogo, cuando existe. Es lo que pidió el
+   * dueño: una cerámica o un vidrio no se representan con un cuadrado
+   * de color plano. Sin imagen, el chip pinta el hex.
+   */
+  image?: string;
+  /** Catálogo del que viene la muestra; sin él, es carta estándar. */
+  catalogue?: string;
 }

@@ -11,7 +11,7 @@ import { ColourPreview } from "@/components/colour/ColourPreview";
 import { ContactCta } from "@/components/layout/ContactCta";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { COLORS } from "@/data";
+import { ALL_COLORS, COLORS } from "@/data";
 import { t, setRequestLocale } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/metadata";
 import { routes } from "@/lib/routes";
@@ -52,7 +52,12 @@ export default async function ColoursPage({ params }: PageProps<"/[locale]/colou
 
       <section className="border-t border-kamika-mist">
         <div className="mx-auto max-w-[1440px] px-5 py-16 md:px-8 md:py-24">
-          <ColourGrid colours={COLORS} />
+          {/* La carta completa: las paletas estándar MÁS las muestras
+              recortadas de los catálogos (ALL_COLORS las fusiona; la
+              imagen manda sobre el hex cuando existen las dos). El
+              previsualizador de arriba sigue con COLORS: solo tiene
+              sentido teñir el render con colores planos. */}
+          <ColourGrid colours={ALL_COLORS} />
 
           {/* Aviso al pie: en pantalla el color miente lo justo para
               que una decisión tomada aquí acabe en devolución. */}

@@ -1,22 +1,24 @@
 "use client";
 
 /**
- * Carta de colores: chips grandes con nombre y código, filtrables por
- * acabado (RAL / decorado madera / anodizado) y por material.
+ * Carta de colores, organizada POR CATÁLOGO (petición del dueño,
+ * 2026-08): primero los filtros —acabado, material y ahora también
+ * catálogo—, y debajo una sección por colección con su titulito y su
+ * recuento, como la página de un muestrario.
  *
- * Los chips no son botones: aquí no hay nada que elegir, es una carta
- * para mirar. Cada uno lleva su código en mono, que es lo que el
- * cliente acabará diciendo por teléfono.
- *
- * La estructura está preparada para reorganizarla por categoría o por
- * material más adelante (está por decidir): el filtro sale de los datos,
- * no de una lista escrita a mano.
+ * Los chips de color no son botones: aquí no hay nada que elegir, es
+ * una carta para mirar. Cada muestra lleva su código en mono, que es lo
+ * que el cliente acabará diciendo por teléfono. Las muestras extraídas
+ * de los catálogos enseñan su IMAGEN (cerámica, vidrio, maderas…); las
+ * de carta estándar, su color plano.
  */
+import Image from "next/image";
 import { useState } from "react";
+import { CATALOGUES } from "@/data/catalogues";
 import type { ColorFinish, Material } from "@/data/types";
 import { cn } from "@/lib/cn";
 import { useI18n } from "@/components/layout/LocaleProvider";
-import type { ContentKey } from "@/lib/i18n";
+import type { ContentKey, Localized } from "@/lib/i18n";
 
 const GROUP_LABEL: Record<ColorFinish["group"], ContentKey> = {
   ral: "colours.groupRal",
@@ -26,6 +28,10 @@ const GROUP_LABEL: Record<ColorFinish["group"], ContentKey> = {
   lamella: "colours.groupLamella",
   "sal-foil": "colours.groupSalFoil",
   "pvc-foil": "colours.groupPvcFoil",
+  powder: "colours.groupPowder",
+  glass: "colours.groupGlass",
+  ceramic: "colours.groupCeramic",
+  "liquid-metal": "colours.groupLiquidMetal",
   special: "colours.groupSpecial",
 };
 
@@ -44,19 +50,51 @@ const chipClasses = (active: boolean) =>
     active ? "bg-kamika-ink text-kamika-paper" : "bg-kamika-blue-50 text-kamika-steel hover:bg-kamika-blue",
   );
 
+/** "ROKA Signature", "Garagentore"… — el nombre corto de la colección. */
+function sectionTitle(catalogueId: string, pick: (value: Localized<string>) => string): string {
+  const catalogue = CATALOGUES.find((entry) => entry.id === catalogueId);
+  if (!catalogue) return catalogueId;
+  if (catalogue.brand && catalogue.collection) {
+    return `${catalogue.brand} ${pick(catalogue.collection)}`;
+  }
+  return pick(catalogue.title);
+}
+
 export function ColourGrid({ colours }: { colours: ColorFinish[] }) {
   const { pick, t, tf } = useI18n();
   const [group, setGroup] = useState<ColorFinish["group"] | null>(null);
   const [material, setMaterial] = useState<Material | null>(null);
+  const [catalogue, setCatalogue] = useState<string | null>(null);
 
   const groups = [...new Set(colours.map((colour) => colour.group))];
   const materials = [...new Set(colours.flatMap((colour) => colour.materials))];
+  // En el orden de la página de catálogos, que es el que el visitante
+  // ya conoce. "standard" agrupa las paletas sin catálogo (RAL, Dekor…).
+  const catalogueIds = CATALOGUES.map((entry) => entry.id).filter((id) =>
+    colours.some((colour) => colour.catalogue === id),
+  );
+  const hasStandard = colours.some((colour) => !colour.catalogue);
 
   const visible = colours.filter(
     (colour) =>
       (group === null || colour.group === group) &&
-      (material === null || colour.materials.includes(material)),
+      (material === null || colour.materials.includes(material)) &&
+      (catalogue === null ||
+        (catalogue === "standard" ? !colour.catalogue : colour.catalogue === catalogue)),
   );
+
+  const sections: { id: string; title: string; items: ColorFinish[] }[] = [
+    ...catalogueIds.map((id) => ({
+      id,
+      title: sectionTitle(id, pick),
+      items: visible.filter((colour) => colour.catalogue === id),
+    })),
+    {
+      id: "standard",
+      title: t("colours.standardSection"),
+      items: visible.filter((colour) => !colour.catalogue),
+    },
+  ].filter((section) => section.items.length > 0);
 
   return (
     <div>
@@ -66,7 +104,7 @@ export function ColourGrid({ colours }: { colours: ColorFinish[] }) {
           role="group"
           aria-label={t("colours.filterGroup")}
         >
-          <span className="eyebrow mr-1 w-16">{t("colours.filterGroup")}</span>
+          <span className="eyebrow mr-1 w-28 shrink-0">{t("colours.filterGroup")}</span>
           <button
             type="button"
             onClick={() => setGroup(null)}
@@ -93,7 +131,7 @@ export function ColourGrid({ colours }: { colours: ColorFinish[] }) {
           role="group"
           aria-label={t("colours.filterMaterial")}
         >
-          <span className="eyebrow mr-1 w-16">{t("colours.filterMaterial")}</span>
+          <span className="eyebrow mr-1 w-28 shrink-0">{t("colours.filterMaterial")}</span>
           <button
             type="button"
             onClick={() => setMaterial(null)}
@@ -114,43 +152,98 @@ export function ColourGrid({ colours }: { colours: ColorFinish[] }) {
             </button>
           ))}
         </div>
+
+        <div
+          className="flex flex-wrap items-center gap-2"
+          role="group"
+          aria-label={t("colours.filterCatalogue")}
+        >
+          <span className="eyebrow mr-1 w-28 shrink-0">{t("colours.filterCatalogue")}</span>
+          <button
+            type="button"
+            onClick={() => setCatalogue(null)}
+            aria-pressed={catalogue === null}
+            className={chipClasses(catalogue === null)}
+          >
+            {t("colours.filterAll")}
+          </button>
+          {catalogueIds.map((id) => (
+            <button
+              key={id}
+              type="button"
+              onClick={() => setCatalogue(catalogue === id ? null : id)}
+              aria-pressed={catalogue === id}
+              className={chipClasses(catalogue === id)}
+            >
+              {sectionTitle(id, pick)}
+            </button>
+          ))}
+          {hasStandard && (
+            <button
+              type="button"
+              onClick={() => setCatalogue(catalogue === "standard" ? null : "standard")}
+              aria-pressed={catalogue === "standard"}
+              className={chipClasses(catalogue === "standard")}
+            >
+              {t("colours.standardChip")}
+            </button>
+          )}
+        </div>
       </div>
 
       <p className="eyebrow mt-8" aria-live="polite">
         {tf("colours.count", { count: visible.length })}
       </p>
 
-      {visible.length > 0 ? (
-        <ul className="mt-5 grid grid-cols-2 gap-x-5 gap-y-8 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-          {visible.map((colour) => (
-            <li key={colour.id}>
-              {/* La muestra lleva un aro fino: sin él, un blanco roto
-                  sobre papel blanco no se ve dónde acaba. */}
-              <div
-                className="aspect-[4/3] w-full rounded-kamika ring-1 ring-inset ring-kamika-ink/15"
-                style={{ backgroundColor: colour.hex }}
-              />
-              <p className="mt-3 font-display text-sm font-medium text-kamika-ink">
-                {pick(colour.name)}
-              </p>
-              {/* Algunas cartas (los folios SAL) imprimen SOLO el
-                  código: ahí el código ES el nombre y repetirlo debajo
-                  sería un eco. */}
-              {colour.code !== pick(colour.name) && (
-                <p className="mt-1 font-mono text-[0.6875rem] tracking-[0.12em] text-kamika-steel uppercase">
-                  {colour.code}
-                </p>
-              )}
-              <p className="mt-2 text-[0.75rem] text-kamika-ink/55">
-                {/* La lista de materiales se lee sola en pantalla, pero
-                    sin la etiqueta un lector de pantalla solo diría
-                    "PVC, aluminio" sin decir para qué. */}
-                <span className="sr-only">{t("colours.availableOn")}: </span>
-                {colour.materials.map((entry) => t(MATERIAL_LABEL[entry])).join(" · ")}
-              </p>
-            </li>
-          ))}
-        </ul>
+      {sections.length > 0 ? (
+        sections.map((section) => (
+          <section key={section.id} className="mt-12 first-of-type:mt-8">
+            <h2 className="text-xl font-medium md:text-2xl">{section.title}</h2>
+            <p className="eyebrow mt-1.5">{tf("colours.count", { count: section.items.length })}</p>
+
+            <ul className="mt-6 grid grid-cols-2 gap-x-5 gap-y-8 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+              {section.items.map((colour) => (
+                <li key={colour.id}>
+                  {/* La muestra lleva un aro fino: sin él, un blanco
+                      roto sobre papel blanco no se ve dónde acaba. */}
+                  {colour.image ? (
+                    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-kamika ring-1 ring-inset ring-kamika-ink/15">
+                      <Image
+                        src={colour.image}
+                        alt={pick(colour.name)}
+                        fill
+                        sizes="(min-width: 1280px) 18vw, (min-width: 640px) 30vw, 45vw"
+                        className="object-cover"
+                      />
+                    </div>
+                  ) : (
+                    <div
+                      className="aspect-[4/3] w-full rounded-kamika ring-1 ring-inset ring-kamika-ink/15"
+                      style={{ backgroundColor: colour.hex }}
+                    />
+                  )}
+                  <p className="mt-3 font-display text-sm font-medium text-kamika-ink">
+                    {pick(colour.name)}
+                  </p>
+                  {/* Algunas cartas (los folios SAL) imprimen SOLO el
+                      código: ahí el código ES el nombre y repetirlo
+                      debajo sería un eco. */}
+                  {colour.code !== "" && colour.code !== pick(colour.name) && (
+                    <p className="mt-1 font-mono text-[0.6875rem] tracking-[0.12em] text-kamika-steel uppercase">
+                      {colour.code}
+                    </p>
+                  )}
+                  <p className="mt-2 text-[0.75rem] text-kamika-ink/55">
+                    <span className="sr-only">{t("colours.availableOn")}: </span>
+                    {t(GROUP_LABEL[colour.group])}
+                    {" · "}
+                    {colour.materials.map((entry) => t(MATERIAL_LABEL[entry])).join(" · ")}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))
       ) : (
         <p className="mt-6 text-kamika-ink/70">{t("colours.noMatch")}</p>
       )}

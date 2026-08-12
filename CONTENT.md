@@ -192,6 +192,12 @@ Eko-Okna…" on sheet 42 of the shutter catalogue. Logo removal alone does not w
 grep the TEXT of every page for the intermediary's name before publishing (`page.get_text()`
 over the whole document). Those three were redacted in place, dangling words ("von") included.
 
+**And images leak past the text grep (caught 2026-08, during the colour pass).** Sheet 52 of the
+roller-shutter catalogue was a full-page Eko-Okna logo drawn as ONE bitmap — zero text on the page,
+so every text scan above called it clean. The page was deleted outright (the file is 53 sheets now;
+`catalogues.ts` re-measured). The complete white-label audit is therefore three passes, not one:
+text grep, logo shapes, and a human flip through the rendered page images.
+
 ### The three Drutex catalogues — same rule, harder to apply
 
 D-ART LINE, Außentüren and the roller-shutter/Raffstoren/insect-screen catalogue come from Drutex,
@@ -212,6 +218,11 @@ Two traps worth recording, because a text search says "clean" while the page sti
 2. **The originals were being served.** `public/pdf/catalogues/` had the untouched files in it, so
    anyone could download the fully branded version. They now live in `source-catalogues/`, outside
    `public/`, which is also where the script reads them from.
+3. **The brand can live inside a photograph (caught 2026-08).** Page 21 of the Außentüren
+   catalogue shows a RAL colour fan photographed WITH its printed "DRUTEX RAL K7 CLASSIC" label —
+   pixels, not text, so both earlier passes missed it. Scrubbed with a pixel redaction
+   (`apply_redactions(images=PDF_REDACT_IMAGE_PIXELS)` over just that region), and the file size in
+   `catalogues.ts` re-measured afterwards, because rewriting images changes it.
 
 What was **kept**: the line name `D-ART LINE` and the model names printed under each door
 (`Washington 6`, `Alaska 1`…). Those are how the customer will refer to a door on the phone, and
@@ -329,7 +340,7 @@ Needed from the owner, per product he actually sells:
 - Sound insulation (dB), burglary resistance class (RC), max sash size, wind load class.
 - Which catalogue it appears in, and **on which page** — that is what the data sheet button links to.
 
-## 3b. Projects are real now; colours are still example data
+## 3b. Projects are real now; the colour chart comes off the catalogues
 
 `src/data/projects.ts` holds **16 real jobs**, all of them Kamika's, all with the owner's own
 photos. The six invented projects that used to live here were deleted the same day, images and
@@ -388,6 +399,31 @@ check them against a physical card before promising a colour on the phone.
 Two colour charts were found and **not** used: the Renolit foil fan on page 64 of the Außentüren
 catalogue and the metallic/special-effect examples on page 40 are printed without names or codes,
 so there is nothing to record beyond "ask".
+
+### The catalogue swatch chart (2026-08) — cropped from the PDFs, not painted
+
+The owner's brief: every colour in every published catalogue, shown as **an image the size of the
+existing chips** — a ceramic, a structured glass or a liquid-metal finish cannot be represented by
+a flat hex square. So:
+
+- `scripts/extract_catalogue_colours.py` finds the swatch tiles on the declared chart pages of
+  each catalogue, reads the caption printed under each one, and crops the tile itself out of the
+  PDF at 170 dpi → **244 JPGs** in `public/images/colours/swatches/{catalogue}/` plus the
+  generated `src/data/catalogue-colors.ts`. **Never hand-edit that file** — re-run the script.
+- Counts per catalogue: ROKA Signature 141 (wood decors, ceramics, glass, liquid metals, powder
+  textures), ROKA Select 12, Außentüren wood stains 7, Garagentore 12, the numbered shutter-slat
+  palette 15, Salamander foils 18, IGLO terrace foils 39.
+- `ALL_COLORS` (in `src/data/index.ts`) merges the two charts: a flat-hex standard entry whose
+  group + code matches an extracted swatch is **superseded by the image** — 62 were — so the same
+  finish never appears twice. `/colours` renders one section per catalogue (title from
+  `catalogues.ts` brand + collection), the standard chart last, and a third filter row by
+  catalogue. The live-preview box above still tints with the flat `COLORS` only.
+- Catalogues with **no extractable chart**, and why nothing was invented: D-ART LINE and Despiro
+  print no named chart (Despiro's colour pages show handles), the door-panel catalogue's embossing
+  pages are unnamed, the fence catalogue lists colours only as body text, the IGLO window
+  catalogue's colour wheel is unnamed, the Eko-Okna shutter catalogue has no palette, and the
+  facade-blind chart photographs whole lamella PROFILES rather than colours (its RALs stay as flat
+  hex in `colors.ts`). The rule stands: a swatch with no printed name gets no entry.
 
 ## 3b-bis. Windows — the manufacturer hierarchy
 
