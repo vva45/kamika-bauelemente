@@ -72,6 +72,9 @@ PAGES = [
          },
          # solo el bloque OBERFLÄCHEN, no las miniaturas de puertas
          region=(688, 460, 1230, 840),
+         # las muestras VERGLASUNG viven ahora en el capítulo de
+         # cristales (extract_catalogue_glass.py), no en la carta
+         exclude=["Klarglas", "Sandstrahlglas", "Satinato"],
          default_group="powder"),
     # Außentüren: las maderas con nombre. La hoja 21 (metalizados) va
     # sin nombres individuales — son "Beispiele" — y no se inventan.
@@ -111,7 +114,26 @@ PAGES = [
          # solo la carta DEKORFOLIEN; los puntos de la warme Kante no
          # son folias
          region=(25, 110, 610, 841),
+         # "02.12.17.000001" es un número de artículo que se coló como
+         # nombre en la primera pasada — un color no se llama así
+         exclude=["02.12.17.000001"],
          default_group="pvc-foil"),
+    # WIKĘD PCV/ALU: cartas PCV (hojas 12-13) y ALU (hoja 26), con el
+    # pie a la DERECHA de cada tesela. Los RAL del aluminio van como
+    # "powder" (son lacado en polvo sobre alu), no como "ral": así no
+    # pisan a los RAL de la carta estándar, que cubren más materiales.
+    dict(cat="wiked-pvc-alu", pdf="wiked-pvc-alu.pdf",
+         sheets=[12, 13, 26],
+         materials=["pvc"],
+         sheet_materials={26: ["aluminium"]},
+         groups={},
+         default_group="pvc-foil",
+         sheet_groups={26: "powder"},
+         caption_side="right",
+         vector_tiles=True,
+         titlecase=True,
+         # "DOWOLNY RAL" es "cualquier RAL", no un color
+         exclude=["DOWOLNY RAL", "Dowolny RAL"]),
 ]
 
 TILE_BOUNDS = (28, 180, 16, 150)  # ancho mín/máx, alto mín/máx
@@ -128,11 +150,19 @@ def lines_of(page):
     return result
 
 
-def find_tiles(page, bounds):
+def find_tiles(page, bounds, vector=False):
     w0, w1, h0, h1 = bounds
     tiles = []
     for im in page.get_images(full=True):
         for rect in page.get_image_rects(im[0]):
+            if w0 <= rect.width <= w1 and h0 <= rect.height <= h1:
+                tiles.append(rect)
+    if vector:
+        # cartas que mezclan fotos con rectángulos vectoriales: el RAL
+        # 7016 del WIKĘD es un relleno plano y el RAL 9016 un rect
+        # blanco solo-borde — ninguno es imagen
+        for drawing in page.get_drawings():
+            rect = drawing["rect"]
             if w0 <= rect.width <= w1 and h0 <= rect.height <= h1:
                 tiles.append(rect)
     # sin duplicados casi idénticos
@@ -144,6 +174,16 @@ def find_tiles(page, bounds):
 
 
 def caption_for(tile, lines, side="below"):
+    if side == "right":
+        # pie a la derecha de la tesela (cartas WIKĘD); puede ocupar
+        # dos líneas ("DĄB KLEJONY MIODOWY / SUPER MATOWY")
+        near = [
+            (r, t) for r, t in lines
+            if tile.x1 - 2 <= r.x0 <= tile.x1 + 80
+            and r.y0 < tile.y1 + 4 and r.y1 > tile.y0 - 4
+        ]
+        near.sort(key=lambda item: item[0].y0)
+        return " ".join(t for _, t in near[:2]) if near else None
     if side == "left":
         near = [
             (r, t) for r, t in lines
@@ -197,9 +237,29 @@ def heading_for(tile, lines, groups, default):
 
 def slugify(text):
     text = text.lower()
-    for a, b in [("ä", "ae"), ("ö", "oe"), ("ü", "ue"), ("ß", "ss")]:
+    for a, b in [("ä", "ae"), ("ö", "oe"), ("ü", "ue"), ("ß", "ss"),
+                 # las cartas WIKĘD vienen en polaco: "Biały" → "bialy",
+                 # no "bia-y"
+                 ("ł", "l"), ("ą", "a"), ("ę", "e"), ("ó", "o"),
+                 ("ś", "s"), ("ż", "z"), ("ź", "z"), ("ć", "c"), ("ń", "n")]:
         text = text.replace(a, b)
     return re.sub(r"[^a-z0-9]+", "-", text).strip("-")
+
+
+KEEP_UPPER = {"RAL", "SAL", "DB", "PX", "FS", "PR", "VEKA", "HS", "PSK"}
+
+
+def polish_title(caption):
+    """"SOSNA GÓRSKA" → "Sosna Górska": las cartas WIKĘD imprimen en
+    mayúsculas y en la web quedarían gritando junto a los "Golden Oak"
+    del resto. Los códigos y siglas (RAL 9016, SIENA PR) no se tocan."""
+    words = []
+    for word in caption.split():
+        if word.upper() in KEEP_UPPER or any(c.isdigit() for c in word):
+            words.append(word.upper())
+        else:
+            words.append("-".join(part.capitalize() for part in word.split("-")))
+    return " ".join(words)
 
 
 def split_name_code(caption):
@@ -268,7 +328,8 @@ def extract(config, debug=False):
             entries.extend(numbered_entries(page, sheet, config, debug))
             continue
         lines = lines_of(page)
-        tiles = find_tiles(page, config.get("tile_bounds", TILE_BOUNDS))
+        tiles = find_tiles(page, config.get("tile_bounds", TILE_BOUNDS),
+                           vector=config.get("vector_tiles", False))
         region = config.get("region")
         if region:
             box = fitz.Rect(*region)
@@ -283,17 +344,25 @@ def extract(config, debug=False):
             # colados y morralla de tabla
             if re.match(r"^Select \d+", clean) or "Seite" in clean:
                 continue
-            if letters and len(clean) > 12 and sum(c.isupper() for c in letters) / len(letters) > 0.9:
+            # las cartas WIKĘD imprimen el pie EN MAYÚSCULAS a la
+            # derecha: ahí el filtro anti-epígrafes no aplica — la
+            # geometría del pie derecho ya es suficientemente estricta
+            if config.get("caption_side") != "right" and letters and len(clean) > 12 and sum(c.isupper() for c in letters) / len(letters) > 0.9:
                 continue
             if clean in ("Ja", "Panel", "LSL", "Farbe", "RAL", "DEKOR"):
                 continue
+            if clean in config.get("exclude", ()):
+                continue
             sheet_default = config.get("sheet_groups", {}).get(sheet, config["default_group"])
             group, heading = heading_for(tile, lines, config["groups"], sheet_default)
-            name, code = split_name_code(caption)
-            if not name:
+            if config.get("titlecase"):
+                clean = polish_title(clean)
+            name, code = split_name_code(clean if config.get("titlecase") else caption)
+            if not name or name in config.get("exclude", ()):
                 continue
+            materials = config.get("sheet_materials", {}).get(sheet, config["materials"])
             entries.append(dict(sheet=sheet, tile=tile, name=name, code=code,
-                                group=group, heading=heading))
+                                group=group, heading=heading, materials=materials))
         if debug:
             found = [e for e in entries if e["sheet"] == sheet]
             print(f"  hoja {sheet}: {len(tiles)} teselas, {len(found)} con pie")
@@ -305,11 +374,12 @@ def extract(config, debug=False):
 
     os.makedirs(out_dir, exist_ok=True)
     # la misma carta se repite por perfil (C-80/C-65/Z-90): un color,
-    # una muestra
+    # una muestra. La clave incluye el material: el Winchester del PCV
+    # y el Winchester del aluminio del WIKĘD son entradas distintas.
     seen_names = set()
     unique_entries = []
     for e in entries:
-        key = e["name"].lower()
+        key = (e["name"].lower(), tuple(e.get("materials") or config["materials"]))
         if key in seen_names:
             continue
         seen_names.add(key)
@@ -331,7 +401,8 @@ def extract(config, debug=False):
         results.append(dict(
             id=f"{config['cat']}-{slug}", name=e["name"], code=e["code"],
             hex=median_hex(image), group=e["group"], image=rel,
-            catalogue=config["cat"], materials=config["materials"], page=e["sheet"],
+            catalogue=config["cat"],
+            materials=e.get("materials") or config["materials"], page=e["sheet"],
         ))
     doc.close()
     return results

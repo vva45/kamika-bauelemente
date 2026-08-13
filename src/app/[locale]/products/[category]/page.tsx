@@ -119,12 +119,15 @@ export default async function CategoryPage({ params }: PageProps<"/[locale]/prod
           <p className="max-w-2xl text-pretty text-kamika-ink/70 md:text-lg">
             {t("manufacturer.chooseIntro")}
           </p>
-          <div className="mt-10 grid gap-x-6 gap-y-10 lg:grid-cols-2">
+          {/* Tres por fila (pedido del dueño, 2026-08): con dos, las
+              tarjetas se veían "algo grandes" — y con siete fabricantes
+              de ventanas la página se hacía un pergamino. */}
+          <div className="mt-10 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
             {manufacturers.map((manufacturer, index) => (
               <ManufacturerCard
                 key={manufacturer.id}
                 manufacturer={manufacturer}
-                priority={index < 2}
+                priority={index < 3}
               />
             ))}
           </div>

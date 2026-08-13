@@ -323,32 +323,123 @@ export const MANUFACTURERS: Manufacturer[] = [
     ],
   },
   {
+    /**
+     * Los datos reales llegaron con el catálogo WIKĘD (2026-08): el
+     * placeholder "VEKA 82 — ficha en camino" se retira y entran los
+     * cuatro sistemas de ventana tal y como los imprime el catálogo
+     * autoalojado. Cada cifra sale de su pliego; nada de memoria.
+     */
     id: "veka",
     category: "windows",
     name: "VEKA",
     tagline: {
-      en: "German PVC window systems.",
-      de: "Deutsche Kunststoff-Fenstersysteme.",
-      pl: "Niemieckie systemy okien PVC.",
+      en: "German PVC window systems, class-A profiles.",
+      de: "Deutsche Kunststoff-Fenstersysteme, Profile der Klasse A.",
+      pl: "Niemieckie systemy okien PVC, profile klasy A.",
     },
     intro: {
-      en: "VEKA profiles are joining the range. The manufacturer's sheet for the first system is on its way — until it arrives, this page stays deliberately short: we would rather send you the real numbers than write them from memory. Ask us and we will quote a VEKA window today.",
-      de: "VEKA-Profile kommen ins Sortiment. Das Herstellerdatenblatt zum ersten System ist unterwegs — bis es da ist, bleibt diese Seite bewusst kurz: Lieber schicken wir Ihnen die echten Zahlen, als sie aus dem Gedächtnis zu schreiben. Fragen Sie uns — ein VEKA-Fenster bieten wir Ihnen schon heute an.",
-      pl: "Profile VEKA dołączają do oferty. Karta producenta dla pierwszego systemu jest w drodze — do tego czasu ta strona celowo pozostaje krótka: wolimy przesłać prawdziwe liczby, niż pisać je z pamięci. Zapytaj — okno VEKA wycenimy już dziś.",
+      en: "Four PVC window systems on VEKA profiles, from the economical Perfectline to the 82-mm Softline 82 with a Uw of 0.76 W/m²K. All are class-A profiles with 3-mm outer walls. Every figure below comes from the self-hosted WIKĘD catalogue, and each system links to its exact page.",
+      de: "Vier Kunststoff-Fenstersysteme auf VEKA-Profilen, vom wirtschaftlichen Perfectline bis zum 82-mm-Softline 82 mit Uw = 0,76 W/(m²K). Alle Profile sind Klasse A mit 3 mm Außenwandstärke. Jede Zahl unten stammt aus dem selbst gehosteten WIKĘD-Katalog, und jedes System verlinkt auf seine genaue Seite.",
+      pl: "Cztery systemy okien PCV na profilach VEKA — od ekonomicznego Perfectline po 82-milimetrowy Softline 82 z Uw = 0,76 W/(m²K). Wszystkie profile są klasy A o ściankach zewnętrznych 3 mm. Każda liczba poniżej pochodzi z samodzielnie hostowanego katalogu WIKĘD, a każdy system linkuje do swojej strony.",
     },
     image: "/images/manufacturers/veka.jpg",
     systems: [
       {
-        // "VEKA – 82" es literal del dueño; la ficha con los datos está
-        // en camino. Sin specs a propósito.
-        id: "82",
-        name: "VEKA 82",
+        id: "softline-82",
+        name: "VEKA Softline 82",
         tagline: {
-          en: "The manufacturer's sheet is on its way — ask us about this system today.",
-          de: "Das Herstellerdatenblatt ist unterwegs — fragen Sie uns schon heute nach diesem System.",
-          pl: "Karta producenta jest w drodze — zapytaj o ten system już dziś.",
+          en: "82 mm, Uw 0.76 — the warmest window of the family.",
+          de: "82 mm, Uw 0,76 — das wärmste Fenster der Familie.",
+          pl: "82 mm, Uw 0,76 — najcieplejsze okno rodziny.",
         },
-        image: "/images/manufacturers/veka-82.jpg",
+        description: {
+          en: "The flagship VEKA window system: 82 mm of build depth, seven chambers in the frame and six in the sash, and three gaskets including a central one. Takes double and triple glazing packs from 24 to 52 mm.",
+          de: "Das Flaggschiff unter den VEKA-Fenstersystemen: 82 mm Bautiefe, sieben Kammern im Rahmen und sechs im Flügel, drei Dichtungen inklusive Mitteldichtung. Nimmt 2- und 3-fach-Glaspakete von 24 bis 52 mm auf.",
+          pl: "Flagowy system okienny VEKA: 82 mm głębokości zabudowy, siedem komór w ramie i sześć w skrzydle, system trzech uszczelek z uszczelką środkową. Przyjmuje pakiety 2- i 3-szybowe o grubości 24–52 mm.",
+        },
+        specs: [
+          { label: { en: "Profile", de: "Profil", pl: "Profil" }, value: "82", unit: "mm", highlight: true },
+          { label: { en: "Uw (reference window)", de: "Uw (Referenzfenster)", pl: "Uw (okno referencyjne)" }, value: "0.76", unit: "W/m²K", highlight: true },
+          { label: { en: "Chambers (frame / sash)", de: "Kammern (Rahmen / Flügel)", pl: "Komory (rama / skrzydło)" }, value: "7 / 6", highlight: true },
+          { label: { en: "Profile class", de: "Profilklasse", pl: "Klasa profilu" }, value: "A" },
+          { label: { en: "Seals", de: "Dichtungen", pl: "Uszczelki" }, value: { en: "3, centre gasket", de: "3, Mitteldichtung", pl: "3, uszczelka środkowa" } },
+          { label: { en: "Glazing packages", de: "Verglasungspakete", pl: "Pakiety szybowe" }, value: { en: "24–52 mm", de: "24–52 mm", pl: "24–52 mm" } },
+        ],
+        datasheet: "/pdf/catalogues/wiked-pvc-alu.pdf#page=10",
+        image: "/images/manufacturers/veka-softline-82.jpg",
+      },
+      {
+        id: "softline-76-md",
+        name: "VEKA Softline 76 MD",
+        tagline: {
+          en: "76 mm with centre gasket, Uw 0.79.",
+          de: "76 mm mit Mitteldichtung, Uw 0,79.",
+          pl: "76 mm z uszczelką środkową, Uw 0,79.",
+        },
+        description: {
+          en: "The 76-mm system in its middle-gasket version: five chambers in frame and sash and three seals, the central one keeping the hardware chamber dry. Glazing packs from 18 to 48 mm.",
+          de: "Das 76-mm-System in der Mitteldichtungs-Ausführung: fünf Kammern in Rahmen und Flügel und drei Dichtungen — die mittlere hält die Beschlagskammer trocken. Glaspakete von 18 bis 48 mm.",
+          pl: "System 76 mm w wersji z uszczelką środkową: pięć komór w ramie i skrzydle oraz trzy uszczelki — środkowa utrzymuje komorę okuć w suchości. Pakiety szybowe 18–48 mm.",
+        },
+        specs: [
+          { label: { en: "Profile", de: "Profil", pl: "Profil" }, value: "76", unit: "mm", highlight: true },
+          { label: { en: "Uw (reference window)", de: "Uw (Referenzfenster)", pl: "Uw (okno referencyjne)" }, value: "0.79", unit: "W/m²K", highlight: true },
+          { label: { en: "Chambers (frame / sash)", de: "Kammern (Rahmen / Flügel)", pl: "Komory (rama / skrzydło)" }, value: "5 / 5", highlight: true },
+          { label: { en: "Profile class", de: "Profilklasse", pl: "Klasa profilu" }, value: "A" },
+          { label: { en: "Seals", de: "Dichtungen", pl: "Uszczelki" }, value: { en: "3, centre gasket", de: "3, Mitteldichtung", pl: "3, uszczelka środkowa" } },
+          { label: { en: "Glazing packages", de: "Verglasungspakete", pl: "Pakiety szybowe" }, value: { en: "18–48 mm", de: "18–48 mm", pl: "18–48 mm" } },
+        ],
+        datasheet: "/pdf/catalogues/wiked-pvc-alu.pdf#page=10",
+        image: "/images/manufacturers/veka-softline-76-md.jpg",
+      },
+      {
+        id: "softline-76-ad",
+        name: "VEKA Softline 76 AD",
+        tagline: {
+          en: "76 mm with outer seals, Uw 0.82.",
+          de: "76 mm mit Anschlagdichtung, Uw 0,82.",
+          pl: "76 mm z uszczelkami zewnętrznymi, Uw 0,82.",
+        },
+        description: {
+          en: "The same 76-mm depth with two outer seals instead of the central gasket — the proven, simpler build-up. Five chambers in frame and sash, glazing packs from 18 to 48 mm.",
+          de: "Dieselbe 76-mm-Bautiefe mit zwei außenliegenden Dichtungen statt Mitteldichtung — der bewährte, einfachere Aufbau. Fünf Kammern in Rahmen und Flügel, Glaspakete von 18 bis 48 mm.",
+          pl: "Ta sama głębokość 76 mm z dwiema uszczelkami zewnętrznymi zamiast środkowej — sprawdzona, prostsza budowa. Pięć komór w ramie i skrzydle, pakiety szybowe 18–48 mm.",
+        },
+        specs: [
+          { label: { en: "Profile", de: "Profil", pl: "Profil" }, value: "76", unit: "mm", highlight: true },
+          { label: { en: "Uw (reference window)", de: "Uw (Referenzfenster)", pl: "Uw (okno referencyjne)" }, value: "0.82", unit: "W/m²K", highlight: true },
+          { label: { en: "Chambers (frame / sash)", de: "Kammern (Rahmen / Flügel)", pl: "Komory (rama / skrzydło)" }, value: "5 / 5", highlight: true },
+          { label: { en: "Profile class", de: "Profilklasse", pl: "Klasa profilu" }, value: "A" },
+          { label: { en: "Seals", de: "Dichtungen", pl: "Uszczelki" }, value: { en: "2 outer seals", de: "2 außenliegende Dichtungen", pl: "2 uszczelki zewnętrzne" } },
+          { label: { en: "Glazing packages", de: "Verglasungspakete", pl: "Pakiety szybowe" }, value: { en: "18–48 mm", de: "18–48 mm", pl: "18–48 mm" } },
+        ],
+        datasheet: "/pdf/catalogues/wiked-pvc-alu.pdf#page=10",
+        image: "/images/manufacturers/veka-softline-76-ad.jpg",
+      },
+      {
+        id: "perfectline",
+        name: "VEKA Perfectline",
+        tagline: {
+          en: "The economical 70-mm system, in Standard and Swing.",
+          de: "Das wirtschaftliche 70-mm-System, als Standard und Swing.",
+          pl: "Ekonomiczny system 70 mm, w wersjach Standard i Swing.",
+        },
+        description: {
+          en: "The entry point to the VEKA range: 70-mm profile, five chambers in frame and sash, two seals including a central one, in two sash designs — the angular Standard and the rounded Swing. Glazing packs from 24 to 40 mm.",
+          de: "Der Einstieg in die VEKA-Reihe: 70-mm-Profil, fünf Kammern in Rahmen und Flügel, zwei Dichtungen inklusive Mitteldichtung, in zwei Flügeldesigns — dem kantigen Standard und dem runden Swing. Glaspakete von 24 bis 40 mm.",
+          pl: "Wejście do oferty VEKA: profil 70 mm, pięć komór w ramie i skrzydle, dwie uszczelki z uszczelką środkową, w dwóch wersjach skrzydła — kanciastej Standard i zaokrąglonej Swing. Pakiety szybowe 24–40 mm.",
+        },
+        specs: [
+          { label: { en: "Profile", de: "Profil", pl: "Profil" }, value: "70", unit: "mm", highlight: true },
+          { label: { en: "Uw (reference window)", de: "Uw (Referenzfenster)", pl: "Uw (okno referencyjne)" }, value: "0.98", unit: "W/m²K", highlight: true },
+          { label: { en: "Chambers (frame / sash)", de: "Kammern (Rahmen / Flügel)", pl: "Komory (rama / skrzydło)" }, value: "5 / 5", highlight: true },
+          { label: { en: "Profile class", de: "Profilklasse", pl: "Klasa profilu" }, value: "A" },
+          { label: { en: "Seals", de: "Dichtungen", pl: "Uszczelki" }, value: { en: "2, centre gasket", de: "2, mit Mitteldichtung", pl: "2, z uszczelką środkową" } },
+          { label: { en: "Glazing packages", de: "Verglasungspakete", pl: "Pakiety szybowe" }, value: { en: "24–40 mm", de: "24–40 mm", pl: "24–40 mm" } },
+          { label: { en: "Sash designs", de: "Flügeldesigns", pl: "Wersje skrzydła" }, value: { en: "Standard and Swing", de: "Standard und Swing", pl: "Standard i Swing" } },
+        ],
+        datasheet: "/pdf/catalogues/wiked-pvc-alu.pdf#page=10",
+        image: "/images/manufacturers/veka-perfectline.jpg",
       },
     ],
   },
@@ -377,6 +468,221 @@ export const MANUFACTURERS: Manufacturer[] = [
           pl: "Karta producenta jest w drodze — zapytaj o ten system już dziś.",
         },
         image: "/images/manufacturers/rehau-synego.jpg",
+      },
+    ],
+  },
+  {
+    /**
+     * Del catálogo WIKĘD (2026-08), como los sistemas VEKA nuevos.
+     * Kömmerling imprime clase B en sus tres sistemas y así se
+     * transcribe — no se maquilla al alza.
+     */
+    id: "koemmerling",
+    category: "windows",
+    name: "Kömmerling",
+    tagline: {
+      en: "German PVC profiles, up to 88 mm build depth.",
+      de: "Deutsche Kunststoffprofile, bis 88 mm Bautiefe.",
+      pl: "Niemieckie profile PCV, do 88 mm głębokości zabudowy.",
+    },
+    intro: {
+      en: "Three Kömmerling window systems, from the proven 5-chamber 76 AD to the 88-mm 88 MD with triple gaskets and glazing packs up to 54 mm. Every figure below comes from the self-hosted WIKĘD catalogue, and each system links to its exact page.",
+      de: "Drei Kömmerling-Fenstersysteme, vom bewährten 5-Kammer-76 AD bis zum 88-mm-System 88 MD mit drei Dichtungen und Glaspaketen bis 54 mm. Jede Zahl unten stammt aus dem selbst gehosteten WIKĘD-Katalog, und jedes System verlinkt auf seine genaue Seite.",
+      pl: "Trzy systemy okienne Kömmerling — od sprawdzonego 5-komorowego 76 AD po 88-milimetrowy 88 MD z trzema uszczelkami i pakietami szybowymi do 54 mm. Każda liczba poniżej pochodzi z samodzielnie hostowanego katalogu WIKĘD, a każdy system linkuje do swojej strony.",
+    },
+    image: "/images/manufacturers/koemmerling.jpg",
+    systems: [
+      {
+        id: "88-md",
+        name: "Kömmerling 88 MD",
+        tagline: {
+          en: "88 mm and seven chambers, Uw 0.74.",
+          de: "88 mm und sieben Kammern, Uw 0,74.",
+          pl: "88 mm i siedem komór, Uw 0,74.",
+        },
+        description: {
+          en: "The deepest PVC profile of the range: 88 mm with a 7-chamber build-up and three gaskets including a central one. Takes glazing packs from 24 to 54 mm — room for heavy triple glazing with wide warm-edge spacers.",
+          de: "Das tiefste Kunststoffprofil der Reihe: 88 mm mit 7-Kammer-Aufbau und drei Dichtungen inklusive Mitteldichtung. Nimmt Glaspakete von 24 bis 54 mm auf — Platz für schwere 3-fach-Verglasung mit breiten warmen Ramen.",
+          pl: "Najgłębszy profil PCV w ofercie: 88 mm, budowa 7-komorowa i trzy uszczelki z uszczelką środkową. Przyjmuje pakiety szybowe 24–54 mm — miejsce na ciężkie pakiety trzyszybowe z szeroką ciepłą ramką.",
+        },
+        specs: [
+          { label: { en: "Profile", de: "Profil", pl: "Profil" }, value: "88", unit: "mm", highlight: true },
+          { label: { en: "Uw (reference window)", de: "Uw (Referenzfenster)", pl: "Uw (okno referencyjne)" }, value: "0.74", unit: "W/m²K", highlight: true },
+          { label: { en: "Chambers", de: "Kammern", pl: "Komory" }, value: "7", highlight: true },
+          { label: { en: "Profile class", de: "Profilklasse", pl: "Klasa profilu" }, value: "B" },
+          { label: { en: "Seals", de: "Dichtungen", pl: "Uszczelki" }, value: { en: "3, centre gasket", de: "3, Mitteldichtung", pl: "3, uszczelka środkowa" } },
+          { label: { en: "Glazing packages", de: "Verglasungspakete", pl: "Pakiety szybowe" }, value: { en: "24–54 mm", de: "24–54 mm", pl: "24–54 mm" } },
+        ],
+        datasheet: "/pdf/catalogues/wiked-pvc-alu.pdf#page=11",
+        image: "/images/manufacturers/koemmerling-88-md.jpg",
+      },
+      {
+        id: "76-md",
+        name: "Kömmerling 76 MD",
+        tagline: {
+          en: "76 mm with centre gasket, Uw 0.78.",
+          de: "76 mm mit Mitteldichtung, Uw 0,78.",
+          pl: "76 mm z uszczelką środkową, Uw 0,78.",
+        },
+        description: {
+          en: "The 76-mm system in the middle-gasket version: six chambers and three seals, the central one protecting the hardware chamber. Glazing packs from 24 to 50 mm.",
+          de: "Das 76-mm-System in der Mitteldichtungs-Ausführung: sechs Kammern und drei Dichtungen — die mittlere schützt die Beschlagskammer. Glaspakete von 24 bis 50 mm.",
+          pl: "System 76 mm w wersji z uszczelką środkową: sześć komór i trzy uszczelki — środkowa chroni komorę okuć. Pakiety szybowe 24–50 mm.",
+        },
+        specs: [
+          { label: { en: "Profile", de: "Profil", pl: "Profil" }, value: "76", unit: "mm", highlight: true },
+          { label: { en: "Uw (reference window)", de: "Uw (Referenzfenster)", pl: "Uw (okno referencyjne)" }, value: "0.78", unit: "W/m²K", highlight: true },
+          { label: { en: "Chambers", de: "Kammern", pl: "Komory" }, value: "6", highlight: true },
+          { label: { en: "Profile class", de: "Profilklasse", pl: "Klasa profilu" }, value: "B" },
+          { label: { en: "Seals", de: "Dichtungen", pl: "Uszczelki" }, value: { en: "3, centre gasket", de: "3, Mitteldichtung", pl: "3, uszczelka środkowa" } },
+          { label: { en: "Glazing packages", de: "Verglasungspakete", pl: "Pakiety szybowe" }, value: { en: "24–50 mm", de: "24–50 mm", pl: "24–50 mm" } },
+        ],
+        datasheet: "/pdf/catalogues/wiked-pvc-alu.pdf#page=11",
+        image: "/images/manufacturers/koemmerling-76-md.jpg",
+      },
+      {
+        id: "76-ad",
+        name: "Kömmerling 76 AD",
+        tagline: {
+          en: "76 mm with outer seals, Uw 0.81.",
+          de: "76 mm mit Anschlagdichtung, Uw 0,81.",
+          pl: "76 mm z uszczelkami zewnętrznymi, Uw 0,81.",
+        },
+        description: {
+          en: "The simpler build-up of the 76-mm family: five chambers and two outer seals. Glazing packs from 24 to 50 mm.",
+          de: "Der einfachere Aufbau der 76-mm-Familie: fünf Kammern und zwei außenliegende Dichtungen. Glaspakete von 24 bis 50 mm.",
+          pl: "Prostsza budowa rodziny 76 mm: pięć komór i dwie uszczelki zewnętrzne. Pakiety szybowe 24–50 mm.",
+        },
+        specs: [
+          { label: { en: "Profile", de: "Profil", pl: "Profil" }, value: "76", unit: "mm", highlight: true },
+          { label: { en: "Uw (reference window)", de: "Uw (Referenzfenster)", pl: "Uw (okno referencyjne)" }, value: "0.81", unit: "W/m²K", highlight: true },
+          { label: { en: "Chambers", de: "Kammern", pl: "Komory" }, value: "5", highlight: true },
+          { label: { en: "Profile class", de: "Profilklasse", pl: "Klasa profilu" }, value: "B" },
+          { label: { en: "Seals", de: "Dichtungen", pl: "Uszczelki" }, value: { en: "2 outer seals", de: "2 außenliegende Dichtungen", pl: "2 uszczelki zewnętrzne" } },
+          { label: { en: "Glazing packages", de: "Verglasungspakete", pl: "Pakiety szybowe" }, value: { en: "24–50 mm", de: "24–50 mm", pl: "24–50 mm" } },
+        ],
+        datasheet: "/pdf/catalogues/wiked-pvc-alu.pdf#page=11",
+        image: "/images/manufacturers/koemmerling-76-ad.jpg",
+      },
+    ],
+  },
+  {
+    /**
+     * Sistemas de aluminio del catálogo WIKĘD. PROCURAL es la marca de
+     * sistemas impresa en cada pliego; el PE50 es de tabiquería
+     * interior y se transcribe como tal.
+     */
+    id: "procural",
+    category: "windows",
+    name: "PROCURAL",
+    tagline: {
+      en: "Aluminium window systems, down to Uw 0.66.",
+      de: "Aluminium-Fenstersysteme, bis Uw 0,66.",
+      pl: "Aluminiowe systemy okienne, do Uw 0,66.",
+    },
+    intro: {
+      en: "Aluminium windows for large glazing: three PROCURAL Aluline depths from the 78-mm PE78N to the passive-grade PE96 with Uw 0.66 W/m²K, plus an internal partition system. Sashes up to 200 kg and burglar resistance up to RC4 — every figure from the self-hosted WIKĘD catalogue.",
+      de: "Aluminiumfenster für große Glasflächen: drei PROCURAL-Aluline-Bautiefen vom 78-mm-PE78N bis zum Passiv-System PE96 mit Uw = 0,66 W/(m²K), dazu ein System für Innenwände. Flügel bis 200 kg und Einbruchhemmung bis RC4 — jede Zahl aus dem selbst gehosteten WIKĘD-Katalog.",
+      pl: "Okna aluminiowe do dużych przeszkleń: trzy głębokości PROCURAL Aluline — od 78-milimetrowego PE78N po pasywny PE96 z Uw = 0,66 W/(m²K) — oraz system ścianek wewnętrznych. Skrzydła do 200 kg i klasa antywłamaniowa do RC4 — każda liczba z samodzielnie hostowanego katalogu WIKĘD.",
+    },
+    image: "/images/manufacturers/procural.jpg",
+    systems: [
+      {
+        id: "aluline-pe96-passive",
+        name: "Aluline PE96 Passive",
+        tagline: {
+          en: "96 mm for passive builds, Uw 0.66.",
+          de: "96 mm für Passivbauten, Uw 0,66.",
+          pl: "96 mm do budynków pasywnych, Uw 0,66.",
+        },
+        description: {
+          en: "The warmest aluminium window of the range: 96-mm frame with a 62-mm thermal break, watertightness E1950 and burglar resistance up to RC3. Sashes up to 1400×2800 mm or 1700×2400 mm and 200 kg.",
+          de: "Das wärmste Aluminiumfenster der Reihe: 96-mm-Rahmen mit 62-mm-Isoliersteg, Schlagregendichtheit E1950 und Einbruchhemmung bis RC3. Flügel bis 1400×2800 mm bzw. 1700×2400 mm und 200 kg.",
+          pl: "Najcieplejsze okno aluminiowe w ofercie: rama 96 mm z przekładką termiczną 62 mm, wodoszczelność E1950 i klasa antywłamaniowa do RC3. Skrzydła do 1400×2800 mm lub 1700×2400 mm i 200 kg.",
+        },
+        specs: [
+          { label: { en: "Profile", de: "Profil", pl: "Profil" }, value: "96", unit: "mm", highlight: true },
+          { label: { en: "Uw (reference window)", de: "Uw (Referenzfenster)", pl: "Uw (okno referencyjne)" }, value: "0.66", unit: "W/m²K", highlight: true },
+          { label: { en: "Burglar resistance", de: "Einbruchhemmung", pl: "Klasa antywłamaniowa" }, value: "RC2, RC3", highlight: true },
+          { label: { en: "Build depth", de: "Bautiefe", pl: "Głębokość zabudowy" }, value: { en: "Frame 96 mm / sash 106 mm, 62 mm break", de: "Rahmen 96 mm / Flügel 106 mm, Steg 62 mm", pl: "Ościeżnica 96 mm / skrzydło 106 mm, przekładka 62 mm" } },
+          { label: { en: "Watertightness", de: "Schlagregendichtheit", pl: "Wodoszczelność" }, value: "E1950" },
+          { label: { en: "Wind load", de: "Windlast", pl: "Obciążenie wiatrem" }, value: "C5" },
+          { label: { en: "Max. sash", de: "Max. Flügel", pl: "Maks. skrzydło" }, value: { en: "1400×2800 / 1700×2400 mm, 200 kg", de: "1400×2800 / 1700×2400 mm, 200 kg", pl: "1400×2800 / 1700×2400 mm, 200 kg" } },
+        ],
+        datasheet: "/pdf/catalogues/wiked-pvc-alu.pdf#page=23",
+        image: "/images/manufacturers/procural-aluline-pe96-passive.jpg",
+      },
+      {
+        id: "aluline-pe78n-hi",
+        name: "Aluline PE78N HI",
+        tagline: {
+          en: "78 mm with thermal inserts, Uw 0.74.",
+          de: "78 mm mit Thermoeinlagen, Uw 0,74.",
+          pl: "78 mm z wkładkami termicznymi, Uw 0,74.",
+        },
+        description: {
+          en: "The insulated HI version of the 78-mm window: Uw 0.74 W/m²K, watertightness E1650 and burglar resistance up to RC4. Sashes up to 1700×2200 mm or 1200×3000 mm and 200 kg.",
+          de: "Die gedämmte HI-Version des 78-mm-Fensters: Uw = 0,74 W/(m²K), Schlagregendichtheit E1650 und Einbruchhemmung bis RC4. Flügel bis 1700×2200 mm bzw. 1200×3000 mm und 200 kg.",
+          pl: "Docieplona wersja HI okna 78 mm: Uw = 0,74 W/(m²K), wodoszczelność E1650 i klasa antywłamaniowa do RC4. Skrzydła do 1700×2200 mm lub 1200×3000 mm i 200 kg.",
+        },
+        specs: [
+          { label: { en: "Profile", de: "Profil", pl: "Profil" }, value: "78", unit: "mm", highlight: true },
+          { label: { en: "Uw (reference window)", de: "Uw (Referenzfenster)", pl: "Uw (okno referencyjne)" }, value: "0.74", unit: "W/m²K", highlight: true },
+          { label: { en: "Burglar resistance", de: "Einbruchhemmung", pl: "Klasa antywłamaniowa" }, value: "RC2, RC3, RC4", highlight: true },
+          { label: { en: "Build depth", de: "Bautiefe", pl: "Głębokość zabudowy" }, value: { en: "Frame 78 mm / sash 86 mm, 42 mm break", de: "Rahmen 78 mm / Flügel 86 mm, Steg 42 mm", pl: "Ościeżnica 78 mm / skrzydło 86 mm, przekładka 42 mm" } },
+          { label: { en: "Watertightness", de: "Schlagregendichtheit", pl: "Wodoszczelność" }, value: "E1650" },
+          { label: { en: "Wind load", de: "Windlast", pl: "Obciążenie wiatrem" }, value: "C5" },
+          { label: { en: "Max. sash", de: "Max. Flügel", pl: "Maks. skrzydło" }, value: { en: "1700×2200 / 1200×3000 mm, 200 kg", de: "1700×2200 / 1200×3000 mm, 200 kg", pl: "1700×2200 / 1200×3000 mm, 200 kg" } },
+        ],
+        datasheet: "/pdf/catalogues/wiked-pvc-alu.pdf#page=23",
+        image: "/images/manufacturers/procural-aluline-pe78n-hi.jpg",
+      },
+      {
+        id: "aluline-pe78n",
+        name: "Aluline PE78N",
+        tagline: {
+          en: "The 78-mm base system, Uw 0.88.",
+          de: "Das 78-mm-Basissystem, Uw 0,88.",
+          pl: "Bazowy system 78 mm, Uw 0,88.",
+        },
+        description: {
+          en: "The base version of the 78-mm aluminium window: the same build depth and sizes as the HI, with Uw 0.88 W/m²K. Watertightness E1650, wind load C5, burglar resistance up to RC4.",
+          de: "Die Basisversion des 78-mm-Aluminiumfensters: dieselbe Bautiefe und dieselben Maße wie die HI-Version, mit Uw = 0,88 W/(m²K). Schlagregendichtheit E1650, Windlast C5, Einbruchhemmung bis RC4.",
+          pl: "Bazowa wersja aluminiowego okna 78 mm: ta sama głębokość zabudowy i wymiary co HI, z Uw = 0,88 W/(m²K). Wodoszczelność E1650, obciążenie wiatrem C5, klasa antywłamaniowa do RC4.",
+        },
+        specs: [
+          { label: { en: "Profile", de: "Profil", pl: "Profil" }, value: "78", unit: "mm", highlight: true },
+          { label: { en: "Uw (reference window)", de: "Uw (Referenzfenster)", pl: "Uw (okno referencyjne)" }, value: "0.88", unit: "W/m²K", highlight: true },
+          { label: { en: "Burglar resistance", de: "Einbruchhemmung", pl: "Klasa antywłamaniowa" }, value: "RC2, RC3, RC4", highlight: true },
+          { label: { en: "Build depth", de: "Bautiefe", pl: "Głębokość zabudowy" }, value: { en: "Frame 78 mm / sash 86 mm, 42 mm break", de: "Rahmen 78 mm / Flügel 86 mm, Steg 42 mm", pl: "Ościeżnica 78 mm / skrzydło 86 mm, przekładka 42 mm" } },
+          { label: { en: "Watertightness", de: "Schlagregendichtheit", pl: "Wodoszczelność" }, value: "E1650" },
+          { label: { en: "Wind load", de: "Windlast", pl: "Obciążenie wiatrem" }, value: "C5" },
+          { label: { en: "Max. sash", de: "Max. Flügel", pl: "Maks. skrzydło" }, value: { en: "1700×2200 / 1200×3000 mm, 200 kg", de: "1700×2200 / 1200×3000 mm, 200 kg", pl: "1700×2200 / 1200×3000 mm, 200 kg" } },
+        ],
+        datasheet: "/pdf/catalogues/wiked-pvc-alu.pdf#page=23",
+        image: "/images/manufacturers/procural-aluline-pe78n.jpg",
+      },
+      {
+        id: "aluline-pe50",
+        name: "Aluline PE50",
+        tagline: {
+          en: "The 52-mm system for internal partitions.",
+          de: "Das 52-mm-System für Innenwände.",
+          pl: "System 52 mm do ścianek wewnętrznych.",
+        },
+        description: {
+          en: "An interior system: 52-mm profiles for glazed partitions inside the building, where thermal insulation is not the point. Elements up to 1200×2700 mm.",
+          de: "Ein Innensystem: 52-mm-Profile für verglaste Trennwände im Gebäude, wo Wärmedämmung nicht der Punkt ist. Elemente bis 1200×2700 mm.",
+          pl: "System wewnętrzny: profile 52 mm do przeszklonych ścianek działowych wewnątrz budynku, gdzie izolacyjność termiczna nie gra roli. Elementy do 1200×2700 mm.",
+        },
+        specs: [
+          { label: { en: "Profile", de: "Profil", pl: "Profil" }, value: "52", unit: "mm", highlight: true },
+          { label: { en: "Use", de: "Einsatz", pl: "Zastosowanie" }, value: { en: "Internal partition system", de: "Innenwand-System", pl: "System ścianek wewnętrznych" }, highlight: true },
+          { label: { en: "Build depth", de: "Bautiefe", pl: "Głębokość zabudowy" }, value: { en: "Frame 52 mm / sash 60 mm", de: "Rahmen 52 mm / Flügel 60 mm", pl: "Ościeżnica 52 mm / skrzydło 60 mm" } },
+          { label: { en: "Max. element", de: "Max. Element", pl: "Maks. element" }, value: "1200×2700 mm" },
+        ],
+        datasheet: "/pdf/catalogues/wiked-pvc-alu.pdf#page=23",
+        image: "/images/manufacturers/procural-aluline-pe50.jpg",
       },
     ],
   },
@@ -886,6 +1192,177 @@ export const MANUFACTURERS: Manufacturer[] = [
         ],
         datasheet: "/pdf/catalogues/iglo-fenster-terrassensysteme.pdf#page=31",
         image: "/images/manufacturers/iglo-edge-slide.jpg",
+      },
+    ],
+  },
+  {
+    /**
+     * Las correderas VEKA del catálogo WIKĘD (2026-08). Mismo id
+     * "veka" que en ventanas a propósito: es el mismo fabricante y la
+     * clave de búsqueda es (categoría, id), como con Salamander.
+     */
+    id: "veka",
+    category: "patio-doors",
+    name: "VEKA",
+    tagline: {
+      en: "Lift-and-slide and sliding systems in PVC.",
+      de: "Hebe-Schiebe- und Schiebesysteme aus Kunststoff.",
+      pl: "Systemy podnoszono-przesuwne i przesuwne z PCV.",
+    },
+    intro: {
+      en: "Three ways to open a wall in PVC, all on class-A VEKA profiles: the Motion 82 lift-and-slide systems with 194 mm of build depth — down to Uw 0.73 W/m²K in the Max version — and the Move 76 slider where a lighter build is enough. Every figure below comes from the self-hosted WIKĘD catalogue.",
+      de: "Drei Wege, eine Wand in Kunststoff zu öffnen, alle auf VEKA-Profilen der Klasse A: die Hebe-Schiebe-Systeme Motion 82 mit 194 mm Bautiefe — bis Uw = 0,73 W/(m²K) in der Max-Version — und der Schieber Move 76, wo ein leichterer Aufbau genügt. Jede Zahl unten stammt aus dem selbst gehosteten WIKĘD-Katalog.",
+      pl: "Trzy sposoby otwarcia ściany w PCV, wszystkie na profilach VEKA klasy A: systemy podnoszono-przesuwne Motion 82 o głębokości zabudowy 194 mm — do Uw = 0,73 W/(m²K) w wersji Max — oraz przesuwny Move 76 tam, gdzie wystarczy lżejsza budowa. Każda liczba poniżej pochodzi z samodzielnie hostowanego katalogu WIKĘD.",
+    },
+    image: "/images/manufacturers/veka-schiebe.jpg",
+    systems: [
+      {
+        id: "motion-82-max",
+        name: "VEKA Motion 82 Max",
+        tagline: {
+          en: "The warmest lift-and-slide: Uw 0.73.",
+          de: "Das wärmste Hebe-Schiebe-System: Uw 0,73.",
+          pl: "Najcieplejszy system HS: Uw 0,73.",
+        },
+        description: {
+          en: "The top lift-and-slide (HS) system of the family: 194 mm of build depth, seven chambers in the frame and glazing packs from 18 to 52 mm. Uw of 0.73 W/m²K on the 3.5 × 2.3 m reference door.",
+          de: "Das Spitzen-Hebe-Schiebe-System (HS) der Familie: 194 mm Bautiefe, sieben Kammern im Rahmen und Glaspakete von 18 bis 52 mm. Uw = 0,73 W/(m²K) an der Referenztür von 3,5 × 2,3 m.",
+          pl: "Topowy system podnoszono-przesuwny (HS) rodziny: 194 mm głębokości zabudowy, siedem komór w ramie i pakiety szybowe 18–52 mm. Uw = 0,73 W/(m²K) dla drzwi referencyjnych 3,5 × 2,3 m.",
+        },
+        specs: [
+          { label: { en: "Opening type", de: "Öffnungsart", pl: "Sposób otwierania" }, value: { en: "Lift-and-slide (HS)", de: "Hebe-Schiebe (HS)", pl: "Podnoszono-przesuwne (HS)" }, highlight: true },
+          { label: { en: "Uw (reference door)", de: "Uw (Referenztür)", pl: "Uw (drzwi referencyjne)" }, value: "0.73", unit: "W/m²K", highlight: true },
+          { label: { en: "Build depth", de: "Bautiefe", pl: "Głębokość zabudowy" }, value: "194", unit: "mm", highlight: true },
+          { label: { en: "Chambers (frame / sash)", de: "Kammern (Rahmen / Flügel)", pl: "Komory (rama / skrzydło)" }, value: "7 / 5" },
+          { label: { en: "Profile class", de: "Profilklasse", pl: "Klasa profilu" }, value: "A" },
+          { label: { en: "Seals", de: "Dichtungen", pl: "Uszczelki" }, value: "2" },
+          { label: { en: "Glazing packages", de: "Verglasungspakete", pl: "Pakiety szybowe" }, value: { en: "18–52 mm", de: "18–52 mm", pl: "18–52 mm" } },
+        ],
+        datasheet: "/pdf/catalogues/wiked-pvc-alu.pdf#page=8",
+        image: "/images/manufacturers/veka-motion-82-max.jpg",
+      },
+      {
+        id: "motion-82",
+        name: "VEKA Motion 82",
+        tagline: {
+          en: "Lift-and-slide with centre gasket, Uw 0.78.",
+          de: "Hebe-Schiebe mit Mitteldichtung, Uw 0,78.",
+          pl: "System HS z uszczelką środkową, Uw 0,78.",
+        },
+        description: {
+          en: "The lift-and-slide (HS) system on the same 194-mm depth, with three gaskets including a central one and glazing packs from 24 to 52 mm. Uw of 0.78 W/m²K on the reference door.",
+          de: "Das Hebe-Schiebe-System (HS) auf derselben 194-mm-Bautiefe, mit drei Dichtungen inklusive Mitteldichtung und Glaspaketen von 24 bis 52 mm. Uw = 0,78 W/(m²K) an der Referenztür.",
+          pl: "System podnoszono-przesuwny (HS) na tej samej głębokości 194 mm, z trzema uszczelkami — w tym środkową — i pakietami szybowymi 24–52 mm. Uw = 0,78 W/(m²K) dla drzwi referencyjnych.",
+        },
+        specs: [
+          { label: { en: "Opening type", de: "Öffnungsart", pl: "Sposób otwierania" }, value: { en: "Lift-and-slide (HS)", de: "Hebe-Schiebe (HS)", pl: "Podnoszono-przesuwne (HS)" }, highlight: true },
+          { label: { en: "Uw (reference door)", de: "Uw (Referenztür)", pl: "Uw (drzwi referencyjne)" }, value: "0.78", unit: "W/m²K", highlight: true },
+          { label: { en: "Build depth", de: "Bautiefe", pl: "Głębokość zabudowy" }, value: "194", unit: "mm", highlight: true },
+          { label: { en: "Chambers (frame / sash)", de: "Kammern (Rahmen / Flügel)", pl: "Komory (rama / skrzydło)" }, value: "7 / 5" },
+          { label: { en: "Profile class", de: "Profilklasse", pl: "Klasa profilu" }, value: "A" },
+          { label: { en: "Seals", de: "Dichtungen", pl: "Uszczelki" }, value: { en: "3, centre gasket", de: "3, Mitteldichtung", pl: "3, uszczelka środkowa" } },
+          { label: { en: "Glazing packages", de: "Verglasungspakete", pl: "Pakiety szybowe" }, value: { en: "24–52 mm", de: "24–52 mm", pl: "24–52 mm" } },
+        ],
+        datasheet: "/pdf/catalogues/wiked-pvc-alu.pdf#page=8",
+        image: "/images/manufacturers/veka-motion-82.jpg",
+      },
+      {
+        id: "move-76",
+        name: "VEKA Move 76",
+        tagline: {
+          en: "The 150-mm slider, Uw 0.81.",
+          de: "Der 150-mm-Schieber, Uw 0,81.",
+          pl: "System przesuwny 150 mm, Uw 0,81.",
+        },
+        description: {
+          en: "The sliding system where a lift-and-slide build is not needed: 150 mm of build depth, three gaskets including a central one, glazing packs from 24 to 48 mm. Uw of 0.81 W/m²K on the reference door.",
+          de: "Das Schiebesystem, wo kein Hebe-Schiebe-Aufbau nötig ist: 150 mm Bautiefe, drei Dichtungen inklusive Mitteldichtung, Glaspakete von 24 bis 48 mm. Uw = 0,81 W/(m²K) an der Referenztür.",
+          pl: "System przesuwny tam, gdzie nie potrzeba konstrukcji HS: 150 mm głębokości zabudowy, trzy uszczelki z uszczelką środkową, pakiety szybowe 24–48 mm. Uw = 0,81 W/(m²K) dla drzwi referencyjnych.",
+        },
+        specs: [
+          { label: { en: "Opening type", de: "Öffnungsart", pl: "Sposób otwierania" }, value: { en: "Sliding", de: "Schiebetür", pl: "Przesuwne" }, highlight: true },
+          { label: { en: "Uw (reference door)", de: "Uw (Referenztür)", pl: "Uw (drzwi referencyjne)" }, value: "0.81", unit: "W/m²K", highlight: true },
+          { label: { en: "Build depth", de: "Bautiefe", pl: "Głębokość zabudowy" }, value: "150", unit: "mm", highlight: true },
+          { label: { en: "Chambers (frame / sash)", de: "Kammern (Rahmen / Flügel)", pl: "Komory (rama / skrzydło)" }, value: "7 / 5" },
+          { label: { en: "Profile class", de: "Profilklasse", pl: "Klasa profilu" }, value: "A" },
+          { label: { en: "Seals", de: "Dichtungen", pl: "Uszczelki" }, value: { en: "3, centre gasket", de: "3, Mitteldichtung", pl: "3, uszczelka środkowa" } },
+          { label: { en: "Glazing packages", de: "Verglasungspakete", pl: "Pakiety szybowe" }, value: { en: "24–48 mm", de: "24–48 mm", pl: "24–48 mm" } },
+        ],
+        datasheet: "/pdf/catalogues/wiked-pvc-alu.pdf#page=8",
+        image: "/images/manufacturers/veka-move-76.jpg",
+      },
+    ],
+  },
+  {
+    /**
+     * Las correderas de aluminio PROCURAL del mismo catálogo. El
+     * catálogo imprime "EI200" en la casilla de estanqueidad del PE78
+     * Fold: las clases de agua son E-cifra (E750…E1950), así que se
+     * transcribe E1200 — kerning roto, misma regla que la errata
+     * 7,73→0,73 del folleto Salamander.
+     */
+    id: "procural",
+    category: "patio-doors",
+    name: "PROCURAL",
+    tagline: {
+      en: "Aluminium lift-and-slide and folding systems.",
+      de: "Hebe-Schiebe- und Faltsysteme aus Aluminium.",
+      pl: "Aluminiowe systemy HS i harmonijkowe.",
+    },
+    intro: {
+      en: "When the opening outgrows PVC: the Alu Slide SL1600TT HI lift-and-slide carries sashes up to 600 kg and 3.3 m of width, and the PE78 Fold folds a whole wall away. Both in aluminium, both from the self-hosted WIKĘD catalogue.",
+      de: "Wenn die Öffnung über Kunststoff hinauswächst: das Hebe-Schiebe-System Alu Slide SL1600TT HI trägt Flügel bis 600 kg und 3,3 m Breite, und das PE78 Fold faltet eine ganze Wand beiseite. Beide aus Aluminium, beide aus dem selbst gehosteten WIKĘD-Katalog.",
+      pl: "Gdy otwór wyrasta ponad PCV: system podnoszono-przesuwny Alu Slide SL1600TT HI nosi skrzydła do 600 kg i 3,3 m szerokości, a PE78 Fold składa całą ścianę na bok. Oba z aluminium, oba z samodzielnie hostowanego katalogu WIKĘD.",
+    },
+    image: "/images/manufacturers/procural-schiebe.jpg",
+    systems: [
+      {
+        id: "alu-slide-sl1600tt-hi",
+        name: "Alu Slide SL1600TT HI",
+        tagline: {
+          en: "Sashes up to 600 kg, Uw 0.92.",
+          de: "Flügel bis 600 kg, Uw 0,92.",
+          pl: "Skrzydła do 600 kg, Uw 0,92.",
+        },
+        description: {
+          en: "The aluminium lift-and-slide for the really big openings: sashes up to 3300×3000 mm or 2300×3500 mm and 600 kg, on two or three tracks. Uw of 0.92 W/m²K on the 3.5 × 2.4 m reference build.",
+          de: "Das Aluminium-Hebe-Schiebe-System für die wirklich großen Öffnungen: Flügel bis 3300×3000 mm bzw. 2300×3500 mm und 600 kg, auf zwei oder drei Laufschienen. Uw = 0,92 W/(m²K) an der Referenzkonstruktion von 3,5 × 2,4 m.",
+          pl: "Aluminiowy system HS do naprawdę dużych otworów: skrzydła do 3300×3000 mm lub 2300×3500 mm i 600 kg, na dwóch lub trzech torach. Uw = 0,92 W/(m²K) dla konstrukcji referencyjnej 3,5 × 2,4 m.",
+        },
+        specs: [
+          { label: { en: "Opening type", de: "Öffnungsart", pl: "Sposób otwierania" }, value: { en: "Lift-and-slide (HS)", de: "Hebe-Schiebe (HS)", pl: "Podnoszono-przesuwne (HS)" }, highlight: true },
+          { label: { en: "Uw (reference build)", de: "Uw (Referenzkonstruktion)", pl: "Uw (konstrukcja referencyjna)" }, value: "0.92", unit: "W/m²K", highlight: true },
+          { label: { en: "Max. sash", de: "Max. Flügel", pl: "Maks. skrzydło" }, value: { en: "3300×3000 / 2300×3500 mm, 600 kg", de: "3300×3000 / 2300×3500 mm, 600 kg", pl: "3300×3000 / 2300×3500 mm, 600 kg" }, highlight: true },
+          { label: { en: "Build depth", de: "Bautiefe", pl: "Głębokość zabudowy" }, value: { en: "2 tracks 160/154 mm, 3 tracks 247/241 mm, sash 67 mm", de: "2 Laufschienen 160/154 mm, 3 Laufschienen 247/241 mm, Flügel 67 mm", pl: "2 tory 160/154 mm, 3 tory 247/241 mm, skrzydło 67 mm" } },
+          { label: { en: "Watertightness", de: "Schlagregendichtheit", pl: "Wodoszczelność" }, value: "9A" },
+          { label: { en: "Wind load", de: "Windlast", pl: "Obciążenie wiatrem" }, value: "C3/B5" },
+        ],
+        datasheet: "/pdf/catalogues/wiked-pvc-alu.pdf#page=24",
+        image: "/images/manufacturers/procural-alu-slide-sl1600tt-hi.jpg",
+      },
+      {
+        id: "pe78-fold",
+        name: "PE78 Fold",
+        tagline: {
+          en: "The folding wall: sashes up to 1200×3500 mm.",
+          de: "Die Faltwand: Flügel bis 1200×3500 mm.",
+          pl: "Ściana harmonijkowa: skrzydła do 1200×3500 mm.",
+        },
+        description: {
+          en: "The folding-door system on the 78-mm aluminium platform: sashes up to 1200×3500 mm and 120 kg fold away to open the entire span. Uw of 1.0 W/m²K on the reference build.",
+          de: "Das Falttür-System auf der 78-mm-Aluminiumplattform: Flügel bis 1200×3500 mm und 120 kg falten sich beiseite und geben die ganze Breite frei. Uw = 1,0 W/(m²K) an der Referenzkonstruktion.",
+          pl: "System drzwi harmonijkowych na aluminiowej platformie 78 mm: skrzydła do 1200×3500 mm i 120 kg składają się na bok, otwierając całą szerokość. Uw = 1,0 W/(m²K) dla konstrukcji referencyjnej.",
+        },
+        specs: [
+          { label: { en: "Opening type", de: "Öffnungsart", pl: "Sposób otwierania" }, value: { en: "Folding", de: "Falttür", pl: "Harmonijkowe" }, highlight: true },
+          { label: { en: "Uw (reference build)", de: "Uw (Referenzkonstruktion)", pl: "Uw (konstrukcja referencyjna)" }, value: "1.0", unit: "W/m²K", highlight: true },
+          { label: { en: "Max. sash", de: "Max. Flügel", pl: "Maks. skrzydło" }, value: { en: "1200×3500 mm, 120 kg", de: "1200×3500 mm, 120 kg", pl: "1200×3500 mm, 120 kg" }, highlight: true },
+          { label: { en: "Build depth", de: "Bautiefe", pl: "Głębokość zabudowy" }, value: { en: "Frame 78 mm / sash 78 mm, 34 mm break", de: "Rahmen 78 mm / Flügel 78 mm, Steg 34 mm", pl: "Ościeżnica 78 mm / skrzydło 78 mm, przekładka 34 mm" } },
+          { label: { en: "Watertightness", de: "Schlagregendichtheit", pl: "Wodoszczelność" }, value: "E1200" },
+          { label: { en: "Wind load", de: "Windlast", pl: "Obciążenie wiatrem" }, value: "C3/B3" },
+        ],
+        datasheet: "/pdf/catalogues/wiked-pvc-alu.pdf#page=24",
+        image: "/images/manufacturers/procural-pe78-fold.jpg",
       },
     ],
   },

@@ -232,6 +232,11 @@ export const pl: Record<ContentKey, string> = {
   "colours.count": "{count} wykończeń",
   "colours.standardSection": "Standardowe palety (RAL, dekory, anodowane)",
   "colours.standardChip": "Standardowa",
+  "colours.glassEyebrow": "Przeszklenia",
+  "colours.glassTitle": "Rodzaje szkła",
+  "colours.glassIntro":
+    "Szkło decyduje o charakterze całego okna lub drzwi: ile światła wpuszcza i ile prywatności zostaje w środku. To rodzaje szkła z naszych katalogów — każda próbka jest sfotografowana z obiektem za szybą, żeby można było samemu ocenić przezierność.",
+  "colours.glassCount": "{count} rodzajów szkła",
 
   // ── Contacto ─────────────────────────────────────────────────
   "contactPage.eyebrow": "Hechingen · Zollernalbkreis",

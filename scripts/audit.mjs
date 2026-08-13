@@ -150,6 +150,7 @@ const { MANUFACTURERS } = await import("../src/data/manufacturers.ts");
 const { PROJECTS } = await import("../src/data/projects.ts");
 const { COLORS } = await import("../src/data/colors.ts");
 const { CATALOGUE_COLORS } = await import("../src/data/catalogue-colors.ts");
+const { CATALOGUE_GLASS } = await import("../src/data/catalogue-glass.ts");
 
 const checkDuplicates = (label, items) => {
   const seen = new Set();
@@ -165,6 +166,7 @@ checkDuplicates("projects", PROJECTS);
 // Las muestras de catálogo las genera un script: un id repetido aquí
 // significa que dos nombres distintos han caído en el mismo slug.
 checkDuplicates("colours", [...COLORS, ...CATALOGUE_COLORS]);
+checkDuplicates("glass", CATALOGUE_GLASS);
 
 // Un id de producto no puede chocar con uno de proyecto o de catálogo:
 // el encargo dice "slug único en todo el sitio".
@@ -239,16 +241,21 @@ for (const product of PRODUCTS) {
     fail("broken reference", `product "${product.id}" points at unknown catalogue "${product.catalogue.id}"`);
   }
 }
-// Las muestras de color extraídas apuntan al catálogo del que salieron:
-// la sección de /colours toma de ahí su título.
+// Las muestras de color y de cristal extraídas apuntan al catálogo del
+// que salieron: las secciones de /colours toman de ahí su título.
 for (const colour of CATALOGUE_COLORS) {
   if (colour.catalogue && !catalogueIds.has(colour.catalogue)) {
     fail("broken reference", `colour swatch "${colour.id}" comes from unknown catalogue "${colour.catalogue}"`);
   }
 }
+for (const glass of CATALOGUE_GLASS) {
+  if (!catalogueIds.has(glass.catalogue)) {
+    fail("broken reference", `glass swatch "${glass.id}" comes from unknown catalogue "${glass.catalogue}"`);
+  }
+}
 
 notes.push(
-  `${PRODUCTS.length} products, ${CATALOGUES.length} catalogues, ${CATALOGUE_MODELS.length} catalogue models, ${PROJECTS.length} projects, ${COLORS.length} standard finishes + ${CATALOGUE_COLORS.length} catalogue swatches.`,
+  `${PRODUCTS.length} products, ${CATALOGUES.length} catalogues, ${CATALOGUE_MODELS.length} catalogue models, ${PROJECTS.length} projects, ${COLORS.length} standard finishes + ${CATALOGUE_COLORS.length} catalogue swatches + ${CATALOGUE_GLASS.length} glass types.`,
 );
 
 // ── 4. Texto visible escrito a pelo ──────────────────────────────────

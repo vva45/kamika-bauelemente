@@ -60,6 +60,7 @@ const OWNER_PHOTOS = new Set([
   "roller-shutters",
   "insect-screens",
   "gates",
+  "pergolas",
   "accessories",
 ]);
 

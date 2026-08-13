@@ -232,6 +232,21 @@ renaming them would leave the website saying one thing and the PDF another.
 IDENCOM, SOMMER, DORMA, GEZE, SOMFY, doorbox, Swisspacer. Those are suppliers of parts, not
 competitors selling windows to the end customer, and naming them is honest attribution.
 
+### The WIKĘD catalogue — a credited manufacturer, treated like ROKA (2026-08)
+
+The owner uploaded WIKĘD's PCV/ALU product catalogue 2026 (Polish, 27 landscape spreads).
+**WIKĘD is the manufacturer** — Luzino, sells through dealers — so it is credited like ROKA or
+Salamander: the brand stays on the cover, the spreads and the back cover. The only thing removed
+is the back cover's contact block (street address + NIP), same rule as everywhere: the visitor
+must have no route to order elsewhere. `scripts/prepare_wiked.py` does it; the untouched original
+lives in `source-catalogues/`. Inside the catalogue the profile brands are **VEKA, Kömmerling and
+PROCURAL** (systems), plus honest component brands (HOPPE handles, MACO, AERECO, SWISSPACER) that
+stay named. `scripts/extract_wiked.py` cuts the system renders and handle photos and generates the
+34-model showcase block; the handles' descriptive Polish captions ("KLAMKO-POCHWYT DO HS") were
+translated mechanically to German for the accessories range — proper names (HOPPE Atlanta,
+Victory, Jocker) stay as printed. One printed misprint is corrected and commented in the code:
+the PE78 Fold's watertightness cell prints "EI200", which as a water class can only be E1200.
+
 ### The Salamander leaflet — Polish, and why that is fine
 
 `source-catalogues/Ulotka_Salamander_PL.pdf` is Eko-Okna's Salamander systems leaflet. The owner
@@ -407,12 +422,18 @@ existing chips** — a ceramic, a structured glass or a liquid-metal finish cann
 a flat hex square. So:
 
 - `scripts/extract_catalogue_colours.py` finds the swatch tiles on the declared chart pages of
-  each catalogue, reads the caption printed under each one, and crops the tile itself out of the
-  PDF at 170 dpi → **244 JPGs** in `public/images/colours/swatches/{catalogue}/` plus the
+  each catalogue, reads the caption printed next to each one, and crops the tile itself out of the
+  PDF at 170 dpi → **295 JPGs** in `public/images/colours/swatches/{catalogue}/` plus the
   generated `src/data/catalogue-colors.ts`. **Never hand-edit that file** — re-run the script.
 - Counts per catalogue: ROKA Signature 141 (wood decors, ceramics, glass, liquid metals, powder
-  textures), ROKA Select 12, Außentüren wood stains 7, Garagentore 12, the numbered shutter-slat
-  palette 15, Salamander foils 18, IGLO terrace foils 39.
+  textures), WIKĘD 54 (38 PVC foils + 16 aluminium finishes, captions to the RIGHT of the tile
+  and two of the RAL chips drawn as vector rects, both handled by the script; ALL-CAPS Polish
+  names are title-cased, "DOWOLNY RAL" = "any RAL" is not a colour and is skipped, and the
+  hardware-cap colours on the OKUCIA page stay with the handles they belong to), ROKA Select 10,
+  Außentüren wood stains 7, Garagentore 12, the numbered shutter-slat palette 15 (an article
+  number that had slipped in as a "colour" in the first pass is now excluded), Salamander foils
+  18, IGLO terrace foils 38. The WIKĘD aluminium RALs are grouped as powder coating on purpose:
+  as group "ral" they would supersede the standard RAL chips, which cover more materials.
 - `ALL_COLORS` (in `src/data/index.ts`) merges the two charts: a flat-hex standard entry whose
   group + code matches an extracted swatch is **superseded by the image** — 62 were — so the same
   finish never appears twice. `/colours` renders one section per catalogue (title from
@@ -425,12 +446,46 @@ a flat hex square. So:
   facade-blind chart photographs whole lamella PROFILES rather than colours (its RALs stay as flat
   hex in `colors.ts`). The rule stands: a swatch with no printed name gets no entry.
 
+### The glass chapter (2026-08) — same idea, for glazing
+
+The owner saw the SZKŁO page of the WIKĘD catalogue and asked for a separate chapter on /colours
+— "almost a page, but not a page" — with the glass types of ALL catalogues, split by catalogue.
+All 15 published PDFs were checked; five have a printed glass chart:
+
+- **WIKĘD** 9 types (a plant photographed behind each glass), **ROKA Signature** 12 (three
+  Verglasungen pages, a sculpture behind each), **ROKA Select** 3 (the VERGLASUNG tiles of the
+  collection overview), and the same 19-type SCHEIBENARTEN chart in both the **Außentüren** and
+  **IGLO window** catalogues (same supplier — each catalogue keeps its own section, 62 entries in
+  total). The rest only mention glass inside spec text: no printed sample, no entry.
+- `scripts/extract_catalogue_glass.py` generates `src/data/catalogue-glass.ts` (`GlassFinish`,
+  no hex on purpose — the image IS the datum) and the crops in `public/images/colours/glass/`;
+  `GlassChapter.tsx` renders it under the colour chart. The three ROKA Select glazing tiles moved
+  OUT of the colour chart into this chapter — same finish never shown twice.
+- Two transcription notes, both commented in the script: the Scheibenarten chart prints
+  "Float 4, 6, 8, 10 m" (glass thicknesses — the unit can only be mm) and WIKĘD's descriptive
+  Polish captions carry a mechanical translation; pattern names (Kathedral, Delta, Atlantic…)
+  stay exactly as printed.
+
 ## 3b-bis. Windows — the manufacturer hierarchy
 
 The owner asked for windows to be organised the way the trade quotes them:
 **Windows → manufacturer → system → versions**. That structure is live with **Aluplast** as the
 first manufacturer (`src/data/manufacturers.ts`), showing four systems: IDEAL 4000, IDEAL 5000,
 IDEAL 7000 and energeto 8000.
+
+**The WIKĘD catalogue filled three manufacturers with real data (2026-08).** The "VEKA 82 — sheet
+on its way" placeholder is gone: VEKA now carries its four real window systems (Softline 82,
+Softline 76 MD/AD, Perfectline), **Kömmerling** joined with three (88 MD, 76 MD, 76 AD — printed
+class B and transcribed as class B), and **PROCURAL** with the aluminium range (Aluline PE96
+Passive, PE78N HI, PE78N, PE50 internal). The patio-door range gained VEKA (Motion 82 Max,
+Motion 82, Move 76) and PROCURAL (Alu Slide SL1600TT HI, PE78 Fold). Every spec is transcribed
+from the self-hosted catalogue and each system links to its exact page; the system images are the
+catalogue's own profile cutaways on white, extracted by `scripts/extract_wiked.py`. The
+manufacturer grid is now **three per row** (owner: two looked too big), first row Aluplast ·
+Salamander · VEKA, then REHAU · Kömmerling · PROCURAL, then IGLO. REHAU still waits for its
+Synego data sheet. The PROCURAL ALU **door** systems live in the WIKĘD showcase
+(`/catalogues/wiked-pvc-alu/models`), not as an entrance-doors manufacturer: that page shows the
+door collections, and the manufacturers branch would have hidden them.
 
 What still needs confirming, because the Aluplast catalogue has not arrived yet:
 

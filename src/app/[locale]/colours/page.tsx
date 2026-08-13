@@ -8,6 +8,7 @@
 import type { Metadata } from "next";
 import { ColourGrid } from "@/components/colour/ColourGrid";
 import { ColourPreview } from "@/components/colour/ColourPreview";
+import { GlassChapter } from "@/components/colour/GlassChapter";
 import { ContactCta } from "@/components/layout/ContactCta";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionTitle } from "@/components/ui/SectionTitle";
@@ -66,6 +67,10 @@ export default async function ColoursPage({ params }: PageProps<"/[locale]/colou
           </p>
         </div>
       </section>
+
+      {/* El capítulo de cristales: transparencias y ornamentados de
+          todos los catálogos con carta de vidrio, por catálogo. */}
+      <GlassChapter />
 
       <ContactCta />
     </>

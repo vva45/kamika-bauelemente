@@ -254,6 +254,11 @@ export const en = {
   "colours.count": "{count} finishes",
   "colours.standardSection": "Standard colour charts (RAL, decors, anodised)",
   "colours.standardChip": "Standard",
+  "colours.glassEyebrow": "Glazing",
+  "colours.glassTitle": "Glass types",
+  "colours.glassIntro":
+    "The glass decides the character of the whole window or door: how much light comes in, and how much of the room stays private. These are the glass types printed in our catalogues — each sample is photographed with an object behind it, so you can judge the transparency for yourself.",
+  "colours.glassCount": "{count} glass types",
 
   // ── Contacto ─────────────────────────────────────────────────
   "contactPage.eyebrow": "Hechingen · Zollernalbkreis",

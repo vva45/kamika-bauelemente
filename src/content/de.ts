@@ -232,6 +232,11 @@ export const de: Record<ContentKey, string> = {
   "colours.count": "{count} Oberflächen",
   "colours.standardSection": "Standard-Farbkarten (RAL, Dekore, Eloxal)",
   "colours.standardChip": "Standard",
+  "colours.glassEyebrow": "Verglasung",
+  "colours.glassTitle": "Glasarten",
+  "colours.glassIntro":
+    "Das Glas entscheidet über den Charakter des ganzen Fensters oder der Tür: wie viel Licht hereinkommt und wie viel vom Raum privat bleibt. Das sind die Glasarten aus unseren Katalogen — jede Musterfläche ist mit einem Objekt dahinter fotografiert, damit Sie die Transparenz selbst beurteilen können.",
+  "colours.glassCount": "{count} Glasarten",
 
   // ── Contacto ─────────────────────────────────────────────────
   "contactPage.eyebrow": "Hechingen · Zollernalbkreis",

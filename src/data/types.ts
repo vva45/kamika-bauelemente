@@ -245,3 +245,17 @@ export interface ColorFinish {
   /** Catálogo del que viene la muestra; sin él, es carta estándar. */
   catalogue?: string;
 }
+
+/**
+ * Un tipo de cristal impreso en un catálogo, para el capítulo de
+ * vidrios de /colours (pedido del dueño, 2026-08): transparencias,
+ * ornamentados y satinados con su muestra real recortada, separados
+ * por catálogo. No es un `ColorFinish`: un vidrio no tiene hex ni
+ * grupo de acabado — su imagen ES el dato.
+ */
+export interface GlassFinish {
+  id: string;
+  name: Localized<string>; // tal cual impreso; polaco descriptivo, traducido
+  catalogue: string; // catálogo del que viene la muestra
+  image: string; // recorte de la carta impresa
+}

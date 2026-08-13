@@ -147,6 +147,31 @@ export const CATALOGUES: Catalogue[] = [
     year: 2026,
   },
   {
+    /**
+     * Catálogo del fabricante WIKĘD (2026-08), subido por el dueño.
+     * WIKĘD vende por distribuidores y se le acredita como a ROKA o
+     * Salamander; lo único retirado es la dirección de contacto de la
+     * contraportada — `scripts/prepare_wiked.py` deja el PDF así.
+     * Está en polaco porque así existe; dentro van perfiles VEKA,
+     * Kömmerling y PROCURAL con los que se montan las fichas de la web.
+     * Sin `category` a propósito: cubre ventanas, correderas y puertas
+     * ALU a la vez, así que vive en la página de catálogos.
+     */
+    id: "wiked-pvc-alu",
+    title: {
+      en: "PVC/ALU joinery — product catalogue",
+      de: "PCV/ALU Produktkatalog",
+      pl: "Katalog produktów PCV/ALU",
+    },
+    brand: "WIKĘD",
+    collection: { en: "PVC/ALU", de: "PCV/ALU", pl: "PCV/ALU" },
+    file: "/pdf/catalogues/wiked-pvc-alu.pdf",
+    cover: "/images/catalogues/wiked-pvc-alu-cover.jpg",
+    pages: 27,
+    sizeMb: 9.2,
+    year: 2026,
+  },
+  {
     id: "rollladen-produktkatalog",
     title: { en: "Roller shutters — product catalogue", de: "Rollladen Produktkatalog", pl: "Rolety — katalog produktów", },
     // Sin marca a propósito: el fabricante de estas persianas vende
