@@ -12,8 +12,10 @@ pliegos el render es la imagen de la zona derecha, pero en Edge y en
 Ideal Neo MD esa zona la ocupa una foto de ambiente y el render vive en
 otro objeto. Se midieron uno a uno.
 
-Las tarjetas de FABRICANTE (iglo.jpg, iglo-terrassen.jpg) no se tocan:
-esas sí son fotos de ambiente a propósito, y al dueño le gustan así.
+La tarjeta de FABRICANTE de terrazas (iglo-terrassen.jpg) no se toca:
+esa foto de ambiente le gusta al dueño. La de ventanas (iglo.jpg) pasó
+a lámina tipográfica en 2026-08 — la genera build-manufacturer-images.mjs,
+junto con las demás tarjetas de la página de ventanas.
 
 Ejecutar:  python3 scripts/extract_system_images.py
 Requiere:  pip install pymupdf pillow

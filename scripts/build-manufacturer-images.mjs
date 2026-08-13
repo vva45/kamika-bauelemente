@@ -110,6 +110,14 @@ const MAKERS = [
   { file: "salamander-sliding", name: "Salamander", note: "PVC SLIDING SYSTEMS" },
   { file: "veka", name: "VEKA", note: "PVC WINDOW SYSTEMS" },
   { file: "rehau", name: "REHAU", note: "PVC WINDOW SYSTEMS" },
+  // Pedido del dueño (2026-08): las tarjetas de ventanas, TODAS con la
+  // misma lámina tipográfica — "más clean, más profi". Kömmerling y
+  // PROCURAL llevaban el render del buque insignia e IGLO una foto de
+  // ambiente; las tres pasan a lámina. La de IGLO de terrazas
+  // (iglo-terrassen.jpg) no se toca: esa gama sigue con su foto.
+  { file: "koemmerling", name: "Kömmerling", note: "PVC WINDOW SYSTEMS" },
+  { file: "procural", name: "PROCURAL", note: "ALUMINIUM WINDOW SYSTEMS" },
+  { file: "iglo", name: "IGLO", note: "PVC WINDOW SYSTEMS" },
 ];
 
 for (const maker of MAKERS) {
@@ -125,7 +133,8 @@ for (const maker of MAKERS) {
  * sería inventar specs con un dibujo.
  */
 const PENDING_SYSTEMS = [
-  { file: "veka-82", name: "VEKA 82" },
+  // veka-82 se retiró: VEKA estrenó sus sistemas reales con el
+  // catálogo WIKĘD y aquel placeholder ya no existe.
   { file: "rehau-synego", name: "Synego" },
 ];
 

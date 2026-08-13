@@ -76,11 +76,10 @@ SYSTEMS = {
     "procural-pe78-fold": (23, [542, 543]),
 }
 
-# Tarjetas de fabricante nuevas: el render del buque insignia.
-MANUFACTURER_CARDS = {
-    "koemmerling": "koemmerling-88-md",
-    "procural": "procural-aluline-pe96-passive",
-}
+# Las tarjetas de fabricante (koemmerling.jpg, procural.jpg, iglo.jpg)
+# NO salen de aquí: el dueño quiere en ventanas la lámina tipográfica
+# de marca para todas — las genera build-manufacturer-images.mjs.
+MANUFACTURER_CARDS = {}
 
 # Tarjetas de las correderas: la foto de ambiente del propio pliego
 # (media página izquierda), como las tarjetas IGLO — recorte directo,
