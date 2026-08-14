@@ -239,7 +239,7 @@ export const pl: Record<ContentKey, string> = {
   "colours.glassCount": "{count} rodzajów szkła",
   "colours.clickHint": "Kliknij dowolną próbkę, aby zobaczyć ją na oknie w podglądzie na górze.",
   "colours.glassClickHint": "Kliknij rodzaj szkła, aby wstawić go w okno na górze — ponowne kliknięcie go wyjmuje.",
-  "colours.approxTone": "Ton przybliżony — prawdziwą strukturę pokazuje sama próbka.",
+  "colours.approxTone": "Próbka jest rozciągnięta na ramę — skala struktury jest tylko poglądowa.",
   "colours.previewJump": "Zobacz na oknie",
 
   // ── Contacto ─────────────────────────────────────────────────

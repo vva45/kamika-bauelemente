@@ -261,7 +261,7 @@ export const en = {
   "colours.glassCount": "{count} glass types",
   "colours.clickHint": "Click any sample to see it on the window in the live preview above.",
   "colours.glassClickHint": "Click a glass type to put it into the window above — click again to take it out.",
-  "colours.approxTone": "Approximate tone — the real texture is shown by the sample itself.",
+  "colours.approxTone": "The sample is stretched over the frame — the grain scale is preview-only.",
   "colours.previewJump": "View in the frame",
 
   // ── Contacto ─────────────────────────────────────────────────

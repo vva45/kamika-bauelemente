@@ -46,6 +46,20 @@ const MATERIAL_LABEL: Record<Material, ContentKey> = {
   "wood-alu": "material.wood-alu",
 };
 
+/** Insignia de "seleccionado": un check sobre la esquina de la tesela,
+ * para que la muestra elegida se distinga aunque el aro pase
+ * desapercibido en un color oscuro. */
+const SelectedBadge = () => (
+  <span
+    aria-hidden
+    className="absolute top-2 right-2 z-10 flex h-6 w-6 items-center justify-center rounded-full bg-kamika-ink text-kamika-paper shadow-md motion-safe:animate-[pulse_1.2s_ease-in-out_1]"
+  >
+    <svg viewBox="0 0 16 16" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 8.5 6.5 12 13 4.5" />
+    </svg>
+  </span>
+);
+
 const chipClasses = (active: boolean) =>
   cn(
     "rounded-kamika px-3 py-1.5 font-mono text-[0.6875rem] tracking-[0.12em] uppercase",
@@ -230,7 +244,7 @@ export function ColourGrid({ colours }: { colours: ColorFinish[] }) {
                       className={cn(
                         "relative aspect-[4/3] w-full overflow-hidden rounded-kamika ring-inset",
                         "motion-safe:transition-transform motion-safe:duration-200 group-hover/tile:scale-[1.02]",
-                        isActive ? "ring-2 ring-kamika-steel" : "ring-1 ring-kamika-ink/15",
+                        isActive ? "ring-2 ring-kamika-steel scale-[1.02]" : "ring-1 ring-kamika-ink/15",
                       )}
                     >
                       <Image
@@ -240,16 +254,19 @@ export function ColourGrid({ colours }: { colours: ColorFinish[] }) {
                         sizes="(min-width: 1280px) 18vw, (min-width: 640px) 30vw, 45vw"
                         className="object-cover"
                       />
+                      {isActive && <SelectedBadge />}
                     </div>
                   ) : (
                     <div
                       className={cn(
-                        "aspect-[4/3] w-full rounded-kamika ring-inset",
+                        "relative aspect-[4/3] w-full rounded-kamika ring-inset",
                         "motion-safe:transition-transform motion-safe:duration-200 group-hover/tile:scale-[1.02]",
-                        isActive ? "ring-2 ring-kamika-steel" : "ring-1 ring-kamika-ink/15",
+                        isActive ? "ring-2 ring-kamika-steel scale-[1.02]" : "ring-1 ring-kamika-ink/15",
                       )}
                       style={{ backgroundColor: colour.hex }}
-                    />
+                    >
+                      {isActive && <SelectedBadge />}
+                    </div>
                   )}
                   <p className="mt-3 font-display text-sm font-medium text-kamika-ink">
                     {pick(colour.name)}

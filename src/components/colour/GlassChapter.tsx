@@ -21,6 +21,18 @@ import { cn } from "@/lib/cn";
 import { useI18n } from "@/components/layout/LocaleProvider";
 import type { Localized } from "@/lib/i18n";
 
+/** La misma insignia de "seleccionado" que usa la carta de colores. */
+const SelectedBadge = () => (
+  <span
+    aria-hidden
+    className="absolute top-2 right-2 z-10 flex h-6 w-6 items-center justify-center rounded-full bg-kamika-ink text-kamika-paper shadow-md motion-safe:animate-[pulse_1.2s_ease-in-out_1]"
+  >
+    <svg viewBox="0 0 16 16" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 8.5 6.5 12 13 4.5" />
+    </svg>
+  </span>
+);
+
 export function GlassChapter() {
   const { pick, t, tf } = useI18n();
   const studio = useColourStudio();
@@ -83,7 +95,7 @@ export function GlassChapter() {
                         className={cn(
                           "relative aspect-[4/3] w-full overflow-hidden rounded-kamika ring-inset",
                           "motion-safe:transition-transform motion-safe:duration-200 group-hover/tile:scale-[1.02]",
-                          isActive ? "ring-2 ring-kamika-steel" : "ring-1 ring-kamika-ink/15",
+                          isActive ? "ring-2 ring-kamika-steel scale-[1.02]" : "ring-1 ring-kamika-ink/15",
                         )}
                       >
                         <Image
@@ -93,6 +105,7 @@ export function GlassChapter() {
                           sizes="(min-width: 1280px) 18vw, (min-width: 640px) 30vw, 45vw"
                           className="object-cover"
                         />
+                        {isActive && <SelectedBadge />}
                       </div>
                       <p className="mt-3 font-display text-sm font-medium text-kamika-ink">
                         {pick(glass.name)}

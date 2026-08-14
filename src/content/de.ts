@@ -239,7 +239,7 @@ export const de: Record<ContentKey, string> = {
   "colours.glassCount": "{count} Glasarten",
   "colours.clickHint": "Klicken Sie eine Musterfläche an, um sie am Fenster in der Live-Vorschau oben zu sehen.",
   "colours.glassClickHint": "Klicken Sie eine Glasart an, um sie in das Fenster oben einzusetzen — nochmal klicken nimmt sie wieder heraus.",
-  "colours.approxTone": "Farbton angenähert — die echte Struktur zeigt die Musterfläche selbst.",
+  "colours.approxTone": "Die Musterfläche ist über den Rahmen gestreckt — der Maßstab der Struktur dient nur der Vorschau.",
   "colours.previewJump": "Am Fenster ansehen",
 
   // ── Contacto ─────────────────────────────────────────────────
