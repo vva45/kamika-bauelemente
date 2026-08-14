@@ -17,6 +17,7 @@
  * cualquier modelo suelto.
  */
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { CategoryCard } from "@/components/category/CategoryCard";
 import { CategoryHero } from "@/components/category/CategoryHero";
@@ -173,6 +174,24 @@ export default async function CategoryPage({ params }: PageProps<"/[locale]/prod
         </section>
       ) : comingSoon ? (
         <ComingSoon title={t("category.comingSoonTitle")} body={t("category.comingSoonBody")}>
+          {/* Pérgolas: el dueño mandó dos imágenes de marca más junto a
+              la portada — mientras no llega su catálogo, son lo único
+              real que esta gama puede enseñar, y aquí se enseñan. */}
+          {slug === "pergolas" && (
+            <div className="mb-10 grid gap-6 sm:grid-cols-2">
+              {[1, 2].map((n) => (
+                <div key={n} className="relative aspect-[4/3] overflow-hidden rounded-kamika ring-1 ring-inset ring-kamika-ink/10">
+                  <Image
+                    src={`/images/categories/pergolas-brand-${n}.jpg`}
+                    alt={t(n === 1 ? "category.pergolasBrandAlt1" : "category.pergolasBrandAlt2")}
+                    fill
+                    sizes="(min-width: 640px) 45vw, 90vw"
+                    className="object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          )}
           {/* Mientras no hay fichas, los catálogos generales son la
               mejor respuesta a "¿qué ofrecéis aquí?". */}
           <div className="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">

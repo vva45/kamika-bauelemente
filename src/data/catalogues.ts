@@ -40,7 +40,7 @@ export const CATALOGUES: Catalogue[] = [
     file: "/pdf/catalogues/roka-signature-2025.pdf",
     cover: "/images/catalogues/roka-signature-2025-cover.jpg",
     pages: 298,
-    sizeMb: 27.4,
+    sizeMb: 25.0,
     year: 2025,
   },
   {
@@ -183,7 +183,7 @@ export const CATALOGUES: Catalogue[] = [
     file: "/pdf/catalogues/rollladen-produktkatalog.pdf",
     cover: "/images/catalogues/rollladen-produktkatalog-cover.jpg",
     pages: 53,
-    sizeMb: 27.2,
+    sizeMb: 18.9,
     year: 2026,
   },
   {
@@ -271,7 +271,7 @@ export const CATALOGUES: Catalogue[] = [
     file: "/pdf/catalogues/fassadenjalousien.pdf",
     cover: "/images/catalogues/fassadenjalousien-cover.jpg",
     pages: 34,
-    sizeMb: 20.8,
+    sizeMb: 15.1,
     year: 2026,
   },
 ];

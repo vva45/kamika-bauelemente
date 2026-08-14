@@ -206,7 +206,7 @@ export const en = {
   "about.factsHeading": "At a glance",
   "about.factLocationLabel": "Based in",
   "about.factAreaLabel": "Working area",
-  "about.factAreaValue": "Hechingen, Zollernalbkreis and the surrounding towns",
+  "about.factAreaValue": "Hechingen and around 150–200 km beyond — and further by arrangement",
   "about.factRangesLabel": "Ranges",
   "about.factRangesValue": "{count} product ranges, from windows to hardware",
   "about.factOwnerLabel": "Run by",
@@ -334,6 +334,8 @@ export const en = {
   "category.typesIntro":
     "Each type is a range of its own, with its own models, specifications and catalogues. Pick the one that matches the opening.",
   "category.comingSoonTitle": "This range is being prepared",
+  "category.pergolasBrandAlt1": "Bioclimatic pergola with louvred roof and lighting over a garden lounge at dusk",
+  "category.pergolasBrandAlt2": "Glazed canopy in winter: black aluminium structure with glass roof over a terrace room",
   "category.comingSoonBody":
     "We supply and install this range, but the catalogue pages are not online yet. Call or write and we will send the current documentation.",
 } satisfies Record<string, string>;

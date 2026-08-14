@@ -186,7 +186,7 @@ export const de: Record<ContentKey, string> = {
   "about.factsHeading": "Auf einen Blick",
   "about.factLocationLabel": "Sitz",
   "about.factAreaLabel": "Einsatzgebiet",
-  "about.factAreaValue": "Hechingen, Zollernalbkreis und die umliegenden Orte",
+  "about.factAreaValue": "Hechingen und etwa 150–200 km im Umkreis — nach Absprache auch weiter",
   "about.factRangesLabel": "Bereiche",
   "about.factRangesValue": "{count} Produktbereiche, von Fenstern bis zu Beschlägen",
   "about.factOwnerLabel": "Geführt von",
@@ -302,5 +302,7 @@ export const de: Record<ContentKey, string> = {
   "category.typesHeading": "Türarten",
   "category.typesIntro": "Jede Art ist ein eigener Bereich mit eigenen Modellen, Spezifikationen und Katalogen. Wählen Sie die, die zu Ihrer Öffnung passt.",
   "category.comingSoonTitle": "Dieser Bereich wird vorbereitet",
+  "category.pergolasBrandAlt1": "Bioklimatische Pergola mit Lamellendach und Beleuchtung über einer Gartenlounge in der Dämmerung",
+  "category.pergolasBrandAlt2": "Verglaste Überdachung im Winter: schwarze Aluminiumkonstruktion mit Glasdach über einem Terrassenraum",
   "category.comingSoonBody": "Wir liefern und montieren diesen Bereich, aber die Katalogseiten sind noch nicht online. Rufen Sie an oder schreiben Sie — wir senden die aktuellen Unterlagen.",
 };

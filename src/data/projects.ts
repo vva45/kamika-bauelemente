@@ -71,7 +71,10 @@ export const PROJECTS: Project[] = [
         },
       },
     ],
-    products: ["external-venetian-blind"],
+    // Sin lista de modelos: la ficha que enlazaba era uno de los
+    // productos de EJEMPLO retirados en 2026-08 — una obra real no
+    // puede apuntar a una ficha inventada. Cuando el proveedor mande
+    // el modelo exacto de este Raffstore, se enlaza con `models`.
     featured: true,
   },
   {
@@ -404,27 +407,30 @@ export const PROJECTS: Project[] = [
      * es suyo el dato, no una invención de la web: no hay nada en la
      * foto que lo contradiga y él es quien hizo la obra.
      */
-    id: "hechingen-fenster",
+    // El dueño precisó en agosto de 2026 que son PUERTAS de balcón, no
+    // ventanas: gama, título y resumen se corrigieron con su palabra
+    // (la primera versión decía "Balkonfenster").
+    id: "hechingen-balkontueren",
     title: {
-      en: "Balcony windows, Hechingen",
-      de: "Balkonfenster, Hechingen",
-      pl: "Okna balkonowe, Hechingen",
+      en: "Balcony doors, Hechingen",
+      de: "Balkontüren, Hechingen",
+      pl: "Drzwi balkonowe, Hechingen",
     },
     location: "Hechingen",
     year: 2025,
-    categories: ["windows"],
+    categories: ["patio-doors"],
     summary: {
-      en: "A three-part element in dark timber tone onto the balcony, photographed from inside in December 2025 with snow still on the roof opposite. The middle leaf opens, the outer two are fixed.",
-      de: "Ein dreiteiliges Element in dunklem Holzton zum Balkon, im Dezember 2025 von innen aufgenommen, mit Schnee auf dem gegenüberliegenden Dach. Der mittlere Flügel öffnet, die beiden äußeren sind fest.",
-      pl: "Trzyczęściowy element w ciemnym odcieniu drewna na balkon, sfotografowany od środka w grudniu 2025, ze śniegiem na dachu naprzeciwko. Skrzydło środkowe otwierane, dwa boczne stałe.",
+      en: "Balcony doors in a dark timber tone — a three-part element photographed from inside in December 2025, with snow still on the roof opposite. The middle leaf opens onto the balcony, the outer two are fixed.",
+      de: "Balkontüren in dunklem Holzton — ein dreiteiliges Element, im Dezember 2025 von innen aufgenommen, mit Schnee auf dem gegenüberliegenden Dach. Der mittlere Flügel öffnet zum Balkon, die beiden äußeren sind fest.",
+      pl: "Drzwi balkonowe w ciemnym odcieniu drewna — trzyczęściowy element sfotografowany od środka w grudniu 2025, ze śniegiem na dachu naprzeciwko. Skrzydło środkowe otwiera się na balkon, dwa boczne są stałe.",
     },
     images: [
       {
-        src: "/images/projects/hechingen-fenster-1.jpg",
+        src: "/images/projects/hechingen-balkontueren-1.jpg",
         alt: {
-          en: "Three-part window in a dark timber tone onto the balcony, seen from inside",
-          de: "Dreiteiliges Element in dunklem Holzton zum Balkon, von innen gesehen",
-          pl: "Trzyczęściowe okno w ciemnym drewnie na balkon, widziane od środka",
+          en: "Three-part balcony doors in a dark timber tone, seen from inside",
+          de: "Dreiteilige Balkontüren in dunklem Holzton, von innen gesehen",
+          pl: "Trzyczęściowe drzwi balkonowe w ciemnym drewnie, widziane od środka",
         },
       },
     ],

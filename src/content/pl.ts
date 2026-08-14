@@ -186,7 +186,7 @@ export const pl: Record<ContentKey, string> = {
   "about.factsHeading": "W skrócie",
   "about.factLocationLabel": "Siedziba",
   "about.factAreaLabel": "Obszar działania",
-  "about.factAreaValue": "Hechingen, Zollernalbkreis i okoliczne miejscowości",
+  "about.factAreaValue": "Hechingen i promień ok. 150–200 km — po uzgodnieniu także dalej",
   "about.factRangesLabel": "Grupy",
   "about.factRangesValue": "{count} grup produktów, od okien po okucia",
   "about.factOwnerLabel": "Prowadzona przez",
@@ -302,5 +302,7 @@ export const pl: Record<ContentKey, string> = {
   "category.typesHeading": "Rodzaje drzwi",
   "category.typesIntro": "Każdy rodzaj to osobna grupa z własnymi modelami, specyfikacjami i katalogami. Wybierz ten, który pasuje do otworu.",
   "category.comingSoonTitle": "Ta grupa jest w przygotowaniu",
+  "category.pergolasBrandAlt1": "Pergola bioklimatyczna z dachem lamelowym i oświetleniem nad ogrodowym wypoczynkiem o zmierzchu",
+  "category.pergolasBrandAlt2": "Przeszklona zabudowa zimą: czarna konstrukcja aluminiowa ze szklanym dachem nad pokojem tarasowym",
   "category.comingSoonBody": "Dostarczamy i montujemy tę grupę, ale strony katalogowe nie są jeszcze online. Zadzwoń albo napisz — wyślemy aktualną dokumentację.",
 };
