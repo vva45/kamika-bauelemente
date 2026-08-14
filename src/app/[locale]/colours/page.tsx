@@ -44,9 +44,12 @@ export default async function ColoursPage({ params }: PageProps<"/[locale]/colou
           />
         </Reveal>
 
+        {/* La foto real del dueño (2026-08) con su máscara: el color
+            cae solo sobre el marco, no sobre el jardín ni la pared. */}
         <ColourPreview
           colours={COLORS.slice(0, 14)}
           renderImage="/images/colours/render.jpg"
+          tintMask="/images/colours/render-mask.png"
           className="mt-12"
         />
       </section>

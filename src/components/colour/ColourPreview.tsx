@@ -32,6 +32,17 @@ type ColourPreviewProps = {
    * página de colores conserva el render neutro que sí se tiñe.
    */
   tint?: boolean;
+  /**
+   * Máscara del velo de color: PNG en blanco (se tiñe) y negro (no).
+   *
+   * Llegó con la foto real (2026-08): multiplicar la imagen ENTERA
+   * teñía también el jardín tras el cristal y la pared — con el
+   * placeholder dibujado no se notaba, con una fotografía sí. La
+   * máscara delimita el conjunto de la ventana y deja fuera cristales,
+   * muro y repisa. Debe compartir proporción con la imagen (4:3): el
+   * velo va con maskSize 100%/100% sobre la misma caja.
+   */
+  tintMask?: string;
   /** Alt propio cuando la imagen no es el render teñible. */
   imageAlt?: string;
 };
@@ -41,6 +52,7 @@ export function ColourPreview({
   renderImage,
   className,
   tint = true,
+  tintMask,
   imageAlt,
 }: ColourPreviewProps) {
   const { pick, t } = useI18n();
@@ -64,7 +76,15 @@ export function ColourPreview({
             <div
               aria-hidden
               className="absolute inset-0 mix-blend-multiply motion-safe:transition-colors motion-safe:duration-500"
-              style={{ backgroundColor: active.hex }}
+              style={{
+                backgroundColor: active.hex,
+                ...(tintMask && {
+                  maskImage: `url(${tintMask})`,
+                  maskSize: "100% 100%",
+                  WebkitMaskImage: `url(${tintMask})`,
+                  WebkitMaskSize: "100% 100%",
+                }),
+              }}
             />
           )}
         </WindowFrame>
