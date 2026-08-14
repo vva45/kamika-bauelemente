@@ -6,15 +6,18 @@
  * catálogo—, y debajo una sección por colección con su titulito y su
  * recuento, como la página de un muestrario.
  *
- * Los chips de color no son botones: aquí no hay nada que elegir, es
- * una carta para mirar. Cada muestra lleva su código en mono, que es lo
- * que el cliente acabará diciendo por teléfono. Las muestras extraídas
- * de los catálogos enseñan su IMAGEN (cerámica, vidrio, maderas…); las
- * de carta estándar, su color plano.
+ * Desde agosto de 2026 los chips SÍ son botones — otra idea del dueño:
+ * cualquier muestra de la carta, clicada, tiñe el marco del live
+ * preview de arriba (vía ColourStudio; la miniatura flotante enseña la
+ * selección cuando el marco queda fuera de pantalla). Cada muestra
+ * lleva su código en mono, que es lo que el cliente acabará diciendo
+ * por teléfono; las extraídas de los catálogos enseñan su IMAGEN
+ * (cerámica, vidrio, maderas…), las de carta estándar su color plano.
  */
 import Image from "next/image";
 import { useState } from "react";
 import { CATALOGUES } from "@/data/catalogues";
+import { useColourStudio } from "@/components/colour/ColourStudio";
 import type { ColorFinish, Material } from "@/data/types";
 import { cn } from "@/lib/cn";
 import { useI18n } from "@/components/layout/LocaleProvider";
@@ -62,6 +65,7 @@ function sectionTitle(catalogueId: string, pick: (value: Localized<string>) => s
 
 export function ColourGrid({ colours }: { colours: ColorFinish[] }) {
   const { pick, t, tf } = useI18n();
+  const studio = useColourStudio();
   const [group, setGroup] = useState<ColorFinish["group"] | null>(null);
   const [material, setMaterial] = useState<Material | null>(null);
   const [catalogue, setCatalogue] = useState<string | null>(null);
@@ -194,6 +198,11 @@ export function ColourGrid({ colours }: { colours: ColorFinish[] }) {
       <p className="eyebrow mt-8" aria-live="polite">
         {tf("colours.count", { count: visible.length })}
       </p>
+      {studio && (
+        <p className="mt-2 max-w-2xl text-[0.8125rem] text-kamika-ink/60">
+          {t("colours.clickHint")}
+        </p>
+      )}
 
       {sections.length > 0 ? (
         sections.map((section) => (
@@ -202,12 +211,28 @@ export function ColourGrid({ colours }: { colours: ColorFinish[] }) {
             <p className="eyebrow mt-1.5">{tf("colours.count", { count: section.items.length })}</p>
 
             <ul className="mt-6 grid grid-cols-2 gap-x-5 gap-y-8 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-              {section.items.map((colour) => (
+              {section.items.map((colour) => {
+                const isActive = studio?.colour?.id === colour.id;
+                return (
                 <li key={colour.id}>
+                  <button
+                    type="button"
+                    onClick={() => studio?.setColour(isActive ? null : colour)}
+                    aria-pressed={isActive}
+                    disabled={!studio}
+                    className="group/tile block w-full text-left"
+                  >
                   {/* La muestra lleva un aro fino: sin él, un blanco
-                      roto sobre papel blanco no se ve dónde acaba. */}
+                      roto sobre papel blanco no se ve dónde acaba. La
+                      elegida lo lleva grueso, en acero. */}
                   {colour.image ? (
-                    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-kamika ring-1 ring-inset ring-kamika-ink/15">
+                    <div
+                      className={cn(
+                        "relative aspect-[4/3] w-full overflow-hidden rounded-kamika ring-inset",
+                        "motion-safe:transition-transform motion-safe:duration-200 group-hover/tile:scale-[1.02]",
+                        isActive ? "ring-2 ring-kamika-steel" : "ring-1 ring-kamika-ink/15",
+                      )}
+                    >
                       <Image
                         src={colour.image}
                         alt={pick(colour.name)}
@@ -218,7 +243,11 @@ export function ColourGrid({ colours }: { colours: ColorFinish[] }) {
                     </div>
                   ) : (
                     <div
-                      className="aspect-[4/3] w-full rounded-kamika ring-1 ring-inset ring-kamika-ink/15"
+                      className={cn(
+                        "aspect-[4/3] w-full rounded-kamika ring-inset",
+                        "motion-safe:transition-transform motion-safe:duration-200 group-hover/tile:scale-[1.02]",
+                        isActive ? "ring-2 ring-kamika-steel" : "ring-1 ring-kamika-ink/15",
+                      )}
                       style={{ backgroundColor: colour.hex }}
                     />
                   )}
@@ -239,8 +268,10 @@ export function ColourGrid({ colours }: { colours: ColorFinish[] }) {
                     {" · "}
                     {colour.materials.map((entry) => t(MATERIAL_LABEL[entry])).join(" · ")}
                   </p>
+                  </button>
                 </li>
-              ))}
+                );
+              })}
             </ul>
           </section>
         ))

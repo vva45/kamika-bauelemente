@@ -454,6 +454,21 @@ a flat hex square. So:
   facade-blind chart photographs whole lamella PROFILES rather than colours (its RALs stay as flat
   hex in `colors.ts`). The rule stands: a swatch with no printed name gets no entry.
 
+### The colour studio (2026-08) — every sample is clickable
+
+The owner's idea, verbatim "una bestia de idea": every one of the ~400 swatches on /colours and
+every glass type in the glass chapter is a BUTTON. Clicking a colour tints the frame of the live
+preview; clicking a glass puts that sample into the window's two panes (the pane rectangles are
+measured pixel geometry, like the mask); clicking the active one again takes it off. The pieces
+(`ColourStudio.tsx`): a context shared by preview, chart and glass chapter, and a floating
+mini-preview that appears bottom-right when something is selected while the main frame is
+off-screen — tapping it scrolls back up. Two honesty rails: textured finishes (wood, ceramic,
+liquid metal) tint the frame with their MEDIAN tone only, and the preview says so
+(`colours.approxTone`) — a multiply veil cannot paint grain; and the glass panes show the
+manufacturer's printed sample as-is, plant or sculpture included, because that sample IS the
+honest demonstration. The home preview (untinted brand artwork) is untouched: no provider there,
+same behaviour as before.
+
 ### The glass chapter (2026-08) — same idea, for glazing
 
 The owner saw the SZKŁO page of the WIKĘD catalogue and asked for a separate chapter on /colours

@@ -4,10 +4,16 @@
  * Fila de chips de color con un render al lado que cambia al pasar por
  * encima de cada uno.
  *
- * El color se aplica sobre la foto con `mix-blend-multiply`, que es lo
- * que respeta las sombras del perfil en vez de taparlo con un rectángulo
- * plano. Para que funcione bien, el render tiene que ser una foto de un
- * marco claro y neutro (ver CONTENT.md).
+ * El color se aplica sobre la foto con `mix-blend-multiply` y la
+ * máscara de la "ventana famosa" (ver ColourStudio): así el velo cae
+ * SOLO en el marco, no en el jardín tras el cristal ni en la pared.
+ *
+ * En /colours el previsualizador vive dentro del ColourStudioProvider:
+ * cualquier muestra de la carta y cualquier cristal del capítulo de
+ * vidrios pueden fijar la selección desde abajo (idea del dueño,
+ * 2026-08), y los chips de aquí la sobrescriben igual. En la home no
+ * hay proveedor y el componente enseña su lámina sin teñir, como
+ * siempre.
  *
  * Los chips son botones de verdad: se recorren con el tabulador y
  * responden al foco igual que al hover, no solo al ratón.
@@ -15,6 +21,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { WindowFrame } from "@/components/ui/WindowFrame";
+import { FramePreview, useColourStudio } from "@/components/colour/ColourStudio";
 import type { ColorFinish } from "@/data/types";
 import { cn } from "@/lib/cn";
 import { useI18n } from "@/components/layout/LocaleProvider";
@@ -29,22 +36,13 @@ type ColourPreviewProps = {
    * Existe porque la home usa la lámina de marca del dueño (abanico de
    * muestras con el logotipo), y multiplicar ESO por un RAL oscuro la
    * dejaba negra entera — se comprobó con renders antes de decidir. La
-   * página de colores conserva el render neutro que sí se tiñe.
+   * página de colores tiñe la foto real con su máscara.
    */
   tint?: boolean;
-  /**
-   * Máscara del velo de color: PNG en blanco (se tiñe) y negro (no).
-   *
-   * Llegó con la foto real (2026-08): multiplicar la imagen ENTERA
-   * teñía también el jardín tras el cristal y la pared — con el
-   * placeholder dibujado no se notaba, con una fotografía sí. La
-   * máscara delimita el conjunto de la ventana y deja fuera cristales,
-   * muro y repisa. Debe compartir proporción con la imagen (4:3): el
-   * velo va con maskSize 100%/100% sobre la misma caja.
-   */
-  tintMask?: string;
   /** Alt propio cuando la imagen no es el render teñible. */
   imageAlt?: string;
+  /** Ancla para la miniatura flotante del estudio. */
+  id?: string;
 };
 
 export function ColourPreview({
@@ -52,39 +50,41 @@ export function ColourPreview({
   renderImage,
   className,
   tint = true,
-  tintMask,
   imageAlt,
+  id,
 }: ColourPreviewProps) {
   const { pick, t } = useI18n();
-  const [activeId, setActiveId] = useState(colours[0]?.id);
-  const active = colours.find((colour) => colour.id === activeId) ?? colours[0];
+  const studio = useColourStudio();
+  const [localId, setLocalId] = useState(colours[0]?.id);
+
+  // Con estudio manda su selección (que puede venir de la carta de
+  // abajo); sin él, el estado local de los chips, como siempre.
+  const active =
+    (tint && studio?.colour) ||
+    colours.find((colour) => colour.id === localId) ||
+    colours[0];
+  const glass = tint ? (studio?.glass ?? null) : null;
 
   if (!active) return null;
 
+  const select = (colour: ColorFinish) => {
+    setLocalId(colour.id);
+    if (tint) studio?.setColour(colour);
+  };
+
   return (
-    <div className={cn("grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-12", className)}>
+    <div id={id} className={cn("grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-12", className)}>
       <div>
         <WindowFrame className="aspect-[4/3] w-full" mullion="vertical">
-          <Image
-            src={renderImage}
-            alt={imageAlt ?? t("home.colourRenderAlt")}
-            fill
-            sizes="(min-width: 1024px) 45vw, 100vw"
-            className="object-cover"
-          />
-          {tint && (
-            <div
-              aria-hidden
-              className="absolute inset-0 mix-blend-multiply motion-safe:transition-colors motion-safe:duration-500"
-              style={{
-                backgroundColor: active.hex,
-                ...(tintMask && {
-                  maskImage: `url(${tintMask})`,
-                  maskSize: "100% 100%",
-                  WebkitMaskImage: `url(${tintMask})`,
-                  WebkitMaskSize: "100% 100%",
-                }),
-              }}
+          {tint ? (
+            <FramePreview colour={active} glass={glass} sizes="(min-width: 1024px) 45vw, 100vw" className="absolute inset-0" />
+          ) : (
+            <Image
+              src={renderImage}
+              alt={imageAlt ?? t("home.colourRenderAlt")}
+              fill
+              sizes="(min-width: 1024px) 45vw, 100vw"
+              className="object-cover"
             />
           )}
         </WindowFrame>
@@ -98,7 +98,17 @@ export function ColourPreview({
           <span className="font-mono text-[0.6875rem] tracking-[0.18em] text-kamika-steel uppercase">
             {active.code}
           </span>
+          {glass && (
+            <span className="font-mono text-[0.6875rem] tracking-[0.18em] text-kamika-steel uppercase">
+              · {t("colours.glassEyebrow")}: {pick(glass.name)}
+            </span>
+          )}
         </p>
+        {/* Una madera o una cerámica no se pueden pintar con un velo
+            plano: el marco enseña su TONO medio y se dice claro. */}
+        {tint && active.image && (
+          <p className="mt-1 text-[0.75rem] text-kamika-ink/55">{t("colours.approxTone")}</p>
+        )}
       </div>
 
       <ul className="grid grid-cols-6 gap-2 sm:grid-cols-8 lg:grid-cols-7">
@@ -108,9 +118,9 @@ export function ColourPreview({
             <li key={colour.id}>
               <button
                 type="button"
-                onMouseEnter={() => setActiveId(colour.id)}
-                onFocus={() => setActiveId(colour.id)}
-                onClick={() => setActiveId(colour.id)}
+                onMouseEnter={() => select(colour)}
+                onFocus={() => select(colour)}
+                onClick={() => select(colour)}
                 aria-pressed={isActive}
                 className={cn(
                   "block aspect-square w-full rounded-kamika ring-1 ring-inset",

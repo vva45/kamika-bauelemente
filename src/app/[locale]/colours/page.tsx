@@ -8,6 +8,7 @@
 import type { Metadata } from "next";
 import { ColourGrid } from "@/components/colour/ColourGrid";
 import { ColourPreview } from "@/components/colour/ColourPreview";
+import { ColourStudioProvider, FloatingPreview } from "@/components/colour/ColourStudio";
 import { GlassChapter } from "@/components/colour/GlassChapter";
 import { ContactCta } from "@/components/layout/ContactCta";
 import { Reveal } from "@/components/ui/Reveal";
@@ -32,7 +33,7 @@ export default async function ColoursPage({ params }: PageProps<"/[locale]/colou
   setRequestLocale(locale);
 
   return (
-    <>
+    <ColourStudioProvider>
       <section className="mx-auto max-w-[1440px] px-5 py-12 md:px-8 md:py-16">
         <Reveal from="left">
           <SectionTitle
@@ -44,12 +45,14 @@ export default async function ColoursPage({ params }: PageProps<"/[locale]/colou
           />
         </Reveal>
 
-        {/* La foto real del dueño (2026-08) con su máscara: el color
-            cae solo sobre el marco, no sobre el jardín ni la pared. */}
+        {/* La foto real del dueño (2026-08): el velo con máscara tiñe
+            solo el marco. Dentro del ColourStudioProvider, cualquier
+            muestra de la carta y cualquier cristal del capítulo de
+            abajo cambian esta ventana (idea del dueño). */}
         <ColourPreview
+          id="live-preview"
           colours={COLORS.slice(0, 14)}
           renderImage="/images/colours/render.jpg"
-          tintMask="/images/colours/render-mask.png"
           className="mt-12"
         />
       </section>
@@ -75,7 +78,11 @@ export default async function ColoursPage({ params }: PageProps<"/[locale]/colou
           todos los catálogos con carta de vidrio, por catálogo. */}
       <GlassChapter />
 
+      {/* La miniatura flotante del estudio: aparece al elegir algo con
+          el marco fuera de pantalla, y tocarla sube a él. */}
+      <FloatingPreview anchorId="live-preview" />
+
       <ContactCta />
-    </>
+    </ColourStudioProvider>
   );
 }
