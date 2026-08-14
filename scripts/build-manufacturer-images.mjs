@@ -118,6 +118,13 @@ const MAKERS = [
   { file: "koemmerling", name: "Kömmerling", note: "PVC WINDOW SYSTEMS" },
   { file: "procural", name: "PROCURAL", note: "ALUMINIUM WINDOW SYSTEMS" },
   { file: "iglo", name: "IGLO", note: "PVC WINDOW SYSTEMS" },
+  // Y las de la gama de puertas de terraza (2026-08): mismas láminas,
+  // subtítulo de correderas. Antes llevaban fotos de ambiente — la de
+  // VEKA y la de PROCURAL venían del pliego del catálogo WIKĘD con el
+  // titular polaco impreso encima, y se veía. Fuera todas.
+  { file: "iglo-terrassen", name: "IGLO", note: "PVC SLIDING SYSTEMS" },
+  { file: "veka-schiebe", name: "VEKA", note: "PVC SLIDING SYSTEMS" },
+  { file: "procural-schiebe", name: "PROCURAL", note: "ALUMINIUM SLIDING SYSTEMS" },
 ];
 
 for (const maker of MAKERS) {

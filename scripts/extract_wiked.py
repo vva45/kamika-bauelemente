@@ -81,13 +81,11 @@ SYSTEMS = {
 # de marca para todas — las genera build-manufacturer-images.mjs.
 MANUFACTURER_CARDS = {}
 
-# Tarjetas de las correderas: la foto de ambiente del propio pliego
-# (media página izquierda), como las tarjetas IGLO — recorte directo,
-# sin lienzo blanco.
-LIFESTYLE_CARDS = {
-    "veka-schiebe": (7, [115]),
-    "procural-schiebe": (23, [539]),
-}
+# Las tarjetas de correderas (veka-schiebe, procural-schiebe) tampoco
+# salen de aquí: primero fueron la foto de ambiente del pliego, pero el
+# titular polaco impreso en la foto se colaba en la tarjeta y el dueño
+# pidió lámina tipográfica para todas — build-manufacturer-images.mjs.
+LIFESTYLE_CARDS = {}
 
 # ── Accesorios: hoja + xrefs → /images/models/wiked-pvc-alu/ ─────────
 ACCESSORIES = {
