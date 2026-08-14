@@ -456,18 +456,21 @@ a flat hex square. So:
 
 ### The colour studio (2026-08) — every sample is clickable
 
-The owner's idea, verbatim "una bestia de idea": every one of the ~400 swatches on /colours and
-every glass type in the glass chapter is a BUTTON. Clicking a colour tints the frame of the live
-preview; clicking a glass puts that sample into the window's two panes (the pane rectangles are
-measured pixel geometry, like the mask); clicking the active one again takes it off. The pieces
-(`ColourStudio.tsx`): a context shared by preview, chart and glass chapter, and a floating
-mini-preview that appears bottom-right when something is selected while the main frame is
-off-screen — tapping it scrolls back up. Two honesty rails: textured finishes (wood, ceramic,
-liquid metal) tint the frame with their MEDIAN tone only, and the preview says so
-(`colours.approxTone`) — a multiply veil cannot paint grain; and the glass panes show the
-manufacturer's printed sample as-is, plant or sculpture included, because that sample IS the
-honest demonstration. The home preview (untinted brand artwork) is untouched: no provider there,
-same behaviour as before.
+The owner's idea, verbatim "una bestia de idea": every one of the ~400 swatches on /colours is a
+BUTTON. Clicking a colour dresses the frame of the live preview; clicking the active one again
+takes it off; the selection is sticky (hovering other tiles changes nothing — only the 14 quick
+chips next to the frame keep their hover behaviour, on purpose). The pieces (`ColourStudio.tsx`):
+a context shared by preview and chart, a selected-tile badge (steel ring + check), and a floating
+mini-preview — near tile-size, per the owner — that appears bottom-right when something is
+selected while the main frame is off-screen; tapping it scrolls back up. How the frame is
+painted, all three rules from the owner: flat colours multiply their hex through the mask;
+TEXTURED finishes stretch their whole sample over the frame ("en plan paint") **rotated 90°** —
+charts print grain horizontally but the fitted product runs vertical (web tiles stay
+horizontal); and the ROKA Signature "Special" handle-surface photos (nickel, brass, bronzes) are
+NOT pasted — their sampled median hex paints the frame flat, "coger muestra y pintar". A glass
+try-on existed briefly and the owner removed it: some types looked right and some did not, and
+hand-tuning 62 crops is not worth it — the glass chapter is a plain gallery again, where the
+printed samples explain themselves. The home preview (untinted brand artwork) is untouched.
 
 ### The glass chapter (2026-08) — same idea, for glazing
 

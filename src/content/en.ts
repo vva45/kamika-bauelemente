@@ -260,7 +260,6 @@ export const en = {
     "The glass decides the character of the whole window or door: how much light comes in, and how much of the room stays private. These are the glass types printed in our catalogues — each sample is photographed with an object behind it, so you can judge the transparency for yourself.",
   "colours.glassCount": "{count} glass types",
   "colours.clickHint": "Click any sample to see it on the window in the live preview above.",
-  "colours.glassClickHint": "Click a glass type to put it into the window above — click again to take it out.",
   "colours.approxTone": "The sample is stretched over the frame — the grain scale is preview-only.",
   "colours.previewJump": "View in the frame",
 

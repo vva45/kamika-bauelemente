@@ -238,7 +238,6 @@ export const pl: Record<ContentKey, string> = {
     "Szkło decyduje o charakterze całego okna lub drzwi: ile światła wpuszcza i ile prywatności zostaje w środku. To rodzaje szkła z naszych katalogów — każda próbka jest sfotografowana z obiektem za szybą, żeby można było samemu ocenić przezierność.",
   "colours.glassCount": "{count} rodzajów szkła",
   "colours.clickHint": "Kliknij dowolną próbkę, aby zobaczyć ją na oknie w podglądzie na górze.",
-  "colours.glassClickHint": "Kliknij rodzaj szkła, aby wstawić go w okno na górze — ponowne kliknięcie go wyjmuje.",
   "colours.approxTone": "Próbka jest rozciągnięta na ramę — skala struktury jest tylko poglądowa.",
   "colours.previewJump": "Zobacz na oknie",
 

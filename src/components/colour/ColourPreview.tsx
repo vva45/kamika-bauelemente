@@ -21,7 +21,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { WindowFrame } from "@/components/ui/WindowFrame";
-import { FramePreview, useColourStudio } from "@/components/colour/ColourStudio";
+import { FramePreview, paintFlat, useColourStudio } from "@/components/colour/ColourStudio";
 import type { ColorFinish } from "@/data/types";
 import { cn } from "@/lib/cn";
 import { useI18n } from "@/components/layout/LocaleProvider";
@@ -63,7 +63,6 @@ export function ColourPreview({
     (tint && studio?.colour) ||
     colours.find((colour) => colour.id === localId) ||
     colours[0];
-  const glass = tint ? (studio?.glass ?? null) : null;
 
   if (!active) return null;
 
@@ -77,7 +76,7 @@ export function ColourPreview({
       <div>
         <WindowFrame className="aspect-[4/3] w-full" mullion="vertical">
           {tint ? (
-            <FramePreview colour={active} glass={glass} sizes="(min-width: 1024px) 45vw, 100vw" className="absolute inset-0" />
+            <FramePreview colour={active} sizes="(min-width: 1024px) 45vw, 100vw" className="absolute inset-0" />
           ) : (
             <Image
               src={renderImage}
@@ -98,15 +97,11 @@ export function ColourPreview({
           <span className="font-mono text-[0.6875rem] tracking-[0.18em] text-kamika-steel uppercase">
             {active.code}
           </span>
-          {glass && (
-            <span className="font-mono text-[0.6875rem] tracking-[0.18em] text-kamika-steel uppercase">
-              · {t("colours.glassEyebrow")}: {pick(glass.name)}
-            </span>
-          )}
         </p>
-        {/* Una madera o una cerámica no se pueden pintar con un velo
-            plano: el marco enseña su TONO medio y se dice claro. */}
-        {tint && active.image && (
+        {/* Solo cuando la textura va estirada de verdad; los "Special"
+            del Signature se pintan planos con su color muestreado y no
+            necesitan aviso. */}
+        {tint && !paintFlat(active) && (
           <p className="mt-1 text-[0.75rem] text-kamika-ink/55">{t("colours.approxTone")}</p>
         )}
       </div>

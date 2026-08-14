@@ -238,7 +238,6 @@ export const de: Record<ContentKey, string> = {
     "Das Glas entscheidet über den Charakter des ganzen Fensters oder der Tür: wie viel Licht hereinkommt und wie viel vom Raum privat bleibt. Das sind die Glasarten aus unseren Katalogen — jede Musterfläche ist mit einem Objekt dahinter fotografiert, damit Sie die Transparenz selbst beurteilen können.",
   "colours.glassCount": "{count} Glasarten",
   "colours.clickHint": "Klicken Sie eine Musterfläche an, um sie am Fenster in der Live-Vorschau oben zu sehen.",
-  "colours.glassClickHint": "Klicken Sie eine Glasart an, um sie in das Fenster oben einzusetzen — nochmal klicken nimmt sie wieder heraus.",
   "colours.approxTone": "Die Musterfläche ist über den Rahmen gestreckt — der Maßstab der Struktur dient nur der Vorschau.",
   "colours.previewJump": "Am Fenster ansehen",
 
