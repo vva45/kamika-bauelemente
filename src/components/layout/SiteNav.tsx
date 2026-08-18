@@ -292,7 +292,7 @@ export function SiteNav({ links, categories, phone, phoneHref }: SiteNavProps) {
                 transition={{ duration: 0.45, ease: EASE }}
                 className="fixed inset-0 z-100 flex flex-col bg-kamika-paper lg:hidden"
               >
-                <div className="flex h-16 shrink-0 items-center justify-end border-b border-kamika-mist px-5">
+                <div className="flex h-12 shrink-0 items-center justify-end border-b border-kamika-mist px-5">
                   <button
                     type="button"
                     onClick={() => setMenuOpen(false)}
@@ -303,17 +303,26 @@ export function SiteNav({ links, categories, phone, phoneHref }: SiteNavProps) {
                   </button>
                 </div>
 
-                {/* Compacto a propósito: en una pantalla de 360×640 las
-                    ocho gamas y los cuatro enlaces tienen que caber sin
-                    hacer scroll dentro del menú. */}
-                <div className="flex-1 overflow-y-auto overscroll-contain px-5 py-6">
+                {/* Compacto para que gamas Y enlaces secundarios quepan
+                    juntos en un móvil normal — petición del dueño: los
+                    "Catalogues/Projects/Colours/About" tienen que verse
+                    debajo de Accessories en cualquier punto de la web.
+                    Cuando la pantalla es más baja que la lista (barra
+                    del navegador desplegada), manda el scroll interno:
+                    `data-lenis-prevent` saca este panel de las garras
+                    de Lenis, que aun parado se traga los gestos — sin
+                    el atributo, el menú no se podía desplazar. */}
+                <div
+                  data-lenis-prevent
+                  className="flex-1 overflow-y-auto overscroll-contain px-5 py-3"
+                >
                   <p className="eyebrow">{t("nav.products")}</p>
-                  <ul className="mt-4 grid gap-1">
+                  <ul className="mt-2 grid">
                     {categories.map((category) => (
                       <li key={category.href}>
                         <Link
                           href={category.href}
-                          className="font-display block py-1.5 text-xl font-medium tracking-[-0.02em] text-kamika-ink sm:py-2 sm:text-2xl"
+                          className="font-display block py-[0.22rem] text-[1.0625rem] font-medium tracking-[-0.02em] text-kamika-ink sm:py-2 sm:text-2xl"
                         >
                           {category.label}
                         </Link>
@@ -335,10 +344,13 @@ export function SiteNav({ links, categories, phone, phoneHref }: SiteNavProps) {
                     ))}
                   </ul>
 
-                  <ul className="mt-6 grid gap-1 border-t border-kamika-mist pt-5">
+                  <ul className="mt-3 grid border-t border-kamika-mist pt-2">
                     {links.map((link) => (
                       <li key={link.href}>
-                        <Link href={link.href} className="block py-2 text-base text-kamika-ink/80">
+                        <Link
+                          href={link.href}
+                          className="block py-[0.3rem] text-[0.9375rem] text-kamika-ink/80"
+                        >
                           {link.label}
                         </Link>
                       </li>
@@ -346,16 +358,18 @@ export function SiteNav({ links, categories, phone, phoneHref }: SiteNavProps) {
                   </ul>
                 </div>
 
-                <div className="shrink-0 border-t border-kamika-mist px-5 py-6">
-                  <LanguageSwitcher className="mb-4" />
-                  <a
-                    href={phoneHref}
-                    className="flex items-center gap-2 font-mono text-sm text-kamika-steel"
-                  >
-                    <PhoneIcon className="size-4" />
-                    {phone}
-                  </a>
-                  <ButtonLink href={routes.contact} className="mt-4 w-full">
+                <div className="shrink-0 border-t border-kamika-mist px-5 py-3">
+                  <div className="mb-2.5 flex items-center justify-between gap-4">
+                    <LanguageSwitcher />
+                    <a
+                      href={phoneHref}
+                      className="flex items-center gap-2 font-mono text-[0.8125rem] text-kamika-steel"
+                    >
+                      <PhoneIcon className="size-4" />
+                      {phone}
+                    </a>
+                  </div>
+                  <ButtonLink href={routes.contact} className="w-full">
                     {t("nav.contact")}
                   </ButtonLink>
                 </div>
