@@ -28,6 +28,8 @@ export const localBusinessSchema = () => ({
   "@context": "https://schema.org",
   "@type": "HomeAndConstructionBusiness",
   "@id": `${SITE_URL}#business`,
+  // Horario confirmado por el dueño (2026-08), en gramática schema.org.
+  openingHours: COMPANY.openingHoursSchema,
   name: COMPANY.tradeNameFull,
   legalName: COMPANY.legalName,
   founder: { "@type": "Person", name: COMPANY.owner },

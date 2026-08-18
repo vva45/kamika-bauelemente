@@ -16,7 +16,7 @@
  * publicar el sitio. Faltan además datos del dueño (USt-IdNr., cámara
  * profesional): ver CONTENT.md.
  */
-import { COMPANY, companyAddressLine } from "@/data/company";
+import { COMPANY, companyLegalAddressLine } from "@/data/company";
 
 export type LegalBlock = {
   heading: string;
@@ -37,13 +37,18 @@ export const LEGAL_UPDATED_LABEL = `Stand: ${LEGAL_UPDATED}`;
 export const IMPRINT_BLOCKS: LegalBlock[] = [
   // EN: Legally required identification of the site operator under § 5
   // DDG (the law that replaced the TMG in 2024): legal name of the
-  // business, its form (sole trader) and its postal address.
+  // business, its form (sole trader) and its postal address. The
+  // address here is the LEGAL one the owner dictated for the Impressum
+  // (Sigmaringer Straße 10, August 2026) — it differs from the contact
+  // address on purpose until he confirms which is which. The owner's
+  // dictated text names just "Kamika"; the sole trader's personal name
+  // stays because § 5 DDG requires it — for the lawyer to settle.
   {
     heading: "Angaben gemäß § 5 DDG",
     paragraphs: [
+      COMPANY.tradeName,
       COMPANY.legalName,
-      `${COMPANY.tradeNameFull}`,
-      `${companyAddressLine}`,
+      `${companyLegalAddressLine}`,
       COMPANY.country,
     ],
   },
@@ -136,14 +141,14 @@ export const IMPRINT_BLOCKS: LegalBlock[] = [
 
 export const PRIVACY_BLOCKS: LegalBlock[] = [
   // EN: Who is responsible for the data processing — the controller
-  // under Art. 4(7) GDPR, with the same address and contact details as
-  // the imprint.
+  // under Art. 4(7) GDPR, with the same LEGAL address and contact
+  // details as the imprint.
   {
     heading: "1. Verantwortlicher",
     paragraphs: [
       "Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:",
       `${COMPANY.legalName}, ${COMPANY.owner}`,
-      `${companyAddressLine}, ${COMPANY.country}`,
+      `${companyLegalAddressLine}, ${COMPANY.country}`,
       `Telefon: ${COMPANY.phone} · E-Mail: ${COMPANY.email}`,
     ],
   },

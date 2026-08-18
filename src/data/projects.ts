@@ -1,7 +1,7 @@
 /**
  * OBRAS REALES DE KAMIKA. Ni una inventada.
  *
- * Las diecisiete entradas salen de las fotos que mandó el dueño (agosto
+ * Las quince entradas salen de las fotos que mandó el dueño (agosto
  * de 2026) más lo que él dijo de cada una: ciudad, mes y qué se montó.
  * Los seis proyectos de ejemplo que había aquí se borraron el mismo día,
  * con sus imágenes.
@@ -11,9 +11,10 @@
  * marcas si no está impreso o dicho — un proyecto es la prueba de que el
  * trabajo existe, y una frase inventada se la carga entera.
  *
- * Las veintiuna fotos del lote están colocadas: las 06 y 07 llegaron
- * después (Hechingen), y la 09 se unió a la 13 porque son la misma
- * casa — lo confirmó el dueño.
+ * Las fotos 06 y 07 (Hechingen: balconeras y un portal) estuvieron
+ * publicadas y el dueño las RETIRÓ de la web en agosto de 2026 — los
+ * originales siguen en source-photos/, por si cambian de idea. La 09
+ * se unió a la 13 porque son la misma casa; lo confirmó él.
  */
 import type { Project } from "./types";
 
@@ -396,68 +397,6 @@ export const PROJECTS: Project[] = [
           en: "Anthracite entrance door with a stainless pull handle in a stone-clad porch",
           de: "Anthrazitfarbene Haustür mit Edelstahl-Stoßgriff im steinverkleideten Windfang",
           pl: "Antracytowe drzwi wejściowe ze stalowym pochwytem we wnęce obłożonej kamieniem",
-        },
-      },
-    ],
-    products: [],
-  },
-  {
-    /**
-     * El mes lo puso el dueño a ojo —"pon diciembre, que hay nieve"— y
-     * es suyo el dato, no una invención de la web: no hay nada en la
-     * foto que lo contradiga y él es quien hizo la obra.
-     */
-    // El dueño precisó en agosto de 2026 que son PUERTAS de balcón, no
-    // ventanas: gama, título y resumen se corrigieron con su palabra
-    // (la primera versión decía "Balkonfenster").
-    id: "hechingen-balkontueren",
-    title: {
-      en: "Balcony doors, Hechingen",
-      de: "Balkontüren, Hechingen",
-      pl: "Drzwi balkonowe, Hechingen",
-    },
-    location: "Hechingen",
-    year: 2025,
-    categories: ["patio-doors"],
-    summary: {
-      en: "Balcony doors in a dark timber tone — a three-part element photographed from inside in December 2025, with snow still on the roof opposite. The middle leaf opens onto the balcony, the outer two are fixed.",
-      de: "Balkontüren in dunklem Holzton — ein dreiteiliges Element, im Dezember 2025 von innen aufgenommen, mit Schnee auf dem gegenüberliegenden Dach. Der mittlere Flügel öffnet zum Balkon, die beiden äußeren sind fest.",
-      pl: "Drzwi balkonowe w ciemnym odcieniu drewna — trzyczęściowy element sfotografowany od środka w grudniu 2025, ze śniegiem na dachu naprzeciwko. Skrzydło środkowe otwiera się na balkon, dwa boczne są stałe.",
-    },
-    images: [
-      {
-        src: "/images/projects/hechingen-balkontueren-1.jpg",
-        alt: {
-          en: "Three-part balcony doors in a dark timber tone, seen from inside",
-          de: "Dreiteilige Balkontüren in dunklem Holzton, von innen gesehen",
-          pl: "Trzyczęściowe drzwi balkonowe w ciemnym drewnie, widziane od środka",
-        },
-      },
-    ],
-    products: [],
-  },
-  {
-    id: "hechingen-hauseingang",
-    title: {
-      en: "House entrance, Hechingen",
-      de: "Hauseingang, Hechingen",
-      pl: "Wejście do domu, Hechingen",
-    },
-    location: "Hechingen",
-    year: 2025,
-    categories: ["entrance-doors"],
-    summary: {
-      en: "An entrance in a light timber tone: the leaf with vertical battens, a fixed side light in textured glass and the letter plate set into it. Fitted in September 2025.",
-      de: "Ein Hauseingang in hellem Holzton: das Türblatt mit senkrechten Leisten, ein festes Seitenteil in Strukturglas und der Briefeinwurf darin. Montiert im September 2025.",
-      pl: "Wejście w jasnym odcieniu drewna: skrzydło z pionowymi listwami, stałe doświetle ze szkła strukturalnego i wrzutnia na listy w nim. Montaż we wrześniu 2025.",
-    },
-    images: [
-      {
-        src: "/images/projects/hechingen-hauseingang-1.jpg",
-        alt: {
-          en: "Open entrance door in light timber with a textured-glass side light and a letter plate",
-          de: "Geöffnete Haustür in hellem Holzton mit Strukturglas-Seitenteil und Briefeinwurf",
-          pl: "Otwarte drzwi wejściowe w jasnym drewnie z doświetlem ze szkła strukturalnego i wrzutnią",
         },
       },
     ],

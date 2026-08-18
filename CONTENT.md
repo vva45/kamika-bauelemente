@@ -376,16 +376,17 @@ proof that the work happened; one invented sentence in it discredits the other f
 
 **The photo batch (2026-08).** The owner uploaded 21 photos of finished work, renamed
 `01.jpeg` … `21.jpeg` with a numbered contact sheet at `00-INDICE.jpg` so they could be referred
-to by number in chat. He went through them by number and ALL 21 are now placed: the copies the
-site uses live at `public/images/projects/{project-id}-N.jpg`. The numbered originals moved to
+to by number in chat. He went through them by number; the copies the site uses live at
+`public/images/projects/{project-id}-N.jpg`. The numbered originals moved to
 **`source-photos/projects-originales/`, OUTSIDE `public/`** — owner's instruction: only the
 placed, edited versions may be publicly reachable; the originals stay in the repo but are not
-served. Photos 06 and 07 were the last two in: 06 is the Hechingen **balcony doors** of December
-2025 (`hechingen-balkontueren` — he first said windows, then corrected to doors, and the project
-was retitled and recategorised on his word), 07 the light-timber Hechingen entrance of September
-2025 (`hechingen-hauseingang`). Still worth asking him one day: 09 and 13 share what looks like
-the same orange awning, and 19 and 20 the same blue-and-white balcony — each pair may be one
-house photographed twice.
+served. **Photos 06 and 07 went up and came down again**: the Hechingen balcony doors and the
+light-timber Hechingen entrance were published as projects and the owner then asked to remove
+both from the site (August 2026) — deleted from `projects.ts` with their public images; the
+originals remain in `source-photos/` if he ever changes his mind. That leaves **15 projects
+online**. Still worth asking him one day: 09 and 13 share what looks like the same orange
+awning, and 19 and 20 the same blue-and-white balcony — each pair may be one house photographed
+twice.
 
 ~~Photo 08 carried a "Contenido generado por IA" watermark~~ — **resolved the same day**: it was
 flagged to the owner, who uploaded the original camera file of the same door, and that is what
