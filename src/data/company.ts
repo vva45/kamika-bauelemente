@@ -17,21 +17,18 @@ export const COMPANY = {
   /** Titular / Inhaber. */
   owner: "Dominik Kamieński",
 
-  street: "Thomasstraße 11",
+  /**
+   * ÚNICA dirección de la empresa, confirmada por el dueño (agosto
+   * 2026): "cambia la dirección a Sigmaringer Straße 10, que aún hay
+   * sitios donde sale Thomasstraße 11". La Thomasstraße era el dato
+   * inicial; durante unos días convivieron las dos (contacto vs.
+   * Impressum) hasta que él zanjó que vale la Sigmaringer para todo.
+   */
+  street: "Sigmaringer Straße 10",
   postalCode: "72379",
   city: "Hechingen",
   country: "Deutschland",
   countryCode: "DE",
-
-  /**
-   * Dirección LEGAL del Impressum, dictada por el dueño (agosto 2026):
-   * "Kamika, Sigmaringer Straße 10, 72379 Hechingen". OJO: difiere de
-   * la dirección de contacto de arriba (Thomasstraße 11), que es la
-   * que dio para la página de contacto y el mapa. Se le preguntó cuál
-   * de las dos vale para qué; hasta su respuesta, el Impressum usa la
-   * que dictó para el Impressum y el contacto no se toca.
-   */
-  legalStreet: "Sigmaringer Straße 10",
 
   email: "kamika.bauelemente@gmail.com",
   phone: "+49 162 774 2992",
@@ -66,9 +63,6 @@ export const COMPANY = {
 
 /** Dirección en una línea, como se escribe en Alemania. */
 export const companyAddressLine = `${COMPANY.street}, ${COMPANY.postalCode} ${COMPANY.city}`;
-
-/** La dirección del Impressum, en una línea. */
-export const companyLegalAddressLine = `${COMPANY.legalStreet}, ${COMPANY.postalCode} ${COMPANY.city}`;
 
 /** `tel:` sin espacios, para que el móvil pueda marcar. */
 export const companyPhoneHref = `tel:${COMPANY.phone.replace(/\s+/g, "")}`;

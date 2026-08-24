@@ -16,7 +16,7 @@
  * publicar el sitio. Faltan además datos del dueño (USt-IdNr., cámara
  * profesional): ver CONTENT.md.
  */
-import { COMPANY, companyLegalAddressLine } from "@/data/company";
+import { COMPANY, companyAddressLine } from "@/data/company";
 
 export type LegalBlock = {
   heading: string;
@@ -37,18 +37,17 @@ export const LEGAL_UPDATED_LABEL = `Stand: ${LEGAL_UPDATED}`;
 export const IMPRINT_BLOCKS: LegalBlock[] = [
   // EN: Legally required identification of the site operator under § 5
   // DDG (the law that replaced the TMG in 2024): legal name of the
-  // business, its form (sole trader) and its postal address. The
-  // address here is the LEGAL one the owner dictated for the Impressum
-  // (Sigmaringer Straße 10, August 2026) — it differs from the contact
-  // address on purpose until he confirms which is which. The owner's
-  // dictated text names just "Kamika"; the sole trader's personal name
-  // stays because § 5 DDG requires it — for the lawyer to settle.
+  // business, its form (sole trader) and its postal address — the ONE
+  // company address (Sigmaringer Straße 10), confirmed by the owner in
+  // August 2026 for the whole site. The owner's dictated text names
+  // just "Kamika"; the sole trader's personal name stays because § 5
+  // DDG requires it — for the lawyer to settle.
   {
     heading: "Angaben gemäß § 5 DDG",
     paragraphs: [
       COMPANY.tradeName,
       COMPANY.legalName,
-      `${companyLegalAddressLine}`,
+      `${companyAddressLine}`,
       COMPANY.country,
     ],
   },
@@ -148,7 +147,7 @@ export const PRIVACY_BLOCKS: LegalBlock[] = [
     paragraphs: [
       "Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:",
       `${COMPANY.legalName}, ${COMPANY.owner}`,
-      `${companyLegalAddressLine}, ${COMPANY.country}`,
+      `${companyAddressLine}, ${COMPANY.country}`,
       `Telefon: ${COMPANY.phone} · E-Mail: ${COMPANY.email}`,
     ],
   },
