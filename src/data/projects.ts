@@ -1,7 +1,7 @@
 /**
  * OBRAS REALES DE KAMIKA. Ni una inventada.
  *
- * Las quince entradas salen de las fotos que mandó el dueño (agosto
+ * Las dieciséis entradas salen de las fotos que mandó el dueño (agosto
  * de 2026) más lo que él dijo de cada una: ciudad, mes y qué se montó.
  * Los seis proyectos de ejemplo que había aquí se borraron el mismo día,
  * con sus imágenes.
@@ -19,6 +19,64 @@
 import type { Project } from "./types";
 
 export const PROJECTS: Project[] = [
+  {
+    /**
+     * La obra más reciente (agosto 2026): SOLO se montaron las
+     * ventanas — el revestimiento verde que sale en todas las fotos lo
+     * ponía otra empresa a la vez, lo dijo el dueño, y por eso el
+     * texto lo menciona como contexto sin atribuirlo.
+     */
+    id: "hechingen-fenstertausch",
+    title: {
+      en: "Window replacement, Hechingen",
+      de: "Fenstertausch, Hechingen",
+      pl: "Wymiana okien, Hechingen",
+    },
+    location: "Hechingen",
+    year: 2026,
+    categories: ["windows"],
+    summary: {
+      en: "New windows in anthracite for a single-storey home: a wide three-part band towards the garden and a two-part element in the gable, fitted in August 2026. The photos were taken during the façade renovation — the new cladding was still going up around the freshly set frames.",
+      de: "Neue Fenster in Anthrazit für ein eingeschossiges Wohnhaus: ein breites dreiteiliges Band zum Garten und ein zweiteiliges Element im Giebel, montiert im August 2026. Die Fotos entstanden während der Fassadensanierung — die neue Verkleidung wuchs noch um die frisch gesetzten Rahmen.",
+      pl: "Nowe okna w antracycie dla parterowego domu: szerokie trzyczęściowe pasmo od ogrodu i dwuczęściowy element w szczycie, montaż w sierpniu 2026. Zdjęcia powstały w trakcie renowacji elewacji — nowa okładzina dopiero rosła wokół świeżo osadzonych ram.",
+    },
+    images: [
+      {
+        src: "/images/projects/hechingen-fenstertausch-1.jpg",
+        alt: {
+          en: "Two-part anthracite window in the finished gable wall with pale-green cladding",
+          de: "Zweiteiliges Anthrazit-Fenster in der fertigen Giebelwand mit hellgrüner Verkleidung",
+          pl: "Dwuczęściowe antracytowe okno w wykończonej ścianie szczytowej z jasnozieloną okładziną",
+        },
+      },
+      {
+        src: "/images/projects/hechingen-fenstertausch-2.jpg",
+        alt: {
+          en: "Long façade with the wide three-part window band during the cladding work",
+          de: "Lange Fassade mit dem breiten dreiteiligen Fensterband während der Verkleidungsarbeiten",
+          pl: "Długa elewacja z szerokim trzyczęściowym pasmem okien w trakcie prac okładzinowych",
+        },
+      },
+      {
+        src: "/images/projects/hechingen-fenstertausch-3.jpg",
+        alt: {
+          en: "Wide anthracite window seen across the freshly clad wall",
+          de: "Breites Anthrazit-Fenster über die frisch verkleidete Wand gesehen",
+          pl: "Szerokie antracytowe okno widziane wzdłuż świeżo obłożonej ściany",
+        },
+      },
+      {
+        src: "/images/projects/hechingen-fenstertausch-4.jpg",
+        alt: {
+          en: "Close-up of a window corner with its white trim against the cladding",
+          de: "Nahaufnahme einer Fensterecke mit weißer Zierleiste an der Verkleidung",
+          pl: "Zbliżenie narożnika okna z białą listwą na tle okładziny",
+        },
+      },
+    ],
+    products: [],
+    featured: true,
+  },
   {
     id: "new-build-altensteig",
     title: {
