@@ -111,6 +111,10 @@ export const en = {
   "home.projectsTitle": "Recent installations",
   "home.projectsIntro":
     "What was asked for, what was fitted, and where. These are the reference for what we can do.",
+  // Banner del programa de distribuidores ROKA (pedido del dueño).
+  "home.rokaEyebrow": "Our entrance-door partner",
+  "home.rokaBody":
+    "All ROKA collections on the official partner page — Signature, Steel, Select, Essential and Function, always up to date.",
   "home.coloursEyebrow": "Colours and finishes",
   "home.coloursTitle": "RAL, wood decor and anodised",
   "home.coloursIntro":

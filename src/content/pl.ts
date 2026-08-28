@@ -110,6 +110,10 @@ export const pl: Record<ContentKey, string> = {
   "home.projectsEyebrow": "Wykonane prace",
   "home.projectsTitle": "Ostatnie montaże",
   "home.projectsIntro": "Czego oczekiwał klient, co zamontowano i gdzie. To nasza wizytówka.",
+  // Banner del programa de distribuidores ROKA (pedido del dueño).
+  "home.rokaEyebrow": "Nasz partner od drzwi zewnętrznych",
+  "home.rokaBody":
+    "Wszystkie kolekcje ROKA na oficjalnej stronie partnerskiej — Signature, Steel, Select, Essential i Function, zawsze aktualne.",
   "home.coloursEyebrow": "Kolory i wykończenia",
   "home.coloursTitle": "RAL, dekory drewna i anodowane",
   "home.coloursIntro": "Ramy mogą mieć inny kolor wewnątrz i na zewnątrz — od RAL przez okleiny drewnopodobne po anodowane, każdy z oryginalnym kodem.",

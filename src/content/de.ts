@@ -110,6 +110,10 @@ export const de: Record<ContentKey, string> = {
   "home.projectsEyebrow": "Ausgeführte Arbeiten",
   "home.projectsTitle": "Aktuelle Montagen",
   "home.projectsIntro": "Was gewünscht war, was eingebaut wurde, und wo. Das ist die Referenz für das, was wir können.",
+  // Banner del programa de distribuidores ROKA (pedido del dueño).
+  "home.rokaEyebrow": "Unser Haustüren-Partner",
+  "home.rokaBody":
+    "Alle ROKA-Kollektionen auf der offiziellen Partnerseite — Signature, Steel, Select, Essential und Function, immer aktuell.",
   "home.coloursEyebrow": "Farben und Oberflächen",
   "home.coloursTitle": "RAL, Holzdekor und eloxiert",
   "home.coloursIntro": "Rahmen können innen und außen unterschiedlich beschichtet werden — von RAL über Holzdekore bis eloxiert, jede Farbe mit ihrem Originalcode.",

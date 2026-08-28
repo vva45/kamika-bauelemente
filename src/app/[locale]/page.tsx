@@ -13,6 +13,7 @@ import { CategoryCard } from "@/components/category/CategoryCard";
 import { CatalogueCard } from "@/components/catalogue/CatalogueCard";
 import { ColourPreview } from "@/components/colour/ColourPreview";
 import { Hero } from "@/components/home/Hero";
+import { RokaPartnerBanner } from "@/components/home/RokaPartnerBanner";
 import { ContactCta } from "@/components/layout/ContactCta";
 import { ProjectCard } from "@/components/project/ProjectCard";
 import { ButtonLink } from "@/components/ui/Button";
@@ -136,6 +137,9 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
           ))}
         </RevealGroup>
       </section>
+
+      {/* ── Partner ROKA: banner del programa de distribuidores ── */}
+      <RokaPartnerBanner />
 
       {/* ── Proyectos ────────────────────────────────────────── */}
       <section className="border-y border-kamika-mist bg-kamika-blue-50">

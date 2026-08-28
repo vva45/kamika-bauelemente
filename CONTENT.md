@@ -290,7 +290,13 @@ Self-hosted, never linked to a manufacturer's website — with ONE owner-mandate
 `source-catalogues/ROKA_Landingpage_Installationshandbuch_DE.pdf`, contact
 marketing@rokadoors.com) and the owner explicitly asked for the link. The nav now carries a
 "ROKA Doors ↗" item — their "Option 2" — opening roka-doors.com in a NEW TAB so the Kamika site
-stays open behind it (`rokaPartnerUrl` in `data/company.ts`). Every other manufacturer stays
+stays open behind it (`rokaPartnerUrl` in `data/company.ts`). The home page additionally carries
+their "Option 1", a partner banner (`components/home/RokaPartnerBanner.tsx`, placed between the
+catalogues and projects sections) — same link, new tab, built in the house style with three real
+door renders from the self-hosted catalogues (the Select one is a copy at
+`public/images/home/roka-banner-select.jpg` with its grey background whitened to match the white
+tiles). To remove the banner, delete its line in `app/[locale]/page.tsx`; the nav link is
+independent. Every other manufacturer stays
 unlinked and every PDF stays self-hosted. Still worth doing: asking ROKA for the catalogues of
 the three collections the site does not carry yet (Steel, Essential, Function) — a draft email
 was handed to the owner.
