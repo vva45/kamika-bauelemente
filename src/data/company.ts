@@ -82,6 +82,23 @@ export const companyWhatsAppHref = `https://wa.me/${whatsappNumber}`;
 export const companyWhatsAppWith = (text: string) =>
   `${companyWhatsAppHref}?text=${encodeURIComponent(text)}`;
 
+/**
+ * LA excepción a la regla "nunca se enlaza la web de un fabricante".
+ *
+ * ROKA tiene un programa de landing para distribuidores (agosto 2026):
+ * una página pensada para enlazarse desde la web del dealer, escrita
+ * en voz de partner. El dueño pidió expresamente integrar el enlace
+ * ("here is the link to our supplier that you can integrate"), y sus
+ * instrucciones —Menüpunkt „ROKA Doors"— están guardadas en
+ * source-catalogues/ROKA_Landingpage_Installationshandbuch_DE.pdf.
+ * Se abre SIEMPRE en pestaña nueva: la web de Kamika queda detrás.
+ *
+ * El resto de la política no cambia: ningún otro fabricante se enlaza
+ * y los catálogos siguen autoalojados.
+ */
+export const rokaPartnerUrl = (locale: string) =>
+  locale === "de" ? "https://roka-doors.com/de/" : "https://roka-doors.com/";
+
 const fullAddress = `${COMPANY.street}, ${COMPANY.postalCode} ${COMPANY.city}, ${COMPANY.country}`;
 
 /** Enlace a Google Maps: abrir la ficha del negocio en pestaña nueva. */

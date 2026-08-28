@@ -24,6 +24,9 @@ export const en = {
   "nav.projects": "Projects",
   "nav.colours": "Colours",
   "nav.about": "About",
+  // Marca del proveedor, no se traduce; enlace externo del programa
+  // de partners de ROKA (ver rokaPartnerUrl en data/company.ts).
+  "nav.rokaDoors": "ROKA Doors",
   "nav.contact": "Contact",
   "nav.allCategories": "All categories",
 

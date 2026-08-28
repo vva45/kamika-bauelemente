@@ -26,6 +26,9 @@ export const pl: Record<ContentKey, string> = {
   "nav.projects": "Realizacje",
   "nav.colours": "Kolory",
   "nav.about": "O nas",
+  // Marca del proveedor, no se traduce; enlace externo del programa
+  // de partners de ROKA (ver rokaPartnerUrl en data/company.ts).
+  "nav.rokaDoors": "ROKA Doors",
   "nav.contact": "Kontakt",
   "nav.allCategories": "Wszystkie kategorie",
 

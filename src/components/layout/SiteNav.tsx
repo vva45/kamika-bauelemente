@@ -14,6 +14,7 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { ButtonLink } from "@/components/ui/Button";
+import { rokaPartnerUrl } from "@/data/company";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { ChevronDownIcon, CloseIcon, MenuIcon, PhoneIcon } from "@/components/ui/icons";
 import { useSmoothScroll } from "@/components/layout/SmoothScroll";
@@ -37,7 +38,7 @@ type SiteNavProps = {
 const EASE = [0.16, 1, 0.3, 1] as const;
 
 export function SiteNav({ links, categories, phone, phoneHref }: SiteNavProps) {
-  const { t, routes } = useI18n();
+  const { t, routes, locale } = useI18n();
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
@@ -247,6 +248,21 @@ export function SiteNav({ links, categories, phone, phoneHref }: SiteNavProps) {
               </Link>
             </li>
           ))}
+          {/* El enlace al proveedor — la Option 2 de sus instrucciones
+              y petición expresa del dueño. Externo y en pestaña nueva
+              a propósito: la web de Kamika queda abierta detrás. */}
+          <li>
+            <a
+              href={rokaPartnerUrl(locale)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 py-2 text-sm font-medium text-kamika-ink/65 motion-safe:transition-colors hover:text-kamika-ink"
+            >
+              {t("nav.rokaDoors")}
+              <span aria-hidden className="text-[0.75rem]">↗</span>
+              <span className="sr-only">({t("a11y.opensInNewTab")})</span>
+            </a>
+          </li>
         </ul>
       </nav>
 
@@ -355,6 +371,18 @@ export function SiteNav({ links, categories, phone, phoneHref }: SiteNavProps) {
                         </Link>
                       </li>
                     ))}
+                    <li>
+                      <a
+                        href={rokaPartnerUrl(locale)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1 py-[0.3rem] text-[0.9375rem] text-kamika-ink/80"
+                      >
+                        {t("nav.rokaDoors")}
+                        <span aria-hidden className="text-[0.75rem]">↗</span>
+                        <span className="sr-only">({t("a11y.opensInNewTab")})</span>
+                      </a>
+                    </li>
                   </ul>
                 </div>
 

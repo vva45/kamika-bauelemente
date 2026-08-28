@@ -285,7 +285,15 @@ appears on the site — same rule as every other brand.
 
 ## 2. PDFs
 
-Self-hosted, never linked to a manufacturer's website.
+Self-hosted, never linked to a manufacturer's website — with ONE owner-mandated exception
+(2026-08): ROKA runs a dealer-landing programme (their instructions live in
+`source-catalogues/ROKA_Landingpage_Installationshandbuch_DE.pdf`, contact
+marketing@rokadoors.com) and the owner explicitly asked for the link. The nav now carries a
+"ROKA Doors ↗" item — their "Option 2" — opening roka-doors.com in a NEW TAB so the Kamika site
+stays open behind it (`rokaPartnerUrl` in `data/company.ts`). Every other manufacturer stays
+unlinked and every PDF stays self-hosted. Still worth doing: asking ROKA for the catalogues of
+the three collections the site does not carry yet (Steel, Essential, Function) — a draft email
+was handed to the owner.
 
 | Status | Path                                         | What it is                                                                 | Who   |
 | ------ | -------------------------------------------- | -------------------------------------------------------------------------- | ----- |
