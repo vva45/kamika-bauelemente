@@ -2365,6 +2365,498 @@ export const CATALOGUE_MODELS: CatalogueModel[] = [
       }
     ]
   },
+  // ══ ROKA Essential + Function (extract_roka_essential_function.py) ══
+  {
+    "id": "essential-1",
+    "catalogue": "roka-essential-2025",
+    "name": "Essential 1",
+    "page": 6,
+    "image": "/images/models/roka-essential-2025/essential-1.jpg",
+    "specs": [
+      {
+        "label": "Ud value",
+        "value": "0.86 W/m²K"
+      },
+      {
+        "label": "Pull handle",
+        "value": "ES 40.1000 Edelstahl"
+      },
+      {
+        "label": "Glazing",
+        "value": "Thermofloat (außen), Satinato (mitte), Thermofloat (innen)"
+      },
+      {
+        "label": "Surface",
+        "value": "RAL 9016 matt oder Feinstruktur"
+      }
+    ]
+  },
+  {
+    "id": "essential-2",
+    "catalogue": "roka-essential-2025",
+    "name": "Essential 2",
+    "page": 6,
+    "image": "/images/models/roka-essential-2025/essential-2.jpg",
+    "specs": [
+      {
+        "label": "Ud value",
+        "value": "0.82 W/m²K"
+      },
+      {
+        "label": "Pull handle",
+        "value": "ES 40.1000 Edelstahl"
+      },
+      {
+        "label": "Glazing",
+        "value": "Thermofloat (außen), Satinato (mitte), Thermofloat (innen)"
+      },
+      {
+        "label": "Surface",
+        "value": "RAL 9007 matt oder Feinstruktur"
+      }
+    ]
+  },
+  {
+    "id": "essential-3",
+    "catalogue": "roka-essential-2025",
+    "name": "Essential 3",
+    "page": 6,
+    "image": "/images/models/roka-essential-2025/essential-3.jpg",
+    "specs": [
+      {
+        "label": "Ud value",
+        "value": "0.81 W/m²K"
+      },
+      {
+        "label": "Pull handle",
+        "value": "ES 40.1000 Edelstahl"
+      },
+      {
+        "label": "Glazing",
+        "value": "Thermofloat (außen), Satinato (mitte), Thermofloat (innen)"
+      },
+      {
+        "label": "Surface",
+        "value": "RAL 7021 matt oder Feinstruktur"
+      }
+    ]
+  },
+  {
+    "id": "essential-4",
+    "catalogue": "roka-essential-2025",
+    "name": "Essential 4",
+    "page": 6,
+    "image": "/images/models/roka-essential-2025/essential-4.jpg",
+    "specs": [
+      {
+        "label": "Ud value",
+        "value": "0.81 W/m²K"
+      },
+      {
+        "label": "Pull handle",
+        "value": "ES 40.1000 Edelstahl"
+      },
+      {
+        "label": "Glazing",
+        "value": "Thermofloat (außen), Satinato (mitte), Thermofloat (innen)"
+      },
+      {
+        "label": "Surface",
+        "value": "RAL 9007 matt oder Feinstruktur"
+      },
+      {
+        "label": "Applications",
+        "value": "Alunox Applikation flächenbündig eingelassen außen"
+      }
+    ]
+  },
+  {
+    "id": "essential-5",
+    "catalogue": "roka-essential-2025",
+    "name": "Essential 5",
+    "page": 7,
+    "image": "/images/models/roka-essential-2025/essential-5.jpg",
+    "specs": [
+      {
+        "label": "Ud value",
+        "value": "0.85 W/m²K"
+      },
+      {
+        "label": "Pull handle",
+        "value": "ES 40.1000 Edelstahl"
+      },
+      {
+        "label": "Glazing",
+        "value": "Thermofloat (außen), Satinato (mitte), Thermofloat (innen)"
+      },
+      {
+        "label": "Surface",
+        "value": "RAL 9005 matt oder Feinstruktur"
+      }
+    ]
+  },
+  {
+    "id": "essential-6",
+    "catalogue": "roka-essential-2025",
+    "name": "Essential 6",
+    "page": 7,
+    "image": "/images/models/roka-essential-2025/essential-6.jpg",
+    "specs": [
+      {
+        "label": "Ud value",
+        "value": "0.79 W/m²K"
+      },
+      {
+        "label": "Pull handle",
+        "value": "ES 40.1000 Edelstahl"
+      },
+      {
+        "label": "Surface",
+        "value": "RAL 9005 matt oder Feinstruktur"
+      },
+      {
+        "label": "Relief grooves",
+        "value": "5mm außen"
+      }
+    ]
+  },
+  {
+    "id": "essential-7",
+    "catalogue": "roka-essential-2025",
+    "name": "Essential 7",
+    "page": 7,
+    "image": "/images/models/roka-essential-2025/essential-7.jpg",
+    "specs": [
+      {
+        "label": "Ud value",
+        "value": "0.79 W/m²K"
+      },
+      {
+        "label": "Pull handle",
+        "value": "ES 40.1000 Edelstahl"
+      },
+      {
+        "label": "Surface",
+        "value": "RAL 9006 matt oder Feinstruktur"
+      }
+    ]
+  },
+  {
+    "id": "essential-8",
+    "catalogue": "roka-essential-2025",
+    "name": "Essential 8",
+    "page": 7,
+    "image": "/images/models/roka-essential-2025/essential-8.jpg",
+    "specs": [
+      {
+        "label": "Ud value",
+        "value": "0.79 W/m²K"
+      },
+      {
+        "label": "Pull handle",
+        "value": "ES 40.1000 Edelstahl"
+      },
+      {
+        "label": "Surface",
+        "value": "RAL 7016 matt oder Feinstruktur"
+      },
+      {
+        "label": "Relief grooves",
+        "value": "5mm außen"
+      }
+    ]
+  },
+  {
+    "id": "function-1",
+    "catalogue": "roka-function-2025",
+    "name": "Function 1",
+    "page": 6,
+    "image": "/images/models/roka-function-2025/function-1.jpg",
+    "specs": [
+      {
+        "label": "Ud value",
+        "value": "1.05 W/m²K"
+      },
+      {
+        "label": "Pull handle",
+        "value": "ES 30.600 Edelstahl"
+      },
+      {
+        "label": "Glazing",
+        "value": "Thermofloat (außen), Klarglas (innen)"
+      },
+      {
+        "label": "Surface",
+        "value": "RAL 9016 matt oder Feinstruktur"
+      },
+      {
+        "label": "Profile system",
+        "value": "ROKA Standard 75 mm"
+      }
+    ]
+  },
+  {
+    "id": "function-2",
+    "catalogue": "roka-function-2025",
+    "name": "Function 2",
+    "page": 6,
+    "image": "/images/models/roka-function-2025/function-2.jpg",
+    "specs": [
+      {
+        "label": "Ud value",
+        "value": "1.1 W/m²K"
+      },
+      {
+        "label": "Pull handle",
+        "value": "ES 30.600 Edelstahl"
+      },
+      {
+        "label": "Glazing",
+        "value": "Thermofloat (außen), Klarglas (innen)"
+      },
+      {
+        "label": "Surface",
+        "value": "RAL 9005 matt oder Feinstruktur"
+      },
+      {
+        "label": "Profile system",
+        "value": "ROKA Standard 75 mm"
+      }
+    ]
+  },
+  {
+    "id": "function-3",
+    "catalogue": "roka-function-2025",
+    "name": "Function 3",
+    "page": 6,
+    "image": "/images/models/roka-function-2025/function-3.jpg",
+    "specs": [
+      {
+        "label": "Ud value",
+        "value": "1.2 W/m²K"
+      },
+      {
+        "label": "Pull handle",
+        "value": "ES 30.600 Edelstahl"
+      },
+      {
+        "label": "Glazing",
+        "value": "Thermofloat (außen), Klarglas (innen)"
+      },
+      {
+        "label": "Surface",
+        "value": "RAL 9007 matt oder Feinstruktur"
+      },
+      {
+        "label": "Profile system",
+        "value": "ROKA Standard 75 mm"
+      }
+    ]
+  },
+  {
+    "id": "function-4",
+    "catalogue": "roka-function-2025",
+    "name": "Function 4",
+    "page": 6,
+    "image": "/images/models/roka-function-2025/function-4.jpg",
+    "specs": [
+      {
+        "label": "Ud value",
+        "value": "1.3 W/m²K"
+      },
+      {
+        "label": "Pull handle",
+        "value": "ES 30.600 Edelstahl"
+      },
+      {
+        "label": "Glazing",
+        "value": "Thermofloat (außen), Klarglas (innen)"
+      },
+      {
+        "label": "Surface",
+        "value": "RAL 9016 matt oder Feinstruktur"
+      },
+      {
+        "label": "Profile system",
+        "value": "ROKA Standard 75 mm"
+      }
+    ]
+  },
+  {
+    "id": "function-5",
+    "catalogue": "roka-function-2025",
+    "name": "Function 5",
+    "page": 7,
+    "image": "/images/models/roka-function-2025/function-5.jpg",
+    "specs": [
+      {
+        "label": "Ud value",
+        "value": "1.05 W/m²K"
+      },
+      {
+        "label": "Pull handle",
+        "value": "ES 30.600 Edelstahl"
+      },
+      {
+        "label": "Glazing",
+        "value": "Thermofloat (außen), Klarglas (innen)"
+      },
+      {
+        "label": "Surface",
+        "value": "RAL 7016 matt oder Feinstruktur"
+      },
+      {
+        "label": "Profile system",
+        "value": "ROKA Standard 75 mm"
+      }
+    ]
+  },
+  {
+    "id": "function-6",
+    "catalogue": "roka-function-2025",
+    "name": "Function 6",
+    "page": 7,
+    "image": "/images/models/roka-function-2025/function-6.jpg",
+    "specs": [
+      {
+        "label": "Ud value",
+        "value": "1.1 W/m²K"
+      },
+      {
+        "label": "Pull handle",
+        "value": "ES 30.600 Edelstahl"
+      },
+      {
+        "label": "Glazing",
+        "value": "Thermofloat (außen), Klarglas (innen)"
+      },
+      {
+        "label": "Surface",
+        "value": "RAL 7021 matt oder Feinstruktur"
+      },
+      {
+        "label": "Profile system",
+        "value": "ROKA Standard 75 mm"
+      }
+    ]
+  },
+  {
+    "id": "function-7",
+    "catalogue": "roka-function-2025",
+    "name": "Function 7",
+    "page": 7,
+    "image": "/images/models/roka-function-2025/function-7.jpg",
+    "specs": [
+      {
+        "label": "Ud value",
+        "value": "1.2 W/m²K"
+      },
+      {
+        "label": "Pull handle",
+        "value": "ES 30.600 Edelstahl"
+      },
+      {
+        "label": "Glazing",
+        "value": "Thermofloat (außen), Klarglas (innen)"
+      },
+      {
+        "label": "Surface",
+        "value": "RAL 9007 matt oder Feinstruktur"
+      },
+      {
+        "label": "Profile system",
+        "value": "ROKA Standard 75 mm"
+      }
+    ]
+  },
+  {
+    "id": "function-8",
+    "catalogue": "roka-function-2025",
+    "name": "Function 8",
+    "page": 7,
+    "image": "/images/models/roka-function-2025/function-8.jpg",
+    "specs": [
+      {
+        "label": "Ud value",
+        "value": "1.3 W/m²K"
+      },
+      {
+        "label": "Pull handle",
+        "value": "ES 30.600 Edelstahl"
+      },
+      {
+        "label": "Glazing",
+        "value": "Thermofloat (außen), Sandstrahlglas mit klaren Motiven (innen)"
+      },
+      {
+        "label": "Surface",
+        "value": "RAL 7021 matt oder Feinstruktur"
+      },
+      {
+        "label": "Profile system",
+        "value": "ROKA Standard 75 mm"
+      }
+    ]
+  },
+  {
+    "id": "function-9",
+    "catalogue": "roka-function-2025",
+    "name": "Function 9",
+    "page": 8,
+    "image": "/images/models/roka-function-2025/function-9.jpg",
+    "specs": [
+      {
+        "label": "Ud value",
+        "value": "1.2 W/m²K"
+      },
+      {
+        "label": "Pull handle",
+        "value": "ES 2631 Edelstahl Kugel Knauf fest auf Ovalrosette"
+      },
+      {
+        "label": "Glazing",
+        "value": "Thermofloat (außen), Klarglas (innen)"
+      },
+      {
+        "label": "Surface",
+        "value": "RAL 9006 matt oder Feinstruktur"
+      },
+      {
+        "label": "Profile system",
+        "value": "ROKA Standard 65 mm"
+      }
+    ]
+  },
+  {
+    "id": "function-10",
+    "catalogue": "roka-function-2025",
+    "name": "Function 10",
+    "page": 8,
+    "image": "/images/models/roka-function-2025/function-10.jpg",
+    "specs": [
+      {
+        "label": "Ud value",
+        "value": "1.2 W/m²K"
+      },
+      {
+        "label": "Pull handle",
+        "value": "ES 2631 Edelstahl Kugel Knauf fest auf Ovalrosette"
+      },
+      {
+        "label": "Glazing",
+        "value": "Thermofloat (außen), Klarglas (innen)"
+      },
+      {
+        "label": "Surface",
+        "value": "RAL 9006 matt oder Feinstruktur"
+      },
+      {
+        "label": "Profile system",
+        "value": "ROKA Standard 65 mm"
+      }
+    ]
+  },
+  // ══ /ROKA Essential + Function ══
   {
     "id": "panel-01",
     "catalogue": "entrance-door-panels",

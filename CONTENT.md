@@ -297,9 +297,15 @@ door renders from the self-hosted catalogues (the Select one is a copy at
 `public/images/home/roka-banner-select.jpg` with its grey background whitened to match the white
 tiles). To remove the banner, delete its line in `app/[locale]/page.tsx`; the nav link is
 independent. Every other manufacturer stays
-unlinked and every PDF stays self-hosted. Still worth doing: asking ROKA for the catalogues of
-the three collections the site does not carry yet (Steel, Essential, Function) — a draft email
-was handed to the owner.
+unlinked and every PDF stays self-hosted. UPDATE 2026-08: the ask worked — ROKA sent the missing
+collections and **Essential (8 models) and Function (10 models) are now published** (catalogues
+`roka-essential-2025` / `roka-function-2025`, extracted by
+`scripts/extract_roka_essential_function.py`, which MERGES into catalogue-models.ts — do NOT run
+`extract_catalogue_models.py`, its main() rewrites the file and would wipe the WIKĘD/gates/shutters
+blocks). The same delivery included byte-identical duplicates of Signature and a lighter "WEB"
+re-export of Select (same 23 pages, same models — kept our sharper published one). **Steel is
+still pending: only its COVER arrived** (`source-catalogues/okladka-steel.pdf`, 1 page) — not
+published, a cover is not a catalogue; ask ROKA for the full Steel PDF.
 
 | Status | Path                                         | What it is                                                                 | Who   |
 | ------ | -------------------------------------------- | -------------------------------------------------------------------------- | ----- |

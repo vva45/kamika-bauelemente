@@ -55,6 +55,33 @@ export const CATALOGUES: Catalogue[] = [
     sizeMb: 11.3,
     year: 2025,
   },
+  // Essential y Function llegaron directamente de ROKA (2026-08),
+  // tras pedirles las colecciones que faltaban. De Steel solo vino la
+  // portada — el catálogo completo sigue pendiente.
+  {
+    id: "roka-essential-2025",
+    title: { en: "ROKA Essential — entrance doors", de: "ROKA Essential — Haustüren", pl: "ROKA Essential — drzwi zewnętrzne", },
+    brand: "ROKA",
+    collection: { en: "Essential", de: "Essential", pl: "Essential", },
+    category: "entrance-doors",
+    file: "/pdf/catalogues/roka-essential-2025.pdf",
+    cover: "/images/catalogues/roka-essential-2025-cover.jpg",
+    pages: 11,
+    sizeMb: 1.0,
+    year: 2025,
+  },
+  {
+    id: "roka-function-2025",
+    title: { en: "ROKA Function — entrance doors", de: "ROKA Function — Haustüren", pl: "ROKA Function — drzwi zewnętrzne", },
+    brand: "ROKA",
+    collection: { en: "Function", de: "Function", pl: "Function", },
+    category: "entrance-doors",
+    file: "/pdf/catalogues/roka-function-2025.pdf",
+    cover: "/images/catalogues/roka-function-2025-cover.jpg",
+    pages: 11,
+    sizeMb: 1.0,
+    year: 2025,
+  },
   {
     id: "despiro-entrance-doors",
     title: { en: "Despiro entrance doors", de: "Despiro Haustüren", pl: "Drzwi zewnętrzne Despiro", },
