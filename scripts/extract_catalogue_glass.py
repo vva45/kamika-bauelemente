@@ -43,11 +43,15 @@ GLASS_DIR = os.path.join(ROOT, "public/images/colours/glass")
 OUT_TS = os.path.join(ROOT, "src/data/catalogue-glass.ts")
 
 
-def item(find, name=None, en=None, de=None, pl=None):
+def item(find, name=None, en=None, de=None, pl=None, crop=None):
     """Un cristal: `find` es el pie impreso; sin traducciones, el nombre
-    queda tal cual en los tres idiomas."""
+    queda tal cual en los tres idiomas. `crop` recorta la tesela:
+    "right-pane" se queda con la LUNA de la derecha (las muestras del
+    Aluminium-Katalog posan sobre una casita con el logo del vendedor
+    grabado — el logo vive en la pared izquierda y NO puede publicarse),
+    "trim-caption" quita el pie numérico que pisa la sombra inferior."""
     base = name or find
-    return dict(find=find, en=en or base, de=de or base, pl=pl or base)
+    return dict(find=find, en=en or base, de=de or base, pl=pl or base, crop=crop)
 
 
 # la carta SCHEIBENARTEN que comparten los dos catálogos del mismo
@@ -118,6 +122,26 @@ CHARTS = [
          caption="below", items=SCHEIBENARTEN),
     dict(cat="iglo-fenster", pdf="iglo-fenster-terrassensysteme.pdf", sheet=39,
          caption="below", items=SCHEIBENARTEN),
+    # Aluminium-Katalog p51 (2026-09): mitad izquierda, 23 Motiv- y
+    # Ornamentgläser sobre la casita (pie debajo de cada tesela); mitad
+    # derecha, los 15 paneles EkoVitre numerados 01-15 (VSG con motivos
+    # al chorro de arena). Nombres tal cual impresos.
+    dict(cat="aluminium-2026", pdf="aluminium-2026.pdf", sheet=50,
+         caption="below",
+         items=[
+             item(find, crop="right-pane")
+             for find in [
+                 "Float klar", "Mirastar", "Parsol bronze", "Altdeutsch weiß",
+                 "Chinchila weiß", "Parsol Grau", "Stopsol Supersilver Clear",
+                 "Stopsol Classic Clear", "Crepi weiß", "Delta weiß",
+                 "Stopsol classic Grau", "Kathedral weiß", "Planibel Dark Grey",
+                 "Satinato Mate", "Master-Point", "Kura weiß",
+                 "Teilsandgestrahlt", "Master-Ligne", "Master-Carre",
+                 "Waterdrop", "Stadip 33.1 PVB Matt", "Silvit weiß",
+                 "Monumental M",
+             ]
+         ] + [item(f"{n:02d}", name=f"EkoVitre {n:02d}", crop="trim-caption")
+              for n in range(1, 16)]),
 ]
 
 
@@ -154,13 +178,18 @@ def tile_for(caption_rect, tiles, side):
     best = None
     for tile in tiles:
         overlap = min(tile.x1, caption_rect.x1) - max(tile.x0, caption_rect.x0)
-        if overlap < 10:
+        # los pies numéricos del EkoVitre ("01"…"15") miden menos de
+        # 10 pt de ancho — para ellos basta con que casi todo el pie
+        # caiga bajo la tesela.
+        if overlap < min(10, caption_rect.width * 0.8):
             continue
         if side == "above":  # pie encima → tesela debajo
             gap = tile.y0 - caption_rect.y1
         else:  # pie debajo → tesela encima
             gap = caption_rect.y0 - tile.y1
-        if gap < -4:
+        # -12: los paneles EkoVitre llevan sombra que el pie numérico
+        # solapa unos 7 pt; con -4 el pie saltaba a la fila de ARRIBA.
+        if gap < -12:
             continue
         if best is None or gap < best[0]:
             best = (gap, tile)
@@ -195,7 +224,12 @@ def main():
             # dpi según tamaño: las fichas grandes del Signature no
             # necesitan 300, las teselas pequeñas sí agradecen detalle
             dpi = 150 if tile.width > 200 else 300
-            pix = page.get_pixmap(dpi=dpi, clip=tile + (1, 1, -1, -1))
+            clip = tile + (1, 1, -1, -1)
+            if entry.get("crop") == "right-pane":
+                clip = fitz.Rect(tile.x0 + tile.width * 0.66, tile.y0 + 2, tile.x1 - 2, tile.y1 - 2)
+            elif entry.get("crop") == "trim-caption":
+                clip = fitz.Rect(tile.x0 + 1, tile.y0 + 1, tile.x1 - 1, tile.y1 - 9)
+            pix = page.get_pixmap(dpi=dpi, clip=clip)
             pix.pil_save(os.path.join(ROOT, "public" + rel), format="JPEG",
                          quality=87, optimize=True)
             everything.append(dict(

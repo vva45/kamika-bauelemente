@@ -133,10 +133,11 @@ were checked and rejected at the time, recorded so nobody re-runs the sweep: "In
 the Aluprof panels catalogue is the inner-face panel of an entrance door, and D-ART LINE's
 "/ inside" captions are interior *views* of entrance doors.
 
-**Pergolas have no catalogue yet.** The range is deliberately `comingSoon: true` with no product
-file at all, and its hero is a generated line-drawing sheet, not a photograph. When the
-manufacturer's PDF arrives it follows the normal route: self-host it, extract the models, write
-nothing from memory.
+**Pergolas got their catalogue in 2026-09** (the cross-range Aluminium-Katalog, see the PDF
+table): the range now shows the two bioclimatic models NUUN ECO and Selt SB350 with printed
+dimensions and equipment lists, `comingSoon` is gone, and the hero is the owner's photograph.
+The paragraph that used to stand here — "no catalogue yet, generated line-drawing hero" —
+described the state before that delivery.
 
 ### The two IGLO catalogues (2026-08)
 
@@ -310,7 +311,7 @@ published, a cover is not a catalogue; ask ROKA for the full Steel PDF.
 | Status | Path                                         | What it is                                                                 | Who   |
 | ------ | -------------------------------------------- | -------------------------------------------------------------------------- | ----- |
 | `[x]`  | `public/pdf/catalogues/*.pdf`                | **Eighteen real catalogues are in place, covering EVERY range**: entrance doors (8, incl. ROKA Essential/Function), shutters/blinds (3), windows (Salamander, IGLO ×2, WIKĘD PCV/ALU), gates (2), and the cross-range Aluminium-Katalog 2026. Titles, years, page counts and file sizes in `src/data/catalogues.ts` were read from the PDFs, not estimated. | —     |
-| `[x]`  | `public/pdf/catalogues/aluminium-2026.pdf`   | **The pergola catalogue arrived (2026-09)** inside Eko-Okna's cross-range Aluminium-Katalog (65 p). White-labeled by `scripts/prepare_aluminium.py` (3 seller pages blanked: Eko intro p3, eko4u ad p63, back cover p65) and compressed 41.9→30.3 MB (72%, the owner's 60-70% rule; quality checked side by side). The TWO bioclimatic pergolas (NUUN ECO, Selt SB350) are extracted by `scripts/extract_aluminium_pergolas.py` (merge markers, `category: "pergolas"`) with dimensions + equipment bullets; the category's comingSoon flag is gone. NOT yet integrated from the same PDF: five alu window-system brands (Aluprof MB, Aliplast, Deceuninck, Cortizo, Reynaers), Despiro PIVOT door fillings, Klappläden, and the p51 ornament-glass chart — candidates for a later round; fence models on p62 largely duplicate the fences catalogue. | —     |
+| `[x]`  | `public/pdf/catalogues/aluminium-2026.pdf`   | **The pergola catalogue arrived (2026-09)** inside Eko-Okna's cross-range Aluminium-Katalog (65 p). White-labeled by `scripts/prepare_aluminium.py` (3 seller pages blanked: Eko intro p3, eko4u ad p63, back cover p65) and compressed 41.9→30.3 MB (72%, the owner's 60-70% rule; quality checked side by side). The TWO bioclimatic pergolas (NUUN ECO, Selt SB350) are extracted by `scripts/extract_aluminium_pergolas.py` (merge markers, `category: "pergolas"`) with dimensions + equipment bullets; the category's comingSoon flag is gone. **Round 2 (2026-09) integrated the rest of the PDF** — the five alu brands as manufacturers, the Despiro PIVOT/Retro doors and Klappläden as models, the p51 glass chart into /colours (see §3b-bis) — leaving out only: p5/MB-60 (owner said to ignore that page), the Verbreiterungen profile pages (13-14, 25, 31, 38, 46, 89 — technical extension profiles, not products), p47's Farbgebung note (RAL K7 + Tiger wood-look, already covered conceptually by /colours), p50's AluLine panel-construction spread (fill types and thicknesses, no models printed), and the p61-62 fence models, which duplicate the fences catalogue. | —     |
 | `[x]`  | `public/pdf/windows/*.pdf`                   | Supplier one-page data sheets: Aluplast Ideal 5000 and 8000, Salamander BluEvolution 82 — what backs those system pages. | —     |
 
 **Weight (2026-08):** the heaviest PDFs were re-compressed by `scripts/shrink_catalogue_pdfs.py`
@@ -549,11 +550,50 @@ Still open on the Aluplast side:
 The four example window products were removed with their images, data sheets and cross-references:
 an invented model cannot sit next to a real hierarchy.
 
-## 3c. The catalogue showcase — generated, not written
+### Aluminium-Katalog round 2 (2026-09) — five brands, the doors, the shutters, the glass
 
-`src/data/catalogue-models.ts` holds **513 entries** — 457 models across the ten catalogues plus 56
-accessories — each with its name, its page, its photograph and whatever specification the catalogue
-prints. It is generated, in this order:
+The owner asked for everything left in the Aluminium-Katalog to be filed "cada modelo en su
+sitio, en su categoria" (only p5 explicitly ignored). What that produced:
+
+- **Five credited aluminium brands as manufacturers** — Aluprof (10 window/fire systems + 4
+  sliding), Aliplast (10 + 7), Deceuninck (6 + 2), CORTIZO (4 + 6), Reynaers (9 + 2) — each with
+  a `windows` and a `patio-doors` entry like Salamander/IGLO/VEKA/PROCURAL before them. German
+  descriptions are the catalogue's paragraphs VERBATIM; en/pl are translations of them; every
+  spec row is copied from that system's TECHNISCHE DATEN and every card links
+  `aluminium-2026.pdf#page=N`. Repeating spec labels live once in the `AL` constant at the top
+  of `manufacturers.ts`. Fire-rated systems (MB-78/60E/86/118 EI, FR 65/90 EI) sit inside the
+  windows entries: entrance-doors cannot take manufacturers (see the page-mechanics note below).
+- **System render cards** come from `scripts/extract_aluminium_system_images.py`: the catalogue
+  is a landscape two-page spread, one system per half; the script finds each system's printed
+  title (largest occurrence, ignoring hits inside longer titles — "VISOGLIDE" inside "VISOGLIDE
+  PLUS"), picks that half's largest bitmap and centres it on the 4:3 white card. ~30 halves are
+  flattened bitmaps with title and paragraph baked in (the IGLO problem again); for those the
+  crop is the template's render band (y 95-445 pt). Brand cards are typographic plates
+  (`build-manufacturer-images.mjs`, `{brand}.jpg` + `{brand}-schiebe.jpg`).
+- **30 catalogue models** via `scripts/extract_aluminium_doors.py` (marker-merged like the
+  pergolas): 16 PIVOT doors (p54-58) with Material/Farbe/Stoßgriff/Rosette… copied BY HAND —
+  the pages are 2×2 grids and plain-text extraction interleaves the columns, so every ficha was
+  verified against a page render; 9 Retro Line panels RL01-RL09 (no printed specs, none
+  invented); 4 Eko Persiane shutter cards + Cortizo Tamiz with its data table. PIVOT/Retro carry
+  `category: "entrance-doors"`, Klappläden `"roller-shutters"`.
+- **Page mechanics changed for that**: collections and category-override models used to be
+  mutually exclusive branches on the category page; now both render (collections first). Without
+  that, entrance-doors and roller-shutters — which have collections — would never have shown the
+  new models. Manufacturers stay exclusive-first, which is also why no aluminium brand may get an
+  `entrance-doors` manufacturer entry: it would hide the door collections.
+- **38 glass types** joined the /colours glass chapter from p51: 23 Motiv-/Ornamentgläser and
+  the 15 numbered EkoVitre panels. The ornament samples posed on a wooden house with the
+  seller's logo ENGRAVED on it — the white-label rule applies inside photos too, so the crops
+  keep only the glass pane (the logo lives on the unglazed left wall; Mirastar's right side is
+  the mirror reflection and is clean). Two extractor fixes are commented in the script: caption
+  overlap under 10 pt (the "01"…"15" numerals are narrower) and gap tolerance -12 pt (the
+  numerals sit on the panels' drop shadows; with -4 they matched the row ABOVE — caught because
+  EkoVitre 06 came out with panel 01's motif).
+
+`src/data/catalogue-models.ts` holds **634 entries** (audit count, 2026-09) — models and
+accessories across the eighteen catalogues, including the pergolas, PIVOT/Retro doors and
+Klappläden the Aluminium-Katalog contributed — each with its name, its page, its photograph and
+whatever specification the catalogue prints. It is generated, in this order:
 
 ```bash
 python3 scripts/prepare_drutex.py            # source-catalogues/ → public/, y su portada
