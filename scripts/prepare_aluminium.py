@@ -61,6 +61,27 @@ def white_label(doc):
     print(f"· white-label: {len(BLANK_PAGES)} páginas en blanco, {hits} menciones sueltas")
 
 
+def replace_cover_logo(doc):
+    """
+    El logo "eko okna" de la portada son siete glifos VECTORIALES
+    blancos (bbox ≈ 243-358 × 179-236 pt). Se eliminan con una
+    redacción sin relleno que solo borra los trazados cubiertos —
+    la foto y el marco azul quedan intactos — y en su hueco se
+    estampa la marca blanca de Kamika, como en los demás catálogos.
+    """
+    page = doc[0]
+    zone = fitz.Rect(235, 174, 365, 242)
+    page.add_redact_annot(zone, fill=False)
+    page.apply_redactions(
+        images=fitz.PDF_REDACT_IMAGE_NONE,
+        graphics=fitz.PDF_REDACT_LINE_ART_REMOVE_IF_COVERED,
+    )
+
+    mark = os.path.join(ROOT, "public/images/brand/kamika-mark-white.png")
+    page.insert_image(zone, filename=mark, keep_proportion=True)
+    print("· portada: logo del vendedor fuera, marca Kamika dentro")
+
+
 def shrink_images(doc):
     """Misma técnica probada que shrink_catalogue_pdfs.py."""
     replaced = skipped = 0
@@ -99,6 +120,7 @@ def main():
     before = os.path.getsize(SRC) / 1048576
     doc = fitz.open(SRC)
     white_label(doc)
+    replace_cover_logo(doc)
     shrink_images(doc)
     doc.save(OUT, garbage=4, deflate=True)
     doc.close()

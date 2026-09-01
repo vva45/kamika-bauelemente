@@ -94,7 +94,7 @@ export const CATALOGUES: Catalogue[] = [
     file: "/pdf/catalogues/aluminium-2026.pdf",
     cover: "/images/catalogues/aluminium-2026-cover.jpg",
     pages: 65,
-    sizeMb: 30.3,
+    sizeMb: 30.4,
     year: 2026,
   },
   {
