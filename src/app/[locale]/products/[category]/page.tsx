@@ -133,45 +133,59 @@ export default async function CategoryPage({ params }: PageProps<"/[locale]/prod
             ))}
           </div>
         </section>
-      ) : collections.length > 0 ? (
-        <section className="mx-auto max-w-[1440px] px-5 py-12 md:px-8 md:py-16">
-          <h2 className="text-2xl md:text-3xl">{t("collection.heading")}</h2>
-          <p className="mt-4 max-w-2xl text-pretty text-kamika-ink/70">
-            {t("collection.intro")}
-          </p>
+      ) : collections.length > 0 || models.length > 0 ? (
+        // Colecciones y modelos por override ya NO se excluyen: el
+        // Aluminium-Katalog (sin categoría propia) aporta puertas PIVOT
+        // a entrance-doors y Klappläden a roller-shutters, gamas que ya
+        // tienen colecciones — se enseñan las dos cosas, colección
+        // primero.
+        <>
+          {collections.length > 0 && (
+            <section className="mx-auto max-w-[1440px] px-5 py-12 md:px-8 md:py-16">
+              <h2 className="text-2xl md:text-3xl">{t("collection.heading")}</h2>
+              <p className="mt-4 max-w-2xl text-pretty text-kamika-ink/70">
+                {t("collection.intro")}
+              </p>
 
-          <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 xl:grid-cols-4">
-            {collections.map((catalogue, index) => (
-              <CollectionCard
-                key={catalogue.id}
-                catalogue={catalogue}
-                priority={index < 4}
-              />
-            ))}
-          </div>
-        </section>
-      ) : models.length > 0 ? (
-        <section className="mx-auto max-w-[1440px] px-5 py-12 md:px-8 md:py-16">
-          <p className="max-w-2xl text-pretty text-kamika-ink/70 md:text-lg">
-            {t("category.fromCataloguesIntro")}
-          </p>
-
-          {/* Por familias, tal y como vienen impresos: quien busca una
-              manilla no quiere verla entre los mandos de persiana. */}
-          {[...new Set(models.map((model) => model.family ?? ""))].map((family) => {
-            const group = models.filter((model) => (model.family ?? "") === family);
-            return (
-              <div key={family} className="mt-12 first:mt-10">
-                {family && <h2 className="text-2xl md:text-3xl">{family}</h2>}
-                <div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-3 xl:grid-cols-4">
-                  {group.map((model, index) => (
-                    <ModelCard key={`${model.catalogue}-${model.id}`} model={model} priority={index < 4} />
-                  ))}
-                </div>
+              <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 xl:grid-cols-4">
+                {collections.map((catalogue, index) => (
+                  <CollectionCard
+                    key={catalogue.id}
+                    catalogue={catalogue}
+                    priority={index < 4}
+                  />
+                ))}
               </div>
-            );
-          })}
-        </section>
+            </section>
+          )}
+          {models.length > 0 && (
+            <section
+              className={`mx-auto max-w-[1440px] px-5 pb-12 md:px-8 md:pb-16 ${
+                collections.length > 0 ? "pt-4" : "pt-12 md:pt-16"
+              }`}
+            >
+              <p className="max-w-2xl text-pretty text-kamika-ink/70 md:text-lg">
+                {t("category.fromCataloguesIntro")}
+              </p>
+
+              {/* Por familias, tal y como vienen impresos: quien busca una
+                  manilla no quiere verla entre los mandos de persiana. */}
+              {[...new Set(models.map((model) => model.family ?? ""))].map((family) => {
+                const group = models.filter((model) => (model.family ?? "") === family);
+                return (
+                  <div key={family} className="mt-12 first:mt-10">
+                    {family && <h2 className="text-2xl md:text-3xl">{family}</h2>}
+                    <div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-3 xl:grid-cols-4">
+                      {group.map((model, index) => (
+                        <ModelCard key={`${model.catalogue}-${model.id}`} model={model} priority={index < 4} />
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
+            </section>
+          )}
+        </>
       ) : comingSoon ? (
         <ComingSoon title={t("category.comingSoonTitle")} body={t("category.comingSoonBody")}>
           {/* Pérgolas: el dueño mandó dos imágenes de marca más junto a

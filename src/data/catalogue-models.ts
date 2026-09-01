@@ -2961,6 +2961,846 @@ export const CATALOGUE_MODELS: CatalogueModel[] = [
     ]
   },
   // ══ /Pérgolas Aluminium-Katalog ══
+  // ══ Puertas y Klappläden Aluminium-Katalog (extract_aluminium_doors.py) ══
+  {
+    "id": "pivot-01",
+    "catalogue": "aluminium-2026",
+    "name": "PIVOT 01",
+    "family": "PIVOT Line",
+    "category": "entrance-doors",
+    "page": 54,
+    "image": "/images/models/aluminium-2026/pivot-01.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      },
+      {
+        "label": "Farbe",
+        "value": "RAL 7016"
+      },
+      {
+        "label": "Stoßgriff",
+        "value": "PWZ im Paneel integriert, in Farbe RAL 7016, L-2200 mm"
+      },
+      {
+        "label": "Rosette",
+        "value": "RS 20 in Schwarz"
+      },
+      {
+        "label": "LED-Beleuchtung",
+        "value": "Kaltweiß | Warmweiß"
+      }
+    ]
+  },
+  {
+    "id": "pivot-02",
+    "catalogue": "aluminium-2026",
+    "name": "PIVOT 02",
+    "family": "PIVOT Line",
+    "category": "entrance-doors",
+    "page": 54,
+    "image": "/images/models/aluminium-2026/pivot-02.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      },
+      {
+        "label": "Farbe",
+        "value": "RAL DB 703 Feinstruktur"
+      },
+      {
+        "label": "Applikation",
+        "value": "Nutenfräsungen"
+      },
+      {
+        "label": "Stoßgriff",
+        "value": "PWZ 2022 PIVOT in Farbe RAL DB 703, Feinstruktur, L-2000 mm"
+      },
+      {
+        "label": "Rosette",
+        "value": "RS 20 in Schwarz"
+      },
+      {
+        "label": "LED-Beleuchtung",
+        "value": "Kaltweiß | Warmweiß"
+      }
+    ]
+  },
+  {
+    "id": "pivot-03",
+    "catalogue": "aluminium-2026",
+    "name": "PIVOT 03",
+    "family": "PIVOT Line",
+    "category": "entrance-doors",
+    "page": 55,
+    "image": "/images/models/aluminium-2026/pivot-03.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      },
+      {
+        "label": "Farbe",
+        "value": "RAL 7021"
+      },
+      {
+        "label": "Stoßgriff",
+        "value": "PQ WE 26 in Farbe RAL 9005, Maße: 40×20 mm, L-2000 mm"
+      },
+      {
+        "label": "Rosette",
+        "value": "RS 20 in Schwarz"
+      },
+      {
+        "label": "LED-Beleuchtung",
+        "value": "Kaltweiß | Warmweiß"
+      }
+    ]
+  },
+  {
+    "id": "pivot-04",
+    "catalogue": "aluminium-2026",
+    "name": "PIVOT 04",
+    "family": "PIVOT Line",
+    "category": "entrance-doors",
+    "page": 55,
+    "image": "/images/models/aluminium-2026/pivot-04.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      },
+      {
+        "label": "Farbe",
+        "value": "RAL DB 703 Struktur"
+      },
+      {
+        "label": "Stoßgriff",
+        "value": "PZL angeglichen an die Paneelhöhe, in Farbe RAL 9005, L-3000 mm"
+      },
+      {
+        "label": "Rosette",
+        "value": "RS 20 in Schwarz"
+      },
+      {
+        "label": "LED-Beleuchtung",
+        "value": "Kaltweiß | Warmweiß"
+      }
+    ]
+  },
+  {
+    "id": "pivot-05",
+    "catalogue": "aluminium-2026",
+    "name": "PIVOT 05",
+    "family": "PIVOT Line",
+    "category": "entrance-doors",
+    "page": 55,
+    "image": "/images/models/aluminium-2026/pivot-05.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      },
+      {
+        "label": "Farbe",
+        "value": "RAL 9007"
+      },
+      {
+        "label": "Applikation",
+        "value": "Nutenfräsungen"
+      },
+      {
+        "label": "Stoßgriff",
+        "value": "PWZ"
+      },
+      {
+        "label": "Rosette",
+        "value": "RS 20 in Schwarz RAL 9007"
+      },
+      {
+        "label": "LED-Beleuchtung",
+        "value": "Kaltweiß | Warmweiß"
+      }
+    ]
+  },
+  {
+    "id": "pivot-06",
+    "catalogue": "aluminium-2026",
+    "name": "PIVOT 06",
+    "family": "PIVOT Line",
+    "category": "entrance-doors",
+    "page": 55,
+    "image": "/images/models/aluminium-2026/pivot-06.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium | Quarzkomposit"
+      },
+      {
+        "label": "Farbe",
+        "value": "RAL 9005 | Ossido Bruno"
+      },
+      {
+        "label": "Applikation",
+        "value": "Schwarz 6 × 6 mm"
+      },
+      {
+        "label": "Stoßgriff",
+        "value": "PS 10 CD in Farbe RAL 9005, L-1200 mm"
+      },
+      {
+        "label": "Rosette",
+        "value": "Aufgeklebt in edlem Schwarz"
+      },
+      {
+        "label": "LED-Beleuchtung",
+        "value": "Kaltweiß | Warmweiß"
+      }
+    ]
+  },
+  {
+    "id": "pivot-07",
+    "catalogue": "aluminium-2026",
+    "name": "PIVOT 07",
+    "family": "PIVOT Line",
+    "category": "entrance-doors",
+    "page": 56,
+    "image": "/images/models/aluminium-2026/pivot-07.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      },
+      {
+        "label": "Farbe",
+        "value": "RAL 9005 | Woodec Alpine"
+      },
+      {
+        "label": "Applikation",
+        "value": "Flächenbündig in RAL 9005"
+      },
+      {
+        "label": "Stoßgriff",
+        "value": "PZW in Farbe RAL 9005, L-800 mm"
+      },
+      {
+        "label": "Rosette",
+        "value": "RS 20 in Schwarz"
+      },
+      {
+        "label": "LED-Beleuchtung",
+        "value": "Kaltweiß | Warmweiß"
+      }
+    ]
+  },
+  {
+    "id": "pivot-08",
+    "catalogue": "aluminium-2026",
+    "name": "PIVOT 08",
+    "family": "PIVOT Line",
+    "category": "entrance-doors",
+    "page": 56,
+    "image": "/images/models/aluminium-2026/pivot-08.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      },
+      {
+        "label": "Farbe",
+        "value": "RAL 9005 mit stilvollen 3D-Lamellen"
+      },
+      {
+        "label": "Applikation",
+        "value": "Vertikale 3D-Lamelle in Farbe Winchester-Dekor"
+      },
+      {
+        "label": "Stoßgriff",
+        "value": "PZV L-3000 mm, nahtlos im Paneel integriert, in Farbe RAL 9005"
+      },
+      {
+        "label": "Rosette",
+        "value": "RS 20 in Schwarz"
+      },
+      {
+        "label": "LED-Beleuchtung",
+        "value": "Kaltweiß | Warmweiß"
+      }
+    ]
+  },
+  {
+    "id": "pivot-09",
+    "catalogue": "aluminium-2026",
+    "name": "PIVOT 09",
+    "family": "PIVOT Line",
+    "category": "entrance-doors",
+    "page": 56,
+    "image": "/images/models/aluminium-2026/pivot-09.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      },
+      {
+        "label": "Farbe",
+        "value": "Schwarz"
+      },
+      {
+        "label": "Stoßgriff",
+        "value": "PWZ in Farbe RAL 9005, L-2200 mm"
+      },
+      {
+        "label": "Rosette",
+        "value": "61421 in Schwarz"
+      },
+      {
+        "label": "Schutzbeschlag",
+        "value": "Aufgeklebt in edlem Schwarz"
+      },
+      {
+        "label": "LED-Beleuchtung",
+        "value": "Kaltweiß | Warmweiß"
+      }
+    ]
+  },
+  {
+    "id": "pivot-10",
+    "catalogue": "aluminium-2026",
+    "name": "PIVOT 10",
+    "family": "PIVOT Line",
+    "category": "entrance-doors",
+    "page": 56,
+    "image": "/images/models/aluminium-2026/pivot-10.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Quarzkomposit"
+      },
+      {
+        "label": "Farbe",
+        "value": "Abu Dhabi White"
+      },
+      {
+        "label": "Stoßgriff",
+        "value": "PS 10 in Farbe Gold"
+      },
+      {
+        "label": "Rosette",
+        "value": "RS 20 in Farbe Gold"
+      },
+      {
+        "label": "Schutzbeschlag",
+        "value": "Aufgeklebt in edlem Gold"
+      },
+      {
+        "label": "LED-Beleuchtung",
+        "value": "Kaltweiß | Warmweiß"
+      }
+    ]
+  },
+  {
+    "id": "pivot-10-pwz",
+    "catalogue": "aluminium-2026",
+    "name": "PIVOT 10 PWZ",
+    "family": "PIVOT Line",
+    "category": "entrance-doors",
+    "page": 57,
+    "image": "/images/models/aluminium-2026/pivot-10-pwz.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Quarzkomposit"
+      },
+      {
+        "label": "Farbe",
+        "value": "Abu Dhabi White"
+      },
+      {
+        "label": "Stoßgriff",
+        "value": "PWZ in Farbe RAL 9016, L-2200 mm"
+      },
+      {
+        "label": "Rosette",
+        "value": "RS 20 in Weiß"
+      },
+      {
+        "label": "Schutzbeschlag",
+        "value": "Aufgeklebt in edlem Weiß"
+      },
+      {
+        "label": "LED-Beleuchtung",
+        "value": "Kaltweiß | Warmweiß"
+      }
+    ]
+  },
+  {
+    "id": "pivot-11",
+    "catalogue": "aluminium-2026",
+    "name": "PIVOT 11",
+    "family": "PIVOT Line",
+    "category": "entrance-doors",
+    "page": 57,
+    "image": "/images/models/aluminium-2026/pivot-11.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      },
+      {
+        "label": "Farbe",
+        "value": "Decoral-Beschichtung in Farbe Dekor Natureiche"
+      },
+      {
+        "label": "Applikation",
+        "value": "Schwarz 6 × 6 mm"
+      },
+      {
+        "label": "Stoßgriff",
+        "value": "PWZ 2022 in Farbe RAL 9005, L-500 mm"
+      },
+      {
+        "label": "Rosette",
+        "value": "RS 20 in Schwarz"
+      },
+      {
+        "label": "LED-Beleuchtung",
+        "value": "Kaltweiß | Warmweiß"
+      }
+    ]
+  },
+  {
+    "id": "pivot-12",
+    "catalogue": "aluminium-2026",
+    "name": "PIVOT 12",
+    "family": "PIVOT Line",
+    "category": "entrance-doors",
+    "page": 58,
+    "image": "/images/models/aluminium-2026/pivot-12.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      },
+      {
+        "label": "Farbe",
+        "value": "Schwarz"
+      },
+      {
+        "label": "Stoßgriff",
+        "value": "PWZ in Farbe RAL 9005, L-2200 mm"
+      },
+      {
+        "label": "Rosette",
+        "value": "61421 in Schwarz"
+      },
+      {
+        "label": "Schutzbeschlag",
+        "value": "Aufgeklebt in edlem Schwarz"
+      },
+      {
+        "label": "LED-Beleuchtung",
+        "value": "Kaltweiß | Warmweiß"
+      }
+    ]
+  },
+  {
+    "id": "pivot-13",
+    "catalogue": "aluminium-2026",
+    "name": "PIVOT 13",
+    "family": "PIVOT Line",
+    "category": "entrance-doors",
+    "page": 58,
+    "image": "/images/models/aluminium-2026/pivot-13.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      },
+      {
+        "label": "Farbe",
+        "value": "RAL 9005"
+      },
+      {
+        "label": "Stoßgriff",
+        "value": "PZ-Abdeckung, an Paneelhöhe angepasst, in RAL 9005"
+      },
+      {
+        "label": "Rosette",
+        "value": "RS 20 in Schwarz"
+      },
+      {
+        "label": "LED-Beleuchtung",
+        "value": "Kaltweiß | Warmweiß"
+      }
+    ]
+  },
+  {
+    "id": "pivot-14",
+    "catalogue": "aluminium-2026",
+    "name": "PIVOT 14",
+    "family": "PIVOT Line",
+    "category": "entrance-doors",
+    "page": 58,
+    "image": "/images/models/aluminium-2026/pivot-14.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      },
+      {
+        "label": "Farbe",
+        "value": "RAL 7016"
+      },
+      {
+        "label": "Applikation",
+        "value": "Nutenfräsungen"
+      },
+      {
+        "label": "Verglasung",
+        "value": "Satinova"
+      },
+      {
+        "label": "Stoßgriff",
+        "value": "PQ 10 aus edlem Edelstahl, Maße: 40×20 mm, L-2200 mm"
+      },
+      {
+        "label": "Rosette",
+        "value": "RS 20 in Farbe RAL 7016"
+      },
+      {
+        "label": "LED-Beleuchtung",
+        "value": "Kaltweiß | Warmweiß"
+      }
+    ]
+  },
+  {
+    "id": "pivot-15",
+    "catalogue": "aluminium-2026",
+    "name": "PIVOT 15",
+    "family": "PIVOT Line",
+    "category": "entrance-doors",
+    "page": 58,
+    "image": "/images/models/aluminium-2026/pivot-15.jpg",
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Aluminium"
+      },
+      {
+        "label": "Farbe",
+        "value": "VIP Rustico"
+      },
+      {
+        "label": "Applikation",
+        "value": "Nutenfräsungen, vertikale und horizontale Applikation in Farben VIP Amber"
+      },
+      {
+        "label": "Stoßgriff",
+        "value": "PZL in exklusiver Abstimmung auf die Paneelhöhe, in tiefschwarzem RAL 9005, L-3000 mm"
+      },
+      {
+        "label": "Rosette",
+        "value": "RS 20 in Schwarz"
+      },
+      {
+        "label": "LED-Beleuchtung",
+        "value": "Kaltweiß | Warmweiß"
+      }
+    ]
+  },
+  {
+    "id": "retro-line-rl01",
+    "catalogue": "aluminium-2026",
+    "name": "RL01",
+    "family": "Retro Line",
+    "category": "entrance-doors",
+    "page": 53,
+    "image": "/images/models/aluminium-2026/retro-line-rl01.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Türpaneel der Serie Despiro Retro Line: zeitlos schöne Designs mit stilvollen, klassischen Dekorelementen"
+      }
+    ]
+  },
+  {
+    "id": "retro-line-rl02",
+    "catalogue": "aluminium-2026",
+    "name": "RL02",
+    "family": "Retro Line",
+    "category": "entrance-doors",
+    "page": 53,
+    "image": "/images/models/aluminium-2026/retro-line-rl02.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Türpaneel der Serie Despiro Retro Line: zeitlos schöne Designs mit stilvollen, klassischen Dekorelementen"
+      }
+    ]
+  },
+  {
+    "id": "retro-line-rl03",
+    "catalogue": "aluminium-2026",
+    "name": "RL03",
+    "family": "Retro Line",
+    "category": "entrance-doors",
+    "page": 53,
+    "image": "/images/models/aluminium-2026/retro-line-rl03.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Türpaneel der Serie Despiro Retro Line: zeitlos schöne Designs mit stilvollen, klassischen Dekorelementen"
+      }
+    ]
+  },
+  {
+    "id": "retro-line-rl04",
+    "catalogue": "aluminium-2026",
+    "name": "RL04",
+    "family": "Retro Line",
+    "category": "entrance-doors",
+    "page": 53,
+    "image": "/images/models/aluminium-2026/retro-line-rl04.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Türpaneel der Serie Despiro Retro Line: zeitlos schöne Designs mit stilvollen, klassischen Dekorelementen"
+      }
+    ]
+  },
+  {
+    "id": "retro-line-rl05",
+    "catalogue": "aluminium-2026",
+    "name": "RL05",
+    "family": "Retro Line",
+    "category": "entrance-doors",
+    "page": 53,
+    "image": "/images/models/aluminium-2026/retro-line-rl05.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Türpaneel der Serie Despiro Retro Line: zeitlos schöne Designs mit stilvollen, klassischen Dekorelementen"
+      }
+    ]
+  },
+  {
+    "id": "retro-line-rl06",
+    "catalogue": "aluminium-2026",
+    "name": "RL06",
+    "family": "Retro Line",
+    "category": "entrance-doors",
+    "page": 53,
+    "image": "/images/models/aluminium-2026/retro-line-rl06.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Türpaneel der Serie Despiro Retro Line: zeitlos schöne Designs mit stilvollen, klassischen Dekorelementen"
+      }
+    ]
+  },
+  {
+    "id": "retro-line-rl07",
+    "catalogue": "aluminium-2026",
+    "name": "RL07",
+    "family": "Retro Line",
+    "category": "entrance-doors",
+    "page": 53,
+    "image": "/images/models/aluminium-2026/retro-line-rl07.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Türpaneel der Serie Despiro Retro Line: zeitlos schöne Designs mit stilvollen, klassischen Dekorelementen"
+      }
+    ]
+  },
+  {
+    "id": "retro-line-rl08",
+    "catalogue": "aluminium-2026",
+    "name": "RL08",
+    "family": "Retro Line",
+    "category": "entrance-doors",
+    "page": 53,
+    "image": "/images/models/aluminium-2026/retro-line-rl08.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Türpaneel der Serie Despiro Retro Line: zeitlos schöne Designs mit stilvollen, klassischen Dekorelementen"
+      }
+    ]
+  },
+  {
+    "id": "retro-line-rl09",
+    "catalogue": "aluminium-2026",
+    "name": "RL09",
+    "family": "Retro Line",
+    "category": "entrance-doors",
+    "page": 53,
+    "image": "/images/models/aluminium-2026/retro-line-rl09.jpg",
+    "specs": [
+      {
+        "label": "",
+        "value": "Türpaneel der Serie Despiro Retro Line: zeitlos schöne Designs mit stilvollen, klassischen Dekorelementen"
+      }
+    ]
+  },
+  {
+    "id": "eko-persiane-angela-aurora",
+    "catalogue": "aluminium-2026",
+    "name": "Eko Persiane Angela | Aurora",
+    "family": "Außenklappläden",
+    "category": "roller-shutters",
+    "page": 48,
+    "image": "/images/models/aluminium-2026/eko-persiane-angela-aurora.jpg",
+    "specs": [
+      {
+        "label": "Lamellen",
+        "value": "Angela: feste Lamellen · Aurora: bewegliche Lamellen"
+      },
+      {
+        "label": "",
+        "value": "Schiebeoption verfügbar (auf Sonderanfrage)"
+      },
+      {
+        "label": "",
+        "value": "Direkte Mauerwerksmontage der Flügel möglich"
+      },
+      {
+        "label": "",
+        "value": "Montage auf Renovierungsrahmen mit 45 mm oder 62 mm Anschlagleiste möglich"
+      }
+    ]
+  },
+  {
+    "id": "eko-persiane-obscura",
+    "catalogue": "aluminium-2026",
+    "name": "Eko Persiane Obscura",
+    "family": "Außenklappläden",
+    "category": "roller-shutters",
+    "page": 48,
+    "image": "/images/models/aluminium-2026/eko-persiane-obscura.jpg",
+    "specs": [
+      {
+        "label": "Ausführung",
+        "value": "Türfüllung"
+      },
+      {
+        "label": "",
+        "value": "Verdeckter Rahmen: im geschlossenen Zustand nur von innen sichtbar – für eine makellose Fassade"
+      },
+      {
+        "label": "",
+        "value": "Flexible Montage: Direktbefestigung der Flügel am Mauerwerk möglich"
+      },
+      {
+        "label": "",
+        "value": "Ideale Sanierungslösung: Montage auf Renovierungsrahmen mit 45 mm oder 62 mm Anschlagleiste"
+      }
+    ]
+  },
+  {
+    "id": "eko-persiane-selene-itaca",
+    "catalogue": "aluminium-2026",
+    "name": "Eko Persiane Selene | Itaca",
+    "family": "Außenklappläden",
+    "category": "roller-shutters",
+    "page": 48,
+    "image": "/images/models/aluminium-2026/eko-persiane-selene-itaca.jpg",
+    "specs": [
+      {
+        "label": "Lamellen",
+        "value": "Feste Lamellen"
+      },
+      {
+        "label": "",
+        "value": "Verschluss mittels Espagnolette-Riegel oder Handgriff"
+      },
+      {
+        "label": "",
+        "value": "Befestigung über Renovierungsrahmen mit 25 mm Anschlagleiste"
+      },
+      {
+        "label": "",
+        "value": "Beschlagbänder in 6 Farben, optimal auf die Klappladenfarbe abgestimmt"
+      }
+    ]
+  },
+  {
+    "id": "eko-persiane-nike-atlante",
+    "catalogue": "aluminium-2026",
+    "name": "Eko Persiane Nike | Atlante",
+    "family": "Außenklappläden",
+    "category": "roller-shutters",
+    "page": 48,
+    "image": "/images/models/aluminium-2026/eko-persiane-nike-atlante.jpg",
+    "specs": [
+      {
+        "label": "Lamellen",
+        "value": "Bewegliche Lamellen"
+      },
+      {
+        "label": "",
+        "value": "Sicherer Verschluss mittels Espagnolette-Riegel oder elegantem Handgriff"
+      },
+      {
+        "label": "",
+        "value": "Effiziente Befestigung über Renovierungsrahmen mit 25 mm Anschlagleiste"
+      },
+      {
+        "label": "",
+        "value": "Perfekte Ästhetik: Beschlagbänder in 6 Farben, optimal auf die Klappladenfarbe abgestimmt"
+      }
+    ]
+  },
+  {
+    "id": "cortizo-tamiz",
+    "catalogue": "aluminium-2026",
+    "name": "Cortizo Tamiz",
+    "family": "Außenklappläden",
+    "category": "roller-shutters",
+    "page": 49,
+    "image": "/images/models/aluminium-2026/cortizo-tamiz.jpg",
+    "specs": [
+      {
+        "label": "Max. Breite",
+        "value": "1600 mm"
+      },
+      {
+        "label": "Max. Höhe",
+        "value": "2500 mm"
+      },
+      {
+        "label": "Max. Flügelgewicht",
+        "value": "65 kg"
+      },
+      {
+        "label": "Bautiefe des Rahmens",
+        "value": "47 mm"
+      },
+      {
+        "label": "Bautiefe des Flügels",
+        "value": "40 mm"
+      },
+      {
+        "label": "Bauarten",
+        "value": "Fix, Dreh-, Schiebe- und Dreh-Falt-Systeme"
+      },
+      {
+        "label": "",
+        "value": "Lamellen flexibel verstellbar oder im festen Neigungswinkel – für eine optimale Licht- und Sichtregulierung"
+      },
+      {
+        "label": "",
+        "value": "Hochwertig lackiert in ausgewählten RAL-Farbtönen sowie in edlen Holzdekoren erhältlich"
+      },
+      {
+        "label": "",
+        "value": "Ausgestattet mit modernen Markenbeschlägen Roto Fentro"
+      }
+    ]
+  },
+  // ══ /Puertas y Klappläden Aluminium-Katalog ══
   {
     "id": "panel-01",
     "catalogue": "entrance-door-panels",
