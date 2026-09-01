@@ -99,14 +99,15 @@ export const CATEGORIES: Category[] = [
      */
     slug: "pergolas",
     name: { en: "Pergolas", de: "Pergolen", pl: "Pergole" },
+    // El catálogo llegó (2026-09): dos pérgolas bioclimáticas del
+    // Aluminium-Katalog. Los datos del intro salen de sus fichas.
     intro: {
-      en: "Pergolas for terraces and outdoor seating areas are joining the range. The documentation is on its way — until it arrives, ask us and we will quote directly from the manufacturer's papers.",
-      de: "Pergolen für Terrasse und Sitzplatz kommen neu ins Programm. Die Unterlagen sind unterwegs — bis dahin fragen Sie einfach an, wir bieten direkt aus den Herstellerunterlagen an.",
-      pl: "Pergole na taras i do strefy wypoczynku dołączają do oferty. Dokumentacja jest w drodze — do tego czasu zapytaj, a przygotujemy ofertę wprost z materiałów producenta.",
+      en: "Bioclimatic aluminium pergolas with adjustable louvre roofs: NUUN ECO built to size with integrated LED lighting and rain, temperature and wind sensors, and the free-standing Selt SB350 with WLAN control and 30 kg/m² roof snow load. Powder-coated in RAL colours to order.",
+      de: "Bioklimatische Aluminium-Pergolen mit verstellbarem Lamellendach: NUUN ECO nach Maß mit integrierter LED-Beleuchtung und Regen-, Temperatur- und Windsensoren, und die freistehende Selt SB350 mit WLAN-Steuerung und 30 kg/m² Dach-Schneelast. Pulverbeschichtet nach RAL-Palette.",
+      pl: "Pergole bioklimatyczne z aluminium z regulowanym dachem lamelowym: NUUN ECO na wymiar ze zintegrowanym oświetleniem LED oraz czujnikami deszczu, temperatury i wiatru, oraz wolnostojąca Selt SB350 ze sterowaniem WLAN i obciążeniem śniegiem dachu 30 kg/m². Malowane proszkowo w kolorach RAL.",
     },
     heroImage: "/images/categories/pergolas-hero.jpg",
     order: 7,
-    comingSoon: true,
   },
   {
     slug: "accessories",

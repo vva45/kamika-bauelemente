@@ -2857,6 +2857,110 @@ export const CATALOGUE_MODELS: CatalogueModel[] = [
     ]
   },
   // ══ /ROKA Essential + Function ══
+  // ══ Pérgolas Aluminium-Katalog (extract_aluminium_pergolas.py) ══
+  {
+    "id": "nuun-eco",
+    "catalogue": "aluminium-2026",
+    "name": "NUUN ECO",
+    "family": "Bioklimatische Pergola",
+    "category": "pergolas",
+    "page": 59,
+    "image": "/images/models/aluminium-2026/nuun-eco.jpg",
+    "specs": [
+      {
+        "label": "Breite",
+        "value": "1,2 m - 4 m"
+      },
+      {
+        "label": "Höhe",
+        "value": "2,2 m - 3 m"
+      },
+      {
+        "label": "Max. Ausfall",
+        "value": "6,8 m"
+      },
+      {
+        "label": "",
+        "value": "Bewegliche Lamellen mit integrierter LED-Beleuchtung"
+      },
+      {
+        "label": "",
+        "value": "Stimmungsvolle LED-Umfangsbeleuchtung im Rahmen"
+      },
+      {
+        "label": "",
+        "value": "Hochpräzise Regen- und Temperatursensoren"
+      },
+      {
+        "label": "",
+        "value": "Intelligenter Windsensor"
+      },
+      {
+        "label": "",
+        "value": "Langlebiges, hochfestes stranggepresstes Aluminium"
+      },
+      {
+        "label": "",
+        "value": "Premium-Pulverbeschichtung nach RAL-Farbpalette"
+      },
+      {
+        "label": "",
+        "value": "Moderne, automatische Steuerungssysteme"
+      }
+    ]
+  },
+  {
+    "id": "selt-sb350",
+    "catalogue": "aluminium-2026",
+    "name": "Selt SB350",
+    "family": "Bioklimatische Pergola",
+    "category": "pergolas",
+    "page": 60,
+    "image": "/images/models/aluminium-2026/selt-sb350.jpg",
+    "specs": [
+      {
+        "label": "Feste Breite",
+        "value": "3,5 m"
+      },
+      {
+        "label": "Feste Höhe",
+        "value": "2,665 m"
+      },
+      {
+        "label": "Ausfall",
+        "value": "3,40 / 3,85 / 4,30 / 4,75 m"
+      },
+      {
+        "label": "",
+        "value": "Robustes Pfostenprofil 130 x 130 mm"
+      },
+      {
+        "label": "",
+        "value": "Optimaler Lamellenabstand 150 mm"
+      },
+      {
+        "label": "",
+        "value": "Integrierte Entwässerung über alle Pfosten (optionale Sperre nach 1 Ablauf in der Rinne)"
+      },
+      {
+        "label": "",
+        "value": "Maximale Dach-Schneelast von 30 kg/m²"
+      },
+      {
+        "label": "",
+        "value": "Leistungsstarker Motortyp 24V DC (Netzteil 230V AC)"
+      },
+      {
+        "label": "",
+        "value": "Komfortable Steuerung per dedizierter Fernbedienung oder Smartphone (WLAN)"
+      },
+      {
+        "label": "",
+        "value": "Sicherer Betriebsbereich von +5 bis +40°C (Lamellenbewegung)"
+      }
+    ]
+  },
+  // ══ /Pérgolas Aluminium-Katalog ══
   {
     "id": "panel-01",
     "catalogue": "entrance-door-panels",

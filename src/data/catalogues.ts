@@ -82,6 +82,21 @@ export const CATALOGUES: Catalogue[] = [
     sizeMb: 1.0,
     year: 2025,
   },
+  // Catálogo transversal de aluminio (2026): sistemas de ventana de
+  // cinco fabricantes, puertas, contraventanas y las dos pérgolas
+  // bioclimáticas. Sin marca única a propósito — es una recopilación
+  // multi-fabricante; sin categoría porque cruza varias gamas (las
+  // pérgolas salen en su página vía category de cada modelo).
+  {
+    id: "aluminium-2026",
+    title: { en: "Aluminium catalogue", de: "Aluminium-Katalog", pl: "Katalog aluminium", },
+    collection: { en: "Aluminium", de: "Aluminium", pl: "Aluminium", },
+    file: "/pdf/catalogues/aluminium-2026.pdf",
+    cover: "/images/catalogues/aluminium-2026-cover.jpg",
+    pages: 65,
+    sizeMb: 30.3,
+    year: 2026,
+  },
   {
     id: "despiro-entrance-doors",
     title: { en: "Despiro entrance doors", de: "Despiro Haustüren", pl: "Drzwi zewnętrzne Despiro", },
