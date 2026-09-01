@@ -125,6 +125,19 @@ const MAKERS = [
   { file: "iglo-terrassen", name: "IGLO", note: "PVC SLIDING SYSTEMS" },
   { file: "veka-schiebe", name: "VEKA", note: "PVC SLIDING SYSTEMS" },
   { file: "procural-schiebe", name: "PROCURAL", note: "ALUMINIUM SLIDING SYSTEMS" },
+  // Las cinco marcas de aluminio del Aluminium-Katalog (2026-09): cada
+  // una vive en ventanas y en correderas, así que doble lámina, como
+  // Salamander/IGLO/VEKA/PROCURAL.
+  { file: "aluprof", name: "Aluprof", note: "ALUMINIUM WINDOW SYSTEMS" },
+  { file: "aluprof-schiebe", name: "Aluprof", note: "ALUMINIUM SLIDING SYSTEMS" },
+  { file: "aliplast", name: "Aliplast", note: "ALUMINIUM WINDOW SYSTEMS" },
+  { file: "aliplast-schiebe", name: "Aliplast", note: "ALUMINIUM SLIDING SYSTEMS" },
+  { file: "deceuninck", name: "Deceuninck", note: "ALUMINIUM WINDOW SYSTEMS" },
+  { file: "deceuninck-schiebe", name: "Deceuninck", note: "ALUMINIUM SLIDING SYSTEMS" },
+  { file: "cortizo", name: "CORTIZO", note: "ALUMINIUM WINDOW SYSTEMS" },
+  { file: "cortizo-schiebe", name: "CORTIZO", note: "ALUMINIUM SLIDING SYSTEMS" },
+  { file: "reynaers", name: "Reynaers", note: "ALUMINIUM WINDOW SYSTEMS" },
+  { file: "reynaers-schiebe", name: "Reynaers", note: "ALUMINIUM SLIDING SYSTEMS" },
 ];
 
 for (const maker of MAKERS) {
