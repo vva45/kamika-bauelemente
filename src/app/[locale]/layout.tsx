@@ -8,6 +8,7 @@
  */
 import type { Metadata } from "next";
 import { IBM_Plex_Mono, Inter, Outfit } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 import { Footer } from "@/components/layout/Footer";
@@ -132,6 +133,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[lo
           <Footer />
         </SmoothScrollProvider>
         </LocaleProvider>
+        <Analytics />
       </body>
     </html>
   );
