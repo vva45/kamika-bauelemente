@@ -30,7 +30,7 @@ export function generateStaticParams() {
   return MANUFACTURERS.flatMap((manufacturer) =>
     manufacturer.systems.map((system) => ({
       category: manufacturer.category,
-      product: manufacturer.id,
+      manufacturer: manufacturer.id,
       system: system.id,
     })),
   );
@@ -38,8 +38,8 @@ export function generateStaticParams() {
 
 export async function generateMetadata({
   params,
-}: PageProps<"/[locale]/products/[category]/[product]/[system]">): Promise<Metadata> {
-  const { locale, category, product: manufacturerId, system: systemId } = await params;
+}: PageProps<"/[locale]/products/[category]/[manufacturer]/[system]">): Promise<Metadata> {
+  const { locale, category, manufacturer: manufacturerId, system: systemId } = await params;
   setRequestLocale(locale);
   if (!isCategorySlug(category)) return {};
   const manufacturer = getManufacturer(category, manufacturerId);
@@ -56,8 +56,8 @@ export async function generateMetadata({
 
 export default async function SystemPage({
   params,
-}: PageProps<"/[locale]/products/[category]/[product]/[system]">) {
-  const { locale, category: categorySlug, product: manufacturerId, system: systemId } = await params;
+}: PageProps<"/[locale]/products/[category]/[manufacturer]/[system]">) {
+  const { locale, category: categorySlug, manufacturer: manufacturerId, system: systemId } = await params;
   setRequestLocale(locale);
   if (!isCategorySlug(categorySlug)) notFound();
 

@@ -1,21 +1,17 @@
 /**
  * Detalle de proyecto: galería, resumen, lo que se instaló —enlazando a
- * las fichas de cada modelo— y contacto.
- *
- * Sin cotas en la galería: un proyecto no tiene una medida que dar, y
- * una cota inventada sería decoración que además miente.
+ * la ficha de catálogo de cada modelo— y contacto.
  */
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ModelCard } from "@/components/catalogue/ModelCard";
 import { ContactCta } from "@/components/layout/ContactCta";
 import { Gallery } from "@/components/media/Gallery";
-import { ProductCard } from "@/components/product/ProductCard";
 import { ProjectCard } from "@/components/project/ProjectCard";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { ButtonLink } from "@/components/ui/Button";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { PROJECTS, getCategory, getProject, getProjectModels, getProjectProducts } from "@/data";
+import { PROJECTS, getCategory, getProject, getProjectModels } from "@/data";
 import { formatNumber, pick, t, setRequestLocale } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/metadata";
 import { routes } from "@/lib/routes";
@@ -49,7 +45,6 @@ export default async function ProjectPage({ params }: PageProps<"/[locale]/proje
   if (!project) notFound();
 
   const title = pick(project.title);
-  const products = getProjectProducts(project);
   const models = getProjectModels(project);
   // Otros proyectos donde se instaló algo parecido, para seguir mirando.
   const others = PROJECTS.filter(
@@ -129,18 +124,14 @@ export default async function ProjectPage({ params }: PageProps<"/[locale]/proje
       </div>
 
       {/* ── Lo que se instaló, modelo a modelo ──────────────────── */}
-      {/* Conviven las dos cosas: gamas con ficha propia y gamas que se
-          venden por catálogo, donde lo que se puso es un modelo de una
-          colección. Misma rejilla, misma tarjeta de tamaño. */}
-      {products.length + models.length > 0 && (
+      {/* Lo que se puso es un modelo de una colección de catálogo; un
+          proyecto sin modelos confirmados no enseña el bloque. */}
+      {models.length > 0 && (
         <section className="mx-auto max-w-[1440px] px-5 py-16 md:px-8 md:py-24">
           <SectionTitle title={t("project.productsUsed")} size="sm" />
           <div className="mt-10 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
             {models.map((model) => (
               <ModelCard key={`${model.catalogue}-${model.id}`} model={model} />
-            ))}
-            {products.map((product) => (
-              <ProductCard key={product.id} product={product} />
             ))}
           </div>
         </section>

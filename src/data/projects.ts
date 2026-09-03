@@ -74,7 +74,6 @@ export const PROJECTS: Project[] = [
         },
       },
     ],
-    products: [],
     featured: true,
   },
   {
@@ -102,7 +101,6 @@ export const PROJECTS: Project[] = [
         },
       },
     ],
-    products: [],
     featured: true,
   },
   {
@@ -161,7 +159,6 @@ export const PROJECTS: Project[] = [
         },
       },
     ],
-    products: [],
   },
   {
     id: "wehingen-tueren-fenster",
@@ -188,7 +185,6 @@ export const PROJECTS: Project[] = [
         },
       },
     ],
-    products: [],
     featured: true,
   },
   {
@@ -216,7 +212,6 @@ export const PROJECTS: Project[] = [
         },
       },
     ],
-    products: [],
   },
   {
     id: "dotternhausen-balkontuer",
@@ -243,7 +238,6 @@ export const PROJECTS: Project[] = [
         },
       },
     ],
-    products: [],
   },
   {
     id: "balingen-arztpraxis",
@@ -286,7 +280,6 @@ export const PROJECTS: Project[] = [
         },
       },
     ],
-    products: [],
     featured: true,
   },
   {
@@ -314,7 +307,6 @@ export const PROJECTS: Project[] = [
         },
       },
     ],
-    products: [],
   },
   {
     id: "balingen-gartenseite",
@@ -349,7 +341,6 @@ export const PROJECTS: Project[] = [
         },
       },
     ],
-    products: [],
   },
   {
     id: "balingen-wohnraumfenster",
@@ -376,7 +367,6 @@ export const PROJECTS: Project[] = [
         },
       },
     ],
-    products: [],
   },
   {
     id: "albstadt-haustuer",
@@ -403,7 +393,6 @@ export const PROJECTS: Project[] = [
         },
       },
     ],
-    products: [],
   },
   {
     id: "neuffen-haustuer",
@@ -430,7 +419,6 @@ export const PROJECTS: Project[] = [
         },
       },
     ],
-    products: [],
     featured: true,
   },
   {
@@ -458,7 +446,6 @@ export const PROJECTS: Project[] = [
         },
       },
     ],
-    products: [],
   },
   {
     id: "balingen-haustuer-fenster",
@@ -493,7 +480,6 @@ export const PROJECTS: Project[] = [
         },
       },
     ],
-    products: [],
   },
   {
     id: "balingen-fenstertausch",
@@ -520,6 +506,5 @@ export const PROJECTS: Project[] = [
         },
       },
     ],
-    products: [],
   },
 ];

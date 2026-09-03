@@ -1,13 +1,13 @@
 "use client";
 
 /**
- * Galería compartida: imagen grande en el marco firma, miniaturas
- * debajo y un lightbox propio — sin librerías, que para cuatro fotos no
- * hacen falta. La usan la ficha de producto y el detalle de proyecto.
+ * Galería del detalle de proyecto: imagen grande en el marco firma,
+ * miniaturas debajo y un lightbox propio — sin librerías, que para
+ * cuatro fotos no hacen falta.
  *
- * Sobre la imagen principal van las dos líneas de cota con el tamaño
- * máximo real del elemento; si quien la usa no pasa medidas (una
- * manilla, un cilindro, un proyecto), no se pintan.
+ * Sin cotas a propósito: un proyecto no tiene una medida que dar, y una
+ * cota inventada sería decoración que además miente. (Las tenía cuando
+ * también servía a las fichas de producto, retiradas en 2026-09.)
  *
  * Teclado: las miniaturas son botones; en el lightbox, Escape cierra y
  * las flechas navegan. Mientras está abierto, la página de detrás no
@@ -16,22 +16,19 @@
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useSmoothScroll } from "@/components/layout/SmoothScroll";
-import { DimensionLine } from "@/components/ui/DimensionLine";
 import { WindowFrame } from "@/components/ui/WindowFrame";
 import { ArrowRightIcon, CloseIcon } from "@/components/ui/icons";
-import type { ProductImage } from "@/data/types";
+import type { GalleryImage } from "@/data/types";
 import { cn } from "@/lib/cn";
 import { useI18n } from "@/components/layout/LocaleProvider";
 
 type GalleryProps = {
-  images: ProductImage[];
+  images: GalleryImage[];
   title: string;
-  /** Solo la ficha de producto pinta cotas; en proyectos no hay medida que dar. */
-  dimensions?: { width: number; height: number } | null;
 };
 
-export function Gallery({ images, title, dimensions = null }: GalleryProps) {
-  const { formatNumber, pick, t, tf } = useI18n();
+export function Gallery({ images, title }: GalleryProps) {
+  const { pick, t, tf } = useI18n();
   const [active, setActive] = useState(0);
   const [lightbox, setLightbox] = useState(false);
   const closeRef = useRef<HTMLButtonElement | null>(null);
@@ -45,12 +42,6 @@ export function Gallery({ images, title, dimensions = null }: GalleryProps) {
     (delta: number) => setActive((index) => (index + delta + total) % total),
     [total],
   );
-
-  // Cotas en mm, sin separador de miles: en un plano van seguidos.
-  const width = dimensions ? `${formatNumber(dimensions.width, { useGrouping: false })} mm` : null;
-  const height = dimensions
-    ? `${formatNumber(dimensions.height, { useGrouping: false })} mm`
-    : null;
 
   const openLightbox = () => {
     openerRef.current = document.activeElement as HTMLElement;
@@ -89,30 +80,24 @@ export function Gallery({ images, title, dimensions = null }: GalleryProps) {
 
   return (
     <div>
-      {/* ── Imagen principal con cotas ────────────────────────── */}
-      <div className={cn("flex items-stretch", height && "gap-3")}>
-        <button
-          type="button"
-          onClick={openLightbox}
-          aria-label={t("gallery.openLightbox")}
-          className="group relative block min-w-0 flex-1 cursor-zoom-in rounded-frame"
-        >
-          <WindowFrame className="aspect-[4/3] w-full" pan>
-            <Image
-              src={current.src}
-              alt={pick(current.alt)}
-              fill
-              priority
-              sizes="(min-width: 1024px) 55vw, 100vw"
-              className="object-cover"
-            />
-          </WindowFrame>
-        </button>
-        {height && (
-          <DimensionLine orientation="vertical" label={height} className="w-5 shrink-0" />
-        )}
-      </div>
-      {width && <DimensionLine label={width} className={cn("mt-3", height && "pr-8")} />}
+      {/* ── Imagen principal ──────────────────────────────────── */}
+      <button
+        type="button"
+        onClick={openLightbox}
+        aria-label={t("gallery.openLightbox")}
+        className="group relative block w-full cursor-zoom-in rounded-frame"
+      >
+        <WindowFrame className="aspect-[4/3] w-full" pan>
+          <Image
+            src={current.src}
+            alt={pick(current.alt)}
+            fill
+            priority
+            sizes="(min-width: 1024px) 55vw, 100vw"
+            className="object-cover"
+          />
+        </WindowFrame>
+      </button>
 
       {/* ── Miniaturas ────────────────────────────────────────── */}
       {total > 1 && (

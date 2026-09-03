@@ -23,7 +23,6 @@ export const routes = {
     return `${prefix()}/products`;
   },
   category: (slug: CategorySlug) => `${prefix()}/products/${slug}`,
-  product: (category: CategorySlug, id: string) => `${prefix()}/products/${category}/${id}`,
   /** Jerarquía por fabricante: /de/products/windows/aluplast[/ideal-4000]. */
   manufacturer: (category: CategorySlug, id: string) => `${prefix()}/products/${category}/${id}`,
   manufacturerSystem: (category: CategorySlug, manufacturerId: string, systemId: string) =>
@@ -46,9 +45,9 @@ export const routes = {
   get contact() {
     return `${prefix()}/contact`;
   },
-  /** Contacto con el asunto pre-rellenado desde una ficha de producto. */
-  contactAbout: (productId: string) =>
-    `${prefix()}/contact?product=${encodeURIComponent(productId)}`,
+  /** Contacto con la colección de catálogo ya preseleccionada (id de catálogo). */
+  contactAbout: (catalogueId: string) =>
+    `${prefix()}/contact?product=${encodeURIComponent(catalogueId)}`,
   get imprint() {
     return `${prefix()}/imprint`;
   },
@@ -69,7 +68,6 @@ export const routesFor = (locale: Locale) => {
     about: `${p}/about`,
     products: `${p}/products`,
     category: (slug: CategorySlug) => `${p}/products/${slug}`,
-    product: (category: CategorySlug, id: string) => `${p}/products/${category}/${id}`,
     manufacturer: (category: CategorySlug, id: string) => `${p}/products/${category}/${id}`,
     manufacturerSystem: (category: CategorySlug, manufacturerId: string, systemId: string) =>
       `${p}/products/${category}/${manufacturerId}/${systemId}`,
@@ -82,8 +80,8 @@ export const routesFor = (locale: Locale) => {
     project: (id: string) => `${p}/projects/${id}`,
     colours: `${p}/colours`,
     contact: `${p}/contact`,
-    contactAbout: (productId: string) =>
-      `${p}/contact?product=${encodeURIComponent(productId)}`,
+    contactAbout: (catalogueId: string) =>
+      `${p}/contact?product=${encodeURIComponent(catalogueId)}`,
     imprint: `${p}/imprint`,
     privacy: `${p}/privacy`,
   };

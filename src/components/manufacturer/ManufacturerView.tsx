@@ -3,10 +3,10 @@
  * rejilla de sistemas — las mismas "casitas" que en la categoría, una
  * por sistema.
  *
- * Es un componente y no una ruta propia porque el fabricante comparte
- * el segmento de URL con las fichas de producto
- * (`/products/windows/aluplast`), y quien decide cuál de los dos es
- * cada slug es la página `[product]`.
+ * Es un componente aparte de su ruta (`[manufacturer]/page.tsx`) desde
+ * la época en que ese segmento de URL se compartía con las fichas de
+ * producto; las fichas se fueron (2026-09) y la separación se queda,
+ * que no molesta.
  */
 import Image from "next/image";
 import { ContactCta } from "@/components/layout/ContactCta";

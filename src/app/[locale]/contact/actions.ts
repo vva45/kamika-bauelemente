@@ -14,7 +14,7 @@
  * que la clave hay que ponerla. Ver .env.example.
  */
 import { COMPANY } from "@/data/company";
-import { getCatalogue, getProduct } from "@/data";
+import { getCatalogue } from "@/data";
 import { collectionName } from "@/lib/catalogue";
 import { t, tf } from "@/lib/i18n";
 import {
@@ -68,11 +68,10 @@ export async function sendEnquiry(
   const invalid = validateContact(values);
   if (invalid.length > 0) return { status: "invalid", fields: invalid };
 
-  // El desplegable mezcla dos cosas: fichas de producto y colecciones de
-  // catálogo. Las dos son un id válido, y en el correo se lee igual.
-  const product = values.product ? getProduct(values.product) : undefined;
+  // El desplegable ofrece colecciones de catálogo; el campo se sigue
+  // llamando `product` en el formulario y en el correo se lee igual.
   const catalogue = values.product ? getCatalogue(values.product) : undefined;
-  const productName = product ? product.name : catalogue ? collectionName(catalogue) : null;
+  const productName = catalogue ? collectionName(catalogue) : null;
 
   const subject = productName
     ? tf("contactPage.enquiryAbout", { product: productName })

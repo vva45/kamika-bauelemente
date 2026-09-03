@@ -23,16 +23,8 @@ import {
 } from "./categories";
 import { COLORS } from "./colors";
 import { CATALOGUE_COLORS } from "./catalogue-colors";
-import { PRODUCTS } from "./products";
 import { PROJECTS } from "./projects";
-import type {
-  Catalogue,
-  CatalogueModel,
-  CategorySlug,
-  ColorFinish,
-  Product,
-  Project,
-} from "./types";
+import type { Catalogue, CatalogueModel, CategorySlug, ColorFinish, Project } from "./types";
 
 export {
   CATALOGUE_MODELS,
@@ -47,38 +39,11 @@ export {
   leafCategories,
   topLevelCategories,
   COLORS,
-  PRODUCTS,
   PROJECTS,
   getCatalogue,
   getCategory,
   isCategorySlug,
   orderedCategories,
-};
-
-// ── Productos ──────────────────────────────────────────────────
-
-export const getProduct = (id: string): Product | undefined =>
-  PRODUCTS.find((product) => product.id === id);
-
-export const getProductsByCategory = (slug: CategorySlug): Product[] =>
-  PRODUCTS.filter((product) => product.category === slug);
-
-export const countProductsByCategory = (slug: CategorySlug): number =>
-  getProductsByCategory(slug).length;
-
-/**
- * "Goes well with". Los ids que todavía no existen se descartan en
- * silencio, para que sembrar una categoría nueva no pueda dejar
- * enlaces muertos en las fichas ya publicadas.
- */
-export const getRelated = (product: Product): Product[] =>
-  product.related
-    .map((id) => getProduct(id))
-    .filter((related): related is Product => related !== undefined);
-
-export const getFeatured = (limit?: number): Product[] => {
-  const featured = PRODUCTS.filter((product) => product.featured);
-  return typeof limit === "number" ? featured.slice(0, limit) : featured;
 };
 
 // ── Catálogos ──────────────────────────────────────────────────
@@ -128,13 +93,10 @@ export const countModelsByCatalogue = (catalogueId: string): number =>
   getModelsByCatalogue(catalogueId).length;
 
 /**
- * Cuántos modelos puede ver el visitante en una gama.
- *
- * No es lo mismo que el número de fichas: en puertas de entrada hay
- * cuatro productos destacados, pero detrás están los cientos de modelos
- * de los catálogos, y ese es el número que le interesa a quien está
- * decidiendo si aquí encontrará lo que busca. Cuando la gama todavía no
- * tiene catálogo, el número de fichas es todo lo que hay.
+ * Cuántos modelos puede ver el visitante en una gama: los de sus
+ * catálogos (más los que otra colección le aporta por override) o, en
+ * las gamas organizadas por fabricante, sus sistemas — el número que
+ * le interesa a quien decide si aquí encontrará lo que busca.
  */
 export const countModelsInCategory = (slug: CategorySlug): number => {
   // Una gama que agrupa tipos (Doors) no tiene modelos propios: enseña
@@ -159,7 +121,7 @@ export const countModelsInCategory = (slug: CategorySlug): number => {
     (total, manufacturer) => total + manufacturer.systems.length,
     0,
   );
-  return Math.max(models, systems, getProductsByCategory(slug).length);
+  return Math.max(models, systems);
 };
 
 /** Familias declaradas en un catálogo, para agrupar el escaparate. */
@@ -181,16 +143,10 @@ export const getProjectsByCategory = (slug: CategorySlug): Project[] =>
   PROJECTS.filter((project) => project.categories.includes(slug)).sort((a, b) => b.year - a.year);
 
 /**
- * Modelos instalados en un proyecto, ya resueltos a producto.
+ * Modelos de catálogo instalados en un proyecto, ya resueltos.
  * Los ids que no existan se descartan en silencio: cambiar el catálogo
  * no puede dejar enlaces muertos en un proyecto ya publicado.
  */
-export const getProjectProducts = (project: Project): Product[] =>
-  (project.products ?? [])
-    .map((id) => getProduct(id))
-    .filter((product): product is Product => product !== undefined);
-
-/** Modelos de catálogo instalados en un proyecto, con el mismo criterio. */
 export const getProjectModels = (project: Project): CatalogueModel[] =>
   (project.models ?? [])
     .map((ref) => getCatalogueModel(ref.catalogue, ref.id))

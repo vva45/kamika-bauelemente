@@ -67,8 +67,6 @@ export const pl: Record<ContentKey, string> = {
   "products.eyebrow": "Grupy produktów",
   "products.title": "Produkty",
   "products.intro": "Osiem grup wokół otworu: element, jego osłona, siatka i okucia. Każda strona modelu pokazuje specyfikację i prowadzi do dokładnej strony katalogu.",
-  "products.filterLabel": "Materiał",
-  "products.filterAll": "Wszystkie materiały",
 
   // ── Materiales (etiquetas de filtro y de spec) ──────────────
   "material.pvc": "PVC",
@@ -88,10 +86,6 @@ export const pl: Record<ContentKey, string> = {
   "product.datasheet": "Karta techniczna",
   "product.sendEnquiry": "Wyślij zapytanie",
   "product.specifications": "Specyfikacja",
-  "product.goesWellWith": "Dobrze pasuje do",
-  "product.usedInProjects": "Zamontowane w tych realizacjach",
-  "product.badgeNew": "Nowość",
-  "product.badgeBestseller": "Bestseller",
   "product.modelsOne": "1 model",
   "product.modelsOther": "{count} modeli",
 
@@ -156,7 +150,6 @@ export const pl: Record<ContentKey, string> = {
   "catalogue.fromCatalogue": "Z katalogu",
   "catalogue.openAtPage": "Otwórz katalog na stronie {page}",
   "catalogue.otherModels": "Inne modele z tego katalogu",
-  "catalogue.modelsInCatalogue": "{count} modeli w tym katalogu",
   "catalogue.modelFamilies": "Serie",
   "catalogue.modelNote": "Zdjęcia i dane pochodzą z katalogu producenta. Zapytaj nas, które modele są dostępne, ile kosztują i jaki jest czas realizacji.",
 
@@ -312,7 +305,5 @@ export const pl: Record<ContentKey, string> = {
   "category.typesHeading": "Rodzaje drzwi",
   "category.typesIntro": "Każdy rodzaj to osobna grupa z własnymi modelami, specyfikacjami i katalogami. Wybierz ten, który pasuje do otworu.",
   "category.comingSoonTitle": "Ta grupa jest w przygotowaniu",
-  "category.pergolasBrandAlt1": "Pergola bioklimatyczna z dachem lamelowym i oświetleniem nad ogrodowym wypoczynkiem o zmierzchu",
-  "category.pergolasBrandAlt2": "Przeszklona zabudowa zimą: czarna konstrukcja aluminiowa ze szklanym dachem nad pokojem tarasowym",
   "category.comingSoonBody": "Dostarczamy i montujemy tę grupę, ale strony katalogowe nie są jeszcze online. Zadzwoń albo napisz — wyślemy aktualną dokumentację.",
 };

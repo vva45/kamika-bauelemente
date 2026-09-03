@@ -7,21 +7,21 @@
  *   1. FABRICANTES, si los declara (ventanas: Aluplast → sistemas).
  *   2. COLECCIONES, si tiene catálogos con escaparate (puertas de
  *      entrada: ROKA Signature, ROKA Select, Despiro, paneles). Cada
- *      portada lleva a todos los modelos de ese catálogo.
- *   3. FICHAS de producto, mientras una gama no tenga ni lo uno ni lo
- *      otro.
- *   4. Aviso honesto de "en preparación" con las salidas útiles.
+ *      portada lleva a todos los modelos de ese catálogo — y debajo,
+ *      los modelos que OTRA colección aporta a la gama (accesorios,
+ *      puertas PIVOT, Klappläden).
+ *   3. Aviso honesto de "en preparación" con las salidas útiles, para
+ *      una gama que aún no tenga nada de lo anterior.
  *
  * Los dos primeros escalones son la misma idea que pidió el dueño —
  * primero la marca, después lo que ofrece— y por eso van antes que
- * cualquier modelo suelto.
+ * cualquier modelo suelto. (Las fichas de producto sueltas que había
+ * como cuarto escalón eran datos de ejemplo; se fueron en 2026-09.)
  */
 import type { Metadata } from "next";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { CategoryCard } from "@/components/category/CategoryCard";
 import { CategoryHero } from "@/components/category/CategoryHero";
-import { CategoryProducts } from "@/components/category/CategoryProducts";
 import { CatalogueCard } from "@/components/catalogue/CatalogueCard";
 import { CollectionCard } from "@/components/catalogue/CollectionCard";
 import { ModelCard } from "@/components/catalogue/ModelCard";
@@ -37,7 +37,6 @@ import {
   getCollectionsFor,
   getManufacturersByCategory,
   getModelsInCategory,
-  getProductsByCategory,
   isCategorySlug,
 } from "@/data";
 import { pick, t, setRequestLocale } from "@/lib/i18n";
@@ -77,7 +76,6 @@ export default async function CategoryPage({ params }: PageProps<"/[locale]/prod
   // enseña sus tipos y nada más, que es justo lo que se ha venido a
   // elegir aquí.
   const children = childCategories(slug);
-  const products = getProductsByCategory(slug);
   // Jerarquía por fabricante (petición del dueño para ventanas): si la
   // gama declara fabricantes, la categoría enseña sus "casitas" en vez
   // de modelos sueltos. Fabricante → sistemas → versiones.
@@ -87,11 +85,6 @@ export default async function CategoryPage({ params }: PageProps<"/[locale]/prod
   // Y los modelos que otra colección aporta a esta gama: los accesorios
   // que traen al final los catálogos de puertas y de persianas.
   const models = getModelsInCategory(slug);
-  const comingSoon =
-    manufacturers.length === 0 &&
-    collections.length === 0 &&
-    models.length === 0 &&
-    (category.comingSoon || products.length === 0);
 
   return (
     <>
@@ -186,26 +179,11 @@ export default async function CategoryPage({ params }: PageProps<"/[locale]/prod
             </section>
           )}
         </>
-      ) : comingSoon ? (
+      ) : (
+        // Hoy ninguna gama cae aquí — las ocho tienen fabricantes,
+        // colecciones o modelos — pero una gama nueva sin catálogo
+        // aterrizaría en este aviso, nunca en una página vacía.
         <ComingSoon title={t("category.comingSoonTitle")} body={t("category.comingSoonBody")}>
-          {/* Pérgolas: el dueño mandó dos imágenes de marca más junto a
-              la portada — mientras no llega su catálogo, son lo único
-              real que esta gama puede enseñar, y aquí se enseñan. */}
-          {slug === "pergolas" && (
-            <div className="mb-10 grid gap-6 sm:grid-cols-2">
-              {[1, 2].map((n) => (
-                <div key={n} className="relative aspect-[4/3] overflow-hidden rounded-kamika ring-1 ring-inset ring-kamika-ink/10">
-                  <Image
-                    src={`/images/categories/pergolas-brand-${n}.jpg`}
-                    alt={t(n === 1 ? "category.pergolasBrandAlt1" : "category.pergolasBrandAlt2")}
-                    fill
-                    sizes="(min-width: 640px) 45vw, 90vw"
-                    className="object-cover"
-                  />
-                </div>
-              ))}
-            </div>
-          )}
           {/* Mientras no hay fichas, los catálogos generales son la
               mejor respuesta a "¿qué ofrecéis aquí?". */}
           <div className="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
@@ -214,10 +192,6 @@ export default async function CategoryPage({ params }: PageProps<"/[locale]/prod
             ))}
           </div>
         </ComingSoon>
-      ) : (
-        <section className="mx-auto max-w-[1440px] px-5 py-12 md:px-8 md:py-16">
-          <CategoryProducts products={products} />
-        </section>
       )}
 
       <ContactCta />

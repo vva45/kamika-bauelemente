@@ -9,8 +9,8 @@
  *  2. Assets referenciados que no existen. ⚠️ Se quita el ancla
  *     `#page=42` ANTES de mirar el disco, o los enlaces a páginas de
  *     catálogo darían falso positivo siempre.
- *  3. Ids duplicados entre ficheros de datos (productos, catálogos,
- *     proyectos, colores).
+ *  3. Ids duplicados entre ficheros de datos (catálogos, fabricantes,
+ *     proyectos, colores, modelos).
  *  4. Textos visibles escritos a pelo en un componente, fuera de la
  *     capa de contenido.
  *  5. Claves de contenido declaradas y nunca usadas.
@@ -124,27 +124,8 @@ notes.push(`${assetRefs.size} asset paths referenced from src.`);
 
 // ── 3. Ids duplicados ────────────────────────────────────────────────
 
-// Los ficheros de producto se importan uno a uno con extensión: Node
-// ejecuta TypeScript sin resolver imports sin extensión, y
-// products/index.ts los escribe como los escribe TypeScript.
-const PRODUCT_MODULES = [
-  ["accessories", "accessories"],
-  ["entrance-doors", "entranceDoors"],
-  ["gates", "gates"],
-  ["insect-screens", "insectScreens"],
-  ["patio-doors", "patioDoors"],
-  ["roller-shutters", "rollerShutters"],
-  ["windows", "windows"],
-];
-
-const PRODUCTS = (
-  await Promise.all(
-    PRODUCT_MODULES.map(async ([file, exported]) => {
-      const loaded = await import(`../src/data/products/${file}.ts`);
-      return loaded[exported];
-    }),
-  )
-).flat();
+// Los ficheros de datos se importan con extensión: Node ejecuta
+// TypeScript sin resolver imports sin extensión.
 const { CATALOGUES } = await import("../src/data/catalogues.ts");
 const { MANUFACTURERS } = await import("../src/data/manufacturers.ts");
 const { PROJECTS } = await import("../src/data/projects.ts");
@@ -160,7 +141,6 @@ const checkDuplicates = (label, items) => {
   }
 };
 
-checkDuplicates("products", PRODUCTS);
 checkDuplicates("catalogues", CATALOGUES);
 checkDuplicates("projects", PROJECTS);
 // Las muestras de catálogo las genera un script: un id repetido aquí
@@ -168,16 +148,13 @@ checkDuplicates("projects", PROJECTS);
 checkDuplicates("colours", [...COLORS, ...CATALOGUE_COLORS]);
 checkDuplicates("glass", CATALOGUE_GLASS);
 
-// Un id de producto no puede chocar con uno de proyecto o de catálogo:
-// el encargo dice "slug único en todo el sitio".
+// Un id no puede chocar entre proyectos y catálogos: el encargo dice
+// "slug único en todo el sitio".
 const everyId = [
-  ...PRODUCTS.map((p) => ["product", p.id]),
-  // Los fabricantes comparten segmento de URL con los productos de su
-  // categoría: un choque de ids serviría dos páginas bajo una URL. La
-  // URL lleva la categoría delante, así que la clave del fabricante es
-  // (categoría, id) — el contrato del tipo dice "único DENTRO de su
-  // categoría", y Salamander existe a la vez en ventanas y en puertas
-  // de terraza precisamente porque es el mismo fabricante.
+  // La URL de un fabricante lleva la categoría delante, así que su
+  // clave es (categoría, id) — el contrato del tipo dice "único DENTRO
+  // de su categoría", y Salamander existe a la vez en ventanas y en
+  // puertas de terraza precisamente porque es el mismo fabricante.
   ...MANUFACTURERS.map((m) => ["manufacturer", `${m.category}/${m.id}`]),
   ...CATALOGUES.map((c) => ["catalogue", c.id]),
   ...PROJECTS.map((p) => ["project", p.id]),
@@ -187,8 +164,7 @@ for (const [kind, id] of everyId) {
   if (owner.has(id)) fail("duplicate id", `"${id}" is used by both ${owner.get(id)} and ${kind}`);
   owner.set(id, kind);
 }
-// Y el choque que sí sería grave: un fabricante contra un PRODUCTO de
-// su misma categoría (misma URL), o dos fabricantes en la misma gama.
+// Dos fabricantes en la misma gama con el mismo id serían una sola URL.
 const manufacturerKeys = new Set();
 for (const manufacturer of MANUFACTURERS) {
   const key = `${manufacturer.category}/${manufacturer.id}`;
@@ -196,26 +172,6 @@ for (const manufacturer of MANUFACTURERS) {
     fail("duplicate id", `manufacturer "${key}" appears more than once`);
   }
   manufacturerKeys.add(key);
-  if (PRODUCTS.some((p) => p.category === manufacturer.category && p.id === manufacturer.id)) {
-    fail("duplicate id", `manufacturer "${key}" collides with a product at the same URL`);
-  }
-}
-
-// Referencias cruzadas: related y products de proyecto.
-const productIds = new Set(PRODUCTS.map((p) => p.id));
-for (const product of PRODUCTS) {
-  for (const related of product.related) {
-    if (!productIds.has(related)) {
-      fail("broken reference", `product "${product.id}" relates to unknown "${related}"`);
-    }
-  }
-}
-for (const project of PROJECTS) {
-  for (const id of project.products ?? []) {
-    if (!productIds.has(id)) {
-      fail("broken reference", `project "${project.id}" lists unknown product "${id}"`);
-    }
-  }
 }
 
 // Modelos de catálogo: id único dentro de su catálogo, y su catálogo
@@ -236,11 +192,6 @@ for (const model of CATALOGUE_MODELS) {
     fail("broken reference", `catalogue model "${model.id}" belongs to unknown catalogue "${model.catalogue}"`);
   }
 }
-for (const product of PRODUCTS) {
-  if (product.catalogue && !catalogueIds.has(product.catalogue.id)) {
-    fail("broken reference", `product "${product.id}" points at unknown catalogue "${product.catalogue.id}"`);
-  }
-}
 // Las muestras de color y de cristal extraídas apuntan al catálogo del
 // que salieron: las secciones de /colours toman de ahí su título.
 for (const colour of CATALOGUE_COLORS) {
@@ -255,7 +206,7 @@ for (const glass of CATALOGUE_GLASS) {
 }
 
 notes.push(
-  `${PRODUCTS.length} products, ${CATALOGUES.length} catalogues, ${CATALOGUE_MODELS.length} catalogue models, ${PROJECTS.length} projects, ${COLORS.length} standard finishes + ${CATALOGUE_COLORS.length} catalogue swatches + ${CATALOGUE_GLASS.length} glass types.`,
+  `${CATALOGUES.length} catalogues, ${CATALOGUE_MODELS.length} catalogue models, ${MANUFACTURERS.length} manufacturer entries, ${PROJECTS.length} projects, ${COLORS.length} standard finishes + ${CATALOGUE_COLORS.length} catalogue swatches + ${CATALOGUE_GLASS.length} glass types.`,
 );
 
 // ── 4. Texto visible escrito a pelo ──────────────────────────────────

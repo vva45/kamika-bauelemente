@@ -67,8 +67,6 @@ export const de: Record<ContentKey, string> = {
   "products.eyebrow": "Produktbereiche",
   "products.title": "Produkte",
   "products.intro": "Acht Bereiche rund um die Öffnung: das Element, seine Beschattung, sein Insektenschutz und die Beschläge. Jede Modellseite zeigt die Spezifikation und verlinkt auf die genaue Katalogseite.",
-  "products.filterLabel": "Material",
-  "products.filterAll": "Alle Materialien",
 
   // ── Materiales (etiquetas de filtro y de spec) ──────────────
   "material.pvc": "Kunststoff",
@@ -88,10 +86,6 @@ export const de: Record<ContentKey, string> = {
   "product.datasheet": "Technisches Datenblatt",
   "product.sendEnquiry": "Anfrage senden",
   "product.specifications": "Spezifikationen",
-  "product.goesWellWith": "Passt gut zu",
-  "product.usedInProjects": "In diesen Referenzen verbaut",
-  "product.badgeNew": "Neu",
-  "product.badgeBestseller": "Bestseller",
   "product.modelsOne": "1 Modell",
   "product.modelsOther": "{count} Modelle",
 
@@ -156,7 +150,6 @@ export const de: Record<ContentKey, string> = {
   "catalogue.fromCatalogue": "Aus dem Katalog",
   "catalogue.openAtPage": "Katalog auf Seite {page} öffnen",
   "catalogue.otherModels": "Weitere Modelle aus diesem Katalog",
-  "catalogue.modelsInCatalogue": "{count} Modelle in diesem Katalog",
   "catalogue.modelFamilies": "Serien",
   "catalogue.modelNote": "Bilder und Daten stammen aus dem Herstellerkatalog. Fragen Sie uns, welche Modelle lieferbar sind, was sie kosten und wie lange sie dauern.",
 
@@ -312,7 +305,5 @@ export const de: Record<ContentKey, string> = {
   "category.typesHeading": "Türarten",
   "category.typesIntro": "Jede Art ist ein eigener Bereich mit eigenen Modellen, Spezifikationen und Katalogen. Wählen Sie die, die zu Ihrer Öffnung passt.",
   "category.comingSoonTitle": "Dieser Bereich wird vorbereitet",
-  "category.pergolasBrandAlt1": "Bioklimatische Pergola mit Lamellendach und Beleuchtung über einer Gartenlounge in der Dämmerung",
-  "category.pergolasBrandAlt2": "Verglaste Überdachung im Winter: schwarze Aluminiumkonstruktion mit Glasdach über einem Terrassenraum",
   "category.comingSoonBody": "Wir liefern und montieren diesen Bereich, aber die Katalogseiten sind noch nicht online. Rufen Sie an oder schreiben Sie — wir senden die aktuellen Unterlagen.",
 };

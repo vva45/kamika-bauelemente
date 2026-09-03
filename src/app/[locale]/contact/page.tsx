@@ -2,10 +2,10 @@
  * /contact — formulario a la izquierda, contacto directo y mapa a la
  * derecha.
  *
- * El `?product=` que trae el botón "Send enquiry" de cada ficha se
- * valida aquí, en el servidor: si el id no existe, simplemente no se
- * preselecciona nada. Así un enlace viejo o manipulado no llega al
- * formulario.
+ * El `?product=` que trae el botón "Send enquiry" de cada modelo de
+ * catálogo (lleva el id de su colección) se valida aquí, en el
+ * servidor: si el id no existe, simplemente no se preselecciona nada.
+ * Así un enlace viejo o manipulado no llega al formulario.
  */
 import type { Metadata } from "next";
 import { ContactForm, type ProductOptionGroup } from "@/components/contact/ContactForm";
@@ -18,7 +18,7 @@ import {
   PhoneIcon,
   PinIcon,
 } from "@/components/ui/icons";
-import { getCatalogue, getCollectionsFor, getProduct, getProductsByCategory, orderedCategories } from "@/data";
+import { getCatalogue, getCollectionsFor, orderedCategories } from "@/data";
 import {
   COMPANY,
   companyAddressLine,
@@ -48,27 +48,19 @@ export default async function ContactPage({ params, searchParams }: PageProps<"/
 
   const { product } = await searchParams;
   const requested = typeof product === "string" ? product : "";
-  // Vale tanto una ficha de producto como una colección de catálogo:
-  // desde las puertas de entrada, lo que se elige es la colección.
-  const selectedProduct = getProduct(requested) || getCatalogue(requested) ? requested : "";
+  // Lo que se preselecciona es una colección de catálogo: así es como
+  // se pide una puerta o una persiana.
+  const selectedProduct = getCatalogue(requested) ? requested : "";
 
   // El desplegable se arma desde la capa de datos, agrupado por
   // categoría: si mañana hay una gama nueva, aparece sola.
   const groups: ProductOptionGroup[] = orderedCategories()
     .map((category) => ({
       category: pick(category.name),
-      options: [
-        // Primero las colecciones —que es como se pide una puerta— y
-        // después las fichas sueltas de las gamas que aún las tienen.
-        ...getCollectionsFor(category.slug).map((catalogue) => ({
-          id: catalogue.id,
-          label: collectionName(catalogue),
-        })),
-        ...getProductsByCategory(category.slug).map((entry) => ({
-          id: entry.id,
-          label: entry.name,
-        })),
-      ],
+      options: getCollectionsFor(category.slug).map((catalogue) => ({
+        id: catalogue.id,
+        label: collectionName(catalogue),
+      })),
     }))
     .filter((group) => group.options.length > 0);
 

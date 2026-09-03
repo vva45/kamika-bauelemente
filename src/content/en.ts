@@ -64,8 +64,6 @@ export const en = {
   "products.title": "Products",
   "products.intro":
     "Eight ranges covering the whole opening: the element, its shading, its screen and its hardware. Every model page lists the specification and links to the exact catalogue page.",
-  "products.filterLabel": "Material",
-  "products.filterAll": "All materials",
 
   // ── Materiales (etiquetas de filtro y de spec) ──────────────
   "material.pvc": "PVC",
@@ -85,10 +83,6 @@ export const en = {
   "product.datasheet": "Technical data sheet",
   "product.sendEnquiry": "Send enquiry",
   "product.specifications": "Specifications",
-  "product.goesWellWith": "Goes well with",
-  "product.usedInProjects": "Used in these projects",
-  "product.badgeNew": "New",
-  "product.badgeBestseller": "Bestseller",
   "product.modelsOne": "1 model",
   "product.modelsOther": "{count} models",
 
@@ -168,7 +162,6 @@ export const en = {
   "catalogue.fromCatalogue": "From the catalogue",
   "catalogue.openAtPage": "Open catalogue at page {page}",
   "catalogue.otherModels": "Other models in this catalogue",
-  "catalogue.modelsInCatalogue": "{count} models in this catalogue",
   "catalogue.modelFamilies": "Series",
   "catalogue.modelNote":
     "Images and data come from the manufacturer's catalogue. Ask us which models are stocked, what they cost and how long they take.",
@@ -344,8 +337,6 @@ export const en = {
   "category.typesIntro":
     "Each type is a range of its own, with its own models, specifications and catalogues. Pick the one that matches the opening.",
   "category.comingSoonTitle": "This range is being prepared",
-  "category.pergolasBrandAlt1": "Bioclimatic pergola with louvred roof and lighting over a garden lounge at dusk",
-  "category.pergolasBrandAlt2": "Glazed canopy in winter: black aluminium structure with glass roof over a terrace room",
   "category.comingSoonBody":
     "We supply and install this range, but the catalogue pages are not online yet. Call or write and we will send the current documentation.",
 } satisfies Record<string, string>;

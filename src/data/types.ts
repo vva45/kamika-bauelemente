@@ -28,26 +28,11 @@ export interface Spec {
   highlight?: boolean; // sale también en la cabecera de la ficha
 }
 
-export interface ProductImage {
-  src: string; // /images/{category}/{id}-1.jpg
+/** Una foto de la galería de un proyecto, con su alt en los tres idiomas. */
+export interface GalleryImage {
+  src: string; // /images/projects/{id}-1.jpg
   alt: Localized<string>;
   caption?: Localized<string>;
-}
-
-export interface Product {
-  id: string; // slug único en todo el sitio
-  category: CategorySlug;
-  name: string; // nombre de modelo, NO se traduce
-  tagline: Localized<string>; // una línea, máx ~60 caracteres
-  description: Localized<string>; // 2-4 frases, sin marketing hueco
-  material?: Material;
-  specs: Spec[]; // 6-10, las 3 primeras con highlight
-  images: ProductImage[]; // mínimo 3
-  datasheet?: string; // /pdf/{category}/{id}.pdf  (ficha propia)
-  catalogue?: { id: string; page?: number }; // o página dentro del catálogo general
-  related: string[]; // ids de "Goes well with" (cross-category)
-  featured?: boolean;
-  badge?: "new" | "bestseller";
 }
 
 export interface Category {
@@ -103,17 +88,7 @@ export interface Project {
   year: number;
   categories: CategorySlug[]; // qué se instaló
   summary: Localized<string>; // 2-3 frases: qué pedía el cliente, qué se puso
-  images: ProductImage[]; // mínimo 3
-  /**
-   * Modelos concretos que se instalaron, por id de producto.
-   *
-   * No venía en el modelo de datos del encargo, pero el detalle de
-   * proyecto tiene que enlazar a las fichas de lo que se puso. Deducirlo
-   * de `categories` daría una lista inventada: "se instalaron ventanas"
-   * no es lo mismo que "se instaló este modelo". Es opcional: un
-   * proyecto sin lista simplemente no enseña el bloque.
-   */
-  products?: string[];
+  images: GalleryImage[]; // mínimo 3
   /**
    * Modelos de catálogo que se instalaron, por catálogo e id.
    *

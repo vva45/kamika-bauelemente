@@ -13,20 +13,14 @@ Status legend: `[ ]` missing · `[~]` placeholder in place, needs replacing.
 
 ## 1. Photography
 
-All placeholders are generated locally in the brand palette, at the exact final paths. Replacing
-them is a copy-and-paste — no code change, same filename.
-
-Regenerate any missing ones at any time with:
-
-```bash
-npm run assets:placeholders
-```
+Every image path below is final: replacing one is a copy-and-paste — no code change, same
+filename. (The placeholder generator of the first build, `generate-placeholders.mjs`, was retired
+in 2026-09: every path it could have filled is now a real photograph or a catalogue extraction.)
 
 | Status | Path                                             | What it must show                                                              | Who   |
 | ------ | ------------------------------------------------ | ------------------------------------------------------------------------------ | ----- |
 | `[~]`  | `public/images/home/hero.jpg`                    | One strong installation photo — a finished window or door in a real house. Landscape, 2400×1500 or larger. This is the first thing a visitor sees. | Owner |
 | `[x]`  | `public/images/categories/{slug}-hero.jpg`        | **Done — all eight are the owner's own photographs**, 1536×1024 (3:2), which is exactly what the frame shows, so none of them is cropped. `build-category-heroes.mjs` no longer generates any of them: every slug is in `OWNER_PHOTOS` and the script refuses to overwrite a real photograph. Replacing one means keeping 3:2 and remembering the Kamika wordmark sits in the top-left corner — the first thing any crop eats. | —     |
-| `[~]`  | `public/images/windows/{product-id}-{1,2,3}.jpg`  | Three photos per product: the element installed, a profile/section detail, and a wider shot. 1600×1200. | Owner |
 | `[x]`  | `public/images/about/dominik.jpg`                 | **The real portrait AND the real bio are in place** (2026-08). The frame crops the photo to 4:5 with the face centred — checked in a real browser. The bio is the owner's own text, translated to English for now; **the German original is stored verbatim in `de.ts`** (`about.ownerBody1/2`, `about.ownerRole`) and goes out literally when the site switches to German. | —     |
 | `[~]`  | `public/images/catalogues/{id}-cover.jpg`         | Front cover of each catalogue — it is also the card the visitor clicks in the range. ROKA's two PDFs have real covers, rendered from page 1. The Despiro and panel PDFs are extracts with no cover, so theirs are composed by `node scripts/build-collection-covers.mjs` from two of their own models. If the supplier sends a complete PDF, render page 1 and drop the composed one. | You   |
 | `[~]`  | `public/images/projects/{id}-{n}.jpg`             | **16 real jobs are online** with the owner's photos (2026-08). Most have a single photo, which is what he had; a second and third of the same job — a wider shot, a detail — make a project page much more convincing. Two photos of the batch (06, 07) still have no job attached. | Owner |
@@ -339,7 +333,15 @@ accessories and the WIKĘD showcase all open the catalogue at the exact page.
 
 ## 3. Product data — the big one
 
-`src/data/products/` holds **zero example products since 2026-08 — the invented data is gone.**
+**2026-09: the product layer itself is gone, not just its data.** `src/data/products/`, the
+`Product` type, `ProductCard`, `CategoryProducts`, the product JSON-LD, the product sitemap
+entries, the "Goes well with" cross-sell, the project→product links and the gallery's dimension
+lines were all code that had served zero products for a month. The `[product]` route segment is
+now `[manufacturer]` (same URLs — `/products/windows/aluprof` — the segment only ever served
+manufacturer pages by then). Twelve orphaned photos of the deleted example accessories left
+`public/images/accessories/` with them. What follows is the history of how the data got there.
+
+`src/data/products/` held **zero example products since 2026-08 — the invented data is gone.**
 The last four (the roller-shutter/Raffstore legacy cards, hidden visually but still reachable by
 URL, still in the sitemap, and linked from one REAL reference — the Altensteig Raffstore job)
 were deleted on the owner's explicit word: "no queremos mentiras". Their images and the invented

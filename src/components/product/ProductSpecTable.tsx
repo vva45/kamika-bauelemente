@@ -8,7 +8,7 @@
  */
 import type { Spec } from "@/data/types";
 import { pick, t } from "@/lib/i18n";
-import { formatSpecValue } from "@/lib/product";
+import { formatSpecValue } from "@/lib/specs";
 
 export function ProductSpecTable({ specs }: { specs: Spec[] }) {
   if (specs.length === 0) return null;

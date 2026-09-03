@@ -1,5 +1,5 @@
 /**
- * Sitemap. Se arma desde la capa de datos, así que sembrar un producto,
+ * Sitemap. Se arma desde la capa de datos, así que sembrar un modelo,
  * un catálogo o un proyecto lo mete solo: no hay lista que mantener.
  *
  * Fuera quedan a propósito /imprint y /privacy (obligaciones legales,
@@ -11,7 +11,6 @@ import {
   CATALOGUES,
   countModelsByCatalogue,
   MANUFACTURERS,
-  PRODUCTS,
   PROJECTS,
   orderedCategories,
 } from "@/data";
@@ -42,7 +41,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...entry(routes.home, 1),
     ...entry(routes.products, 0.9),
     ...orderedCategories().flatMap((category) => entry(routes.category(category.slug), 0.8)),
-    ...PRODUCTS.flatMap((product) => entry(routes.product(product.category, product.id), 0.7)),
     // Jerarquía por fabricante: la página de marca y cada sistema.
     ...MANUFACTURERS.flatMap((manufacturer) =>
       entry(routes.manufacturer(manufacturer.category, manufacturer.id), 0.7),
