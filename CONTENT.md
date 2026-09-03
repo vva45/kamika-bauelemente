@@ -676,12 +676,18 @@ size and 0.656 of its width, which the component reproduces. See
 
 ## 6. Legal — must be checked by a lawyer
 
-`/imprint` (§ 5 DDG) and `/privacy` (DSGVO) will be written in German in phase 5, with an English
-comment above each block explaining what it says. **Neither is legal advice and both need review by
-a German lawyer before the site goes live.**
+`/imprint` (§ 5 DDG) and `/privacy` (DSGVO) are written in German — the legally binding text —
+with an English comment above each block explaining what it says. **Neither is legal advice and
+both need review by a German lawyer.**
 
-Both pages are written and live at `/imprint` and `/privacy`, in German, with an English comment
-above every block in `src/content/legal.ts` explaining what that block says.
+Both pages are live at `/imprint` and `/privacy` in `src/content/legal.ts`. **Since 2026-09 every
+block also carries an English and a Polish courtesy translation**: a visitor on /en or /pl reads
+the document in their language (Art. 12 GDPR — information has to be intelligible to the person
+reading it), under a notice that the German version prevails, and a button at the end unfolds the
+German original on the same page (`LegalOriginal`). On /de nothing changes. If the owner would
+rather show German first and the translation behind the button, that is the initial state of one
+toggle plus its labels — the mechanics are the same. The translations are mine, not a lawyer's:
+they go into the lawyer's review together with the German.
 
 Needed to complete them:
 
@@ -740,8 +746,9 @@ How it works, for whoever maintains it (full comments in `src/lib/i18n.ts`):
   printed), brand names, and the owner's texts (his German is verbatim in `de.ts`; the Polish
   `about.owner*` strings are a translation of his German — he is a native speaker, ask him to
   bless them).
-- **/imprint and /privacy stay in German in all three languages** — they are German legal texts;
-  translating them would create unreviewed legal copy.
+- **/imprint and /privacy are translated since 2026-09** (they stayed German-only at first, to
+  avoid unreviewed legal copy). The German text remains the binding one and is one click away on
+  the EN/PL pages; the translations join the lawyer's review — see §6.
 - Polish grammar note: counters use the genitive plural ("{count} modeli / stron"), which reads
   slightly off for counts of 2–4. Accepted trade-off with a single plural form — the owner can
   veto any wording, it is one line per key.

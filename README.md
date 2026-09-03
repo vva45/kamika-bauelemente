@@ -34,9 +34,11 @@ npm run dev          # http://localhost:3000
   through `pick()`. `src/content/de.ts` already has every key, empty, waiting for translation.
 - **Switching the site to German** means filling in `de.ts`, filling in the `de` fields in
   `src/data/**`, and changing `LOCALE` in `src/lib/i18n.ts`. No component changes.
-- **Legal pages are the exception**: `/imprint` and `/privacy` are in German from day one, because
-  German law requires it. Their text is in `src/content/legal.ts`, with an English comment above
-  every block.
+- **Legal pages live outside the content dictionaries**: `/imprint` and `/privacy` come from
+  `src/content/legal.ts`, where every block carries its German original (the legally binding
+  text, required by German law) plus English and Polish courtesy translations, and an English
+  comment above it explaining what it says. The EN/PL pages state that the German version
+  prevails.
 - **One model card** (`ModelCard`), used identically in the catalogue showcases, the category
   grids and the projects. Same for `Gallery`, `Breadcrumb`, `ComingSoon`, `SectionTitle`,
   `WindowFrame`.
