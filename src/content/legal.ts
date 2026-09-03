@@ -24,7 +24,7 @@ export type LegalBlock = {
 };
 
 /** Fecha de la última revisión. Actualízala cuando el abogado la revise. */
-export const LEGAL_UPDATED = "August 2026";
+export const LEGAL_UPDATED = "September 2026";
 
 export const IMPRINT_TITLE = "Impressum";
 export const PRIVACY_TITLE = "Datenschutzerklärung";
@@ -218,18 +218,24 @@ export const PRIVACY_BLOCKS: LegalBlock[] = [
     ],
   },
 
-  // EN: No cookies, no analytics, no third-party fonts, and nothing
-  // third-party loaded on page view. The one embed that exists — the
-  // map — is behind a click, so it loads nothing until the visitor
-  // asks for it. That is why the site still needs no cookie banner.
-  // Do not publish this section as it stands if anything third-party
-  // is ever loaded automatically.
+  // EN: No cookies, no third-party fonts, nothing third-party loaded
+  // on page view — with ONE declared exception since 2026-09: Vercel
+  // Web Analytics, which the owner installed. It is cookieless, uses no
+  // cross-device identifier, hashes the IP into a daily-rotating key
+  // and stores only aggregated page/referrer/country/device data, so
+  // it runs on legitimate interest (Art. 6(1)(f)) and the site still
+  // needs no cookie banner. The map embed stays behind a click. If
+  // anything else third-party is ever loaded automatically, this
+  // section must be rewritten first — and a lawyer should confirm the
+  // legitimate-interest reading of the analytics.
   {
-    heading: "8. Keine Cookies, keine Analyse-Werkzeuge",
+    heading: "8. Keine Cookies; Reichweitenmessung mit Vercel Web Analytics",
     paragraphs: [
-      "Diese Website setzt keine Cookies, verwendet keine Tracking- oder Analysedienste und lädt beim Aufruf der Seiten keine Inhalte Dritter nach (keine externen Schriftarten, keine Social-Media-Plugins). Die verwendeten Schriftarten werden von unserem eigenen Server ausgeliefert.",
+      "Diese Website setzt keine Cookies und lädt beim Aufruf der Seiten keine Inhalte Dritter nach (keine externen Schriftarten, keine Social-Media-Plugins). Die verwendeten Schriftarten werden von unserem eigenen Server ausgeliefert.",
+      "Zur Messung der Reichweite nutzen wir Vercel Web Analytics, einen Dienst unseres Hosting-Anbieters Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA. Der Dienst arbeitet ohne Cookies und ohne geräteübergreifende Identifikatoren. Erfasst werden die aufgerufene Seite, die Referrer-URL, das Land, Browser- und Gerätetyp sowie die Bildschirmgröße. Die IP-Adresse wird nur zur Bildung eines täglich wechselnden, nicht rückführbaren Kennwerts verwendet und nicht gespeichert. Ein Personenbezug wird nicht hergestellt; die Auswertung erfolgt ausschließlich in aggregierter Form.",
+      "Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO: unser berechtigtes Interesse, die Nutzung unserer Website zu verstehen und sie zu verbessern. Für Vercel gilt der unter Ziffer 3 genannte Vertrag über die Auftragsverarbeitung; die Übermittlung in die USA wird auf die Standardvertragsklauseln der Europäischen Kommission gestützt.",
       "Die Standortkarte wird erst nach Ihrem ausdrücklichen Klick geladen (siehe Ziffer 9). Solange Sie die Karte nicht anfordern, wird keine Verbindung zu Google hergestellt.",
-      "Eine Einwilligung in Cookies ist daher für die Nutzung dieser Website nicht erforderlich.",
+      "Eine Einwilligung in Cookies ist für die Nutzung dieser Website nicht erforderlich.",
     ],
   },
 

@@ -696,9 +696,12 @@ Needed to complete them:
   Resend as the processor that delivers form messages. That is only true once `RESEND_API_KEY` is
   set in Vercel. If the form ends up delivering only through the visitor's own mail client, that
   block must be deleted — publishing a processor you do not use is itself a defect.
-- The privacy policy states that the site sets **no cookies and runs no analytics**. That is true
-  of the site as built. Adding Google Analytics, an embedded map or any third-party widget makes it
-  false and forces a consent banner.
+- The privacy policy states that the site sets **no cookies** and declares exactly one
+  measurement tool: **Vercel Web Analytics**, which the owner installed in 2026-09 (section 8,
+  legitimate interest — cookieless, no cross-device identifier, IP hashed into a daily-rotating
+  key, aggregated data only). That is true of the site as built. Adding Google Analytics, an
+  auto-loading map or any other third-party widget makes it false and forces a consent banner;
+  the lawyer should also confirm the legitimate-interest reading of the analytics block.
 
 ## 7. Checks before publishing
 
