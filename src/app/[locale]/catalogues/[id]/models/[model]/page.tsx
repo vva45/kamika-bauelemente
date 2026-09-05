@@ -31,6 +31,7 @@ import {
 import { collectionName } from "@/lib/catalogue";
 import { pick, t, tf, setRequestLocale } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/metadata";
+import { tm } from "@/lib/model-text";
 import { routes } from "@/lib/routes";
 
 export function generateStaticParams() {
@@ -47,18 +48,19 @@ export async function generateMetadata({
   if (!model || !catalogue) return {};
 
   const lead = model.specs[0];
+  const name = tm(model.name);
 
   // La descripción nombra el modelo y su colección ANTES del dato: en
   // 141 fichas la primera spec es solo "Material: PVC" y eso, a secas,
   // era toda la descripción que veía el buscador.
-  const intro = `${model.name}, ${pick(catalogue.title)}.`;
-  const leadText = lead && lead.label ? ` ${lead.label}: ${lead.value}.` : "";
+  const intro = `${name}, ${pick(catalogue.title)}.`;
+  const leadText = lead && lead.label ? ` ${tm(lead.label)}: ${tm(lead.value)}.` : "";
 
   return pageMetadata({
-    title: `${model.name} — ${collectionName(catalogue)}`,
+    title: `${name} — ${collectionName(catalogue)}`,
     description: `${intro}${leadText}`,
     path: routes.catalogueModel(model.catalogue, model.id),
-    image: { url: model.detailImage ?? model.image, alt: model.name },
+    image: { url: model.detailImage ?? model.image, alt: name },
   });
 }
 
@@ -72,6 +74,8 @@ export default async function CatalogueModelPage({
   if (!model || !catalogue) notFound();
 
   const title = collectionName(catalogue);
+  // Nombre de producto tal cual; nombre genérico ("Türspion") traducido.
+  const name = tm(model.name);
   // Un accesorio sale de un catálogo de puertas pero pertenece a la
   // gama de accesorios: el camino de vuelta es el suyo, no el de las
   // puertas entre las que venía impreso.
@@ -116,7 +120,7 @@ export default async function CatalogueModelPage({
             ...(model.category || (category && pick(category.name) === title)
               ? []
               : [{ label: title, href: routes.catalogueModels(catalogue.id) }]),
-            { label: model.name },
+            { label: name },
           ]}
         />
 
@@ -127,7 +131,7 @@ export default async function CatalogueModelPage({
                 // La ficha enseña el render del producto cuando lo hay;
                 // la lámina del pliego se queda para la lista.
                 src={model.detailImage ?? model.image}
-                alt={model.name}
+                alt={name}
                 fill
                 priority
                 sizes="(min-width: 1024px) 55vw, 100vw"
@@ -141,18 +145,19 @@ export default async function CatalogueModelPage({
               <p className="eyebrow">
                 {t("catalogue.fromCatalogue")} · {title}
               </p>
-              <h1 className="mt-4 text-3xl text-balance md:text-4xl">{model.name}</h1>
+              <h1 className="mt-4 text-3xl text-balance md:text-4xl">{name}</h1>
               {model.family && (
                 <p className="mt-2 font-mono text-[0.8125rem] tracking-[0.12em] text-kamika-steel uppercase">
-                  {model.family}
+                  {tm(model.family)}
                 </p>
               )}
 
-              {/* Párrafo del fabricante. Va en el idioma del catálogo
-                  —alemán en persianas— porque es texto copiado, no
-                  redactado: traducirlo a mano sería inventarlo. */}
+              {/* Párrafo del fabricante, copiado del catálogo. En los
+                  datos está en el idioma del PDF; `tm()` lo sirve en el
+                  idioma de la página desde el diccionario de model-text
+                  (traducción fiel, nada añadido). */}
               {model.description && (
-                <p className="mt-5 text-pretty text-kamika-ink/75">{model.description}</p>
+                <p className="mt-5 text-pretty text-kamika-ink/75">{tm(model.description)}</p>
               )}
 
               <div className="mt-8 flex flex-col gap-3">
@@ -193,10 +198,10 @@ export default async function CatalogueModelPage({
                       className="border-t border-kamika-mist last:border-b"
                     >
                       <th scope="row" className="py-3 pr-6 text-left font-normal text-kamika-ink/65">
-                        {spec.label}
+                        {tm(spec.label)}
                       </th>
                       <td className="py-3 text-right font-mono text-[0.8125rem] text-kamika-ink">
-                        {spec.value}
+                        {tm(spec.value)}
                       </td>
                     </tr>
                   ) : (
@@ -205,7 +210,7 @@ export default async function CatalogueModelPage({
                        normal, que en mono se leería como una medida. */
                     <tr key={spec.value} className="border-t border-kamika-mist last:border-b">
                       <td colSpan={2} className="py-3 text-pretty text-kamika-ink/75">
-                        {spec.value}
+                        {tm(spec.value)}
                       </td>
                     </tr>
                   ),

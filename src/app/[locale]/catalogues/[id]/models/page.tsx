@@ -27,6 +27,7 @@ import {
 import { collectionName } from "@/lib/catalogue";
 import { formatNumber, pick, t, tf, setRequestLocale } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/metadata";
+import { tm } from "@/lib/model-text";
 import { routes } from "@/lib/routes";
 
 export function generateStaticParams() {
@@ -129,7 +130,7 @@ export default async function CatalogueModelsPage({
                     href={`#${encodeURIComponent(family)}`}
                     className="block rounded-kamika bg-kamika-blue-50 px-3 py-1.5 font-mono text-[0.6875rem] tracking-[0.12em] text-kamika-steel uppercase hover:bg-kamika-blue hover:text-kamika-ink"
                   >
-                    {family}
+                    {tm(family)}
                   </a>
                 </li>
               ))}
@@ -143,8 +144,10 @@ export default async function CatalogueModelsPage({
         {families.length > 1 ? (
           families.map((family) => (
             <section key={family} className="mt-14 scroll-mt-28" id={encodeURIComponent(family)}>
+              {/* El ancla (`id`) va sobre el nombre original para que el
+                  enlace sea el mismo en los tres idiomas; el rótulo, traducido. */}
               <h2 className="border-b border-kamika-mist pb-3 font-display text-xl font-medium text-kamika-ink">
-                {family}
+                {tm(family)}
               </h2>
               <div className="mt-8 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {models

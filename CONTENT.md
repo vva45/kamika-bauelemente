@@ -614,9 +614,15 @@ wrong door.
 Nothing here is written by hand, so nothing here needs the owner's review — but two things are
 worth knowing:
 
-- The specification text is reproduced **in German**, exactly as the manufacturer prints it
-  ("Keramik - Oxide Nero", "8 mm Applikationen…"). Translating it would mean inventing wording for
-  someone else's product.
+- The specification text is stored **exactly as the manufacturer prints it** ("Keramik - Oxide
+  Nero", "8 mm Applikationen…"), in the language of the PDF. **Since 2026-09 the pages serve it in
+  the visitor's language** through `src/data/model-text/` — an exact-match dictionary (one file per
+  catalogue, 647 entries) that maps each printed string to de/en/pl. Rules: proper names of finishes
+  and handles (Sediment Taupe, Ossido Bruno, Golden Oak…) are never translated, measurements and
+  codes are copied as they are, obvious PDF typos are fixed in all three versions and nothing is
+  added. `npm run audit` fails on any model text with real words that is missing from the
+  dictionary, so a new extractor run cannot leak German into /en or /pl unnoticed. If a string is
+  not in the dictionary, `tm()` falls back to the printed original rather than breaking the page.
 - These are the manufacturer's renders. They are honest and they are what the customer will
   compare, but a photo of a door Kamika actually fitted beats any of them.
 
@@ -637,9 +643,9 @@ range now has real content, and four invented spec sheets sitting among forty-fo
 exactly what this project does not do.
 
 Still missing from the range because no catalogue covers them: **cylinders**. Window handles,
-sills and vents arrived with the Salamander "Dodatki" page (Klamki, Parapety, Nawiewniki — names
-as printed, Polish included; they get German names when a German-language accessory catalogue
-lands). The thresholds were added on the 2026-08 second pass.
+sills and vents arrived with the Salamander "Dodatki" page (Klamki, Parapety, Nawiewniki — stored
+as printed in Polish, shown translated through the model-text dictionary since 2026-09). The
+thresholds were added on the 2026-08 second pass.
 
 Two accessory chapters remain out, deliberately: the glazing and sandblasted-glass ranges
 (Außentüren p. 78-83 — a glass chart rather than parts) and the pull-handle spreads on p. 84-87,
@@ -742,10 +748,15 @@ How it works, for whoever maintains it (full comments in `src/lib/i18n.ts`):
 - Data layer: every `Localized` field carries en+de+pl (categories, catalogues, manufacturers,
   systems, the 12 example products, projects, 75 named colours). Spec values with prose are now
   localisable (`value: string | Localized<string>`).
-- **Never translated, on purpose**: model names, printed catalogue specs (German/Polish as
-  printed), brand names, and the owner's texts (his German is verbatim in `de.ts`; the Polish
-  `about.owner*` strings are a translation of his German — he is a native speaker, ask him to
-  bless them).
+- **Never translated, on purpose**: product names (Select 11, INFINITI X, Keramik No. 03, Prizzi —
+  what the customer quotes in an enquiry and finds in the PDF), finish and handle names, brand
+  names, and the owner's texts (his German is verbatim in `de.ts`; the Polish `about.owner*`
+  strings are a translation of his German — he is a native speaker, ask him to bless them).
+  Generic model names that are only the catalogue's word for the thing ("Türspion", "Klamki",
+  "Paneel 12", "Alaska 1 Dekorrahmen") ARE translated, via `model-text/model-names.ts`.
+- **Printed catalogue specs are translated since 2026-09** (they used to appear in German — or
+  Polish — on every locale). The data keeps the printed original; `src/data/model-text/` holds the
+  de/en/pl rendering of each string and the audit enforces full coverage. See §3c.
 - **/imprint and /privacy are translated since 2026-09** (they stayed German-only at first, to
   avoid unreviewed legal copy). The German text remains the binding one and is one click away on
   the EN/PL pages; the translations join the lawyer's review — see §6.

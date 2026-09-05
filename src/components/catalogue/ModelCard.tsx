@@ -14,6 +14,7 @@ import Link from "next/link";
 import { WindowFrame } from "@/components/ui/WindowFrame";
 import type { CatalogueModel } from "@/data/types";
 import { cn } from "@/lib/cn";
+import { tm } from "@/lib/model-text";
 import { routes } from "@/lib/routes";
 
 type ModelCardProps = {
@@ -26,13 +27,16 @@ export function ModelCard({ model, priority = false, className }: ModelCardProps
   // La primera spec es la que más distingue al modelo: el acabado en
   // ROKA, la medida en los paneles.
   const lead = model.specs[0];
+  // Nombres de producto salen tal cual; los genéricos ("Türspion",
+  // "Paneel 12") tienen traducción en el diccionario.
+  const name = tm(model.name);
 
   return (
     <article className={cn("group relative flex flex-col", className)}>
       <WindowFrame className="aspect-[3/4] w-full" pan>
         <Image
           src={model.image}
-          alt={model.name}
+          alt={name}
           fill
           priority={priority}
           sizes="(min-width: 1280px) 22vw, (min-width: 768px) 30vw, 90vw"
@@ -42,7 +46,7 @@ export function ModelCard({ model, priority = false, className }: ModelCardProps
 
       <h3 className="mt-4 font-display text-base font-semibold text-kamika-ink">
         <Link href={routes.catalogueModel(model.catalogue, model.id)} className="stretched-link">
-          {model.name}
+          {name}
         </Link>
       </h3>
 
@@ -50,7 +54,7 @@ export function ModelCard({ model, priority = false, className }: ModelCardProps
           los dos puntos sobran y quedaban colgando al principio. */}
       {lead && (
         <p className="mt-1 line-clamp-2 text-sm text-kamika-ink/65">
-          {lead.label ? `${lead.label}: ${lead.value}` : lead.value}
+          {lead.label ? `${tm(lead.label)}: ${tm(lead.value)}` : tm(lead.value)}
         </p>
       )}
     </article>

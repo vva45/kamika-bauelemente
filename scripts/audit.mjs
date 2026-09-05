@@ -205,8 +205,38 @@ for (const glass of CATALOGUE_GLASS) {
   }
 }
 
+// Texto de los modelos (familias, etiquetas, valores, descripciones):
+// los extractores lo copian del PDF en el idioma del PDF, y la web lo
+// sirve en los tres idiomas a través de `src/data/model-text/`. Todo
+// texto con palabras de verdad tiene que estar en ese diccionario con
+// de/en/pl; si no, la página /en o /pl enseñaría alemán (o polaco).
+const { MODEL_TEXT, needsModelTranslation } = await import("../src/data/model-text/index.ts");
+const untranslated = new Map();
+const wantTranslation = (text, where) => {
+  if (!text || !needsModelTranslation(text) || untranslated.has(text)) return;
+  const entry = MODEL_TEXT[text];
+  if (!entry) untranslated.set(text, `${where}: missing`);
+  else {
+    const empty = ["de", "en", "pl"].filter((locale) => !entry[locale]?.trim());
+    if (empty.length) untranslated.set(text, `${where}: empty ${empty.join("/")}`);
+  }
+};
+for (const model of CATALOGUE_MODELS) {
+  const where = `${model.catalogue}/${model.id}`;
+  wantTranslation(model.family, `${where} family`);
+  wantTranslation(model.description, `${where} description`);
+  for (const spec of model.specs) {
+    wantTranslation(spec.label, `${where} label`);
+    wantTranslation(spec.value, `${where} value`);
+  }
+}
+for (const [text, where] of untranslated) {
+  const short = text.length > 80 ? `${text.slice(0, 77)}…` : text;
+  fail("untranslated model text", `${where} — "${short}" (add it to src/data/model-text/)`);
+}
+
 notes.push(
-  `${CATALOGUES.length} catalogues, ${CATALOGUE_MODELS.length} catalogue models, ${MANUFACTURERS.length} manufacturer entries, ${PROJECTS.length} projects, ${COLORS.length} standard finishes + ${CATALOGUE_COLORS.length} catalogue swatches + ${CATALOGUE_GLASS.length} glass types.`,
+  `${CATALOGUES.length} catalogues, ${CATALOGUE_MODELS.length} catalogue models (${Object.keys(MODEL_TEXT).length} translated text entries), ${MANUFACTURERS.length} manufacturer entries, ${PROJECTS.length} projects, ${COLORS.length} standard finishes + ${CATALOGUE_COLORS.length} catalogue swatches + ${CATALOGUE_GLASS.length} glass types.`,
 );
 
 // ── 4. Texto visible escrito a pelo ──────────────────────────────────

@@ -41,6 +41,7 @@ import {
 } from "@/data";
 import { pick, t, setRequestLocale } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/metadata";
+import { tm } from "@/lib/model-text";
 import { routes } from "@/lib/routes";
 
 export function generateStaticParams() {
@@ -167,7 +168,7 @@ export default async function CategoryPage({ params }: PageProps<"/[locale]/prod
                 const group = models.filter((model) => (model.family ?? "") === family);
                 return (
                   <div key={family} className="mt-12 first:mt-10">
-                    {family && <h2 className="text-2xl md:text-3xl">{family}</h2>}
+                    {family && <h2 className="text-2xl md:text-3xl">{tm(family)}</h2>}
                     <div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-3 xl:grid-cols-4">
                       {group.map((model, index) => (
                         <ModelCard key={`${model.catalogue}-${model.id}`} model={model} priority={index < 4} />
