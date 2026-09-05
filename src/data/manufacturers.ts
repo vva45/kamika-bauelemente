@@ -73,6 +73,7 @@ export const MANUFACTURERS: Manufacturer[] = [
         description: {
           en: "Windows that combine modern design with very good technical parameters. The Ideal 5000 system has triple sealing, and it is also available in a version with a lower frame that lets more light into the room. The Uw value refers to a 1230 × 1480 mm reference window.",
           de: "Fenster, die modernes Design mit sehr guten technischen Parametern verbinden. Das System Ideal 5000 verfügt über eine dreifache Abdichtung. Es ist auch in einer Version mit einem niedrigeren Rahmen erhältlich, mit dem jeder Raum leicht beleuchtet werden kann. Der angegebene Uw-Wert bezieht sich auf ein Referenzfenster von 1230 × 1480 mm.",
+          pl: "Okna łączące nowoczesny design z bardzo dobrymi parametrami technicznymi. System Ideal 5000 ma potrójne uszczelnienie i jest dostępny także w wersji z niższą ościeżnicą, która wpuszcza do pomieszczenia więcej światła. Podana wartość Uw dotyczy okna referencyjnego 1230 × 1480 mm.",
         },
         specs: [
           {
@@ -128,6 +129,7 @@ export const MANUFACTURERS: Manufacturer[] = [
         description: {
           en: "The newest generation. Windows based on the Ideal 8000 system offer thermal and sound insulation at the highest level. The system is also available as the Energeto 8000 Powerdur version, designed for energy-efficient and passive building. The Uw value refers to a 1230 × 1480 mm reference window.",
           de: "Die neueste Generation. Fenster, die auf dem System Ideal 8000 basieren, bieten Wärme- und Schalldämmung auf höchstem Niveau. Das System ist in der Version Energeto 8000 Powerdur erhältlich, die für energieeffizientes und passives Bauen konzipiert ist. Der angegebene Uw-Wert bezieht sich auf ein Referenzfenster von 1230 × 1480 mm.",
+          pl: "Najnowsza generacja. Okna oparte na systemie Ideal 8000 zapewniają izolacyjność cieplną i akustyczną na najwyższym poziomie. System dostępny jest także w wersji Energeto 8000 Powerdur, zaprojektowanej do budownictwa energooszczędnego i pasywnego. Podana wartość Uw dotyczy okna referencyjnego 1230 × 1480 mm.",
         },
         specs: [
           {
@@ -230,6 +232,7 @@ export const MANUFACTURERS: Manufacturer[] = [
         description: {
           en: "Innovative technology and the best thermal parameters are the hallmarks of energy-saving building and the BluEvolution 82 system. With this system we can also offer products with a renovation frame. The Uw value refers to a 1230 × 1480 mm reference window in the best thermal build-up.",
           de: "Innovative Technik und beste Wärmeparameter sind kennzeichnend für energiesparendes Bauen und das System BluEvolution 82. Bei der Wahl dieses Systems bieten wir auch die Möglichkeit, Produkte mit einem Renovierungsrahmen zu wählen. Der Uw-Wert ist für ein 1230 × 1480 mm großes Referenzfenster in der besten thermischen Ausführung angegeben.",
+          pl: "Innowacyjna technologia i najlepsze parametry cieplne to znaki rozpoznawcze budownictwa energooszczędnego i systemu BluEvolution 82. W tym systemie oferujemy także produkty z ramą renowacyjną. Wartość Uw podano dla okna referencyjnego 1230 × 1480 mm w najlepszym wariancie termicznym.",
         },
         specs: [
           {
@@ -286,13 +289,13 @@ export const MANUFACTURERS: Manufacturer[] = [
         },
         specs: [
           { label: { en: "Frame depth", de: "Einbautiefe", pl: "Głębokość zabudowy" }, value: "76", unit: "mm", highlight: true },
-          { label: { en: "Uw" }, value: { en: "0.77–1.20", de: "0,77–1,20", pl: "0,77–1,20" }, unit: "W/m²K", highlight: true },
+          { label: { en: "Uw", de: "Uw", pl: "Uw" }, value: { en: "0.77–1.20", de: "0,77–1,20", pl: "0,77–1,20" }, unit: "W/m²K", highlight: true },
           {
             label: { en: "Chambers (frame / sash)", de: "Kammern (Rahmen / Flügel)", pl: "Komory (rama / skrzydło)" },
             value: "5–6 / 5",
             highlight: true,
           },
-          { label: { en: "Uf (2D / 3D)" }, value: { en: "from 1.3 / from 1.1", de: "ab 1,3 / ab 1,1", pl: "od 1,3 / od 1,1" }, unit: "W/m²K" },
+          { label: { en: "Uf (2D / 3D)", de: "Uf (2D / 3D)", pl: "Uf (2D / 3D)" }, value: { en: "from 1.3 / from 1.1", de: "ab 1,3 / ab 1,1", pl: "od 1,3 / od 1,1" }, unit: "W/m²K" },
           { label: { en: "Seals", de: "Dichtungen", pl: "Uszczelki" }, value: "2–3" },
           { label: { en: "Glazing packages", de: "Verglasungspakete", pl: "Pakiety szybowe" }, value: { en: "up to 48 mm", de: "bis 48 mm", pl: "do 48 mm" } },
           { label: { en: "Sound insulation Rw", de: "Schalldämmung Rw", pl: "Izolacyjność akustyczna Rw" }, value: "29–38 dB" },
@@ -324,13 +327,13 @@ export const MANUFACTURERS: Manufacturer[] = [
           // serie del fabricante publica 0,73 para este sistema (el 82
           // imprime 0,74-1,10 en la misma casilla). Se corrige solo la
           // errata tipográfica, no el dato.
-          { label: { en: "Uw" }, value: { en: "0.73–1.1", de: "0,73–1,1", pl: "0,73–1,1" }, unit: "W/m²K", highlight: true },
+          { label: { en: "Uw", de: "Uw", pl: "Uw" }, value: { en: "0.73–1.1", de: "0,73–1,1", pl: "0,73–1,1" }, unit: "W/m²K", highlight: true },
           {
             label: { en: "Chambers (frame / sash)", de: "Kammern (Rahmen / Flügel)", pl: "Komory (rama / skrzydło)" },
             value: "6 / 6",
             highlight: true,
           },
-          { label: { en: "Uf" }, value: { en: "from 1.0", de: "ab 1,0", pl: "od 1,0" }, unit: "W/m²K" },
+          { label: { en: "Uf", de: "Uf", pl: "Uf" }, value: { en: "from 1.0", de: "ab 1,0", pl: "od 1,0" }, unit: "W/m²K" },
           { label: { en: "Seals", de: "Dichtungen", pl: "Uszczelki" }, value: { en: "3, centre gasket", de: "3, Mitteldichtung", pl: "3, uszczelka środkowa" } },
           { label: { en: "Glazing packages", de: "Verglasungspakete", pl: "Pakiety szybowe" }, value: { en: "up to 61 mm", de: "bis 61 mm", pl: "do 61 mm" } },
           { label: { en: "Sound insulation Rw", de: "Schalldämmung Rw", pl: "Izolacyjność akustyczna Rw" }, value: "29–38 dB" },
@@ -955,8 +958,8 @@ export const MANUFACTURERS: Manufacturer[] = [
         name: "MB-79N Casement",
         tagline: {
           en: "Outward-opening windows: top hung and side hung.",
-          de: "Nach außen öffnende Fenster: Top Hung und Side Hung.",
-          pl: "Okna otwierane na zewnątrz: top hung i side hung.",
+          de: "Nach außen öffnende Fenster: oben angeschlagen (Top Hung) und seitlich angeschlagen (Side Hung).",
+          pl: "Okna otwierane na zewnątrz: zawieszone górą (top hung) i bokiem (side hung).",
         },
         description: {
           en: "MB-79N CASEMENT is a technologically advanced window system that guarantees excellent thermal and acoustic insulation and stands out with maximum tightness. This premium solution allows the precise realisation of many construction variants: from elegant fixed glazing through outward-opening turn and tilt windows to highly functional top-hung reversible windows.",
@@ -966,7 +969,7 @@ export const MANUFACTURERS: Manufacturer[] = [
         specs: [
           { label: AL.frameDepth, value: "70", unit: "mm", highlight: true },
           { label: AL.sashDepth, value: "79", unit: "mm", highlight: true },
-          { label: AL.variants, value: "Top Hung / Side Hung", highlight: true },
+          { label: AL.variants, value: { en: "Top hung / side hung", de: "Oben angeschlagen / seitlich angeschlagen", pl: "Zawieszone górą / bokiem" }, highlight: true },
           { label: AL.glazing, value: { en: "Frame 1.5–54 mm / sash 10.5–63 mm", de: "Blendrahmen 1,5–54 mm / Flügel 10,5–63 mm", pl: "Ościeżnica 1,5–54 mm / skrzydło 10,5–63 mm" } },
           { label: AL.maxDoorLeaf, value: "H 2700/2500 × L 1400/2400 mm" },
           { label: AL.maxWeight, value: "180 kg" },
@@ -1670,7 +1673,7 @@ export const MANUFACTURERS: Manufacturer[] = [
           { label: AL.glazing, value: "14 – 44 mm", highlight: true },
           { label: AL.minFrame, value: "15 mm" },
           { label: AL.minSash, value: "50 mm" },
-          { label: AL.maxSash, value: { en: "Turn-tilt (top hung) H 1800 × L 1800 mm", de: "Dreh-Kipp (Top Hung) H 1800 × L 1800 mm", pl: "Rozwierno-uchylne (top hung) H 1800 × L 1800 mm" } },
+          { label: AL.maxSash, value: { en: "Turn-tilt (top hung) H 1800 × L 1800 mm", de: "Dreh-Kipp (oben angeschlagen) H 1800 × L 1800 mm", pl: "Rozwierno-uchylne (zawieszone górą) H 1800 × L 1800 mm" } },
           { label: AL.maxWeight, value: "100 kg" },
         ],
         datasheet: "/pdf/catalogues/aluminium-2026.pdf#page=34",
@@ -1978,8 +1981,8 @@ export const MANUFACTURERS: Manufacturer[] = [
             highlight: true,
           },
           { label: { en: "Frame depth", de: "Rahmentiefe", pl: "Głębokość ramy" }, value: "76", unit: "mm", highlight: true },
-          { label: { en: "Uw" }, value: { en: "from 1.3", de: "ab 1,3", pl: "od 1,3" }, unit: "W/m²K", highlight: true },
-          { label: { en: "Uf" }, value: { en: "from 1.8", de: "ab 1,8", pl: "od 1,8" }, unit: "W/m²K" },
+          { label: { en: "Uw", de: "Uw", pl: "Uw" }, value: { en: "from 1.3", de: "ab 1,3", pl: "od 1,3" }, unit: "W/m²K", highlight: true },
+          { label: { en: "Uf", de: "Uf", pl: "Uf" }, value: { en: "from 1.8", de: "ab 1,8", pl: "od 1,8" }, unit: "W/m²K" },
           { label: { en: "Frame / sash height", de: "Rahmen-/Flügelhöhe", pl: "Wysokość ramy/skrzydła" }, value: "52 / 88 mm" },
           { label: { en: "Glazing packages", de: "Verglasungspakete", pl: "Pakiety szybowe" }, value: { en: "up to 28 mm", de: "bis 28 mm", pl: "do 28 mm" } },
           { label: { en: "Layouts", de: "Schemata", pl: "Schematy" }, value: "A · C · D" },
@@ -2012,8 +2015,8 @@ export const MANUFACTURERS: Manufacturer[] = [
             unit: "mm",
             highlight: true,
           },
-          { label: { en: "Uw" }, value: { en: "from 1.5", de: "ab 1,5", pl: "od 1,5" }, unit: "W/m²K", highlight: true },
-          { label: { en: "Uf" }, value: { en: "from 1.1", de: "ab 1,1", pl: "od 1,1" }, unit: "W/m²K" },
+          { label: { en: "Uw", de: "Uw", pl: "Uw" }, value: { en: "from 1.5", de: "ab 1,5", pl: "od 1,5" }, unit: "W/m²K", highlight: true },
+          { label: { en: "Uf", de: "Uf", pl: "Uf" }, value: { en: "from 1.1", de: "ab 1,1", pl: "od 1,1" }, unit: "W/m²K" },
           { label: { en: "Frame / sash height", de: "Rahmen-/Flügelhöhe", pl: "Wysokość ramy/skrzydła" }, value: "54 / 88 mm" },
           { label: { en: "Glazing packages", de: "Verglasungspakete", pl: "Pakiety szybowe" }, value: { en: "up to 49 mm", de: "bis 49 mm", pl: "do 49 mm" } },
           { label: { en: "Layouts", de: "Schemata", pl: "Schematy" }, value: "A · C" },
@@ -2046,8 +2049,8 @@ export const MANUFACTURERS: Manufacturer[] = [
             unit: "mm",
             highlight: true,
           },
-          { label: { en: "Uw" }, value: { en: "0.74–1.10", de: "0,74–1,10", pl: "0,74–1,10" }, unit: "W/m²K", highlight: true },
-          { label: { en: "Uf" }, value: { en: "from 1.0", de: "ab 1,0", pl: "od 1,0" }, unit: "W/m²K" },
+          { label: { en: "Uw", de: "Uw", pl: "Uw" }, value: { en: "0.74–1.10", de: "0,74–1,10", pl: "0,74–1,10" }, unit: "W/m²K", highlight: true },
+          { label: { en: "Uf", de: "Uf", pl: "Uf" }, value: { en: "from 1.0", de: "ab 1,0", pl: "od 1,0" }, unit: "W/m²K" },
           {
             label: { en: "Chambers (frame / sash)", de: "Kammern (Rahmen / Flügel)", pl: "Komory (rama / skrzydło)" },
             value: "5 / 5",
@@ -3003,7 +3006,7 @@ export const MANUFACTURERS: Manufacturer[] = [
         specs: [
           { label: AL.frameDepth, value: { en: "120 mm (2-track) / 176 mm (3-track)", de: "120 mm (2-gleisig) / 176 mm (3-gleisig)", pl: "120 mm (2 tory) / 176 mm (3 tory)" }, highlight: true },
           { label: AL.sashDepth, value: "37", unit: "mm", highlight: true },
-          { label: AL.variants, value: "Standard Vent (SV) / Large Vent (LV)", highlight: true },
+          { label: AL.variants, value: { en: "Standard Vent (SV) / Large Vent (LV)", de: "Standardflügel (SV) / großer Flügel (LV)", pl: "Skrzydło standardowe (SV) / duże skrzydło (LV)" }, highlight: true },
           { label: AL.glazing, value: "SV 24–30 mm / LV 32–38 mm" },
           { label: { en: "Max. dimensions", de: "Max. Abmessungen", pl: "Maks. wymiary" }, value: "H 2700 × L 2300 mm" },
           { label: AL.maxWeight, value: "250 kg" },

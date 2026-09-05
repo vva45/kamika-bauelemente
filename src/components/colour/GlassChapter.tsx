@@ -12,8 +12,8 @@
  * para que se vea la transparencia.
  */
 import Image from "next/image";
+import { GLASS_TYPES } from "@/data";
 import { CATALOGUES } from "@/data/catalogues";
-import { CATALOGUE_GLASS } from "@/data/catalogue-glass";
 import { pick, t, tf } from "@/lib/i18n";
 
 /** Mismo título corto que usan las secciones de la carta de colores. */
@@ -31,7 +31,7 @@ export function GlassChapter() {
   const sections = CATALOGUES.map((catalogue) => ({
     id: catalogue.id,
     title: sectionTitle(catalogue.id),
-    items: CATALOGUE_GLASS.filter((glass) => glass.catalogue === catalogue.id),
+    items: GLASS_TYPES.filter((glass) => glass.catalogue === catalogue.id),
   })).filter((section) => section.items.length > 0);
 
   if (sections.length === 0) return null;

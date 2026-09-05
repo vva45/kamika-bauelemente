@@ -21,8 +21,10 @@ import {
   orderedCategories,
   topLevelCategories,
 } from "./categories";
-import { COLORS } from "./colors";
+import { COLORS as STANDARD_COLORS } from "./colors";
 import { CATALOGUE_COLORS } from "./catalogue-colors";
+import { CATALOGUE_GLASS } from "./catalogue-glass";
+import { localizeSwatch } from "./model-text/swatches";
 import { PROJECTS } from "./projects";
 import type { Catalogue, CatalogueModel, CategorySlug, ColorFinish, Project } from "./types";
 
@@ -38,7 +40,6 @@ export {
   childCategories,
   leafCategories,
   topLevelCategories,
-  COLORS,
   PROJECTS,
   getCatalogue,
   getCategory,
@@ -179,9 +180,19 @@ export const getColorsByGroup = (group: ColorFinish["group"]): ColorFinish[] =>
 const finishKey = (color: ColorFinish) =>
   `${color.group}:${(color.code || color.name.en).toLowerCase().replace(/[^a-z0-9]/g, "")}`;
 
+/** La carta estándar, con los pocos nombres IGLO copiados sin traducir ya traducidos. */
+export const COLORS: ColorFinish[] = STANDARD_COLORS.map(localizeSwatch);
+
 const supersededByImage = new Set(CATALOGUE_COLORS.map(finishKey));
 
+// Las muestras extraídas llevan el nombre impreso copiado a los tres
+// idiomas; `localizeSwatch` le pone la traducción (ver model-text/swatches).
 export const ALL_COLORS: ColorFinish[] = [
-  ...COLORS.filter((color) => !supersededByImage.has(finishKey(color))),
-  ...CATALOGUE_COLORS,
+  // La deduplicación compara los nombres impresos (sin traducir) de
+  // ambas listas; la traducción se aplica después.
+  ...STANDARD_COLORS.filter((color) => !supersededByImage.has(finishKey(color))).map(localizeSwatch),
+  ...CATALOGUE_COLORS.map(localizeSwatch),
 ];
+
+/** Los tipos de vidrio de los catálogos, con el nombre en los tres idiomas. */
+export const GLASS_TYPES = CATALOGUE_GLASS.map(localizeSwatch);

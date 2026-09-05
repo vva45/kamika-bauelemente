@@ -748,12 +748,18 @@ How it works, for whoever maintains it (full comments in `src/lib/i18n.ts`):
 - Data layer: every `Localized` field carries en+de+pl (categories, catalogues, manufacturers,
   systems, the 12 example products, projects, 75 named colours). Spec values with prose are now
   localisable (`value: string | Localized<string>`).
-- **Never translated, on purpose**: product names (Select 11, INFINITI X, Keramik No. 03, Prizzi —
-  what the customer quotes in an enquiry and finds in the PDF), finish and handle names, brand
-  names, and the owner's texts (his German is verbatim in `de.ts`; the Polish `about.owner*`
-  strings are a translation of his German — he is a native speaker, ask him to bless them).
-  Generic model names that are only the catalogue's word for the thing ("Türspion", "Klamki",
-  "Paneel 12", "Alaska 1 Dekorrahmen") ARE translated, via `model-text/model-names.ts`.
+- **Never translated, on purpose**: brand and product names (Select 11, INFINITI X, Prizzi, PIVOT
+  07 — what the customer quotes in an enquiry and finds in the PDF), proper names of finishes,
+  decors and handles (Sediment Taupe, Golden Oak, Ossido Nero, Winchester), and the owner's texts
+  (his German is verbatim in `de.ts`; the Polish `about.owner*` strings are a translation of his
+  German — he is a native speaker, ask him to bless them).
+- **Everything descriptive IS translated (owner's call, 2026-09: "translate everything except
+  brands and models")**: generic model names ("Türspion", "Klamki", "Paneel 12", "Alaska 1
+  Dekorrahmen") via `model-text/model-names.ts`, including the German ROKA Signature series
+  ("Holz No. 12" → "Wood No. 12" / "Drewno No. 12"); descriptive colour and glass names ("Eiche
+  dunkel", "Złoty Dąb", "Klarglas", "Antisol Grau") via `model-text/swatches.ts`, applied by
+  `localizeSwatch()` when the data layer builds `ALL_COLORS` and `GLASS_TYPES`. The audit lists
+  every untranslated swatch name that is not declared as a proper name in `KEEP`.
 - **Printed catalogue specs are translated since 2026-09** (they used to appear in German — or
   Polish — on every locale). The data keeps the printed original; `src/data/model-text/` holds the
   de/en/pl rendering of each string and the audit enforces full coverage. See §3c.

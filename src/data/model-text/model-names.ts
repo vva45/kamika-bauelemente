@@ -8,9 +8,11 @@
  * la palabra genérica del catálogo — "Türspion", "Klamki", "Paneel 12",
  * "Alaska 1 Dekorrahmen" — y esa palabra sí se traduce.
  *
- * Tres familias se generan a partir de los propios modelos para no
- * listar 200 líneas a mano: "Paneel NN" → "Panel NN", "X Dekorrahmen" →
- * "X decorative frame", "Stangengriffe X" → "Bar handles X".
+ * Cuatro familias se generan a partir de los propios modelos para no
+ * listar 300 líneas a mano: "Paneel NN" → "Panel NN", "X Dekorrahmen" →
+ * "X decorative frame", "Stangengriffe X" → "Bar handles X", y las
+ * series de ROKA Signature con nombre alemán ("Holz No. 12" → "Wood
+ * No. 12"; Earth, Balance y Vintage ya son iguales en los tres idiomas).
  */
 import { CATALOGUE_MODELS } from "../catalogue-models.ts";
 import { t, type ModelText } from "./helpers.ts";
@@ -88,10 +90,23 @@ const HAND: Record<string, ModelText> = {
   "Türband Jocker": t("Türband Jocker", "Door hinge Jocker", "Zawias drzwiowy Jocker"),
 };
 
+// Series de ROKA Signature con nombre alemán → traducidas.
+const ROKA_SERIES: Record<string, { en: string; pl: string }> = {
+  Keramik: { en: "Ceramic", pl: "Ceramika" },
+  Glas: { en: "Glass", pl: "Szkło" },
+  Holz: { en: "Wood", pl: "Drewno" },
+  "Edles Flüssigmetall": { en: "Fine liquid metal", pl: "Szlachetny płynny metal" },
+};
+
 // Familias generadas a partir de los nombres reales.
 const GENERATED: Record<string, ModelText> = {};
 for (const { name } of CATALOGUE_MODELS) {
   if (GENERATED[name] || HAND[name]) continue;
+  const roka = /^(Keramik|Glas|Holz|Edles Flüssigmetall) (No\. \d+)$/.exec(name);
+  if (roka) {
+    const series = ROKA_SERIES[roka[1]];
+    GENERATED[name] = t(name, `${series.en} ${roka[2]}`, `${series.pl} ${roka[2]}`);
+  }
   const panel = /^Paneel (.+)$/.exec(name);
   if (panel) GENERATED[name] = t(name, `Panel ${panel[1]}`, `Panel ${panel[1]}`);
   const deko = /^(.+) Dekorrahmen$/.exec(name);

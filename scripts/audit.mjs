@@ -235,6 +235,44 @@ for (const [text, where] of untranslated) {
   fail("untranslated model text", `${where} — "${short}" (add it to src/data/model-text/)`);
 }
 
+// Muestras de color y de vidrio: los extractores copian el nombre
+// impreso a de/en/pl por igual. Cada nombre así copiado con palabras de
+// verdad tiene que estar en `model-text/swatches.ts` — traducido, o en
+// KEEP si es un nombre propio de decor (Golden Oak, Ossido Nero).
+const { SWATCH_TEXT, isUntranslated } = await import("../src/data/model-text/swatches.ts");
+const swatchMissing = new Map();
+for (const [kind, items] of [["standard finish", COLORS], ["colour swatch", CATALOGUE_COLORS], ["glass type", CATALOGUE_GLASS]]) {
+  for (const item of items) {
+    const name = item.name.en;
+    if (!isUntranslated(item.name) || !needsModelTranslation(name) || SWATCH_TEXT[name]) continue;
+    if (!swatchMissing.has(name)) swatchMissing.set(name, `${kind} "${item.id}" (${item.catalogue ?? "standard"})`);
+  }
+}
+for (const [name, where] of swatchMissing) {
+  fail("untranslated swatch name", `${where} — "${name}" (translate it in src/data/model-text/swatches.ts, or list it in KEEP)`);
+}
+
+// Datos escritos a mano (fabricantes, catálogos, proyectos): cada campo
+// `Localized` lleva los tres idiomas. `pick()` cae al inglés si falta
+// uno, y eso es exactamente una descripción en inglés en /pl.
+const incompleteLocalized = [];
+const walkLocalized = (value, path) => {
+  if (!value || typeof value !== "object") return;
+  if (typeof value.en === "string") {
+    for (const locale of ["de", "pl"]) {
+      if (typeof value[locale] !== "string" || !value[locale].trim()) {
+        incompleteLocalized.push(`${path} has no ${locale} ("${value.en.slice(0, 60)}")`);
+      }
+    }
+    return;
+  }
+  for (const [key, child] of Object.entries(value)) walkLocalized(child, `${path}.${key}`);
+};
+for (const manufacturer of MANUFACTURERS) walkLocalized(manufacturer, `manufacturer ${manufacturer.id}/${manufacturer.category}`);
+for (const catalogue of CATALOGUES) walkLocalized(catalogue, `catalogue ${catalogue.id}`);
+for (const project of PROJECTS) walkLocalized(project, `project ${project.id}`);
+for (const message of incompleteLocalized) fail("incomplete translation", message);
+
 notes.push(
   `${CATALOGUES.length} catalogues, ${CATALOGUE_MODELS.length} catalogue models (${Object.keys(MODEL_TEXT).length} translated text entries), ${MANUFACTURERS.length} manufacturer entries, ${PROJECTS.length} projects, ${COLORS.length} standard finishes + ${CATALOGUE_COLORS.length} catalogue swatches + ${CATALOGUE_GLASS.length} glass types.`,
 );

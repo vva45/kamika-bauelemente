@@ -56,7 +56,7 @@ const CODE_TOKENS = new Set([
   "RAL", "RC", "EI", "DIN", "ISO", "PVC", "ALU", "LED", "VSG", "ESG", "HST", "PSK", "PUR", "XPS",
   "HPL", "USB", "WLAN", "EKO", "PA", "NCS", "DB", "VIP", "EK", "ES", "RS", "PWZ", "PZL", "PQ",
   "PS", "PZW", "PZV", "PZ", "UV", "IP", "IPX", "UW", "UD", "UG", "UF", "mm", "cm", "kg", "max",
-  "min", "Max", "Min", "Uw", "Ud", "Ug", "Uf", "Rw", "dB", "Nm", "kN", "Pa", "mit",
+  "min", "Max", "Min", "Uw", "Ud", "Ug", "Uf", "Rw", "dB", "Nm", "kN", "Pa", "mit", "SAL",
 ]);
 
 /** ¿Tiene este texto alguna palabra de verdad (≥3 letras que no sea un código)? */
